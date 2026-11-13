@@ -273,7 +273,7 @@ const asOfCn = data.asOf.slice(0, 16).replace('T', ' ');
         if (av === null) return 1;
         if (bv === null) return -1;
         if (typeof av === 'string') return av.localeCompare(bv, 'zh') * direction;
-        if (av !== bv) return (bv - av) * direction;
+        if (av !== bv) return (av - bv) * direction;
         return (a.dataset.name || '').localeCompare(b.dataset.name || '', 'zh');
       })
       .forEach((r) => body.appendChild(r));
