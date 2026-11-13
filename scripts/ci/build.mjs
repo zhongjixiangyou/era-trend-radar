@@ -9,16 +9,24 @@ import { emitStatus, exitFor } from "./lib/status.mjs";
 import { entryOf } from "./lib/entry.mjs";
 import { previewState, checkPreviewGuards } from "./lib/preview-guards.mjs";
 
+// 与 scripts/ci/leakcheck.mjs 同一检测集：events / trends / forecasts 三类的非 published ID。
+// 以前只扫 events，趋势和判断泄漏了也算 healthy。
 function pendingIds(contentDir) {
   const ids = new Set();
-  const dir = path.join(contentDir, "events");
-  if (!fs.existsSync(dir)) return ids;
-  for (const f of fs.readdirSync(dir)) {
-    if (!f.endsWith(".json")) continue;
-    let j;
-    try { j = JSON.parse(fs.readFileSync(path.join(dir, f), "utf8")); } catch (_) { continue; }
-    const recs = Array.isArray(j) ? j : (Array.isArray(j.events) ? j.events : [j]);
-    for (const r of recs) if (r && typeof r.id === "string" && r.status !== "published") ids.add(r.id);
+  for (const kind of ["events", "trends", "forecasts"]) {
+    const dir = path.join(contentDir, kind);
+    if (!fs.existsSync(dir)) continue;
+    for (const f of fs.readdirSync(dir)) {
+      if (!f.endsWith(".json")) continue;
+      let j;
+      try { j = JSON.parse(fs.readFileSync(path.join(dir, f), "utf8")); } catch (_) { continue; }
+      const recs = Array.isArray(j) ? j : (Array.isArray(j[kind]) ? j[kind] : [j]);
+      // 只认「显式声明了非 published 状态」的记录：trends/forecasts 往往没有 status 字段，
+      // 而它们会随已发布事件合法进入公开产物（按引用收进投影），当成 pending 会误报整站泄漏。
+      for (const r of recs) {
+        if (r && typeof r.id === "string" && typeof r.status === "string" && r.status !== "published") ids.add(r.id);
+      }
+    }
   }
   return ids;
 }
@@ -26,7 +34,7 @@ function scanLeak(distDir, ids) {
   const hits = [];
   if (!ids.size) return hits;
   for (const rel of walk(distDir)) {
-    if (!/\.(html|json|js|mjs|csv|txt|xml|svg)$/.test(rel)) continue;
+    if (!/\.(html|json|js|mjs|cjs|css|map|csv|txt|xml|svg)$/.test(rel)) continue;
     const abs = path.join(distDir, rel);
     let text;
     try { text = fs.readFileSync(abs, "utf8"); } catch (_) { continue; }
@@ -163,14 +171,24 @@ function main() {
     const noBannerAtAll = guards.pages > 0 && guards.noBanner.length === guards.pages;
     const looksPublic = noBannerAtAll && guards.noNoindex.length === guards.pages;
     const artifactPreview = !looksPublic;
+    // 形态由调用方声明（deploy 传 --expect public），不让产物自证：
+    // 公开投影里只要混进一条 pending，全站就会渲染横幅，靠产物反推会把该失败的构建归成「预览产物」放行。
+    const expect = typeof args.expect === "string" ? args.expect : null;
+    const expectOk = !expect || expect === "public" || expect === "preview";
+    const classOk = !expect || (expect === "public" ? looksPublic : artifactPreview);
     const leakOk = looksPublic ? leakHits.length === 0 : guards.ok;
+    // 导出入口没配、或导出 0 个文件，等于门禁什么都没比，不能算 healthy（以前这种是静默放行）。
+    const exportConfigured = exportCmd.length > 0;
+    const exportOk = exportConfigured && exportExit === 0 && compared.length > 0;
     const ok =
-      (exportCmd.length === 0 || exportExit === 0) &&
+      exportOk &&
       drift.length === 0 &&
       res.status === 0 &&
       intakeHits.length === 0 &&
       leakOk &&
-      hasIndex;
+      hasIndex &&
+      classOk &&
+      expectOk;
 
     const report = {
       tool: TOOL,
@@ -186,6 +204,8 @@ function main() {
       files: files.length,
       hasIndex,
       intakeLeak: intakeHits,
+      expect,
+      classOk,
       preview: artifactPreview,
       previewState: { published: pv.published, pending: pv.pending, artifact: looksPublic ? "public" : "preview" },
       previewGuards: artifactPreview ? guards : null,
@@ -199,6 +219,10 @@ function main() {
         ? `入口构建 ${files.length} 文件；${compared.length} 个派生文件与 content/ 无漂移` +
           (artifactPreview ? `；预览产物放行 ${leakHits.length} 处 pending（横幅/noindex 已校验）` : `；公开产物无 pending 泄漏`)
         : [
+            !expectOk ? `--expect 只能是 public|preview，收到 ${expect}` : "",
+            !classOk ? `产物形态与 --expect ${expect} 不符（${looksPublic ? "公开" : "预览"}产物）` : "",
+            !exportConfigured ? "导出入口未配置（entries.build.exportCmd），门禁未做任何比对" : "",
+            exportConfigured && exportExit === 0 && compared.length === 0 ? "导出未产出任何文件，无从比对" : "",
             artifactPreview && !leakOk ? `预览产物护栏不全：${guards.summary}` : "",
             exportExit !== 0 && exportCmd.length ? `导出失败 exit=${exportExit} ${exportErr}` : "",
             drift.length ? `派生层漂移 ${drift.length} 个：${drift.slice(0, 5).join(", ")}` : "",

@@ -22,19 +22,43 @@ const TMPROOT = mkdtempSync(path.join(os.tmpdir(), 'era-src-data-'));
 const BACKUP = path.join(TMPROOT, 'data');
 const hadData = existsSync('src/data');
 if (hadData) cpSync('src/data', BACKUP, { recursive: true });
-process.on('exit', () => {
-  if (!hadData) return;
+
+let restored = !hadData;
+// 还原要先拷到同级暂存目录再换入：原先先 rm 再 cp，中途挂掉会留下一个空 src/data。
+// 成功还原后连 /tmp/era-src-data-* 一起删，否则每跑一次留一份（曾积了 24 个）。
+function restore(reason = '') {
+  if (restored) return;
+  restored = true;
   if (!existsSync(path.join(BACKUP, 'events.json'))) {
     console.error(`\n⚠ 备份缺失（${BACKUP}），src/data 未还原；请手动 git checkout -- src/data`);
     return;
   }
   try {
+    const staging = path.join('src', '.data.restore');
+    rmSync(staging, { recursive: true, force: true });
+    cpSync(BACKUP, staging, { recursive: true });
     rmSync('src/data', { recursive: true, force: true });
-    cpSync(BACKUP, 'src/data', { recursive: true });
-    console.log('\n↩ src/data 已还原（公开投影只是构建期状态）');
+    cpSync(staging, 'src/data', { recursive: true });
+    rmSync(staging, { recursive: true, force: true });
+    rmSync(TMPROOT, { recursive: true, force: true });
+    console.log(`\n↩ src/data 已还原（公开投影只是构建期状态${reason ? `，${reason}` : ''}）`);
   } catch (e) {
     console.error(`\n⚠ 还原 src/data 失败，请手动 git checkout -- src/data（${e.message}）`);
   }
+}
+
+process.on('exit', () => restore());
+// node 在 SIGTERM/SIGINT 下不触发 'exit'（实测）：本地 Ctrl-C、CI 超时或取消都会把公开投影留在 src/data。
+for (const [sig, code] of [['SIGINT', 130], ['SIGTERM', 143], ['SIGHUP', 129]]) {
+  process.on(sig, () => {
+    restore(`收到 ${sig}`);
+    process.exit(code);
+  });
+}
+process.on('uncaughtException', (e) => {
+  console.error(e);
+  restore(`异常 ${e.message}`);
+  process.exit(1);
 });
 
 const step = (title, cmd, argv) => {

@@ -66,7 +66,7 @@ jobs:
 
       - name: Build site (config entry, out=dist)
         continue-on-error: true
-        run: node scripts/ci/build.mjs --report reports/build.json
+        run: node scripts/ci/build.mjs --expect public --report reports/build.json
 
       - name: Gate statuses (build must be healthy)
         run: node scripts/ci/gate.mjs --require entry-validate,entry-scoreCheck,build --strict build --report reports/gate.json
