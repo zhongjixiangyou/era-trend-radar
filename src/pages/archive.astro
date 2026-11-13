@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import HeatGrid from '../components/HeatGrid.astro';
+import EventRow from '../components/EventRow.astro';
 import {
   allSnapshots, sortedEvents, eventById, trendById, statusLabel, categoryLabel, fmtDate, total, siteMeta,
 } from '../lib/data';
@@ -30,13 +31,13 @@ const heatRows = cats.map((c) => ({
   <div class="section-head" style="margin-top:34px">
     <div>
       <span class="num">历史档案 / ARCHIVE</span>
-      <h2 style="margin-top:6px">按期回看</h2>
+      <h2 style="margin-top:6px">半年事件回看</h2>
     </div>
     <span class="more">{allSnapshots.length} 期 · {totalEvents} 条事件</span>
   </div>
 
   <p style="max-width:46em;color:var(--ink-2);font-size:14px;line-height:1.85">
-    档案不是旧闻列表。每一期记录当时看到什么、怎么判断，以及后来哪些判断被修正。这是这个站唯一不能事后编辑的部分。
+    按来源发布日期回看过去半年发生的变化。标有「回溯补录」的内容是在事后研究整理，不代表本站当时已作出判断；首次研究时间与后续修订在详情中保留。
   </p>
 
   {allSnapshots.map((s) => (
@@ -109,4 +110,13 @@ const heatRows = cats.map((c) => ({
       ))}
     </tbody>
   </table>
+  <div class="filters" aria-label="跳转到月份">
+    {months.map((m) => <a class="chip" href={`#month-${m.key}`}>{m.label} · {m.items.length}</a>)}
+  </div>
+  {months.map((m) => (
+    <section id={`month-${m.key}`} style="scroll-margin-top:24px">
+      <div class="section-head"><h2>{m.label}</h2><span class="num">{m.items.length} 条事件</span></div>
+      {m.items.length ? <div class="event-list">{m.items.map((e) => <EventRow event={e} />)}</div> : <p class="count-line">本月尚未收录核验通过的事件，不代表当月没有变化。</p>}
+    </section>
+  ))}
 </Base>

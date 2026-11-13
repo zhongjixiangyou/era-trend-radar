@@ -61,7 +61,13 @@
     ]
   },
   "status": "published",
-  "trendLinks": [],
+  "trendLinks": [
+    {
+      "trendId": "tr_cn-demand-rebalancing",
+      "direction": "support",
+      "reason": "提供观察命题的核实节点，持续性仍需后续证据。"
+    }
+  ],
   "revisions": [
     {
       "at": "2026-11-13T14:26:00Z",

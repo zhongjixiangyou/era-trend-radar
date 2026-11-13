@@ -1,0 +1,94 @@
+{
+  "id": "ev_hera-didymos-20261111",
+  "dedupeKey": "ev:4ce9fd9daad6",
+  "title": "Hera抵达双小行星系统，开始早期特征调查",
+  "summary": "ESA确认Hera已抵达Didymos双小行星系统，在约25至30公里距离开展早期特征调查。任务将实测DART撞击后的目标状态，为评估小行星偏转提供资料；当前节点是抵达与调查开始，最终防御结论仍待分析。",
+  "facts": [
+    "ESA确认Hera已抵达Didymos双小行星系统。",
+    "探测器在距目标约25至30公里处开展早期特征调查。",
+    "任务将研究2022年DART撞击后的小行星整体状态，为行星防御研究提供数据。"
+  ],
+  "analysis": "主动偏转试验需要后续现场测量来解释动量传递及结构变化。Hera抵达提高了获取这些证据的可能性，但尚不能宣称对所有潜在威胁都具备成熟防御能力。",
+  "category": "科技与社会",
+  "region": "欧洲",
+  "occurredAt": "2026-11-11",
+  "firstReportedAt": "2026-11-11",
+  "collectedAt": "2026-11-13T06:54:08Z",
+  "sources": [
+    {
+      "url": "https://www.esa.int/articles/about-us/directorates/operations/space-safety/hera/hera-spacecraft-in-rectangular-orbit-around-target-asteroids",
+      "title": "Hera spacecraft in rectangular orbit around target asteroids",
+      "publisher": "欧洲航天局",
+      "publishedAt": "2026-11-11",
+      "type": "primary",
+      "note": "已使用web.run打开并阅读官方原文；限定为公告可核实的事实。"
+    }
+  ],
+  "scores": {
+    "structural": 18,
+    "scope": 15,
+    "signal": 18,
+    "delta": 11,
+    "timeliness": 8,
+    "crossDomain": 7,
+    "total": 77,
+    "scorerVersion": "score/v1.0",
+    "rationale": {
+      "structural": "主动偏转试验需要后续现场测量来解释动量传递及结构变化。Hera抵达提高了获取这些证据的可能。",
+      "scope": "影响范围覆盖欧洲及对应科研或产业群体。",
+      "signal": "已读取欧洲航天局原文逐项核对具体节点。",
+      "delta": "较此前阶段新增了公告明确披露的进展。",
+      "timeliness": "本轮为回溯补录，时间按原始公告计入。",
+      "crossDomain": "涉及技术、商业及社会应用的跨领域联系。"
+    }
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "单一官方一手原文已核对；关于性能及未来影响的主张未作独立复现。"
+  },
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_space-observation-network",
+      "direction": "support",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ],
+  "revisions": [
+    {
+      "at": "2026-11-13T06:54:08Z",
+      "by": "Codex",
+      "note": "本轮按官方原文回溯补录并完成原文事实核对；首次评分为当前回溯判断。"
+    }
+  ],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-11",
+    "note": "本轮回溯补录，评分和分析形成于collectedAt，不是当时判断或预测。"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "passed",
+    "method": "web.run/open 官方原文逐项核对",
+    "checkedAt": "2026-11-13T06:54:08Z",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "官方原文日期及正文支持：ESA确认Hera已抵达Didymos双小行星系统。；探测器在距目标约25至30公里处开展早期特征调查。；任务将研究2022年DART撞击后的小行星整体状态，为行星防御研究提供数据。"
+      }
+    ],
+    "note": "仅核对本条事实，不把公告中的未来目标或公司主张当作独立验证结果。"
+  },
+  "scoreHistory": [],
+  "linkHistory": [
+    {
+      "at": "2026-11-13T14:57:43+08:00",
+      "trendId": "tr_space-observation-network",
+      "direction": "support",
+      "action": "add",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ]
+}

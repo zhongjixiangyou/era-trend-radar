@@ -1,0 +1,94 @@
+{
+  "id": "ev_mtgi2-launch-20260827",
+  "dedupeKey": "ev:c9d136a0b7ca",
+  "title": "欧洲MTG-I2气象卫星成功发射，补齐三卫星系统",
+  "summary": "欧洲气象卫星MTG-I2成功发射并建立通信，三颗第三代气象卫星由此全部入轨。该星计划支持欧洲每2.5分钟快速扫描，提升强天气预警能力；但发射当天仍需升轨和调试，不能等同于完整业务能力已上线。",
+  "facts": [
+    "ESA确认MTG-I2于8月27日成功发射，并与地面建立通信。",
+    "该星是三颗Meteosat第三代卫星中的第二颗成像星，前两颗已交付业务运行。",
+    "新星计划提供欧洲每2.5分钟一次的快速扫描，完整能力仍需完成升轨与调试。"
+  ],
+  "analysis": "更密集的气象观测有机会改善临近预报及灾害响应，也关联农业、航空和保险。需继续跟踪调试验收、数据开放及预报技能提升，而不只看发射成功。",
+  "category": "科技与社会",
+  "region": "欧洲",
+  "occurredAt": "2026-08-27",
+  "firstReportedAt": "2026-08-27",
+  "collectedAt": "2026-11-13T06:51:54Z",
+  "sources": [
+    {
+      "url": "https://www.esa.int/media-advisories/news-media/media/media-advisories/n-43-2026-mtg-i2-completes-europe-s-latest-weather-trio",
+      "title": "MTG-I2 completes Europe’s latest weather trio",
+      "publisher": "欧洲航天局",
+      "publishedAt": "2026-08-27",
+      "type": "primary",
+      "note": "已使用web.run打开并阅读官方原文；仅核实公告明确披露的节点。"
+    }
+  ],
+  "scores": {
+    "structural": 19,
+    "scope": 15,
+    "signal": 17,
+    "delta": 10,
+    "timeliness": 3,
+    "crossDomain": 9,
+    "total": 73,
+    "rationale": {
+      "structural": "更密集的气象观测有机会改善临近预报及灾害响应，也关联农业、航空和保险。需继续跟踪调试验收、。",
+      "scope": "影响范围主要覆盖欧洲及相关产业参与者。",
+      "signal": "已读取欧洲航天局原文确认具体节点。",
+      "delta": "相对前一阶段跨越了公告所述的明确节点。",
+      "timeliness": "本轮作为历史补录，按原始发布时间计入。",
+      "crossDomain": "涉及科研、供应链或公共服务的跨领域联系。"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "单一官方一手原文已核对；关于性能及未来影响的主张未作独立复现。"
+  },
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_space-observation-network",
+      "direction": "support",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ],
+  "revisions": [
+    {
+      "at": "2026-11-13T06:51:54Z",
+      "by": "Codex",
+      "note": "本轮按官方原文回溯补录并完成原文事实核对；首次评分为当前回溯判断。"
+    }
+  ],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-08-27",
+    "note": "本轮回溯补录，评分和分析形成于collectedAt，不是当时判断或预测。"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "passed",
+    "method": "web.run/open 官方原文逐项核对",
+    "checkedAt": "2026-11-13T06:51:54Z",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "原文发布日期及正文明确支持：ESA确认MTG-I2于8月27日成功发射，并与地面建立通信。；该星是三颗Meteosat第三代卫星中的第二颗成像星，前两颗已交付业务运行。；新星计划提供欧洲每2.5分钟一次的快速扫描，完整能力仍需完成升轨与调试。"
+      }
+    ],
+    "note": "仅核对本条事实，不把公告中的未来目标或公司主张当作独立验证结果。"
+  },
+  "scoreHistory": [],
+  "linkHistory": [
+    {
+      "at": "2026-11-13T14:57:43+08:00",
+      "trendId": "tr_space-observation-network",
+      "direction": "support",
+      "action": "add",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ]
+}

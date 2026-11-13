@@ -1,0 +1,109 @@
+{
+  "id": "ev_fao-sofi-20260721",
+  "dedupeKey": "ev:ab076deef69e",
+  "title": "联合国粮食报告：全球饥饿人数降至6.45亿",
+  "summary": "联合国五机构发布粮食安全报告，估计2025年全球6.45亿人面临饥饿，比上年减少近1400万，但非洲饥饿人数约3.09亿。全球改善连续三年延续，地区差异和健康饮食负担仍突出。",
+  "facts": [
+    "7月21日发布的SOFI报告估计2025年全球饥饿人数6.45亿，占人口7.8%。",
+    "全球饥饿人数比2024年减少近1400万，连续第三年下降。",
+    "非洲饥饿人数约3.09亿，亚洲约2.92亿。"
+  ],
+  "analysis": "全球改善与非洲绝对人数高企同时存在，援助和农食投资不能只依据全球均值。报告统计的是2025年，尚未体现2026年全部冲突和气候影响；需跟踪食品价格、化肥供应及援助资金。",
+  "category": "科技与社会",
+  "region": "全球",
+  "occurredAt": "2026-07-21",
+  "firstReportedAt": "2026-07-21",
+  "collectedAt": "2026-11-13T06:55:07+00:00",
+  "sources": [
+    {
+      "url": "https://www.fao.org/newsroom/detail/un-report--global-hunger-levels-ease-for-third-consecutive-year-as-regional-disparities-persist/",
+      "title": "UN report: Global hunger levels ease for third consecutive year as regional disparities persist",
+      "publisher": "FAO",
+      "publishedAt": "2026-07-21",
+      "type": "primary",
+      "note": "亲读官方公开正文；日期为本次公告发布日"
+    }
+  ],
+  "scores": {
+    "structural": 23,
+    "scope": 20,
+    "signal": 18,
+    "delta": 10,
+    "timeliness": 2,
+    "crossDomain": 9,
+    "total": 82,
+    "rationale": {
+      "structural": "粮食可及性是长期发展基础",
+      "scope": "全球人口及重点脆弱地区",
+      "signal": "五机构联合统计报告原文可核",
+      "delta": "连续三年改善但地区差异仍突出",
+      "timeliness": "本轮事后补录，时效按历史研究计分",
+      "crossDomain": "能源化肥气候与公共健康相连"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "已核对单一官方原文；机构预测与统计可能修订，不表示独立交叉验证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "passed",
+    "method": "web.run/open 官方原文正文",
+    "checkedAt": "2026-11-13T06:55:07+00:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "7月21日发布的SOFI报告估计2025年全球饥饿人数6.45亿，占人口7.8%。；全球饥饿人数比2024年减少近1400万，连续第三年下降。；非洲饥饿人数约3.09亿，亚洲约2.92亿。"
+      }
+    ],
+    "note": "日期对应官方发布这一事件；统计所属期间见事实，预测未当作已实现结果"
+  },
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_climate-food-inflation",
+      "direction": "support",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ],
+  "revisions": [
+    {
+      "at": "2026-11-13T06:55:07+00:00",
+      "by": "Codex-global",
+      "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+    }
+  ],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13",
+    "note": "本轮依据当时发布的官方原文开展回溯研究，非当时预测；不推定发生日及来源窗口可比性"
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-13T06:55:07+00:00",
+      "by": "Codex-global",
+      "note": "本轮回溯首次评分",
+      "scores": {
+        "structural": 23,
+        "scope": 20,
+        "signal": 18,
+        "delta": 10,
+        "timeliness": 2,
+        "crossDomain": 9,
+        "total": 82
+      }
+    }
+  ],
+  "linkHistory": [
+    {
+      "at": "2026-11-13T14:57:43+08:00",
+      "trendId": "tr_climate-food-inflation",
+      "direction": "support",
+      "action": "add",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ]
+}

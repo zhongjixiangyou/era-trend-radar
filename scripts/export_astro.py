@@ -772,6 +772,9 @@ def validate_and_normalize_events(
                 "forecastRefs": [as_text(x).strip() for x in as_list(doc.get("forecastRefs"))],
                 "retro": retro,
                 "display": display,
+                "metrics": doc.get("metrics"),
+                "scoreHistory": doc.get("scoreHistory", []),
+                "industryTable": doc.get("industryTable"),
             }
         )
     return events, errors
@@ -829,7 +832,7 @@ def validate_and_normalize_trends(docs: list[dict], today: date, warnings: list[
         if stage not in TREND_STAGES:
             errors.append(f"{ctx}.stage={stage!r} 必须是 {list(TREND_STAGES)}")
 
-        indicators = [as_text(x).strip() for x in as_list(doc.get("indicators")) if as_text(x).strip()]
+        indicators = [x if isinstance(x, dict) else as_text(x).strip() for x in as_list(doc.get("indicators")) if x]
         if not indicators:
             errors.append(f"{ctx}：indicators 为空（schema minItems=1，趋势必须有可观察指标）")
         elif len(indicators) > 12:
@@ -838,7 +841,7 @@ def validate_and_normalize_trends(docs: list[dict], today: date, warnings: list[
         evidence = [as_text(x).strip() for x in as_list(doc.get("evidenceRefs")) if as_text(x).strip()]
         if not evidence:
             warnings.append(f"{ctx}：evidenceRefs 为空，趋势没有证据引用（schema 允许，但页面会空）")
-        counter = [as_text(x).strip() for x in as_list(doc.get("counterEvidence")) if as_text(x).strip()]
+        counter = [x if isinstance(x, dict) else as_text(x).strip() for x in as_list(doc.get("counterEvidence")) if x]
         if not counter:
             errors.append(
                 f"{ctx}：counterEvidence 为空（schema minItems=1）——必须写反证，"
@@ -884,6 +887,8 @@ def validate_and_normalize_trends(docs: list[dict], today: date, warnings: list[
                 "currentJudgment": judgment,
                 "reviewBy": _iso(review_by),
                 "revisions": revisions,
+                "counterSearch": doc.get("counterSearch"),
+                "retro": doc.get("retro"),
             }
         )
     return trends, errors
@@ -1152,7 +1157,7 @@ def _filter_trend_refs(trends: list[dict], public_ids: set[str]) -> list[dict]:
         evrefs = [r for r in (t.get("eventRefs") or [])
                   if isinstance(r, dict) and r.get("eventId") in public_ids]
         cev = [r for r in (t.get("counterEvidence") or [])
-               if not isinstance(r, dict) or r.get("eventId") in public_ids]
+               if not isinstance(r, dict) or not r.get("eventId") or r.get("eventId") in public_ids]
         out.append({**t, "evidenceRefs": refs, "eventRefs": evrefs, "counterEvidence": cev})
     return out
 

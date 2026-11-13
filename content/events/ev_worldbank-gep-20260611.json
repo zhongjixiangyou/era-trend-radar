@@ -1,0 +1,109 @@
+{
+  "id": "ev_worldbank-gep-20260611",
+  "dedupeKey": "ev:54e41328667a",
+  "title": "世界银行预计2026年全球增长降至2.5%",
+  "summary": "世界银行六月展望预计2026年全球经济增长2.5%，低于2025年的2.9%，三分之二经济体预测较一月下调。报告将能源、通胀和融资冲击列为中东冲突影响全球增长的主要路径。",
+  "facts": [
+    "6月11日全球经济展望预计2026年全球增长2.5%，2027年2.8%。",
+    "三分之二经济体的增长预测较2026年1月下调。",
+    "发展中经济体2026年增长预测为3.6%，低于2025年的4.4%。"
+  ],
+  "analysis": "增长与通胀压力并存意味着需求刺激的空间可能缩小，外部融资薄弱经济体更易受损。预测依赖能源运输逐步恢复，需观察实际供应和金融压力；不同机构全球增速不可直接混用口径。",
+  "category": "全球宏观",
+  "region": "全球",
+  "occurredAt": "2026-06-11",
+  "firstReportedAt": "2026-06-11",
+  "collectedAt": "2026-11-13T06:55:07+00:00",
+  "sources": [
+    {
+      "url": "https://www.worldbank.org/en/news/press-release/2026/06/11/global-economic-prospects-june-2026-press-release",
+      "title": "Middle East Conflict Sends Global Growth to Lowest Rate Since COVID-19",
+      "publisher": "World Bank",
+      "publishedAt": "2026-06-11",
+      "type": "primary",
+      "note": "亲读官方公开正文；日期为本次公告发布日"
+    }
+  ],
+  "scores": {
+    "structural": 21,
+    "scope": 20,
+    "signal": 17,
+    "delta": 11,
+    "timeliness": 2,
+    "crossDomain": 9,
+    "total": 80,
+    "rationale": {
+      "structural": "增长放缓影响发展与收入追赶",
+      "scope": "涵盖全球及发展中经济体",
+      "signal": "官方全球展望提供统一预测口径",
+      "delta": "多数经济体较一月被下调",
+      "timeliness": "本轮事后补录，时效按历史研究计分",
+      "crossDomain": "能源融资和就业联动"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "已核对单一官方原文；机构预测与统计可能修订，不表示独立交叉验证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "passed",
+    "method": "web.run/open 官方原文正文",
+    "checkedAt": "2026-11-13T06:55:07+00:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "6月11日全球经济展望预计2026年全球增长2.5%，2027年2.8%。；三分之二经济体的增长预测较2026年1月下调。；发展中经济体2026年增长预测为3.6%，低于2025年的4.4%。"
+      }
+    ],
+    "note": "日期对应官方发布这一事件；统计所属期间见事实，预测未当作已实现结果"
+  },
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_global-growth-frictions",
+      "direction": "support",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ],
+  "revisions": [
+    {
+      "at": "2026-11-13T06:55:07+00:00",
+      "by": "Codex-global",
+      "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+    }
+  ],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13",
+    "note": "本轮依据当时发布的官方原文开展回溯研究，非当时预测；不推定发生日及来源窗口可比性"
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-13T06:55:07+00:00",
+      "by": "Codex-global",
+      "note": "本轮回溯首次评分",
+      "scores": {
+        "structural": 21,
+        "scope": 20,
+        "signal": 17,
+        "delta": 11,
+        "timeliness": 2,
+        "crossDomain": 9,
+        "total": 80
+      }
+    }
+  ],
+  "linkHistory": [
+    {
+      "at": "2026-11-13T14:57:43+08:00",
+      "trendId": "tr_global-growth-frictions",
+      "direction": "support",
+      "action": "add",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ]
+}

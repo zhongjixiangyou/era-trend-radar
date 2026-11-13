@@ -1,0 +1,92 @@
+{
+  "id": "ev_cn-renewable-plan-2026",
+  "dedupeKey": "ev:749520c9f95b",
+  "title": "中国发布可再生能源“十五五”发展规划",
+  "summary": "发改委与能源局7月23日发布规划：2030年可再生能源消费约18亿吨标准煤，装机约35亿千瓦、年发电量约6万亿千瓦时。",
+  "facts": [
+    "国家发展改革委、国家能源局联合通知成文日期7月6日，7月23日公开发布。",
+    "到2030年可再生能源消费约18亿吨标准煤；发电装机约35亿千瓦，年发电量约6万亿千瓦时。",
+    "风电与光伏合计装机超28亿千瓦，年发电量超4万亿千瓦时。",
+    "“十五五”期间新增可再生能源可靠顶峰能力3亿千瓦以上，海上风电新开工约1亿千瓦。",
+    "2030年电力结构目标为“非化石过半、可再生近半、新能源30%”。"
+  ],
+  "analysis": "装机目标对应年均新增规模仍高，消纳与调节能力是瓶颈。“可靠顶峰能力”单列说明政策重心从装机规模转向可用容量，配套储能与电网投资是关键。",
+  "category": "中国经济与产业",
+  "region": "中国",
+  "occurredAt": "2026-07-06",
+  "firstReportedAt": "2026-07-23",
+  "collectedAt": "2026-11-13T14:58:00+08:00",
+  "sources": [
+    {
+      "url": "https://www.ndrc.gov.cn/xxgk/jd/jd/202607/t20260723_1406645.html",
+      "title": "《可再生能源发展“十五五”规划》答记者问",
+      "publisher": "国家发展改革委、国家能源局",
+      "publishedAt": "2026-07-23",
+      "type": "primary"
+    },
+    {
+      "url": "https://www.ndrc.gov.cn/xwdt/tzgg/202607/t20260723_1406643_ext.html",
+      "title": "关于印发《可再生能源发展“十五五”规划》的通知",
+      "publisher": "国家发展改革委、国家能源局",
+      "publishedAt": "2026-07-23",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 21,
+    "scope": 17,
+    "signal": 14,
+    "delta": 12,
+    "timeliness": 5,
+    "crossDomain": 9,
+    "rationale": {
+      "structural": "覆盖发电、消纳与调节能力",
+      "scope": "全国能源系统",
+      "signal": "多项2030量化目标",
+      "delta": "新增可靠顶峰能力指标",
+      "timeliness": "7月发布，仍在观察窗口内",
+      "crossDomain": "牵连制造、电网与气候"
+    },
+    "total": 78,
+    "scorerVersion": "score/v1.2"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "独立复核亲读官方原始正文并修正事实；尚非多个独立统计来源交叉验证"
+  },
+  "evidenceGrade": "single_primary",
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_cn-policy-power-system",
+      "direction": "support",
+      "reason": "规划给出装机与可靠顶峰能力目标"
+    }
+  ],
+  "revisions": [
+    {
+      "at": "2026-11-13T06:58:16+00:00",
+      "by": "Codex-global-review",
+      "note": "独立复核原文后pending→published；新华社转述替换为发改委原通知和主管部门答记者问；区分成文7月6日与公开7月23日；移除未在本次原文问答核对的光热/海洋能分项。"
+    }
+  ],
+  "verification": {
+    "status": "passed",
+    "method": "web.run/open 官方原文独立复核",
+    "checkedAt": "2026-11-13T06:58:16+00:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "国家发展改革委、国家能源局联合通知成文日期7月6日，7月23日公开发布。；到2030年可再生能源消费约18亿吨标准煤；发电装机约35亿千瓦，年发电量约6万亿千瓦时。；风电与光伏合计装机超28亿千瓦，年发电量超4万亿千瓦时。；“十五五”期间新增可再生能源可靠顶峰能力3亿千瓦以上，海上风电新开工约1亿千瓦。；2030年电力结构目标为“非化石过半、可再生近半、新能源30%”。"
+      }
+    ],
+    "note": "来源正文逐项核对；修正日期/来源类型及无证分析。网页引用：turn31view1:3-30; turn31view2:4-19"
+  },
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13T06:58:00Z",
+    "note": "事后补录：事件发生在先，本记录于 2026-11-13 补入；不构成当时预测。"
+  }
+}

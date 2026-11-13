@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 
 const here = dirname(fileURLToPath(import.meta.url));
-const dataDir = resolve(here, '../../src/data');
+const dataDir = process.env.ERA_QA_DATA_DIR ? resolve(process.env.ERA_QA_DATA_DIR) : resolve(here, '../../src/data');
 
 function firstId(file, what) {
   try {
@@ -58,7 +58,7 @@ function readJson(file) {
 export function previewMode() {
   // 与 src/lib/data.ts:80 同口径（651cbcc 起）：数据集里有 pending 事件就是预览态。
   // 不看 meta 计数——构建期 meta 可能是公开投影的，计数会指错。
-  return readJson('events.json').some((e) => e.status === 'pending');
+  return readJson('meta.json').mode === 'preview' || readJson('events.json').some((e) => e.status === 'pending');
 }
 
 function visibleEvents() {

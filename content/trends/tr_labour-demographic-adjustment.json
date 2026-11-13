@@ -1,0 +1,31 @@
+{
+  "id": "tr_labour-demographic-adjustment",
+  "firstSeenAt": "2026-11-13T14:57:43+08:00",
+  "revisions": [
+    {
+      "at": "2026-11-13T14:57:43+08:00",
+      "by": "Codex",
+      "note": "首次回溯研究建立；这是本轮判断，不是事件发生时的预测。"
+    }
+  ],
+  "title": "就业与人口流动",
+  "thesis": "就业、实际工资和移民流量呈分化，人口流动变化不能直接解释就业结果。",
+  "stage": "emerging",
+  "indicators": [
+    "就业率与实际工资",
+    "永久移民流量及构成",
+    "不同年龄和地区分布"
+  ],
+  "evidenceRefs": [
+    "ev_oecd-employment-20260707",
+    "ev_un-sdg-report-20260707",
+    "ev_oecd-migration-20261112"
+  ],
+  "counterEvidence": [
+    {
+      "text": "就业总量上升并不代表所有群体实际工资改善；移民下降也不等于劳动市场压力自动减轻。"
+    }
+  ],
+  "currentJudgment": "当前回溯研究，置信度中低。跨国监测显示就业总量与家庭感受可能分离；统计范围不同，不推断简单因果。",
+  "reviewBy": "2026-12-13T00:00:00+08:00"
+}

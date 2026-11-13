@@ -1,0 +1,31 @@
+{
+  "id": "tr_ai-platform-expansion",
+  "firstSeenAt": "2026-11-13T14:57:43+08:00",
+  "revisions": [
+    {
+      "at": "2026-11-13T14:57:43+08:00",
+      "by": "Codex",
+      "note": "首次回溯研究建立；这是本轮判断，不是事件发生时的预测。"
+    }
+  ],
+  "title": "AI进入系统与服务",
+  "thesis": "AI正进入系统助手和健康服务，分发规则及用户采用决定商业落地程度。",
+  "stage": "emerging",
+  "indicators": [
+    "宣布功能与真实开放地区",
+    "用户权限和健康声明边界",
+    "应用收费及分发条件"
+  ],
+  "evidenceRefs": [
+    "ev_apple-eu-terms-20260818",
+    "ev_apple-health-20260909",
+    "ev_siri-ai-announcement-20260608"
+  ],
+  "counterEvidence": [
+    {
+      "text": "公司公告不能独立验证实际效果；健康评分不是医学诊断，分发收费变化也不代表开发者净收益必然增加。"
+    }
+  ],
+  "currentJudgment": "当前回溯研究，置信度中低。当前主要来自单一公司的官方公告，足以核实产品与规则宣布，不能推断全行业采用率。",
+  "reviewBy": "2026-12-13T00:00:00+08:00"
+}

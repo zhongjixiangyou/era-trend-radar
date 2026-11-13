@@ -1,0 +1,109 @@
+{
+  "id": "ev_wmo-decadal-outlook-20260528",
+  "dedupeKey": "ev:cf421ea0d443",
+  "title": "WMO：未来五年至少一年暂超1.5℃概率为91%",
+  "summary": "世界气象组织发布年度至年代际气候预测，预计2026至2030年全球年均气温较工业化前高1.3至1.9℃；至少一年暂超1.5℃概率为91%，至少一年刷新最暖纪录概率为86%。",
+  "facts": [
+    "报告于5月28日发布，预测2026—2030年全球年均温高出1850—1900年1.3—1.9℃。",
+    "未来五年至少一年暂时超过1.5℃的概率为91%。",
+    "至少一年超过2024年最暖纪录的概率为86%。"
+  ],
+  "analysis": "高温风险会向电力峰值、农业和保险传递，但年度暂超1.5℃不能直接等同巴黎协定长期温控目标已被突破。需跟踪实际温度、区域降雨和暴露资产，而不是把概率当作确定结果。",
+  "category": "未来趋势",
+  "region": "全球",
+  "occurredAt": "2026-05-28",
+  "firstReportedAt": "2026-05-28",
+  "collectedAt": "2026-11-13T06:55:07+00:00",
+  "sources": [
+    {
+      "url": "https://wmo.int/resources/publication-series/wmo-global-annual-decadal-climate-update/global-annual-decadal-climate-update-2026-2035",
+      "title": "WMO Global Annual to Decadal Climate Update 2026–2035",
+      "publisher": "WMO",
+      "publishedAt": "2026-05-28",
+      "type": "primary",
+      "note": "亲读官方公开正文；日期为本次公告发布日"
+    }
+  ],
+  "scores": {
+    "structural": 23,
+    "scope": 20,
+    "signal": 16,
+    "delta": 9,
+    "timeliness": 2,
+    "crossDomain": 9,
+    "total": 79,
+    "rationale": {
+      "structural": "五年气候风险影响资产与基础设施规划",
+      "scope": "全球农业能源及城市均受影响",
+      "signal": "多模式预测为概率信号而非实绩",
+      "delta": "提供新一轮五年温度概率区间",
+      "timeliness": "本轮事后补录，时效按历史研究计分",
+      "crossDomain": "气候联动能源粮食与保险"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "已核对单一官方原文；机构预测与统计可能修订，不表示独立交叉验证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "passed",
+    "method": "web.run/open 官方原文正文",
+    "checkedAt": "2026-11-13T06:55:07+00:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "报告于5月28日发布，预测2026—2030年全球年均温高出1850—1900年1.3—1.9℃。；未来五年至少一年暂时超过1.5℃的概率为91%。；至少一年超过2024年最暖纪录的概率为86%。"
+      }
+    ],
+    "note": "日期对应官方发布这一事件；统计所属期间见事实，预测未当作已实现结果"
+  },
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_climate-food-inflation",
+      "direction": "support",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ],
+  "revisions": [
+    {
+      "at": "2026-11-13T06:55:07+00:00",
+      "by": "Codex-global",
+      "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+    }
+  ],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13",
+    "note": "本轮依据当时发布的官方原文开展回溯研究，非当时预测；不推定发生日及来源窗口可比性"
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-13T06:55:07+00:00",
+      "by": "Codex-global",
+      "note": "本轮回溯首次评分",
+      "scores": {
+        "structural": 23,
+        "scope": 20,
+        "signal": 16,
+        "delta": 9,
+        "timeliness": 2,
+        "crossDomain": 9,
+        "total": 79
+      }
+    }
+  ],
+  "linkHistory": [
+    {
+      "at": "2026-11-13T14:57:43+08:00",
+      "trendId": "tr_climate-food-inflation",
+      "direction": "support",
+      "action": "add",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ]
+}

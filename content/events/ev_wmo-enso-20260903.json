@@ -1,0 +1,109 @@
+{
+  "id": "ev_wmo-enso-20260903",
+  "dedupeKey": "ev:0e3064a10e66",
+  "title": "WMO预计厄尔尼诺几乎确定持续到2027年二月",
+  "summary": "世界气象组织发布八月期ENSO更新，确认厄尔尼诺已经建立且继续增强，预计延续至2027年二月的概率接近100%。报告预测年底前强度还将上升，并要求加强区域预警和应对准备。",
+  "facts": [
+    "WMO八月期更新实际发布日为9月3日。",
+    "截至八月中旬厄尔尼诺已经建立，持续至2027年二月的概率接近100%。",
+    "报告强调事件强度不能直接换算为任一区域影响大小。"
+  ],
+  "analysis": "风险窗口延长会影响跨季节粮食、能源和灾害预算安排。它并不确定每个地区旱涝方向和损失，需结合区域预报；本条按真实发布日期计入九月，而非按报告期错归八月。",
+  "category": "未来趋势",
+  "region": "全球",
+  "occurredAt": "2026-09-03",
+  "firstReportedAt": "2026-09-03",
+  "collectedAt": "2026-11-13T06:55:07+00:00",
+  "sources": [
+    {
+      "url": "https://public.wmo.int/resources/publication-series/el-ninola-nina-updates/august-2026",
+      "title": "El Niño/La Niña Update (August 2026)",
+      "publisher": "WMO",
+      "publishedAt": "2026-09-03",
+      "type": "primary",
+      "note": "亲读官方公开正文；日期为本次公告发布日"
+    }
+  ],
+  "scores": {
+    "structural": 22,
+    "scope": 20,
+    "signal": 17,
+    "delta": 10,
+    "timeliness": 3,
+    "crossDomain": 9,
+    "total": 81,
+    "rationale": {
+      "structural": "风险跨年度延续影响中期防灾预算",
+      "scope": "全球多区域降水和温度格局",
+      "signal": "WMO多模式预报概率与观测结合",
+      "delta": "将持续窗口延长至翌年二月",
+      "timeliness": "本轮事后补录，时效按历史研究计分",
+      "crossDomain": "气候灾害与食品能源相连"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "已核对单一官方原文；机构预测与统计可能修订，不表示独立交叉验证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "passed",
+    "method": "web.run/open 官方原文正文",
+    "checkedAt": "2026-11-13T06:55:07+00:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "WMO八月期更新实际发布日为9月3日。；截至八月中旬厄尔尼诺已经建立，持续至2027年二月的概率接近100%。；报告强调事件强度不能直接换算为任一区域影响大小。"
+      }
+    ],
+    "note": "日期对应官方发布这一事件；统计所属期间见事实，预测未当作已实现结果"
+  },
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_climate-food-inflation",
+      "direction": "support",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ],
+  "revisions": [
+    {
+      "at": "2026-11-13T06:55:07+00:00",
+      "by": "Codex-global",
+      "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+    }
+  ],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13",
+    "note": "本轮依据当时发布的官方原文开展回溯研究，非当时预测；不推定发生日及来源窗口可比性"
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-13T06:55:07+00:00",
+      "by": "Codex-global",
+      "note": "本轮回溯首次评分",
+      "scores": {
+        "structural": 22,
+        "scope": 20,
+        "signal": 17,
+        "delta": 10,
+        "timeliness": 3,
+        "crossDomain": 9,
+        "total": 81
+      }
+    }
+  ],
+  "linkHistory": [
+    {
+      "at": "2026-11-13T14:57:43+08:00",
+      "trendId": "tr_climate-food-inflation",
+      "direction": "support",
+      "action": "add",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ]
+}

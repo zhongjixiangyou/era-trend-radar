@@ -2,35 +2,25 @@
   "id": "ev_fed-hike-sep",
   "dedupeKey": "ev:8a1f7775592f",
   "title": "美联储重启加息25个基点，12比0全票通过",
-  "summary": "为3年2个月来首次加息，政策利率升至3.75%-4.00%，16名官员预计年内还会加。",
+  "summary": "美联储9月16日宣布加息25个基点，联邦基金利率目标区间升至3.75%—4.00%，12名委员全部赞成。声明称通胀仍处高位，后续决策取决于数据与风险变化。",
   "facts": [
-    "美联储联邦公开市场委员会（FOMC）加息25个基点",
-    "联邦基金利率目标区间升至3.75%-4.00%",
-    "FOMC 以12比0通过加息",
-    "为3年2个月来首次加息",
-    "16名官员预计年内继续加息"
+    "联邦基金利率目标区间上调25个基点至3.75%—4.00%。",
+    "声明列出的12名委员全部赞成此次政策行动。",
+    "声明称通胀仍处高位，后续政策调整将结合经济数据、前景和风险。"
   ],
-  "analysis": "全票加息意味着委员会对通胀的判断一致；但市场此前普遍预期按兵不动，政策路径的预期差可能放大资产波动。",
+  "analysis": "全票通过说明此次政策行动获委员会一致支持，但不能据此推断未来每次会议都将加息。需要结合后续通胀、就业和官方会议声明跟踪政策持续性。",
   "category": "全球宏观",
   "region": "美国",
-  "occurredAt": "2026-09-16T00:00:00+08:00",
-  "firstReportedAt": "2026-09-17T00:00:00+08:00",
+  "occurredAt": "2026-09-16T14:00:00-04:00",
+  "firstReportedAt": "2026-09-16T14:00:00-04:00",
   "collectedAt": "2026-11-13T13:30:00+08:00",
   "sources": [
     {
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
       "title": "Federal Reserve Board - Federal Reserve issues FOMC statement",
       "publisher": "Federal Reserve Board",
-      "publishedAt": "2026-09-16T00:00:00+08:00",
+      "publishedAt": "2026-09-16T14:00:00-04:00",
       "type": "primary"
-    },
-    {
-      "url": "https://finance.sina.com.cn/jjxw/2026-09-17/doc-inisaiep4453541.shtml",
-      "title": "美联储宣布加息25个基点",
-      "publisher": "新浪财经",
-      "publishedAt": "2026-09-17T00:00:00+08:00",
-      "type": "corroboration",
-      "note": "转述FOMC声明，未见federalreserve.gov原文"
     }
   ],
   "scores": {
@@ -52,42 +42,38 @@
     "scorerVersion": "score/v1.0"
   },
   "credibility": {
-    "level": "unverified",
-    "basis": "仅二手转述，尚未取得FOMC官方声明原文"
+    "level": "partial",
+    "basis": "单一官方一手原文已逐项核对；无独立交叉验证，机构数据及政策可后续修订。"
   },
   "evidenceGrade": "single_primary",
   "verification": {
-    "status": "pending",
-    "method": "verify_sources/http",
-    "note": "核验未闭合：存在 1 条 unknown 检查（HTTP 200 https://finance.sina.com.cn/jjx）。不得以声明视为通过，补齐原文事实后再改 passed。",
+    "status": "passed",
+    "method": "web.run/open 官方原文正文与表格",
+    "checkedAt": "2026-11-13T14:53:21+08:00",
     "checks": [
       {
-        "kind": "http",
+        "kind": "source_text",
         "result": "pass",
-        "evidence": "HTTP 200 https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm（页面无发布日期（日期未核））"
-      },
-      {
-        "kind": "http",
-        "result": "unknown",
-        "evidence": "HTTP 200 https://finance.sina.com.cn/jjxw/2026-09-17/doc-inisaiep4453541.shtml（标题相似度低，需人工确认）"
-      },
-      {
-        "kind": "primary_present",
-        "result": "pass",
-        "evidence": "primary 1 条"
+        "evidence": "官方9月16日声明明确加息25基点，目标区间3.75%—4%，委员12人赞成；未据此推定市场预期及后续加息次数。"
       }
     ],
-    "checkedAt": "2026-11-13T14:03:06+08:00"
+    "note": "仅核实一手来源明确陈述的事实，未把研究分析当作原文事实。"
   },
-  "status": "pending",
+  "status": "published",
   "trendLinks": [
     {
       "trendId": "tr_global-rates-rehike",
       "direction": "support",
-      "reason": "首次加息且全票，确认政策转向"
+      "reason": "9月加息是政策收紧的已核实节点，是否持续仍需后续会议佐证。"
     }
   ],
-  "revisions": [],
+  "revisions": [
+    {
+      "at": "2026-11-13T14:53:21+08:00",
+      "by": "Codex",
+      "note": "本轮亲读官方原文逐项核对；移除未核实二手转述，pending→published。旧快照保留于本轮核验审计记录。"
+    }
+  ],
   "forecastRefs": [],
   "retro": {
     "isRetro": true,

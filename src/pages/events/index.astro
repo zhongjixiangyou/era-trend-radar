@@ -70,6 +70,7 @@ const points = events.map((e) => ({
     <span class="count-line" style="margin:0 8px 0 0">排序</span>
     <button class="chip" data-sort="score" aria-pressed="true">重要度</button>
     <button class="chip" data-sort="confidence" aria-pressed="false">置信度</button>
+    <button class="chip" data-sort="heat" aria-pressed="false">热度 · 来源覆盖</button>
     <button class="chip" data-sort="trends" aria-pressed="false">关联趋势</button>
     <button class="chip" data-sort="date" aria-pressed="false">时间</button>
     <span class="count-line" id="dir-line" style="margin:0 0 0 10px">降序 ↓</span>
@@ -114,6 +115,7 @@ const points = events.map((e) => ({
     if (key === 'date') return el.dataset.date || '';
     if (key === 'confidence') return Number(el.dataset.confidence);
     if (key === 'trends') return Number(el.dataset.trends);
+    if (key === 'heat') return el.dataset.heat ? Number(el.dataset.heat) : null;
     return Number(el.dataset.score);
   };
 
@@ -134,6 +136,8 @@ const points = events.map((e) => ({
       .sort((a, b) => {
         const va = valueOf(a, state.sort);
         const vb = valueOf(b, state.sort);
+        if (va == null) return vb == null ? 0 : 1;
+        if (vb == null) return -1;
         if (typeof va === 'string') return va.localeCompare(vb) * sign;
         return (va - vb) * sign || Number(b.dataset.score) - Number(a.dataset.score);
       })

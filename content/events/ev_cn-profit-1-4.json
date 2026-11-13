@@ -1,0 +1,113 @@
+{
+  "id": "ev_cn-profit-1-4",
+  "dedupeKey": "ev:850e8a095bbf",
+  "title": "1—4月规上工业企业利润同比增长18.2%",
+  "summary": "国家统计局5月27日发布：1—4月规上工业企业利润24358.4亿元，同比增18.2%；营收增5.2%，利润率5.43%。",
+  "facts": [
+    "1—4月全国规模以上工业企业实现利润总额24358.4亿元，同比增长18.2%。",
+    "采矿业利润同比增长26.0%，制造业增长20.4%，电力热力燃气及水生产和供应业下降1.9%。",
+    "1—4月营业收入同比增长5.2%；营业收入利润率5.43%，同比提高0.60个百分点。",
+    "4月当月规上工业企业利润同比增长24.7%。"
+  ],
+  "analysis": "利润、营收和利润率同时提高，但门类分化明显，不能据总量增长判断所有行业需求转强。价格与基数可能影响同比，需后续数据分解；本次未核实与2019年之前的可比利润率，故不作历史高低判断。",
+  "category": "中国经济与产业",
+  "region": "中国",
+  "occurredAt": "2026-05-27T09:30+08:00",
+  "firstReportedAt": "2026-05-27T09:30+08:00",
+  "collectedAt": "2026-11-13T14:58:00+08:00",
+  "sources": [
+    {
+      "url": "https://www.stats.gov.cn/zwfwck/sjfb/202605/t20260527_1963808.html",
+      "title": "2026年1—4月份全国规模以上工业企业利润增长18.2%",
+      "publisher": "国家统计局",
+      "publishedAt": "2026-05-27T09:30:00+08:00",
+      "type": "primary"
+    },
+    {
+      "url": "https://www.news.cn/fortune/20260527/58a68f4601b148158fcb5dfe0c8f2680/c.html",
+      "title": "前4个月全国规模以上工业企业利润增长18.2%",
+      "publisher": "新华网",
+      "publishedAt": "2026-05-27",
+      "type": "corroboration",
+      "note": "新华社转述，不作为统计原始来源"
+    }
+  ],
+  "scores": {
+    "structural": 18,
+    "scope": 14,
+    "signal": 13,
+    "delta": 11,
+    "timeliness": 4,
+    "crossDomain": 7,
+    "rationale": {
+      "structural": "利润连续修复涉及价格、行业结构与政策多条链条",
+      "scope": "覆盖全部规上工业，影响面广",
+      "signal": "单月24.7%与高技术44.8%是清晰信号",
+      "delta": "相对1—3月增速变化明确",
+      "timeliness": "5月发布，距今约半年",
+      "crossDomain": "牵连上游价格、出口与就业"
+    },
+    "total": 67,
+    "scorerVersion": "score/v1.2"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "独立复核亲读官方原始正文并修正事实；尚非多个独立统计来源交叉验证"
+  },
+  "evidenceGrade": "single_primary",
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_cn-industrial-margin-repair",
+      "direction": "support",
+      "reason": "利润率同比提高0.60个百分点，支持利润修复判断"
+    }
+  ],
+  "revisions": [
+    {
+      "at": "2026-11-13T06:58:16+00:00",
+      "by": "Codex-global-review",
+      "note": "独立复核原文后pending→published；补齐统计局原文为primary，新华社降为corroboration；删除原文未列的高技术等一组事实和2019年前利润率比较。"
+    }
+  ],
+  "verification": {
+    "status": "passed",
+    "method": "web.run/open 官方原文独立复核",
+    "checkedAt": "2026-11-13T06:58:16+00:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "1—4月全国规模以上工业企业实现利润总额24358.4亿元，同比增长18.2%。；采矿业利润同比增长26.0%，制造业增长20.4%，电力热力燃气及水生产和供应业下降1.9%。；1—4月营业收入同比增长5.2%；营业收入利润率5.43%，同比提高0.60个百分点。；4月当月规上工业企业利润同比增长24.7%。"
+      }
+    ],
+    "note": "来源正文逐项核对；修正日期/来源类型及无证分析。网页引用：turn32view0:11-43"
+  },
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13T06:58:00Z",
+    "note": "事后补录：事件发生在先，本记录于 2026-11-13 补入；不构成当时预测。"
+  },
+  "metrics": {
+    "metricSetId": "cn_industrial_profit_2026_cumulative",
+    "comparable": false,
+    "items": [
+      {
+        "metric": "利润总额",
+        "value": 24358.4,
+        "unit": "亿元",
+        "period": "2026-01..04",
+        "scope": "规上工业",
+        "sourceUrl": "https://www.news.cn/fortune/20260527/58a68f4601b148158fcb5dfe0c8f2680/c.html"
+      },
+      {
+        "metric": "营收利润率",
+        "value": 5.43,
+        "unit": "%",
+        "period": "2026-01..04",
+        "scope": "规上工业"
+      }
+    ]
+  }
+}

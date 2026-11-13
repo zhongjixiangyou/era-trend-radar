@@ -1,0 +1,94 @@
+{
+  "id": "ev_casgevy-young-20260701",
+  "dedupeKey": "ev:58b94c7ef9d7",
+  "title": "FDA把Casgevy适用年龄扩至两岁及以上患儿",
+  "summary": "FDA补充批准基因编辑疗法Casgevy，把相关镰状细胞病和输血依赖型β地中海贫血患者适用年龄扩至两岁及以上。年龄扩展增加了早期干预可能，但治疗仍需复杂移植流程、清髓预处理及长期随访。",
+  "facts": [
+    "FDA补充批准Casgevy用于两岁及以上反复血管闭塞危象的镰状细胞病或输血依赖型β地中海贫血患者。",
+    "该疗法此前获批年龄为12岁及以上。",
+    "疗法使用患者自身经CRISPR/Cas9编辑的造血干细胞，给药前仍需高强度清髓预处理。"
+  ],
+  "analysis": "监管适应人群扩展使基因编辑从技术展示进入更早期治疗选择。实际可及性还受治疗中心、费用和预处理风险制约，不能写成所有儿童可无风险使用的一次性治愈。",
+  "category": "科技与社会",
+  "region": "美国",
+  "occurredAt": "2026-07-01",
+  "firstReportedAt": "2026-07-01",
+  "collectedAt": "2026-11-13T06:54:08Z",
+  "sources": [
+    {
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-gene-therapy-young-children-sickle-cell-disease",
+      "title": "FDA Approves First Gene Therapy for Young Children with Sickle Cell Disease",
+      "publisher": "美国食品药品监督管理局",
+      "publishedAt": "2026-07-01",
+      "type": "primary",
+      "note": "已使用web.run打开并阅读官方原文；限定为公告可核实的事实。"
+    }
+  ],
+  "scores": {
+    "structural": 20,
+    "scope": 11,
+    "signal": 18,
+    "delta": 11,
+    "timeliness": 2,
+    "crossDomain": 7,
+    "total": 69,
+    "scorerVersion": "score/v1.0",
+    "rationale": {
+      "structural": "监管适应人群扩展使基因编辑从技术展示进入更早期治疗选择。实际可及性还受治疗中心、费用和预处。",
+      "scope": "影响范围覆盖美国及对应科研或产业群体。",
+      "signal": "已读取美国食品药品监督管理局原文逐项核对具体节点。",
+      "delta": "较此前阶段新增了公告明确披露的进展。",
+      "timeliness": "本轮为回溯补录，时间按原始公告计入。",
+      "crossDomain": "涉及技术、商业及社会应用的跨领域联系。"
+    }
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "单一官方一手原文已核对；关于性能及未来影响的主张未作独立复现。"
+  },
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_health-translation",
+      "direction": "support",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ],
+  "revisions": [
+    {
+      "at": "2026-11-13T06:54:08Z",
+      "by": "Codex",
+      "note": "本轮按官方原文回溯补录并完成原文事实核对；首次评分为当前回溯判断。"
+    }
+  ],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-07-01",
+    "note": "本轮回溯补录，评分和分析形成于collectedAt，不是当时判断或预测。"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "passed",
+    "method": "web.run/open 官方原文逐项核对",
+    "checkedAt": "2026-11-13T06:54:08Z",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "官方原文日期及正文支持：FDA补充批准Casgevy用于两岁及以上反复血管闭塞危象的镰状细胞病或输血依赖型β地中海贫血患者。；该疗法此前获批年龄为12岁及以上。；疗法使用患者自身经CRISPR/Cas9编辑的造血干细胞，给药前仍需高强度清髓预处理。"
+      }
+    ],
+    "note": "仅核对本条事实，不把公告中的未来目标或公司主张当作独立验证结果。"
+  },
+  "scoreHistory": [],
+  "linkHistory": [
+    {
+      "at": "2026-11-13T14:57:43+08:00",
+      "trendId": "tr_health-translation",
+      "direction": "support",
+      "action": "add",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ]
+}

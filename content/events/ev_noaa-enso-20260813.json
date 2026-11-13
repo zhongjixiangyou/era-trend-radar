@@ -1,0 +1,109 @@
+{
+  "id": "ev_noaa-enso-20260813",
+  "dedupeKey": "ev:281027d5f2cb",
+  "title": "NOAA：秋冬出现很强厄尔尼诺概率超过90%",
+  "summary": "美国气候预测中心确认厄尔尼诺持续增强，预计2026年秋冬达到很强级别的概率超过90%。七月尼诺3.4区指数为正1.4℃，报告提醒强度虽增加典型影响的可能性，却不保证各地都会出现对应灾害。",
+  "facts": [
+    "NOAA气候预测中心于8月13日发布ENSO诊断讨论。",
+    "预计2026年北半球秋冬出现很强厄尔尼诺的概率超过90%。",
+    "七月尼诺3.4区指数为+1.4℃。"
+  ],
+  "analysis": "季节气候风险上调为粮食、水资源和电力规划提供预警，但不等于已经出现全球同方向损失。需看区域季节预报和降雨实况，不能由海温指数机械估算经济损失。",
+  "category": "未来趋势",
+  "region": "全球",
+  "occurredAt": "2026-08-13",
+  "firstReportedAt": "2026-08-13",
+  "collectedAt": "2026-11-13T06:55:07+00:00",
+  "sources": [
+    {
+      "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_disc_aug2026/ensodisc.shtml",
+      "title": "ENSO Diagnostic Discussion — 13 August 2026",
+      "publisher": "NOAA CPC",
+      "publishedAt": "2026-08-13",
+      "type": "primary",
+      "note": "亲读官方公开正文；日期为本次公告发布日"
+    }
+  ],
+  "scores": {
+    "structural": 21,
+    "scope": 20,
+    "signal": 17,
+    "delta": 11,
+    "timeliness": 2,
+    "crossDomain": 9,
+    "total": 80,
+    "rationale": {
+      "structural": "季节气候变化影响生产和防灾计划",
+      "scope": "ENSO能够改变多地气温降水",
+      "signal": "官方观测结合多模型概率预测",
+      "delta": "很强事件风险提高至九成以上",
+      "timeliness": "本轮事后补录，时效按历史研究计分",
+      "crossDomain": "气候农业水电与公共健康相连"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "已核对单一官方原文；机构预测与统计可能修订，不表示独立交叉验证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "passed",
+    "method": "web.run/open 官方原文正文",
+    "checkedAt": "2026-11-13T06:55:07+00:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "NOAA气候预测中心于8月13日发布ENSO诊断讨论。；预计2026年北半球秋冬出现很强厄尔尼诺的概率超过90%。；七月尼诺3.4区指数为+1.4℃。"
+      }
+    ],
+    "note": "日期对应官方发布这一事件；统计所属期间见事实，预测未当作已实现结果"
+  },
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_climate-food-inflation",
+      "direction": "support",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ],
+  "revisions": [
+    {
+      "at": "2026-11-13T06:55:07+00:00",
+      "by": "Codex-global",
+      "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+    }
+  ],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13",
+    "note": "本轮依据当时发布的官方原文开展回溯研究，非当时预测；不推定发生日及来源窗口可比性"
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-13T06:55:07+00:00",
+      "by": "Codex-global",
+      "note": "本轮回溯首次评分",
+      "scores": {
+        "structural": 21,
+        "scope": 20,
+        "signal": 17,
+        "delta": 11,
+        "timeliness": 2,
+        "crossDomain": 9,
+        "total": 80
+      }
+    }
+  ],
+  "linkHistory": [
+    {
+      "at": "2026-11-13T14:57:43+08:00",
+      "trendId": "tr_climate-food-inflation",
+      "direction": "support",
+      "action": "add",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ]
+}

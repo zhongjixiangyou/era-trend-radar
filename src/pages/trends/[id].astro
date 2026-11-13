@@ -25,7 +25,7 @@ const domainCn = trend.domain === 'global' ? '全球' : trend.domain === 'china'
 
 <Base title={trend.title} description={trend.thesis} active="trends">
   <article style="padding-top:34px">
-    <div class="kicker">趋势 · {domainCn} · 首次出现 {fmtDate(trend.firstSeen)}</div>
+    <div class="kicker">趋势 · {domainCn} · 回溯观察起点 {fmtDate(trend.firstSeen)}</div>
     <h1 style="font-size:clamp(30px,3.8vw,46px);line-height:1.22;margin:0 0 18px;max-width:18em">{trend.title}</h1>
     <p class="standfirst" style="max-width:42em">{trend.thesis}</p>
     <div class="byline" style="margin-bottom:30px">
@@ -54,18 +54,20 @@ const domainCn = trend.domain === 'global' ? '全球' : trend.domain === 'china'
           </>
         ))}
         {events.length === 0 && <p style="color:var(--ink-3)">暂无关联事件。</p>}
+        {(trend.counterEvidence ?? []).length > 0 && <section class="aside-block">
+          <h3>反证与判断边界</h3>
+          <ul class="indicator-list">{trend.counterEvidence.map((c: any) => <li>{c.text ?? c.note ?? c.reason}{c.url && <> · <a href={c.url} target="_blank" rel="noopener noreferrer">查看来源</a></>}</li>)}</ul>
+        </section>}
       </div>
 
       <aside class="detail-aside">
         <div class="aside-block">
-          <h3>置信度变化</h3>
+          <h3>判断修订记录</h3>
           <ol class="timeline">
             {trend.revisions.map((r: any) => (
               <li>
                 <div class="d">{fmtDate(r.date)}</div>
-                <div class="t" style="font-family:var(--mono);font-size:14px">
-                  {r.from ?? '—'} → {r.to}
-                </div>
+                {r.from != null && r.to != null && <div class="t">{r.from} → {r.to}</div>}
                 {r.reason && <div class="n">{r.reason}</div>}
               </li>
             ))}

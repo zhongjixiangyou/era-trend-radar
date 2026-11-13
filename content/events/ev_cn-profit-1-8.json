@@ -22,14 +22,6 @@
       "publisher": "国家统计局",
       "publishedAt": "2026-09-28T00:00:00+08:00",
       "type": "primary"
-    },
-    {
-      "url": "https://english.www.gov.cn/archive/statistics/202609/28/content_WS6ab9d6f1c6d00ca5f9a0d7e5.html",
-      "title": "Industrial profits up 15.7% in first eight months",
-      "publisher": "Gov.cn",
-      "publishedAt": "2026-09-28T00:00:00+08:00",
-      "type": "corroboration",
-      "note": "同源发布，不计独立佐证"
     }
   ],
   "scores": {
@@ -52,41 +44,37 @@
   },
   "credibility": {
     "level": "partial",
-    "basis": "官方一手统计，但尚未逐项比对原文表格；独立佐证与官方同源"
+    "basis": "单一官方一手原文已逐项核对；无独立交叉验证，机构数据及政策可后续修订。"
   },
   "evidenceGrade": "single_primary",
   "verification": {
-    "status": "pending",
-    "method": "verify_sources/http",
-    "note": "核验未闭合：存在 1 条 unknown 检查（HTTP 200 https://english.www.gov.cn/arch）。不得以声明视为通过，补齐原文事实后再改 passed。",
+    "status": "passed",
+    "method": "web.run/open 官方原文正文与表格",
+    "checkedAt": "2026-11-13T14:53:21+08:00",
     "checks": [
       {
-        "kind": "http",
+        "kind": "source_text",
         "result": "pass",
-        "evidence": "HTTP 200 https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html（页面无发布日期（日期未核））"
-      },
-      {
-        "kind": "http",
-        "result": "unknown",
-        "evidence": "HTTP 200 https://english.www.gov.cn/archive/statistics/202609/28/content_WS6ab9d6f1c6d00ca5f9a0d7e5.html（标题部分匹配）"
-      },
-      {
-        "kind": "primary_present",
-        "result": "pass",
-        "evidence": "primary 1 条"
+        "evidence": "国家统计局9月28日表格：利润52719.8亿元+15.7%，营收930851.2亿元+6.6%，利润率5.66%同比+0.44个百分点；电子利润+109.9%。"
       }
     ],
-    "checkedAt": "2026-11-13T13:54:29+08:00"
+    "note": "仅核实一手来源明确陈述的事实，未把研究分析当作原文事实。"
   },
-  "status": "pending",
+  "status": "published",
   "trendLinks": [
     {
       "trendId": "tr_cn-industrial-margin-repair",
       "direction": "support",
-      "reason": "利润率同比提高0.44pp，且为连续第4个月两位数利润增长"
+      "reason": "1—8月累计利润率同比提高0.44个百分点，支持盈利修复观察；单期累计数据不足以证明长期结构改善。"
     }
   ],
-  "revisions": [],
+  "revisions": [
+    {
+      "at": "2026-11-13T14:53:21+08:00",
+      "by": "Codex",
+      "note": "本轮亲读官方原文逐项核对；移除未核实二手转述，pending→published。旧快照保留于本轮核验审计记录。"
+    }
+  ],
   "forecastRefs": [],
   "retro": {
     "isRetro": true,
@@ -95,22 +83,175 @@
   },
   "scoreHistory": [],
   "linkHistory": [],
-  "metrics": [
-    {
-      "name": "利润总额同比",
-      "value": 15.7,
-      "unit": "%",
-      "period": "2026年1-8月",
-      "caliber": "累计同比",
-      "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html"
-    },
-    {
-      "name": "营业收入利润率",
-      "value": 5.66,
-      "unit": "%",
-      "period": "2026年1-8月",
-      "caliber": "累计",
-      "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html"
-    }
-  ]
+  "metrics": {
+    "metricSetId": "nbs-industrial-2026-08",
+    "comparable": true,
+    "items": [
+      {
+        "metric": "利润总额同比",
+        "value": 15.7,
+        "unit": "%",
+        "period": "2026年1-8月",
+        "scope": "累计同比",
+        "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html"
+      },
+      {
+        "metric": "营业收入利润率",
+        "value": 5.66,
+        "unit": "%",
+        "period": "2026年1-8月",
+        "scope": "累计",
+        "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html"
+      }
+    ]
+  },
+  "industryTable": {
+    "period": "2026年1—8月",
+    "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
+    "sourceTitle": "国家统计局：1—8月规上工业分行业主要财务指标",
+    "publishedAt": "2026-09-28",
+    "unit": "累计同比，%",
+    "rows": [
+      {
+        "name": "煤炭开采和洗选业",
+        "revenueGrowth": 10.4,
+        "profitGrowth": 51.6
+      },
+      {
+        "name": "石油和天然气开采业",
+        "revenueGrowth": 13,
+        "profitGrowth": 17
+      },
+      {
+        "name": "黑色金属矿采选业",
+        "revenueGrowth": -6.6,
+        "profitGrowth": -2.8
+      },
+      {
+        "name": "非金属矿采选业",
+        "revenueGrowth": -14.4,
+        "profitGrowth": -7.2
+      },
+      {
+        "name": "农副食品加工业",
+        "revenueGrowth": 2.7,
+        "profitGrowth": -17.4
+      },
+      {
+        "name": "食品制造业",
+        "revenueGrowth": 4.8,
+        "profitGrowth": 1.6
+      },
+      {
+        "name": "酒饮料和精制茶制造业",
+        "revenueGrowth": -7.7,
+        "profitGrowth": -34.7
+      },
+      {
+        "name": "纺织业",
+        "revenueGrowth": 2.8,
+        "profitGrowth": 11.9
+      },
+      {
+        "name": "纺织服装服饰业",
+        "revenueGrowth": -1.9,
+        "profitGrowth": -14.4
+      },
+      {
+        "name": "家具制造业",
+        "revenueGrowth": -8.9,
+        "profitGrowth": -51.8
+      },
+      {
+        "name": "造纸和纸制品业",
+        "revenueGrowth": 5,
+        "profitGrowth": 23.6
+      },
+      {
+        "name": "化学原料和化学制品制造业",
+        "revenueGrowth": 9.1,
+        "profitGrowth": 51
+      },
+      {
+        "name": "医药制造业",
+        "revenueGrowth": -0.3,
+        "profitGrowth": 3.9
+      },
+      {
+        "name": "橡胶和塑料制品业",
+        "revenueGrowth": 3,
+        "profitGrowth": -3.2
+      },
+      {
+        "name": "非金属矿物制品业",
+        "revenueGrowth": -9.5,
+        "profitGrowth": -46.7
+      },
+      {
+        "name": "黑色金属冶炼和压延加工业",
+        "revenueGrowth": -1.1,
+        "profitGrowth": -62.4
+      },
+      {
+        "name": "有色金属冶炼和压延加工业",
+        "revenueGrowth": 18.5,
+        "profitGrowth": 82.9
+      },
+      {
+        "name": "金属制品业",
+        "revenueGrowth": 4,
+        "profitGrowth": -6.3
+      },
+      {
+        "name": "通用设备制造业",
+        "revenueGrowth": 5.9,
+        "profitGrowth": 2.5
+      },
+      {
+        "name": "专用设备制造业",
+        "revenueGrowth": 6.9,
+        "profitGrowth": -2.1
+      },
+      {
+        "name": "汽车制造业",
+        "revenueGrowth": 2.9,
+        "profitGrowth": -16
+      },
+      {
+        "name": "铁路船舶航空航天和其他运输设备制造业",
+        "revenueGrowth": 12,
+        "profitGrowth": 10.9
+      },
+      {
+        "name": "电气机械和器材制造业",
+        "revenueGrowth": 11.5,
+        "profitGrowth": -5.2
+      },
+      {
+        "name": "计算机通信和其他电子设备制造业",
+        "revenueGrowth": 20.1,
+        "profitGrowth": 109.9
+      },
+      {
+        "name": "仪器仪表制造业",
+        "revenueGrowth": 7.2,
+        "profitGrowth": 0.7
+      },
+      {
+        "name": "电力热力生产和供应业",
+        "revenueGrowth": 0.4,
+        "profitGrowth": -15.1
+      },
+      {
+        "name": "燃气生产和供应业",
+        "revenueGrowth": 3.2,
+        "profitGrowth": 10.2
+      },
+      {
+        "name": "水的生产和供应业",
+        "revenueGrowth": -0.2,
+        "profitGrowth": 0.8
+      }
+    ]
+  }
 }

@@ -1,0 +1,33 @@
+{
+  "id": "tr_advanced-energy-validation",
+  "firstSeenAt": "2026-11-13T14:57:43+08:00",
+  "revisions": [
+    {
+      "at": "2026-11-13T14:57:43+08:00",
+      "by": "Codex",
+      "note": "首次回溯研究建立；这是本轮判断，不是事件发生时的预测。"
+    }
+  ],
+  "title": "先进能源走向验证",
+  "thesis": "先进核能与聚变正在推进试验及供应链准备，但距离规模商业供能仍有多道门槛。",
+  "stage": "emerging",
+  "indicators": [
+    "临界试验与持续功率运行",
+    "监管许可及建设进度",
+    "供应链资助与实际交付"
+  ],
+  "evidenceRefs": [
+    "ev_unity-criticality-20260701",
+    "ev_antares-criticality-20260604",
+    "ev_doe-smr-supply-20260514",
+    "ev_battery-battman-20261028",
+    "ev_doe-fusion-roadmap-20260609"
+  ],
+  "counterEvidence": [
+    {
+      "text": "临界试验、补贴和路线图均不能证明成本、寿命及大规模商业部署已过关。"
+    }
+  ],
+  "currentJudgment": "当前回溯研究，置信度中。官方公告支持试验、资助与路线图节点；零功率临界不等于商业发电，路线图不构成投运承诺。",
+  "reviewBy": "2026-12-13T00:00:00+08:00"
+}

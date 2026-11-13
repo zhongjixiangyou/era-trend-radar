@@ -1,0 +1,33 @@
+{
+  "id": "tr_health-translation",
+  "firstSeenAt": "2026-11-13T14:57:43+08:00",
+  "revisions": [
+    {
+      "at": "2026-11-13T14:57:43+08:00",
+      "by": "Codex",
+      "note": "首次回溯研究建立；这是本轮判断，不是事件发生时的预测。"
+    }
+  ],
+  "title": "新疗法与卫生可及性",
+  "thesis": "新疗法监管节点和公共卫生改善并行，效果、支付与可及性仍需分别验证。",
+  "stage": "emerging",
+  "indicators": [
+    "监管适应症及批准条件",
+    "临床证据和长期随访",
+    "地区消除与医疗人才供给"
+  ],
+  "evidenceRefs": [
+    "ev_who-searo-trachoma-20260908",
+    "ev_who-health-worker-code-20260523",
+    "ev_voceryq-approval-20261030",
+    "ev_casgevy-young-20260701",
+    "ev_fayuvi-approval-20260917"
+  ],
+  "counterEvidence": [
+    {
+      "text": "加速批准需要后续验证，适应症扩展不代表所有患者适用；公共卫生目标达成也不等于病原体全球根除。"
+    }
+  ],
+  "currentJudgment": "当前回溯研究，置信度中。监管公告与卫生机构报告可核实节点；疾病、地区和证据阶段不同，不可把条数当作疗效比较。",
+  "reviewBy": "2026-12-13T00:00:00+08:00"
+}

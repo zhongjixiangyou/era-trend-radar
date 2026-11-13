@@ -35,7 +35,7 @@ const statusCn = event.status === 'confirmed' ? '已核实' : event.status === '
 
     {event.analysis && (
       <p style="font-family:var(--serif);font-size:17px;line-height:1.9;max-width:42em;color:var(--ink);border-left:2px solid var(--accent);padding-left:16px;margin:0 0 30px">
-        {event.analysis}
+        <b>研究分析。</b>{event.analysis}
       </p>
     )}
 
@@ -93,7 +93,7 @@ const statusCn = event.status === 'confirmed' ? '已核实' : event.status === '
 
         {(event.timeline ?? []).length > 0 && (
           <>
-            <h3 style="font-family:var(--sans);font-size:10.5px;letter-spacing:.16em;color:var(--ink-3);font-weight:500;margin:34px 0 6px">发展过程</h3>
+            <h3 style="font-family:var(--sans);font-size:10.5px;letter-spacing:.16em;color:var(--ink-3);font-weight:500;margin:34px 0 6px">核验与修订记录</h3>
             <Timeline items={event.timeline} />
           </>
         )}
@@ -124,7 +124,7 @@ const statusCn = event.status === 'confirmed' ? '已核实' : event.status === '
           <h3>评分拆解</h3>
           <ScorePanel scores={event.scores} />
           <p style="font-size:11px;color:var(--ink-3);line-height:1.7;margin-top:10px">
-            总分是六维分项得分直接相加，不是人工拍板。改分必须留下记录。
+            总分为六项研究评分之和，包含主观判断，不是事件发生概率。改分保留记录。
           </p>
         </div>
 

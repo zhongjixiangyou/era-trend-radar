@@ -49,7 +49,7 @@ const leadTotal = lead ? total(lead.scores) : 0;
   {lead && (
   <section class="lead">
     <div class="lead-main">
-      <div class="kicker">本期头条 · 全球利率</div>
+      <div class="kicker">半年回溯 · 本期重点</div>
       <h1><a href={href(`/events/${lead.id}/`)}>{lead.title}</a></h1>
       <p class="standfirst">{lead.summary}</p>
       <div class="byline">
@@ -57,16 +57,46 @@ const leadTotal = lead ? total(lead.scores) : 0;
       </div>
     </div>
     <aside class="lead-side">
-      {(lead.metrics ?? []).slice(0, 3).map((m: any) => (
-        <div class="keyfig">
-          <div class="label">{m.label}</div>
-          <div class="value">{m.value}</div>
-          {m.note && <div class="note">{m.note}</div>}
-        </div>
-      ))}
+      {(lead.metrics ?? []).length > 0 ? (
+        (lead.metrics ?? []).slice(0, 3).map((m: any) => (
+          <div class="keyfig">
+            <div class="label">{m.label}</div>
+            <div class="value">{m.value}</div>
+            {m.note && <div class="note">{m.note}</div>}
+          </div>
+        ))
+      ) : (
+        <>
+          {lead.trends.length > 0 && (
+            <div class="lead-side-block">
+              <div class="label">归入趋势</div>
+              {lead.trends.slice(0, 2).map((tr: any) => (
+                <a class="lead-side-link" href={href(`/trends/${tr.id}/`)}>{trendById.get(tr.id)?.title ?? tr.id}</a>
+              ))}
+            </div>
+          )}
+          <div class="lead-side-block">
+            <div class="label">证据</div>
+            <div class="value" style="font-size:30px">{lead.sources.length}</div>
+            <div class="note">个独立来源 · 可信度{lead.credibility === 'high' ? '高' : lead.credibility === 'medium' ? '中' : '待核实'}</div>
+          </div>
+          {lead.watch && (
+            <div class="lead-side-block">
+              <div class="label">下一步看什么</div>
+              <div class="note" style="font-size:13px;line-height:1.7">{lead.watch}</div>
+            </div>
+          )}
+        </>
+      )}
     </aside>
   </section>
   )}
+
+  <section style="border-top:1px solid var(--rule);padding:18px 0" aria-label="半年覆盖">
+    <p class="count-line">已核实 {publishedEvents.length} 条事件 · {allTrends.length} 条趋势 · 历史事件均标明回溯研究</p>
+    <div class="filters">{['05','06','07','08','09','10','11'].map((m) => <a class="chip" href={href(`/archive/#month-2026-${m}`)}>{Number(m)} 月 · {publishedEvents.filter((e) => e.date.startsWith(`2026-${m}`)).length}</a>)}</div>
+    <p style="color:var(--ink-3);font-size:12px;line-height:1.8">回溯资料不等于当时预测；月份条数反映本轮研究覆盖，不用于判断领域是否突然爆发。</p>
+  </section>
 
   <section class="contents" aria-label="本期要目">
     {contents.map((col) => (
@@ -134,17 +164,25 @@ const leadTotal = lead ? total(lead.scores) : 0;
         个领域达到加速门槛 · 其余 {emerging.domains.length} 个观察积累中，样本不足不排行
       </span>
     </div>
-    {emerging.domains
-      .slice()
-      .sort((a, b) => b.recent.events - a.recent.events)
-      .slice(0, 3)
-      .map((d) => (
-        <a class="em-brief-row" href={href('/emerging/#' + d.id)}>
-          <span class="em-brief-name">{trendById.get(d.id)?.title ?? d.id}</span>
-          <span class="em-brief-line">{d.reason}</span>
-          <span class="em-brief-val">{d.recent.events}</span>
-        </a>
-      ))}
+    {emerging.domains.length === 0
+      ? topTrends.slice(0, 3).map((t) => (
+          <a class="em-brief-row" href={href(`/trends/${t.id}/`)}>
+            <span class="em-brief-name">{t.title}</span>
+            <span class="em-brief-line">观察中 · 证据 {t.evidenceCount ?? 0} 条</span>
+            <span class="em-brief-val">{t.evidenceCount ?? 0}</span>
+          </a>
+        ))
+      : emerging.domains
+          .slice()
+          .sort((a, b) => b.recent.events - a.recent.events)
+          .slice(0, 3)
+          .map((d) => (
+            <a class="em-brief-row" href={href('/emerging/#' + d.id)}>
+              <span class="em-brief-name">{trendById.get(d.id)?.title ?? d.title ?? '观察领域'}</span>
+              <span class="em-brief-line">{d.reason}</span>
+              <span class="em-brief-val">{d.recent.events}</span>
+            </a>
+          ))}
   </div>
 
   <div class="section-head">
@@ -154,22 +192,42 @@ const leadTotal = lead ? total(lead.scores) : 0;
     </div>
     <a class="more" href={href('/forecasts/')}>判断追踪 →</a>
   </div>
-  <table class="ledger">
-    <thead>
-      <tr><th>判断</th><th>提出</th><th>到期</th><th>置信</th><th>状态</th></tr>
-    </thead>
-    <tbody>
-      {allForecasts.map((f) => (
-        <tr>
-          <td>{f.claim}</td>
-          <td class="num">{fmtDate(f.madeAt)}</td>
-          <td class="num">{fmtDate(f.dueBy)}</td>
-          <td class="num">{f.confidence}</td>
-          <td>{forecastStatusLabel[f.status]}</td>
-        </tr>
-      ))}
-    </tbody>
-  </table>
+  {allForecasts.length > 0 ? (
+    <table class="ledger">
+      <thead>
+        <tr><th>判断</th><th>提出</th><th>到期</th><th>置信</th><th>状态</th></tr>
+      </thead>
+      <tbody>
+        {allForecasts.map((f) => (
+          <tr>
+            <td>{f.claim}</td>
+            <td class="num">{fmtDate(f.madeAt)}</td>
+            <td class="num">{fmtDate(f.dueBy)}</td>
+            <td class="num">{f.confidence}</td>
+            <td>{forecastStatusLabel[f.status]}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  ) : (
+    <>
+      <table class="ledger">
+        <thead>
+          <tr><th>趋势层判断（待到期复核）</th><th>验证期限</th><th>状态</th></tr>
+        </thead>
+        <tbody>
+          {topTrends.slice(0, 3).map((t) => (
+            <tr>
+              <td><a href={href(`/trends/${t.id}/`)}>{t.judgment || t.title}</a></td>
+              <td class="num">{fmtDate(t.verifyBy)}</td>
+              <td>{statusLabel[t.status]}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p class="count-line">尚无正式发布的概率预测；上表是趋势层的可证伪判断，到期复核，历史补录不会包装为当时预测。</p>
+    </>
+  )}
 
   <div class="section-head">
     <div>
@@ -190,10 +248,11 @@ const leadTotal = lead ? total(lead.scores) : 0;
     </a>
   ) : (
     <div style="border-top:1px solid var(--rule);padding-top:16px">
-      <div class="kicker">尚无快照</div>
-      <p style="font-family:var(--serif);font-size:17px;line-height:1.8;max-width:46em;color:var(--ink-2);margin:0">
-        第一期快照要等本轮研究跑完才生成。之前那两期是演示数据，已删除——不拿重建的假历史冒充当时判断。
-      </p>
+      <div class="kicker">尚无快照 · 以下是最近三条</div>
+      <div class="event-list" style="margin-top:14px">
+        {ranked.slice(0, 3).map((e) => <EventRow event={e} />)}
+      </div>
+      <p class="count-line">快照从下一期开始记录。按月份浏览过去半年的已核实事件；回溯分析标明研究时间，不冒充当时判断。</p>
     </div>
   )}
 </Base>

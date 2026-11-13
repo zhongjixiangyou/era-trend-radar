@@ -24,7 +24,7 @@ const dirClass = (v) =>
 <Base
   title="中国产业"
   active="china"
-  description="按同口径收入与利润增速，把中国产业样本放进四个象限：同步增长、增收压利、周期修复、结构下降。口径不一致的样本单独列出，不硬归类。"
+  description="按同口径收入与利润增速，把中国产业样本放进四个象限：同步增长、增收压利、缩收增利、收入利润双降。口径不一致的样本单独列出，不硬归类。"
 >
   <article class="cn">
     <header class="cn-head">
@@ -35,8 +35,9 @@ const dirClass = (v) =>
         同向的是规模变化，背离的才是结构信号。
       </p>
       <p class="cn-caliber">
-        口径提示：本期样本混用上市公司合并口径（沪市整体、中芯国际）与全国工业口径（规上工业），
-        <b>横向只作方向参考，纵向不可比</b>。分行业同口径数据尚未补齐，见下文「还缺什么」。
+        口径提示：本表统一采用国家统计局 {china.source?.period} 规模以上工业企业分行业累计同比，
+        <b>收入与利润共用同一统计期间</b>。这是一张行业横截面，不能替代多期趋势验证。
+        {china.source && <a href={china.source.url} target="_blank" rel="noopener noreferrer">查看官方原表</a>}
       </p>
     </header>
 
@@ -104,7 +105,7 @@ const dirClass = (v) =>
                   {s.note}
                   {s.eventId && (
                     <a class="cn-event" href={href(`/events/${s.eventId}/`)}>
-                      {s.eventId}
+                      查看核验记录
                     </a>
                   )}
                 </p>
@@ -146,7 +147,7 @@ const dirClass = (v) =>
                 {s.note}
                 {s.eventId && (
                   <a class="cn-event" href={href(`/events/${s.eventId}/`)}>
-                    {s.eventId}
+                    查看核验记录
                   </a>
                 )}
               </p>
@@ -186,7 +187,7 @@ const dirClass = (v) =>
       </div>
       <p class="cn-quad-desc">
         只用同比增速的正负，不设阈值：收入 &gt; 0 且利润 &gt; 0 → 同步增长；收入 &gt; 0、利润 ≤ 0 → 增收压利；
-        收入 ≤ 0、利润 &gt; 0 → 周期修复；两者都 ≤ 0 → 结构下降。零计入「不增长」一侧，持平不算增长。
+        收入 ≤ 0、利润 &gt; 0 → 缩收增利；两者都 ≤ 0 → 收入利润双降。零计入「不增长」一侧，持平不算增长。
         四类互斥，任一有效的两个数字必然落在其中一类；缺一项的进「口径待补」。
       </p>
       <table class="cn-table">
@@ -200,8 +201,8 @@ const dirClass = (v) =>
         <tbody>
           <tr><td class="up">+</td><td class="up">+</td><td>同步增长</td></tr>
           <tr><td class="up">+</td><td class="down">−</td><td>增收压利</td></tr>
-          <tr><td class="down">−</td><td class="up">+</td><td>周期修复</td></tr>
-          <tr><td class="down">−</td><td class="down">−</td><td>结构下降</td></tr>
+          <tr><td class="down">−</td><td class="up">+</td><td>缩收增利</td></tr>
+          <tr><td class="down">−</td><td class="down">−</td><td>收入利润双降</td></tr>
         </tbody>
       </table>
       <p class="cn-foot">

@@ -1,0 +1,93 @@
+{
+  "id": "ev_bnef-dc-power-2035",
+  "dedupeKey": "ev:bnef-dc-power-2035",
+  "title": "BNEF预计2035年数据中心用电量接近当前四倍",
+  "summary": "BNEF在11月11日发布报告，预计2035年数据中心用电量达2354太瓦时，约占全球用电7%；同时跟踪到181吉瓦配套燃气发电项目公告。报告强调这些项目成熟度不同，公告规模不代表最终建成容量。",
+  "facts": [
+    "报告预计数据中心用电量到2035年接近当前四倍，达2354太瓦时、全球用电约7%。",
+    "BNEF跟踪到181吉瓦拟配套数据中心的燃气发电项目公告，超过90%位于美国。",
+    "报告明确说明公告项目成熟度及时间不同，不应将公告规模视作最终建成预测。"
+  ],
+  "analysis": "研究提示并网速度和供电方式会影响算力扩张及排放；这是机构情景预测，不能把2035年的用电量写成已实现事实，也不能把燃气项目公告全部计入投运容量。",
+  "category": "未来趋势",
+  "region": "全球",
+  "occurredAt": "2026-11-11",
+  "firstReportedAt": "2026-11-11",
+  "collectedAt": "2026-11-13T14:57:43+08:00",
+  "sources": [
+    {
+      "url": "https://about.bnef.com/insights/data-centers/data-center-power-demand-is-set-to-surge-raising-new-climate-challenges-bloombergnef/",
+      "title": "Data Center Power Demand Is Set to Surge, Raising New Climate Challenges",
+      "publisher": "BloombergNEF",
+      "publishedAt": "2026-11-11",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 21,
+    "scope": 19,
+    "signal": 17,
+    "delta": 11,
+    "timeliness": 10,
+    "crossDomain": 9,
+    "total": 87,
+    "rationale": {
+      "structural": "算力扩张涉及供电与并网约束",
+      "scope": "机构全球数据中心情景",
+      "signal": "官方报告含明确模型边界",
+      "delta": "配套燃气项目形成显著公告规模",
+      "timeliness": "原文发布距本轮收录两天",
+      "crossDomain": "涉及算力、电力、燃气与排放"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "已核对单一官方原文；机构预测与统计可能修订，不表示独立交叉验证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "passed",
+    "method": "web.run/open 官方报告正文",
+    "checkedAt": "2026-11-13T14:57:43+08:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "11月11日官方正文：2035年2354TWh/7%，181GW为公告项目，不是已建成；超过90%在美国。"
+      }
+    ],
+    "note": "预测与公告未当作实现结果。"
+  },
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_ai-power-constraint",
+      "direction": "support",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ],
+  "revisions": [
+    {
+      "at": "2026-11-13T14:57:43+08:00",
+      "by": "Codex",
+      "note": "亲读BNEF官方11月11日报告后首次回溯补录；与原161GW候选不同，不替换旧记录。"
+    }
+  ],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13",
+    "note": "本轮回溯研究，非当时判断。"
+  },
+  "scoreHistory": [],
+  "linkHistory": [
+    {
+      "at": "2026-11-13T14:57:43+08:00",
+      "trendId": "tr_ai-power-constraint",
+      "direction": "support",
+      "action": "add",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ]
+}

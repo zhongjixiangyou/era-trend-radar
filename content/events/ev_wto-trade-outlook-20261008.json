@@ -1,0 +1,109 @@
+{
+  "id": "ev_wto-trade-outlook-20261008",
+  "dedupeKey": "ev:bd17d1f15341",
+  "title": "WTO上调货物贸易增长至3.9%，下调服务贸易至3.3%",
+  "summary": "世贸组织十月展望将2026年货物贸易量增长预测从1.9%提高至3.9%，服务贸易量增长则从4.8%降至3.3%。上半年AI相关商品贡献了货物贸易增长的47%，能源和运输冲击仍拖累部分地区。",
+  "facts": [
+    "10月8日WTO把2026年货物贸易量增长预测从1.9%上调至3.9%。",
+    "2026年商业服务贸易量增长预测从4.8%下调至3.3%。",
+    "上半年AI相关商品占全球货物贸易增长的47%，相关商品贸易额同比增67%。"
+  ],
+  "analysis": "商品和服务贸易出现方向相反的预测修订，说明不能用一个总量代替行业判断。AI资本开支若回落会削弱支撑，运输与旅游恢复也取决于冲突；47%为增长贡献，不能写成全部贸易份额。",
+  "category": "全球宏观",
+  "region": "全球",
+  "occurredAt": "2026-10-08",
+  "firstReportedAt": "2026-10-08",
+  "collectedAt": "2026-11-13T06:55:07+00:00",
+  "sources": [
+    {
+      "url": "https://www.wto.org/english/news_e/news26_e/stat_08oct26_510_e.htm",
+      "title": "AI boom and trade resilience to Middle East crisis lift outlook, but gains to be uneven",
+      "publisher": "WTO",
+      "publishedAt": "2026-10-08",
+      "type": "primary",
+      "note": "亲读官方公开正文；日期为本次公告发布日"
+    }
+  ],
+  "scores": {
+    "structural": 22,
+    "scope": 20,
+    "signal": 18,
+    "delta": 13,
+    "timeliness": 3,
+    "crossDomain": 9,
+    "total": 85,
+    "rationale": {
+      "structural": "AI资本开支重塑贸易增长来源",
+      "scope": "涵盖全球商品和服务贸易",
+      "signal": "官方预测含上半年行业统计支撑",
+      "delta": "货物上修服务下修幅度均明显",
+      "timeliness": "本轮事后补录，时效按历史研究计分",
+      "crossDomain": "技术能源物流旅游与金融联动"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "已核对单一官方原文；机构预测与统计可能修订，不表示独立交叉验证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "passed",
+    "method": "web.run/open 官方原文正文",
+    "checkedAt": "2026-11-13T06:55:07+00:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "10月8日WTO把2026年货物贸易量增长预测从1.9%上调至3.9%。；2026年商业服务贸易量增长预测从4.8%下调至3.3%。；上半年AI相关商品占全球货物贸易增长的47%，相关商品贸易额同比增67%。"
+      }
+    ],
+    "note": "日期对应官方发布这一事件；统计所属期间见事实，预测未当作已实现结果"
+  },
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_global-growth-frictions",
+      "direction": "support",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ],
+  "revisions": [
+    {
+      "at": "2026-11-13T06:55:07+00:00",
+      "by": "Codex-global",
+      "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+    }
+  ],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13",
+    "note": "本轮依据当时发布的官方原文开展回溯研究，非当时预测；不推定发生日及来源窗口可比性"
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-13T06:55:07+00:00",
+      "by": "Codex-global",
+      "note": "本轮回溯首次评分",
+      "scores": {
+        "structural": 22,
+        "scope": 20,
+        "signal": 18,
+        "delta": 13,
+        "timeliness": 3,
+        "crossDomain": 9,
+        "total": 85
+      }
+    }
+  ],
+  "linkHistory": [
+    {
+      "at": "2026-11-13T14:57:43+08:00",
+      "trendId": "tr_global-growth-frictions",
+      "direction": "support",
+      "action": "add",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ]
+}

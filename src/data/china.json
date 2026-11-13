@@ -1,39 +1,276 @@
 {
   "macro": [
-    { "label": "GDP 同比", "value": "4.6%", "note": "前三季度，总量超 107 万亿元" },
-    { "label": "规上工业增加值", "value": "5.3%", "note": "前三季度" },
-    { "label": "规上工业利润", "value": "15.5%", "note": "1—9 月累计" },
-    { "label": "沪市净利", "value": "6.0%", "note": "三季报合计 4.01 万亿元" }
+    {
+      "label": "利润总额同比",
+      "value": "15.7%",
+      "note": "2026年1-8月"
+    },
+    {
+      "label": "营业收入利润率",
+      "value": "5.66%",
+      "note": "2026年1-8月"
+    }
   ],
   "samples": [
     {
-      "name": "沪市整体",
-      "scope": "上市公司",
-      "revenueGrowth": 3.8,
-      "profitGrowth": 6.0,
-      "note": "2317 家公司三季报合计，营收 39.07 万亿元、净利 4.01 万亿元",
-      "eventId": "ev-20261104-sse-q3-earnings"
+      "name": "煤炭开采和洗选业",
+      "revenueGrowth": 10.4,
+      "profitGrowth": 51.6,
+      "scope": "2026年1—8月",
+      "note": "累计同比，%；同行业同期间，不能据单期结果断言长期结构变化。",
+      "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
+      "eventId": "ev_cn-profit-1-8"
     },
     {
-      "name": "中芯国际",
-      "scope": "半导体",
-      "revenueGrowth": 22.4,
-      "profitGrowth": 91.6,
-      "note": "前三季度营收 606.18 亿元、净利 73.14 亿元",
-      "eventId": "ev-20261112-smic-q3"
+      "name": "石油和天然气开采业",
+      "revenueGrowth": 13,
+      "profitGrowth": 17,
+      "scope": "2026年1—8月",
+      "note": "累计同比，%；同行业同期间，不能据单期结果断言长期结构变化。",
+      "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
+      "eventId": "ev_cn-profit-1-8"
     },
     {
-      "name": "规上工业",
-      "scope": "全国工业",
-      "revenueGrowth": null,
-      "profitGrowth": 15.5,
-      "note": "1—9 月利润同比；营收增速未在同口径下公布",
-      "eventId": "ev-20261027-cn-industrial-profit"
+      "name": "黑色金属矿采选业",
+      "revenueGrowth": -6.6,
+      "profitGrowth": -2.8,
+      "scope": "2026年1—8月",
+      "note": "累计同比，%；同行业同期间，不能据单期结果断言长期结构变化。",
+      "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
+      "eventId": "ev_cn-profit-1-8"
+    },
+    {
+      "name": "非金属矿采选业",
+      "revenueGrowth": -14.4,
+      "profitGrowth": -7.2,
+      "scope": "2026年1—8月",
+      "note": "累计同比，%；同行业同期间，不能据单期结果断言长期结构变化。",
+      "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
+      "eventId": "ev_cn-profit-1-8"
+    },
+    {
+      "name": "农副食品加工业",
+      "revenueGrowth": 2.7,
+      "profitGrowth": -17.4,
+      "scope": "2026年1—8月",
+      "note": "累计同比，%；同行业同期间，不能据单期结果断言长期结构变化。",
+      "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
+      "eventId": "ev_cn-profit-1-8"
+    },
+    {
+      "name": "食品制造业",
+      "revenueGrowth": 4.8,
+      "profitGrowth": 1.6,
+      "scope": "2026年1—8月",
+      "note": "累计同比，%；同行业同期间，不能据单期结果断言长期结构变化。",
+      "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
+      "eventId": "ev_cn-profit-1-8"
+    },
+    {
+      "name": "酒饮料和精制茶制造业",
+      "revenueGrowth": -7.7,
+      "profitGrowth": -34.7,
+      "scope": "2026年1—8月",
+      "note": "累计同比，%；同行业同期间，不能据单期结果断言长期结构变化。",
+      "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
+      "eventId": "ev_cn-profit-1-8"
+    },
+    {
+      "name": "纺织业",
+      "revenueGrowth": 2.8,
+      "profitGrowth": 11.9,
+      "scope": "2026年1—8月",
+      "note": "累计同比，%；同行业同期间，不能据单期结果断言长期结构变化。",
+      "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
+      "eventId": "ev_cn-profit-1-8"
+    },
+    {
+      "name": "纺织服装服饰业",
+      "revenueGrowth": -1.9,
+      "profitGrowth": -14.4,
+      "scope": "2026年1—8月",
+      "note": "累计同比，%；同行业同期间，不能据单期结果断言长期结构变化。",
+      "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
+      "eventId": "ev_cn-profit-1-8"
+    },
+    {
+      "name": "家具制造业",
+      "revenueGrowth": -8.9,
+      "profitGrowth": -51.8,
+      "scope": "2026年1—8月",
+      "note": "累计同比，%；同行业同期间，不能据单期结果断言长期结构变化。",
+      "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
+      "eventId": "ev_cn-profit-1-8"
+    },
+    {
+      "name": "造纸和纸制品业",
+      "revenueGrowth": 5,
+      "profitGrowth": 23.6,
+      "scope": "2026年1—8月",
+      "note": "累计同比，%；同行业同期间，不能据单期结果断言长期结构变化。",
+      "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
+      "eventId": "ev_cn-profit-1-8"
+    },
+    {
+      "name": "化学原料和化学制品制造业",
+      "revenueGrowth": 9.1,
+      "profitGrowth": 51,
+      "scope": "2026年1—8月",
+      "note": "累计同比，%；同行业同期间，不能据单期结果断言长期结构变化。",
+      "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
+      "eventId": "ev_cn-profit-1-8"
+    },
+    {
+      "name": "医药制造业",
+      "revenueGrowth": -0.3,
+      "profitGrowth": 3.9,
+      "scope": "2026年1—8月",
+      "note": "累计同比，%；同行业同期间，不能据单期结果断言长期结构变化。",
+      "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
+      "eventId": "ev_cn-profit-1-8"
+    },
+    {
+      "name": "橡胶和塑料制品业",
+      "revenueGrowth": 3,
+      "profitGrowth": -3.2,
+      "scope": "2026年1—8月",
+      "note": "累计同比，%；同行业同期间，不能据单期结果断言长期结构变化。",
+      "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
+      "eventId": "ev_cn-profit-1-8"
+    },
+    {
+      "name": "非金属矿物制品业",
+      "revenueGrowth": -9.5,
+      "profitGrowth": -46.7,
+      "scope": "2026年1—8月",
+      "note": "累计同比，%；同行业同期间，不能据单期结果断言长期结构变化。",
+      "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
+      "eventId": "ev_cn-profit-1-8"
+    },
+    {
+      "name": "黑色金属冶炼和压延加工业",
+      "revenueGrowth": -1.1,
+      "profitGrowth": -62.4,
+      "scope": "2026年1—8月",
+      "note": "累计同比，%；同行业同期间，不能据单期结果断言长期结构变化。",
+      "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
+      "eventId": "ev_cn-profit-1-8"
+    },
+    {
+      "name": "有色金属冶炼和压延加工业",
+      "revenueGrowth": 18.5,
+      "profitGrowth": 82.9,
+      "scope": "2026年1—8月",
+      "note": "累计同比，%；同行业同期间，不能据单期结果断言长期结构变化。",
+      "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
+      "eventId": "ev_cn-profit-1-8"
+    },
+    {
+      "name": "金属制品业",
+      "revenueGrowth": 4,
+      "profitGrowth": -6.3,
+      "scope": "2026年1—8月",
+      "note": "累计同比，%；同行业同期间，不能据单期结果断言长期结构变化。",
+      "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
+      "eventId": "ev_cn-profit-1-8"
+    },
+    {
+      "name": "通用设备制造业",
+      "revenueGrowth": 5.9,
+      "profitGrowth": 2.5,
+      "scope": "2026年1—8月",
+      "note": "累计同比，%；同行业同期间，不能据单期结果断言长期结构变化。",
+      "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
+      "eventId": "ev_cn-profit-1-8"
+    },
+    {
+      "name": "专用设备制造业",
+      "revenueGrowth": 6.9,
+      "profitGrowth": -2.1,
+      "scope": "2026年1—8月",
+      "note": "累计同比，%；同行业同期间，不能据单期结果断言长期结构变化。",
+      "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
+      "eventId": "ev_cn-profit-1-8"
+    },
+    {
+      "name": "汽车制造业",
+      "revenueGrowth": 2.9,
+      "profitGrowth": -16,
+      "scope": "2026年1—8月",
+      "note": "累计同比，%；同行业同期间，不能据单期结果断言长期结构变化。",
+      "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
+      "eventId": "ev_cn-profit-1-8"
+    },
+    {
+      "name": "铁路船舶航空航天和其他运输设备制造业",
+      "revenueGrowth": 12,
+      "profitGrowth": 10.9,
+      "scope": "2026年1—8月",
+      "note": "累计同比，%；同行业同期间，不能据单期结果断言长期结构变化。",
+      "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
+      "eventId": "ev_cn-profit-1-8"
+    },
+    {
+      "name": "电气机械和器材制造业",
+      "revenueGrowth": 11.5,
+      "profitGrowth": -5.2,
+      "scope": "2026年1—8月",
+      "note": "累计同比，%；同行业同期间，不能据单期结果断言长期结构变化。",
+      "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
+      "eventId": "ev_cn-profit-1-8"
+    },
+    {
+      "name": "计算机通信和其他电子设备制造业",
+      "revenueGrowth": 20.1,
+      "profitGrowth": 109.9,
+      "scope": "2026年1—8月",
+      "note": "累计同比，%；同行业同期间，不能据单期结果断言长期结构变化。",
+      "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
+      "eventId": "ev_cn-profit-1-8"
+    },
+    {
+      "name": "仪器仪表制造业",
+      "revenueGrowth": 7.2,
+      "profitGrowth": 0.7,
+      "scope": "2026年1—8月",
+      "note": "累计同比，%；同行业同期间，不能据单期结果断言长期结构变化。",
+      "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
+      "eventId": "ev_cn-profit-1-8"
+    },
+    {
+      "name": "电力热力生产和供应业",
+      "revenueGrowth": 0.4,
+      "profitGrowth": -15.1,
+      "scope": "2026年1—8月",
+      "note": "累计同比，%；同行业同期间，不能据单期结果断言长期结构变化。",
+      "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
+      "eventId": "ev_cn-profit-1-8"
+    },
+    {
+      "name": "燃气生产和供应业",
+      "revenueGrowth": 3.2,
+      "profitGrowth": 10.2,
+      "scope": "2026年1—8月",
+      "note": "累计同比，%；同行业同期间，不能据单期结果断言长期结构变化。",
+      "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
+      "eventId": "ev_cn-profit-1-8"
+    },
+    {
+      "name": "水的生产和供应业",
+      "revenueGrowth": -0.2,
+      "profitGrowth": 0.8,
+      "scope": "2026年1—8月",
+      "note": "累计同比，%；同行业同期间，不能据单期结果断言长期结构变化。",
+      "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
+      "eventId": "ev_cn-profit-1-8"
     }
   ],
+  "source": {
+    "url": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
+    "title": "国家统计局：1—8月规上工业分行业主要财务指标",
+    "period": "2026年1—8月"
+  },
   "missing": [
-    "分行业营收与利润增速（二组按统计局分行业口径补）",
-    "高技术制造业与装备制造业增加值增速",
-    "出口交货值与工业企业产能利用率"
+    "本表为一个累计区间的行业横截面；仍需连续多期同口径数据验证持续性。"
   ]
 }

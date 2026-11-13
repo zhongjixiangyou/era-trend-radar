@@ -1,0 +1,31 @@
+{
+  "id": "tr_science-manufacturing-transfer",
+  "firstSeenAt": "2026-11-13T14:57:43+08:00",
+  "revisions": [
+    {
+      "at": "2026-11-13T14:57:43+08:00",
+      "by": "Codex",
+      "note": "首次回溯研究建立；这是本轮判断，不是事件发生时的预测。"
+    }
+  ],
+  "title": "科研与制造能力转化",
+  "thesis": "基础科研、材料与制造培训增加能力储备，商业效果仍需独立验证。",
+  "stage": "emerging",
+  "indicators": [
+    "实验可复现与负结果",
+    "培训交付及企业采用",
+    "材料产量与应用验证"
+  ],
+  "evidenceRefs": [
+    "ev_cms-dilepton-20260526",
+    "ev_apple-amc-houston-20260813",
+    "ev_quantum-isotopes-20260716"
+  ],
+  "counterEvidence": [
+    {
+      "text": "CMS未发现新粒子属于重要负结果；材料纯度和培训开放本身不能证明商业生产效率已经提升。"
+    }
+  ],
+  "currentJudgment": "当前回溯研究，置信度中低。不同领域节点用于观察从知识到生产能力的链条，不能把它们合成统一技术成熟度。",
+  "reviewBy": "2026-12-13T00:00:00+08:00"
+}

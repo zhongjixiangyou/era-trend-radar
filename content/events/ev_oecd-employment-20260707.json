@@ -1,0 +1,109 @@
+{
+  "id": "ev_oecd-employment-20260707",
+  "dedupeKey": "ev:9d8d2033670f",
+  "title": "OECD就业创新高，三分之一成员实际工资仍低于五年前",
+  "summary": "经合组织就业展望称，五月成员国就业人数达6.7亿、失业率4.9%，但约三分之一成员实际工资仍低于五年前水平。报告预计2026年就业增长0.3%，并指出能源冲击可能继续削弱购买力。",
+  "facts": [
+    "OECD于7月7日发布就业展望相关公告。",
+    "2026年5月OECD就业人数6.7亿，失业率4.9%。",
+    "约三分之一OECD国家实际工资低于五年前水平，2026年就业增长预测为0.3%。"
+  ],
+  "analysis": "低失业与工资购买力不足可以并存，消费分析不能只看岗位总量。报告认为AI影响青年就业的证据尚有限，不应据此直接认定AI导致失业；需跟踪实际工资与青年就业分项。",
+  "category": "科技与社会",
+  "region": "OECD经济体",
+  "occurredAt": "2026-07-07",
+  "firstReportedAt": "2026-07-07",
+  "collectedAt": "2026-11-13T06:55:07+00:00",
+  "sources": [
+    {
+      "url": "https://www.oecd.org/en/about/news/press-releases/2026/07/oecd-job-markets-remain-strong-but-real-wages-are-lagging.html",
+      "title": "OECD job markets remain strong, but real wages are lagging",
+      "publisher": "OECD",
+      "publishedAt": "2026-07-07",
+      "type": "primary",
+      "note": "亲读官方公开正文；日期为本次公告发布日"
+    }
+  ],
+  "scores": {
+    "structural": 20,
+    "scope": 17,
+    "signal": 18,
+    "delta": 10,
+    "timeliness": 2,
+    "crossDomain": 8,
+    "total": 75,
+    "rationale": {
+      "structural": "工资与就业分化影响家庭消费基础",
+      "scope": "覆盖OECD劳动市场与地区差异",
+      "signal": "官方就业与工资数据相互对照",
+      "delta": "就业纪录与实际工资缺口形成反差",
+      "timeliness": "本轮事后补录，时效按历史研究计分",
+      "crossDomain": "能源物价劳动与技术影响相连"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "已核对单一官方原文；机构预测与统计可能修订，不表示独立交叉验证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "passed",
+    "method": "web.run/open 官方原文正文",
+    "checkedAt": "2026-11-13T06:55:07+00:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "OECD于7月7日发布就业展望相关公告。；2026年5月OECD就业人数6.7亿，失业率4.9%。；约三分之一OECD国家实际工资低于五年前水平，2026年就业增长预测为0.3%。"
+      }
+    ],
+    "note": "日期对应官方发布这一事件；统计所属期间见事实，预测未当作已实现结果"
+  },
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_labour-demographic-adjustment",
+      "direction": "support",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ],
+  "revisions": [
+    {
+      "at": "2026-11-13T06:55:07+00:00",
+      "by": "Codex-global",
+      "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+    }
+  ],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13",
+    "note": "本轮依据当时发布的官方原文开展回溯研究，非当时预测；不推定发生日及来源窗口可比性"
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-13T06:55:07+00:00",
+      "by": "Codex-global",
+      "note": "本轮回溯首次评分",
+      "scores": {
+        "structural": 20,
+        "scope": 17,
+        "signal": 18,
+        "delta": 10,
+        "timeliness": 2,
+        "crossDomain": 8,
+        "total": 75
+      }
+    }
+  ],
+  "linkHistory": [
+    {
+      "at": "2026-11-13T14:57:43+08:00",
+      "trendId": "tr_labour-demographic-adjustment",
+      "direction": "support",
+      "action": "add",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ]
+}

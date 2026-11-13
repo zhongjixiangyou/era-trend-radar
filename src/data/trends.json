@@ -1,73 +1,423 @@
 [
   {
-    "id": "tr_climate-food-inflation",
-    "title": "气候波动正通过粮食与化肥价格重新进入全球通胀链条",
-    "thesis": "气候波动正通过粮食与化肥价格重新进入全球通胀链条",
+    "id": "tr_cn-realestate-contraction",
+    "title": "房地产仍待修复",
+    "thesis": "房地产累计投资承压，能否企稳需要销售、资金与新开工的多期验证。",
     "domain": "global",
-    "firstSeen": "2026-11-09",
+    "firstSeen": "2026-11-13",
     "status": "emerging",
     "confidence": null,
     "evidenceCount": 1,
     "supportCount": 1,
     "counterCount": 0,
     "indicators": [
-      "厄尔尼诺潜在收入损失',  — IFAD估算6年最高11万亿美元",
-      "粮价指数',  — 待接入FAO月度数据",
-      "化肥价格',  — 受能源成本传导"
+      "连续多期同口径数据变化",
+      "政策执行与实际效果之间的差距"
     ],
-    "judgment": "置信度低。机制成立但只有一条证据，且为情景估算；需FAO粮价与化肥价格连续3个月数据。",
-    "verifyBy": "2027-03-31",
+    "counterEvidence": [
+      {
+        "text": "累计区间不代表单月变化，销售或融资改善可能使后续走势改变。"
+      }
+    ],
+    "judgment": "本轮回溯研究，置信度中低。当前只核实一个累计区间，足以表述压力，不能认定永久结构下滑。",
+    "verifyBy": "2026-12-13",
+    "revisions": [
+      {
+        "date": "2026-11-13",
+        "from": null,
+        "to": null,
+        "reason": "首次按核实原文建立回溯观察，不作为当时判断。"
+      }
+    ]
+  },
+  {
+    "id": "tr_cn-policy-power-system",
+    "title": "能源转型制度建设",
+    "thesis": "能源转型政策正在推进，执行效果需用投资、并网和运行数据检验。",
+    "domain": "global",
+    "firstSeen": "2026-11-13",
+    "status": "emerging",
+    "confidence": null,
+    "evidenceCount": 3,
+    "supportCount": 3,
+    "counterCount": 0,
+    "indicators": [
+      "连续多期同口径数据变化",
+      "政策执行与实际效果之间的差距"
+    ],
+    "counterEvidence": [
+      {
+        "text": "政策发布不等于投资、并网或减排绩效实现，需观察执行细则与完成率。"
+      }
+    ],
+    "judgment": "本轮回溯研究，置信度中。三份官方政策表明制度准备推进，尚不能证明项目已全部落地或目标完成。",
+    "verifyBy": "2026-12-13",
+    "revisions": [
+      {
+        "date": "2026-11-13",
+        "from": null,
+        "to": null,
+        "reason": "首次按核实原文建立回溯观察，不作为当时判断。"
+      }
+    ]
+  },
+  {
+    "id": "tr_cn-demand-rebalancing",
+    "title": "中国需求与生产分化",
+    "thesis": "中国生产和需求指标存在分化，复苏强度须由多项同期间指标交叉观察。",
+    "domain": "global",
+    "firstSeen": "2026-11-13",
+    "status": "emerging",
+    "confidence": null,
+    "evidenceCount": 4,
+    "supportCount": 4,
+    "counterCount": 0,
+    "indicators": [
+      "连续多期同口径数据变化",
+      "政策执行与实际效果之间的差距"
+    ],
+    "counterEvidence": [
+      {
+        "text": "PMI越过50不等于全部行业景气，价格变化也可能来自供给而非需求。"
+      }
+    ],
+    "judgment": "本轮回溯研究，置信度中。官方PMI、物价与GDP说明不同侧面的活动，不能把季、月或累计口径直接相减。",
+    "verifyBy": "2026-12-13",
+    "revisions": [
+      {
+        "date": "2026-11-13",
+        "from": null,
+        "to": null,
+        "reason": "首次按核实原文建立回溯观察，不作为当时判断。"
+      }
+    ]
+  },
+  {
+    "id": "tr_space-observation-network",
+    "title": "空间观测能力扩展",
+    "thesis": "气象与深空任务增加观测能力，实际价值取决于调试、数据交付和科研应用。",
+    "domain": "global",
+    "firstSeen": "2026-11-13",
+    "status": "emerging",
+    "confidence": null,
+    "evidenceCount": 4,
+    "supportCount": 4,
+    "counterCount": 0,
+    "indicators": [
+      "发射与入轨后调试",
+      "公开数据规模与质量",
+      "科研成果及业务验收"
+    ],
+    "counterEvidence": [
+      {
+        "text": "发射成功不等于全部仪器与业务已验收，深空任务目标也不能在发射时计作已实现。"
+      }
+    ],
+    "judgment": "当前回溯研究，置信度中。卫星发射、探测器到达及数据发布属于不同成熟度节点，不能当作同一种突破累加。",
+    "verifyBy": "2026-12-13",
+    "revisions": [
+      {
+        "date": "2026-11-13",
+        "from": null,
+        "to": null,
+        "reason": "首次回溯研究建立；这是本轮判断，不是事件发生时的预测。"
+      }
+    ]
+  },
+  {
+    "id": "tr_science-manufacturing-transfer",
+    "title": "科研与制造能力转化",
+    "thesis": "基础科研、材料与制造培训增加能力储备，商业效果仍需独立验证。",
+    "domain": "global",
+    "firstSeen": "2026-11-13",
+    "status": "emerging",
+    "confidence": null,
+    "evidenceCount": 3,
+    "supportCount": 3,
+    "counterCount": 0,
+    "indicators": [
+      "实验可复现与负结果",
+      "培训交付及企业采用",
+      "材料产量与应用验证"
+    ],
+    "counterEvidence": [
+      {
+        "text": "CMS未发现新粒子属于重要负结果；材料纯度和培训开放本身不能证明商业生产效率已经提升。"
+      }
+    ],
+    "judgment": "当前回溯研究，置信度中低。不同领域节点用于观察从知识到生产能力的链条，不能把它们合成统一技术成熟度。",
+    "verifyBy": "2026-12-13",
+    "revisions": [
+      {
+        "date": "2026-11-13",
+        "from": null,
+        "to": null,
+        "reason": "首次回溯研究建立；这是本轮判断，不是事件发生时的预测。"
+      }
+    ]
+  },
+  {
+    "id": "tr_labour-demographic-adjustment",
+    "title": "就业与人口流动",
+    "thesis": "就业、实际工资和移民流量呈分化，人口流动变化不能直接解释就业结果。",
+    "domain": "global",
+    "firstSeen": "2026-11-13",
+    "status": "emerging",
+    "confidence": null,
+    "evidenceCount": 3,
+    "supportCount": 3,
+    "counterCount": 0,
+    "indicators": [
+      "就业率与实际工资",
+      "永久移民流量及构成",
+      "不同年龄和地区分布"
+    ],
+    "counterEvidence": [
+      {
+        "text": "就业总量上升并不代表所有群体实际工资改善；移民下降也不等于劳动市场压力自动减轻。"
+      }
+    ],
+    "judgment": "当前回溯研究，置信度中低。跨国监测显示就业总量与家庭感受可能分离；统计范围不同，不推断简单因果。",
+    "verifyBy": "2026-12-13",
+    "revisions": [
+      {
+        "date": "2026-11-13",
+        "from": null,
+        "to": null,
+        "reason": "首次回溯研究建立；这是本轮判断，不是事件发生时的预测。"
+      }
+    ]
+  },
+  {
+    "id": "tr_health-translation",
+    "title": "新疗法与卫生可及性",
+    "thesis": "新疗法监管节点和公共卫生改善并行，效果、支付与可及性仍需分别验证。",
+    "domain": "global",
+    "firstSeen": "2026-11-13",
+    "status": "emerging",
+    "confidence": null,
+    "evidenceCount": 5,
+    "supportCount": 5,
+    "counterCount": 0,
+    "indicators": [
+      "监管适应症及批准条件",
+      "临床证据和长期随访",
+      "地区消除与医疗人才供给"
+    ],
+    "counterEvidence": [
+      {
+        "text": "加速批准需要后续验证，适应症扩展不代表所有患者适用；公共卫生目标达成也不等于病原体全球根除。"
+      }
+    ],
+    "judgment": "当前回溯研究，置信度中。监管公告与卫生机构报告可核实节点；疾病、地区和证据阶段不同，不可把条数当作疗效比较。",
+    "verifyBy": "2026-12-13",
+    "revisions": [
+      {
+        "date": "2026-11-13",
+        "from": null,
+        "to": null,
+        "reason": "首次回溯研究建立；这是本轮判断，不是事件发生时的预测。"
+      }
+    ]
+  },
+  {
+    "id": "tr_global-growth-frictions",
+    "title": "增长与贸易摩擦",
+    "thesis": "全球增长和贸易在冲击下保持韧性但前景分化，机构预测会随条件变化修订。",
+    "domain": "global",
+    "firstSeen": "2026-11-13",
+    "status": "emerging",
+    "confidence": null,
+    "evidenceCount": 5,
+    "supportCount": 5,
+    "counterCount": 0,
+    "indicators": [
+      "同一机构预测修订",
+      "贸易量与晴雨表",
+      "不同地区增长差异"
+    ],
+    "counterEvidence": [
+      {
+        "text": "IMF七月与十月数字不同属于预测修订；晴雨表是先行指标，不是全年贸易最终结果。"
+      }
+    ],
+    "judgment": "当前回溯研究，置信度中。多家机构的预测与监测描绘不同侧面，方法和发布时间有别，不能把数值差异直接当作谁预测错误。",
+    "verifyBy": "2026-12-13",
+    "revisions": [
+      {
+        "date": "2026-11-13",
+        "from": null,
+        "to": null,
+        "reason": "首次回溯研究建立；这是本轮判断，不是事件发生时的预测。"
+      }
+    ]
+  },
+  {
+    "id": "tr_ai-platform-expansion",
+    "title": "AI进入系统与服务",
+    "thesis": "AI正进入系统助手和健康服务，分发规则及用户采用决定商业落地程度。",
+    "domain": "global",
+    "firstSeen": "2026-11-13",
+    "status": "emerging",
+    "confidence": null,
+    "evidenceCount": 3,
+    "supportCount": 3,
+    "counterCount": 0,
+    "indicators": [
+      "宣布功能与真实开放地区",
+      "用户权限和健康声明边界",
+      "应用收费及分发条件"
+    ],
+    "counterEvidence": [
+      {
+        "text": "公司公告不能独立验证实际效果；健康评分不是医学诊断，分发收费变化也不代表开发者净收益必然增加。"
+      }
+    ],
+    "judgment": "当前回溯研究，置信度中低。当前主要来自单一公司的官方公告，足以核实产品与规则宣布，不能推断全行业采用率。",
+    "verifyBy": "2026-12-13",
+    "revisions": [
+      {
+        "date": "2026-11-13",
+        "from": null,
+        "to": null,
+        "reason": "首次回溯研究建立；这是本轮判断，不是事件发生时的预测。"
+      }
+    ]
+  },
+  {
+    "id": "tr_advanced-energy-validation",
+    "title": "先进能源走向验证",
+    "thesis": "先进核能与聚变正在推进试验及供应链准备，但距离规模商业供能仍有多道门槛。",
+    "domain": "global",
+    "firstSeen": "2026-11-13",
+    "status": "emerging",
+    "confidence": null,
+    "evidenceCount": 5,
+    "supportCount": 5,
+    "counterCount": 0,
+    "indicators": [
+      "临界试验与持续功率运行",
+      "监管许可及建设进度",
+      "供应链资助与实际交付"
+    ],
+    "counterEvidence": [
+      {
+        "text": "临界试验、补贴和路线图均不能证明成本、寿命及大规模商业部署已过关。"
+      }
+    ],
+    "judgment": "当前回溯研究，置信度中。官方公告支持试验、资助与路线图节点；零功率临界不等于商业发电，路线图不构成投运承诺。",
+    "verifyBy": "2026-12-13",
+    "revisions": [
+      {
+        "date": "2026-11-13",
+        "from": null,
+        "to": null,
+        "reason": "首次回溯研究建立；这是本轮判断，不是事件发生时的预测。"
+      }
+    ]
+  },
+  {
+    "id": "tr_climate-food-inflation",
+    "title": "气候与粮食韧性",
+    "thesis": "变暖和厄尔尼诺风险持续影响粮食系统，但饥饿与食品价格不会同向机械变化。",
+    "domain": "global",
+    "firstSeen": "2026-11-09",
+    "status": "emerging",
+    "confidence": null,
+    "evidenceCount": 6,
+    "supportCount": 6,
+    "counterCount": 0,
+    "indicators": [
+      "全球温度与ENSO概率",
+      "粮食价格及收成",
+      "饥饿人口与地区差异"
+    ],
+    "counterEvidence": [
+      {
+        "text": "联合国粮食报告显示全球饥饿人数下降，说明气候压力并不意味着全球粮食结果只会恶化。"
+      }
+    ],
+    "judgment": "当前回溯研究，置信度中。气候监测与风险预测支持压力存在；粮食安全还受贸易、收入和政策影响，不能把模型风险直接写成损失事实。",
+    "verifyBy": "2026-12-13",
     "revisions": [
       {
         "date": "2026-11-13",
         "from": null,
         "to": null,
         "reason": "首次建立，阶段emerging，证据仅1条"
+      },
+      {
+        "date": "2026-11-13",
+        "from": null,
+        "to": null,
+        "reason": "本轮依据已核实原文收敛命题并补反证；上一版完整判断保存在history/takeover-20261113对应记录，不将旧结论事后抹去。"
       }
     ]
   },
   {
     "id": "tr_geopolitics-energy-premium",
-    "title": "中东冲突把能源风险溢价结构性抬高",
-    "thesis": "中东冲突把能源风险溢价结构性抬高，油价中枢高于战前",
+    "title": "能源供需双重冲击",
+    "thesis": "石油供应与运输约束同时压低需求，供需双弱使能源价格判断更复杂。",
     "domain": "global",
     "firstSeen": "2026-08-28",
-    "status": "strengthening",
+    "status": "emerging",
     "confidence": null,
-    "evidenceCount": 1,
-    "supportCount": 1,
-    "counterCount": 0,
+    "evidenceCount": 6,
+    "supportCount": 5,
+    "counterCount": 1,
     "indicators": [
-      "布伦特原油',  — 一度突破90美元/桶",
-      "霍尔木兹通行量',  — 受阻",
-      "航运保险成本',  — 待接入"
+      "全球供应及需求修订",
+      "可观察库存变化",
+      "运输恢复与炼化开工率"
     ],
-    "judgment": "置信度中。供给冲击明确，但需求下修是反向力量；观察布伦特能否站稳85美元以上。",
-    "verifyBy": "2027-01-31",
+    "counterEvidence": [
+      {
+        "text": "需求下降可能削弱价格支撑，供应恢复也会压低溢价；不能只用冲突持续时间断言结构变化。"
+      }
+    ],
+    "judgment": "当前回溯研究，置信度中。连续月报支持供需同时受冲击，但数据会修订；目前不足以认定油价中枢已经永久抬高。",
+    "verifyBy": "2026-12-13",
     "revisions": [
       {
         "date": "2026-11-13",
         "from": null,
         "to": null,
         "reason": "首次建立，阶段strengthening"
+      },
+      {
+        "date": "2026-11-13",
+        "from": null,
+        "to": null,
+        "reason": "本轮依据已核实原文收敛命题并补反证；上一版完整判断保存在history/takeover-20261113对应记录，不将旧结论事后抹去。"
       }
     ]
   },
   {
     "id": "tr_cn-nev-demand-shift",
-    "title": "中国新能源车的增长动力由内需转向出口",
+    "title": "新能源车需求换挡",
     "thesis": "中国新能源车的增长动力由内需转向出口，国内需求持续收缩",
     "domain": "global",
     "firstSeen": "2026-08-12",
     "status": "emerging",
     "confidence": null,
-    "evidenceCount": 1,
-    "supportCount": 1,
+    "evidenceCount": 2,
+    "supportCount": 2,
     "counterCount": 0,
     "indicators": [
-      "NEV国内销量同比',  — 连续7个月降幅超20%",
-      "NEV出口同比',  — 10月+1.4倍",
-      "NEV占新车销量比',  — 10月64.3%"
+      "NEV国内销量同比：连续7个月降幅超20%",
+      "NEV出口同比：10月+1.4倍",
+      "NEV占新车销量比：10月64.3%"
+    ],
+    "counterEvidence": [
+      {
+        "text": "占比上升部分来自燃油车下滑更快，不等于NEV绝对需求扩张"
+      },
+      {
+        "text": "出口面临欧盟与新兴市场关税及本地化要求，1.4倍增速难以线性外推"
+      },
+      {
+        "text": "2025年同期基数偏低，需看两年复合增速"
+      }
     ],
     "judgment": "置信度中低。出口补位成立，但“内需持续收缩”只有7个月证据，且受基数与政策扰动；若国内销量降幅收窄至10%以内则降级。",
     "verifyBy": "2027-01-31",
@@ -82,7 +432,7 @@
   },
   {
     "id": "tr_cn-demographic-decline",
-    "title": "中国结婚与出生人数进入加速下行段",
+    "title": "婚育与人口下行",
     "thesis": "中国结婚与出生人数进入加速下行段，2027年后出生人口再下台阶",
     "domain": "global",
     "firstSeen": "2026-08-12",
@@ -92,9 +442,17 @@
     "supportCount": 1,
     "counterCount": 0,
     "indicators": [
-      "结婚登记对数',  — 前三季度464.8万对，-9.8%",
-      "出生人口',  — 2025年792万，首次跌破800万",
-      "育儿补贴覆盖',  — 2026年发放2516万人"
+      "结婚登记对数：前三季度464.8万对，-9.8%",
+      "出生人口：2025年792万，首次跌破800万",
+      "育儿补贴覆盖：2026年发放2516万人"
+    ],
+    "counterEvidence": [
+      {
+        "text": "育儿补贴与婚假延长可能带来短期反弹，2025年就曾出现"
+      },
+      {
+        "text": "结婚数不等于生育数，未婚生育与再婚口径变化会影响结论"
+      }
     ],
     "judgment": "置信度中高。领先指标连续下行，但政策脉冲会制造季度波动，需看两年复合增速。",
     "verifyBy": "2027-02-28",
@@ -109,82 +467,115 @@
   },
   {
     "id": "tr_global-rates-rehike",
-    "title": "全球利率在2026年重新上行",
-    "thesis": "全球利率在2026年重新上行，美联储与日本央行同步收紧",
+    "title": "主要央行再收紧",
+    "thesis": "2026年部分主要央行重新收紧，融资条件的变化需分地区跟踪。",
     "domain": "global",
     "firstSeen": "2026-06-16",
-    "status": "strengthening",
+    "status": "emerging",
     "confidence": null,
-    "evidenceCount": 1,
-    "supportCount": 1,
+    "evidenceCount": 5,
+    "supportCount": 5,
     "counterCount": 0,
     "indicators": [
-      "美联储政策利率',  — 2026-09加息至3.75%-4.00%",
-      "日本央行政策利率',  — 6月1%、9月升至31年高位",
-      "10年期美债收益率',  — 2026-11-05为4.87%"
+      "政策利率与投票分歧",
+      "通胀及实际工资变化",
+      "后续会议指引"
     ],
-    "judgment": "置信度中高。两家主要央行同向收紧，但市场对终点分歧大；观察核心PCE与12月会议。",
-    "verifyBy": "2026-12-31",
+    "counterEvidence": [
+      {
+        "text": "政策利率上调不等于长期利率必然上涨；就业走弱和通胀回落可能改变政策。"
+      }
+    ],
+    "judgment": "当前回溯研究，置信度中。ECB、BOJ与Fed的公告支持多个地区收紧的观察；不能概括为所有央行同步，也不能从单次加息推断无限持续。",
+    "verifyBy": "2026-12-13",
     "revisions": [
       {
         "date": "2026-11-13",
         "from": null,
         "to": null,
         "reason": "首次建立，阶段strengthening"
+      },
+      {
+        "date": "2026-11-13",
+        "from": null,
+        "to": null,
+        "reason": "本轮依据已核实原文收敛命题并补反证；上一版完整判断保存在history/takeover-20261113对应记录，不将旧结论事后抹去。"
       }
     ]
   },
   {
     "id": "tr_ai-power-constraint",
-    "title": "AI算力扩张的约束正从芯片供给转向电力与并网能力",
-    "thesis": "AI算力扩张的约束正从芯片供给转向电力与并网能力",
+    "title": "算力与供电约束",
+    "thesis": "AI算力投资持续扩张，供电、并网及排放边界成为需要并行跟踪的约束。",
     "domain": "global",
     "firstSeen": "2026-06-03",
-    "status": "strengthening",
+    "status": "emerging",
     "confidence": null,
-    "evidenceCount": 2,
-    "supportCount": 2,
+    "evidenceCount": 5,
+    "supportCount": 5,
     "counterCount": 0,
     "indicators": [
-      "全球数据中心电力需求',  — 2026年161GW，同比+31%",
-      "科技公司资本开支 vs 油气上游',  — IEA：五家科技公司已超过全球油气上游投资",
-      "SMR/核电建设许可',  — NRC首座SMR建设许可"
+      "数据中心收入与资本投入",
+      "并网周期及供电结构",
+      "已投运容量与公告项目差距"
     ],
-    "judgment": "置信度中高。需求侧证据强（161GW、+31%），供给侧才刚起步；真正可验证的是2027年是否出现因电力延期上线的数据中心。",
-    "verifyBy": "2027-01-31",
+    "counterEvidence": [
+      {
+        "text": "BNEF强调公告项目成熟度不同，181GW不是确定建成容量；其2035年用电预测仍依赖情景假设。"
+      }
+    ],
+    "judgment": "当前回溯研究，置信度中。芯片公司收入与BNEF供电报告提供不同侧面证据；不能因此断言芯片约束已完全消失。",
+    "verifyBy": "2026-12-13",
     "revisions": [
       {
         "date": "2026-11-13",
         "from": null,
         "to": null,
         "reason": "首次建立，阶段strengthening，连接数据中心电力与SMR两条证据链"
+      },
+      {
+        "date": "2026-11-13",
+        "from": null,
+        "to": null,
+        "reason": "本轮依据已核实原文收敛命题并补反证；上一版完整判断保存在history/takeover-20261113对应记录，不将旧结论事后抹去。"
       }
     ]
   },
   {
     "id": "tr_cn-industrial-margin-repair",
-    "title": "中国规上工业利润增速持续快于营收增速",
-    "thesis": "中国规上工业利润增速持续快于营收增速，利润率在修复而非仅靠价格反弹",
+    "title": "工业利润与行业分化",
+    "thesis": "规上工业利润率同比修复，同时行业收入与利润增长明显分化。",
     "domain": "global",
     "firstSeen": "2026-05-27",
-    "status": "strengthening",
+    "status": "emerging",
     "confidence": null,
-    "evidenceCount": 2,
-    "supportCount": 2,
+    "evidenceCount": 5,
+    "supportCount": 5,
     "counterCount": 0,
     "indicators": [
-      "营业收入利润率（累计）',  — 2026年1-8月5.66%，同比+0.44pp",
-      "利润总额同比',  — 连续4个月回落但仍两位数",
-      "分行业利润分化',  — 电子、有色、煤炭高增，下游消费品偏弱"
+      "同期间累计营业收入利润率",
+      "分行业收入与利润同比",
+      "库存与应收账款变化"
     ],
-    "judgment": "置信度中。利润率修复有连续6个月证据，但分化明显：上游与电子强、地产链与光伏弱。若9-10月利润率回落至5.5%以下，趋势降级为stable。",
-    "verifyBy": "2026-12-15",
+    "counterEvidence": [
+      {
+        "text": "1—8月汽车利润下降16%、钢铁下降62.4%，整体利润增长没有覆盖所有行业。"
+      }
+    ],
+    "judgment": "当前回溯研究，置信度中。已核实累计利润及利润率数据支持修复观察，行业分化明显；累计口径不能直接相减推算单月走势。",
+    "verifyBy": "2026-12-13",
     "revisions": [
       {
         "date": "2026-11-13",
         "from": null,
         "to": null,
         "reason": "首次建立，阶段strengthening，证据为1-8月利润数据"
+      },
+      {
+        "date": "2026-11-13",
+        "from": null,
+        "to": null,
+        "reason": "本轮依据已核实原文收敛命题并补反证；上一版完整判断保存在history/takeover-20261113对应记录，不将旧结论事后抹去。"
       }
     ]
   }

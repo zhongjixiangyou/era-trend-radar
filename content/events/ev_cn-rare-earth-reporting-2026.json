@@ -1,0 +1,84 @@
+{
+  "id": "ev_cn-rare-earth-reporting-2026",
+  "dedupeKey": "ev:f81cb92465bc",
+  "title": "商务部完善战略矿产出口管制举报机制，7月1日实施",
+  "summary": "商务部公告2026年第26号：6月24日发布、7月1日实施，列明13类可举报的战略矿产两用物项出口管制违法行为。",
+  "facts": [
+    "商务部公告2026年第26号落款及所列发布日期为6月24日，实施日期7月1日；本页发布时间为7月8日09:52。",
+    "公告列明13类可举报行为，包括未经许可出口、超范围出口、以拆分等方式规避许可、绕道第三国、非法对外转移相关技术等。",
+    "公告依据《出口管制法》《对外贸易法》制定，任何组织和个人有权举报。"
+  ],
+  "analysis": "执法从许可端延伸到社会举报端，覆盖技术转移与第三国绕道，对企业合规与转口贸易审查提出更高要求。实际执行强度仍取决于受理与查处力度。",
+  "category": "中国经济与产业",
+  "region": "中国",
+  "occurredAt": "2026-06-24",
+  "firstReportedAt": "2026-07-08T09:52:00+08:00",
+  "collectedAt": "2026-11-13T14:58:00+08:00",
+  "sources": [
+    {
+      "url": "https://www.mofcom.gov.cn/zcfb/zgdwjjmywg/art/2026/art_d32fd9d37c224be88b9d6e79c7b14ff0.html",
+      "title": "中华人民共和国商务部公告2026年第26号",
+      "publisher": "商务部",
+      "publishedAt": "2026-07-08T09:52:00+08:00",
+      "type": "primary",
+      "note": ""
+    }
+  ],
+  "scores": {
+    "structural": 17,
+    "scope": 12,
+    "signal": 12,
+    "delta": 11,
+    "timeliness": 4,
+    "crossDomain": 8,
+    "rationale": {
+      "structural": "涉及出口管制执法链条",
+      "scope": "影响战略矿产贸易相关企业",
+      "signal": "举报机制是制度性动作",
+      "delta": "相较既有许可管理是新增环节",
+      "timeliness": "6月发布、7月实施",
+      "crossDomain": "牵连新能源、半导体供应链"
+    },
+    "total": 64,
+    "scorerVersion": "score/v1.2"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "独立复核亲读官方原始正文并修正事实；尚非多个独立统计来源交叉验证"
+  },
+  "evidenceGrade": "single_primary",
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_geopolitics-energy-premium",
+      "direction": "support",
+      "reason": "关键矿产管制收紧，强化地缘溢价逻辑"
+    }
+  ],
+  "revisions": [
+    {
+      "at": "2026-11-13T06:58:16+00:00",
+      "by": "Codex-global-review",
+      "note": "独立复核原文后pending→published；保留公告标注6月24日，但所取得网页发布为7月8日；最早报道保守记本页可核时间，不伪造零点发布时间。"
+    }
+  ],
+  "verification": {
+    "status": "passed",
+    "method": "web.run/open 官方原文独立复核",
+    "checkedAt": "2026-11-13T06:58:16+00:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "商务部公告2026年第26号落款及所列发布日期为6月24日，实施日期7月1日；本页发布时间为7月8日09:52。；公告列明13类可举报行为，包括未经许可出口、超范围出口、以拆分等方式规避许可、绕道第三国、非法对外转移相关技术等。；公告依据《出口管制法》《对外贸易法》制定，任何组织和个人有权举报。"
+      }
+    ],
+    "note": "来源正文逐项核对；修正日期/来源类型及无证分析。网页引用：turn28view5:2-41,81-85"
+  },
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13T06:58:00Z",
+    "note": "事后补录：事件发生在先，本记录于 2026-11-13 补入；不构成当时预测。"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "tr_cn-policy-power-system",
+  "title": "能源转型制度建设",
+  "thesis": "能源转型政策正在推进，执行效果需用投资、并网和运行数据检验。",
+  "firstSeenAt": "2026-11-13T15:00:17+08:00",
+  "stage": "emerging",
+  "indicators": [
+    "连续多期同口径数据变化",
+    "政策执行与实际效果之间的差距"
+  ],
+  "evidenceRefs": [
+    "ev_cn-carbon-peak-plan-2026",
+    "ev_cn-renewable-plan-2026",
+    "ev_cn-power-system-plan-2026"
+  ],
+  "counterEvidence": [
+    {
+      "text": "政策发布不等于投资、并网或减排绩效实现，需观察执行细则与完成率。"
+    }
+  ],
+  "currentJudgment": "本轮回溯研究，置信度中。三份官方政策表明制度准备推进，尚不能证明项目已全部落地或目标完成。",
+  "reviewBy": "2026-12-13T00:00:00+08:00",
+  "revisions": [
+    {
+      "at": "2026-11-13T15:00:17+08:00",
+      "by": "Codex",
+      "note": "首次按核实原文建立回溯观察，不作为当时判断。"
+    }
+  ]
+}

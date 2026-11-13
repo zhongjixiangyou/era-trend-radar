@@ -1,0 +1,33 @@
+{
+  "id": "tr_global-growth-frictions",
+  "firstSeenAt": "2026-11-13T14:57:43+08:00",
+  "revisions": [
+    {
+      "at": "2026-11-13T14:57:43+08:00",
+      "by": "Codex",
+      "note": "首次回溯研究建立；这是本轮判断，不是事件发生时的预测。"
+    }
+  ],
+  "title": "增长与贸易摩擦",
+  "thesis": "全球增长和贸易在冲击下保持韧性但前景分化，机构预测会随条件变化修订。",
+  "stage": "emerging",
+  "indicators": [
+    "同一机构预测修订",
+    "贸易量与晴雨表",
+    "不同地区增长差异"
+  ],
+  "evidenceRefs": [
+    "ev_wto-goods-barometer-20260605",
+    "ev_imf-weo-update-20260708",
+    "ev_worldbank-gep-20260611",
+    "ev_imf-weo-20261013",
+    "ev_wto-trade-outlook-20261008"
+  ],
+  "counterEvidence": [
+    {
+      "text": "IMF七月与十月数字不同属于预测修订；晴雨表是先行指标，不是全年贸易最终结果。"
+    }
+  ],
+  "currentJudgment": "当前回溯研究，置信度中。多家机构的预测与监测描绘不同侧面，方法和发布时间有别，不能把数值差异直接当作谁预测错误。",
+  "reviewBy": "2026-12-13T00:00:00+08:00"
+}

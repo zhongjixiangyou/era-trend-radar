@@ -1,0 +1,85 @@
+{
+  "id": "ev_cn-us-trade-consult-2026",
+  "dedupeKey": "ev:416f7822793a",
+  "title": "中美同意成立政府间贸易理事会和投资理事会",
+  "summary": "商务部5月20日解读：中美同意成立政府间贸易理事会和投资理事会；部分关税与非关税措施暂停至2026年11月10日。",
+  "facts": [
+    "商务部美大司负责人5月20日就中美经贸磋商初步成果作解读，双方同意成立政府间贸易理事会和投资理事会。",
+    "双方经贸团队将尽快就理事会架构、职能、运行模式形成具体安排。",
+    "2025年10月吉隆坡联合安排将部分关税和非关税措施暂停实施至2026年11月10日，含美方24%对等关税及中方相关反制。",
+    "暂停范围还包括美方出口管制50%穿透性规则、对华海事物流造船业301调查措施及中方相关反制。"
+  ],
+  "analysis": "从“危机式应对”转向“机制化管理”目前是措辞与框架层面的进展，理事会能否落地取决于后续安排。关税暂停有明确到期日，11月10日前后是最直接的观察窗口。",
+  "category": "全球宏观",
+  "region": "中美",
+  "occurredAt": "2026-05-20",
+  "firstReportedAt": "2026-05-20T11:23:00+08:00",
+  "collectedAt": "2026-11-13T14:58:00+08:00",
+  "sources": [
+    {
+      "url": "https://www.mofcom.gov.cn/syxwfb/art/2026/art_3e89743a8d5d4a95bccdda685830afbd.html",
+      "title": "商务部美大司负责人解读中美经贸磋商初步成果",
+      "publisher": "商务部",
+      "publishedAt": "2026-05-20",
+      "type": "primary",
+      "note": ""
+    }
+  ],
+  "scores": {
+    "structural": 20,
+    "scope": 17,
+    "signal": 14,
+    "delta": 12,
+    "timeliness": 4,
+    "crossDomain": 9,
+    "rationale": {
+      "structural": "涉及关税、出口管制与产业调查多条制度链",
+      "scope": "影响两国贸易与全球供应链",
+      "signal": "理事会与暂停安排是具体机制",
+      "delta": "相较此前对抗状态是方向性变化",
+      "timeliness": "5月发布，距到期日仍有观察价值",
+      "crossDomain": "牵连航运、半导体与农产品"
+    },
+    "total": 76,
+    "scorerVersion": "score/v1.2"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "独立复核亲读官方原始正文并修正事实；尚非多个独立统计来源交叉验证"
+  },
+  "evidenceGrade": "single_primary",
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_geopolitics-energy-premium",
+      "direction": "weaken",
+      "reason": "磋商机制化降低短期关税升级概率"
+    }
+  ],
+  "revisions": [
+    {
+      "at": "2026-11-13T06:58:16+00:00",
+      "by": "Codex-global-review",
+      "note": "独立复核原文后pending→published；标题“建立”改为“同意成立”，与尚待具体安排一致；10:00改为网页明确11:23。"
+    }
+  ],
+  "verification": {
+    "status": "passed",
+    "method": "web.run/open 官方原文独立复核",
+    "checkedAt": "2026-11-13T06:58:16+00:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "商务部美大司负责人5月20日就中美经贸磋商初步成果作解读，双方同意成立政府间贸易理事会和投资理事会。；双方经贸团队将尽快就理事会架构、职能、运行模式形成具体安排。；2025年10月吉隆坡联合安排将部分关税和非关税措施暂停实施至2026年11月10日，含美方24%对等关税及中方相关反制。；暂停范围还包括美方出口管制50%穿透性规则、对华海事物流造船业301调查措施及中方相关反制。"
+      }
+    ],
+    "note": "来源正文逐项核对；修正日期/来源类型及无证分析。网页引用：turn29view0:2-37"
+  },
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13T06:58:00Z",
+    "note": "事后补录：事件发生在先，本记录于 2026-11-13 补入；不构成当时预测。"
+  }
+}

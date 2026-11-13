@@ -1,0 +1,109 @@
+{
+  "id": "ev_wmo-climate-update-20261109",
+  "dedupeKey": "ev:6f88a781d2b0",
+  "title": "WMO：2026年前九月全球温度高出工业化前约1.47℃",
+  "summary": "世界气象组织在气候大会发布更新，2026年一至九月全球平均地表温度比工业化前高约1.47℃，过去四年占据最暖年份前四位。报告并警示增强的厄尔尼诺将继续影响2027年风险。",
+  "facts": [
+    "WMO于11月9日发布2026年气候状态更新。",
+    "2026年1—9月全球平均地表温度较工业化前高约1.47℃。",
+    "过去四年为有记录以来最暖的四年。"
+  ],
+  "analysis": "持续高温增加农业、电网和保险承保压力，需把慢性变暖与厄尔尼诺的短期叠加区分。当前温度只覆盖前九月，全年值仍可能变化；区域损失不能由全球平均温度直接推算。",
+  "category": "未来趋势",
+  "region": "全球",
+  "occurredAt": "2026-11-09",
+  "firstReportedAt": "2026-11-09",
+  "collectedAt": "2026-11-13T06:55:07+00:00",
+  "sources": [
+    {
+      "url": "https://wmo.int/news/media-centre/state-of-climate-2026-gives-new-meaning-phrase-charts",
+      "title": "State of the climate in 2026 gives new meaning to phrase off the charts",
+      "publisher": "WMO",
+      "publishedAt": "2026-11-09",
+      "type": "primary",
+      "note": "亲读官方公开正文；日期为本次公告发布日"
+    }
+  ],
+  "scores": {
+    "structural": 24,
+    "scope": 20,
+    "signal": 18,
+    "delta": 11,
+    "timeliness": 5,
+    "crossDomain": 10,
+    "total": 88,
+    "rationale": {
+      "structural": "持续增温影响多年资产韧性",
+      "scope": "全球气候与各地区经济活动",
+      "signal": "官方观测更新覆盖前九个月",
+      "delta": "最暖年份集中并叠加厄尔尼诺",
+      "timeliness": "本轮事后补录，时效按历史研究计分",
+      "crossDomain": "粮食能源保险与公共健康联动"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "已核对单一官方原文；机构预测与统计可能修订，不表示独立交叉验证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "passed",
+    "method": "web.run/open 官方原文正文",
+    "checkedAt": "2026-11-13T06:55:07+00:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "WMO于11月9日发布2026年气候状态更新。；2026年1—9月全球平均地表温度较工业化前高约1.47℃。；过去四年为有记录以来最暖的四年。"
+      }
+    ],
+    "note": "日期对应官方发布这一事件；统计所属期间见事实，预测未当作已实现结果"
+  },
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_climate-food-inflation",
+      "direction": "support",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ],
+  "revisions": [
+    {
+      "at": "2026-11-13T06:55:07+00:00",
+      "by": "Codex-global",
+      "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+    }
+  ],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13",
+    "note": "本轮依据当时发布的官方原文开展回溯研究，非当时预测；不推定发生日及来源窗口可比性"
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-13T06:55:07+00:00",
+      "by": "Codex-global",
+      "note": "本轮回溯首次评分",
+      "scores": {
+        "structural": 24,
+        "scope": 20,
+        "signal": 18,
+        "delta": 11,
+        "timeliness": 5,
+        "crossDomain": 10,
+        "total": 88
+      }
+    }
+  ],
+  "linkHistory": [
+    {
+      "at": "2026-11-13T14:57:43+08:00",
+      "trendId": "tr_climate-food-inflation",
+      "direction": "support",
+      "action": "add",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ]
+}

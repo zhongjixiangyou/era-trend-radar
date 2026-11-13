@@ -1,0 +1,109 @@
+{
+  "id": "ev_wto-goods-barometer-20260605",
+  "dedupeKey": "ev:0655b0634492",
+  "title": "WTO货物贸易晴雨表101.7，电子元件需求支撑韧性",
+  "summary": "世界贸易组织发布货物贸易晴雨表，指数101.7低于一月102.3，但仍高于100趋势线。电子元件指数105.5明显偏强，农业原料和汽车略低于趋势线，全球贸易显现由科技需求支撑的分化。",
+  "facts": [
+    "6月5日WTO货物贸易晴雨表为101.7，低于一月102.3。",
+    "电子元件指数105.5，出口订单100.5。",
+    "农业原料98.9、汽车99.8，均略低于100基准。"
+  ],
+  "analysis": "贸易未同步衰退，AI设备需求可能抵消部分能源和运输冲击。但晴雨表是相对趋势的领先指数，不是增长百分比；需用后续季度实物贸易量验证，尤其关注行业结构差异。",
+  "category": "全球宏观",
+  "region": "全球",
+  "occurredAt": "2026-06-05",
+  "firstReportedAt": "2026-06-05",
+  "collectedAt": "2026-11-13T06:55:07+00:00",
+  "sources": [
+    {
+      "url": "https://www.wto.org/english/news_e/news26_e/wtoi_05jun26_405_e.htm",
+      "title": "Goods trade holding up despite Middle East conflict and high energy prices",
+      "publisher": "WTO",
+      "publishedAt": "2026-06-05",
+      "type": "primary",
+      "note": "亲读官方公开正文；日期为本次公告发布日"
+    }
+  ],
+  "scores": {
+    "structural": 19,
+    "scope": 20,
+    "signal": 16,
+    "delta": 9,
+    "timeliness": 2,
+    "crossDomain": 8,
+    "total": 74,
+    "rationale": {
+      "structural": "行业分化影响全球供应链需求结构",
+      "scope": "全球货物贸易及主要行业",
+      "signal": "领先指标须由后续贸易量检验",
+      "delta": "总指数放缓而电子元件明显偏强",
+      "timeliness": "本轮事后补录，时效按历史研究计分",
+      "crossDomain": "AI投资运输能源与制造相连"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "已核对单一官方原文；机构预测与统计可能修订，不表示独立交叉验证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "passed",
+    "method": "web.run/open 官方原文正文",
+    "checkedAt": "2026-11-13T06:55:07+00:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "6月5日WTO货物贸易晴雨表为101.7，低于一月102.3。；电子元件指数105.5，出口订单100.5。；农业原料98.9、汽车99.8，均略低于100基准。"
+      }
+    ],
+    "note": "日期对应官方发布这一事件；统计所属期间见事实，预测未当作已实现结果"
+  },
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_global-growth-frictions",
+      "direction": "support",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ],
+  "revisions": [
+    {
+      "at": "2026-11-13T06:55:07+00:00",
+      "by": "Codex-global",
+      "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+    }
+  ],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13",
+    "note": "本轮依据当时发布的官方原文开展回溯研究，非当时预测；不推定发生日及来源窗口可比性"
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-13T06:55:07+00:00",
+      "by": "Codex-global",
+      "note": "本轮回溯首次评分",
+      "scores": {
+        "structural": 19,
+        "scope": 20,
+        "signal": 16,
+        "delta": 9,
+        "timeliness": 2,
+        "crossDomain": 8,
+        "total": 74
+      }
+    }
+  ],
+  "linkHistory": [
+    {
+      "at": "2026-11-13T14:57:43+08:00",
+      "trendId": "tr_global-growth-frictions",
+      "direction": "support",
+      "action": "add",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "id": "ev_boj-jgb-plan-20260616",
+  "dedupeKey": "ev:0851b8f5a45c",
+  "title": "日本央行公布购债缩减路径，2027年四月后每月约2万亿日元",
+  "summary": "日本央行决定每季度把计划月度国债购买额减少约2000亿日元，延续至2027年一季度，随后每月约2万亿日元。央行同时保留长期利率快速上升时灵活增加购买和调整计划的权力。",
+  "facts": [
+    "6月16日日本央行以7比1多数通过国债购买计划。",
+    "原则上每季度把计划月购债额减少约2000亿日元，直至2027年一季度。",
+    "2027年4月起计划月购债约2万亿日元；利率急升时可灵活干预。"
+  ],
+  "analysis": "减少央行购买可能提升市场定价作用并改变久期供需，但可变干预意味着缩表并非机械执行。需要观察拍卖、期限溢价和市场流动性；本条为资产购买安排，与同日短期利率决策分开。",
+  "category": "全球宏观",
+  "region": "日本",
+  "occurredAt": "2026-06-16",
+  "firstReportedAt": "2026-06-16",
+  "collectedAt": "2026-11-13T06:55:07+00:00",
+  "sources": [
+    {
+      "url": "https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/k260616b.pdf",
+      "title": "Plan for the Outright Purchases of Japanese Government Bonds",
+      "publisher": "Bank of Japan",
+      "publishedAt": "2026-06-16",
+      "type": "primary",
+      "note": "亲读官方公开正文；日期为本次公告发布日"
+    }
+  ],
+  "scores": {
+    "structural": 21,
+    "scope": 16,
+    "signal": 20,
+    "delta": 11,
+    "timeliness": 2,
+    "crossDomain": 7,
+    "total": 77,
+    "rationale": {
+      "structural": "央行购债路径影响债市供需结构",
+      "scope": "主要影响日本债市与跨境投资",
+      "signal": "政策计划给出逐季金额与例外",
+      "delta": "明确递减至每月约两万亿的路径",
+      "timeliness": "本轮事后补录，时效按历史研究计分",
+      "crossDomain": "财政融资与金融机构资产配置相连"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "已核对单一官方原文；机构预测与统计可能修订，不表示独立交叉验证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "passed",
+    "method": "web.run/open 官方原文正文",
+    "checkedAt": "2026-11-13T06:55:07+00:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "6月16日日本央行以7比1多数通过国债购买计划。；原则上每季度把计划月购债额减少约2000亿日元，直至2027年一季度。；2027年4月起计划月购债约2万亿日元；利率急升时可灵活干预。"
+      }
+    ],
+    "note": "日期对应官方发布这一事件；统计所属期间见事实，预测未当作已实现结果"
+  },
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_global-rates-rehike",
+      "direction": "support",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ],
+  "revisions": [
+    {
+      "at": "2026-11-13T06:55:07+00:00",
+      "by": "Codex-global",
+      "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+    }
+  ],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13",
+    "note": "本轮依据当时发布的官方原文开展回溯研究，非当时预测；不推定发生日及来源窗口可比性"
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-13T06:55:07+00:00",
+      "by": "Codex-global",
+      "note": "本轮回溯首次评分",
+      "scores": {
+        "structural": 21,
+        "scope": 16,
+        "signal": 20,
+        "delta": 11,
+        "timeliness": 2,
+        "crossDomain": 7,
+        "total": 77
+      }
+    }
+  ],
+  "linkHistory": [
+    {
+      "at": "2026-11-13T14:57:43+08:00",
+      "trendId": "tr_global-rates-rehike",
+      "direction": "support",
+      "action": "add",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ]
+}

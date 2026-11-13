@@ -84,22 +84,29 @@ const asOfCn = data.asOf.slice(0, 16).replace('T', ' ');
     <div class="filters" role="group" aria-label="领域排序">
       <span class="count-line" style="margin:0 8px 0 0">排序</span>
       <button class="chip" data-em-sort="state" aria-pressed="true">状态</button>
-      <button class="chip" data-em-sort="recent" aria-pressed="false">近 30 天事件</button>
+      <button class="chip" data-em-sort="growth" aria-pressed="false">增速</button>
       <button class="chip" data-em-sort="sources" aria-pressed="false">独立来源</button>
+      <button class="chip" data-em-sort="breakthrough" aria-pressed="false">最近突破</button>
     <span class="count-line" id="em-dir" style="margin-left:8px">降序 ↓</span>
     </div>
 
+    {domains.length === 0 ? (
+      <p class="em-note" id="em-empty">
+        本期没有可进入实时统计的领域：回溯补录不参与增速，需等采集链路产生带真实发生日的实时事件后才会出现。
+      </p>
+    ) : (
     <div class="ledger-scroll">
     <table class="ledger em-table">
       <thead>
         <tr>
-          <th>领域</th>
-          <th>状态</th>
-          <th class="r">近 30 天</th>
-          <th class="r">独立来源</th>
-          <th class="r">前 30 天</th>
-          <th class="r">近 7 天</th>
-          <th class="r">增速</th>
+          <th data-em-sort="name" aria-sort="none" tabindex="0" role="button">领域</th>
+          <th data-em-sort="state" aria-sort="none" tabindex="0" role="button">状态</th>
+          <th class="r" data-em-sort="recent" aria-sort="none" tabindex="0" role="button">近 30 天</th>
+          <th class="r" data-em-sort="sources" aria-sort="none" tabindex="0" role="button">独立来源</th>
+          <th class="r" data-em-sort="prior" aria-sort="none" tabindex="0" role="button">前 30 天</th>
+          <th class="r" data-em-sort="short" aria-sort="none" tabindex="0" role="button">近 7 天</th>
+          <th class="r" data-em-sort="growth" aria-sort="none" tabindex="0" role="button">增速</th>
+          <th class="r" data-em-sort="breakthrough" aria-sort="none" tabindex="0" role="button">突破</th>
           <th>判定</th>
         </tr>
       </thead>
@@ -107,9 +114,14 @@ const asOfCn = data.asOf.slice(0, 16).replace('T', ' ');
         {domains.map((d) => (
           <tr
             class="em-row"
+            data-name={name(d.id)}
             data-state={stateOrder[d.state] ?? 9}
             data-recent={d.recent.events}
             data-sources={d.recent.distinctSources}
+            data-prior={d.prior.events}
+            data-short={d.shortRecent.events}
+            data-growth={d.growthRatio === null ? '' : d.growthRatio}
+            data-breakthrough={d.recent.breakthroughEvents}
           >
             <td class="em-name-cell">{name(d.id)}</td>
             <td><span class={`status ${d.state}`}>{stateLabel[d.state] ?? d.state}</span></td>
@@ -118,12 +130,14 @@ const asOfCn = data.asOf.slice(0, 16).replace('T', ' ');
             <td class="num">{d.prior.events}</td>
             <td class="num">{d.shortRecent.events}</td>
             <td class="num">{pct(d.growthRatio)}</td>
+            <td class="num">{d.recent.breakthroughAvailable ? d.recent.breakthroughEvents : '—'}</td>
             <td class="em-reason">{d.reason}{d.lowBase ? ' · 低基数，不换算增长率' : ''}</td>
           </tr>
         ))}
       </tbody>
     </table>
     </div>
+    )}
     <p class="em-note">
       前 30 天不足 {data.rules.lowBasePrior} 条时标为低基数，只给原始计数、不换算增长率——从 0 涨到 1 不是「无限增长」。同一事件被十家转载只算 1 个来源。
     </p>
@@ -197,29 +211,57 @@ const asOfCn = data.asOf.slice(0, 16).replace('T', ' ');
   let currentKey = 'state';
   let dir = -1;
 
+  function val(row, key) {
+    if (key === 'name') return row.dataset.name || '';
+    const raw = row.dataset[key];
+    return raw === '' || raw === undefined ? null : Number(raw);
+  }
+
   function sortBy(key, direction) {
     rows
       .slice()
       .sort((a, b) => {
-        const av = Number(a.dataset[key]);
-        const bv = Number(b.dataset[key]);
+        const av = val(a, key);
+        const bv = val(b, key);
+        // 缺值（如低基数不换算的增速）永远排末，不补 0 冒充最小值
+        if (av === null && bv === null) return 0;
+        if (av === null) return 1;
+        if (bv === null) return -1;
+        if (typeof av === 'string') return av.localeCompare(bv, 'zh') * direction;
         if (av !== bv) return (bv - av) * direction;
-        return a.children[0].textContent.localeCompare(b.children[0].textContent, 'zh');
+        return (a.dataset.name || '').localeCompare(b.dataset.name || '', 'zh');
       })
       .forEach((r) => body.appendChild(r));
+
+    document.querySelectorAll('th[data-em-sort]').forEach((th) => {
+      th.setAttribute(
+        'aria-sort',
+        th.dataset.emSort === key ? (direction < 0 ? 'descending' : 'ascending') : 'none'
+      );
+    });
     const label = document.getElementById('em-dir');
     if (label) label.textContent = direction < 0 ? '降序 ↓' : '升序 ↑';
   }
 
-  document.querySelectorAll('[data-em-sort]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const key = btn.dataset.emSort;
-      dir = key === currentKey ? dir * -1 : -1;
-      currentKey = key;
-      sortBy(key, dir);
-      document
-        .querySelectorAll('[data-em-sort]')
-        .forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+  function activate(key) {
+    dir = key === currentKey ? dir * -1 : -1;
+    currentKey = key;
+    sortBy(key, dir);
+    document.querySelectorAll('[data-em-sort]').forEach((el) => {
+      if (el.tagName === 'TH') return;
+      el.setAttribute('aria-pressed', String(el.dataset.emSort === key));
     });
+  }
+
+  document.querySelectorAll('[data-em-sort]').forEach((el) => {
+    el.addEventListener('click', () => activate(el.dataset.emSort));
+    if (el.tagName === 'TH') {
+      el.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          activate(el.dataset.emSort);
+        }
+      });
+    }
   });
 </script>

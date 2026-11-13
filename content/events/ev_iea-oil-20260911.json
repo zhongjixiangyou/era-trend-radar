@@ -1,0 +1,109 @@
+{
+  "id": "ev_iea-oil-20260911",
+  "dedupeKey": "ev:774729d00313",
+  "title": "IEA九月报告再下调需求，八月石油库存减少9500万桶",
+  "summary": "国际能源署九月报告预计2026年石油需求同比减少250万桶/日，比八月预测降幅再扩大94万桶；八月全球供应降至每日1.001亿桶，观察库存减少9500万桶，海湾供应恢复被推迟至2027年。",
+  "facts": [
+    "IEA于9月11日发布九月石油市场报告。",
+    "预计2026年石油需求减少250万桶/日，降幅较上月扩大94万桶/日。",
+    "八月全球供应1.001亿桶/日，观察库存减少9500万桶。"
+  ],
+  "analysis": "库存消耗与供需双降表明高价可以和需求疲弱同时存在，柴油等成品油可能比原油更紧。需观察运输通行、炼厂和库存回补；恢复时间只是报告预测，不是既成事实。",
+  "category": "全球宏观",
+  "region": "全球",
+  "occurredAt": "2026-09-11",
+  "firstReportedAt": "2026-09-11",
+  "collectedAt": "2026-11-13T06:55:07+00:00",
+  "sources": [
+    {
+      "url": "https://www.iea.org/reports/oil-market-report-september-2026",
+      "title": "Oil Market Report - September 2026",
+      "publisher": "IEA",
+      "publishedAt": "2026-09-11",
+      "type": "primary",
+      "note": "亲读官方公开正文；日期为本次公告发布日"
+    }
+  ],
+  "scores": {
+    "structural": 23,
+    "scope": 20,
+    "signal": 18,
+    "delta": 12,
+    "timeliness": 3,
+    "crossDomain": 9,
+    "total": 85,
+    "rationale": {
+      "structural": "供应中断延长改变能源风险期限",
+      "scope": "全球燃料及亚洲工业需求受影响",
+      "signal": "供需实绩和库存共同构成信号",
+      "delta": "需求降幅再扩大且库存继续下降",
+      "timeliness": "本轮事后补录，时效按历史研究计分",
+      "crossDomain": "运输炼化通胀与经济活动相连"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "已核对单一官方原文；机构预测与统计可能修订，不表示独立交叉验证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "passed",
+    "method": "web.run/open 官方原文正文",
+    "checkedAt": "2026-11-13T06:55:07+00:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "IEA于9月11日发布九月石油市场报告。；预计2026年石油需求减少250万桶/日，降幅较上月扩大94万桶/日。；八月全球供应1.001亿桶/日，观察库存减少9500万桶。"
+      }
+    ],
+    "note": "日期对应官方发布这一事件；统计所属期间见事实，预测未当作已实现结果"
+  },
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_geopolitics-energy-premium",
+      "direction": "support",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ],
+  "revisions": [
+    {
+      "at": "2026-11-13T06:55:07+00:00",
+      "by": "Codex-global",
+      "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+    }
+  ],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13",
+    "note": "本轮依据当时发布的官方原文开展回溯研究，非当时预测；不推定发生日及来源窗口可比性"
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-13T06:55:07+00:00",
+      "by": "Codex-global",
+      "note": "本轮回溯首次评分",
+      "scores": {
+        "structural": 23,
+        "scope": 20,
+        "signal": 18,
+        "delta": 12,
+        "timeliness": 3,
+        "crossDomain": 9,
+        "total": 85
+      }
+    }
+  ],
+  "linkHistory": [
+    {
+      "at": "2026-11-13T14:57:43+08:00",
+      "trendId": "tr_geopolitics-energy-premium",
+      "direction": "support",
+      "action": "add",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ]
+}

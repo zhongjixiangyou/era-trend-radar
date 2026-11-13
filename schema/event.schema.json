@@ -615,6 +615,59 @@
         "items"
       ],
       "additionalProperties": false
+    },
+    "industryTable": {
+      "type": "object",
+      "description": "官方原文同期间分行业收入与利润同比表；必须附原始来源，不能混用统计区间。",
+      "required": [
+        "period",
+        "sourceUrl",
+        "sourceTitle",
+        "rows"
+      ],
+      "properties": {
+        "period": {
+          "type": "string"
+        },
+        "sourceUrl": {
+          "type": "string",
+          "pattern": "^https?://"
+        },
+        "sourceTitle": {
+          "type": "string"
+        },
+        "publishedAt": {
+          "type": "string"
+        },
+        "unit": {
+          "type": "string"
+        },
+        "rows": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "revenueGrowth",
+              "profitGrowth"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "revenueGrowth": {
+                "type": "number"
+              },
+              "profitGrowth": {
+                "type": "number"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
     }
   },
   "additionalProperties": true,

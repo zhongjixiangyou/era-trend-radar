@@ -9,8 +9,8 @@ const months = ['05', '06', '07', '08', '09', '10', '11'];
 
 const rows = allTrends.map((t) => {
   const related = allEvents.filter((e) => e.trends.some((x: any) => x.id === t.id));
-  const heat = related.reduce((s, e) => s + total(e.scores), 0);
-  const avg = related.length ? Math.round(heat / related.length) : 0;
+  const heat = related.length ? new Set(related.flatMap((e) => e.sources.map((s) => { try { return new URL(s.url).hostname.replace(/^www\./, ''); } catch { return s.url; } }))).size : null;
+  const avg = related.length ? Math.round(related.reduce((s, e) => s + total(e.scores), 0) / related.length) : null;
   return { ...t, count: related.length, heat, avg };
 });
 
@@ -38,7 +38,7 @@ const domainCn = (d: string) =>
       {months.map((m) => <span><i class="axis-y">2026.</i>{m}</span>)}
     </div>
     <p style="font-size:11.5px;color:var(--ink-3);margin:-2px 0 18px;line-height:1.7">
-      5—9 月仍在回溯补录，右侧圆点密集不代表变化突然加速。空档是研究进度，不是结论。
+      全部历史内容按本轮回溯研究整理；圆点密度还受选题与采集覆盖影响，不直接代表变化加速。
     </p>
     {rows.map((t) => <TrendStrip trend={t} />)}
     <div class="legend">
@@ -54,7 +54,7 @@ const domainCn = (d: string) =>
       <span class="num">排行</span>
       <h2 style="margin-top:6px">证据条数</h2>
     </div>
-    <span class="more">已核实来源条数，不是判断准确率</span>
+    <span class="more">关联的已核实事件数，不是判断准确率</span>
   </div>
 
   <RankBars
@@ -85,7 +85,7 @@ const domainCn = (d: string) =>
         <th class="sortable" data-key="evidence" aria-sort="none">证据</th>
         <th class="sortable" data-key="heat" aria-sort="none">热度</th>
         <th class="sortable" data-key="count" aria-sort="none">事件数</th>
-        <th class="sortable" data-key="firstSeen" aria-sort="none">首次出现</th>
+        <th class="sortable" data-key="firstSeen" aria-sort="none">观察起点</th>
         <th>验证期限</th>
       </tr>
     </thead>
@@ -93,7 +93,7 @@ const domainCn = (d: string) =>
       {rows.map((t) => (
         <tr
           data-evidence={t.evidenceCount ?? -1}
-          data-heat={t.heat}
+          data-heat={t.heat ?? -1}
           data-count={t.count}
           data-firstseen={t.firstSeen}
         >
@@ -101,7 +101,7 @@ const domainCn = (d: string) =>
           <td>{domainCn(t.domain)}</td>
           <td><span class={`status ${t.status}`}>{statusLabel[t.status]}</span></td>
           <td class="num">{t.evidenceCount ?? 0}</td>
-          <td class="num">{t.heat}</td>
+          <td class="num">{t.heat ?? '—'}</td>
           <td class="num">{t.count}</td>
           <td class="num">{fmtDate(t.firstSeen)}</td>
           <td class="num">{t.verifyBy ? fmtDate(t.verifyBy) : '—'}</td>
@@ -112,7 +112,7 @@ const domainCn = (d: string) =>
   </div>
   <p class="table-hint">窄屏放不下 8 列，表格可左右滑动。</p>
   <p style="font-size:11px;color:var(--ink-3);margin-top:10px;max-width:52em;line-height:1.7">
-    证据 = 该趋势已核实来源条数，空着就是还没补够，不补估值。热度 = 该趋势关联事件的重要度之和，衡量它当前占据了多少结构性注意力，不是预测准确率。缺数据的趋势热度记 0，排在末尾，不补估值。
+    证据 = 关联的已核实事件数。热度 = 这些事件来源的去重域名数，只表示本站来源覆盖，不代表全网讨论量或独立信源数。缺值排在末尾，不补零。
   </p>
 </Base>
 

@@ -1,0 +1,85 @@
+{
+  "id": "ev_cn-cpi-2026-06",
+  "dedupeKey": "ev:01528b23f6d4",
+  "title": "6月CPI同比上涨1.0%，上半年累计1.0%",
+  "summary": "国家统计局7月10日发布：6月CPI同比涨1.0%、环比降0.3%；上半年平均涨1.0%，猪肉价格同比降15.9%。",
+  "facts": [
+    "6月CPI同比上涨1.0%，其中城市涨1.0%、农村涨0.8%；食品价格降1.6%，非食品涨1.5%。",
+    "消费品价格涨1.1%，服务价格涨0.8%；6月CPI环比下降0.3%。",
+    "猪肉价格同比下降15.9%，鲜果下降0.7%，鸡蛋上涨16.0%。",
+    "1—6月平均CPI同比上涨1.0%。"
+  ],
+  "analysis": "食品与非食品价格分化，猪肉下跌与服务价格温和上涨并存。温和通胀可能影响政策选择，但不能由本页数据证明内需传导偏弱；应继续观察核心价格、服务价格与后续月份，而非把单月环比下降等同通缩。",
+  "category": "中国经济与产业",
+  "region": "中国",
+  "occurredAt": "2026-07-10T09:30+08:00",
+  "firstReportedAt": "2026-07-10T09:30+08:00",
+  "collectedAt": "2026-11-13T14:58:00+08:00",
+  "sources": [
+    {
+      "url": "https://www.stats.gov.cn/english/PressRelease/202607/t20260710_1964094.html",
+      "title": "Consumer Price Index in June 2026",
+      "publisher": "国家统计局",
+      "publishedAt": "2026-07-10",
+      "type": "primary",
+      "note": ""
+    }
+  ],
+  "scores": {
+    "structural": 14,
+    "scope": 12,
+    "signal": 10,
+    "delta": 9,
+    "timeliness": 4,
+    "crossDomain": 6,
+    "rationale": {
+      "structural": "物价反映供需与货币条件",
+      "scope": "覆盖居民消费全品类",
+      "signal": "同比1.0%属温和水平",
+      "delta": "环比-0.3%有短期波动",
+      "timeliness": "7月发布，仍在观察窗口内",
+      "crossDomain": "牵连货币政策与消费"
+    },
+    "total": 55,
+    "scorerVersion": "score/v1.2"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "独立复核亲读官方原始正文并修正事实；尚非多个独立统计来源交叉验证"
+  },
+  "evidenceGrade": "single_primary",
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_cn-demand-rebalancing",
+      "direction": "support",
+      "reason": "提供观察命题的核实节点，持续性仍需后续证据。"
+    }
+  ],
+  "revisions": [
+    {
+      "at": "2026-11-13T06:58:16+00:00",
+      "by": "Codex-global-review",
+      "note": "独立复核原文后pending→published；原文0.30个百分点对应畜肉类，非单列猪肉；移除错误归因。修正双斜杠URL。"
+    }
+  ],
+  "verification": {
+    "status": "passed",
+    "method": "web.run/open 官方原文独立复核",
+    "checkedAt": "2026-11-13T06:58:16+00:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "6月CPI同比上涨1.0%，其中城市涨1.0%、农村涨0.8%；食品价格降1.6%，非食品涨1.5%。；消费品价格涨1.1%，服务价格涨0.8%；6月CPI环比下降0.3%。；猪肉价格同比下降15.9%，鲜果下降0.7%，鸡蛋上涨16.0%。；1—6月平均CPI同比上涨1.0%。"
+      }
+    ],
+    "note": "来源正文逐项核对；修正日期/来源类型及无证分析。网页引用：turn29view5:18-32"
+  },
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13T06:58:00Z",
+    "note": "事后补录：事件发生在先，本记录于 2026-11-13 补入；不构成当时预测。"
+  }
+}

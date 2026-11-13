@@ -1,0 +1,28 @@
+{
+  "id": "tr_cn-realestate-contraction",
+  "title": "房地产仍待修复",
+  "thesis": "房地产累计投资承压，能否企稳需要销售、资金与新开工的多期验证。",
+  "firstSeenAt": "2026-11-13T15:00:17+08:00",
+  "stage": "emerging",
+  "indicators": [
+    "连续多期同口径数据变化",
+    "政策执行与实际效果之间的差距"
+  ],
+  "evidenceRefs": [
+    "ev_cn-realestate-1-7"
+  ],
+  "counterEvidence": [
+    {
+      "text": "累计区间不代表单月变化，销售或融资改善可能使后续走势改变。"
+    }
+  ],
+  "currentJudgment": "本轮回溯研究，置信度中低。当前只核实一个累计区间，足以表述压力，不能认定永久结构下滑。",
+  "reviewBy": "2026-12-13T00:00:00+08:00",
+  "revisions": [
+    {
+      "at": "2026-11-13T15:00:17+08:00",
+      "by": "Codex",
+      "note": "首次按核实原文建立回溯观察，不作为当时判断。"
+    }
+  ]
+}

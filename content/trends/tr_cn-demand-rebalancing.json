@@ -1,0 +1,31 @@
+{
+  "id": "tr_cn-demand-rebalancing",
+  "title": "中国需求与生产分化",
+  "thesis": "中国生产和需求指标存在分化，复苏强度须由多项同期间指标交叉观察。",
+  "firstSeenAt": "2026-11-13T15:00:17+08:00",
+  "stage": "emerging",
+  "indicators": [
+    "连续多期同口径数据变化",
+    "政策执行与实际效果之间的差距"
+  ],
+  "evidenceRefs": [
+    "ev_cn-pmi-2026-05",
+    "ev_cn-pmi-sep-2026",
+    "ev_cn-cpi-2026-06",
+    "ev_cn-gdp-q3-2026"
+  ],
+  "counterEvidence": [
+    {
+      "text": "PMI越过50不等于全部行业景气，价格变化也可能来自供给而非需求。"
+    }
+  ],
+  "currentJudgment": "本轮回溯研究，置信度中。官方PMI、物价与GDP说明不同侧面的活动，不能把季、月或累计口径直接相减。",
+  "reviewBy": "2026-12-13T00:00:00+08:00",
+  "revisions": [
+    {
+      "at": "2026-11-13T15:00:17+08:00",
+      "by": "Codex",
+      "note": "首次按核实原文建立回溯观察，不作为当时判断。"
+    }
+  ]
+}

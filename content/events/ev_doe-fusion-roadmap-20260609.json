@@ -1,0 +1,94 @@
+{
+  "id": "ev_doe-fusion-roadmap-20260609",
+  "dedupeKey": "ev:48ced4f2a49d",
+  "title": "美国发布定稿聚变路线图，目标指向2030年代中期",
+  "summary": "美国能源部发布最终版聚变科学与技术路线图，把研发、基础设施、人才和商业化优先事项纳入统一框架，指向2030年代中期聚变电力。这是政策和资源协调节点，并非聚变电站已经实现商业发电。",
+  "facts": [
+    "能源部发布最终版聚变科学与技术路线图。",
+    "路线图把科学、技术、基础设施、人才和商业化优先事项纳入统一战略。",
+    "官方目标是支持聚变示范电站及2030年代中期的商业聚变电力。"
+  ],
+  "analysis": "路线图可以帮助观察公共研发与私人资本是否形成共同路径。目标年份属于政策愿景，需继续看材料、氚循环、净电力输出及示范工程的实际进展。",
+  "category": "科技与社会",
+  "region": "美国",
+  "occurredAt": "2026-06-09",
+  "firstReportedAt": "2026-06-09",
+  "collectedAt": "2026-11-13T06:51:54Z",
+  "sources": [
+    {
+      "url": "https://www.energy.gov/articles/energy-department-releases-finalized-fusion-science-and-technology-roadmap-accelerate",
+      "title": "Energy Department Releases Finalized Fusion Science and Technology Roadmap",
+      "publisher": "美国能源部",
+      "publishedAt": "2026-06-09",
+      "type": "primary",
+      "note": "已使用web.run打开并阅读官方原文；仅核实公告明确披露的节点。"
+    }
+  ],
+  "scores": {
+    "structural": 18,
+    "scope": 14,
+    "signal": 12,
+    "delta": 7,
+    "timeliness": 2,
+    "crossDomain": 7,
+    "total": 60,
+    "rationale": {
+      "structural": "路线图可以帮助观察公共研发与私人资本是否形成共同路径。目标年份属于政策愿景，需继续看材料、。",
+      "scope": "影响范围主要覆盖美国及相关产业参与者。",
+      "signal": "已读取美国能源部原文确认具体节点。",
+      "delta": "相对前一阶段跨越了公告所述的明确节点。",
+      "timeliness": "本轮作为历史补录，按原始发布时间计入。",
+      "crossDomain": "涉及科研、供应链或公共服务的跨领域联系。"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "单一官方一手原文已核对；关于性能及未来影响的主张未作独立复现。"
+  },
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_advanced-energy-validation",
+      "direction": "support",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ],
+  "revisions": [
+    {
+      "at": "2026-11-13T06:51:54Z",
+      "by": "Codex",
+      "note": "本轮按官方原文回溯补录并完成原文事实核对；首次评分为当前回溯判断。"
+    }
+  ],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-06-09",
+    "note": "本轮回溯补录，评分和分析形成于collectedAt，不是当时判断或预测。"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "passed",
+    "method": "web.run/open 官方原文逐项核对",
+    "checkedAt": "2026-11-13T06:51:54Z",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "原文发布日期及正文明确支持：能源部发布最终版聚变科学与技术路线图。；路线图把科学、技术、基础设施、人才和商业化优先事项纳入统一战略。；官方目标是支持聚变示范电站及2030年代中期的商业聚变电力。"
+      }
+    ],
+    "note": "仅核对本条事实，不把公告中的未来目标或公司主张当作独立验证结果。"
+  },
+  "scoreHistory": [],
+  "linkHistory": [
+    {
+      "at": "2026-11-13T14:57:43+08:00",
+      "trendId": "tr_advanced-energy-validation",
+      "direction": "support",
+      "action": "add",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ]
+}

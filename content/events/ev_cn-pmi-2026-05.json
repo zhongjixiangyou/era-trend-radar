@@ -1,0 +1,84 @@
+{
+  "id": "ev_cn-pmi-2026-05",
+  "dedupeKey": "ev:79e5cd4135c6",
+  "title": "5月制造业PMI回落至50.0%，位于临界点",
+  "summary": "国家统计局5月31日发布：5月制造业PMI 50.0%，比上月降0.3个百分点；大型企业51.1%，中小型企业均低于临界点。",
+  "facts": [
+    "5月制造业PMI为50.0%，比上月下降0.3个百分点，位于临界点。",
+    "大型企业PMI 51.1%（升0.9个百分点）；中型48.6%、小型48.5%，分别降1.9和1.6个百分点。",
+    "生产指数51.2%，新订单指数49.9%（降0.7个百分点），原材料库存48.6%，从业人员48.6%。"
+  ],
+  "analysis": "整体卡在临界点、结构分化明显：大型企业扩张、中小企业收缩，新订单回到荣枯线下说明需求端偏弱。单月数据不足以判断趋势，需与5—6月连续观察。",
+  "category": "中国经济与产业",
+  "region": "中国",
+  "occurredAt": "2026-05-31T09:30+08:00",
+  "firstReportedAt": "2026-05-31T09:30+08:00",
+  "collectedAt": "2026-11-13T14:58:00+08:00",
+  "sources": [
+    {
+      "url": "https://www.stats.gov.cn/zwfwck/sjfb/202605/t20260531_1963824.html",
+      "title": "2026年5月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "publishedAt": "2026-05-31",
+      "type": "primary",
+      "note": ""
+    }
+  ],
+  "scores": {
+    "structural": 16,
+    "scope": 13,
+    "signal": 12,
+    "delta": 10,
+    "timeliness": 4,
+    "crossDomain": 6,
+    "rationale": {
+      "structural": "PMI为景气先行指标，反映供需与就业组合",
+      "scope": "覆盖制造业与大中小型企业",
+      "signal": "新订单跌破50是明确信号",
+      "delta": "较上月0.3个百分点，变化温和",
+      "timeliness": "5月末发布，仍在观察窗口内",
+      "crossDomain": "与出口、投资、就业相关"
+    },
+    "total": 61,
+    "scorerVersion": "score/v1.2"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "独立复核亲读官方原始正文并修正事实；尚非多个独立统计来源交叉验证"
+  },
+  "evidenceGrade": "single_primary",
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_cn-demand-rebalancing",
+      "direction": "support",
+      "reason": "提供观察命题的核实节点，持续性仍需后续证据。"
+    }
+  ],
+  "revisions": [
+    {
+      "at": "2026-11-13T06:58:16+00:00",
+      "by": "Codex-global-review",
+      "note": "独立复核原文后pending→published；仅保留已亲读核对的制造业三组事实；非制造业与综合指数本次未取得对应段落，移除而不默认为已核实。"
+    }
+  ],
+  "verification": {
+    "status": "passed",
+    "method": "web.run/open 官方原文独立复核",
+    "checkedAt": "2026-11-13T06:58:16+00:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "5月制造业PMI为50.0%，比上月下降0.3个百分点，位于临界点。；大型企业PMI 51.1%（升0.9个百分点）；中型48.6%、小型48.5%，分别降1.9和1.6个百分点。；生产指数51.2%，新订单指数49.9%（降0.7个百分点），原材料库存48.6%，从业人员48.6%。"
+      }
+    ],
+    "note": "来源正文逐项核对；修正日期/来源类型及无证分析。网页引用：turn28view4:11-48"
+  },
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13T06:58:00Z",
+    "note": "事后补录：事件发生在先，本记录于 2026-11-13 补入；不构成当时预测。"
+  }
+}

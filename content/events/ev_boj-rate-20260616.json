@@ -1,0 +1,109 @@
+{
+  "id": "ev_boj-rate-20260616",
+  "dedupeKey": "ev:d830149e175e",
+  "title": "日本央行把隔夜利率目标提高至约1%",
+  "summary": "日本央行以七比一表决将无担保隔夜拆借利率目标定为约1%，6月17日起执行，补充存款利率也为1%、基本贷款利率1.25%。声明关注原油涨价向消费价格传导及通胀预期上升。",
+  "facts": [
+    "日本央行6月16日以7比1多数决定隔夜拆借利率目标约1%。",
+    "新指引于6月17日生效，补充存款利率1%、基本贷款利率1.25%。",
+    "声明称原油涨价正较快向企业间交易价格传递。"
+  ],
+  "analysis": "日本货币正常化影响本国融资、汇率与全球资金配置。央行仍认为金融条件宽松，加息不代表全面转为限制性政策；需观察实际利率、工资和油价传导。",
+  "category": "全球宏观",
+  "region": "日本",
+  "occurredAt": "2026-06-16",
+  "firstReportedAt": "2026-06-16",
+  "collectedAt": "2026-11-13T06:55:07+00:00",
+  "sources": [
+    {
+      "url": "https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/k260616a.pdf",
+      "title": "Change in the Guideline for Money Market Operations — June 16, 2026",
+      "publisher": "Bank of Japan",
+      "publishedAt": "2026-06-16",
+      "type": "primary",
+      "note": "亲读官方公开正文；日期为本次公告发布日"
+    }
+  ],
+  "scores": {
+    "structural": 21,
+    "scope": 18,
+    "signal": 20,
+    "delta": 12,
+    "timeliness": 2,
+    "crossDomain": 8,
+    "total": 81,
+    "rationale": {
+      "structural": "利率正常化改变日本融资基准",
+      "scope": "日本及国际资金配置受影响",
+      "signal": "正式政策指引明确表决与执行日",
+      "delta": "隔夜利率目标升至约百分之一",
+      "timeliness": "本轮事后补录，时效按历史研究计分",
+      "crossDomain": "通胀汇率和跨境资产联动"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "已核对单一官方原文；机构预测与统计可能修订，不表示独立交叉验证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "passed",
+    "method": "web.run/open 官方原文正文",
+    "checkedAt": "2026-11-13T06:55:07+00:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "日本央行6月16日以7比1多数决定隔夜拆借利率目标约1%。；新指引于6月17日生效，补充存款利率1%、基本贷款利率1.25%。；声明称原油涨价正较快向企业间交易价格传递。"
+      }
+    ],
+    "note": "日期对应官方发布这一事件；统计所属期间见事实，预测未当作已实现结果"
+  },
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_global-rates-rehike",
+      "direction": "support",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ],
+  "revisions": [
+    {
+      "at": "2026-11-13T06:55:07+00:00",
+      "by": "Codex-global",
+      "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+    }
+  ],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13",
+    "note": "本轮依据当时发布的官方原文开展回溯研究，非当时预测；不推定发生日及来源窗口可比性"
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-13T06:55:07+00:00",
+      "by": "Codex-global",
+      "note": "本轮回溯首次评分",
+      "scores": {
+        "structural": 21,
+        "scope": 18,
+        "signal": 20,
+        "delta": 12,
+        "timeliness": 2,
+        "crossDomain": 8,
+        "total": 81
+      }
+    }
+  ],
+  "linkHistory": [
+    {
+      "at": "2026-11-13T14:57:43+08:00",
+      "trendId": "tr_global-rates-rehike",
+      "direction": "support",
+      "action": "add",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "id": "ev_apple-eu-terms-20260818",
+  "dedupeKey": "ev:e966f1a31790",
+  "title": "苹果宣布统一欧盟应用商业条款，调整替代分发收费",
+  "summary": "苹果宣布统一欧盟应用商业条款，计划以商店外数字交易5%的佣金替代按安装计费的核心技术费，并扩大替代分发资格。变化可能影响开发者成本结构，但这是苹果公告口径，实际节省取决于业务模式与适用条件。",
+  "facts": [
+    "苹果宣布欧盟开发者可签署统一的新商业条款，并计划10月1日生效。",
+    "按公告，按安装计费的核心技术费将由商店外应用数字交易5%的核心技术佣金替代。",
+    "公告还扩大了运营替代应用市场及网页分发的资格；替代分发仍需公证审核。"
+  ],
+  "analysis": "平台收费从安装次数转向交易额，会重新分配不同类型开发者的成本。应看条款落地、开发者迁移和监管机构后续评价，不将苹果所述争议解决当成独立监管确认。",
+  "category": "科技与社会",
+  "region": "欧洲",
+  "occurredAt": "2026-08-18",
+  "firstReportedAt": "2026-08-18",
+  "collectedAt": "2026-11-13T06:54:08Z",
+  "sources": [
+    {
+      "url": "https://www.apple.com/newsroom/2026/08/apple-announces-changes-for-apps-in-the-european-union/",
+      "title": "Apple announces changes for apps in the European Union",
+      "publisher": "Apple",
+      "publishedAt": "2026-08-18",
+      "type": "primary",
+      "note": "已使用web.run打开并阅读官方原文；限定为公告可核实的事实。"
+    }
+  ],
+  "scores": {
+    "structural": 18,
+    "scope": 15,
+    "signal": 16,
+    "delta": 10,
+    "timeliness": 3,
+    "crossDomain": 8,
+    "total": 70,
+    "scorerVersion": "score/v1.0",
+    "rationale": {
+      "structural": "平台收费从安装次数转向交易额，会重新分配不同类型开发者的成本。应看条款落地、开发者迁移和监。",
+      "scope": "影响范围覆盖欧洲及对应科研或产业群体。",
+      "signal": "已读取Apple原文逐项核对具体节点。",
+      "delta": "较此前阶段新增了公告明确披露的进展。",
+      "timeliness": "本轮为回溯补录，时间按原始公告计入。",
+      "crossDomain": "涉及技术、商业及社会应用的跨领域联系。"
+    }
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "单一官方一手原文已核对；关于性能及未来影响的主张未作独立复现。"
+  },
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_ai-platform-expansion",
+      "direction": "support",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ],
+  "revisions": [
+    {
+      "at": "2026-11-13T06:54:08Z",
+      "by": "Codex",
+      "note": "本轮按官方原文回溯补录并完成原文事实核对；首次评分为当前回溯判断。"
+    }
+  ],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-08-18",
+    "note": "本轮回溯补录，评分和分析形成于collectedAt，不是当时判断或预测。"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "passed",
+    "method": "web.run/open 官方原文逐项核对",
+    "checkedAt": "2026-11-13T06:54:08Z",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "官方原文日期及正文支持：苹果宣布欧盟开发者可签署统一的新商业条款，并计划10月1日生效。；按公告，按安装计费的核心技术费将由商店外应用数字交易5%的核心技术佣金替代。；公告还扩大了运营替代应用市场及网页分发的资格；替代分发仍需公证审核。"
+      }
+    ],
+    "note": "仅核对本条事实，不把公告中的未来目标或公司主张当作独立验证结果。"
+  },
+  "scoreHistory": [],
+  "linkHistory": [
+    {
+      "at": "2026-11-13T14:57:43+08:00",
+      "trendId": "tr_ai-platform-expansion",
+      "direction": "support",
+      "action": "add",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ]
+}

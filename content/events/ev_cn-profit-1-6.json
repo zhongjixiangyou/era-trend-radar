@@ -1,0 +1,105 @@
+{
+  "id": "ev_cn-profit-1-6",
+  "dedupeKey": "ev:0f7f5da96a1a",
+  "title": "1—6月规上工业企业利润同比增长18.7%",
+  "summary": "国家统计局7月27日发布：1—6月规上工业企业利润39479.9亿元，同比增18.7%；营收69.26万亿元，利润率5.70%。",
+  "facts": [
+    "1—6月规上工业企业实现利润总额39479.9亿元，同比增长18.7%。",
+    "采矿业利润5745.0亿元增33.5%，制造业29712.1亿元增20.1%，电力热力燃气及水生产和供应业4022.7亿元降4.2%。",
+    "营业收入69.26万亿元增6.5%，营业成本58.80万亿元增5.9%，利润率5.70%提高0.59个百分点。",
+    "有色金属冶炼和压延加工业增99.4%，电子设备制造业增96.9%，化学原料增67.8%，汽车制造业降19.5%，非金属矿物制品业降47.8%。"
+  ],
+  "analysis": "上半年利润增长伴随行业显著分化，有色与电子增长、汽车和建材下降。成本增速低于营收与利润率改善同时存在，但这不能独立识别需求贡献；需观察订单、销售量和价格因素，不能直接认定全面复苏。",
+  "category": "中国经济与产业",
+  "region": "中国",
+  "occurredAt": "2026-07-27T09:30+08:00",
+  "firstReportedAt": "2026-07-27T09:30+08:00",
+  "collectedAt": "2026-11-13T14:58:00+08:00",
+  "sources": [
+    {
+      "url": "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202607/t20260727_1964194.html",
+      "title": "2026年1—6月份全国规模以上工业企业利润增长18.7%",
+      "publisher": "国家统计局",
+      "publishedAt": "2026-07-27",
+      "type": "primary",
+      "note": ""
+    }
+  ],
+  "scores": {
+    "structural": 17,
+    "scope": 13,
+    "signal": 11,
+    "delta": 10,
+    "timeliness": 4,
+    "crossDomain": 7,
+    "rationale": {
+      "structural": "利润与成本结构反映供需",
+      "scope": "覆盖全部规上工业",
+      "signal": "增速稳定但分化明显",
+      "delta": "较1—5月基本持平",
+      "timeliness": "7月末发布，仍在观察窗口内",
+      "crossDomain": "牵连价格、出口与投资"
+    },
+    "total": 62,
+    "scorerVersion": "score/v1.2"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "独立复核亲读官方原始正文并修正事实；尚非多个独立统计来源交叉验证"
+  },
+  "evidenceGrade": "single_primary",
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_cn-industrial-margin-repair",
+      "direction": "support",
+      "reason": "上半年利润率同比提高0.59个百分点"
+    }
+  ],
+  "revisions": [
+    {
+      "at": "2026-11-13T06:58:16+00:00",
+      "by": "Codex-global-review",
+      "note": "独立复核原文后pending→published；删除未被本页数据识别的“需求侧贡献有限”因果断言。"
+    }
+  ],
+  "verification": {
+    "status": "passed",
+    "method": "web.run/open 官方原文独立复核",
+    "checkedAt": "2026-11-13T06:58:16+00:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "1—6月规上工业企业实现利润总额39479.9亿元，同比增长18.7%。；采矿业利润5745.0亿元增33.5%，制造业29712.1亿元增20.1%，电力热力燃气及水生产和供应业4022.7亿元降4.2%。；营业收入69.26万亿元增6.5%，营业成本58.80万亿元增5.9%，利润率5.70%提高0.59个百分点。；有色金属冶炼和压延加工业增99.4%，电子设备制造业增96.9%，化学原料增67.8%，汽车制造业降19.5%，非金属矿物制品业降47.8%。"
+      }
+    ],
+    "note": "来源正文逐项核对；修正日期/来源类型及无证分析。网页引用：turn28view0:10-47"
+  },
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13T06:58:00Z",
+    "note": "事后补录：事件发生在先，本记录于 2026-11-13 补入；不构成当时预测。"
+  },
+  "metrics": {
+    "metricSetId": "cn_industrial_profit_2026_cumulative",
+    "comparable": false,
+    "items": [
+      {
+        "metric": "利润总额",
+        "value": 39479.9,
+        "unit": "亿元",
+        "period": "2026-01..06",
+        "scope": "规上工业"
+      },
+      {
+        "metric": "营收利润率",
+        "value": 5.7,
+        "unit": "%",
+        "period": "2026-01..06",
+        "scope": "规上工业"
+      }
+    ]
+  }
+}

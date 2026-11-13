@@ -51,7 +51,7 @@ export const siteMeta = meta as {
   site: string; generatedAt: string; window: { from: string; to: string };
   counts: { events: number; trends: number; forecasts: number; published?: number; pending?: number };
   preview?: { published: number; pending: number };
-  editorNote?: string; runStatus?: string; lastSuccessfulRun?: string; issue?: string;
+  editorNote?: string; runStatus?: string; lastSuccessfulRun?: string; issue?: string; mode?: string;
 };
 
 export function total(s: Score): number {
@@ -65,7 +65,7 @@ export const scoreLabels: [keyof Score, string][] = [
   ['structural', '结构性影响'],
   ['scope', '影响范围'],
   ['signal', '趋势信号'],
-  ['delta', '信息增量'],
+  ['delta', '变化幅度'],
   ['timeliness', '时效性'],
   ['crossDomain', '跨领域'],
 ];
@@ -77,7 +77,7 @@ export const sortedEvents = [...allEvents].sort((a, b) => b.date.localeCompare(a
  * 公开投影只装已发布事件，用 content 计数判会让正式产物也挂上预览横幅。
  * 早先判据是「published===0」，3 条已确认 + 8 条候选时会掉进非预览态，等于半发布。
  */
-export const previewMode = sortedEvents.some((e) => e.status === 'pending');
+export const previewMode = siteMeta.mode === 'preview' || sortedEvents.some((e) => e.status === 'pending');
 export const publishedEvents = sortedEvents.filter((e) => previewMode || e.status !== 'pending');
 export const trendById = new Map(allTrends.map((t) => [t.id, t]));
 export const eventById = new Map(allEvents.map((e) => [e.id, e]));

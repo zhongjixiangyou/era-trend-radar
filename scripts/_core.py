@@ -1007,7 +1007,7 @@ def revisions(ctx: Ctx, label: str, items: Any, allow_stage: bool = False) -> No
         sub.text("by", min_len=1, max_len=40, required=False)
         sub.text("note", min_len=4, max_len=400)
         if allow_stage and "stageBefore" in item:
-            sub.enum("stageBefore", STAGES, required=False)
+            sub.text("stageBefore", enum=STAGES, required=False)
         for key in sorted(set(item) - {"at", "by", "note"} - ({"stageBefore"} if allow_stage else set())):
             ctx.warn("W_UNKNOWN_FIELD", label, f"revisions[{i}].{key}", f"未知字段 {key}")
 

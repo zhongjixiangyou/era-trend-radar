@@ -1,0 +1,94 @@
+{
+  "id": "ev_euclid-dr1-20261112",
+  "dedupeKey": "ev:7ab05e0cc041",
+  "title": "欧几里得发布首批重大数据，覆盖十亿多个天体",
+  "summary": "ESA发布欧几里得探测任务首个重大数据批次DR1-Foundation，包含约13个月观测、十亿多个天体的光及大面积天区影像。它扩大了暗宇宙研究的数据基础，当前仍是建图材料，并非暗物质或暗能量谜题已获解释。",
+  "facts": [
+    "ESA发布Euclid首个重大数据批次DR1-Foundation。",
+    "数据包含约13个月观测，覆盖十亿多个天体的光。",
+    "覆盖天区相当于约9500个满月的面积，为后续三维宇宙地图提供基础。"
+  ],
+  "analysis": "大规模可复用观测数据会降低后续研究门槛，并支持机器学习和公民科学。应观察数据校准、独立研究结果及误差控制，避免把数据规模直接等同于理论突破。",
+  "category": "科技与社会",
+  "region": "欧洲",
+  "occurredAt": "2026-11-12",
+  "firstReportedAt": "2026-11-12",
+  "collectedAt": "2026-11-13T06:51:54Z",
+  "sources": [
+    {
+      "url": "https://www.esa.int/articles/about-us/directorates/science/euclid/euclid-lays-the-foundation-for-its-best-ever-3d-map-of-the-universe",
+      "title": "Euclid lays the foundation for its best-ever 3D map of the Universe",
+      "publisher": "欧洲航天局",
+      "publishedAt": "2026-11-12",
+      "type": "primary",
+      "note": "已使用web.run打开并阅读官方原文；仅核实公告明确披露的节点。"
+    }
+  ],
+  "scores": {
+    "structural": 18,
+    "scope": 16,
+    "signal": 18,
+    "delta": 11,
+    "timeliness": 8,
+    "crossDomain": 7,
+    "total": 78,
+    "rationale": {
+      "structural": "大规模可复用观测数据会降低后续研究门槛，并支持机器学习和公民科学。应观察数据校准、独立研究。",
+      "scope": "影响范围主要覆盖欧洲及相关产业参与者。",
+      "signal": "已读取欧洲航天局原文确认具体节点。",
+      "delta": "相对前一阶段跨越了公告所述的明确节点。",
+      "timeliness": "本轮作为历史补录，按原始发布时间计入。",
+      "crossDomain": "涉及科研、供应链或公共服务的跨领域联系。"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "单一官方一手原文已核对；关于性能及未来影响的主张未作独立复现。"
+  },
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_space-observation-network",
+      "direction": "support",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ],
+  "revisions": [
+    {
+      "at": "2026-11-13T06:51:54Z",
+      "by": "Codex",
+      "note": "本轮按官方原文回溯补录并完成原文事实核对；首次评分为当前回溯判断。"
+    }
+  ],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-12",
+    "note": "本轮回溯补录，评分和分析形成于collectedAt，不是当时判断或预测。"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "passed",
+    "method": "web.run/open 官方原文逐项核对",
+    "checkedAt": "2026-11-13T06:51:54Z",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "原文发布日期及正文明确支持：ESA发布Euclid首个重大数据批次DR1-Foundation。；数据包含约13个月观测，覆盖十亿多个天体的光。；覆盖天区相当于约9500个满月的面积，为后续三维宇宙地图提供基础。"
+      }
+    ],
+    "note": "仅核对本条事实，不把公告中的未来目标或公司主张当作独立验证结果。"
+  },
+  "scoreHistory": [],
+  "linkHistory": [
+    {
+      "at": "2026-11-13T14:57:43+08:00",
+      "trendId": "tr_space-observation-network",
+      "direction": "support",
+      "action": "add",
+      "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+    }
+  ]
+}

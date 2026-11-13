@@ -1,5 +1,140 @@
 [
   {
+    "id": "ev_oecd-migration-20261112",
+    "title": "OECD：永久移民连续两年减少，仍高于疫情前",
+    "date": "2026-11-12",
+    "reportedAt": "2026-11-12",
+    "collectedAt": "2026-11-13",
+    "region": "other",
+    "category": "technology",
+    "summary": "经合组织报告显示，2025年成员国新增永久移民610万人，同比下降1.6%，仍比2019年高12.5%。家庭团聚占45%、劳动移民占20%，人道移民数量下降26%，移民技能利用成为政策重点。",
+    "analysis": "总流入回落不等于劳动力需求消失，老龄化下技能匹配和移民创业仍影响生产率。需区分家庭、劳动和人道类别，观察就业质量与技能利用，不能由总量下降推出所有目的国同步收紧。",
+    "facts": [
+      "OECD于11月12日发布2026年国际移民展望相关公告。",
+      "2025年永久移民610万人，同比下降1.6%，比2019年高12.5%。",
+      "家庭团聚占45%、劳动移民占20%，人道移民同比下降26%。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 21,
+      "scope": 17,
+      "signal": 18,
+      "delta": 9,
+      "timeliness": 6,
+      "crossDomain": 8,
+      "total": 79,
+      "rationale": {
+        "structural": "人口流动影响老龄化与劳动力供给",
+        "scope": "覆盖OECD主要移民目的地",
+        "signal": "官方年度流量统计提供分项数据",
+        "delta": "连续第二年下降但仍高于疫情前",
+        "timeliness": "本轮事后补录，时效按历史研究计分",
+        "crossDomain": "人口就业技能及生产率相连"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "OECD",
+        "url": "https://www.oecd.org/en/about/news/press-releases/2026/11/migration-to-oecd-countries-declines-for-second-consecutive-year-but-remains-high-by-historical-standards.html",
+        "date": "2026-11-12",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_labour-demographic-adjustment",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 79,
+        "reason": "本轮回溯首次评分"
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_euclid-dr1-20261112",
+    "title": "欧几里得发布首批重大数据，覆盖十亿多个天体",
+    "date": "2026-11-12",
+    "reportedAt": "2026-11-12",
+    "collectedAt": "2026-11-13",
+    "region": "europe",
+    "category": "technology",
+    "summary": "ESA发布欧几里得探测任务首个重大数据批次DR1-Foundation，包含约13个月观测、十亿多个天体的光及大面积天区影像。它扩大了暗宇宙研究的数据基础，当前仍是建图材料，并非暗物质或暗能量谜题已获解释。",
+    "analysis": "大规模可复用观测数据会降低后续研究门槛，并支持机器学习和公民科学。应观察数据校准、独立研究结果及误差控制，避免把数据规模直接等同于理论突破。",
+    "facts": [
+      "ESA发布Euclid首个重大数据批次DR1-Foundation。",
+      "数据包含约13个月观测，覆盖十亿多个天体的光。",
+      "覆盖天区相当于约9500个满月的面积，为后续三维宇宙地图提供基础。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 18,
+      "scope": 16,
+      "signal": 18,
+      "delta": 11,
+      "timeliness": 8,
+      "crossDomain": 7,
+      "total": 78,
+      "rationale": {
+        "structural": "大规模可复用观测数据会降低后续研究门槛，并支持机器学习和公民科学。应观察数据校准、独立研究。",
+        "scope": "影响范围主要覆盖欧洲及相关产业参与者。",
+        "signal": "已读取欧洲航天局原文确认具体节点。",
+        "delta": "相对前一阶段跨越了公告所述的明确节点。",
+        "timeliness": "本轮作为历史补录，按原始发布时间计入。",
+        "crossDomain": "涉及科研、供应链或公共服务的跨领域联系。"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "欧洲航天局",
+        "url": "https://www.esa.int/articles/about-us/directorates/science/euclid/euclid-lays-the-foundation-for-its-best-ever-3d-map-of-the-universe",
+        "date": "2026-11-12",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_space-observation-network",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮按官方原文回溯补录并完成原文事实核对；首次评分为当前回溯判断。"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 78
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
     "id": "ev_cn-nev-oct",
     "title": "10月新能源车销量占比64.3%，出口同比增1.4倍",
     "date": "2026-11-11",
@@ -68,6 +203,140 @@
     "backfill": false
   },
   {
+    "id": "ev_bnef-dc-power-2035",
+    "title": "BNEF预计2035年数据中心用电量接近当前四倍",
+    "date": "2026-11-11",
+    "reportedAt": "2026-11-11",
+    "collectedAt": "2026-11-13",
+    "region": "global",
+    "category": "technology",
+    "summary": "BNEF在11月11日发布报告，预计2035年数据中心用电量达2354太瓦时，约占全球用电7%；同时跟踪到181吉瓦配套燃气发电项目公告。报告强调这些项目成熟度不同，公告规模不代表最终建成容量。",
+    "analysis": "研究提示并网速度和供电方式会影响算力扩张及排放；这是机构情景预测，不能把2035年的用电量写成已实现事实，也不能把燃气项目公告全部计入投运容量。",
+    "facts": [
+      "报告预计数据中心用电量到2035年接近当前四倍，达2354太瓦时、全球用电约7%。",
+      "BNEF跟踪到181吉瓦拟配套数据中心的燃气发电项目公告，超过90%位于美国。",
+      "报告明确说明公告项目成熟度及时间不同，不应将公告规模视作最终建成预测。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 21,
+      "scope": 19,
+      "signal": 17,
+      "delta": 11,
+      "timeliness": 10,
+      "crossDomain": 9,
+      "total": 87,
+      "rationale": {
+        "structural": "算力扩张涉及供电与并网约束",
+        "scope": "机构全球数据中心情景",
+        "signal": "官方报告含明确模型边界",
+        "delta": "配套燃气项目形成显著公告规模",
+        "timeliness": "原文发布距本轮收录两天",
+        "crossDomain": "涉及算力、电力、燃气与排放"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "BloombergNEF",
+        "url": "https://about.bnef.com/insights/data-centers/data-center-power-demand-is-set-to-surge-raising-new-climate-challenges-bloombergnef/",
+        "date": "2026-11-11",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_ai-power-constraint",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "亲读BNEF官方11月11日报告后首次回溯补录；与原161GW候选不同，不替换旧记录。"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 87
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_hera-didymos-20261111",
+    "title": "Hera抵达双小行星系统，开始早期特征调查",
+    "date": "2026-11-11",
+    "reportedAt": "2026-11-11",
+    "collectedAt": "2026-11-13",
+    "region": "europe",
+    "category": "technology",
+    "summary": "ESA确认Hera已抵达Didymos双小行星系统，在约25至30公里距离开展早期特征调查。任务将实测DART撞击后的目标状态，为评估小行星偏转提供资料；当前节点是抵达与调查开始，最终防御结论仍待分析。",
+    "analysis": "主动偏转试验需要后续现场测量来解释动量传递及结构变化。Hera抵达提高了获取这些证据的可能性，但尚不能宣称对所有潜在威胁都具备成熟防御能力。",
+    "facts": [
+      "ESA确认Hera已抵达Didymos双小行星系统。",
+      "探测器在距目标约25至30公里处开展早期特征调查。",
+      "任务将研究2022年DART撞击后的小行星整体状态，为行星防御研究提供数据。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 18,
+      "scope": 15,
+      "signal": 18,
+      "delta": 11,
+      "timeliness": 8,
+      "crossDomain": 7,
+      "total": 77,
+      "rationale": {
+        "structural": "主动偏转试验需要后续现场测量来解释动量传递及结构变化。Hera抵达提高了获取这些证据的可能。",
+        "scope": "影响范围覆盖欧洲及对应科研或产业群体。",
+        "signal": "已读取欧洲航天局原文逐项核对具体节点。",
+        "delta": "较此前阶段新增了公告明确披露的进展。",
+        "timeliness": "本轮为回溯补录，时间按原始公告计入。",
+        "crossDomain": "涉及技术、商业及社会应用的跨领域联系。"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "欧洲航天局",
+        "url": "https://www.esa.int/articles/about-us/directorates/operations/space-safety/hera/hera-spacecraft-in-rectangular-orbit-around-target-asteroids",
+        "date": "2026-11-11",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_space-observation-network",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮按官方原文回溯补录并完成原文事实核对；首次评分为当前回溯判断。"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 77
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
     "id": "ev_el-nino-11t",
     "title": "IFAD警告厄尔尼诺未来六年或致11万亿美元损失",
     "date": "2026-11-09",
@@ -133,6 +402,74 @@
     ],
     "watch": null,
     "backfill": false
+  },
+  {
+    "id": "ev_wmo-climate-update-20261109",
+    "title": "WMO：2026年前九月全球温度高出工业化前约1.47℃",
+    "date": "2026-11-09",
+    "reportedAt": "2026-11-09",
+    "collectedAt": "2026-11-13",
+    "region": "global",
+    "category": "technology",
+    "summary": "世界气象组织在气候大会发布更新，2026年一至九月全球平均地表温度比工业化前高约1.47℃，过去四年占据最暖年份前四位。报告并警示增强的厄尔尼诺将继续影响2027年风险。",
+    "analysis": "持续高温增加农业、电网和保险承保压力，需把慢性变暖与厄尔尼诺的短期叠加区分。当前温度只覆盖前九月，全年值仍可能变化；区域损失不能由全球平均温度直接推算。",
+    "facts": [
+      "WMO于11月9日发布2026年气候状态更新。",
+      "2026年1—9月全球平均地表温度较工业化前高约1.47℃。",
+      "过去四年为有记录以来最暖的四年。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 24,
+      "scope": 20,
+      "signal": 18,
+      "delta": 11,
+      "timeliness": 5,
+      "crossDomain": 10,
+      "total": 88,
+      "rationale": {
+        "structural": "持续增温影响多年资产韧性",
+        "scope": "全球气候与各地区经济活动",
+        "signal": "官方观测更新覆盖前九个月",
+        "delta": "最暖年份集中并叠加厄尔尼诺",
+        "timeliness": "本轮事后补录，时效按历史研究计分",
+        "crossDomain": "粮食能源保险与公共健康联动"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "WMO",
+        "url": "https://wmo.int/news/media-centre/state-of-climate-2026-gives-new-meaning-phrase-charts",
+        "date": "2026-11-09",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_climate-food-inflation",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 88,
+        "reason": "本轮回溯首次评分"
+      }
+    ],
+    "watch": null,
+    "backfill": true
   },
   {
     "id": "ev_cn-marriage-9m",
@@ -207,6 +544,140 @@
     ],
     "watch": null,
     "backfill": false
+  },
+  {
+    "id": "ev_voceryq-approval-20261030",
+    "title": "FDA加速批准首个质粒DNA免疫疗法，针对复发性呼吸道乳头状瘤病",
+    "date": "2026-10-30",
+    "reportedAt": "2026-10-30",
+    "collectedAt": "2026-11-13",
+    "region": "us",
+    "category": "technology",
+    "summary": "FDA加速批准Voceryq，成为美国首个质粒DNA免疫疗法，用于成人复发性呼吸道乳头状瘤病。批准依据是减少手术频率的中间终点，厂家仍须开展确证试验，因此不能把加速批准写成长期临床获益已完全证实。",
+    "analysis": "治疗从反复处理病灶扩展到针对感染机制，具有新的平台意义。其适应症非常具体，需追踪确证试验、安全性和手术负担变化，不外推为所有HPV疾病的通用疗法。",
+    "facts": [
+      "FDA加速批准Voceryq用于成人复发性呼吸道乳头状瘤病。",
+      "这是美国首个获批的质粒DNA免疫疗法，针对导致该病的特定HPV感染。",
+      "批准基于减少手术频率这一中间临床终点，厂家必须开展批准后试验确认临床获益。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 19,
+      "scope": 10,
+      "signal": 18,
+      "delta": 12,
+      "timeliness": 6,
+      "crossDomain": 7,
+      "total": 72,
+      "rationale": {
+        "structural": "治疗从反复处理病灶扩展到针对感染机制，具有新的平台意义。其适应症非常具体，需追踪确证试验、。",
+        "scope": "影响范围覆盖美国及对应科研或产业群体。",
+        "signal": "已读取美国食品药品监督管理局原文逐项核对具体节点。",
+        "delta": "较此前阶段新增了公告明确披露的进展。",
+        "timeliness": "本轮为回溯补录，时间按原始公告计入。",
+        "crossDomain": "涉及技术、商业及社会应用的跨领域联系。"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "美国食品药品监督管理局",
+        "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-plasmid-dna-based-immunotherapy-adults-recurrent-respiratory-papillomatosis",
+        "date": "2026-10-30",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_health-translation",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮按官方原文回溯补录并完成原文事实核对；首次评分为当前回溯判断。"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 72
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_battery-battman-20261028",
+    "title": "美国发布电池战略并启动制造加速联盟",
+    "date": "2026-10-28",
+    "reportedAt": "2026-10-28",
+    "collectedAt": "2026-11-13",
+    "region": "us",
+    "category": "technology",
+    "summary": "美国能源部发布国家电池战略并启动BattMan制造加速联盟，把重点放在本土供应链、制造工艺和实验室成果规模化。2030年与2035年目标属于政策愿景，当前核实的是战略与联盟启动，尚无已实现降本数据。",
+    "analysis": "电池竞争逐渐延伸至工艺、材料安全和制造效率。联盟能否把研究转成稳定产能仍需验证，应跟踪具体项目、成本基线、量产良率及电网储能部署。",
+    "facts": [
+      "能源部宣布国家电池战略及电池制造加速联盟BattMan。",
+      "战略目标包括2030年形成整合的本土电池供应链，以及2035年取得技术和制造领导地位。",
+      "BattMan由国家实验室、产业及高校组成，重点解决新技术量产障碍与制造成本问题。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 18,
+      "scope": 14,
+      "signal": 13,
+      "delta": 8,
+      "timeliness": 5,
+      "crossDomain": 9,
+      "total": 67,
+      "rationale": {
+        "structural": "电池竞争逐渐延伸至工艺、材料安全和制造效率。联盟能否把研究转成稳定产能仍需验证，应跟踪具体。",
+        "scope": "影响范围覆盖美国及对应科研或产业群体。",
+        "signal": "已读取美国能源部原文逐项核对具体节点。",
+        "delta": "较此前阶段新增了公告明确披露的进展。",
+        "timeliness": "本轮为回溯补录，时间按原始公告计入。",
+        "crossDomain": "涉及技术、商业及社会应用的跨领域联系。"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "美国能源部",
+        "url": "https://www.energy.gov/cmei/articles/does-office-critical-minerals-and-energy-innovation-unveils-new-strategy-and",
+        "date": "2026-10-28",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_advanced-energy-validation",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮按官方原文回溯补录并完成原文事实核对；首次评分为当前回溯判断。"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 67
+      }
+    ],
+    "watch": null,
+    "backfill": true
   },
   {
     "id": "ev_cn-profit-1-9",
@@ -324,7 +795,13 @@
         "official": true
       }
     ],
-    "trends": [],
+    "trends": [
+      {
+        "id": "tr_cn-demand-rebalancing",
+        "effect": "support",
+        "reason": "提供观察命题的核实节点，持续性仍需后续证据。"
+      }
+    ],
     "timeline": [
       {
         "date": "2026-11-13",
@@ -336,6 +813,209 @@
       {
         "date": "2026-11-13",
         "total": 65
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_mmx-launch-20261020",
+    "title": "日本MMX火星卫星探测器成功发射并分离",
+    "date": "2026-10-20",
+    "reportedAt": "2026-10-20",
+    "collectedAt": "2026-11-13",
+    "region": "other",
+    "category": "technology",
+    "summary": "JAXA宣布，搭载MMX火星卫星探测器的H3十号火箭从种子岛成功发射，随后正常分离探测器并投入轨道。这标志任务进入实际飞行阶段，尚不代表已到达火星卫星、更不能视为采样返回成功。",
+    "analysis": "深空任务从地面准备走向飞行是可验证的重要节点。后续风险仍包括巡航、导航、接近和采样，因此趋势判断应随任务节点更新，保留最初判断的局限。",
+    "facts": [
+      "JAXA于日本时间10月20日4时41分03秒从种子岛发射H3十号火箭。",
+      "JAXA确认火箭按计划飞行，并在约1小时11分13秒后正常分离MMX。",
+      "公告核实的是发射、分离与入轨节点，并非采样返回完成。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 18,
+      "scope": 14,
+      "signal": 18,
+      "delta": 11,
+      "timeliness": 5,
+      "crossDomain": 7,
+      "total": 73,
+      "rationale": {
+        "structural": "深空任务从地面准备走向飞行是可验证的重要节点。后续风险仍包括巡航、导航、接近和采样，因此趋。",
+        "scope": "影响范围主要覆盖日本及相关产业参与者。",
+        "signal": "已读取日本宇宙航空研究开发机构原文确认具体节点。",
+        "delta": "相对前一阶段跨越了公告所述的明确节点。",
+        "timeliness": "本轮作为历史补录，按原始发布时间计入。",
+        "crossDomain": "涉及科研、供应链或公共服务的跨领域联系。"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "日本宇宙航空研究开发机构",
+        "url": "https://www.jaxa.jp/press/2026/10/20261020-1_j.html",
+        "date": "2026-10-20",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_space-observation-network",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮按官方原文回溯补录并完成原文事实核对；首次评分为当前回溯判断。"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 73
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_imf-weo-20261013",
+    "title": "IMF十月展望：全球增长3.1%，通胀仍有黏性",
+    "date": "2026-10-13",
+    "reportedAt": "2026-10-13",
+    "collectedAt": "2026-11-13",
+    "region": "global",
+    "category": "economy",
+    "summary": "国际货币基金组织十月展望预计2026年全球增长3.1%、2027年3.4%，全球总体通胀分别为4.7%和4.1%。报告认为战争、贸易和人工智能预期重估等因素继续构成下行风险。",
+    "analysis": "预测显示增长仍有韧性，但通胀黏性限制政策空间。AI投资可以支撑需求，也可能形成估值重估风险；需观察投资兑现和能源供应。此为当期机构预测，不能写成已经实现的全年结果。",
+    "facts": [
+      "IMF于10月13日发布世界经济展望。",
+      "预计2026和2027年全球增长分别为3.1%和3.4%。",
+      "预计两年全球总体通胀分别为4.7%和4.1%。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 21,
+      "scope": 20,
+      "signal": 17,
+      "delta": 9,
+      "timeliness": 3,
+      "crossDomain": 9,
+      "total": 79,
+      "rationale": {
+        "structural": "通胀路径关系货币与财政空间",
+        "scope": "全球总量及跨境金融风险",
+        "signal": "官方预测与风险章节共同支持",
+        "delta": "提供十月更新基准与风险分布",
+        "timeliness": "本轮事后补录，时效按历史研究计分",
+        "crossDomain": "AI能源贸易和金融交叉"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "IMF",
+        "url": "https://www.imf.org/en/Publications/WEO/Issues/2026/10/13/world-economic-outlook-october-2026",
+        "date": "2026-10-13",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_global-growth-frictions",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 79,
+        "reason": "本轮回溯首次评分"
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_wto-trade-outlook-20261008",
+    "title": "WTO上调货物贸易增长至3.9%，下调服务贸易至3.3%",
+    "date": "2026-10-08",
+    "reportedAt": "2026-10-08",
+    "collectedAt": "2026-11-13",
+    "region": "global",
+    "category": "economy",
+    "summary": "世贸组织十月展望将2026年货物贸易量增长预测从1.9%提高至3.9%，服务贸易量增长则从4.8%降至3.3%。上半年AI相关商品贡献了货物贸易增长的47%，能源和运输冲击仍拖累部分地区。",
+    "analysis": "商品和服务贸易出现方向相反的预测修订，说明不能用一个总量代替行业判断。AI资本开支若回落会削弱支撑，运输与旅游恢复也取决于冲突；47%为增长贡献，不能写成全部贸易份额。",
+    "facts": [
+      "10月8日WTO把2026年货物贸易量增长预测从1.9%上调至3.9%。",
+      "2026年商业服务贸易量增长预测从4.8%下调至3.3%。",
+      "上半年AI相关商品占全球货物贸易增长的47%，相关商品贸易额同比增67%。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 22,
+      "scope": 20,
+      "signal": 18,
+      "delta": 13,
+      "timeliness": 3,
+      "crossDomain": 9,
+      "total": 85,
+      "rationale": {
+        "structural": "AI资本开支重塑贸易增长来源",
+        "scope": "涵盖全球商品和服务贸易",
+        "signal": "官方预测含上半年行业统计支撑",
+        "delta": "货物上修服务下修幅度均明显",
+        "timeliness": "本轮事后补录，时效按历史研究计分",
+        "crossDomain": "技术能源物流旅游与金融联动"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "WTO",
+        "url": "https://www.wto.org/english/news_e/news26_e/stat_08oct26_510_e.htm",
+        "date": "2026-10-08",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_global-growth-frictions",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 85,
+        "reason": "本轮回溯首次评分"
       }
     ],
     "watch": null,
@@ -386,7 +1066,13 @@
         "official": true
       }
     ],
-    "trends": [],
+    "trends": [
+      {
+        "id": "tr_cn-demand-rebalancing",
+        "effect": "support",
+        "reason": "提供观察命题的核实节点，持续性仍需后续证据。"
+      }
+    ],
     "timeline": [
       {
         "date": "2026-11-13",
@@ -485,7 +1171,20 @@
       "营业收入利润率5.66%，同比提高0.44个百分点",
       "电子设备制造业利润同比+1.1倍，有色金属+82.9%，煤炭+51.6%，化工+51.0%"
     ],
-    "metrics": [],
+    "metrics": [
+      {
+        "label": "利润总额同比",
+        "value": "15.7%",
+        "note": "2026年1-8月 · 累计同比",
+        "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html"
+      },
+      {
+        "label": "营业收入利润率",
+        "value": "5.66%",
+        "note": "2026年1-8月 · 累计",
+        "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html"
+      }
+    ],
     "scores": {
       "structural": 20,
       "scope": 17,
@@ -505,33 +1204,101 @@
     },
     "credibility": "medium",
     "evidenceGrade": "single_primary",
-    "status": "pending",
+    "status": "confirmed",
     "sources": [
       {
         "name": "国家统计局",
         "url": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
         "date": "2026-09-28",
         "official": true
-      },
-      {
-        "name": "Gov.cn",
-        "url": "https://english.www.gov.cn/archive/statistics/202609/28/content_WS6ab9d6f1c6d00ca5f9a0d7e5.html",
-        "date": "2026-09-28",
-        "official": false
       }
     ],
     "trends": [
       {
         "id": "tr_cn-industrial-margin-repair",
         "effect": "support",
-        "reason": "利润率同比提高0.44pp，且为连续第4个月两位数利润增长"
+        "reason": "1—8月累计利润率同比提高0.44个百分点，支持盈利修复观察；单期累计数据不足以证明长期结构改善。"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮亲读官方原文逐项核对；移除未核实二手转述，pending→published。旧快照保留于本轮核验审计记录。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
         "total": 82
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_boj-rate-20260918",
+    "title": "日本央行再将隔夜利率目标提高至约1.25%",
+    "date": "2026-09-18",
+    "reportedAt": "2026-09-18",
+    "collectedAt": "2026-11-13",
+    "region": "other",
+    "category": "economy",
+    "summary": "日本央行以七比二多数将隔夜拆借利率目标定为约1.25%，9月24日起执行，补充存款利率1.25%、基本贷款利率1.5%。声明指出原油和日元贬值等成本正向消费价格传递。",
+    "analysis": "较六月更高的政策利率延续融资条件正常化，但外部能源冲击与AI需求同时存在。需观察工资传导和实际利率，不能把政策利率上升直接等同经济过热或日元必然升值。",
+    "facts": [
+      "日本央行9月18日以7比2多数决定隔夜利率目标约1.25%。",
+      "9月24日起补充存款利率1.25%、基本贷款利率1.5%。",
+      "声明指出企业间成本上涨已开始传递至消费价格。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 22,
+      "scope": 18,
+      "signal": 20,
+      "delta": 11,
+      "timeliness": 3,
+      "crossDomain": 8,
+      "total": 82,
+      "rationale": {
+        "structural": "连续调整影响日本货币正常化路径",
+        "scope": "涉及日本与跨境融资和资产配置",
+        "signal": "正式政策决议给出利率与生效日",
+        "delta": "目标由六月一厘水平进一步上升",
+        "timeliness": "本轮事后补录，时效按历史研究计分",
+        "crossDomain": "能源汇率工资与科技需求相连"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "Bank of Japan",
+        "url": "https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/k260918a.pdf",
+        "date": "2026-09-18",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_global-rates-rehike",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 82,
+        "reason": "本轮回溯首次评分"
       }
     ],
     "watch": null,
@@ -605,21 +1372,86 @@
     "backfill": true
   },
   {
-    "id": "ev_fed-hike-sep",
-    "title": "美联储重启加息25个基点，12比0全票通过",
-    "date": "2026-09-16",
+    "id": "ev_fayuvi-approval-20260917",
+    "title": "FDA批准首个针对Sanfilippo A型儿童患者的治疗",
+    "date": "2026-09-17",
     "reportedAt": "2026-09-17",
     "collectedAt": "2026-11-13",
     "region": "us",
-    "category": "economy",
-    "summary": "为3年2个月来首次加息，政策利率升至3.75%-4.00%，16名官员预计年内还会加。",
-    "analysis": "全票加息意味着委员会对通胀的判断一致；但市场此前普遍预期按兵不动，政策路径的预期差可能放大资产波动。",
+    "category": "technology",
+    "summary": "FDA批准Fayuvi，成为Sanfilippo A型儿童患者首个获批治疗选择。该基因疗法采用一次静脉给药，临床证据来自单臂研究与历史对照。获批改变了治疗路径，但疗效持久性、长期安全和可及性仍需追踪。",
+    "analysis": "这是罕见病治疗的监管节点，不能扩写为所有神经退行性疾病的通用突破。历史对照研究存在比较局限，长期随访、适用条件和真实支付能力决定实际受益范围。",
     "facts": [
-      "美联储联邦公开市场委员会（FOMC）加息25个基点",
-      "联邦基金利率目标区间升至3.75%-4.00%",
-      "FOMC 以12比0通过加息",
-      "为3年2个月来首次加息",
-      "16名官员预计年内继续加息"
+      "FDA批准Fayuvi，用于Sanfilippo A型即黏多糖贮积症IIIA型儿童患者。",
+      "该疗法采用一次静脉给药的AAV9载体递送SGSH基因。",
+      "FDA披露证据来自开放标签、单臂、多中心儿童研究，与未治疗历史对照比较。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 20,
+      "scope": 9,
+      "signal": 18,
+      "delta": 13,
+      "timeliness": 4,
+      "crossDomain": 7,
+      "total": 71,
+      "rationale": {
+        "structural": "这是罕见病治疗的监管节点，不能扩写为所有神经退行性疾病的通用突破。历史对照研究存在比较局限。",
+        "scope": "影响范围主要覆盖美国及相关产业参与者。",
+        "signal": "已读取美国食品药品监督管理局原文确认具体节点。",
+        "delta": "相对前一阶段跨越了公告所述的明确节点。",
+        "timeliness": "本轮作为历史补录，按原始发布时间计入。",
+        "crossDomain": "涉及科研、供应链或公共服务的跨领域联系。"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "美国食品药品监督管理局",
+        "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-gene-therapy-pediatric-patients-sanfilippo-syndrome-type",
+        "date": "2026-09-17",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_health-translation",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮按官方原文回溯补录并完成原文事实核对；首次评分为当前回溯判断。"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 71
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_fed-hike-sep",
+    "title": "美联储重启加息25个基点，12比0全票通过",
+    "date": "2026-09-16",
+    "reportedAt": "2026-09-16",
+    "collectedAt": "2026-11-13",
+    "region": "us",
+    "category": "economy",
+    "summary": "美联储9月16日宣布加息25个基点，联邦基金利率目标区间升至3.75%—4.00%，12名委员全部赞成。声明称通胀仍处高位，后续决策取决于数据与风险变化。",
+    "analysis": "全票通过说明此次政策行动获委员会一致支持，但不能据此推断未来每次会议都将加息。需要结合后续通胀、就业和官方会议声明跟踪政策持续性。",
+    "facts": [
+      "联邦基金利率目标区间上调25个基点至3.75%—4.00%。",
+      "声明列出的12名委员全部赞成此次政策行动。",
+      "声明称通胀仍处高位，后续政策调整将结合经济数据、前景和风险。"
     ],
     "metrics": [],
     "scores": {
@@ -641,33 +1473,304 @@
     },
     "credibility": "medium",
     "evidenceGrade": "single_primary",
-    "status": "pending",
+    "status": "confirmed",
     "sources": [
       {
         "name": "Federal Reserve Board",
         "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
         "date": "2026-09-16",
         "official": true
-      },
-      {
-        "name": "新浪财经",
-        "url": "https://finance.sina.com.cn/jjxw/2026-09-17/doc-inisaiep4453541.shtml",
-        "date": "2026-09-17",
-        "official": false
       }
     ],
     "trends": [
       {
         "id": "tr_global-rates-rehike",
         "effect": "support",
-        "reason": "首次加息且全票，确认政策转向"
+        "reason": "9月加息是政策收紧的已核实节点，是否持续仍需后续会议佐证。"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮亲读官方原文逐项核对；移除未核实二手转述，pending→published。旧快照保留于本轮核验审计记录。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
         "total": 85
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_iea-oil-20260911",
+    "title": "IEA九月报告再下调需求，八月石油库存减少9500万桶",
+    "date": "2026-09-11",
+    "reportedAt": "2026-09-11",
+    "collectedAt": "2026-11-13",
+    "region": "global",
+    "category": "economy",
+    "summary": "国际能源署九月报告预计2026年石油需求同比减少250万桶/日，比八月预测降幅再扩大94万桶；八月全球供应降至每日1.001亿桶，观察库存减少9500万桶，海湾供应恢复被推迟至2027年。",
+    "analysis": "库存消耗与供需双降表明高价可以和需求疲弱同时存在，柴油等成品油可能比原油更紧。需观察运输通行、炼厂和库存回补；恢复时间只是报告预测，不是既成事实。",
+    "facts": [
+      "IEA于9月11日发布九月石油市场报告。",
+      "预计2026年石油需求减少250万桶/日，降幅较上月扩大94万桶/日。",
+      "八月全球供应1.001亿桶/日，观察库存减少9500万桶。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 23,
+      "scope": 20,
+      "signal": 18,
+      "delta": 12,
+      "timeliness": 3,
+      "crossDomain": 9,
+      "total": 85,
+      "rationale": {
+        "structural": "供应中断延长改变能源风险期限",
+        "scope": "全球燃料及亚洲工业需求受影响",
+        "signal": "供需实绩和库存共同构成信号",
+        "delta": "需求降幅再扩大且库存继续下降",
+        "timeliness": "本轮事后补录，时效按历史研究计分",
+        "crossDomain": "运输炼化通胀与经济活动相连"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "IEA",
+        "url": "https://www.iea.org/reports/oil-market-report-september-2026",
+        "date": "2026-09-11",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_geopolitics-energy-premium",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 85,
+        "reason": "本轮回溯首次评分"
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_apple-health-20260909",
+    "title": "苹果宣布更高频HRV和日常恢复评分，扩展可穿戴健康分析",
+    "date": "2026-09-09",
+    "reportedAt": "2026-09-09",
+    "collectedAt": "2026-11-13",
+    "region": "global",
+    "category": "technology",
+    "summary": "苹果宣布新款手表采用更高频心率与HRV测量，并提供结合活动、生命体征和睡眠的恢复评分；健康应用也将扩展长期洞察。它体现可穿戴设备从记录走向建议，但消费级评分不等于医学诊断或健康寿命已改善。",
+    "analysis": "将连续指标压缩成行动建议可能降低理解门槛，也会带来算法解释和误导风险。厂商精度主张尚未独立复核，下一步看真实使用效果、不同人群表现及隐私控制。",
+    "facts": [
+      "苹果宣布Watch Series 12及Ultra 4采用新的光学和电学心脏传感系统。",
+      "公告称新系统支持更高频心率和HRV测量，并推出每日0至10分的readiness评分。",
+      "重新设计的Health应用在公告中注明计划于当年稍后推出。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 15,
+      "scope": 16,
+      "signal": 13,
+      "delta": 8,
+      "timeliness": 4,
+      "crossDomain": 8,
+      "total": 64,
+      "rationale": {
+        "structural": "将连续指标压缩成行动建议可能降低理解门槛，也会带来算法解释和误导风险。厂商精度主张尚未独立。",
+        "scope": "影响范围覆盖全球及对应科研或产业群体。",
+        "signal": "已读取Apple原文逐项核对具体节点。",
+        "delta": "较此前阶段新增了公告明确披露的进展。",
+        "timeliness": "本轮为回溯补录，时间按原始公告计入。",
+        "crossDomain": "涉及技术、商业及社会应用的跨领域联系。"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "Apple",
+        "url": "https://www.apple.com/newsroom/2026/09/apple-advances-health-and-fitness-capabilities-using-apple-intelligence/",
+        "date": "2026-09-09",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_ai-platform-expansion",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮按官方原文回溯补录并完成原文事实核对；首次评分为当前回溯判断。"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 64
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_who-searo-trachoma-20260908",
+    "title": "WHO确认东南亚区域整体消除沙眼公共卫生问题",
+    "date": "2026-09-08",
+    "reportedAt": "2026-09-08",
+    "collectedAt": "2026-11-13",
+    "region": "other",
+    "category": "technology",
+    "summary": "世卫组织发布东帝汶卫生进展公告，确认该国9月3日通过消除沙眼公共卫生问题验证，东南亚区域由此实现全区域这一里程碑。公告还记录该国慢病规范管理人数超过8.69万人。",
+    "analysis": "持续监测与基层卫生投入可以带来跨国可复制的防盲成果。消除公共卫生问题不等于病原体永久根除，需观察监测质量、复发与服务持续性；日期区分验证日与公告日。",
+    "facts": [
+      "WHO于9月8日发布东帝汶公共卫生进展公告。",
+      "东帝汶9月3日获验证消除沙眼公共卫生问题，为该区域最后一个疑似流行国家。",
+      "WHO据此宣布其东南亚区域整体消除沙眼公共卫生问题。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 19,
+      "scope": 14,
+      "signal": 20,
+      "delta": 12,
+      "timeliness": 3,
+      "crossDomain": 6,
+      "total": 74,
+      "rationale": {
+        "structural": "长期基层卫生投入形成疾病控制能力",
+        "scope": "里程碑覆盖WHO东南亚区域",
+        "signal": "官方验证明确疾病消除性质",
+        "delta": "最后疑似流行国家通过验证",
+        "timeliness": "本轮事后补录，时效按历史研究计分",
+        "crossDomain": "公共卫生教育与劳动能力相连"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "WHO",
+        "url": "https://www.who.int/timorleste/news/detail/08-09-2026-timor-leste-recognized-for-major-public-health-achievements-at-who-regional-committee",
+        "date": "2026-09-08",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_health-translation",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 74,
+        "reason": "本轮回溯首次评分"
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_wmo-enso-20260903",
+    "title": "WMO预计厄尔尼诺几乎确定持续到2027年二月",
+    "date": "2026-09-03",
+    "reportedAt": "2026-09-03",
+    "collectedAt": "2026-11-13",
+    "region": "global",
+    "category": "technology",
+    "summary": "世界气象组织发布八月期ENSO更新，确认厄尔尼诺已经建立且继续增强，预计延续至2027年二月的概率接近100%。报告预测年底前强度还将上升，并要求加强区域预警和应对准备。",
+    "analysis": "风险窗口延长会影响跨季节粮食、能源和灾害预算安排。它并不确定每个地区旱涝方向和损失，需结合区域预报；本条按真实发布日期计入九月，而非按报告期错归八月。",
+    "facts": [
+      "WMO八月期更新实际发布日为9月3日。",
+      "截至八月中旬厄尔尼诺已经建立，持续至2027年二月的概率接近100%。",
+      "报告强调事件强度不能直接换算为任一区域影响大小。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 22,
+      "scope": 20,
+      "signal": 17,
+      "delta": 10,
+      "timeliness": 3,
+      "crossDomain": 9,
+      "total": 81,
+      "rationale": {
+        "structural": "风险跨年度延续影响中期防灾预算",
+        "scope": "全球多区域降水和温度格局",
+        "signal": "WMO多模式预报概率与观测结合",
+        "delta": "将持续窗口延长至翌年二月",
+        "timeliness": "本轮事后补录，时效按历史研究计分",
+        "crossDomain": "气候灾害与食品能源相连"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "WMO",
+        "url": "https://public.wmo.int/resources/publication-series/el-ninola-nina-updates/august-2026",
+        "date": "2026-09-03",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_climate-food-inflation",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 81,
+        "reason": "本轮回溯首次评分"
       }
     ],
     "watch": null,
@@ -736,6 +1839,2631 @@
       {
         "date": "2026-11-13",
         "total": 79
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_mtgi2-launch-20260827",
+    "title": "欧洲MTG-I2气象卫星成功发射，补齐三卫星系统",
+    "date": "2026-08-27",
+    "reportedAt": "2026-08-27",
+    "collectedAt": "2026-11-13",
+    "region": "europe",
+    "category": "technology",
+    "summary": "欧洲气象卫星MTG-I2成功发射并建立通信，三颗第三代气象卫星由此全部入轨。该星计划支持欧洲每2.5分钟快速扫描，提升强天气预警能力；但发射当天仍需升轨和调试，不能等同于完整业务能力已上线。",
+    "analysis": "更密集的气象观测有机会改善临近预报及灾害响应，也关联农业、航空和保险。需继续跟踪调试验收、数据开放及预报技能提升，而不只看发射成功。",
+    "facts": [
+      "ESA确认MTG-I2于8月27日成功发射，并与地面建立通信。",
+      "该星是三颗Meteosat第三代卫星中的第二颗成像星，前两颗已交付业务运行。",
+      "新星计划提供欧洲每2.5分钟一次的快速扫描，完整能力仍需完成升轨与调试。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 19,
+      "scope": 15,
+      "signal": 17,
+      "delta": 10,
+      "timeliness": 3,
+      "crossDomain": 9,
+      "total": 73,
+      "rationale": {
+        "structural": "更密集的气象观测有机会改善临近预报及灾害响应，也关联农业、航空和保险。需继续跟踪调试验收、。",
+        "scope": "影响范围主要覆盖欧洲及相关产业参与者。",
+        "signal": "已读取欧洲航天局原文确认具体节点。",
+        "delta": "相对前一阶段跨越了公告所述的明确节点。",
+        "timeliness": "本轮作为历史补录，按原始发布时间计入。",
+        "crossDomain": "涉及科研、供应链或公共服务的跨领域联系。"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "欧洲航天局",
+        "url": "https://www.esa.int/media-advisories/news-media/media/media-advisories/n-43-2026-mtg-i2-completes-europe-s-latest-weather-trio",
+        "date": "2026-08-27",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_space-observation-network",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮按官方原文回溯补录并完成原文事实核对；首次评分为当前回溯判断。"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 73
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_nvidia-q2fy27-20260826",
+    "title": "英伟达季度收入962亿美元，数据中心收入继续翻倍",
+    "date": "2026-08-26",
+    "reportedAt": "2026-08-26",
+    "collectedAt": "2026-11-13",
+    "region": "global",
+    "category": "technology",
+    "summary": "英伟达报告截至7月26日的季度收入962亿美元，同比增长106%，数据中心收入890亿美元、增长117%。这延续了前一季度的算力采购扩张，属于已确认的供应商收入，不能据此断言客户投资回报同样翻倍。",
+    "analysis": "连续季度收入增长增强了基础设施需求信号，但产业链现金流与终端商业价值可能不同步。应继续看客户集中度、设备使用率、电力瓶颈及采购持续性。",
+    "facts": [
+      "英伟达报告截至7月26日的第二财季收入962亿美元，同比增加106%、环比增加18%。",
+      "该季度数据中心收入890亿美元，同比增加117%。",
+      "该季度GAAP毛利率为75.0%，相关表格标注未经审计。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 22,
+      "scope": 18,
+      "signal": 18,
+      "delta": 12,
+      "timeliness": 3,
+      "crossDomain": 9,
+      "total": 82,
+      "rationale": {
+        "structural": "连续季度收入增长增强了基础设施需求信号，但产业链现金流与终端商业价值可能不同步。应继续看客。",
+        "scope": "影响范围覆盖全球及对应科研或产业群体。",
+        "signal": "已读取NVIDIA原文逐项核对具体节点。",
+        "delta": "较此前阶段新增了公告明确披露的进展。",
+        "timeliness": "本轮为回溯补录，时间按原始公告计入。",
+        "crossDomain": "涉及技术、商业及社会应用的跨领域联系。"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "NVIDIA",
+        "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Second-Quarter-Fiscal-2027/default.aspx",
+        "date": "2026-08-26",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_ai-power-constraint",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮按官方原文回溯补录并完成原文事实核对；首次评分为当前回溯判断。"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 82
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_apple-eu-terms-20260818",
+    "title": "苹果宣布统一欧盟应用商业条款，调整替代分发收费",
+    "date": "2026-08-18",
+    "reportedAt": "2026-08-18",
+    "collectedAt": "2026-11-13",
+    "region": "europe",
+    "category": "technology",
+    "summary": "苹果宣布统一欧盟应用商业条款，计划以商店外数字交易5%的佣金替代按安装计费的核心技术费，并扩大替代分发资格。变化可能影响开发者成本结构，但这是苹果公告口径，实际节省取决于业务模式与适用条件。",
+    "analysis": "平台收费从安装次数转向交易额，会重新分配不同类型开发者的成本。应看条款落地、开发者迁移和监管机构后续评价，不将苹果所述争议解决当成独立监管确认。",
+    "facts": [
+      "苹果宣布欧盟开发者可签署统一的新商业条款，并计划10月1日生效。",
+      "按公告，按安装计费的核心技术费将由商店外应用数字交易5%的核心技术佣金替代。",
+      "公告还扩大了运营替代应用市场及网页分发的资格；替代分发仍需公证审核。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 18,
+      "scope": 15,
+      "signal": 16,
+      "delta": 10,
+      "timeliness": 3,
+      "crossDomain": 8,
+      "total": 70,
+      "rationale": {
+        "structural": "平台收费从安装次数转向交易额，会重新分配不同类型开发者的成本。应看条款落地、开发者迁移和监。",
+        "scope": "影响范围覆盖欧洲及对应科研或产业群体。",
+        "signal": "已读取Apple原文逐项核对具体节点。",
+        "delta": "较此前阶段新增了公告明确披露的进展。",
+        "timeliness": "本轮为回溯补录，时间按原始公告计入。",
+        "crossDomain": "涉及技术、商业及社会应用的跨领域联系。"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "Apple",
+        "url": "https://www.apple.com/newsroom/2026/08/apple-announces-changes-for-apps-in-the-european-union/",
+        "date": "2026-08-18",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_ai-platform-expansion",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮按官方原文回溯补录并完成原文事实核对；首次评分为当前回溯判断。"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 70
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_cn-realestate-1-7",
+    "title": "1—7月房地产开发投资同比下降19.2%",
+    "date": "2026-08-17",
+    "reportedAt": "2026-08-17",
+    "collectedAt": "2026-11-13",
+    "region": "china",
+    "category": "industry",
+    "summary": "国家统计局8月17日发布：1—7月房地产开发投资43009亿元，同比降19.2%；新建商品房销售额42718亿元，降13.1%。",
+    "analysis": "开发投资与到位资金降幅均大于销售额降幅，说明开发端仍有压力；待售面积小幅下降不能单独证明需求复苏。新开工和竣工均下降，未来供给也可能变化；是否见底需结合后续成交、交付与融资连续观察。",
+    "facts": [
+      "1—7月全国房地产开发投资43009亿元，同比下降19.2%；其中住宅投资33172亿元，下降19.1%。",
+      "房屋新开工面积26700万平方米，下降24.0%；竣工面积19195万平方米，下降23.2%。",
+      "新建商品房销售面积45021万平方米降11.8%，销售额42718亿元降13.1%。",
+      "房地产开发企业到位资金45748亿元，下降20.3%；其中国内贷款6300亿元，下降32.1%。",
+      "7月末商品房待售面积75911万平方米，同比下降0.8%。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 18,
+      "scope": 14,
+      "signal": 13,
+      "delta": 12,
+      "timeliness": 4,
+      "crossDomain": 7,
+      "total": 68,
+      "rationale": {
+        "structural": "投资、销售、资金三条链",
+        "scope": "全国房地产及上下游",
+        "signal": "投资-19.2%与贷款-32.1%信号清晰",
+        "delta": "降幅较上月小幅扩大",
+        "timeliness": "8月发布，仍在观察窗口内",
+        "crossDomain": "牵连建材、家电与地方财政"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "国家统计局",
+        "url": "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202608/t20260817_1965053.html",
+        "date": "2026-08-17",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_cn-realestate-contraction",
+        "effect": "support",
+        "reason": "投资与到位资金双位数下降"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "独立复核原文后pending→published；删除未证实的“待售面积同比转负”和“尚未见底”趋势断言。"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 68
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_noaa-enso-20260813",
+    "title": "NOAA：秋冬出现很强厄尔尼诺概率超过90%",
+    "date": "2026-08-13",
+    "reportedAt": "2026-08-13",
+    "collectedAt": "2026-11-13",
+    "region": "global",
+    "category": "technology",
+    "summary": "美国气候预测中心确认厄尔尼诺持续增强，预计2026年秋冬达到很强级别的概率超过90%。七月尼诺3.4区指数为正1.4℃，报告提醒强度虽增加典型影响的可能性，却不保证各地都会出现对应灾害。",
+    "analysis": "季节气候风险上调为粮食、水资源和电力规划提供预警，但不等于已经出现全球同方向损失。需看区域季节预报和降雨实况，不能由海温指数机械估算经济损失。",
+    "facts": [
+      "NOAA气候预测中心于8月13日发布ENSO诊断讨论。",
+      "预计2026年北半球秋冬出现很强厄尔尼诺的概率超过90%。",
+      "七月尼诺3.4区指数为+1.4℃。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 21,
+      "scope": 20,
+      "signal": 17,
+      "delta": 11,
+      "timeliness": 2,
+      "crossDomain": 9,
+      "total": 80,
+      "rationale": {
+        "structural": "季节气候变化影响生产和防灾计划",
+        "scope": "ENSO能够改变多地气温降水",
+        "signal": "官方观测结合多模型概率预测",
+        "delta": "很强事件风险提高至九成以上",
+        "timeliness": "本轮事后补录，时效按历史研究计分",
+        "crossDomain": "气候农业水电与公共健康相连"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "NOAA CPC",
+        "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_disc_aug2026/ensodisc.shtml",
+        "date": "2026-08-13",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_climate-food-inflation",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 80,
+        "reason": "本轮回溯首次评分"
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_apple-amc-houston-20260813",
+    "title": "苹果休斯敦先进制造中心开放，向中小企业提供免费培训",
+    "date": "2026-08-13",
+    "reportedAt": "2026-08-13",
+    "collectedAt": "2026-11-13",
+    "region": "us",
+    "category": "technology",
+    "summary": "苹果宣布在休斯敦开放先进制造中心，为美国中小企业提供免费课程、设备与互动实验室体验。它把智能制造培训与现有服务器生产设施相结合，属于技能和产业配套投入，培训效果与供应商采用率仍待观察。",
+    "analysis": "技能培训是制造本地化中容易被设备投资掩盖的环节。公告证明中心开放和服务设计，不证明就业或生产率已提高，后续看参训企业、课程完成和改造项目。",
+    "facts": [
+      "苹果宣布在休斯敦开放先进制造中心。",
+      "中心向中小企业提供免费培训与教育课程，并提供设备和互动实验室体验。",
+      "中心设于苹果AI服务器生产及发货设施内。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 13,
+      "scope": 10,
+      "signal": 13,
+      "delta": 7,
+      "timeliness": 3,
+      "crossDomain": 7,
+      "total": 53,
+      "rationale": {
+        "structural": "技能培训是制造本地化中容易被设备投资掩盖的环节。公告证明中心开放和服务设计，不证明就业或生。",
+        "scope": "影响范围主要覆盖美国及相关产业参与者。",
+        "signal": "已读取Apple原文确认具体节点。",
+        "delta": "相对前一阶段跨越了公告所述的明确节点。",
+        "timeliness": "本轮作为历史补录，按原始发布时间计入。",
+        "crossDomain": "涉及科研、供应链或公共服务的跨领域联系。"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "Apple",
+        "url": "https://www.apple.com/newsroom/2026/08/apple-opens-advanced-manufacturing-center-in-houston/",
+        "date": "2026-08-13",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_science-manufacturing-transfer",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮按官方原文回溯补录并完成原文事实核对；首次评分为当前回溯判断。"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 53
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_iea-oil-20260812",
+    "title": "IEA下调石油需求，预计2026年减少160万桶/日",
+    "date": "2026-08-12",
+    "reportedAt": "2026-08-12",
+    "collectedAt": "2026-11-13",
+    "region": "global",
+    "category": "economy",
+    "summary": "国际能源署八月报告预计2026年全球石油需求减少160万桶/日，降幅比上月预测扩大51万桶/日。七月供应虽回升至每日1.015亿桶，仍比上年少630万桶，观察库存当月减少6900万桶。",
+    "analysis": "需求下降未必带来低油价，供应与运输约束可能更紧。需要联合观察海峡通行、成品油裂解价差和库存；需求预测还会随冲突和供应恢复调整，不能仅凭需求总量判断宽松。",
+    "facts": [
+      "IEA八月报告发布于8月12日。",
+      "预计2026年石油需求同比减少160万桶/日，降幅较上月扩大51万桶/日。",
+      "七月供应为1.015亿桶/日，同比少630万桶/日。",
+      "七月全球观察库存减少6900万桶。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 22,
+      "scope": 20,
+      "signal": 18,
+      "delta": 12,
+      "timeliness": 2,
+      "crossDomain": 9,
+      "total": 83,
+      "rationale": {
+        "structural": "能源供应冲击影响生产与物价",
+        "scope": "全球石油供需及运输系统",
+        "signal": "月报同时提供供需和库存诊断",
+        "delta": "需求降幅扩大且供应同比明显不足",
+        "timeliness": "本轮事后补录，时效按历史研究计分",
+        "crossDomain": "运输化工通胀和货币政策联动"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "IEA",
+        "url": "https://www.iea.org/reports/oil-market-report-August-2026",
+        "date": "2026-08-12",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_geopolitics-energy-premium",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 83,
+        "reason": "本轮回溯首次评分"
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_cn-profit-1-6",
+    "title": "1—6月规上工业企业利润同比增长18.7%",
+    "date": "2026-07-27",
+    "reportedAt": "2026-07-27",
+    "collectedAt": "2026-11-13",
+    "region": "china",
+    "category": "industry",
+    "summary": "国家统计局7月27日发布：1—6月规上工业企业利润39479.9亿元，同比增18.7%；营收69.26万亿元，利润率5.70%。",
+    "analysis": "上半年利润增长伴随行业显著分化，有色与电子增长、汽车和建材下降。成本增速低于营收与利润率改善同时存在，但这不能独立识别需求贡献；需观察订单、销售量和价格因素，不能直接认定全面复苏。",
+    "facts": [
+      "1—6月规上工业企业实现利润总额39479.9亿元，同比增长18.7%。",
+      "采矿业利润5745.0亿元增33.5%，制造业29712.1亿元增20.1%，电力热力燃气及水生产和供应业4022.7亿元降4.2%。",
+      "营业收入69.26万亿元增6.5%，营业成本58.80万亿元增5.9%，利润率5.70%提高0.59个百分点。",
+      "有色金属冶炼和压延加工业增99.4%，电子设备制造业增96.9%，化学原料增67.8%，汽车制造业降19.5%，非金属矿物制品业降47.8%。"
+    ],
+    "metrics": [
+      {
+        "label": "利润总额",
+        "value": "39479.9亿元",
+        "note": "2026-01..06 · 规上工业"
+      },
+      {
+        "label": "营收利润率",
+        "value": "5.7%",
+        "note": "2026-01..06 · 规上工业"
+      }
+    ],
+    "scores": {
+      "structural": 17,
+      "scope": 13,
+      "signal": 11,
+      "delta": 10,
+      "timeliness": 4,
+      "crossDomain": 7,
+      "total": 62,
+      "rationale": {
+        "structural": "利润与成本结构反映供需",
+        "scope": "覆盖全部规上工业",
+        "signal": "增速稳定但分化明显",
+        "delta": "较1—5月基本持平",
+        "timeliness": "7月末发布，仍在观察窗口内",
+        "crossDomain": "牵连价格、出口与投资"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "国家统计局",
+        "url": "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202607/t20260727_1964194.html",
+        "date": "2026-07-27",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_cn-industrial-margin-repair",
+        "effect": "support",
+        "reason": "上半年利润率同比提高0.59个百分点"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "独立复核原文后pending→published；删除未被本页数据识别的“需求侧贡献有限”因果断言。"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 62
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_cn-power-system-plan-2026",
+    "title": "发改委、能源局印发《新型电力系统建设“十五五”规划》",
+    "date": "2026-07-21",
+    "reportedAt": "2026-08-03",
+    "collectedAt": "2026-11-13",
+    "region": "china",
+    "category": "industry",
+    "summary": "发改委、能源局8月3日发布通知（发改能源〔2026〕942号），印发《新型电力系统建设“十五五”规划》，成文日期7月21日。",
+    "analysis": "与碳达峰行动方案、可再生能源规划构成电力侧政策组合。本记录只核实“印发”这一发布事实，具体量化指标在附件中，未逐条核对前不作推断。",
+    "facts": [
+      "通知文号为发改能源〔2026〕942号，由国家发展改革委、国家能源局联合印发。",
+      "通知发布时间为2026年8月3日，落款日期为2026年7月21日。",
+      "规划依据“十五五”规划纲要和《新型能源体系建设“十五五”规划》编制。",
+      "规划全文以附件PDF/OFD形式随通知发布。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 20,
+      "scope": 16,
+      "signal": 13,
+      "delta": 11,
+      "timeliness": 4,
+      "crossDomain": 9,
+      "total": 73,
+      "rationale": {
+        "structural": "电力系统规划牵连发输配用",
+        "scope": "全国电力系统",
+        "signal": "部委联合印发是明确动作",
+        "delta": "相较既有规划是新周期部署",
+        "timeliness": "8月发布，仍在观察窗口内",
+        "crossDomain": "牵连能源、制造与气候"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "国家发展和改革委员会",
+        "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260803_1406883.html",
+        "date": "2026-08-03",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_cn-policy-power-system",
+        "effect": "support",
+        "reason": "电力系统五年规划落地，政策组合成形"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "独立复核原文后pending→published；按原通知区分7月21日成文与8月3日公开，不制造零点时分。"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 73
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_fao-sofi-20260721",
+    "title": "联合国粮食报告：全球饥饿人数降至6.45亿",
+    "date": "2026-07-21",
+    "reportedAt": "2026-07-21",
+    "collectedAt": "2026-11-13",
+    "region": "global",
+    "category": "technology",
+    "summary": "联合国五机构发布粮食安全报告，估计2025年全球6.45亿人面临饥饿，比上年减少近1400万，但非洲饥饿人数约3.09亿。全球改善连续三年延续，地区差异和健康饮食负担仍突出。",
+    "analysis": "全球改善与非洲绝对人数高企同时存在，援助和农食投资不能只依据全球均值。报告统计的是2025年，尚未体现2026年全部冲突和气候影响；需跟踪食品价格、化肥供应及援助资金。",
+    "facts": [
+      "7月21日发布的SOFI报告估计2025年全球饥饿人数6.45亿，占人口7.8%。",
+      "全球饥饿人数比2024年减少近1400万，连续第三年下降。",
+      "非洲饥饿人数约3.09亿，亚洲约2.92亿。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 23,
+      "scope": 20,
+      "signal": 18,
+      "delta": 10,
+      "timeliness": 2,
+      "crossDomain": 9,
+      "total": 82,
+      "rationale": {
+        "structural": "粮食可及性是长期发展基础",
+        "scope": "全球人口及重点脆弱地区",
+        "signal": "五机构联合统计报告原文可核",
+        "delta": "连续三年改善但地区差异仍突出",
+        "timeliness": "本轮事后补录，时效按历史研究计分",
+        "crossDomain": "能源化肥气候与公共健康相连"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "FAO",
+        "url": "https://www.fao.org/newsroom/detail/un-report--global-hunger-levels-ease-for-third-consecutive-year-as-regional-disparities-persist/",
+        "date": "2026-07-21",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_climate-food-inflation",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 82,
+        "reason": "本轮回溯首次评分"
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_quantum-isotopes-20260716",
+    "title": "美国实验室公布超纯硅锗同位素材料进展",
+    "date": "2026-07-16",
+    "reportedAt": "2026-07-16",
+    "collectedAt": "2026-11-13",
+    "region": "us",
+    "category": "technology",
+    "summary": "美国能源部与国家实验室公布超富集硅烷、锗烷制备进展，称会干扰量子信息的特定同位素杂质降至百万分之一以下。进展针对量子器件的材料供应，仍不能等同于量子计算机性能或规模化制造突破。",
+    "analysis": "高纯同位素有助降低器件噪声，是量子产业链的基础条件。当前证据来自官方材料报告，应观察批量供应、价格、良率及实际器件的相干性改善。",
+    "facts": [
+      "能源部同位素项目与橡树岭、太平洋西北国家实验室报告超富集硅烷和锗烷制备进展。",
+      "公告称相关材料中的硅29和锗73杂质降至百万分之一以下。",
+      "硅烷中的硅28同位素纯度达到99.9999%。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 16,
+      "scope": 11,
+      "signal": 14,
+      "delta": 9,
+      "timeliness": 2,
+      "crossDomain": 6,
+      "total": 58,
+      "rationale": {
+        "structural": "高纯同位素有助降低器件噪声，是量子产业链的基础条件。当前证据来自官方材料报告，应观察批量供。",
+        "scope": "影响范围主要覆盖美国及相关产业参与者。",
+        "signal": "已读取美国能源部原文确认具体节点。",
+        "delta": "相对前一阶段跨越了公告所述的明确节点。",
+        "timeliness": "本轮作为历史补录，按原始发布时间计入。",
+        "crossDomain": "涉及科研、供应链或公共服务的跨领域联系。"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "美国能源部",
+        "url": "https://www.energy.gov/science/articles/silencing-noise-doe-unveils-breakthrough-domestic-silicon-and-germanium-isotope",
+        "date": "2026-07-16",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_science-manufacturing-transfer",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮按官方原文回溯补录并完成原文事实核对；首次评分为当前回溯判断。"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 58
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_cn-cpi-2026-06",
+    "title": "6月CPI同比上涨1.0%，上半年累计1.0%",
+    "date": "2026-07-10",
+    "reportedAt": "2026-07-10",
+    "collectedAt": "2026-11-13",
+    "region": "china",
+    "category": "industry",
+    "summary": "国家统计局7月10日发布：6月CPI同比涨1.0%、环比降0.3%；上半年平均涨1.0%，猪肉价格同比降15.9%。",
+    "analysis": "食品与非食品价格分化，猪肉下跌与服务价格温和上涨并存。温和通胀可能影响政策选择，但不能由本页数据证明内需传导偏弱；应继续观察核心价格、服务价格与后续月份，而非把单月环比下降等同通缩。",
+    "facts": [
+      "6月CPI同比上涨1.0%，其中城市涨1.0%、农村涨0.8%；食品价格降1.6%，非食品涨1.5%。",
+      "消费品价格涨1.1%，服务价格涨0.8%；6月CPI环比下降0.3%。",
+      "猪肉价格同比下降15.9%，鲜果下降0.7%，鸡蛋上涨16.0%。",
+      "1—6月平均CPI同比上涨1.0%。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 14,
+      "scope": 12,
+      "signal": 10,
+      "delta": 9,
+      "timeliness": 4,
+      "crossDomain": 6,
+      "total": 55,
+      "rationale": {
+        "structural": "物价反映供需与货币条件",
+        "scope": "覆盖居民消费全品类",
+        "signal": "同比1.0%属温和水平",
+        "delta": "环比-0.3%有短期波动",
+        "timeliness": "7月发布，仍在观察窗口内",
+        "crossDomain": "牵连货币政策与消费"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "国家统计局",
+        "url": "https://www.stats.gov.cn/english/PressRelease/202607/t20260710_1964094.html",
+        "date": "2026-07-10",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_cn-demand-rebalancing",
+        "effect": "support",
+        "reason": "提供观察命题的核实节点，持续性仍需后续证据。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "独立复核原文后pending→published；原文0.30个百分点对应畜肉类，非单列猪肉；移除错误归因。修正双斜杠URL。"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 55
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_imf-weo-update-20260708",
+    "title": "IMF七月更新预计全球增长3.0%",
+    "date": "2026-07-08",
+    "reportedAt": "2026-07-08",
+    "collectedAt": "2026-11-13",
+    "region": "global",
+    "category": "economy",
+    "summary": "国际货币基金组织七月更新预计2026年全球增长3.0%、2027年3.4%。报告指出战争拖累能源进口和脆弱经济体，人工智能需求支撑科技价值链相关国家，全球去通胀进程停滞。",
+    "analysis": "全球总量掩盖能源进口与技术出口经济体的分化，行业配置需要同时看能源暴露和科技需求。增长预测可能因冲突或市场重估下修，不能把AI带动局部需求等同全面复苏。",
+    "facts": [
+      "IMF于7月8日发布世界经济展望更新。",
+      "预计2026年全球增长3.0%，2027年3.4%。",
+      "报告指出全球去通胀进程停滞，能源进口经济体承压。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 20,
+      "scope": 20,
+      "signal": 16,
+      "delta": 9,
+      "timeliness": 2,
+      "crossDomain": 9,
+      "total": 76,
+      "rationale": {
+        "structural": "增长与通胀分化影响中期政策",
+        "scope": "覆盖全球经济体增长展望",
+        "signal": "机构预测信号需后续数据检验",
+        "delta": "更新年度增长与风险分布",
+        "timeliness": "本轮事后补录，时效按历史研究计分",
+        "crossDomain": "科技需求联动能源和金融"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "IMF",
+        "url": "https://www.imf.org/en/publications/weo/issues/2026/07/08/world-economic-outlook-update-july-2026",
+        "date": "2026-07-08",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_global-growth-frictions",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 76,
+        "reason": "本轮回溯首次评分"
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_un-sdg-report-20260707",
+    "title": "联合国：可评估的可持续发展目标仅36%进展达标或适中",
+    "date": "2026-07-07",
+    "reportedAt": "2026-07-07",
+    "collectedAt": "2026-11-13",
+    "region": "global",
+    "category": "technology",
+    "summary": "联合国发布2026年可持续发展目标报告，在139个有趋势数据的目标中，仅36%按计划推进或取得适中进展，49%进展过慢、15%低于2015年基线。报告同时记录饮水、电力与网络覆盖的改善。",
+    "analysis": "同一报告兼有基础设施改善与总体进度不足，不能只讲成功或全面倒退。2030年前融资和执行压力仍大，需观察目标分项和国家差异；这些比例只适用于可评估目标，不是全部目标。",
+    "facts": [
+      "联合国于7月7日发布2026年可持续发展目标报告。",
+      "139个有趋势数据的目标中36%按计划或取得适中进展。",
+      "49%进展过慢，15%低于2015年基线。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 24,
+      "scope": 20,
+      "signal": 18,
+      "delta": 10,
+      "timeliness": 2,
+      "crossDomain": 10,
+      "total": 84,
+      "rationale": {
+        "structural": "揭示全球发展承诺与执行之间缺口",
+        "scope": "全球多国及多类发展目标",
+        "signal": "官方可评估目标统计口径明确",
+        "delta": "提供139项目标最新进度分类",
+        "timeliness": "本轮事后补录，时效按历史研究计分",
+        "crossDomain": "公共服务金融能源与社会治理联动"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "UN DESA",
+        "url": "https://unstats.un.org/sdgs/files/report/2026/SDGs_Report_Key_Messages_2026.pdf",
+        "date": "2026-07-07",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_labour-demographic-adjustment",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 84,
+        "reason": "本轮回溯首次评分"
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_oecd-employment-20260707",
+    "title": "OECD就业创新高，三分之一成员实际工资仍低于五年前",
+    "date": "2026-07-07",
+    "reportedAt": "2026-07-07",
+    "collectedAt": "2026-11-13",
+    "region": "other",
+    "category": "technology",
+    "summary": "经合组织就业展望称，五月成员国就业人数达6.7亿、失业率4.9%，但约三分之一成员实际工资仍低于五年前水平。报告预计2026年就业增长0.3%，并指出能源冲击可能继续削弱购买力。",
+    "analysis": "低失业与工资购买力不足可以并存，消费分析不能只看岗位总量。报告认为AI影响青年就业的证据尚有限，不应据此直接认定AI导致失业；需跟踪实际工资与青年就业分项。",
+    "facts": [
+      "OECD于7月7日发布就业展望相关公告。",
+      "2026年5月OECD就业人数6.7亿，失业率4.9%。",
+      "约三分之一OECD国家实际工资低于五年前水平，2026年就业增长预测为0.3%。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 20,
+      "scope": 17,
+      "signal": 18,
+      "delta": 10,
+      "timeliness": 2,
+      "crossDomain": 8,
+      "total": 75,
+      "rationale": {
+        "structural": "工资与就业分化影响家庭消费基础",
+        "scope": "覆盖OECD劳动市场与地区差异",
+        "signal": "官方就业与工资数据相互对照",
+        "delta": "就业纪录与实际工资缺口形成反差",
+        "timeliness": "本轮事后补录，时效按历史研究计分",
+        "crossDomain": "能源物价劳动与技术影响相连"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "OECD",
+        "url": "https://www.oecd.org/en/about/news/press-releases/2026/07/oecd-job-markets-remain-strong-but-real-wages-are-lagging.html",
+        "date": "2026-07-07",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_labour-demographic-adjustment",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 75,
+        "reason": "本轮回溯首次评分"
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_cn-renewable-plan-2026",
+    "title": "中国发布可再生能源“十五五”发展规划",
+    "date": "2026-07-06",
+    "reportedAt": "2026-07-23",
+    "collectedAt": "2026-11-13",
+    "region": "china",
+    "category": "industry",
+    "summary": "发改委与能源局7月23日发布规划：2030年可再生能源消费约18亿吨标准煤，装机约35亿千瓦、年发电量约6万亿千瓦时。",
+    "analysis": "装机目标对应年均新增规模仍高，消纳与调节能力是瓶颈。“可靠顶峰能力”单列说明政策重心从装机规模转向可用容量，配套储能与电网投资是关键。",
+    "facts": [
+      "国家发展改革委、国家能源局联合通知成文日期7月6日，7月23日公开发布。",
+      "到2030年可再生能源消费约18亿吨标准煤；发电装机约35亿千瓦，年发电量约6万亿千瓦时。",
+      "风电与光伏合计装机超28亿千瓦，年发电量超4万亿千瓦时。",
+      "“十五五”期间新增可再生能源可靠顶峰能力3亿千瓦以上，海上风电新开工约1亿千瓦。",
+      "2030年电力结构目标为“非化石过半、可再生近半、新能源30%”。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 21,
+      "scope": 17,
+      "signal": 14,
+      "delta": 12,
+      "timeliness": 5,
+      "crossDomain": 9,
+      "total": 78,
+      "rationale": {
+        "structural": "覆盖发电、消纳与调节能力",
+        "scope": "全国能源系统",
+        "signal": "多项2030量化目标",
+        "delta": "新增可靠顶峰能力指标",
+        "timeliness": "7月发布，仍在观察窗口内",
+        "crossDomain": "牵连制造、电网与气候"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "国家发展改革委、国家能源局",
+        "url": "https://www.ndrc.gov.cn/xxgk/jd/jd/202607/t20260723_1406645.html",
+        "date": "2026-07-23",
+        "official": true
+      },
+      {
+        "name": "国家发展改革委、国家能源局",
+        "url": "https://www.ndrc.gov.cn/xwdt/tzgg/202607/t20260723_1406643_ext.html",
+        "date": "2026-07-23",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_cn-policy-power-system",
+        "effect": "support",
+        "reason": "规划给出装机与可靠顶峰能力目标"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "独立复核原文后pending→published；新华社转述替换为发改委原通知和主管部门答记者问；区分成文7月6日与公开7月23日；移除未在本次原文问答核对的光热/海洋能分项。"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 78
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_cn-carbon-peak-plan-2026",
+    "title": "国务院印发《“十五五”碳达峰行动方案》",
+    "date": "2026-07-05",
+    "reportedAt": "2026-07-14",
+    "collectedAt": "2026-11-13",
+    "region": "china",
+    "category": "industry",
+    "summary": "7月14日公开的国务院方案（成文7月5日）：到2030年单位GDP二氧化碳排放比2025年降17%，非化石能源消费占比达25%。",
+    "analysis": "方案同时设置碳强度、非化石能源与电力调节目标，可能为储能、需求响应和电网投资提供政策方向。目标不是已实现业绩，也未核实它们是否历史首次提出；需观察地方分解、资金安排与价格机制。",
+    "facts": [
+      "到2030年，单位国内生产总值二氧化碳排放比2025年降低17%，非化石能源消费占比达到25%。",
+      "新增西电东送能力8000万千瓦以上；到2030年抽水蓄能装机约1.6亿千瓦，新型储能力争3亿千瓦。",
+      "到2030年全国虚拟电厂最大调节能力5000万千瓦以上，电力需求响应能力达最大用电负荷5%以上。",
+      "到2030年新能源汽车保有量占比力争30%，新能源营运交通工具保有量占比25%。",
+      "“十五五”期间规上工业单位增加值二氧化碳排放降低17%以上、单位增加值能耗降低10%以上。",
+      "方案提出设立国家低碳转型基金。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 22,
+      "scope": 18,
+      "signal": 15,
+      "delta": 13,
+      "timeliness": 5,
+      "crossDomain": 10,
+      "total": 83,
+      "rationale": {
+        "structural": "覆盖能源、工业、建筑、交通全链条",
+        "scope": "全国性五年规划",
+        "signal": "多项量化目标可核",
+        "delta": "本方案同时给出储能与需求响应等量化目标",
+        "timeliness": "7月印发，处于执行初期",
+        "crossDomain": "牵连电力、制造、金融与气候"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "国务院（生态环境部转载）",
+        "url": "https://www.mee.gov.cn/zcwj/gwywj/202607/t20260714_1161655.shtml",
+        "date": "2026-07-14",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_cn-policy-power-system",
+        "effect": "support",
+        "reason": "碳达峰方案量化储能与需求响应目标"
+      },
+      {
+        "id": "tr_cn-nev-demand-shift",
+        "effect": "support",
+        "reason": "提出2030年新能源汽车保有量占比30%"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "独立复核原文后pending→published；区分7月5日成文与7月14日公开；删除“首次量化”未核实历史比较。"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 83
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_casgevy-young-20260701",
+    "title": "FDA把Casgevy适用年龄扩至两岁及以上患儿",
+    "date": "2026-07-01",
+    "reportedAt": "2026-07-01",
+    "collectedAt": "2026-11-13",
+    "region": "us",
+    "category": "technology",
+    "summary": "FDA补充批准基因编辑疗法Casgevy，把相关镰状细胞病和输血依赖型β地中海贫血患者适用年龄扩至两岁及以上。年龄扩展增加了早期干预可能，但治疗仍需复杂移植流程、清髓预处理及长期随访。",
+    "analysis": "监管适应人群扩展使基因编辑从技术展示进入更早期治疗选择。实际可及性还受治疗中心、费用和预处理风险制约，不能写成所有儿童可无风险使用的一次性治愈。",
+    "facts": [
+      "FDA补充批准Casgevy用于两岁及以上反复血管闭塞危象的镰状细胞病或输血依赖型β地中海贫血患者。",
+      "该疗法此前获批年龄为12岁及以上。",
+      "疗法使用患者自身经CRISPR/Cas9编辑的造血干细胞，给药前仍需高强度清髓预处理。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 20,
+      "scope": 11,
+      "signal": 18,
+      "delta": 11,
+      "timeliness": 2,
+      "crossDomain": 7,
+      "total": 69,
+      "rationale": {
+        "structural": "监管适应人群扩展使基因编辑从技术展示进入更早期治疗选择。实际可及性还受治疗中心、费用和预处。",
+        "scope": "影响范围覆盖美国及对应科研或产业群体。",
+        "signal": "已读取美国食品药品监督管理局原文逐项核对具体节点。",
+        "delta": "较此前阶段新增了公告明确披露的进展。",
+        "timeliness": "本轮为回溯补录，时间按原始公告计入。",
+        "crossDomain": "涉及技术、商业及社会应用的跨领域联系。"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "美国食品药品监督管理局",
+        "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-gene-therapy-young-children-sickle-cell-disease",
+        "date": "2026-07-01",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_health-translation",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮按官方原文回溯补录并完成原文事实核对；首次评分为当前回溯判断。"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 69
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_unity-criticality-20260701",
+    "title": "Unity成为美国试点计划第三个达到临界的先进堆",
+    "date": "2026-06-30",
+    "reportedAt": "2026-07-01",
+    "collectedAt": "2026-11-13",
+    "region": "us",
+    "category": "technology",
+    "summary": "能源部公告称，Deployable Energy的Unity在爱达荷国家实验室完成零功率临界演示，成为试点计划第三个达到临界的项目。多个不同设计跨过试验节点，但尚不能据此推断规模发电成本或商用交付时间。",
+    "analysis": "同一计划内出现多个设计可提高工程经验的积累速度。其共同局限仍是零功率阶段，后续应分项目追踪功率运行、许可及制造成本，避免把试验数量当成装机规模。",
+    "facts": [
+      "能源部7月1日公告称，Deployable Energy的Unity于此前一晚完成零功率装燃料临界演示。",
+      "试验地点为爱达荷国家实验室。",
+      "Unity是该反应堆试点计划第三个达到临界的项目，前两项为Antares和Valar。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 17,
+      "scope": 11,
+      "signal": 16,
+      "delta": 9,
+      "timeliness": 2,
+      "crossDomain": 7,
+      "total": 62,
+      "rationale": {
+        "structural": "同一计划内出现多个设计可提高工程经验的积累速度。其共同局限仍是零功率阶段，后续应分项目追踪。",
+        "scope": "影响范围主要覆盖美国及相关产业参与者。",
+        "signal": "已读取美国能源部原文确认具体节点。",
+        "delta": "相对前一阶段跨越了公告所述的明确节点。",
+        "timeliness": "本轮作为历史补录，按原始发布时间计入。",
+        "crossDomain": "涉及科研、供应链或公共服务的跨领域联系。"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "美国能源部",
+        "url": "https://www.energy.gov/articles/us-department-energy-meets-president-trumps-goal-delivers-third-advanced-reactor",
+        "date": "2026-07-01",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_advanced-energy-validation",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮按官方原文回溯补录并完成原文事实核对；首次评分为当前回溯判断。"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 62
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_cn-profit-1-5",
+    "title": "1—5月规上工业企业利润同比增长18.8%",
+    "date": "2026-06-27",
+    "reportedAt": "2026-06-27",
+    "collectedAt": "2026-11-13",
+    "region": "china",
+    "category": "industry",
+    "summary": "国家统计局6月27日发布：1—5月规上工业企业利润31439.6亿元，同比增18.8%；营收56.55万亿元，利润率5.56%。",
+    "analysis": "累计利润增长伴随有色和电子高增、汽车与黑色金属下降，行业景气并不一致。营收与成本差反映利润率改善，但不足以分离价格、数量和基数贡献；需继续跟踪订单、售价及行业实物产量，不直接宣称需求侧仍弱。",
+    "facts": [
+      "1—5月规上工业企业实现利润总额31439.6亿元，同比增长18.8%。",
+      "采矿业利润4795.2亿元增33.5%，制造业23285.2亿元增20.0%，电力热力燃气及水生产和供应业3359.2亿元降2.7%。",
+      "营业收入56.55万亿元增5.5%，营业成本48.04万亿元增4.7%，利润率5.56%提高0.63个百分点。",
+      "有色金属冶炼和压延加工业利润增117.1%，计算机通信和其他电子设备制造业增103.9%，汽车制造业降19.8%，黑色金属冶炼降37.4%。"
+    ],
+    "metrics": [
+      {
+        "label": "利润总额",
+        "value": "31439.6亿元",
+        "note": "2026-01..05 · 规上工业"
+      },
+      {
+        "label": "营收利润率",
+        "value": "5.56%",
+        "note": "2026-01..05 · 规上工业"
+      }
+    ],
+    "scores": {
+      "structural": 17,
+      "scope": 13,
+      "signal": 11,
+      "delta": 10,
+      "timeliness": 4,
+      "crossDomain": 7,
+      "total": 62,
+      "rationale": {
+        "structural": "利润数据反映价格与行业结构",
+        "scope": "覆盖全部规上工业",
+        "signal": "行业分化是主要信号",
+        "delta": "较1—4月小幅变化",
+        "timeliness": "6月末发布，仍在观察窗口内",
+        "crossDomain": "牵连上游价格与出口"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "国家统计局",
+        "url": "https://www.stats.gov.cn/zwfwck/sjfb/202606/t20260627_1964019.html",
+        "date": "2026-06-27",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_cn-industrial-margin-repair",
+        "effect": "support",
+        "reason": "利润率同比提高0.63个百分点"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "独立复核原文后pending→published；删除“上游价格贡献明显”“中下游需求侧仍弱”未经该页因果分解的断言。"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 62
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_cn-rare-earth-reporting-2026",
+    "title": "商务部完善战略矿产出口管制举报机制，7月1日实施",
+    "date": "2026-06-24",
+    "reportedAt": "2026-07-08",
+    "collectedAt": "2026-11-13",
+    "region": "china",
+    "category": "industry",
+    "summary": "商务部公告2026年第26号：6月24日发布、7月1日实施，列明13类可举报的战略矿产两用物项出口管制违法行为。",
+    "analysis": "执法从许可端延伸到社会举报端，覆盖技术转移与第三国绕道，对企业合规与转口贸易审查提出更高要求。实际执行强度仍取决于受理与查处力度。",
+    "facts": [
+      "商务部公告2026年第26号落款及所列发布日期为6月24日，实施日期7月1日；本页发布时间为7月8日09:52。",
+      "公告列明13类可举报行为，包括未经许可出口、超范围出口、以拆分等方式规避许可、绕道第三国、非法对外转移相关技术等。",
+      "公告依据《出口管制法》《对外贸易法》制定，任何组织和个人有权举报。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 17,
+      "scope": 12,
+      "signal": 12,
+      "delta": 11,
+      "timeliness": 4,
+      "crossDomain": 8,
+      "total": 64,
+      "rationale": {
+        "structural": "涉及出口管制执法链条",
+        "scope": "影响战略矿产贸易相关企业",
+        "signal": "举报机制是制度性动作",
+        "delta": "相较既有许可管理是新增环节",
+        "timeliness": "6月发布、7月实施",
+        "crossDomain": "牵连新能源、半导体供应链"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "商务部",
+        "url": "https://www.mofcom.gov.cn/zcfb/zgdwjjmywg/art/2026/art_d32fd9d37c224be88b9d6e79c7b14ff0.html",
+        "date": "2026-07-08",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_geopolitics-energy-premium",
+        "effect": "support",
+        "reason": "关键矿产管制收紧，强化地缘溢价逻辑"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "独立复核原文后pending→published；保留公告标注6月24日，但所取得网页发布为7月8日；最早报道保守记本页可核时间，不伪造零点发布时间。"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 64
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_boj-rate-20260616",
+    "title": "日本央行把隔夜利率目标提高至约1%",
+    "date": "2026-06-16",
+    "reportedAt": "2026-06-16",
+    "collectedAt": "2026-11-13",
+    "region": "other",
+    "category": "economy",
+    "summary": "日本央行以七比一表决将无担保隔夜拆借利率目标定为约1%，6月17日起执行，补充存款利率也为1%、基本贷款利率1.25%。声明关注原油涨价向消费价格传导及通胀预期上升。",
+    "analysis": "日本货币正常化影响本国融资、汇率与全球资金配置。央行仍认为金融条件宽松，加息不代表全面转为限制性政策；需观察实际利率、工资和油价传导。",
+    "facts": [
+      "日本央行6月16日以7比1多数决定隔夜拆借利率目标约1%。",
+      "新指引于6月17日生效，补充存款利率1%、基本贷款利率1.25%。",
+      "声明称原油涨价正较快向企业间交易价格传递。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 21,
+      "scope": 18,
+      "signal": 20,
+      "delta": 12,
+      "timeliness": 2,
+      "crossDomain": 8,
+      "total": 81,
+      "rationale": {
+        "structural": "利率正常化改变日本融资基准",
+        "scope": "日本及国际资金配置受影响",
+        "signal": "正式政策指引明确表决与执行日",
+        "delta": "隔夜利率目标升至约百分之一",
+        "timeliness": "本轮事后补录，时效按历史研究计分",
+        "crossDomain": "通胀汇率和跨境资产联动"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "Bank of Japan",
+        "url": "https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/k260616a.pdf",
+        "date": "2026-06-16",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_global-rates-rehike",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 81,
+        "reason": "本轮回溯首次评分"
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_boj-jgb-plan-20260616",
+    "title": "日本央行公布购债缩减路径，2027年四月后每月约2万亿日元",
+    "date": "2026-06-16",
+    "reportedAt": "2026-06-16",
+    "collectedAt": "2026-11-13",
+    "region": "other",
+    "category": "economy",
+    "summary": "日本央行决定每季度把计划月度国债购买额减少约2000亿日元，延续至2027年一季度，随后每月约2万亿日元。央行同时保留长期利率快速上升时灵活增加购买和调整计划的权力。",
+    "analysis": "减少央行购买可能提升市场定价作用并改变久期供需，但可变干预意味着缩表并非机械执行。需要观察拍卖、期限溢价和市场流动性；本条为资产购买安排，与同日短期利率决策分开。",
+    "facts": [
+      "6月16日日本央行以7比1多数通过国债购买计划。",
+      "原则上每季度把计划月购债额减少约2000亿日元，直至2027年一季度。",
+      "2027年4月起计划月购债约2万亿日元；利率急升时可灵活干预。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 21,
+      "scope": 16,
+      "signal": 20,
+      "delta": 11,
+      "timeliness": 2,
+      "crossDomain": 7,
+      "total": 77,
+      "rationale": {
+        "structural": "央行购债路径影响债市供需结构",
+        "scope": "主要影响日本债市与跨境投资",
+        "signal": "政策计划给出逐季金额与例外",
+        "delta": "明确递减至每月约两万亿的路径",
+        "timeliness": "本轮事后补录，时效按历史研究计分",
+        "crossDomain": "财政融资与金融机构资产配置相连"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "Bank of Japan",
+        "url": "https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/k260616b.pdf",
+        "date": "2026-06-16",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_global-rates-rehike",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 77,
+        "reason": "本轮回溯首次评分"
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_worldbank-gep-20260611",
+    "title": "世界银行预计2026年全球增长降至2.5%",
+    "date": "2026-06-11",
+    "reportedAt": "2026-06-11",
+    "collectedAt": "2026-11-13",
+    "region": "global",
+    "category": "economy",
+    "summary": "世界银行六月展望预计2026年全球经济增长2.5%，低于2025年的2.9%，三分之二经济体预测较一月下调。报告将能源、通胀和融资冲击列为中东冲突影响全球增长的主要路径。",
+    "analysis": "增长与通胀压力并存意味着需求刺激的空间可能缩小，外部融资薄弱经济体更易受损。预测依赖能源运输逐步恢复，需观察实际供应和金融压力；不同机构全球增速不可直接混用口径。",
+    "facts": [
+      "6月11日全球经济展望预计2026年全球增长2.5%，2027年2.8%。",
+      "三分之二经济体的增长预测较2026年1月下调。",
+      "发展中经济体2026年增长预测为3.6%，低于2025年的4.4%。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 21,
+      "scope": 20,
+      "signal": 17,
+      "delta": 11,
+      "timeliness": 2,
+      "crossDomain": 9,
+      "total": 80,
+      "rationale": {
+        "structural": "增长放缓影响发展与收入追赶",
+        "scope": "涵盖全球及发展中经济体",
+        "signal": "官方全球展望提供统一预测口径",
+        "delta": "多数经济体较一月被下调",
+        "timeliness": "本轮事后补录，时效按历史研究计分",
+        "crossDomain": "能源融资和就业联动"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "World Bank",
+        "url": "https://www.worldbank.org/en/news/press-release/2026/06/11/global-economic-prospects-june-2026-press-release",
+        "date": "2026-06-11",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_global-growth-frictions",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 80,
+        "reason": "本轮回溯首次评分"
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_ecb-rate-hike-20260611",
+    "title": "欧洲央行加息25基点，存款利率升至2.25%",
+    "date": "2026-06-11",
+    "reportedAt": "2026-06-11",
+    "collectedAt": "2026-11-13",
+    "region": "other",
+    "category": "economy",
+    "summary": "欧洲央行决定将三项关键利率提高25个基点，6月17日起存款便利利率为2.25%。其基准预测把2026年总体通胀置于3.0%，并强调能源冲击与战争带来的不确定性。",
+    "analysis": "能源通胀重新约束货币宽松，会通过融资成本影响投资与消费。但一次加息并不确认持续紧缩周期，需观察工资、核心通胀和后续议息决策。",
+    "facts": [
+      "6月11日决定将三项关键利率各提高25个基点。",
+      "6月17日起存款便利、主要再融资和边际贷款利率分别为2.25%、2.40%、2.65%。",
+      "基准预测2026年总体通胀为3.0%，2027年为2.3%。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 19,
+      "scope": 17,
+      "signal": 20,
+      "delta": 12,
+      "timeliness": 2,
+      "crossDomain": 8,
+      "total": 78,
+      "rationale": {
+        "structural": "利率改变欧元区融资条件",
+        "scope": "影响欧元区及跨境资产定价",
+        "signal": "正式议息决定而非市场预期",
+        "delta": "关键利率一次提高二十五基点",
+        "timeliness": "本轮事后补录，时效按历史研究计分",
+        "crossDomain": "能源价格传导至金融和消费"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "ECB",
+        "url": "https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.mp260611~4d41bd5e83.en.html",
+        "date": "2026-06-11",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_global-rates-rehike",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 78,
+        "reason": "本轮回溯首次评分"
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_doe-fusion-roadmap-20260609",
+    "title": "美国发布定稿聚变路线图，目标指向2030年代中期",
+    "date": "2026-06-09",
+    "reportedAt": "2026-06-09",
+    "collectedAt": "2026-11-13",
+    "region": "us",
+    "category": "technology",
+    "summary": "美国能源部发布最终版聚变科学与技术路线图，把研发、基础设施、人才和商业化优先事项纳入统一框架，指向2030年代中期聚变电力。这是政策和资源协调节点，并非聚变电站已经实现商业发电。",
+    "analysis": "路线图可以帮助观察公共研发与私人资本是否形成共同路径。目标年份属于政策愿景，需继续看材料、氚循环、净电力输出及示范工程的实际进展。",
+    "facts": [
+      "能源部发布最终版聚变科学与技术路线图。",
+      "路线图把科学、技术、基础设施、人才和商业化优先事项纳入统一战略。",
+      "官方目标是支持聚变示范电站及2030年代中期的商业聚变电力。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 18,
+      "scope": 14,
+      "signal": 12,
+      "delta": 7,
+      "timeliness": 2,
+      "crossDomain": 7,
+      "total": 60,
+      "rationale": {
+        "structural": "路线图可以帮助观察公共研发与私人资本是否形成共同路径。目标年份属于政策愿景，需继续看材料、。",
+        "scope": "影响范围主要覆盖美国及相关产业参与者。",
+        "signal": "已读取美国能源部原文确认具体节点。",
+        "delta": "相对前一阶段跨越了公告所述的明确节点。",
+        "timeliness": "本轮作为历史补录，按原始发布时间计入。",
+        "crossDomain": "涉及科研、供应链或公共服务的跨领域联系。"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "美国能源部",
+        "url": "https://www.energy.gov/articles/energy-department-releases-finalized-fusion-science-and-technology-roadmap-accelerate",
+        "date": "2026-06-09",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_advanced-energy-validation",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮按官方原文回溯补录并完成原文事实核对；首次评分为当前回溯判断。"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 60
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_siri-ai-announcement-20260608",
+    "title": "苹果发布Siri AI，系统助手转向个人上下文与跨应用操作",
+    "date": "2026-06-08",
+    "reportedAt": "2026-06-08",
+    "collectedAt": "2026-11-13",
+    "region": "global",
+    "category": "technology",
+    "summary": "苹果介绍重新设计的Siri AI，突出个人上下文、屏幕感知、跨设备会话和系统操作能力。发布显示AI助手正进入操作系统入口，但当日属于厂商功能公告，能力效果、地区覆盖和实际采用率需分别验证。",
+    "analysis": "操作系统级入口可能改变用户寻找信息和调用应用的习惯。当前只核实厂商宣布及架构描述，不替代独立任务测试；下一步看正式推出、错误率、权限控制和使用留存。",
+    "facts": [
+      "苹果6月8日介绍重新设计的Siri AI。",
+      "公告列出个人上下文、屏幕感知、多模态理解与独立会话应用等能力。",
+      "架构使用端侧模型和Private Cloud Compute；公告明确中国及部分欧盟平台初期存在可用性限制。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 20,
+      "scope": 18,
+      "signal": 13,
+      "delta": 10,
+      "timeliness": 2,
+      "crossDomain": 8,
+      "total": 71,
+      "rationale": {
+        "structural": "操作系统级入口可能改变用户寻找信息和调用应用的习惯。当前只核实厂商宣布及架构描述，不替代独。",
+        "scope": "影响范围覆盖全球及对应科研或产业群体。",
+        "signal": "已读取Apple原文逐项核对具体节点。",
+        "delta": "较此前阶段新增了公告明确披露的进展。",
+        "timeliness": "本轮为回溯补录，时间按原始公告计入。",
+        "crossDomain": "涉及技术、商业及社会应用的跨领域联系。"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "Apple",
+        "url": "https://www.apple.com/newsroom/2026/06/apple-introduces-siri-ai-a-profoundly-more-capable-and-personal-assistant/",
+        "date": "2026-06-08",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_ai-platform-expansion",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮按官方原文回溯补录并完成原文事实核对；首次评分为当前回溯判断。"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 71
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_wto-goods-barometer-20260605",
+    "title": "WTO货物贸易晴雨表101.7，电子元件需求支撑韧性",
+    "date": "2026-06-05",
+    "reportedAt": "2026-06-05",
+    "collectedAt": "2026-11-13",
+    "region": "global",
+    "category": "economy",
+    "summary": "世界贸易组织发布货物贸易晴雨表，指数101.7低于一月102.3，但仍高于100趋势线。电子元件指数105.5明显偏强，农业原料和汽车略低于趋势线，全球贸易显现由科技需求支撑的分化。",
+    "analysis": "贸易未同步衰退，AI设备需求可能抵消部分能源和运输冲击。但晴雨表是相对趋势的领先指数，不是增长百分比；需用后续季度实物贸易量验证，尤其关注行业结构差异。",
+    "facts": [
+      "6月5日WTO货物贸易晴雨表为101.7，低于一月102.3。",
+      "电子元件指数105.5，出口订单100.5。",
+      "农业原料98.9、汽车99.8，均略低于100基准。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 19,
+      "scope": 20,
+      "signal": 16,
+      "delta": 9,
+      "timeliness": 2,
+      "crossDomain": 8,
+      "total": 74,
+      "rationale": {
+        "structural": "行业分化影响全球供应链需求结构",
+        "scope": "全球货物贸易及主要行业",
+        "signal": "领先指标须由后续贸易量检验",
+        "delta": "总指数放缓而电子元件明显偏强",
+        "timeliness": "本轮事后补录，时效按历史研究计分",
+        "crossDomain": "AI投资运输能源与制造相连"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "WTO",
+        "url": "https://www.wto.org/english/news_e/news26_e/wtoi_05jun26_405_e.htm",
+        "date": "2026-06-05",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_global-growth-frictions",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 74,
+        "reason": "本轮回溯首次评分"
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_antares-criticality-20260604",
+    "title": "Antares微型堆Mark-0完成零功率临界试验",
+    "date": "2026-06-04",
+    "reportedAt": "2026-06-04",
+    "collectedAt": "2026-11-13",
+    "region": "us",
+    "category": "technology",
+    "summary": "美国能源部确认，Antares的Mark-0在爱达荷国家实验室完成零功率装燃料临界演示，成为该试点计划首个达到这一节点的项目。这是堆物理试验进展，后续发电和商业部署仍需测试与许可。",
+    "analysis": "临界演示减少了新型堆设计的一部分工程不确定性，但零功率不等于并网发电，也没有证明全寿命经济性。下一观察点是功率提升、燃料表现及监管许可。",
+    "facts": [
+      "能源部确认Antares的Mark-0在爱达荷国家实验室完成装燃料的零功率临界演示。",
+      "该演示属于能源部反应堆试点计划。",
+      "公告说明后续商业化仍需更多试验及美国核管会许可。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 18,
+      "scope": 10,
+      "signal": 16,
+      "delta": 11,
+      "timeliness": 2,
+      "crossDomain": 7,
+      "total": 64,
+      "rationale": {
+        "structural": "临界演示减少了新型堆设计的一部分工程不确定性，但零功率不等于并网发电，也没有证明全寿命经济。",
+        "scope": "影响范围主要覆盖美国及相关产业参与者。",
+        "signal": "已读取美国能源部原文确认具体节点。",
+        "delta": "相对前一阶段跨越了公告所述的明确节点。",
+        "timeliness": "本轮作为历史补录，按原始发布时间计入。",
+        "crossDomain": "涉及科研、供应链或公共服务的跨领域联系。"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "美国能源部",
+        "url": "https://www.energy.gov/articles/department-energy-celebrates-first-advanced-reactor-criticality",
+        "date": "2026-06-04",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_advanced-energy-validation",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮按官方原文回溯补录并完成原文事实核对；首次评分为当前回溯判断。"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 64
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_cn-pmi-2026-05",
+    "title": "5月制造业PMI回落至50.0%，位于临界点",
+    "date": "2026-05-31",
+    "reportedAt": "2026-05-31",
+    "collectedAt": "2026-11-13",
+    "region": "china",
+    "category": "industry",
+    "summary": "国家统计局5月31日发布：5月制造业PMI 50.0%，比上月降0.3个百分点；大型企业51.1%，中小型企业均低于临界点。",
+    "analysis": "整体卡在临界点、结构分化明显：大型企业扩张、中小企业收缩，新订单回到荣枯线下说明需求端偏弱。单月数据不足以判断趋势，需与5—6月连续观察。",
+    "facts": [
+      "5月制造业PMI为50.0%，比上月下降0.3个百分点，位于临界点。",
+      "大型企业PMI 51.1%（升0.9个百分点）；中型48.6%、小型48.5%，分别降1.9和1.6个百分点。",
+      "生产指数51.2%，新订单指数49.9%（降0.7个百分点），原材料库存48.6%，从业人员48.6%。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 16,
+      "scope": 13,
+      "signal": 12,
+      "delta": 10,
+      "timeliness": 4,
+      "crossDomain": 6,
+      "total": 61,
+      "rationale": {
+        "structural": "PMI为景气先行指标，反映供需与就业组合",
+        "scope": "覆盖制造业与大中小型企业",
+        "signal": "新订单跌破50是明确信号",
+        "delta": "较上月0.3个百分点，变化温和",
+        "timeliness": "5月末发布，仍在观察窗口内",
+        "crossDomain": "与出口、投资、就业相关"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "国家统计局",
+        "url": "https://www.stats.gov.cn/zwfwck/sjfb/202605/t20260531_1963824.html",
+        "date": "2026-05-31",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_cn-demand-rebalancing",
+        "effect": "support",
+        "reason": "提供观察命题的核实节点，持续性仍需后续证据。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "独立复核原文后pending→published；仅保留已亲读核对的制造业三组事实；非制造业与综合指数本次未取得对应段落，移除而不默认为已核实。"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 61
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_wmo-decadal-outlook-20260528",
+    "title": "WMO：未来五年至少一年暂超1.5℃概率为91%",
+    "date": "2026-05-28",
+    "reportedAt": "2026-05-28",
+    "collectedAt": "2026-11-13",
+    "region": "global",
+    "category": "technology",
+    "summary": "世界气象组织发布年度至年代际气候预测，预计2026至2030年全球年均气温较工业化前高1.3至1.9℃；至少一年暂超1.5℃概率为91%，至少一年刷新最暖纪录概率为86%。",
+    "analysis": "高温风险会向电力峰值、农业和保险传递，但年度暂超1.5℃不能直接等同巴黎协定长期温控目标已被突破。需跟踪实际温度、区域降雨和暴露资产，而不是把概率当作确定结果。",
+    "facts": [
+      "报告于5月28日发布，预测2026—2030年全球年均温高出1850—1900年1.3—1.9℃。",
+      "未来五年至少一年暂时超过1.5℃的概率为91%。",
+      "至少一年超过2024年最暖纪录的概率为86%。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 23,
+      "scope": 20,
+      "signal": 16,
+      "delta": 9,
+      "timeliness": 2,
+      "crossDomain": 9,
+      "total": 79,
+      "rationale": {
+        "structural": "五年气候风险影响资产与基础设施规划",
+        "scope": "全球农业能源及城市均受影响",
+        "signal": "多模式预测为概率信号而非实绩",
+        "delta": "提供新一轮五年温度概率区间",
+        "timeliness": "本轮事后补录，时效按历史研究计分",
+        "crossDomain": "气候联动能源粮食与保险"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "WMO",
+        "url": "https://wmo.int/resources/publication-series/wmo-global-annual-decadal-climate-update/global-annual-decadal-climate-update-2026-2035",
+        "date": "2026-05-28",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_climate-food-inflation",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 79,
+        "reason": "本轮回溯首次评分"
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_cn-profit-1-4",
+    "title": "1—4月规上工业企业利润同比增长18.2%",
+    "date": "2026-05-27",
+    "reportedAt": "2026-05-27",
+    "collectedAt": "2026-11-13",
+    "region": "china",
+    "category": "industry",
+    "summary": "国家统计局5月27日发布：1—4月规上工业企业利润24358.4亿元，同比增18.2%；营收增5.2%，利润率5.43%。",
+    "analysis": "利润、营收和利润率同时提高，但门类分化明显，不能据总量增长判断所有行业需求转强。价格与基数可能影响同比，需后续数据分解；本次未核实与2019年之前的可比利润率，故不作历史高低判断。",
+    "facts": [
+      "1—4月全国规模以上工业企业实现利润总额24358.4亿元，同比增长18.2%。",
+      "采矿业利润同比增长26.0%，制造业增长20.4%，电力热力燃气及水生产和供应业下降1.9%。",
+      "1—4月营业收入同比增长5.2%；营业收入利润率5.43%，同比提高0.60个百分点。",
+      "4月当月规上工业企业利润同比增长24.7%。"
+    ],
+    "metrics": [
+      {
+        "label": "利润总额",
+        "value": "24358.4亿元",
+        "note": "2026-01..04 · 规上工业",
+        "sourceUrl": "https://www.news.cn/fortune/20260527/58a68f4601b148158fcb5dfe0c8f2680/c.html"
+      },
+      {
+        "label": "营收利润率",
+        "value": "5.43%",
+        "note": "2026-01..04 · 规上工业"
+      }
+    ],
+    "scores": {
+      "structural": 18,
+      "scope": 14,
+      "signal": 13,
+      "delta": 11,
+      "timeliness": 4,
+      "crossDomain": 7,
+      "total": 67,
+      "rationale": {
+        "structural": "利润连续修复涉及价格、行业结构与政策多条链条",
+        "scope": "覆盖全部规上工业，影响面广",
+        "signal": "单月24.7%与高技术44.8%是清晰信号",
+        "delta": "相对1—3月增速变化明确",
+        "timeliness": "5月发布，距今约半年",
+        "crossDomain": "牵连上游价格、出口与就业"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "国家统计局",
+        "url": "https://www.stats.gov.cn/zwfwck/sjfb/202605/t20260527_1963808.html",
+        "date": "2026-05-27",
+        "official": true
+      },
+      {
+        "name": "新华网",
+        "url": "https://www.news.cn/fortune/20260527/58a68f4601b148158fcb5dfe0c8f2680/c.html",
+        "date": "2026-05-27",
+        "official": false
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_cn-industrial-margin-repair",
+        "effect": "support",
+        "reason": "利润率同比提高0.60个百分点，支持利润修复判断"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "独立复核原文后pending→published；补齐统计局原文为primary，新华社降为corroboration；删除原文未列的高技术等一组事实和2019年前利润率比较。"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 67
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_cms-dilepton-20260526",
+    "title": "CMS扩大重粒子搜索范围，未发现新粒子信号",
+    "date": "2026-05-26",
+    "reportedAt": "2026-05-26",
+    "collectedAt": "2026-11-13",
+    "region": "global",
+    "category": "technology",
+    "summary": "CMS发布利用更大规模碰撞数据进行的重粒子搜索，未发现相关新粒子证据，并进一步收紧部分模型的质量界限。它展示基础研究中负结果的价值：搜索能力在提高，但标准模型之外的新物理尚未因此被证实。",
+    "analysis": "排除范围扩大能筛掉部分理论参数，并指导后续实验；它不等于排除了所有新物理。应持续观察更高统计量分析及其他独立实验，不将最高质量碰撞误写成新粒子发现。",
+    "facts": [
+      "CMS发布基于2022年至2025年质子碰撞数据的重粒子搜索分析。",
+      "分析通过电子或缪子对寻找可能的新重粒子衰变。",
+      "研究未发现此类新粒子的证据，并对部分模型设置最高达5.55 TeV的质量排除界限。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 13,
+      "scope": 13,
+      "signal": 15,
+      "delta": 7,
+      "timeliness": 2,
+      "crossDomain": 5,
+      "total": 55,
+      "rationale": {
+        "structural": "排除范围扩大能筛掉部分理论参数，并指导后续实验；它不等于排除了所有新物理。应持续观察更高统。",
+        "scope": "影响范围覆盖全球及对应科研或产业群体。",
+        "signal": "已读取CERN CMS合作组原文逐项核对具体节点。",
+        "delta": "较此前阶段新增了公告明确披露的进展。",
+        "timeliness": "本轮为回溯补录，时间按原始公告计入。",
+        "crossDomain": "涉及技术、商业及社会应用的跨领域联系。"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "CERN CMS合作组",
+        "url": "https://cms.cern/news/hunting-heavy-particles-through-high-mass-pairs-electrons-or-muons/",
+        "date": "2026-05-26",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_science-manufacturing-transfer",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮按官方原文回溯补录并完成原文事实核对；首次评分为当前回溯判断。"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 55
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_who-health-worker-code-20260523",
+    "title": "世卫大会首次修订跨国卫生人才招聘守则",
+    "date": "2026-05-23",
+    "reportedAt": "2026-05-23",
+    "collectedAt": "2026-11-13",
+    "region": "global",
+    "category": "technology",
+    "summary": "世界卫生大会通过卫生人才国际招聘守则修订，这是守则通过十六年来首次更新。修订把跨国招聘照护人员纳入范围，并鼓励来源国和目的国共同投入卫生体系。",
+    "analysis": "人才流动从单纯补缺转向考虑来源国损失，可能影响护理培训和跨国招聘。守则通过不等于各国执行到位，需观察国内政策、招聘协议及来源国投入是否改变。",
+    "facts": [
+      "成员国于5月23日批准修订卫生人才国际招聘守则的决议。",
+      "修订覆盖作为照护人员受聘的跨国卫生人才，并明确紧急情况下的适用。",
+      "守则鼓励对来源国和目的国卫生体系与人力共同投资。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 19,
+      "scope": 15,
+      "signal": 17,
+      "delta": 11,
+      "timeliness": 2,
+      "crossDomain": 7,
+      "total": 71,
+      "rationale": {
+        "structural": "十六年来首次更新跨国招聘治理框架",
+        "scope": "覆盖跨国卫生与照护人才流动",
+        "signal": "大会通过决议提供明确制度信号",
+        "delta": "增加照护人员及紧急情形适用条款",
+        "timeliness": "本轮事后补录，时效按历史研究计分",
+        "crossDomain": "连接劳动力迁移与公共卫生"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "WHO",
+        "url": "https://www.who.int/news/item/23-05-2026-seventy-ninth-world-health-assembly---daily-update--23-may-2026",
+        "date": "2026-05-23",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_health-translation",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 71,
+        "reason": "本轮回溯首次评分"
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_cn-us-trade-consult-2026",
+    "title": "中美同意成立政府间贸易理事会和投资理事会",
+    "date": "2026-05-20",
+    "reportedAt": "2026-05-20",
+    "collectedAt": "2026-11-13",
+    "region": "other",
+    "category": "economy",
+    "summary": "商务部5月20日解读：中美同意成立政府间贸易理事会和投资理事会；部分关税与非关税措施暂停至2026年11月10日。",
+    "analysis": "从“危机式应对”转向“机制化管理”目前是措辞与框架层面的进展，理事会能否落地取决于后续安排。关税暂停有明确到期日，11月10日前后是最直接的观察窗口。",
+    "facts": [
+      "商务部美大司负责人5月20日就中美经贸磋商初步成果作解读，双方同意成立政府间贸易理事会和投资理事会。",
+      "双方经贸团队将尽快就理事会架构、职能、运行模式形成具体安排。",
+      "2025年10月吉隆坡联合安排将部分关税和非关税措施暂停实施至2026年11月10日，含美方24%对等关税及中方相关反制。",
+      "暂停范围还包括美方出口管制50%穿透性规则、对华海事物流造船业301调查措施及中方相关反制。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 20,
+      "scope": 17,
+      "signal": 14,
+      "delta": 12,
+      "timeliness": 4,
+      "crossDomain": 9,
+      "total": 76,
+      "rationale": {
+        "structural": "涉及关税、出口管制与产业调查多条制度链",
+        "scope": "影响两国贸易与全球供应链",
+        "signal": "理事会与暂停安排是具体机制",
+        "delta": "相较此前对抗状态是方向性变化",
+        "timeliness": "5月发布，距到期日仍有观察价值",
+        "crossDomain": "牵连航运、半导体与农产品"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "商务部",
+        "url": "https://www.mofcom.gov.cn/syxwfb/art/2026/art_3e89743a8d5d4a95bccdda685830afbd.html",
+        "date": "2026-05-20",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_geopolitics-energy-premium",
+        "effect": "weaken",
+        "reason": "磋商机制化降低短期关税升级概率"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "独立复核原文后pending→published；标题“建立”改为“同意成立”，与尚待具体安排一致；10:00改为网页明确11:23。"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 76
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_nvidia-q1fy27-20260520",
+    "title": "英伟达季度收入816亿美元，数据中心同比增长92%",
+    "date": "2026-05-20",
+    "reportedAt": "2026-05-20",
+    "collectedAt": "2026-11-13",
+    "region": "global",
+    "category": "technology",
+    "summary": "英伟达公布截至4月26日的季度收入816亿美元，同比增长85%，其中数据中心收入752亿美元、增长92%。财报为算力投资提供了收入层面的证据，但供应商营收不能直接证明终端AI应用已普遍盈利。",
+    "analysis": "硬件采购形成了可计量商业收入，比产品发布更能反映资本开支。仍需结合客户利用率、现金流和电力交付判断持续性，不能把单一公司的增长外推为所有AI应用回报。",
+    "facts": [
+      "英伟达披露截至4月26日的2027财年第一季度收入816亿美元，同比增加85%。",
+      "该季度数据中心收入752亿美元，同比增加92%。",
+      "公告披露该季度GAAP毛利率74.9%；这是公司未经审计的季度数据。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 21,
+      "scope": 18,
+      "signal": 18,
+      "delta": 12,
+      "timeliness": 2,
+      "crossDomain": 9,
+      "total": 80,
+      "rationale": {
+        "structural": "硬件采购形成了可计量商业收入，比产品发布更能反映资本开支。仍需结合客户利用率、现金流和电力。",
+        "scope": "影响范围覆盖全球及对应科研或产业群体。",
+        "signal": "已读取NVIDIA原文逐项核对具体节点。",
+        "delta": "较此前阶段新增了公告明确披露的进展。",
+        "timeliness": "本轮为回溯补录，时间按原始公告计入。",
+        "crossDomain": "涉及技术、商业及社会应用的跨领域联系。"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "NVIDIA",
+        "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2027",
+        "date": "2026-05-20",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_ai-power-constraint",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮按官方原文回溯补录并完成原文事实核对；首次评分为当前回溯判断。"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 80
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_doe-smr-supply-20260514",
+    "title": "美国拨款9400多万美元补小型模块化反应堆供应链短板",
+    "date": "2026-05-14",
+    "reportedAt": "2026-05-14",
+    "collectedAt": "2026-11-13",
+    "region": "us",
+    "category": "technology",
+    "summary": "美国能源部宣布向八家公司提供合计超过9400万美元的成本分担资金，支持小型模块化反应堆选址、许可及制造供应链。资金面向未来部署的瓶颈环节，尚不代表新反应堆已经发电。",
+    "analysis": "资金从概念研发转向许可和制造环节，有助观察核能扩张的产业准备程度。但授奖与产能实际形成有距离，应跟踪项目开工、交付和许可进度。",
+    "facts": [
+      "能源部宣布遴选八家公司，提供合计超过9400万美元的联邦成本分担资金。",
+      "资助涵盖选址许可、压力容器制造及核燃料生产等供应链环节。",
+      "Framatome项目拟增加每年约200吨铀的燃料制造能力。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 17,
+      "scope": 12,
+      "signal": 15,
+      "delta": 8,
+      "timeliness": 2,
+      "crossDomain": 7,
+      "total": 61,
+      "rationale": {
+        "structural": "资金从概念研发转向许可和制造环节，有助观察核能扩张的产业准备程度。但授奖与产能实际形成有距。",
+        "scope": "影响范围主要覆盖美国及相关产业参与者。",
+        "signal": "已读取美国能源部原文确认具体节点。",
+        "delta": "相对前一阶段跨越了公告所述的明确节点。",
+        "timeliness": "本轮作为历史补录，按原始发布时间计入。",
+        "crossDomain": "涉及科研、供应链或公共服务的跨领域联系。"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "美国能源部",
+        "url": "https://www.energy.gov/articles/energy-department-awards-94-million-american-companies-help-expedite-deployments-small",
+        "date": "2026-05-14",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_advanced-energy-validation",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮按官方原文回溯补录并完成原文事实核对；首次评分为当前回溯判断。"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 61
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_iea-oil-20260513",
+    "title": "IEA五月报告：全球供油较二月减少1280万桶/日",
+    "date": "2026-05-13",
+    "reportedAt": "2026-05-13",
+    "collectedAt": "2026-11-13",
+    "region": "global",
+    "category": "economy",
+    "summary": "国际能源署五月报告称，四月全球石油供应降至每日9510万桶，比二月少1280万桶；全年需求预计减少42万桶/日。运输受阻与炼厂原料不足并存，石化和航空成为当时受影响较大的行业。",
+    "analysis": "供给损失大于需求收缩，能源价格对下游行业仍有挤压。供应预测假设海峡流量六月逐步恢复，此假设若失效需重估；不能把后来数据倒灌为五月已经确定的结论。",
+    "facts": [
+      "IEA于5月13日发布石油市场报告。",
+      "四月全球石油供应9510万桶/日，较二月累计减少1280万桶/日。",
+      "预计2026年需求同比减少42万桶/日，至1.04亿桶/日。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 23,
+      "scope": 20,
+      "signal": 18,
+      "delta": 13,
+      "timeliness": 2,
+      "crossDomain": 9,
+      "total": 85,
+      "rationale": {
+        "structural": "供给中断改变全球能源安全安排",
+        "scope": "影响全球燃料化工航空需求",
+        "signal": "原文给出供给实绩与需求预测",
+        "delta": "供油较二月损失幅度显著",
+        "timeliness": "本轮事后补录，时效按历史研究计分",
+        "crossDomain": "能源供给传递到制造交通和物价"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "IEA",
+        "url": "https://www.iea.org/files/db7a9af0-7a97-49a5-af56-6732b08d6225/-13MAY2026__OilMarketReport.pdf",
+        "date": "2026-05-13",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_geopolitics-energy-premium",
+        "effect": "support",
+        "reason": "该官方节点支持这一观察命题的部分证据；影响和持续性仍需后续验证。"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "本轮首次回溯补录，亲读官方原文后记录事实；首次评分为本轮判断，不冒充历史预测"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 85,
+        "reason": "本轮回溯首次评分"
       }
     ],
     "watch": null,

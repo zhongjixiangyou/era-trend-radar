@@ -1,63 +1,37 @@
 {
   "id": "tr_ai-power-constraint",
-  "thesis": "AI算力扩张的约束正从芯片供给转向电力与并网能力",
+  "thesis": "AI算力投资持续扩张，供电、并网及排放边界成为需要并行跟踪的约束。",
   "firstSeenAt": "2026-06-03T00:00:00+08:00",
-  "stage": "strengthening",
+  "stage": "emerging",
   "indicators": [
-    {
-      "name": "全球数据中心电力需求",
-      "note": "2026年161GW，同比+31%"
-    },
-    {
-      "name": "科技公司资本开支 vs 油气上游",
-      "note": "IEA：五家科技公司已超过全球油气上游投资"
-    },
-    {
-      "name": "SMR/核电建设许可",
-      "note": "NRC首座SMR建设许可"
-    }
+    "数据中心收入与资本投入",
+    "并网周期及供电结构",
+    "已投运容量与公告项目差距"
   ],
   "evidenceRefs": [
-    "ev_ai-dc-power-161gw",
-    "ev_nrc-smr-first"
+    "ev_nvidia-q2fy27-20260826",
+    "ev_bnef-dc-power-2035",
+    "ev_nvidia-q1fy27-20260520"
   ],
   "counterEvidence": [
     {
-      "text": "AI泡沫论若导致资本开支下修，电力约束会先消失而不是先解决",
-      "url": "https://news.qq.com/rain/a/20261110A0DFHU00"
-    },
-    {
-      "text": "芯片能效每年提升，单位算力耗电下降可能部分抵消需求增长"
-    },
-    {
-      "text": "SMR首堆工期通常5-10年，2027年前难形成有效供给"
+      "text": "BNEF强调公告项目成熟度不同，181GW不是确定建成容量；其2035年用电预测仍依赖情景假设。"
     }
   ],
-  "currentJudgment": "置信度中高。需求侧证据强（161GW、+31%），供给侧才刚起步；真正可验证的是2027年是否出现因电力延期上线的数据中心。",
-  "reviewBy": "2027-01-31T00:00:00+08:00",
+  "currentJudgment": "当前回溯研究，置信度中。芯片公司收入与BNEF供电报告提供不同侧面证据；不能因此断言芯片约束已完全消失。",
+  "reviewBy": "2026-12-13T00:00:00+08:00",
   "revisions": [
     {
       "at": "2026-11-13T13:30:00+08:00",
       "by": "二组",
       "note": "首次建立，阶段strengthening，连接数据中心电力与SMR两条证据链"
+    },
+    {
+      "at": "2026-11-13T14:57:43+08:00",
+      "by": "Codex",
+      "stageBefore": "strengthening",
+      "note": "本轮依据已核实原文收敛命题并补反证；上一版完整判断保存在history/takeover-20261113对应记录，不将旧结论事后抹去。"
     }
   ],
-  "counterSearch": {
-    "at": "2026-11-13T13:30:00+08:00",
-    "sources": [
-      "Reuters",
-      "BloombergNEF",
-      "IEA"
-    ],
-    "keywords": [
-      "AI capex cut",
-      "data center delay power",
-      "grid interconnection queue"
-    ],
-    "window": "2026-05-13/2026-11-13",
-    "hits": 2,
-    "result": "found",
-    "note": "命中AI泡沫论与能效提升两条反证；未发现云厂商公开延期披露"
-  },
-  "title": "AI 电力约束"
+  "title": "算力与供电约束"
 }
