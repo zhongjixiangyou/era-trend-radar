@@ -107,7 +107,7 @@ export const regionLabel: Record<string, string> = {
 };
 
 export const categoryLabel: Record<string, string> = {
-  technology: '科技', economy: '经济', industry: '产业', society: '社会',
+  technology: '科技', economy: '经济', industry: '产业', future: '未来趋势', society: '社会',
   policy: '政策', energy: '能源', demography: '人口',
 };
 

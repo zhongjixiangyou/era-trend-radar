@@ -47,7 +47,7 @@ const read = (name, fallback) => {
 };
 const day = (iso) => (iso ? String(iso).slice(0, 10) : null);
 
-const CATEGORY = { 中国经济与产业: 'industry', 全球宏观: 'economy', 未来趋势: 'technology', 科技与社会: 'technology' };
+const CATEGORY = { 中国经济与产业: 'industry', 全球宏观: 'economy', 未来趋势: 'future', 科技与社会: 'technology' };
 const REGION = { 中国: 'china', 全球: 'global', 美国: 'us', 中东: 'asia', 欧洲: 'europe', 亚洲: 'asia' };
 const CRED = { multi_independent: 'high', single_primary: 'medium', secondary_only: 'low', unverified: 'low' };
 
