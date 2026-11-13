@@ -1,0 +1,220 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://era.local/schema/trend.schema.json",
+  "title": "ERA 趋势（trend）",
+  "description": "一条可被证据支持、也可被证据推翻的长期判断。schema 版本 era-schema/v1。",
+  "type": "object",
+  "required": [
+    "id",
+    "thesis",
+    "firstSeenAt",
+    "stage",
+    "indicators",
+    "evidenceRefs",
+    "counterEvidence",
+    "currentJudgment",
+    "reviewBy",
+    "revisions"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^tr_[a-z0-9][a-z0-9_-]{2,63}$"
+    },
+    "thesis": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 200,
+      "description": "一句话趋势命题，必须可被证伪"
+    },
+    "firstSeenAt": {
+      "type": "string",
+      "description": "最早观察到该趋势的时间"
+    },
+    "stage": {
+      "type": "string",
+      "enum": [
+        "emerging",
+        "strengthening",
+        "stable",
+        "weakening",
+        "falsified"
+      ],
+      "description": "emerging=刚出现；strengthening=增强；stable=平稳；weakening=减弱；falsified=已被证伪"
+    },
+    "indicators": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 12,
+      "description": "可观测指标：以后拿什么数据判断趋势强弱",
+      "items": {
+        "oneOf": [
+          {
+            "type": "string",
+            "minLength": 4,
+            "maxLength": 200
+          },
+          {
+            "type": "object",
+            "required": [
+              "name"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 4,
+                "maxLength": 120
+              },
+              "note": {
+                "type": "string",
+                "maxLength": 200
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "evidenceRefs": {
+      "type": "array",
+      "description": "支持该趋势的 event id 列表",
+      "items": {
+        "type": "string",
+        "pattern": "^ev_[a-z0-9][a-z0-9_-]{2,63}$"
+      }
+    },
+    "counterEvidence": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 20,
+      "description": "反证必写。若检索后确无明确反证，也要写清检索范围与结果，不能留空",
+      "items": {
+        "oneOf": [
+          {
+            "type": "string",
+            "minLength": 4,
+            "maxLength": 400
+          },
+          {
+            "type": "object",
+            "required": [
+              "text"
+            ],
+            "properties": {
+              "text": {
+                "type": "string",
+                "minLength": 4,
+                "maxLength": 400
+              },
+              "url": {
+                "type": "string",
+                "pattern": "^https?://"
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "currentJudgment": {
+      "type": "string",
+      "minLength": 20,
+      "description": "当前判断 + 置信度（高/中/低），并说明依据与不确定处"
+    },
+    "reviewBy": {
+      "type": "string",
+      "description": "下次复核日期，ISO 8601；晚于 firstSeenAt"
+    },
+    "revisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "at",
+          "note"
+        ],
+        "properties": {
+          "at": {
+            "type": "string"
+          },
+          "by": {
+            "type": "string",
+            "maxLength": 40
+          },
+          "note": {
+            "type": "string",
+            "minLength": 4,
+            "maxLength": 400
+          },
+          "stageBefore": {
+            "type": "string",
+            "enum": [
+              "emerging",
+              "strengthening",
+              "stable",
+              "weakening",
+              "falsified"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "counterSearch": {
+      "type": "object",
+      "description": "反证检索记录：找过什么、找到什么、结论",
+      "required": [
+        "at",
+        "result"
+      ],
+      "properties": {
+        "at": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}([T ]\\d{2}:\\d{2}(:\\d{2})?(Z|[+-]\\d{2}:\\d{2})?)?$"
+        },
+        "sources": {
+          "type": "array",
+          "maxItems": 20,
+          "items": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "keywords": {
+          "type": "array",
+          "maxItems": 20,
+          "items": {
+            "type": "string"
+          }
+        },
+        "window": {
+          "type": "string",
+          "maxLength": 60
+        },
+        "hits": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10000
+        },
+        "result": {
+          "type": "string",
+          "enum": [
+            "found",
+            "not_found"
+          ]
+        },
+        "note": {
+          "type": "string",
+          "maxLength": 400
+        }
+      }
+    },
+    "title": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 24,
+      "description": "展示用短名（≤24 字符），供跨文件映射与专栏显示"
+    }
+  },
+  "additionalProperties": true
+}

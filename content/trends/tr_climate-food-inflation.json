@@ -1,0 +1,58 @@
+{
+  "id": "tr_climate-food-inflation",
+  "thesis": "气候波动正通过粮食与化肥价格重新进入全球通胀链条",
+  "firstSeenAt": "2026-11-09T00:00:00+08:00",
+  "stage": "emerging",
+  "indicators": [
+    {
+      "name": "厄尔尼诺潜在收入损失",
+      "note": "IFAD估算6年最高11万亿美元"
+    },
+    {
+      "name": "粮价指数",
+      "note": "待接入FAO月度数据"
+    },
+    {
+      "name": "化肥价格",
+      "note": "受能源成本传导"
+    }
+  ],
+  "evidenceRefs": [
+    "ev_el-nino-11t"
+  ],
+  "counterEvidence": [
+    {
+      "text": "11万亿美元是情景推演而非观测值，不能当作基准预测"
+    },
+    {
+      "text": "全球粮食库存消费比仍高于2022年，短期缓冲存在"
+    }
+  ],
+  "currentJudgment": "置信度低。机制成立但只有一条证据，且为情景估算；需FAO粮价与化肥价格连续3个月数据。",
+  "reviewBy": "2027-03-31T00:00:00+08:00",
+  "revisions": [
+    {
+      "at": "2026-11-13T13:30:00+08:00",
+      "by": "二组",
+      "note": "首次建立，阶段emerging，证据仅1条"
+    }
+  ],
+  "counterSearch": {
+    "at": "2026-11-13T13:30:00+08:00",
+    "sources": [
+      "FAO",
+      "World Bank",
+      "IFAD"
+    ],
+    "keywords": [
+      "粮价 回落",
+      "粮食库存 充足",
+      "厄尔尼诺 减弱"
+    ],
+    "window": "2026-05-13/2026-11-13",
+    "hits": 2,
+    "result": "found",
+    "note": "命中库存缓冲与情景推演限定"
+  },
+  "title": "气候→食品通胀"
+}

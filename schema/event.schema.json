@@ -1,0 +1,659 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://era.local/schema/event.schema.json",
+  "title": "ERA 事件（event）",
+  "description": "一条被核实、可评分、可关联趋势的短事件记录。schema 版本 era-schema/v1。",
+  "type": "object",
+  "required": [
+    "id",
+    "dedupeKey",
+    "title",
+    "summary",
+    "facts",
+    "analysis",
+    "category",
+    "region",
+    "occurredAt",
+    "firstReportedAt",
+    "collectedAt",
+    "sources",
+    "scores",
+    "credibility",
+    "status",
+    "trendLinks",
+    "revisions",
+    "forecastRefs",
+    "retro"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^ev_[a-z0-9][a-z0-9_-]{2,63}$",
+      "description": "稳定主键，格式 ev_<slug>"
+    },
+    "dedupeKey": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._:-]{7,127}$",
+      "description": "去重指纹，小写 ASCII；推荐 ev:<12位hash>，由 scripts/dedupe.py key 生成"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 4,
+      "maxLength": 120
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 120,
+      "description": "事实摘要，≤120 字（不计空白），只写发生了什么"
+    },
+    "facts": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 30,
+      "description": "可逐条核查的事实，每条一个；判断不得写进 facts",
+      "items": {
+        "oneOf": [
+          {
+            "type": "string",
+            "minLength": 4,
+            "maxLength": 240
+          },
+          {
+            "type": "object",
+            "required": [
+              "text"
+            ],
+            "properties": {
+              "text": {
+                "type": "string",
+                "minLength": 4,
+                "maxLength": 240
+              },
+              "sourceUrl": {
+                "type": "string",
+                "pattern": "^https?://"
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "analysis": {
+      "type": "string",
+      "minLength": 30,
+      "description": "判断与推论：为什么重要、影响链条、哪里还不确定（与 facts 分离）"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "全球宏观",
+        "中国经济与产业",
+        "科技与社会",
+        "未来趋势"
+      ]
+    },
+    "region": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 60
+    },
+    "occurredAt": {
+      "type": "string",
+      "description": "事件发生时间，ISO 8601；允许只到日期"
+    },
+    "firstReportedAt": {
+      "type": "string",
+      "description": "最早公开报道时间，ISO 8601；无时区按 +08:00 解释并给 WARN"
+    },
+    "collectedAt": {
+      "type": "string",
+      "description": "本记录入库时间，ISO 8601；无时区按 +08:00 解释并给 WARN"
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 30,
+      "items": {
+        "type": "object",
+        "required": [
+          "url",
+          "title",
+          "publisher",
+          "publishedAt",
+          "type"
+        ],
+        "properties": {
+          "url": {
+            "type": "string",
+            "pattern": "^https?://"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 200
+          },
+          "publisher": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 80
+          },
+          "publishedAt": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "primary",
+              "corroboration"
+            ],
+            "description": "primary=一手/原始来源；corroboration=交叉印证"
+          },
+          "note": {
+            "type": "string",
+            "maxLength": 200
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "scores": {
+      "type": "object",
+      "required": [
+        "structural",
+        "scope",
+        "signal",
+        "delta",
+        "timeliness",
+        "crossDomain",
+        "total",
+        "rationale",
+        "scorerVersion"
+      ],
+      "properties": {
+        "structural": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 25
+        },
+        "scope": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 20
+        },
+        "signal": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 20
+        },
+        "delta": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 15
+        },
+        "timeliness": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "crossDomain": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "total": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "必须等于六维之和，由 scripts/score.py 计算，禁止手填"
+        },
+        "rationale": {
+          "type": "object",
+          "required": [
+            "structural",
+            "scope",
+            "signal",
+            "delta",
+            "timeliness",
+            "crossDomain"
+          ],
+          "properties": {
+            "structural": {
+              "type": "string",
+              "minLength": 6
+            },
+            "scope": {
+              "type": "string",
+              "minLength": 6
+            },
+            "signal": {
+              "type": "string",
+              "minLength": 6
+            },
+            "delta": {
+              "type": "string",
+              "minLength": 6
+            },
+            "timeliness": {
+              "type": "string",
+              "minLength": 6
+            },
+            "crossDomain": {
+              "type": "string",
+              "minLength": 6
+            }
+          },
+          "additionalProperties": false
+        },
+        "scorerVersion": {
+          "type": "string",
+          "pattern": "^score/v[0-9]+\\.[0-9]+$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "credibility": {
+      "type": "object",
+      "required": [
+        "level",
+        "basis"
+      ],
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": [
+            "verified",
+            "partial",
+            "unverified"
+          ]
+        },
+        "basis": {
+          "type": "string",
+          "minLength": 10
+        }
+      },
+      "additionalProperties": false
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "published",
+        "pending"
+      ],
+      "description": "published 必须有 primary 来源且 credibility 不为 unverified"
+    },
+    "trendLinks": {
+      "type": "array",
+      "maxItems": 20,
+      "items": {
+        "type": "object",
+        "required": [
+          "trendId",
+          "direction",
+          "reason"
+        ],
+        "properties": {
+          "trendId": {
+            "type": "string",
+            "pattern": "^tr_[a-z0-9][a-z0-9_-]{2,63}$"
+          },
+          "direction": {
+            "type": "string",
+            "enum": [
+              "support",
+              "weaken",
+              "challenge"
+            ]
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 5
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "revisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "at",
+          "note"
+        ],
+        "properties": {
+          "at": {
+            "type": "string"
+          },
+          "by": {
+            "type": "string",
+            "maxLength": 40
+          },
+          "note": {
+            "type": "string",
+            "minLength": 4,
+            "maxLength": 400
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "forecastRefs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^fc_[a-z0-9][a-z0-9_-]{2,63}$"
+      }
+    },
+    "retro": {
+      "type": "object",
+      "required": [
+        "isRetro"
+      ],
+      "description": "回溯标记：isRetro=true 表示事后补录，必须写 asOf 与 note，禁止把事后知道的事写成当时预测",
+      "properties": {
+        "isRetro": {
+          "type": "boolean"
+        },
+        "asOf": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string",
+          "maxLength": 400
+        }
+      },
+      "additionalProperties": false
+    },
+    "evidenceGrade": {
+      "type": "string",
+      "enum": [
+        "multi_independent",
+        "single_primary",
+        "secondary_only",
+        "unverified"
+      ],
+      "description": "证据等级；published 只允许 single_primary / multi_independent"
+    },
+    "verification": {
+      "type": "object",
+      "description": "来源核验记录；published 要求 status=passed",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "not_started",
+            "pending",
+            "passed",
+            "failed"
+          ]
+        },
+        "method": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 200
+        },
+        "checkedAt": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}([T ]\\d{2}:\\d{2}(:\\d{2})?(Z|[+-]\\d{2}:\\d{2})?)?$"
+        },
+        "checks": {
+          "type": "array",
+          "maxItems": 12,
+          "items": {
+            "type": "object",
+            "required": [
+              "kind",
+              "result"
+            ],
+            "properties": {
+              "kind": {
+                "type": "string",
+                "minLength": 2,
+                "maxLength": 40
+              },
+              "result": {
+                "type": "string",
+                "enum": [
+                  "pass",
+                  "fail",
+                  "unknown"
+                ]
+              },
+              "evidence": {
+                "type": "string",
+                "minLength": 2,
+                "maxLength": 300
+              }
+            }
+          }
+        },
+        "note": {
+          "type": "string",
+          "maxLength": 300,
+          "description": "核验备注（可空）：写清核验口径、拦截原因或人工判断"
+        }
+      },
+      "required": [
+        "status"
+      ]
+    },
+    "scoreHistory": {
+      "type": "array",
+      "maxItems": 100,
+      "description": "评分历史，只追加不改写",
+      "items": {
+        "type": "object",
+        "required": [
+          "at",
+          "scores"
+        ],
+        "properties": {
+          "at": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}([T ]\\d{2}:\\d{2}(:\\d{2})?(Z|[+-]\\d{2}:\\d{2})?)?$"
+          },
+          "by": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40
+          },
+          "note": {
+            "type": "string",
+            "maxLength": 200
+          },
+          "scores": {
+            "type": "object",
+            "required": [
+              "structural",
+              "scope",
+              "signal",
+              "delta",
+              "timeliness",
+              "crossDomain",
+              "total"
+            ],
+            "properties": {
+              "structural": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 25
+              },
+              "scope": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 20
+              },
+              "signal": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 20
+              },
+              "delta": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 15
+              },
+              "timeliness": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "crossDomain": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "total": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 100
+              }
+            }
+          }
+        }
+      }
+    },
+    "linkHistory": {
+      "type": "array",
+      "maxItems": 200,
+      "description": "趋势关联变更历史，只追加不改写",
+      "items": {
+        "type": "object",
+        "required": [
+          "at",
+          "trendId",
+          "direction",
+          "action"
+        ],
+        "properties": {
+          "at": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}([T ]\\d{2}:\\d{2}(:\\d{2})?(Z|[+-]\\d{2}:\\d{2})?)?$"
+          },
+          "trendId": {
+            "type": "string",
+            "pattern": "^tr_[a-z0-9][a-z0-9_-]{2,63}$"
+          },
+          "direction": {
+            "type": "string",
+            "enum": [
+              "support",
+              "weaken",
+              "challenge"
+            ]
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "add",
+              "remove",
+              "change"
+            ]
+          },
+          "reason": {
+            "type": "string",
+            "maxLength": 200
+          }
+        }
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "description": "同口径指标组：中国产业四象限等多期比较必须共用同一 metricSetId，禁止混用不同区间口径",
+      "properties": {
+        "metricSetId": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 64
+        },
+        "comparable": {
+          "type": "boolean",
+          "description": "各期是否同口径；false 时页面只能并列展示，不得相减或算增速"
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "metric",
+              "value",
+              "period"
+            ],
+            "properties": {
+              "metric": {
+                "type": "string"
+              },
+              "value": {
+                "type": [
+                  "number",
+                  "string"
+                ]
+              },
+              "unit": {
+                "type": "string"
+              },
+              "period": {
+                "type": "string"
+              },
+              "scope": {
+                "type": "string"
+              },
+              "sourceUrl": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "metricSetId",
+        "comparable",
+        "items"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true,
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "status"
+        ],
+        "properties": {
+          "status": {
+            "const": "published"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "evidenceGrade",
+          "verification"
+        ],
+        "properties": {
+          "evidenceGrade": {
+            "enum": [
+              "single_primary",
+              "multi_independent"
+            ]
+          },
+          "verification": {
+            "required": [
+              "status"
+            ],
+            "properties": {
+              "status": {
+                "const": "passed"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

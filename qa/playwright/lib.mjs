@@ -50,31 +50,48 @@ export async function findUnprefixedAssets(page, basePath) {
   return urls.filter((u) => u.url !== basePath && !u.url.startsWith(`${basePath}/`));
 }
 
-/** 390px 下找横向溢出元素 */
+/** 找页面级横向溢出。注意：横向可滚容器（nav 之类）里的元素不算溢出，单独记进 clipped。 */
 export async function scanOverflow(page) {
   return page.evaluate(() => {
     const vw = document.documentElement.clientWidth;
     const docOverflow = document.documentElement.scrollWidth - vw;
+    const inScroller = (el) => {
+      let n = el.parentElement;
+      while (n && n !== document.documentElement) {
+        const ox = getComputedStyle(n).overflowX;
+        if (ox === 'auto' || ox === 'scroll') return n;
+        n = n.parentElement;
+      }
+      return null;
+    };
     const offenders = [];
+    const clipped = [];
     for (const el of document.querySelectorAll('body *')) {
       const r = el.getBoundingClientRect();
       if (r.width === 0 && r.height === 0) continue;
       const over = Math.max(r.right - vw, -r.left);
-      if (over > 1) {
-        const id = el.id ? `#${el.id}` : '';
-        const cls = el.className && typeof el.className === 'string' ? `.${el.className.trim().split(/\s+/).slice(0, 2).join('.')}` : '';
-        offenders.push({
-          selector: `${el.tagName.toLowerCase()}${id}${cls}`,
-          right: Math.round(r.right),
-          left: Math.round(r.left),
-          width: Math.round(r.width),
-          over: Math.round(over),
-          text: (el.textContent || '').trim().slice(0, 40),
-        });
+      if (over <= 1) continue;
+      const id = el.id ? `#${el.id}` : '';
+      const cls = el.className && typeof el.className === 'string' ? `.${el.className.trim().split(/\s+/).slice(0, 2).join('.')}` : '';
+      const rec = {
+        selector: `${el.tagName.toLowerCase()}${id}${cls}`,
+        right: Math.round(r.right),
+        left: Math.round(r.left),
+        width: Math.round(r.width),
+        over: Math.round(over),
+        text: (el.textContent || '').trim().slice(0, 40),
+      };
+      const sc = inScroller(el);
+      if (sc) {
+        rec.scroller = `${sc.tagName.toLowerCase()}.${(sc.className || '').toString().split(' ')[0]}`;
+        clipped.push(rec);
+      } else {
+        offenders.push(rec);
       }
     }
     offenders.sort((a, b) => b.over - a.over);
-    return { vw, docOverflow, offenders: offenders.slice(0, 8) };
+    clipped.sort((a, b) => b.over - a.over);
+    return { vw, docOverflow, offenders: offenders.slice(0, 8), clipped: clipped.slice(0, 8) };
   });
 }
 

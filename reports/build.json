@@ -1,0 +1,35 @@
+{
+  "tool": "build",
+  "mode": "entry",
+  "argv": [
+    "pnpm",
+    "build"
+  ],
+  "exportArgv": [
+    "python3",
+    "scripts/export_astro.py",
+    "--content",
+    "content",
+    "--out",
+    ".era-tmp/derived",
+    "--schema",
+    "schema",
+    "--json"
+  ],
+  "exportExit": 0,
+  "derivedDir": "src/data",
+  "compared": 3,
+  "drift": [
+    "漂移 events.json",
+    "漂移 forecasts.json",
+    "漂移 trends.json"
+  ],
+  "buildExit": 0,
+  "dist": "dist",
+  "files": 24,
+  "hasIndex": true,
+  "intakeLeak": [],
+  "parity": null,
+  "status": "failed",
+  "message": "派生层漂移 3 个：漂移 events.json, 漂移 forecasts.json, 漂移 trends.json"
+}

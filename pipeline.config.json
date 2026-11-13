@@ -1,0 +1,270 @@
+{
+  "schemaVersion": "1.0.0",
+  "scoringVersion": "score-v1",
+  "modelVersion": "deepseek-chat@2026-11",
+  "pipelineVersion": "0.4.0",
+  "timezone": "Asia/Shanghai",
+  "window": {
+    "mode": "fixed",
+    "start": "2026-05-13",
+    "end": "2026-11-13",
+    "days": 180,
+    "frozenAt": "2026-11-13",
+    "note": "契约窗口冻结到 2026-11-13；到期前必须改成 mode=rolling（近180天）或更新契约，否则新事件全部 EVENT_DATE_OUT_OF_RANGE"
+  },
+  "schedule": {
+    "collect": [
+      "0 0 * * *",
+      "0 12 * * *"
+    ],
+    "analyze": "0 1 * * 1",
+    "monthlyReview": "0 2 1 * *",
+    "deploy": "push:main"
+  },
+  "scoring": {
+    "totalMax": 100,
+    "dimensions": [
+      {
+        "key": "impact",
+        "label": "影响面",
+        "max": 25
+      },
+      {
+        "key": "novelty",
+        "label": "新颖度",
+        "max": 20
+      },
+      {
+        "key": "momentum",
+        "label": "势头",
+        "max": 20
+      },
+      {
+        "key": "breadth",
+        "label": "广度",
+        "max": 15
+      },
+      {
+        "key": "credibility",
+        "label": "可信度",
+        "max": 10
+      },
+      {
+        "key": "durability",
+        "label": "持续性",
+        "max": 10
+      }
+    ],
+    "requireBasis": true
+  },
+  "data": {
+    "dir": "content",
+    "file": "data.json",
+    "candidatesDir": "content/candidates",
+    "inboxDir": "content/inbox"
+  },
+  "artifacts": {
+    "dir": "artifacts",
+    "reportsDir": "reports",
+    "historyDir": "history"
+  },
+  "commit": {
+    "whitelist": [
+      "content/",
+      "reports/",
+      "history/"
+    ],
+    "messagePrefix": "chore(era)",
+    "durableReports": [
+      "factcheck.json",
+      "factcheck.md",
+      "monthly-review-*.md",
+      "monthly-review-*.json"
+    ]
+  },
+  "runStatus": {
+    "values": [
+      "healthy",
+      "no_change",
+      "degraded",
+      "failed"
+    ],
+    "descriptions": {
+      "healthy": "成功且有新增",
+      "no_change": "成功且无新增（不 commit）",
+      "degraded": "部分来源失败仍产出，缺口写进 reports/",
+      "failed": "全源失败或硬错误，不 commit 不 deploy"
+    }
+  },
+  "exitCodes": {
+    "ok": 0,
+    "validation_failed": 1,
+    "usage_error": 2,
+    "source_failed": 3,
+    "note": "v0.3 分层：0 通过 / 1 校验失败 / 2 CLI 用法错误 / 3 SOURCE_FAILED。任何非 0 一律阻断本轮提交与发布，工作流不对 2 做豁免分支。"
+  },
+  "directions": [
+    "支持",
+    "削弱",
+    "挑战"
+  ],
+  "entries": {
+    "collect": {
+      "mode": "fetch",
+      "cmd": [
+        "python3",
+        "scripts/collect.py",
+        "--sources",
+        "config/sources.json",
+        "--out",
+        "inbox/imported/events",
+        "--json"
+      ],
+      "report": "reports/collect.json",
+      "note": "二组真实入口：collect.py 联网抓取并写 inbox/imported/events。退出码 0=成功(可 no_change) / 1=degraded(部分源失败) / 3=全源失败(SOURCE_FAILED)；其它非 0 一律 failed。"
+    },
+    "analyze": {
+      "mode": "model",
+      "cmd": [
+        "python3",
+        "scripts/analyze.py",
+        "--content",
+        "content/",
+        "--budget",
+        "20",
+        "--json"
+      ],
+      "report": "reports/analyze.json",
+      "note": "二组实测入口；无 key 时脚本 exit=4、status=skipped_no_key，CI 统一映射为 failed+no_api_key，不新增第五态。"
+    },
+    "validate": {
+      "cmd": [
+        "python3",
+        "scripts/cli.py",
+        "validate",
+        "content/"
+      ],
+      "report": "reports/validate-content.json",
+      "note": "整库校验必须 exit 0 才允许集成；DEDUPE_KEY_DUP/REF_MISSING 一律阻断。"
+    },
+    "scoreCheck": {
+      "cmd": [
+        "python3",
+        "scripts/cli.py",
+        "score",
+        "content/"
+      ],
+      "report": "reports/score-check.json",
+      "note": "只读重算比对；CI 禁止 --write，不允许校验后自动修分。"
+    },
+    "build": {
+      "cmd": [
+        "pnpm",
+        "build"
+      ],
+      "out": "dist",
+      "report": "reports/build.json",
+      "note": "Astro 入口：先由 content/ 重新导出到 .era-tmp/derived，与 src/data 逐文件比对（漂移即失败），再 pnpm build；产物必须含 index.html 且无 _intake。",
+      "exportCmd": [
+        "python3",
+        "scripts/export_astro.py",
+        "--content",
+        "content",
+        "--out",
+        ".era-tmp/derived",
+        "--schema",
+        "schema",
+        "--json"
+      ],
+      "exportOut": ".era-tmp/derived",
+      "derivedDir": "src/data"
+    }
+  },
+  "budgets": {
+    "retry": {
+      "retries": 2,
+      "baseDelayMs": 800,
+      "maxDelayMs": 6000
+    },
+    "collect": {
+      "maxRequests": 30,
+      "maxItems": 200,
+      "maxRuntimeMinutes": 15
+    },
+    "analyze": {
+      "screen": {
+        "maxModelCalls": 4,
+        "maxItems": 80,
+        "maxInputChars": 30000
+      },
+      "deepDive": {
+        "maxModelCalls": 16,
+        "maxItems": 16,
+        "maxInputChars": 20000
+      },
+      "maxModelCalls": 20,
+      "maxRequests": 60,
+      "maxRuntimeMinutes": 18
+    },
+    "monthlyReview": {
+      "maxModelCalls": 4,
+      "maxItems": 12,
+      "maxRuntimeMinutes": 18
+    }
+  },
+  "cache": {
+    "fetchDir": ".cache/era-fetch",
+    "fetchTtlHours": 12,
+    "npm": true
+  },
+  "model": {
+    "provider": "deepseek",
+    "id": "deepseek-chat",
+    "endpoint": "https://api.deepseek.com/chat/completions",
+    "apiKeyEnv": "DEEPSEEK_API_KEY",
+    "baseUrlEnv": "DEEPSEEK_BASE_URL",
+    "timeoutMs": 90000,
+    "temperature": 0.2
+  },
+  "search": {
+    "endpointEnv": "ERA_SEARCH_ENDPOINT",
+    "apiKeyEnv": "ERA_SEARCH_API_KEY",
+    "note": "反证检索用；未配置时 reports 里必须显式写 unavailable + 原因，不许留空。"
+  },
+  "sources": [
+    {
+      "id": "openai-news",
+      "kind": "rss",
+      "url": "https://openai.com/news/rss.xml",
+      "provisional": true
+    },
+    {
+      "id": "google-ai-blog",
+      "kind": "rss",
+      "url": "https://blog.google/technology/ai/rss/",
+      "provisional": true
+    },
+    {
+      "id": "mit-tech-review",
+      "kind": "rss",
+      "url": "https://www.technologyreview.com/feed/",
+      "provisional": true
+    }
+  ],
+  "notes": {
+    "data": "唯一数据根 content/（与二组 CLI 默认一致）。站点读取由一组构建期从 content/ 派生，写白名单只允许 content/、reports/、history/。",
+    "permissions": "collect / analyze / monthly-review 需要 contents: write（提交 content/、reports/、history/）；deploy 只 contents: read + pages: write + id-token: write。",
+    "monthlyReview": "月报把修订提案与反证检索留痕写进 reports/ 并提交，但不直接改 content/data.json 的已发布判断；正式并入走 analyze。",
+    "schema": "字段与六维键以三组查错 check/SCHEMA.md v1.0 为准；与项目.md 的中文维度名差异待二组统一。",
+    "sources": "RSS 源是临时占位（provisional=true），二组给正式来源白名单后替换。",
+    "window": "事件发生日/首发日/抓取日都必须落在这个窗口内（契约 §4.3）。",
+    "node": "版本由一组锁定受支持 LTS（Astro 要求 >=22.23.4）；工作流用 node-version-file: .nvmrc 读取，不在 YAML 写死 25。缺少 .nvmrc 时 setup-node 直接失败，属预期：版本未锁定就不出构建。",
+    "analyzeSkip": "无 key：顶层 status=failed、reason=no_api_key、executed=false；不读候选、不调模型、不写 content/。不新增第五态。",
+    "parity": "构建后比对 artifacts/site/content-hash.txt 与 content 源目录哈希；不一致说明站点读的不是 content/，判失败。",
+    "schemaFreeze": "六维命名/上限、方向枚举、ID 形态以查错最新 SCHEMA 冻结版为准；本 config 已把 directions 与维度上限做成可配置项，查错 v2 定稿后只改 config。",
+    "entries": "所有外部入口路径与参数只在 entries 里配置，工作流不硬编码；换入口只改 config。",
+    "intake": "_intake/ 可提交但不进构建产物与导出包；build/package 双向检查。",
+    "score": "CI 只跑 cli.py score content/（只读）比对；--write 只允许发布前的候选分析步骤。",
+    "commit": "content/、history/ 全提交；reports/ 只提交内容派生的可审阅报告（durableReports），gate/validate/commit 这类逐轮重写的报告由工作流以 artifact 上传，避免每次运行产生噪声 commit"
+  }
+}

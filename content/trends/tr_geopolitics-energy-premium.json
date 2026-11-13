@@ -1,0 +1,58 @@
+{
+  "id": "tr_geopolitics-energy-premium",
+  "thesis": "中东冲突把能源风险溢价结构性抬高，油价中枢高于战前",
+  "firstSeenAt": "2026-08-28T00:00:00+08:00",
+  "stage": "strengthening",
+  "indicators": [
+    {
+      "name": "布伦特原油",
+      "note": "一度突破90美元/桶"
+    },
+    {
+      "name": "霍尔木兹通行量",
+      "note": "受阻"
+    },
+    {
+      "name": "航运保险成本",
+      "note": "待接入"
+    }
+  ],
+  "evidenceRefs": [
+    "ev_mideast-war-6m"
+  ],
+  "counterEvidence": [
+    {
+      "text": "OPEC连续6个月下调需求增长，需求侧走弱可能压过供给溢价"
+    },
+    {
+      "text": "美国与OPEC闲置产能可部分对冲"
+    }
+  ],
+  "currentJudgment": "置信度中。供给冲击明确，但需求下修是反向力量；观察布伦特能否站稳85美元以上。",
+  "reviewBy": "2027-01-31T00:00:00+08:00",
+  "revisions": [
+    {
+      "at": "2026-11-13T13:30:00+08:00",
+      "by": "二组",
+      "note": "首次建立，阶段strengthening"
+    }
+  ],
+  "counterSearch": {
+    "at": "2026-11-13T13:30:00+08:00",
+    "sources": [
+      "OPEC",
+      "IEA",
+      "Reuters"
+    ],
+    "keywords": [
+      "需求 下调",
+      "停火",
+      "闲置产能"
+    ],
+    "window": "2026-05-13/2026-11-13",
+    "hits": 2,
+    "result": "found",
+    "note": "命中OPEC需求六连降与停火谈判"
+  },
+  "title": "地缘能源溢价"
+}

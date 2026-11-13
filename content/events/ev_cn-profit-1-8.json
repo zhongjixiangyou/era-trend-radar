@@ -1,0 +1,116 @@
+{
+  "id": "ev_cn-profit-1-8",
+  "dedupeKey": "ev:1a7c49772758",
+  "title": "1-8月规上工业企业利润同比增长15.7%",
+  "summary": "1—8 月规上工业企业利润总额 52,719.8 亿元，同比增长 15.7%。营业收入利润率 5.66%，同比提高 0.44 个百分点；电子设备制造业利润增长 1.1 倍，有色金属、煤炭、化工分别增长 82.9%、51.6%、51.0%。",
+  "facts": [
+    "利润总额52,719.8亿元，同比+15.7%",
+    "营业收入93.09万亿元，同比+6.6%",
+    "营业收入利润率5.66%，同比提高0.44个百分点",
+    "电子设备制造业利润同比+1.1倍，有色金属+82.9%，煤炭+51.6%，化工+51.0%"
+  ],
+  "analysis": "利润增速高于营收增速，说明利润率在修复；但电子、有色等上游高增可能来自价格与基数，不能直接外推为全面景气。",
+  "category": "中国经济与产业",
+  "region": "中国",
+  "occurredAt": "2026-09-28T00:00:00+08:00",
+  "firstReportedAt": "2026-09-28T00:00:00+08:00",
+  "collectedAt": "2026-11-13T13:30:00+08:00",
+  "sources": [
+    {
+      "url": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
+      "title": "2026年1—8月份全国规模以上工业企业利润增长15.7%",
+      "publisher": "国家统计局",
+      "publishedAt": "2026-09-28T00:00:00+08:00",
+      "type": "primary"
+    },
+    {
+      "url": "https://english.www.gov.cn/archive/statistics/202609/28/content_WS6ab9d6f1c6d00ca5f9a0d7e5.html",
+      "title": "Industrial profits up 15.7% in first eight months",
+      "publisher": "Gov.cn",
+      "publishedAt": "2026-09-28T00:00:00+08:00",
+      "type": "corroboration",
+      "note": "同源发布，不计独立佐证"
+    }
+  ],
+  "scores": {
+    "structural": 20,
+    "scope": 17,
+    "signal": 18,
+    "delta": 12,
+    "timeliness": 7,
+    "crossDomain": 8,
+    "total": 82,
+    "rationale": {
+      "structural": "利润与营收剪刀差持续6个月以上，指向企业盈利结构变化",
+      "scope": "覆盖全部规上工业41个大类行业",
+      "signal": "为“工业利润率修复”趋势提供第6个月连续证据",
+      "delta": "新增分行业拆分，电子与上游分化首次清晰",
+      "timeliness": "1-8月数据在9月末发布，仍在当期",
+      "crossDomain": "上游涨价同时影响制造业成本与CPI/PPI"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "官方一手统计，但尚未逐项比对原文表格；独立佐证与官方同源"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "passed",
+    "method": "verify_sources/http",
+    "note": "verify_sources.py 自动核验（HTTP），以 checks 为准",
+    "checks": [
+      {
+        "kind": "http",
+        "result": "pass",
+        "evidence": "HTTP 200 https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html（页面无发布日期（日期未核））"
+      },
+      {
+        "kind": "http",
+        "result": "unknown",
+        "evidence": "HTTP 200 https://english.www.gov.cn/archive/statistics/202609/28/content_WS6ab9d6f1c6d00ca5f9a0d7e5.html（标题部分匹配）"
+      },
+      {
+        "kind": "primary_present",
+        "result": "pass",
+        "evidence": "primary 1 条"
+      }
+    ],
+    "checkedAt": "2026-11-13T13:54:29+08:00"
+  },
+  "status": "pending",
+  "trendLinks": [
+    {
+      "trendId": "tr_cn-industrial-margin-repair",
+      "direction": "support",
+      "reason": "利润率同比提高0.44pp，且为连续第4个月两位数利润增长"
+    }
+  ],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-09-28",
+    "note": "2026-09-28 数据发布，2026-11-13 回溯补录；1-8月分行业口径，不得与1-9月总量混算"
+  },
+  "scoreHistory": [],
+  "linkHistory": [],
+  "metrics": [
+    {
+      "name": "利润总额同比",
+      "value": 15.7,
+      "unit": "%",
+      "period": "2026年1-8月",
+      "caliber": "累计同比",
+      "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html"
+    },
+    {
+      "name": "营业收入利润率",
+      "value": 5.66,
+      "unit": "%",
+      "period": "2026年1-8月",
+      "caliber": "累计",
+      "sourceUrl": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html"
+    }
+  ]
+}

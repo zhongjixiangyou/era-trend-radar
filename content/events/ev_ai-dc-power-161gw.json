@@ -1,0 +1,97 @@
+{
+  "id": "ev_ai-dc-power-161gw",
+  "dedupeKey": "ev:2424e13d5315",
+  "title": "2026年全球数据中心电力需求达161GW，同比增31%",
+  "summary": "据 TrendForce 数据，2026 年全球数据中心电力需求达 161GW，同比增长 31%，AI 服务器是主要拉动；BloombergNEF 同期提示，数据中心电力需求上升将带来新的气候挑战。",
+  "facts": [
+    "2026年全球数据中心电力需求161GW，同比增长31%",
+    "AI服务器为主要驱动",
+    "BNEF 同期提示数据中心电力需求上升带来气候挑战"
+  ],
+  "analysis": "算力扩张的瓶颈正从芯片供给转向电力与并网；若电力交付慢于GPU交付，AI资本开支的节奏会被迫改变。",
+  "category": "未来趋势",
+  "region": "全球",
+  "occurredAt": "2026-09-17T00:00:00+08:00",
+  "firstReportedAt": "2026-09-17T00:00:00+08:00",
+  "collectedAt": "2026-11-13T13:30:00+08:00",
+  "sources": [
+    {
+      "url": "https://www.communicationstoday.co.in/ai-servers-drive-31-surge-in-global-data-centre-power-demand/",
+      "title": "AI servers drive 31% surge in global data centre power demand",
+      "publisher": "Communications Today（引TrendForce）",
+      "publishedAt": "2026-09-17T00:00:00+08:00",
+      "type": "primary"
+    },
+    {
+      "url": "https://about.bnef.com/insights/data-centers/data-center-power-demand-is-set-to-surge-raising-new-climate-challenges-bloombergnef/",
+      "title": "Data center power demand set to surge, raising new climate challenges",
+      "publisher": "BloombergNEF",
+      "publishedAt": "2026-09-15T00:00:00+08:00",
+      "type": "corroboration",
+      "note": "独立机构，口径为电力需求增长趋势"
+    }
+  ],
+  "scores": {
+    "structural": 21,
+    "scope": 18,
+    "signal": 19,
+    "delta": 12,
+    "timeliness": 8,
+    "crossDomain": 10,
+    "total": 88,
+    "rationale": {
+      "structural": "把AI扩张的约束从半导体移到能源基础设施",
+      "scope": "全球数据中心、电网、发电与设备供应链",
+      "signal": "为“AI电力约束”趋势提供量化锚点",
+      "delta": "首次给出161GW与31%的年度口径",
+      "timeliness": "2026全年预测，当期有效",
+      "crossDomain": "连接AI、电力、核电、气候政策"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "研究机构口径，TrendForce与BNEF两家独立，但未核对原始报告"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "passed",
+    "method": "verify_sources/http",
+    "note": "verify_sources.py 自动核验（HTTP），以 checks 为准",
+    "checks": [
+      {
+        "kind": "http",
+        "result": "pass",
+        "evidence": "HTTP 200 https://www.communicationstoday.co.in/ai-servers-drive-31-surge-in-global-data-centre-power-demand/（OK）"
+      },
+      {
+        "kind": "http",
+        "result": "unknown",
+        "evidence": "HTTP 200 https://about.bnef.com/insights/data-centers/data-center-power-demand-is-set-to-surge-raising-new-climate-challenges-bloombergnef/（记录日期 2026-09-15 与页面 2026-11-11 相差>3天）"
+      },
+      {
+        "kind": "primary_present",
+        "result": "pass",
+        "evidence": "primary 1 条"
+      }
+    ],
+    "checkedAt": "2026-11-13T13:54:29+08:00"
+  },
+  "status": "pending",
+  "trendLinks": [
+    {
+      "trendId": "tr_ai-power-constraint",
+      "direction": "support",
+      "reason": "需求增速31%远高于电网扩容速度"
+    }
+  ],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-09-17",
+    "note": "2026-09-17 事件发生，2026-11-13 研究回溯补录，非当时实时采集"
+  },
+  "scoreHistory": [],
+  "linkHistory": []
+}

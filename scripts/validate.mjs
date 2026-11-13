@@ -10,11 +10,7 @@ import { resolve } from 'node:path';
 
 const args = process.argv.slice(2);
 let dataDir = 'src/data';
-for (let i = 0; i < args.length; i++) {
-  if (args[i] === '--data') dataDir = args[++i];
-}
 
-const root = resolve(process.cwd(), dataDir);
 const errors = [];
 const warnings = [];
 const push = (path, code, message) => errors.push({ path, code, message });
@@ -24,6 +20,22 @@ function fail(code, message) {
   process.stderr.write(JSON.stringify({ ok: false, errors: [{ path: dataDir, code, message }] }) + '\n');
   process.exit(2);
 }
+
+const USAGE = '用法：node scripts/validate.mjs [--data <dir>]';
+for (let i = 0; i < args.length; i++) {
+  if (args[i] === '--data') {
+    const v = args[++i];
+    if (!v || v.startsWith('--')) fail('USAGE', `--data 后面要跟目录名。${USAGE}`);
+    dataDir = v;
+  } else if (args[i] === '--help' || args[i] === '-h') {
+    process.stdout.write(USAGE + '\n--data 默认 src/data；退出码 0 通过 / 1 校验失败 / 2 用法或文件错误\n');
+    process.exit(0);
+  } else {
+    fail('USAGE', `不认识的参数：${args[i]}。${USAGE}`);
+  }
+}
+
+const root = resolve(process.cwd(), dataDir);
 
 const REQUIRED = ['meta.json', 'events.json', 'trends.json', 'forecasts.json', 'snapshots.json'];
 for (const f of REQUIRED) {
@@ -45,15 +57,16 @@ const forecasts = load('forecasts.json');
 const snapshots = load('snapshots.json');
 
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
+// 两套都认：v1 永久 ID（ev_slug / tr_slug / fc_slug，权威）与旧站格式（ev-YYYYMMDD-slug）。
 const ID_RE = {
-  event: /^ev-\d{8}-[a-z0-9-]{1,40}$/,
-  trend: /^tr-[a-z0-9-]{1,40}$/,
-  forecast: /^fc-\d{6}-[a-z0-9-]{1,40}$/,
+  event: /^(ev-\d{8}-[a-z0-9-]{1,40}|ev_[a-z0-9][a-z0-9-]{0,60})$/,
+  trend: /^(tr-[a-z0-9-]{1,40}|tr_[a-z0-9][a-z0-9-]{0,60})$/,
+  forecast: /^(fc-\d{6}-[a-z0-9-]{1,40}|fc_[a-z0-9][a-z0-9-]{0,60})$/,
   snapshot: /^snap-\d{4}-\d{2}-\d{2}$/,
 };
 const DIMS = ['structural', 'scope', 'signal', 'novelty', 'timeliness', 'cross'];
-// 权重放大 100 倍做整数加权，避免 78.5 这类半值在浮点下漂移
-const WEIGHTED = { structural: 25, scope: 20, signal: 20, novelty: 15, timeliness: 10, cross: 10 };
+// v1 口径：六维本身就是分项得分（满分 25/20/20/15/10/10），总分 = 六项直接相加。
+const CAPS = { structural: 25, scope: 20, signal: 20, novelty: 15, timeliness: 10, cross: 10 };
 /** 半值向上取整，与契约「四舍五入、.5 向上」一致；scaled 为 ×100 的整数 */
 const roundHalfUp = (scaled) => Math.floor((scaled + 50) / 100);
 const REGIONS = ['global', 'china', 'us', 'europe', 'asia', 'other'];
@@ -70,12 +83,33 @@ const isObj = (v) => v !== null && typeof v === 'object' && !Array.isArray(v);
 /** 带时区的 ISO 8601 时间；Date.parse 会放过 2026/11/13 这类非 ISO 写法，必须先用正则卡住 */
 const ISO_DT = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2})?(\.\d+)?(Z|[+-]\d{2}:\d{2})$/;
 const isIsoDateTime = (v) => typeof v === 'string' && ISO_DT.test(v) && !Number.isNaN(Date.parse(v));
-const isHttp = (v) => typeof v === 'string' && /^https?:\/\/\S+$/i.test(v);
+const SECRET_QUERY = /[?&](access_?token|token|api_?key|apikey|key|sig|signature|secret|password|passwd|pwd|auth)=/i;
+/**
+ * 来源链接校验：必须 http(s)，且不能把凭据写进 URL。
+ * 拒两种：authority 里的 userinfo（https://user:pass@host/…），以及 ?token=/key=/sig= 一类敏感参数。
+ * 返回 null 表示没问题，否则返回原因（直接当 message 用）。
+ */
+function urlProblem(v) {
+  if (typeof v !== 'string' || v.length === 0) return 'URL 不能为空';
+  let u;
+  try {
+    u = new URL(v);
+  } catch {
+    return 'URL 不是合法地址';
+  }
+  if (u.protocol !== 'http:' && u.protocol !== 'https:') return 'URL 协议必须是 http 或 https';
+  if (u.username || u.password) return 'URL 不能带用户名密码（userinfo），那等于把凭据发到页面和仓库里';
+  if (SECRET_QUERY.test(u.search) || SECRET_QUERY.test('?' + u.hash.replace(/^#/, ''))) {
+    return 'URL 不能带 token/key/sig 一类敏感查询参数';
+  }
+  return null;
+}
+const isHttp = (v) => urlProblem(v) === null;
 const isNonEmptyStr = (v) => typeof v === 'string' && v.trim().length > 0;
 
 for (const [name, arr] of Object.entries({ events, trends, forecasts, snapshots })) {
   if (!Array.isArray(arr)) push(name, 'TYPE', '必须是数组');
-  else if (arr.length === 0) push(name, 'EMPTY', '不能为空数组');
+  else if (arr.length === 0 && name !== 'snapshots') push(name, 'EMPTY', '不能为空数组');
 }
 
 // ---- 唯一 ID ----
@@ -122,24 +156,24 @@ uniqueIds(snapshots, 'snapshots', ID_RE.snapshot);
   if (!e.scores || typeof e.scores !== 'object') {
     push(`${p}.scores`, 'REQUIRED', '缺少 scores');
   } else {
-    let scaled = 0;
+    let sum = 0;
     let ok = true;
     for (const d of DIMS) {
       const v = e.scores[d];
-      if (!isInt(v) || v < 0 || v > 100) {
-        push(`${p}.scores.${d}`, 'RANGE', `${d} 必须是 0–100 的整数`);
+      if (!isInt(v) || v < 0 || v > CAPS[d]) {
+        push(`${p}.scores.${d}`, 'RANGE', `${d} 必须是 0–${CAPS[d]} 的整数`);
         ok = false;
       } else {
-        scaled += v * WEIGHTED[d];
+        sum += v;
       }
     }
     if (!isInt(e.scores.total) || e.scores.total < 0 || e.scores.total > 100) {
       push(`${p}.scores.total`, 'RANGE', 'scores.total 是当前分的唯一来源，必须是 0–100 的整数');
     } else if (ok) {
-      const expected = roundHalfUp(scaled);
+      const expected = sum;
       if (e.scores.total !== expected) {
         push(`${p}.scores.total`, 'TOTAL_MISMATCH',
-          `scores.total=${e.scores.total} 与六维加权值 ${expected} 不一致`);
+          `scores.total=${e.scores.total} 与六维合计 ${expected} 不一致`);
       }
     }
   }
@@ -152,8 +186,8 @@ uniqueIds(snapshots, 'snapshots', ID_RE.snapshot);
     e.scoreHistory.forEach((h, j) => {
       if (!isDate(h?.date)) {
         push(`${p}.scoreHistory[${j}].date`, 'DATE', '日期格式错误');
-      } else if (prevDate !== null && h.date <= prevDate) {
-        push(`${p}.scoreHistory[${j}].date`, 'ORDER', `评分历史日期必须严格递增（${h.date} ≤ ${prevDate}）`);
+      } else if (prevDate !== null && h.date < prevDate) {
+        push(`${p}.scoreHistory[${j}].date`, 'ORDER', `评分历史日期不能倒退（${h.date} 早于 ${prevDate}）；同日多条按数组顺序算先后`);
       } else {
         prevDate = h.date;
       }
@@ -180,7 +214,8 @@ uniqueIds(snapshots, 'snapshots', ID_RE.snapshot);
   if (!Array.isArray(e.facts) || e.facts.length < 2) push(`${p}.facts`, 'REQUIRED', '至少 2 条可核实事实');
   if (!Array.isArray(e.sources) || e.sources.length === 0) push(`${p}.sources`, 'REQUIRED', '至少 1 个来源');
   (e.sources ?? []).forEach((s, j) => {
-    if (!isHttp(s?.url)) push(`${p}.sources[${j}].url`, 'URL', '来源 URL 必须是 http(s)');
+    const urlErr = urlProblem(s?.url);
+    if (urlErr) push(`${p}.sources[${j}].url`, 'URL', urlErr);
     if (!isNonEmptyStr(s?.name)) push(`${p}.sources[${j}].name`, 'REQUIRED', '来源缺少名称');
     if (s?.date && !isDate(s.date)) push(`${p}.sources[${j}].date`, 'DATE', '来源日期格式错误');
   });
@@ -209,28 +244,32 @@ uniqueIds(snapshots, 'snapshots', ID_RE.snapshot);
   for (const k of ['title', 'thesis', 'judgment']) if (!isNonEmptyStr(t[k])) push(`${p}.${k}`, 'REQUIRED', `${k} 不能为空`);
   if (!isDate(t.firstSeen)) push(`${p}.firstSeen`, 'DATE', 'firstSeen 格式错误');
   if (!T_STATUS.includes(t.status)) push(`${p}.status`, 'ENUM', `status 非法：${t.status}`);
-  if (!isInt(t.confidence) || t.confidence < 0 || t.confidence > 100) push(`${p}.confidence`, 'RANGE', 'confidence 必须是 0–100 的整数');
+  if (t.confidence !== null && (!isInt(t.confidence) || t.confidence < 0 || t.confidence > 100)) {
+    push(`${p}.confidence`, 'RANGE', 'confidence 必须是 0–100 的整数或 null（暂无）');
+  }
   if (!Array.isArray(t.indicators) || t.indicators.length === 0) push(`${p}.indicators`, 'REQUIRED', '至少 1 个观察指标');
   if (!Array.isArray(t.revisions) || t.revisions.length === 0) {
     push(`${p}.revisions`, 'REQUIRED', 'revisions 不能为空');
   } else {
     t.revisions.forEach((r, j) => {
       if (!isDate(r?.date)) push(`${p}.revisions[${j}].date`, 'DATE', '日期格式错误');
-      else if (j > 0 && isDate(t.revisions[j - 1]?.date) && r.date <= t.revisions[j - 1].date) {
-        push(`${p}.revisions[${j}].date`, 'ORDER', `修订日期必须严格递增（${r.date} ≤ ${t.revisions[j - 1].date}）`);
+      else if (j > 0 && isDate(t.revisions[j - 1]?.date) && r.date < t.revisions[j - 1].date) {
+        push(`${p}.revisions[${j}].date`, 'ORDER', `修订日期不能倒退（${r.date} 早于 ${t.revisions[j - 1].date}）；同日多条按数组顺序算先后`);
       }
-      if (!isInt(r?.to) || r.to < 0 || r.to > 100) push(`${p}.revisions[${j}].to`, 'RANGE', 'to 必须是 0–100');
+      if (r?.to !== null && (!isInt(r?.to) || r.to < 0 || r.to > 100)) {
+        push(`${p}.revisions[${j}].to`, 'RANGE', 'to 必须是 0–100 的整数或 null（暂无）');
+      }
       if (r?.from !== null && (!isInt(r?.from) || r.from < 0 || r.from > 100)) {
         push(`${p}.revisions[${j}].from`, 'RANGE', 'from 必须是 null 或 0–100 的整数');
       }
       if (j > 0 && r.from !== t.revisions[j - 1].to) {
-        push(`${p}.revisions[${j}].from`, 'CHAIN', `from=${r.from} 与上一条 to=${t.revisions[j - 1].to} 不连续`);
+        push(`${p}.revisions[${j}].from`, 'REVISION_CHAIN', `from=${r.from} 与上一条 to=${t.revisions[j - 1].to} 不连续`);
       }
-      if (j === 0 && r.from !== null) push(`${p}.revisions[0].from`, 'CHAIN', '第一条 from 必须为 null');
+      if (j === 0 && r.from !== null) push(`${p}.revisions[0].from`, 'REVISION_CHAIN', '第一条 from 必须为 null');
     });
     const last = t.revisions[t.revisions.length - 1].to;
     if (isInt(t.confidence) && last !== t.confidence) {
-      push(`${p}.confidence`, 'CHAIN', `confidence=${t.confidence} 与最后一条修订 ${last} 不一致`);
+      push(`${p}.confidence`, 'REVISION_CHAIN', `confidence=${t.confidence} 与最后一条修订 ${last} 不一致`);
     }
   }
   if (t.verifyBy && !isDate(t.verifyBy)) push(`${p}.verifyBy`, 'DATE', 'verifyBy 格式错误');
@@ -255,14 +294,14 @@ uniqueIds(snapshots, 'snapshots', ID_RE.snapshot);
       if (!isInt(h?.confidence) || h.confidence < 0 || h.confidence > 100) {
         push(`${p}.history[${j}].confidence`, 'RANGE', 'confidence 必须是 0–100 的整数');
       }
-      if (j > 0 && isDate(h?.date) && isDate(f.history[j - 1]?.date) && h.date <= f.history[j - 1].date) {
-        push(`${p}.history[${j}].date`, 'ORDER', `历史日期必须严格递增（${h.date} ≤ ${f.history[j - 1].date}）`);
+      if (j > 0 && isDate(h?.date) && isDate(f.history[j - 1]?.date) && h.date < f.history[j - 1].date) {
+        push(`${p}.history[${j}].date`, 'ORDER', `历史日期不能倒退（${h.date} 早于 ${f.history[j - 1].date}）；同日多条按数组顺序算先后`);
       }
     });
   }
   if (Array.isArray(f.history) && f.history.length > 0) {
     const last = f.history[f.history.length - 1];
-    if (last.confidence !== f.confidence) push(`${p}.confidence`, 'CHAIN', `confidence=${f.confidence} 与最后一条历史 ${last.confidence} 不一致`);
+    if (last.confidence !== f.confidence) push(`${p}.confidence`, 'REVISION_CHAIN', `confidence=${f.confidence} 与最后一条历史 ${last.confidence} 不一致`);
   }
 });
 

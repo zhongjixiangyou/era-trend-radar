@@ -1,0 +1,95 @@
+{
+ "id": "ev_el-nino-11t",
+ "dedupeKey": "ev:b7dc67e6cdb9",
+ "title": "IFAD警告厄尔尼诺未来六年或致11万亿美元损失",
+ "summary": "气候冲击叠加能源与化肥涨价，威胁全球粮食安全与低收入国家债务。",
+ "facts": [
+  "潜在收入损失最高11万亿美元，跨度6年",
+  "IFAD在COP31发布",
+  "风险传导路径包括粮食减产、粮价上涨与化肥能源成本"
+ ],
+ "analysis": "损失估算是情景推演而非既成事实；但粮食进口国财政与债务压力是可比的历史机制，值得作为中期风险跟踪。",
+ "category": "全球宏观",
+ "region": "全球",
+ "occurredAt": "2026-11-09T00:00:00+08:00",
+ "firstReportedAt": "2026-11-09T00:00:00+08:00",
+ "collectedAt": "2026-11-13T13:30:00+08:00",
+ "sources": [
+  {
+   "url": "https://www.downtoearth.org.in/climate-change/cop31-el-ni%C3%B1o-could-cause-11-trillion-in-global-income-losses-threaten-food-security-ifad-warns",
+   "title": "COP31: El Niño could cause $11 trillion in global income losses",
+   "publisher": "Down To Earth",
+   "publishedAt": "2026-11-09T00:00:00+08:00",
+   "type": "primary"
+  },
+  {
+   "url": "https://www.edie.net/cop31-el-nino-could-cause-11trn-in-losses-in-the-next-six-years/",
+   "title": "COP31: El Niño could cause $11trn in losses in the next six years",
+   "publisher": "edie",
+   "publishedAt": "2026-11-09T00:00:00+08:00",
+   "type": "corroboration",
+   "note": "独立媒体，同引IFAD报告"
+  }
+ ],
+ "scores": {
+  "structural": 16,
+  "scope": 19,
+  "signal": 14,
+  "delta": 11,
+  "timeliness": 9,
+  "crossDomain": 9,
+  "total": 78,
+  "rationale": {
+   "structural": "气候波动通过粮食与化肥价格传导到通胀与债务",
+   "scope": "全球，低收入进口国最脆弱",
+   "signal": "为“气候-粮食-通胀”链条提供量化风险",
+   "delta": "首次给出6年11万亿美元的跨度估算",
+   "timeliness": "COP31当期",
+   "crossDomain": "连接农业、能源、通胀与主权债务"
+  },
+  "scorerVersion": "score/v1.0"
+ },
+ "credibility": {
+  "level": "partial",
+  "basis": "IFAD报告经两家媒体报道，未取得报告原文"
+ },
+ "evidenceGrade": "secondary_only",
+ "verification": {
+  "status": "pending",
+  "method": "verify_sources/http",
+  "note": "verify_sources.py 自动核验（HTTP），以 checks 为准",
+  "checks": [
+   {
+    "kind": "http",
+    "result": "unknown",
+    "evidence": "HTTP 200 https://www.downtoearth.org.in/climate-change/cop31-el-ni%C3%B1o-could-cause-11-trillion-in-global-income-losses-threaten-food-security-ifad-warns（标题部分匹配）"
+   },
+   {
+    "kind": "http",
+    "result": "pass",
+    "evidence": "HTTP 200 https://www.edie.net/cop31-el-nino-could-cause-11trn-in-losses-in-the-next-six-years/（OK）"
+   },
+   {
+    "kind": "primary_present",
+    "result": "pass",
+    "evidence": "primary 1 条"
+   }
+  ],
+  "checkedAt": "2026-11-13T13:54:29+08:00"
+ },
+ "status": "pending",
+ "trendLinks": [
+  {
+   "trendId": "tr_climate-food-inflation",
+   "direction": "support",
+   "reason": "给出气候冲击到收入损失的量化路径"
+  }
+ ],
+ "revisions": [],
+ "forecastRefs": [],
+ "retro": {
+  "isRetro": false
+ },
+ "scoreHistory": [],
+ "linkHistory": []
+}

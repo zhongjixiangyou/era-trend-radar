@@ -1,0 +1,202 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://era.local/schema/forecast.schema.json",
+  "title": "ERA 判断/预测（forecast）",
+  "description": "一条带截止期、可判对错的判断或预测，用于事后复盘打分。schema 版本 era-schema/v1。",
+  "type": "object",
+  "required": [
+    "id",
+    "statement",
+    "createdAt",
+    "resolveBy",
+    "probability",
+    "rationale",
+    "indicators",
+    "linkedTrendIds",
+    "evidenceRefs",
+    "status",
+    "resolution",
+    "revisions"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^fc_[a-z0-9][a-z0-9_-]{2,63}$"
+    },
+    "statement": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 200,
+      "description": "一句话可证伪判断，必须写清时间范围与判定对象"
+    },
+    "createdAt": {
+      "type": "string",
+      "description": "做出该判断的时间，ISO 8601"
+    },
+    "resolveBy": {
+      "type": "string",
+      "description": "判定截止日，ISO 8601；必须晚于 createdAt"
+    },
+    "probability": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "主观概率，0-1 之间（不要写 60 表示 60%）"
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 20,
+      "description": "为什么这么判断：证据链 + 关键假设"
+    },
+    "indicators": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 12,
+      "description": "判定指标：到期拿什么数据判定兑现/未兑现",
+      "items": {
+        "oneOf": [
+          {
+            "type": "string",
+            "minLength": 4,
+            "maxLength": 200
+          },
+          {
+            "type": "object",
+            "required": [
+              "name"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 4,
+                "maxLength": 120
+              },
+              "note": {
+                "type": "string",
+                "maxLength": 200
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "linkedTrendIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^tr_[a-z0-9][a-z0-9_-]{2,63}$"
+      }
+    },
+    "evidenceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^ev_[a-z0-9][a-z0-9_-]{2,63}$"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "resolved",
+        "void"
+      ],
+      "description": "open=待判定；resolved=已判定（必须有 resolution）；void=作废（写理由在 revisions）"
+    },
+    "resolution": {
+      "description": "open/void 时必须为 null；resolved 时必填",
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "required": [
+            "resolvedAt",
+            "outcome",
+            "note"
+          ],
+          "properties": {
+            "resolvedAt": {
+              "type": "string"
+            },
+            "outcome": {
+              "type": "string",
+              "enum": [
+                "hit",
+                "partial",
+                "miss",
+                "unresolved"
+              ],
+              "description": "hit=兑现；partial=部分兑现；miss=未兑现；unresolved=到期仍无法判定"
+            },
+            "note": {
+              "type": "string",
+              "minLength": 10,
+              "maxLength": 400
+            },
+            "evidenceUrls": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^https?://"
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "revisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "at",
+          "note"
+        ],
+        "properties": {
+          "at": {
+            "type": "string"
+          },
+          "by": {
+            "type": "string",
+            "maxLength": 40
+          },
+          "note": {
+            "type": "string",
+            "minLength": 4,
+            "maxLength": 400
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "firstJudgment": {
+      "type": "object",
+      "description": "首次判断，永久保留不可覆盖",
+      "required": [
+        "statement",
+        "createdAt"
+      ],
+      "properties": {
+        "statement": {
+          "type": "string",
+          "minLength": 10,
+          "maxLength": 400
+        },
+        "createdAt": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}([T ]\\d{2}:\\d{2}(:\\d{2})?(Z|[+-]\\d{2}:\\d{2})?)?$"
+        },
+        "probability": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

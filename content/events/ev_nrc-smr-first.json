@@ -1,0 +1,97 @@
+{
+  "id": "ev_nrc-smr-first",
+  "dedupeKey": "ev:dff85a964548",
+  "title": "美国NRC批准首座小型模块化反应堆建设",
+  "summary": "美国核管会（NRC）批准首座小型模块化反应堆（SMR）建设许可，项目方为 X-energy；随后亚马逊与美国电力公司 AEP 宣布在印第安纳州合作推进 SMR 项目。",
+  "facts": [
+    "2026年9月29日，NRC 批准首座小型模块化反应堆（SMR）建设许可",
+    "项目方为X-energy",
+    "此后亚马逊与AEP宣布在印第安纳州合作SMR项目"
+  ],
+  "analysis": "许可只是建设起点，首堆工期与成本仍可能超支；真正的信号是科技公司开始直接为核电买单。",
+  "category": "未来趋势",
+  "region": "美国",
+  "occurredAt": "2026-09-29T00:00:00+08:00",
+  "firstReportedAt": "2026-09-29T00:00:00+08:00",
+  "collectedAt": "2026-11-13T13:30:00+08:00",
+  "sources": [
+    {
+      "url": "https://www.nrc.gov/about-nrc/news-releases/2026/26-079",
+      "title": "NRC approves first SMR construction permit",
+      "publisher": "美国核管会",
+      "publishedAt": "2026-09-29T00:00:00+08:00",
+      "type": "primary"
+    },
+    {
+      "url": "https://investors.x-energy.com/news-releases/news-release-details/x-energy-amazon-american-electric-power-partner-bring-smr",
+      "title": "X-energy, Amazon and AEP partner to bring SMR",
+      "publisher": "X-energy",
+      "publishedAt": "2026-10-19T00:00:00+08:00",
+      "type": "corroboration",
+      "note": "企业公告，独立于监管机构"
+    }
+  ],
+  "scores": {
+    "structural": 20,
+    "scope": 13,
+    "signal": 17,
+    "delta": 12,
+    "timeliness": 8,
+    "crossDomain": 9,
+    "total": 79,
+    "rationale": {
+      "structural": "为数据中心提供稳定的零碳基荷电源选项",
+      "scope": "美国电力市场与核电供应链",
+      "signal": "“AI电力约束”从预测进入建设阶段",
+      "delta": "首个建设许可，此前只有设计认证",
+      "timeliness": "9月末，仍在项目早期",
+      "crossDomain": "连接AI算力、核电、气候目标"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "NRC官方公告与企业公告，尚未核对许可文件细节"
+  },
+  "evidenceGrade": "unverified",
+  "verification": {
+    "status": "pending",
+    "method": "verify_sources/http",
+    "note": "verify_sources.py 自动核验（HTTP），以 checks 为准",
+    "checks": [
+      {
+        "kind": "http",
+        "result": "unknown",
+        "evidence": "HTTP 403 https://www.nrc.gov/about-nrc/news-releases/2026/26-079（被拦截或服务端错误，无法核验，需人工确认）"
+      },
+      {
+        "kind": "http",
+        "result": "unknown",
+        "evidence": "HTTP - https://investors.x-energy.com/news-releases/news-release-details/x-energy-amazon-american-electric-power-partner-bring-smr（请求失败：The read operation timed out（网络层失败，不等于死链，可重试））"
+      },
+      {
+        "kind": "primary_present",
+        "result": "pass",
+        "evidence": "primary 1 条"
+      }
+    ],
+    "checkedAt": "2026-11-13T13:54:29+08:00"
+  },
+  "status": "pending",
+  "trendLinks": [
+    {
+      "trendId": "tr_ai-power-constraint",
+      "direction": "support",
+      "reason": "SMR进入建设意味着供给端开始响应电力缺口"
+    }
+  ],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-09-29",
+    "note": "2026-09-29 许可发放，2026-11-13 回溯补录，非当时实时采集"
+  },
+  "scoreHistory": [],
+  "linkHistory": []
+}

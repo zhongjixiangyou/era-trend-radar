@@ -1,0 +1,223 @@
+---
+import Base from '../layouts/Base.astro';
+import { href } from '../lib/url';
+import { fmtDate } from '../lib/data';
+import data from '../data/emerging.json';
+import trends from '../data/trends.json';
+
+const trendTitle = new Map((trends as any[]).map((t) => [t.id, t.title]));
+// 二组 emerging.json 的领域 id 与其站点 trends.json 不是同一批（下划线 vs 连字符），
+// 在契约补 title 字段前用本地映射兜底，避免页面露出裸 id。
+const fallbackTitle: Record<string, string> = {
+  'tr_climate-food-inflation': '气候与粮食通胀',
+  'tr_cn-demographic-decline': '中国人口结构下行',
+  'tr_cn-nev-demand-shift': '中国新能源车需求转向',
+  'tr_ai-power-constraint': 'AI 算力的电力约束',
+  'tr_cn-industrial-margin-repair': '中国工业利润率修复',
+  'tr_geopolitics-energy-premium': '地缘政治与能源溢价',
+  'tr_global-rates-rehike': '全球利率再上行',
+};
+
+const stateLabel: Record<string, string> = {
+  insufficient: '观察积累中',
+  emerging_candidate: '新苗头',
+  accelerating: '加速中',
+  cooling: '降温',
+  stable: '平稳',
+};
+const stateOrder: Record<string, number> = {
+  accelerating: 0,
+  emerging_candidate: 1,
+  stable: 2,
+  cooling: 3,
+  insufficient: 4,
+};
+
+const domains = [...data.domains].sort(
+  (a, b) => (stateOrder[a.state] ?? 9) - (stateOrder[b.state] ?? 9) || b.recent.events - a.recent.events
+);
+const accelerating = domains.filter((d) => d.state === 'accelerating' || d.state === 'emerging_candidate');
+const name = (id: string) => trendTitle.get(id) ?? fallbackTitle[id] ?? id;
+
+const pct = (r: number | null) => (r === null ? '不计算' : `${r.toFixed(2)}×`);
+const asOfCn = data.asOf.slice(0, 16).replace('T', ' ');
+---
+
+<Base
+  title="异军突起"
+  active="emerging"
+  description="只看谁在短时间内突然加速：按固定窗口数真实事件与独立来源，达到门槛才进榜；样本不足就写观察积累中。"
+>
+  <header class="em-hero">
+    <span class="num">专栏 / EMERGING</span>
+    <h1>异军突起</h1>
+    <p class="standfirst" style="max-width:40em">
+      不看谁一直很热，只看谁在短时间里突然变密。判定只用两样东西：固定窗口内的真实事件数、去重后的独立来源数。报道变多不等于领域突破，评分被上调也不算。
+    </p>
+    <p class="byline">
+      统计时点 {asOfCn} UTC · 窗口 近 {data.windows.recent.days} 天 vs 前 {data.windows.prior.days} 天 · 另出 {data.windows.shortRecent.days} 天短窗
+    </p>
+  </header>
+
+  <section style="border-top:2px solid var(--ink);padding-top:18px;margin-top:8px">
+    <div class="em-empty">
+      <div>
+        <span class="em-big">{accelerating.length}</span>
+        <span class="em-big-note">个领域达到加速门槛</span>
+      </div>
+      <p>
+        本期没有领域在近 30 天同时拿到 <b>{data.rules.minRecentEvents}</b> 条以上去重事件与 <b>{data.rules.minDistinctSources}</b> 个以上独立来源，
+        因此不生成排行。这不是「没有变化」，是<b>样本还不足以下结论</b>。参与统计的事件 {data.totals.events} 条，回溯补录 {data.excluded.retroEvents} 条已单列、不计入增速。突破判定{data.totals.breakthroughAvailable ? '已接入' : '尚未接入里程碑字段，任何「突破」都不会被认定'}。
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <div>
+        <span class="num">01 / 领域</span>
+        <h2 style="margin-top:6px">被持续观察的领域</h2>
+      </div>
+      <span class="more">{domains.length} 个领域</span>
+    </div>
+
+    <div class="filters" role="group" aria-label="领域排序">
+      <span class="count-line" style="margin:0 8px 0 0">排序</span>
+      <button class="chip" data-em-sort="state" aria-pressed="true">状态</button>
+      <button class="chip" data-em-sort="recent" aria-pressed="false">近 30 天事件</button>
+      <button class="chip" data-em-sort="sources" aria-pressed="false">独立来源</button>
+    <span class="count-line" id="em-dir" style="margin-left:8px">降序 ↓</span>
+    </div>
+
+    <table class="ledger em-table">
+      <thead>
+        <tr>
+          <th>领域</th>
+          <th>状态</th>
+          <th class="r">近 30 天</th>
+          <th class="r">独立来源</th>
+          <th class="r">前 30 天</th>
+          <th class="r">近 7 天</th>
+          <th class="r">增速</th>
+          <th>判定</th>
+        </tr>
+      </thead>
+      <tbody id="em-body">
+        {domains.map((d) => (
+          <tr
+            class="em-row"
+            data-state={stateOrder[d.state] ?? 9}
+            data-recent={d.recent.events}
+            data-sources={d.recent.distinctSources}
+          >
+            <td class="em-name-cell">{name(d.id)}</td>
+            <td><span class={`status ${d.state}`}>{stateLabel[d.state] ?? d.state}</span></td>
+            <td class="num">{d.recent.events}</td>
+            <td class="num">{d.recent.distinctSources}</td>
+            <td class="num">{d.prior.events}</td>
+            <td class="num">{d.shortRecent.events}</td>
+            <td class="num">{pct(d.growthRatio)}</td>
+            <td class="em-reason">{d.reason}{d.lowBase ? ' · 低基数，不换算增长率' : ''}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p class="em-note">
+      前 30 天不足 {data.rules.lowBasePrior} 条时标为低基数，只给原始计数、不换算增长率——从 0 涨到 1 不是「无限增长」。同一事件被十家转载只算 1 个来源。
+    </p>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <div>
+        <span class="num">02 / 回溯</span>
+        <h2 style="margin-top:6px">历史回溯观察</h2>
+      </div>
+      <span class="more">不计入实时增速</span>
+    </div>
+    {data.historical.items.length === 0 ? (
+      <p class="em-note">本期没有可单列的回溯条目。</p>
+    ) : (
+      <>
+        <p class="em-note" style="margin-bottom:14px">{data.historical.note}</p>
+        <ul class="em-hist">
+          {data.historical.items.map((h) => (
+            <li>
+              <span class="em-date">{fmtDate(h.occurredAt.slice(0, 10))}</span>
+              <span class="em-hist-title">{h.title}</span>
+              <span class="em-hist-meta">
+                独立来源 {h.sourceDomains} · 覆盖可比 {h.coverageComparable === null ? '未知' : h.coverageComparable ? '是' : '否'} · 增速 {h.growthComputed ? '已计算' : '未计算'}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </>
+    )}
+  </section>
+
+  <section>
+    <div class="section-head">
+      <div>
+        <span class="num">03 / 口径</span>
+        <h2 style="margin-top:6px">怎么算「突然加速」</h2>
+      </div>
+    </div>
+    <dl class="em-rules">
+      <div><dt>窗口</dt><dd>近 30 天与紧邻的前 30 天，等长对比；另出 7 天短窗，只看最新动向。</dd></div>
+      <div><dt>计数</dt><dd>按真实发生日去重（{data.rules.dedupe}），同一事件多源转载算 1 条。</dd></div>
+      <div><dt>入榜门槛</dt><dd>近 30 天 ≥ {data.rules.minRecentEvents} 条事件且 ≥ {data.rules.minDistinctSources} 个独立来源。</dd></div>
+      <div><dt>加速 / 降温</dt><dd>近 30 天事件数 ≥ 前 30 天的 {data.rules.acceleratingRatio}× 记为加速；≤ {data.rules.coolingRatio}× 记为降温。</dd></div>
+      <div><dt>突破</dt><dd>{data.totals.breakthroughNote}评分被上调（scoreRevisionSignal）只说明评分变了，<b>不等于技术、成本或采用上的突破</b>。</dd></div>
+      <div><dt>回溯</dt><dd>回溯补录不参与实时增速；发生日可靠且来源覆盖可比的，单列在「历史回溯观察」，只作事实时间线。</dd></div>
+    </dl>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <div>
+        <span class="num">04 / 局限</span>
+        <h2 style="margin-top:6px">这套算法还看不清什么</h2>
+      </div>
+    </div>
+    <ul class="em-ul">
+      {data.limitations.map((l) => <li>{l}</li>)}
+    </ul>
+    <p class="em-note" style="border-top:1px solid var(--rule);padding-top:14px">
+      想看过去发生过什么，去 <a href={href('/events/')}>事件档案</a> 与 <a href={href('/archive/')}>历史档案</a>；这里的排名只反映最近一个窗口，不代表长期地位。
+    </p>
+  </section>
+</Base>
+
+<script>
+  const body = document.getElementById('em-body');
+  const rows = Array.from(document.querySelectorAll('.em-row'));
+
+  let currentKey = 'state';
+  let dir = -1;
+
+  function sortBy(key, direction) {
+    rows
+      .slice()
+      .sort((a, b) => {
+        const av = Number(a.dataset[key]);
+        const bv = Number(b.dataset[key]);
+        if (av !== bv) return (bv - av) * direction;
+        return a.children[0].textContent.localeCompare(b.children[0].textContent, 'zh');
+      })
+      .forEach((r) => body.appendChild(r));
+    const label = document.getElementById('em-dir');
+    if (label) label.textContent = direction < 0 ? '降序 ↓' : '升序 ↑';
+  }
+
+  document.querySelectorAll('[data-em-sort]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const key = btn.dataset.emSort;
+      dir = key === currentKey ? dir * -1 : -1;
+      currentKey = key;
+      sortBy(key, dir);
+      document
+        .querySelectorAll('[data-em-sort]')
+        .forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+    });
+  });
+</script>

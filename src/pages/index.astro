@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import EventRow from '../components/EventRow.astro';
 import TrendStrip from '../components/TrendStrip.astro';
+import emerging from '../data/emerging.json';
 import {
   siteMeta, publishedEvents, allTrends, allForecasts, allSnapshots,
   total, fmtDate, statusLabel, forecastStatusLabel, trendById,
@@ -109,7 +110,34 @@ const leadTotal = total(lead.scores);
 
   <div class="section-head">
     <div>
-      <span class="num">03 / 判断</span>
+      <span class="num">03 / 异军突起</span>
+      <h2 style="margin-top:6px">谁在突然加速</h2>
+    </div>
+    <a class="more" href={href('/emerging/')}>异军突起 →</a>
+  </div>
+  <div class="em-brief">
+    <div class="em-brief-head">
+      <span class="em-brief-big">{emerging.domains.filter((d) => d.state === 'accelerating' || d.state === 'emerging_candidate').length}</span>
+      <span class="em-brief-note">
+        个领域达到加速门槛 · 其余 {emerging.domains.length} 个观察积累中，样本不足不排行
+      </span>
+    </div>
+    {emerging.domains
+      .slice()
+      .sort((a, b) => b.recent.events - a.recent.events)
+      .slice(0, 3)
+      .map((d) => (
+        <a class="em-brief-row" href={href('/emerging/#' + d.id)}>
+          <span class="em-brief-name">{trendById.get(d.id)?.title ?? d.id}</span>
+          <span class="em-brief-line">{d.reason}</span>
+          <span class="em-brief-val">{d.recent.events}</span>
+        </a>
+      ))}
+  </div>
+
+  <div class="section-head">
+    <div>
+      <span class="num">04 / 判断</span>
       <h2 style="margin-top:6px">可以被证伪的预测</h2>
     </div>
     <a class="more" href={href('/forecasts/')}>判断追踪 →</a>
@@ -133,18 +161,27 @@ const leadTotal = total(lead.scores);
 
   <div class="section-head">
     <div>
-      <span class="num">04 / 档案</span>
+      <span class="num">05 / 档案</span>
       <h2 style="margin-top:6px">最近一期</h2>
     </div>
     <a class="more" href={href('/archive/')}>历史档案 →</a>
   </div>
-  <a href={href('/archive/')} style="display:block;border-top:1px solid var(--rule);padding-top:16px">
-    <div class="kicker">{latestSnap.title}</div>
-    <p style="font-family:var(--serif);font-size:18px;line-height:1.8;max-width:52em;color:var(--ink-2);margin:0">
-      {latestSnap.summary}
-    </p>
-    <div class="fc-meta" style="margin-top:12px">
-      {latestSnap.eventIds.length} 条事件 · {fmtDate(latestSnap.date)}
+  {latestSnap ? (
+    <a href={href('/archive/')} style="display:block;border-top:1px solid var(--rule);padding-top:16px">
+      <div class="kicker">{latestSnap.title}</div>
+      <p style="font-family:var(--serif);font-size:18px;line-height:1.8;max-width:52em;color:var(--ink-2);margin:0">
+        {latestSnap.summary}
+      </p>
+      <div class="fc-meta" style="margin-top:12px">
+        {latestSnap.eventIds.length} 条事件 · {fmtDate(latestSnap.date)}
+      </div>
+    </a>
+  ) : (
+    <div style="border-top:1px solid var(--rule);padding-top:16px">
+      <div class="kicker">尚无快照</div>
+      <p style="font-family:var(--serif);font-size:17px;line-height:1.8;max-width:46em;color:var(--ink-2);margin:0">
+        第一期快照要等本轮研究跑完才生成。之前那两期是演示数据，已删除——不拿重建的假历史冒充当时判断。
+      </p>
     </div>
-  </a>
+  )}
 </Base>

@@ -1,0 +1,70 @@
+name: ERA monthly review
+
+# 月报：只读 content/data.json，把本月新增/修订/缺口写进 reports/ 并提交；
+# 不改已发布判断（正式并入走 analyze），提交仍受 commit 白名单约束。
+on:
+  schedule:
+    - cron: "0 2 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: era-research
+  cancel-in-progress: false
+
+env:
+  TZ: Asia/Shanghai
+
+jobs:
+  monthly-review:
+    name: monthly-review
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          fetch-depth: 1
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Validate whole content dir (repo CLI, read only)
+        continue-on-error: true
+        run: node scripts/ci/entry-run.mjs --name validate --report reports/validate-content.json
+
+      - name: Monthly review (read only data)
+        continue-on-error: true
+        run: node scripts/ci/monthly-review.mjs
+
+      - name: Gate statuses
+        if: always()
+        run: node scripts/ci/gate.mjs --require entry-validate,monthly-review --report reports/gate.json
+
+      - name: Configure git
+        run: |
+          git config user.name "era-bot"
+          git config user.email "era-bot@users.noreply.github.com"
+
+      - name: Commit reports only (whitelist enforced)
+        run: node scripts/ci/commit.mjs --push --report reports/commit.json
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: monthly-review-report
+          path: reports/
+          retention-days: 30
+          if-no-files-found: warn

@@ -809,8 +809,8 @@ h1, h2, h3, h4 {
 .scatter .dot { fill: var(--accent); transition: r .12s ease; }
 .scatter .dot.med { fill: none; stroke: var(--accent); stroke-width: 1.5; }
 .scatter .dot.low { fill: none; stroke: var(--ink-3); stroke-width: 1.2; stroke-dasharray: 2 2; }
-.scatter .pt:hover .dot, .scatter .pt:focus-visible .dot { r: 4.4px; }
-.scatter .pt.sel .dot { r: 4.4px; }
+.scatter .pt:hover .dot, .scatter .pt:focus-visible .dot { r: 3.9px; }
+.scatter .pt.sel .dot { r: 3.9px; }
 .scatter .pt.sel .halo, .scatter .pt:focus-visible .halo { opacity: 1; }
 .scatter .pt:focus { outline: none; }
 
@@ -835,6 +835,113 @@ h1, h2, h3, h4 {
   .scatter-info { grid-template-columns: 1fr; gap: 6px; }
   .si-meta { flex-direction: row; align-items: baseline; gap: 10px; }
   .si-score { font-size: 22px; margin: 0; }
-  .scatter .pt .dot { r: 4.6px; }
+  .scatter .pt .dot { r: 4.2px; }
   .scatter .pt.sel .halo, .scatter .pt:focus-visible .halo { r: 7.6px; }
+}
+
+/* 一组：异军突起专栏（独立块，勿覆盖） */
+.em-hero { padding: 34px 0 6px; }
+.em-hero h1 { font-family: var(--serif); font-size: clamp(40px, 5vw, 64px); line-height: 1.1; margin: 10px 0 14px; font-weight: 400; }
+.em-note { font-size: 11.5px; color: var(--ink-3); line-height: 1.75; margin: 10px 0 0; max-width: 54em; }
+.em { border-top: 1px solid var(--rule); padding: 26px 0 30px; }
+.em-head { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+.em-name { font-family: var(--serif); font-size: 26px; margin: 0; font-weight: 400; }
+.em-meta { font-family: var(--mono); font-size: 11px; color: var(--ink-3); }
+.em-meta b { color: var(--ink); font-weight: 400; }
+.em-line { font-size: 14.5px; line-height: 1.8; color: var(--ink-2); margin: 10px 0 18px; max-width: 44em; }
+.em-grid { display: grid; grid-template-columns: 280px 1fr; gap: 36px; align-items: start; }
+.em-h4 { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.16em; color: var(--ink-3); font-weight: 500; margin: 0 0 10px; }
+.burst { display: flex; align-items: flex-end; gap: 10px; height: 76px; border-bottom: 1px solid var(--rule); padding-bottom: 6px; }
+.burst-col { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; gap: 4px; }
+.burst-n { font-family: var(--mono); font-size: 10px; color: var(--ink-3); }
+.burst-col i { display: block; width: 100%; background: var(--rule-2); min-height: 2px; }
+.burst-col i.on { background: var(--accent); }
+.burst-col b { font-family: var(--mono); font-size: 9.5px; color: var(--ink-3); font-weight: 400; }
+.em-hint { font-size: 11px; color: var(--ink-3); line-height: 1.7; margin: 8px 0 0; }
+.em-timeline { list-style: none; margin: 0; padding: 0; }
+.em-timeline li { display: grid; grid-template-columns: 76px 66px 1fr; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--rule-2); font-size: 12.5px; line-height: 1.7; }
+.em-date { font-family: var(--mono); font-size: 10.5px; color: var(--ink-3); }
+.em-stage { font-size: 10.5px; color: var(--accent); }
+.em-text { color: var(--ink-2); }
+.em-link { grid-column: 3; font-size: 11px; }
+.em-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-top: 22px; }
+.em-ul { margin: 0; padding-left: 15px; font-size: 12.5px; line-height: 1.85; color: var(--ink-2); }
+.em-counter li { color: var(--ink-3); }
+.em-next { margin-top: 20px; font-size: 12.5px; line-height: 1.8; color: var(--ink-2); border-left: 2px solid var(--accent); padding-left: 12px; }
+.em-brief { border-top: 1px solid var(--rule); }
+.em-brief-row { display: grid; grid-template-columns: 150px 1fr 56px; gap: 20px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--rule-2); }
+.em-brief-name { font-family: var(--serif); font-size: 17px; }
+.em-brief-line { font-size: 12.5px; color: var(--ink-3); line-height: 1.65; }
+.em-brief-val { font-family: var(--mono); font-size: 16px; text-align: right; }
+@media (max-width: 860px) {
+  .em-grid, .em-cols { grid-template-columns: 1fr; gap: 22px; }
+  .em-timeline li { grid-template-columns: 1fr; gap: 2px; }
+  .em-link { grid-column: 1; }
+  .em-name { font-size: 22px; }
+  .em-brief-row { grid-template-columns: 1fr 40px; gap: 6px 12px; }
+  .em-brief-line { grid-column: 1 / -1; }
+}
+
+/* 一组：异军突起（真实口径版） */
+.em-empty { display: grid; grid-template-columns: 240px 1fr; gap: 34px; align-items: start; padding: 6px 0 26px; }
+.em-big { font-family: var(--serif); font-size: 84px; line-height: 0.9; color: var(--accent); }
+.em-big-note { display: block; font-size: 12px; color: var(--ink-3); margin-top: 10px; letter-spacing: 0.02em; }
+.em-empty p { font-size: 14px; line-height: 1.85; color: var(--ink-2); margin: 0; max-width: 46em; }
+.em-table td, .em-table th { font-size: 12.5px; }
+.em-table .num { text-align: right; font-family: var(--mono); }
+.em-name-cell { font-family: var(--serif); font-size: 15px; }
+.em-reason { color: var(--ink-3); font-size: 11.5px; }
+.em-hist { list-style: none; margin: 0; padding: 0; }
+.em-hist li { display: grid; grid-template-columns: 86px 1fr 220px; gap: 14px; padding: 11px 0; border-bottom: 1px solid var(--rule-2); font-size: 12.5px; }
+.em-hist-title { font-family: var(--serif); font-size: 15px; }
+.em-hist-meta { font-family: var(--mono); font-size: 10.5px; color: var(--ink-3); }
+.em-rules { margin: 0; }
+.em-rules > div { display: grid; grid-template-columns: 96px 1fr; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--rule-2); }
+.em-rules dt { font-family: var(--mono); font-size: 10.5px; color: var(--ink-3); letter-spacing: 0.08em; }
+.em-rules dd { margin: 0; font-size: 12.5px; line-height: 1.8; color: var(--ink-2); }
+.em-brief-head { display: flex; align-items: baseline; gap: 12px; padding: 14px 0 12px; border-bottom: 1px solid var(--rule-2); }
+.em-brief-big { font-family: var(--serif); font-size: 40px; line-height: 1; color: var(--accent); }
+.em-brief-note { font-size: 12px; color: var(--ink-3); }
+@media (max-width: 860px) {
+  .em-empty { grid-template-columns: 1fr; gap: 10px; }
+  .em-big { font-size: 56px; }
+  .em-hist li { grid-template-columns: 1fr; gap: 3px; }
+  .em-rules > div { grid-template-columns: 1fr; gap: 3px; }
+}
+
+/* ---------- 一组：宽表横向滚动 + 手机导航滚动条（独立块，勿覆盖） ---------- */
+
+.ledger-scroll { overflow-x: auto; overscroll-behavior-x: contain; }
+.ledger-scroll .ledger { min-width: 100%; }
+.ledger-scroll .ledger th:first-child,
+.ledger-scroll .ledger td:first-child { min-width: 11em; }
+/* 除首列外不换行：状态标签「强化中」曾被挤成三行，行高翻倍 */
+.ledger-scroll .ledger td:not(:first-child) { white-space: nowrap; }
+
+@media (max-width: 860px) {
+  .nav { max-width: 100%; scrollbar-width: none; }
+  .nav::-webkit-scrollbar { display: none; }
+}
+
+/* 7 个导航项一行放不下：保持单行横滑（44px 触控目标），右缘渐隐提示还有内容。
+   末尾留 28px 内边距，滑到底时渐隐盖住的是空白，不会吃掉「历史档案」。 */
+@media (max-width: 860px) {
+  .nav { padding-right: 28px; }
+  .nav {
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+    mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+  }
+}
+
+/* 一组：趋势月轴在窄屏收起年份（08 → 2026.08 的年份部分隐藏，刻度位置不变） */
+.month-axis .axis-y { font-style: normal; }
+@media (max-width: 430px) {
+  .month-axis .axis-y { display: none; }
+  .month-axis { letter-spacing: 0.02em; }
+}
+
+/* 一组：宽表滑动提示（桌面不显示） */
+.table-hint { display: none; }
+@media (max-width: 860px) {
+  .table-hint { display: block; font-size: 11px; color: var(--ink-3); margin: 8px 0 0; }
 }

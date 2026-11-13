@@ -1,0 +1,610 @@
+{
+  "schemaVersion": "1",
+  "asOf": "2026-11-13T06:01:10.079996+00:00",
+  "windows": {
+    "recent": {
+      "from": "2026-10-14T06:01:10.079996+00:00",
+      "to": "2026-11-13T06:01:10.079996+00:00",
+      "days": 30
+    },
+    "prior": {
+      "from": "2026-09-14T06:01:10.079996+00:00",
+      "to": "2026-10-14T06:01:10.079996+00:00",
+      "days": 30
+    },
+    "shortRecent": {
+      "from": "2026-11-06T06:01:10.079996+00:00",
+      "to": "2026-11-13T06:01:10.079996+00:00",
+      "days": 7
+    },
+    "shortPrior": {
+      "from": "2026-10-30T06:01:10.079996+00:00",
+      "to": "2026-11-06T06:01:10.079996+00:00",
+      "days": 7
+    }
+  },
+  "rules": {
+    "minRecentEvents": 3,
+    "minDistinctSources": 2,
+    "lowBasePrior": 3,
+    "acceleratingRatio": 2.0,
+    "coolingRatio": 0.5,
+    "scoreRevisionDelta": 12,
+    "dedupe": "dedupeKey",
+    "retroExcluded": true,
+    "ratioOnLowBase": "not_computed"
+  },
+  "excluded": {
+    "retroEvents": 1,
+    "retroIds": [
+      "ev_mideast-war-6m"
+    ],
+    "duplicateEvents": 0
+  },
+  "totals": {
+    "events": 7,
+    "asOfSource": "run_time",
+    "breakthroughAvailable": false,
+    "breakthroughNote": "突破判定需 milestones[] 带出处；schema 当前无此字段，故所有突破计数为 0 且不可展示。",
+    "scoreRevisionSignalNote": "scoreRevisionSignal 仅表示评分被上调，不得当技术/成本/采用突破。"
+  },
+  "historical": {
+    "note": "回溯补录：不参与实时增速；发生日可靠、来源覆盖可比的单列展示历史事实时间线。",
+    "count": 1,
+    "items": [
+      {
+        "id": "ev_mideast-war-6m",
+        "occurredAt": "2026-08-28T00:00:00+08:00",
+        "title": "中东战事半年：霍尔木兹受阻，布伦特一度突破90美元",
+        "sourceDomains": 1,
+        "coverageComparable": null,
+        "growthComputed": false
+      }
+    ]
+  },
+  "limitations": [
+    "来源配置变更（新增 RSS/API）会让计数上升，事件数据本身无法区分；需人工核对采集报告里的首抓日期。",
+    "asOf 生产取本轮显式 UTC 运行时间；max(collectedAt) 只用于历史回放/fixture，否则停采后数据永远显得新。",
+    "scoreRevisionSignal 只表示评分被上调，不等于技术/成本/采用突破；突破需 milestones[] 带出处，当前 schema 无此字段故 breakthroughAvailable=false。",
+    "事件数少时全部判 insufficient 是预期行为，不生成排行。"
+  ],
+  "domains": [
+    {
+      "id": "tr_climate-food-inflation",
+      "kind": "trend",
+      "state": "insufficient",
+      "growthRatio": null,
+      "lowBase": false,
+      "reason": "近期事件 1 < 3",
+      "recent": {
+        "events": 1,
+        "distinctSources": 2,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": [
+          "ev_el-nino-11t"
+        ]
+      },
+      "prior": {
+        "events": 0,
+        "distinctSources": 0,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": []
+      },
+      "shortRecent": {
+        "events": 1,
+        "distinctSources": 2,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": [
+          "ev_el-nino-11t"
+        ]
+      },
+      "shortPrior": {
+        "events": 0,
+        "distinctSources": 0,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": []
+      }
+    },
+    {
+      "id": "tr_cn-demographic-decline",
+      "kind": "trend",
+      "state": "insufficient",
+      "growthRatio": null,
+      "lowBase": false,
+      "reason": "近期事件 1 < 3",
+      "recent": {
+        "events": 1,
+        "distinctSources": 2,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": [
+          "ev_cn-marriage-9m"
+        ]
+      },
+      "prior": {
+        "events": 0,
+        "distinctSources": 0,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": []
+      },
+      "shortRecent": {
+        "events": 0,
+        "distinctSources": 0,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": []
+      },
+      "shortPrior": {
+        "events": 1,
+        "distinctSources": 2,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": [
+          "ev_cn-marriage-9m"
+        ]
+      }
+    },
+    {
+      "id": "tr_cn-nev-demand-shift",
+      "kind": "trend",
+      "state": "insufficient",
+      "growthRatio": null,
+      "lowBase": false,
+      "reason": "近期事件 1 < 3",
+      "recent": {
+        "events": 1,
+        "distinctSources": 2,
+        "scoreRevisionSignal": 1,
+        "scoreRevisionIds": [
+          "ev_cn-nev-oct"
+        ],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": [
+          "ev_cn-nev-oct"
+        ]
+      },
+      "prior": {
+        "events": 0,
+        "distinctSources": 0,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": []
+      },
+      "shortRecent": {
+        "events": 1,
+        "distinctSources": 2,
+        "scoreRevisionSignal": 1,
+        "scoreRevisionIds": [
+          "ev_cn-nev-oct"
+        ],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": [
+          "ev_cn-nev-oct"
+        ]
+      },
+      "shortPrior": {
+        "events": 0,
+        "distinctSources": 0,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": []
+      }
+    },
+    {
+      "id": "tr_ai-power-constraint",
+      "kind": "trend",
+      "state": "insufficient",
+      "growthRatio": null,
+      "lowBase": false,
+      "reason": "近期事件 0 < 3",
+      "recent": {
+        "events": 0,
+        "distinctSources": 0,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": []
+      },
+      "prior": {
+        "events": 2,
+        "distinctSources": 4,
+        "scoreRevisionSignal": 2,
+        "scoreRevisionIds": [
+          "ev_ai-dc-power-161gw",
+          "ev_nrc-smr-first"
+        ],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": [
+          "ev_ai-dc-power-161gw",
+          "ev_nrc-smr-first"
+        ]
+      },
+      "shortRecent": {
+        "events": 0,
+        "distinctSources": 0,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": []
+      },
+      "shortPrior": {
+        "events": 0,
+        "distinctSources": 0,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": []
+      }
+    },
+    {
+      "id": "tr_cn-industrial-margin-repair",
+      "kind": "trend",
+      "state": "insufficient",
+      "growthRatio": null,
+      "lowBase": false,
+      "reason": "近期事件 0 < 3",
+      "recent": {
+        "events": 0,
+        "distinctSources": 0,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": []
+      },
+      "prior": {
+        "events": 1,
+        "distinctSources": 2,
+        "scoreRevisionSignal": 1,
+        "scoreRevisionIds": [
+          "ev_cn-profit-1-8"
+        ],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": [
+          "ev_cn-profit-1-8"
+        ]
+      },
+      "shortRecent": {
+        "events": 0,
+        "distinctSources": 0,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": []
+      },
+      "shortPrior": {
+        "events": 0,
+        "distinctSources": 0,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": []
+      }
+    },
+    {
+      "id": "tr_geopolitics-energy-premium",
+      "kind": "trend",
+      "state": "insufficient",
+      "growthRatio": null,
+      "lowBase": false,
+      "reason": "近期事件 0 < 3",
+      "recent": {
+        "events": 0,
+        "distinctSources": 0,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": []
+      },
+      "prior": {
+        "events": 0,
+        "distinctSources": 0,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": []
+      },
+      "shortRecent": {
+        "events": 0,
+        "distinctSources": 0,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": []
+      },
+      "shortPrior": {
+        "events": 0,
+        "distinctSources": 0,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": []
+      }
+    },
+    {
+      "id": "tr_global-rates-rehike",
+      "kind": "trend",
+      "state": "insufficient",
+      "growthRatio": null,
+      "lowBase": false,
+      "reason": "近期事件 0 < 3",
+      "recent": {
+        "events": 0,
+        "distinctSources": 0,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": []
+      },
+      "prior": {
+        "events": 1,
+        "distinctSources": 1,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": [
+          "ev_fed-hike-sep"
+        ]
+      },
+      "shortRecent": {
+        "events": 0,
+        "distinctSources": 0,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": []
+      },
+      "shortPrior": {
+        "events": 0,
+        "distinctSources": 0,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": []
+      }
+    }
+  ],
+  "categories": [
+    {
+      "id": "中国经济与产业",
+      "kind": "category",
+      "state": "insufficient",
+      "growthRatio": null,
+      "lowBase": false,
+      "reason": "近期事件 2 < 3",
+      "recent": {
+        "events": 2,
+        "distinctSources": 4,
+        "scoreRevisionSignal": 1,
+        "scoreRevisionIds": [
+          "ev_cn-nev-oct"
+        ],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": [
+          "ev_cn-marriage-9m",
+          "ev_cn-nev-oct"
+        ]
+      },
+      "prior": {
+        "events": 1,
+        "distinctSources": 2,
+        "scoreRevisionSignal": 1,
+        "scoreRevisionIds": [
+          "ev_cn-profit-1-8"
+        ],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": [
+          "ev_cn-profit-1-8"
+        ]
+      },
+      "shortRecent": {
+        "events": 1,
+        "distinctSources": 2,
+        "scoreRevisionSignal": 1,
+        "scoreRevisionIds": [
+          "ev_cn-nev-oct"
+        ],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": [
+          "ev_cn-nev-oct"
+        ]
+      },
+      "shortPrior": {
+        "events": 1,
+        "distinctSources": 2,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": [
+          "ev_cn-marriage-9m"
+        ]
+      }
+    },
+    {
+      "id": "全球宏观",
+      "kind": "category",
+      "state": "insufficient",
+      "growthRatio": null,
+      "lowBase": false,
+      "reason": "近期事件 1 < 3",
+      "recent": {
+        "events": 1,
+        "distinctSources": 2,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": [
+          "ev_el-nino-11t"
+        ]
+      },
+      "prior": {
+        "events": 1,
+        "distinctSources": 1,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": [
+          "ev_fed-hike-sep"
+        ]
+      },
+      "shortRecent": {
+        "events": 1,
+        "distinctSources": 2,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": [
+          "ev_el-nino-11t"
+        ]
+      },
+      "shortPrior": {
+        "events": 0,
+        "distinctSources": 0,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": []
+      }
+    },
+    {
+      "id": "未来趋势",
+      "kind": "category",
+      "state": "insufficient",
+      "growthRatio": null,
+      "lowBase": false,
+      "reason": "近期事件 0 < 3",
+      "recent": {
+        "events": 0,
+        "distinctSources": 0,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": []
+      },
+      "prior": {
+        "events": 2,
+        "distinctSources": 4,
+        "scoreRevisionSignal": 2,
+        "scoreRevisionIds": [
+          "ev_ai-dc-power-161gw",
+          "ev_nrc-smr-first"
+        ],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": [
+          "ev_ai-dc-power-161gw",
+          "ev_nrc-smr-first"
+        ]
+      },
+      "shortRecent": {
+        "events": 0,
+        "distinctSources": 0,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": []
+      },
+      "shortPrior": {
+        "events": 0,
+        "distinctSources": 0,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": []
+      }
+    }
+  ]
+}

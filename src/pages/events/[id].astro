@@ -33,6 +33,12 @@ const statusCn = event.status === 'confirmed' ? '已核实' : event.status === '
       重要度 {t} · 可信度 {credibilityCn} · {statusCn} · 收录于 {fmtDate(event.collectedAt ?? event.date)}
     </div>
 
+    {event.analysis && (
+      <p style="font-family:var(--serif);font-size:17px;line-height:1.9;max-width:42em;color:var(--ink);border-left:2px solid var(--accent);padding-left:16px;margin:0 0 30px">
+        {event.analysis}
+      </p>
+    )}
+
     <div class="detail">
       <div>
         {event.facts.length > 0 && (

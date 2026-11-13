@@ -1,0 +1,80 @@
+name: ERA collect
+
+# 采集：外部入口 → 候选写入 content/candidates/（数据根唯一是 content/）。
+# v0.4：entries.collect.mode=import_only 期间真实抓取入口未就绪，collect 一律 failed(no_fetch_entry)、exit 3，
+# 本工作流会红，绝不会因为"脚本跑通"就标 healthy。
+on:
+  schedule:
+    - cron: "0 0 * * *"
+    - cron: "0 12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: era-research
+  cancel-in-progress: false
+
+env:
+  TZ: Asia/Shanghai
+
+jobs:
+  collect:
+    name: collect
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          fetch-depth: 1
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Cache fetch
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        with:
+          path: .cache/era-fetch
+          key: era-fetch-${{ github.run_id }}
+          restore-keys: era-fetch-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Collect (config entry)
+        continue-on-error: true
+        run: node scripts/ci/collect.mjs --report reports/collect.json
+
+      - name: Validate (schema gate)
+        if: always()
+        continue-on-error: true
+        run: node scripts/ci/validate.mjs --report reports/validate.json
+
+      - name: Gate statuses
+        if: always()
+        run: node scripts/ci/gate.mjs --require collect,validate --report reports/gate.json
+
+      - name: Configure git
+        run: |
+          git config user.name "era-bot"
+          git config user.email "era-bot@users.noreply.github.com"
+
+      - name: Commit (idempotent, whitelist)
+        run: node scripts/ci/commit.mjs --push --report reports/commit.json
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: collect-report
+          path: reports/
+          retention-days: 14
+          if-no-files-found: warn

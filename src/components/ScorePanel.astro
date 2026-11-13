@@ -7,18 +7,20 @@ interface Props {
 
 const { scores } = Astro.props;
 const t = total(scores as any);
+// v1 六维是分项得分，条长按各自满分归一，否则 25 分看起来像 25%。
+const CAPS: Record<string, number> = { structural: 25, scope: 20, signal: 20, novelty: 15, timeliness: 10, cross: 10 };
 ---
 
 <div class="score-panel">
   {scoreLabels.map(([key, label]) => (
     <div class="score-row">
       <span>{label}</span>
-      <div class="bar"><i style={`width:${scores[key]}%`}></i></div>
+      <div class="bar"><i style={`width:${Math.round((scores[key] / CAPS[key]) * 100)}%`}></i></div>
       <span class="v">{scores[key]}</span>
     </div>
   ))}
   <div class="score-row total">
-    <span>加权总分</span>
+    <span>总分</span>
     <div class="bar"><i style={`width:${t}%`}></i></div>
     <span class="v">{t}</span>
   </div>

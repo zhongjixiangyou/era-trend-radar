@@ -1,57 +1,43 @@
 [
   {
-    "id": "fc-202611-fed-december-hike",
-    "claim": "美联储将在 2026 年 12 月议息会议上加息至少 25 个基点。",
-    "madeAt": "2026-11-12",
+    "id": "fc_fed-no-cut-2026",
+    "claim": "2026年12月31日前，美联储不会下调联邦基金利率目标区间",
+    "madeAt": "2026-11-13",
     "dueBy": "2026-12-31",
-    "confidence": 64,
+    "confidence": 72,
     "status": "open",
-    "trendId": "tr-fed-hike-cycle",
+    "trendId": "tr_global-rates-rehike",
     "support": [
-      "10 月 CPI 环比 0.4%、核心 0.3%，连续第三个月超预期",
-      "高盛、德意志银行上调 2027 年加息路径",
-      "10 月非农新增 16.5 万，前两月合计上修 8.4 万"
+      "ev_fed-hike-sep"
     ],
-    "counter": [
-      "三季度劳动生产率环比折年 +3.6%、单位劳动力成本 -0.7%，为渐进调整提供缓冲",
-      "美联储官员在「渐进加息」与「继续观察」之间存在分歧"
-    ],
-    "history": [{ "date": "2026-11-12", "confidence": 64, "reason": "首次提出" }]
+    "counter": [],
+    "history": [
+      {
+        "date": "2026-11-13",
+        "confidence": 72,
+        "reason": "首次判断，概率0.72"
+      }
+    ]
   },
   {
-    "id": "fc-202610-cn-profit-double-digit",
-    "claim": "2026 年全年规上工业企业利润同比增速保持两位数。",
-    "madeAt": "2026-10-27",
-    "dueBy": "2027-01-31",
-    "confidence": 58,
+    "id": "fc_ai-power-delay-2027",
+    "claim": "2027年6月30日前，至少一家超大规模云厂商公开披露因电力或并网约束推迟数据中心上线",
+    "madeAt": "2026-11-13",
+    "dueBy": "2027-06-30",
+    "confidence": 45,
     "status": "open",
-    "trendId": "tr-cn-profit-recovery",
+    "trendId": "tr_ai-power-constraint",
     "support": [
-      "1—9 月利润同比 +15.5%",
-      "沪市三季报净利增速 6.0%，高于营收 3.8%"
+      "ev_ai-dc-power-161gw",
+      "ev_nrc-smr-first"
     ],
-    "counter": [
-      "四季度基数抬升",
-      "PPI 若重新走弱将压缩利润空间"
-    ],
-    "history": [{ "date": "2026-10-27", "confidence": 58, "reason": "首次提出" }]
-  },
-  {
-    "id": "fc-202610-humanoid-100k",
-    "claim": "2026 年中国人形机器人实际产量将低于行业 10 万台的目标。",
-    "madeAt": "2026-10-26",
-    "dueBy": "2027-01-31",
-    "confidence": 42,
-    "status": "open",
-    "trendId": "tr-humanoid-mass-production",
-    "support": [
-      "整机厂供应链负责人称从样机到批量下线仍有难度",
-      "核心零部件交期长，一致性交付未解决"
-    ],
-    "counter": [
-      "智元等整机厂收入快速增长",
-      "地方产业园补贴推动产能落地"
-    ],
-    "history": [{ "date": "2026-10-26", "confidence": 42, "reason": "首次提出" }]
+    "counter": [],
+    "history": [
+      {
+        "date": "2026-11-13",
+        "confidence": 45,
+        "reason": "首次判断，概率0.45"
+      }
+    ]
   }
 ]

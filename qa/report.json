@@ -1,14 +1,14 @@
 {
   "ok": false,
-  "generatedAt": "2026-11-13T05:54:54.361Z",
+  "generatedAt": "2026-11-13T06:10:32.257Z",
   "base": {
     "mode": "base",
     "origin": "http://127.0.0.1:4321",
     "rootPath": "/era-trend-radar"
   },
   "summary": {
-    "total": 30,
-    "pass": 29,
+    "total": 36,
+    "pass": 35,
     "fail": 1,
     "skip": 0
   },
@@ -38,6 +38,15 @@
       "detail": {
         "url": "http://127.0.0.1:4321/era-trend-radar/events/ev-20261014-us-cpi-sept/",
         "title": "美国 9 月 CPI 同比升至 3.7%，降息叙事首次被打断 · ERA 时代趋势雷达"
+      }
+    },
+    {
+      "id": "route:emerging",
+      "name": "/emerging/ → 200",
+      "status": "pass",
+      "detail": {
+        "url": "http://127.0.0.1:4321/era-trend-radar/emerging/",
+        "title": "异军突起 · ERA 时代趋势雷达"
       }
     },
     {
@@ -104,6 +113,12 @@
       "detail": {}
     },
     {
+      "id": "assets:emerging",
+      "name": "/emerging/ 资源前缀正确",
+      "status": "pass",
+      "detail": {}
+    },
+    {
       "id": "assets:trends",
       "name": "/trends/ 资源前缀正确",
       "status": "pass",
@@ -135,120 +150,311 @@
     },
     {
       "id": "overflow:home",
-      "name": "/ 溢出 0px",
+      "name": "/ 320/390/430 全部 0 溢出",
       "status": "pass",
-      "detail": {}
+      "detail": {
+        "detail": {
+          "320": {
+            "overflow": 0,
+            "offenders": 0,
+            "clipped": 3
+          },
+          "390": {
+            "overflow": 0,
+            "offenders": 0,
+            "clipped": 2
+          },
+          "430": {
+            "overflow": 0,
+            "offenders": 0,
+            "clipped": 1
+          }
+        }
+      }
     },
     {
       "id": "overflow:events",
-      "name": "/events/ 溢出 0px",
+      "name": "/events/ 320/390/430 全部 0 溢出",
       "status": "pass",
-      "detail": {}
+      "detail": {
+        "detail": {
+          "320": {
+            "overflow": 0,
+            "offenders": 0,
+            "clipped": 3
+          },
+          "390": {
+            "overflow": 0,
+            "offenders": 0,
+            "clipped": 2
+          },
+          "430": {
+            "overflow": 0,
+            "offenders": 0,
+            "clipped": 1
+          }
+        }
+      }
     },
     {
       "id": "overflow:event-detail",
-      "name": "/events/ev-20261014-us-cpi-sept/ 溢出 0px",
+      "name": "/events/ev-20261014-us-cpi-sept/ 320/390/430 全部 0 溢出",
       "status": "pass",
-      "detail": {}
+      "detail": {
+        "detail": {
+          "320": {
+            "overflow": 0,
+            "offenders": 0,
+            "clipped": 3
+          },
+          "390": {
+            "overflow": 0,
+            "offenders": 0,
+            "clipped": 2
+          },
+          "430": {
+            "overflow": 0,
+            "offenders": 0,
+            "clipped": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "overflow:emerging",
+      "name": "/emerging/ 在 320/390/430px 溢出",
+      "status": "fail",
+      "detail": {
+        "bad": [
+          {
+            "width": 320,
+            "overflow": 146,
+            "offenders": [
+              {
+                "selector": "table.ledger.em-table",
+                "right": 466,
+                "left": 18,
+                "width": 448,
+                "over": 146,
+                "text": "领域状态近 30 天独立来源前 30 天近 7 天增速判定气候与粮食通胀观察积累"
+              },
+              {
+                "selector": "thead",
+                "right": 466,
+                "left": 18,
+                "width": 448,
+                "over": 146,
+                "text": "领域状态近 30 天独立来源前 30 天近 7 天增速判定"
+              },
+              {
+                "selector": "tr",
+                "right": 466,
+                "left": 18,
+                "width": 448,
+                "over": 146,
+                "text": "领域状态近 30 天独立来源前 30 天近 7 天增速判定"
+              }
+            ]
+          },
+          {
+            "width": 390,
+            "overflow": 76,
+            "offenders": [
+              {
+                "selector": "table.ledger.em-table",
+                "right": 466,
+                "left": 18,
+                "width": 448,
+                "over": 76,
+                "text": "领域状态近 30 天独立来源前 30 天近 7 天增速判定气候与粮食通胀观察积累"
+              },
+              {
+                "selector": "thead",
+                "right": 466,
+                "left": 18,
+                "width": 448,
+                "over": 76,
+                "text": "领域状态近 30 天独立来源前 30 天近 7 天增速判定"
+              },
+              {
+                "selector": "tr",
+                "right": 466,
+                "left": 18,
+                "width": 448,
+                "over": 76,
+                "text": "领域状态近 30 天独立来源前 30 天近 7 天增速判定"
+              }
+            ]
+          },
+          {
+            "width": 430,
+            "overflow": 36,
+            "offenders": [
+              {
+                "selector": "table.ledger.em-table",
+                "right": 466,
+                "left": 18,
+                "width": 448,
+                "over": 36,
+                "text": "领域状态近 30 天独立来源前 30 天近 7 天增速判定气候与粮食通胀观察积累"
+              },
+              {
+                "selector": "thead",
+                "right": 466,
+                "left": 18,
+                "width": 448,
+                "over": 36,
+                "text": "领域状态近 30 天独立来源前 30 天近 7 天增速判定"
+              },
+              {
+                "selector": "tr",
+                "right": 466,
+                "left": 18,
+                "width": 448,
+                "over": 36,
+                "text": "领域状态近 30 天独立来源前 30 天近 7 天增速判定"
+              }
+            ]
+          }
+        ],
+        "detail": {
+          "320": {
+            "overflow": 146,
+            "offenders": 8,
+            "clipped": 3
+          },
+          "390": {
+            "overflow": 76,
+            "offenders": 8,
+            "clipped": 2
+          },
+          "430": {
+            "overflow": 36,
+            "offenders": 8,
+            "clipped": 1
+          }
+        }
+      }
     },
     {
       "id": "overflow:trends",
-      "name": "/trends/ 溢出 36px",
-      "status": "fail",
+      "name": "/trends/ 320/390/430 全部 0 溢出",
+      "status": "pass",
       "detail": {
-        "vw": 390,
-        "docOverflow": 36,
-        "offenders": [
-          {
-            "selector": "table#trend-table.ledger",
-            "right": 426,
-            "left": 18,
-            "width": 408,
-            "over": 36,
-            "text": "趋势领域状态置信度热度事件数首次出现验证期限美联储重回加息通道，全球贴现率重新上"
+        "detail": {
+          "320": {
+            "overflow": 0,
+            "offenders": 0,
+            "clipped": 8
           },
-          {
-            "selector": "thead",
-            "right": 426,
-            "left": 18,
-            "width": 408,
-            "over": 36,
-            "text": "趋势领域状态置信度热度事件数首次出现验证期限"
+          "390": {
+            "overflow": 0,
+            "offenders": 0,
+            "clipped": 8
           },
-          {
-            "selector": "tr",
-            "right": 426,
-            "left": 18,
-            "width": 408,
-            "over": 36,
-            "text": "趋势领域状态置信度热度事件数首次出现验证期限"
-          },
-          {
-            "selector": "th",
-            "right": 426,
-            "left": 336,
-            "width": 90,
-            "over": 36,
-            "text": "验证期限"
-          },
-          {
-            "selector": "tbody",
-            "right": 426,
-            "left": 18,
-            "width": 408,
-            "over": 36,
-            "text": "美联储重回加息通道，全球贴现率重新上行全球强化中7822932026.10.14"
-          },
-          {
-            "selector": "tr",
-            "right": 426,
-            "left": 18,
-            "width": 408,
-            "over": 36,
-            "text": "美联储重回加息通道，全球贴现率重新上行全球强化中7822932026.10.14"
-          },
-          {
-            "selector": "td.num",
-            "right": 426,
-            "left": 336,
-            "width": 90,
-            "over": 36,
-            "text": "2026.12.31"
-          },
-          {
-            "selector": "tr",
-            "right": 426,
-            "left": 18,
-            "width": 408,
-            "over": 36,
-            "text": "中国工业利润修复快于收入，但行业分化明显中国强化中6628242026.10.2"
+          "430": {
+            "overflow": 0,
+            "offenders": 0,
+            "clipped": 8
           }
-        ]
+        }
       }
     },
     {
       "id": "overflow:trend-detail",
-      "name": "/trends/tr-fed-hike-cycle/ 溢出 0px",
+      "name": "/trends/tr-fed-hike-cycle/ 320/390/430 全部 0 溢出",
       "status": "pass",
-      "detail": {}
+      "detail": {
+        "detail": {
+          "320": {
+            "overflow": 0,
+            "offenders": 0,
+            "clipped": 3
+          },
+          "390": {
+            "overflow": 0,
+            "offenders": 0,
+            "clipped": 2
+          },
+          "430": {
+            "overflow": 0,
+            "offenders": 0,
+            "clipped": 1
+          }
+        }
+      }
     },
     {
       "id": "overflow:forecasts",
-      "name": "/forecasts/ 溢出 0px",
+      "name": "/forecasts/ 320/390/430 全部 0 溢出",
       "status": "pass",
-      "detail": {}
+      "detail": {
+        "detail": {
+          "320": {
+            "overflow": 0,
+            "offenders": 0,
+            "clipped": 3
+          },
+          "390": {
+            "overflow": 0,
+            "offenders": 0,
+            "clipped": 2
+          },
+          "430": {
+            "overflow": 0,
+            "offenders": 0,
+            "clipped": 1
+          }
+        }
+      }
     },
     {
       "id": "overflow:china",
-      "name": "/china/ 溢出 0px",
+      "name": "/china/ 320/390/430 全部 0 溢出",
       "status": "pass",
-      "detail": {}
+      "detail": {
+        "detail": {
+          "320": {
+            "overflow": 0,
+            "offenders": 0,
+            "clipped": 7
+          },
+          "390": {
+            "overflow": 0,
+            "offenders": 0,
+            "clipped": 4
+          },
+          "430": {
+            "overflow": 0,
+            "offenders": 0,
+            "clipped": 3
+          }
+        }
+      }
     },
     {
       "id": "overflow:archive",
-      "name": "/archive/ 溢出 0px",
+      "name": "/archive/ 320/390/430 全部 0 溢出",
       "status": "pass",
-      "detail": {}
+      "detail": {
+        "detail": {
+          "320": {
+            "overflow": 1,
+            "offenders": 0,
+            "clipped": 3
+          },
+          "390": {
+            "overflow": 0,
+            "offenders": 0,
+            "clipped": 2
+          },
+          "430": {
+            "overflow": 0,
+            "offenders": 0,
+            "clipped": 1
+          }
+        }
+      }
     },
     {
       "id": "events:rows",
@@ -326,9 +532,30 @@
     },
     {
       "id": "events:search",
-      "name": "搜「美国 10」10 → 1 条",
+      "name": "3 个关键词全部命中",
       "status": "pass",
-      "detail": {}
+      "detail": {
+        "detail": [
+          {
+            "kw": "美国10",
+            "after": 1,
+            "ok": true,
+            "why": "无空格应命中「美国 10 月」"
+          },
+          {
+            "kw": "美国 10",
+            "after": 1,
+            "ok": true,
+            "why": "带空格"
+          },
+          {
+            "kw": "CPI",
+            "after": 2,
+            "ok": true,
+            "why": "英文大小写"
+          }
+        ]
+      }
     },
     {
       "id": "events:sort",
@@ -367,12 +594,100 @@
         "entries": 1,
         "note": "派活写的是「时间线可展开」，当前没有折叠交互，需主管确认是否算达成"
       }
+    },
+    {
+      "id": "nav:320",
+      "name": "320px 导航 51px，横滑",
+      "status": "pass",
+      "detail": {
+        "width": 320,
+        "height": 51,
+        "scrollW": 479,
+        "clientW": 284,
+        "overflowX": "auto",
+        "links": 7,
+        "offscreen": [
+          "中国产业",
+          "判断追踪",
+          "历史档案"
+        ],
+        "linkHeights": [
+          44,
+          44,
+          44,
+          44,
+          44,
+          44,
+          44
+        ],
+        "wrapped": false,
+        "scrollable": true,
+        "reachable": true
+      }
+    },
+    {
+      "id": "nav:390",
+      "name": "390px 导航 51px，横滑",
+      "status": "pass",
+      "detail": {
+        "width": 390,
+        "height": 51,
+        "scrollW": 479,
+        "clientW": 354,
+        "overflowX": "auto",
+        "links": 7,
+        "offscreen": [
+          "判断追踪",
+          "历史档案"
+        ],
+        "linkHeights": [
+          44,
+          44,
+          44,
+          44,
+          44,
+          44,
+          44
+        ],
+        "wrapped": false,
+        "scrollable": true,
+        "reachable": true
+      }
+    },
+    {
+      "id": "nav:430",
+      "name": "430px 导航 51px，横滑",
+      "status": "pass",
+      "detail": {
+        "width": 430,
+        "height": 51,
+        "scrollW": 479,
+        "clientW": 394,
+        "overflowX": "auto",
+        "links": 7,
+        "offscreen": [
+          "历史档案"
+        ],
+        "linkHeights": [
+          44,
+          44,
+          44,
+          44,
+          44,
+          44,
+          44
+        ],
+        "wrapped": false,
+        "scrollable": true,
+        "reachable": true
+      }
     }
   ],
   "screens": [
     "/Users/zhongjixiangyou/Documents/deepseek-harness/default-workspace/era-trend-radar/qa/screens/390-home.png",
     "/Users/zhongjixiangyou/Documents/deepseek-harness/default-workspace/era-trend-radar/qa/screens/390-events.png",
     "/Users/zhongjixiangyou/Documents/deepseek-harness/default-workspace/era-trend-radar/qa/screens/390-event-detail.png",
+    "/Users/zhongjixiangyou/Documents/deepseek-harness/default-workspace/era-trend-radar/qa/screens/390-emerging.png",
     "/Users/zhongjixiangyou/Documents/deepseek-harness/default-workspace/era-trend-radar/qa/screens/390-trends.png",
     "/Users/zhongjixiangyou/Documents/deepseek-harness/default-workspace/era-trend-radar/qa/screens/390-trend-detail.png",
     "/Users/zhongjixiangyou/Documents/deepseek-harness/default-workspace/era-trend-radar/qa/screens/390-forecasts.png",

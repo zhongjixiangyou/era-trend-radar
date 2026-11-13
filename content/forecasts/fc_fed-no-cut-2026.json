@@ -1,0 +1,33 @@
+{
+ "id": "fc_fed-no-cut-2026",
+ "statement": "2026年12月31日前，美联储不会下调联邦基金利率目标区间",
+ "createdAt": "2026-11-13T13:30:00+08:00",
+ "resolveBy": "2026-12-31T00:00:00+08:00",
+ "probability": 0.72,
+ "rationale": "9月刚重启加息且12比0全票，16名官员预计年内继续加息；通胀未回到目标前，降息缺乏委员会基础。关键假设：不再出现系统性金融事件迫使紧急宽松。",
+ "indicators": [
+  "FOMC 10月/12月声明与投票",
+  "联邦基金利率目标区间",
+  "核心PCE同比"
+ ],
+ "linkedTrendIds": [
+  "tr_global-rates-rehike"
+ ],
+ "evidenceRefs": [
+  "ev_fed-hike-sep"
+ ],
+ "status": "open",
+ "resolution": null,
+ "revisions": [
+  {
+   "at": "2026-11-13T13:30:00+08:00",
+   "by": "二组",
+   "note": "首次判断，概率0.72"
+  }
+ ],
+ "firstJudgment": {
+  "statement": "2026年12月31日前，美联储不会下调联邦基金利率目标区间",
+  "createdAt": "2026-11-13T13:30:00+08:00",
+  "probability": 0.72
+ }
+}

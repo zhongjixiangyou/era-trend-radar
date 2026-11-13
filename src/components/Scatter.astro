@@ -85,7 +85,7 @@ const latest = points[0];
       >
         <circle class="halo" cx={x(e.date)} cy={y(e.score)} r="9.5" />
         <circle class="hit" cx={x(e.date)} cy={y(e.score)} r="13" />
-        <circle class={`dot ${dotClass(e.credibility)}`} cx={x(e.date)} cy={y(e.score)} r="4.2" />
+        <circle class={`dot ${dotClass(e.credibility)}`} cx={x(e.date)} cy={y(e.score)} r="3.4" />
       </g>
     ))}
   </svg>
@@ -104,7 +104,7 @@ const latest = points[0];
   </div>
 
   <figcaption style="font-size:11px;color:var(--ink-3);margin-top:8px;line-height:1.7">
-    点圆点（或 Tab 聚焦后回车）在上方查看事件；同一点有重叠时可连续点击切换。实心=高可信，半实=中，空心=待核实。
+    点圆点（或 Tab 聚焦后回车）在下方查看事件；同一点有重叠时可连续点击切换。实心=高可信，半实=中，空心=待核实。
   </figcaption>
 </figure>
 

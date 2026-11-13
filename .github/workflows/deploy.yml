@@ -1,0 +1,109 @@
+name: ERA deploy
+
+# 发布：只在整库 validate + 只读 score 重算 + 构建全部通过后，才把 dist/ 发到 GitHub Pages。
+# 失败不覆盖线上旧版：gate --strict build 要求 build=healthy，fallback 桩（degraded）一律拒绝。
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/**"
+      - "src/**"
+      - "pipeline.config.json"
+      - "scripts/ci/**"
+      - ".github/workflows/deploy.yml"
+  workflow_run:
+    workflows: ["ERA analyze"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  TZ: Asia/Shanghai
+
+jobs:
+  build:
+    name: build
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          # workflow_run 默认会 checkout 触发那次运行的旧 SHA，而 analyze 的提交是 GITHUB_TOKEN 推的，
+          # 不会触发 push 工作流。这里显式取触发分支的 HEAD，保证部署的是刚提交的新数据。
+          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_branch || github.ref }}
+          fetch-depth: 1
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Validate whole content dir (repo CLI, read only)
+        continue-on-error: true
+        run: node scripts/ci/entry-run.mjs --name validate --report reports/validate-content.json
+
+      - name: Score recompute check (read only, never --write)
+        continue-on-error: true
+        run: node scripts/ci/entry-run.mjs --name scoreCheck --report reports/score-check.json
+
+      - name: Validate data (schema gate)
+        continue-on-error: true
+        run: node scripts/ci/validate.mjs --report reports/validate.json
+
+      - name: Build site (config entry, out=dist)
+        continue-on-error: true
+        run: node scripts/ci/build.mjs --report reports/build.json
+
+      - name: Gate statuses (build must be healthy)
+        run: node scripts/ci/gate.mjs --require entry-validate,entry-scoreCheck,validate,build --strict build --report reports/gate.json
+
+      - name: Resolve site dir
+        id: site
+        run: |
+          SITE=$(node -e "process.stdout.write(require('./reports/build.json').dist || 'dist')")
+          echo "dir=$SITE" >> "$GITHUB_OUTPUT"
+          echo "site dir: $SITE"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
+        with:
+          path: ${{ steps.site.outputs.dir }}
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: deploy-reports
+          path: reports/
+          retention-days: 14
+          if-no-files-found: warn
+
+  deploy:
+    name: deploy
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4.0.5

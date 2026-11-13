@@ -2,7 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import TrendStrip from '../../components/TrendStrip.astro';
 import RankBars from '../../components/RankBars.astro';
-import { allTrends, allEvents, statusLabel, fmtDate, total, siteMeta } from '../../lib/data';
+import { allTrends, allEvents, statusLabel, fmtDate, total, siteMeta, categoryLabel } from '../../lib/data';
 import { href } from '../../lib/url';
 
 const months = ['05', '06', '07', '08', '09', '10', '11'];
@@ -15,7 +15,8 @@ const rows = allTrends.map((t) => {
 });
 
 const byConfidence = [...rows].sort((a, b) => b.confidence - a.confidence);
-const domainCn = (d: string) => (d === 'global' ? '全球' : d === 'china' ? '中国' : d === 'technology' ? '科技' : d);
+const domainCn = (d: string) =>
+  d === 'global' ? '全球' : d === 'china' ? '中国' : (categoryLabel[d] ?? d);
 ---
 
 <Base title="趋势图谱" active="trends" description="把事件归并为趋势信号：每一条趋势都可被证伪，支撑与反证都保留在时间轴上。">
@@ -33,7 +34,7 @@ const domainCn = (d: string) => (d === 'global' ? '全球' : d === 'china' ? '�
 
   <div style="margin-top:34px">
     <div class="month-axis">
-      {months.map((m) => <span>2026.{m}</span>)}
+      {months.map((m) => <span><i class="axis-y">2026.</i>{m}</span>)}
     </div>
     <p style="font-size:11.5px;color:var(--ink-3);margin:-2px 0 18px;line-height:1.7">
       5—9 月仍在回溯补录，右侧圆点密集不代表变化突然加速。空档是研究进度，不是结论。
@@ -72,6 +73,7 @@ const domainCn = (d: string) => (d === 'global' ? '全球' : d === 'china' ? '�
     <span class="more">点表头排序</span>
   </div>
 
+  <div class="ledger-scroll">
   <table class="ledger" id="trend-table">
     <thead>
       <tr>
@@ -105,6 +107,8 @@ const domainCn = (d: string) => (d === 'global' ? '全球' : d === 'china' ? '�
       ))}
     </tbody>
   </table>
+  </div>
+  <p class="table-hint">窄屏放不下 8 列，表格可左右滑动。</p>
   <p style="font-size:11px;color:var(--ink-3);margin-top:10px;max-width:52em;line-height:1.7">
     热度 = 该趋势关联事件的重要度之和，衡量它当前占据了多少结构性注意力，不是预测准确率。缺数据的趋势热度记 0，排在末尾，不补估值。
   </p>

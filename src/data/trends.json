@@ -1,80 +1,191 @@
 [
   {
-    "id": "tr-fed-hike-cycle",
-    "title": "美联储重回加息通道，全球贴现率重新上行",
-    "thesis": "通胀连续三个月超预期，市场叙事从「何时降息」转向「加到多高」。高估值资产、长久期债券与新兴市场汇率同时承压，而这一次的紧缩发生在财政赤字扩张的背景下。",
+    "id": "tr_climate-food-inflation",
+    "title": "气候波动正通过粮食与化肥价格重新进入全球通胀链条",
+    "thesis": "气候波动正通过粮食与化肥价格重新进入全球通胀链条",
     "domain": "global",
-    "firstSeen": "2026-10-14",
+    "firstSeen": "2026-11-09",
+    "status": "emerging",
+    "confidence": null,
+    "evidenceCount": 1,
+    "supportCount": 1,
+    "counterCount": 0,
+    "indicators": [
+      "厄尔尼诺潜在收入损失',  — IFAD估算6年最高11万亿美元",
+      "粮价指数',  — 待接入FAO月度数据",
+      "化肥价格',  — 受能源成本传导"
+    ],
+    "judgment": "置信度低。机制成立但只有一条证据，且为情景估算；需FAO粮价与化肥价格连续3个月数据。",
+    "verifyBy": "2027-03-31",
+    "revisions": [
+      {
+        "date": "2026-11-13",
+        "from": null,
+        "to": null,
+        "reason": "首次建立，阶段emerging，证据仅1条"
+      }
+    ]
+  },
+  {
+    "id": "tr_geopolitics-energy-premium",
+    "title": "中东冲突把能源风险溢价结构性抬高",
+    "thesis": "中东冲突把能源风险溢价结构性抬高，油价中枢高于战前",
+    "domain": "global",
+    "firstSeen": "2026-08-28",
     "status": "strengthening",
-    "confidence": 78,
-    "indicators": ["CPI 同比与环比", "核心 CPI", "12 月加息概率", "美元指数", "10 年期实际利率"],
-    "judgment": "若 12 月议息会议前核心 CPI 环比仍不低于 0.3%，美联储将在 12 月加息至少 25 个基点。",
+    "confidence": null,
+    "evidenceCount": 1,
+    "supportCount": 1,
+    "counterCount": 0,
+    "indicators": [
+      "布伦特原油',  — 一度突破90美元/桶",
+      "霍尔木兹通行量',  — 受阻",
+      "航运保险成本',  — 待接入"
+    ],
+    "judgment": "置信度中。供给冲击明确，但需求下修是反向力量；观察布伦特能否站稳85美元以上。",
+    "verifyBy": "2027-01-31",
+    "revisions": [
+      {
+        "date": "2026-11-13",
+        "from": null,
+        "to": null,
+        "reason": "首次建立，阶段strengthening"
+      }
+    ]
+  },
+  {
+    "id": "tr_cn-nev-demand-shift",
+    "title": "中国新能源车的增长动力由内需转向出口",
+    "thesis": "中国新能源车的增长动力由内需转向出口，国内需求持续收缩",
+    "domain": "global",
+    "firstSeen": "2026-08-12",
+    "status": "emerging",
+    "confidence": null,
+    "evidenceCount": 1,
+    "supportCount": 1,
+    "counterCount": 0,
+    "indicators": [
+      "NEV国内销量同比',  — 连续7个月降幅超20%",
+      "NEV出口同比',  — 10月+1.4倍",
+      "NEV占新车销量比',  — 10月64.3%"
+    ],
+    "judgment": "置信度中低。出口补位成立，但“内需持续收缩”只有7个月证据，且受基数与政策扰动；若国内销量降幅收窄至10%以内则降级。",
+    "verifyBy": "2027-01-31",
+    "revisions": [
+      {
+        "date": "2026-11-13",
+        "from": null,
+        "to": null,
+        "reason": "首次建立，阶段emerging，仅有1条事件支撑"
+      }
+    ]
+  },
+  {
+    "id": "tr_cn-demographic-decline",
+    "title": "中国结婚与出生人数进入加速下行段",
+    "thesis": "中国结婚与出生人数进入加速下行段，2027年后出生人口再下台阶",
+    "domain": "global",
+    "firstSeen": "2026-08-12",
+    "status": "strengthening",
+    "confidence": null,
+    "evidenceCount": 1,
+    "supportCount": 1,
+    "counterCount": 0,
+    "indicators": [
+      "结婚登记对数',  — 前三季度464.8万对，-9.8%",
+      "出生人口',  — 2025年792万，首次跌破800万",
+      "育儿补贴覆盖',  — 2026年发放2516万人"
+    ],
+    "judgment": "置信度中高。领先指标连续下行，但政策脉冲会制造季度波动，需看两年复合增速。",
+    "verifyBy": "2027-02-28",
+    "revisions": [
+      {
+        "date": "2026-11-13",
+        "from": null,
+        "to": null,
+        "reason": "首次建立，阶段strengthening"
+      }
+    ]
+  },
+  {
+    "id": "tr_global-rates-rehike",
+    "title": "全球利率在2026年重新上行",
+    "thesis": "全球利率在2026年重新上行，美联储与日本央行同步收紧",
+    "domain": "global",
+    "firstSeen": "2026-06-16",
+    "status": "strengthening",
+    "confidence": null,
+    "evidenceCount": 1,
+    "supportCount": 1,
+    "counterCount": 0,
+    "indicators": [
+      "美联储政策利率',  — 2026-09加息至3.75%-4.00%",
+      "日本央行政策利率',  — 6月1%、9月升至31年高位",
+      "10年期美债收益率',  — 2026-11-05为4.87%"
+    ],
+    "judgment": "置信度中高。两家主要央行同向收紧，但市场对终点分歧大；观察核心PCE与12月会议。",
     "verifyBy": "2026-12-31",
     "revisions": [
-      { "date": "2026-10-14", "from": null, "to": 62, "reason": "首次建立：9 月 CPI 同比 3.7% 超预期" },
-      { "date": "2026-11-12", "from": 62, "to": 78, "reason": "10 月 CPI 连续第三个月超预期，高盛、德银上调路径" }
+      {
+        "date": "2026-11-13",
+        "from": null,
+        "to": null,
+        "reason": "首次建立，阶段strengthening"
+      }
     ]
   },
   {
-    "id": "tr-cn-profit-recovery",
-    "title": "中国工业利润修复快于收入，但行业分化明显",
-    "thesis": "利润增速连续高于营收增速，说明改善来自利润率而非单纯放量：单位成本下降、价格因素企稳、财务费用回落。但上游资源与设备制造受益更多，中下游消费品仍受需求约束。",
-    "domain": "china",
-    "firstSeen": "2026-10-27",
+    "id": "tr_ai-power-constraint",
+    "title": "AI算力扩张的约束正从芯片供给转向电力与并网能力",
+    "thesis": "AI算力扩张的约束正从芯片供给转向电力与并网能力",
+    "domain": "global",
+    "firstSeen": "2026-06-03",
     "status": "strengthening",
-    "confidence": 66,
-    "indicators": ["规上工业利润增速", "营业收入利润率", "PPI", "上市公司净利增速"],
-    "judgment": "2026 年全年规上工业企业利润同比增速将保持两位数。",
+    "confidence": null,
+    "evidenceCount": 2,
+    "supportCount": 2,
+    "counterCount": 0,
+    "indicators": [
+      "全球数据中心电力需求',  — 2026年161GW，同比+31%",
+      "科技公司资本开支 vs 油气上游',  — IEA：五家科技公司已超过全球油气上游投资",
+      "SMR/核电建设许可',  — NRC首座SMR建设许可"
+    ],
+    "judgment": "置信度中高。需求侧证据强（161GW、+31%），供给侧才刚起步；真正可验证的是2027年是否出现因电力延期上线的数据中心。",
     "verifyBy": "2027-01-31",
     "revisions": [
-      { "date": "2026-10-27", "from": null, "to": 58, "reason": "首次建立：1—9 月利润同比 +15.5%" },
-      { "date": "2026-11-04", "from": 58, "to": 66, "reason": "沪市三季报净利增速 6.0% 高于营收 3.8%，上市公司层面同向" }
+      {
+        "date": "2026-11-13",
+        "from": null,
+        "to": null,
+        "reason": "首次建立，阶段strengthening，连接数据中心电力与SMR两条证据链"
+      }
     ]
   },
   {
-    "id": "tr-ai-capex-supply-chain",
-    "title": "AI 资本开支沿供应链变成订单，但现金流尚未验证",
-    "thesis": "算力预算正在从承诺变成设备采购与交付，设备商、电力配套与数据中心建设先受益。但收入确认、折旧与融资成本开始反向拉扯估值，投入与兑现之间的时间差是本轮最大的风险点。",
-    "domain": "technology",
-    "firstSeen": "2026-11-12",
+    "id": "tr_cn-industrial-margin-repair",
+    "title": "中国规上工业利润增速持续快于营收增速",
+    "thesis": "中国规上工业利润增速持续快于营收增速，利润率在修复而非仅靠价格反弹",
+    "domain": "global",
+    "firstSeen": "2026-05-27",
     "status": "strengthening",
-    "confidence": 72,
-    "indicators": ["云厂商资本开支", "设备商订单", "数据中心电力配套投运", "ARR 兑现率"],
-    "judgment": "未来两个季度，AI 基础设施公司的资本开支增速仍将高于收入增速。",
-    "verifyBy": "2027-04-30",
+    "confidence": null,
+    "evidenceCount": 1,
+    "supportCount": 2,
+    "counterCount": 0,
+    "indicators": [
+      "营业收入利润率（累计）',  — 2026年1-8月5.66%，同比+0.44pp",
+      "利润总额同比',  — 连续4个月回落但仍两位数",
+      "分行业利润分化',  — 电子、有色、煤炭高增，下游消费品偏弱"
+    ],
+    "judgment": "置信度中。利润率修复有连续6个月证据，但分化明显：上游与电子强、地产链与光伏弱。若9-10月利润率回落至5.5%以下，趋势降级为stable。",
+    "verifyBy": "2026-12-15",
     "revisions": [
-      { "date": "2026-11-12", "from": null, "to": 72, "reason": "首次建立：Nebius 上调资本开支至 270 亿美元，同时推迟 ARR 目标" }
-    ]
-  },
-  {
-    "id": "tr-humanoid-mass-production",
-    "title": "人形机器人从样机走向量产，瓶颈在供应链不在需求",
-    "thesis": "2026 年被称作量产元年，整机厂产能规划快速抬升，商用场景从展示扩展到工厂、商超与文旅。但减速器、灵巧手与一致性交付仍是硬约束，「10 万台」更像目标而非产量。",
-    "domain": "technology",
-    "firstSeen": "2026-10-26",
-    "status": "emerging",
-    "confidence": 61,
-    "indicators": ["整机年产量", "核心零部件交期", "单台成本", "工业场景复购率"],
-    "judgment": "2026 年中国人形机器人实际产量将低于行业喊出的 10 万台目标。",
-    "verifyBy": "2027-01-31",
-    "revisions": [
-      { "date": "2026-10-26", "from": null, "to": 55, "reason": "首次建立：央视财经报道量产元年与 10 万台目标" },
-      { "date": "2026-10-29", "from": 55, "to": 61, "reason": "智元等厂商收入快速增长，需求侧得到验证" }
-    ]
-  },
-  {
-    "id": "tr-china-semiconductor-capacity",
-    "title": "国产晶圆产能利用率与盈利同步抬升",
-    "thesis": "成熟制程接近满产、价格企稳，折旧压力被利用率摊薄，毛利率随之修复。但先进制程仍受设备与出口管制约束，产能扩张的资本开支强度不会下降。",
-    "domain": "china",
-    "firstSeen": "2026-11-12",
-    "status": "strengthening",
-    "confidence": 68,
-    "indicators": ["产能利用率", "毛利率", "资本开支", "设备国产化率"],
-    "judgment": "2027 年上半年国产晶圆厂产能利用率仍将高于 90%。",
-    "verifyBy": "2027-06-30",
-    "revisions": [
-      { "date": "2026-11-12", "from": null, "to": 68, "reason": "首次建立：中芯国际 Q3 产能利用率 97.3%、毛利率 29.9%" }
+      {
+        "date": "2026-11-13",
+        "from": null,
+        "to": null,
+        "reason": "首次建立，阶段strengthening，证据为1-8月利润数据"
+      }
     ]
   }
 ]

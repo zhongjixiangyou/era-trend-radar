@@ -1,0 +1,6 @@
+{
+  "tool": "build",
+  "status": "failed",
+  "at": "2026-11-13T06:11:53.648Z",
+  "message": "派生层漂移 3 个：漂移 events.json, 漂移 forecasts.json, 漂移 trends.json"
+}

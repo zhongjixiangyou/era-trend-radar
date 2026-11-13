@@ -1,0 +1,58 @@
+{
+  "id": "tr_global-rates-rehike",
+  "thesis": "全球利率在2026年重新上行，美联储与日本央行同步收紧",
+  "firstSeenAt": "2026-06-16T00:00:00+08:00",
+  "stage": "strengthening",
+  "indicators": [
+    {
+      "name": "美联储政策利率",
+      "note": "2026-09加息至3.75%-4.00%"
+    },
+    {
+      "name": "日本央行政策利率",
+      "note": "6月1%、9月升至31年高位"
+    },
+    {
+      "name": "10年期美债收益率",
+      "note": "2026-11-05为4.87%"
+    }
+  ],
+  "evidenceRefs": [
+    "ev_fed-hike-sep"
+  ],
+  "counterEvidence": [
+    {
+      "text": "美国10月CPI超预期后金价单日跌3%，说明市场仍在博弈加息终点而非无限上行"
+    },
+    {
+      "text": "若就业快速走弱，紧缩可能提前结束"
+    }
+  ],
+  "currentJudgment": "置信度中高。两家主要央行同向收紧，但市场对终点分歧大；观察核心PCE与12月会议。",
+  "reviewBy": "2026-12-31T00:00:00+08:00",
+  "revisions": [
+    {
+      "at": "2026-11-13T13:30:00+08:00",
+      "by": "二组",
+      "note": "首次建立，阶段strengthening"
+    }
+  ],
+  "counterSearch": {
+    "at": "2026-11-13T13:30:00+08:00",
+    "sources": [
+      "Federal Reserve",
+      "Reuters",
+      "日本央行"
+    ],
+    "keywords": [
+      "降息",
+      "pivot",
+      "核心PCE 回落"
+    ],
+    "window": "2026-05-13/2026-11-13",
+    "hits": 2,
+    "result": "found",
+    "note": "命中金价回落与市场博弈加息终点"
+  },
+  "title": "全球利率再紧缩"
+}

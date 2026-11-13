@@ -110,7 +110,7 @@ page.on('console', (m) => { if (m.type() === 'error') consoleErrors.push(m.text(
 page.on('pageerror', (e) => pageErrors.push(String(e).slice(0, 300)));
 
 // 1) 8 条路由 200
-console.log('[1/5] 路由可达性');
+console.log('[1/6] 路由可达性');
 for (const r of routes) {
   const url = urlFor(r.path);
   consoleErrors.length = 0;
@@ -139,7 +139,7 @@ for (const r of routes) {
 }
 
 // 2) Pages 子路径：资源不得绕过 base
-console.log('\n[2/5] 子路径资源前缀');
+console.log('\n[2/6] 子路径资源前缀');
 for (const r of routes) {
   await page.goto(urlFor(r.path), { waitUntil: 'domcontentloaded' }).catch(() => {});
   const bad = await findUnprefixedAssets(page, rootPath);
@@ -152,17 +152,26 @@ for (const r of routes) {
   }
 }
 
-// 3) 390×844 无横向溢出
-console.log('\n[3/5] 390×844 横向溢出');
+// 3) 横向溢出（默认 320/390/430，可用 WIDTHS 覆盖）
+const WIDTHS = (process.env.WIDTHS || '320,390,430').split(',').map(Number).filter(Boolean);
+console.log(`\n[3/6] 横向溢出 ${WIDTHS.join('/')}px`);
 for (const r of routes) {
-  await page.goto(urlFor(r.path), { waitUntil: 'load' }).catch(() => {});
-  const o = await scanOverflow(page);
-  if (o.docOverflow <= 1) pass(`overflow:${r.name}`, `${r.path} 溢出 ${o.docOverflow}px`);
-  else fail(`overflow:${r.name}`, `${r.path} 溢出 ${o.docOverflow}px`, o);
+  const bad = [];
+  const detail = {};
+  for (const w of WIDTHS) {
+    await page.setViewportSize({ width: w, height: 844 });
+    await page.goto(urlFor(r.path), { waitUntil: 'load' }).catch(() => {});
+    const o = await scanOverflow(page);
+    detail[w] = { overflow: o.docOverflow, offenders: o.offenders.length, clipped: o.clipped.length };
+    if (o.docOverflow > 1) bad.push({ width: w, overflow: o.docOverflow, offenders: o.offenders.slice(0, 3) });
+  }
+  if (!bad.length) pass(`overflow:${r.name}`, `${r.path} ${WIDTHS.join('/')} 全部 0 溢出`, { detail });
+  else fail(`overflow:${r.name}`, `${r.path} 在 ${bad.map((b) => b.width).join('/')}px 溢出`, { bad, detail });
 }
+await page.setViewportSize({ width: 390, height: 844 });
 
 // 4) 事件档案：筛选 / 搜索 / 排序
-console.log('\n[4/5] 事件档案交互');
+console.log('\n[4/6] 事件档案交互');
 const eventsUrl = urlFor('/events/');
 
 async function rowSelector() {
@@ -222,22 +231,31 @@ if (!Object.keys(groups).length) {
   }
 }
 
-// 搜索
+// 搜索：空格归一化 + 英文大小写
 const searchBox = page.locator('[data-testid="search"], input[type="search"]').first();
 if (!(await searchBox.count())) {
   skip('events:search', '找不到搜索框（input[type=search]）');
 } else {
   await page.goto(eventsUrl, { waitUntil: 'load' });
   const before = await visibleRows();
-  const title = await page.locator('.event-title, [data-testid="event-title"]').first().innerText().catch(() => '');
-  const kw = title.trim().slice(0, 5).trim() || 'CPI';
-  await searchBox.fill(kw).catch(() => {});
-  await page.waitForTimeout(450);
-  const after = await visibleRows();
-  const cleared = await searchBox.inputValue().catch(() => '');
-  if (after > 0 && after < before) pass('events:search', `搜「${kw}」${before} → ${after} 条`);
-  else if (after === 0) fail('events:search', `搜「${kw}」结果 0 条`, { kw, before });
-  else fail('events:search', `搜「${kw}」条数没变（${before}）`, { kw, before, input: cleared });
+  const cases = [
+    { kw: '美国10', min: 1, why: '无空格应命中「美国 10 月」' },
+    { kw: '美国 10', min: 1, why: '带空格' },
+    { kw: 'CPI', min: 1, why: '英文大小写' },
+  ];
+  const detail = [];
+  let ok = 0;
+  for (const c of cases) {
+    await page.goto(eventsUrl, { waitUntil: 'load' });
+    await searchBox.fill(c.kw).catch(() => {});
+    await page.waitForTimeout(450);
+    const after = await visibleRows();
+    const good = after >= c.min && after <= before;
+    if (good) ok++;
+    detail.push({ kw: c.kw, after, ok: good, why: c.why });
+  }
+  if (ok === cases.length) pass('events:search', `${cases.length} 个关键词全部命中`, { detail });
+  else fail('events:search', `${cases.length - ok}/${cases.length} 个关键词没命中`, { detail });
 }
 
 // 排序（按钮组 data-sort）
@@ -265,7 +283,7 @@ if (!(await sortBtns.count())) {
 }
 
 // 5) 事件详情：时间线
-console.log('\n[5/5] 事件详情');
+console.log('\n[5/6] 事件详情');
 const detailRoute = routes.find((r) => r.kind === 'detail' && r.path.startsWith('/events/'));
 if (!detailRoute) {
   skip('detail:timeline', '路由表里没有事件详情页');
@@ -303,6 +321,45 @@ if (!detailRoute) {
     }
   }
 }
+
+// 6) 手机导航：高度 ≤70px，7 项可达（换行或横滑）
+console.log('\n[6/6] 手机导航');
+for (const w of WIDTHS) {
+  await page.setViewportSize({ width: w, height: 844 });
+  await page.goto(urlFor('/'), { waitUntil: 'load' }).catch(() => {});
+  const nav = await page.evaluate(() => {
+    const el = document.querySelector('nav.nav') || document.querySelector('header nav') || document.querySelector('nav');
+    if (!el) return null;
+    const cs = getComputedStyle(el);
+    const links = [...el.querySelectorAll('a')].map((a) => {
+      const r = a.getBoundingClientRect();
+      return { t: a.textContent.trim().slice(0, 8), left: Math.round(r.left), right: Math.round(r.right), h: Math.round(r.height) };
+    });
+    return {
+      height: Math.round(el.getBoundingClientRect().height),
+      scrollW: el.scrollWidth,
+      clientW: el.clientWidth,
+      overflowX: cs.overflowX,
+      links: links.length,
+      offscreen: links.filter((l) => l.right > document.documentElement.clientWidth + 1 || l.left < -1).map((l) => l.t),
+      linkHeights: links.map((l) => l.h),
+    };
+  });
+  if (!nav) { skip(`nav:${w}`, `${w}px 找不到 nav`); continue; }
+  const wrapped = nav.scrollW <= nav.clientW + 1;
+  const scrollable = nav.overflowX === 'auto' || nav.overflowX === 'scroll';
+  const reachable = wrapped || scrollable;
+  const heightOk = nav.height <= 70;
+  const detail = { width: w, ...nav, wrapped, scrollable, reachable };
+  if (heightOk && reachable) {
+    pass(`nav:${w}`, `${w}px 导航 ${nav.height}px，${wrapped ? '换行全露出' : '横滑'}`, detail);
+  } else if (!heightOk) {
+    fail(`nav:${w}`, `${w}px 导航高 ${nav.height}px，超过 70px 上限`, detail);
+  } else {
+    fail(`nav:${w}`, `${w}px 导航 ${nav.links} 项不可达（未换行且不横滑）`, detail);
+  }
+}
+await page.setViewportSize({ width: 390, height: 844 });
 
 // 截图留证
 const shots = [];

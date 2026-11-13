@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import EventRow from '../../components/EventRow.astro';
+import DistGrid from '../../components/DistGrid.astro';
 import Scatter from '../../components/Scatter.astro';
 import { publishedEvents, total, categoryLabel, regionLabel, siteMeta } from '../../lib/data';
 import { href } from '../../lib/url';
@@ -46,6 +47,8 @@ const points = events.map((e) => ({
 
   <Scatter items={points} from={siteMeta.window.from} to={siteMeta.window.to} />
 
+  <DistGrid items={points} />
+
   <div class="filters" role="group" aria-label="按类别筛选">
     <span class="count-line" style="margin:0 8px 0 0">类别</span>
     <button class="chip" data-filter="category" data-value="all" aria-pressed="true">全部</button>
@@ -81,6 +84,7 @@ const points = events.map((e) => ({
         data-category={e.category}
         data-region={e.region}
         data-score={total(e.scores)}
+        data-heat={new Set(e.sources.map((s: any) => { try { return new URL(s.url).hostname.replace(/^www\./, ''); } catch { return s.url; } })).size}
         data-confidence={credRank(e.credibility)}
         data-trends={e.trends.length}
         data-date={e.date}
@@ -101,6 +105,11 @@ const points = events.map((e) => ({
   const dirEl = document.getElementById('dir-line');
   const items = Array.from(document.querySelectorAll('.filter-item'));
 
+  // 搜索归一化：去掉所有空白（含全角空格）、统一全角→半角与大小写，
+  // 让「美国10」和「美国 10」是同一个查询。
+  const normText = (s) => s.normalize('NFKC').replace(/\s+/g, '').toLowerCase();
+  const textOf = new Map(items.map((el) => [el, normText(el.dataset.text || '')]));
+
   const valueOf = (el, key) => {
     if (key === 'date') return el.dataset.date || '';
     if (key === 'confidence') return Number(el.dataset.confidence);
@@ -113,7 +122,7 @@ const points = events.map((e) => ({
     for (const el of items) {
       const okCat = state.category === 'all' || el.dataset.category === state.category;
       const okReg = state.region === 'all' || el.dataset.region === state.region;
-      const okQ = !state.q || (el.dataset.text || '').includes(state.q);
+      const okQ = !state.q || (textOf.get(el) || '').includes(state.q);
       const show = okCat && okReg && okQ;
       el.hidden = !show;
       if (show) visible++;
@@ -162,7 +171,7 @@ const points = events.map((e) => ({
 
   const search = document.querySelector('.search');
   search?.addEventListener('input', (e) => {
-    state.q = (e.target as HTMLInputElement).value.trim().toLowerCase();
+    state.q = normText((e.target as HTMLInputElement).value);
     apply();
   });
 
