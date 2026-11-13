@@ -37,7 +37,7 @@ const ticks = [60, 70, 80, 90, 100];
 <figure class="dist">
   <figcaption>
     <span class="dist-title">重要度 × 可信度分布</span>
-    <span class="dist-meta">{items.length} 条 · 横轴为六维加权总分，纵轴为证据等级</span>
+    <span class="dist-meta">{items.length} 条 · 横轴为六维总分（分项直接相加），纵轴为证据等级</span>
   </figcaption>
 
   {items.length === 0 ? (
@@ -72,7 +72,7 @@ const ticks = [60, 70, 80, 90, 100];
     </svg>
   )}
   <p class="dist-note">
-    横轴是重要度（六维加权，不是报道量），纵轴是证据等级（高 = 多源独立，中 = 单一官方，低 = 二手转述）。
+    横轴是重要度（六维分项相加，不是报道量），纵轴是证据等级（高 = 多源独立，中 = 单一官方，低 = 二手转述）。
     右上角才是「重要且站得住」的事件；左上角高分低可信的，只进待核实队列。
   </p>
 </figure>

@@ -56,10 +56,8 @@ export const siteMeta = meta as {
 export function total(s: Score): number {
   // scores.total 是唯一来源；没有才回退算（旧数据/外部导入）。
   if (typeof s.total === 'number') return s.total;
-  // 与 scripts/validate.mjs 同一套算法：整数加权 + 半值向上，避免浮点 .5 漂移。
-  const scaled = s.structural * 25 + s.scope * 20 + s.signal * 20 +
-    s.novelty * 15 + s.timeliness * 10 + s.cross * 10;
-  return Math.floor((scaled + 50) / 100);
+  // v1 口径：六维本身就是分项得分（满分 25/20/20/15/10/10），总分直接相加，无加权、无半值问题。
+  return s.structural + s.scope + s.signal + s.novelty + s.timeliness + s.cross;
 }
 
 export const scoreLabels: [keyof Score, string][] = [
