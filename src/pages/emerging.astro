@@ -4,6 +4,7 @@ import { href } from '../lib/url';
 import { fmtDate } from '../lib/data';
 import data from '../data/emerging.json';
 import trends from '../data/trends.json';
+import eventsData from '../data/events.json';
 
 const trendTitle = new Map((trends as any[]).map((t) => [t.id, t.title]));
 // 二组 emerging.json 的领域 id 与其站点 trends.json 不是同一批（下划线 vs 连字符），
@@ -38,6 +39,24 @@ const domains = [...data.domains].sort(
 );
 const accelerating = domains.filter((d) => d.state === 'accelerating' || d.state === 'emerging_candidate');
 const name = (id: string) => trendTitle.get(id) ?? fallbackTitle[id] ?? id;
+
+// 回溯期（实时窗口无样本）的兜底：不排行、不造曲线，只把正在观察的领域按证据量列出来，
+// 让读者知道「现在在盯什么」，而不是看到一张空表。
+const observed = (trends as any[])
+  .map((t) => {
+    const linked = (eventsData as any[]).filter((e) => (e.trends ?? []).some((x: any) => x.id === t.id));
+    const latest = linked.map((e) => e.date).sort().at(-1) ?? '';
+    return {
+      id: t.id,
+      title: t.title,
+      evidence: t.evidenceCount ?? 0,
+      events: linked.length,
+      latest,
+      latestKey: latest ? Number(latest.replace(/-/g, '')) : 0,
+      status: t.status,
+    };
+  })
+  .sort((a, b) => b.evidence - a.evidence || b.latestKey - a.latestKey);
 
 const pct = (r: number | null) => (r === null ? '不计算' : `${r.toFixed(2)}×`);
 const asOfCn = data.asOf.slice(0, 16).replace('T', ' ');
@@ -91,9 +110,35 @@ const asOfCn = data.asOf.slice(0, 16).replace('T', ' ');
     </div>
 
     {domains.length === 0 ? (
-      <p class="em-note" id="em-empty">
-        本期没有可进入实时统计的领域：回溯补录不参与增速，需等采集链路产生带真实发生日的实时事件后才会出现。
-      </p>
+      <>
+        <p class="em-note" id="em-empty">
+          本期没有可进入实时统计的领域：回溯补录不参与增速，需等采集链路产生带真实发生日的实时事件后才会出现排行。下面是本轮正在盯的领域，只列证据量，不排名次。
+        </p>
+        <div class="ledger-scroll">
+          <table class="ledger em-table">
+            <thead>
+              <tr>
+                <th data-em-sort="name" aria-sort="none" tabindex="0" role="button">领域</th>
+                <th class="r" data-em-sort="evidence" aria-sort="descending" tabindex="0" role="button">证据条数</th>
+                <th class="r" data-em-sort="count" aria-sort="none" tabindex="0" role="button">关联事件</th>
+                <th class="r" data-em-sort="latest" aria-sort="none" tabindex="0" role="button">最近一条</th>
+                <th>状态</th>
+              </tr>
+            </thead>
+            <tbody id="em-body">
+              {observed.map((o) => (
+                <tr class="em-row" data-name={o.title} data-evidence={o.evidence} data-count={o.events} data-latest={o.latestKey}>
+                  <td class="em-name-cell"><a href={href(`/trends/${o.id}/`)}>{o.title}</a></td>
+                  <td class="num">{o.evidence}</td>
+                  <td class="num">{o.events}</td>
+                  <td class="num">{o.latest ? fmtDate(o.latest) : '—'}</td>
+                  <td><span class={`status ${o.status}`}>{stateLabel[o.status] ?? o.status}</span></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </>
     ) : (
     <div class="ledger-scroll">
     <table class="ledger em-table">
