@@ -60,9 +60,9 @@ const FIXTURE = {
           structural: '夹具：结构性影响的分项理由',
           scope: '夹具：影响范围的分项理由',
           signal: '夹具：信号价值的分项理由',
-          delta: '夹具：信息增量的分项理由',
+          novelty: '夹具：信息增量的分项理由',
           timeliness: '夹具：时效性的分项理由',
-          crossDomain: '夹具：跨领域的分项理由',
+          cross: '夹具：跨领域的分项理由',
         },
       },
       credibility: 'high',
@@ -223,6 +223,13 @@ const cases = [
   } },
   { name: '首条评分日期不等于采集日', expect: { code: 1, code_: 'HISTORY_HEAD' }, mutate: (d) => {
     ev(d)[0].scoreHistory[0].date = '2026-01-01';
+  } },
+  { name: 'rationale 用旧键名只警告（exit 0）', expect: { code: 0, warn_: 'RATIONALE_ALIAS' }, mutate: (d) => {
+    const r = ev(d)[0].scores.rationale;
+    r.delta = r.novelty;
+    r.crossDomain = r.cross;
+    delete r.novelty;
+    delete r.cross;
   } },
   { name: 'rationale 缺分项只警告（exit 0）', expect: { code: 0, warn_: 'RATIONALE' }, mutate: (d) => {
     delete ev(d)[0].scores.rationale.structural;

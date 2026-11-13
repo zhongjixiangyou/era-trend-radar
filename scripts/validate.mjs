@@ -169,10 +169,26 @@ uniqueIds(snapshots, 'snapshots', ID_RE.snapshot);
       if (!isObj(e.scores.rationale)) {
         push(`${p}.scores.rationale`, 'TYPE', 'rationale 必须是对象');
       } else {
-        const alias = { novelty: ['novelty', 'delta'], cross: ['cross', 'crossDomain'] };
-        const missing = DIMS.filter((d) => (alias[d] ?? [d]).every((k) => !isNonEmptyStr(e.scores.rationale[k])));
+        // 规范键名与 scores 对齐（novelty / cross）；delta / crossDomain 是二组旧导出的名字，
+        // 迁移窗口内继续认，但每份数据提醒一次，别让新旧两套名字长期并存。
+        const legacy = { novelty: 'delta', cross: 'crossDomain' };
+        const missing = [];
+        const aliased = [];
+        for (const d of DIMS) {
+          const r = e.scores.rationale;
+          if (isNonEmptyStr(r[d])) continue;
+          if (legacy[d] && isNonEmptyStr(r[legacy[d]])) {
+            aliased.push(`${legacy[d]}→${d}`);
+            continue;
+          }
+          missing.push(d);
+        }
         if (missing.length > 0) {
-          warn(`${p}.scores.rationale`, 'RATIONALE', `缺 ${missing.join('/')} 的分项理由（v1 允许用 delta 代 novelty、crossDomain 代 cross）`);
+          warn(`${p}.scores.rationale`, 'RATIONALE', `缺 ${missing.join('/')} 的分项理由`);
+        }
+        if (aliased.length > 0) {
+          warn(`${p}.scores.rationale`, 'RATIONALE_ALIAS',
+            `用了旧键名 ${aliased.join('、')}；规范名与 scores 一致，二组下轮导出请改名`);
         }
       }
     }
