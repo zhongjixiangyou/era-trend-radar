@@ -10,7 +10,8 @@
  */
 import { spawnSync } from 'node:child_process';
 import { resolveNode } from './node-runtime.mjs';
-import { copyFileSync, cpSync, rmSync, existsSync, mkdtempSync, writeFileSync, readFileSync } from 'node:fs';
+import { acquire, releaseLock, restoreDataFrom } from './lib/release-lock.mjs';
+import { copyFileSync, cpSync, rmSync, existsSync, mkdtempSync } from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 
@@ -18,48 +19,20 @@ import path from 'node:path';
 // 不是仓库状态：构建结束（成功、失败、中途 exit）一律把 src/data 还原，
 // 免得下一次预览、下一个人的验收、git diff 都踩着 3 条/0 条这种投影残骸。
 // 备份必须放在仓库外：derive.mjs 开头就 rm -rf .era-tmp，放里面会被自己删掉（踩过）。
-// 并发保护：两个 release 并行时，后启动的那个会把「已被投影的 src/data」当成原始备份，
-// 两边都打印「已还原」，仓库却停在投影上（2026-11-13 实测停在 3 条）。
-// 独占锁发生在备份之前，拿不到锁就不碰 src/data。
-const LOCK = path.join('src', '.release.lock');
-let locked = false;
-function pidAlive(pid) {
-  if (!Number.isInteger(pid) || pid <= 0) return false;
-  try { process.kill(pid, 0); return true; } catch (e) { return e.code === 'EPERM'; }
-}
-function acquireLock() {
-  for (let attempt = 0; attempt < 2; attempt += 1) {
-    try {
-      writeFileSync(LOCK, String(process.pid), { flag: 'wx' });
-      return true;
-    } catch (e) {
-      if (e.code !== 'EEXIST') {
-        console.error(`✗ 无法创建 ${LOCK}（${e.message}），拒绝并发改写 src/data`);
-        return false;
-      }
-      let holder = NaN;
-      try { holder = Number(readFileSync(LOCK, 'utf8').trim()); } catch (_) { /* 锁文件读不了就按僵尸处理 */ }
-      if (pidAlive(holder)) {
-        console.error(`✗ 另一个 release 正在跑（pid ${holder}，锁 ${LOCK}），拒绝并发改写 src/data`);
-        return false;
-      }
-      // SIGKILL 之类硬杀留下的僵尸锁：pid 已不在，清掉重试一次
-      try { rmSync(LOCK, { force: true }); } catch (_) {}
-    }
-  }
-  console.error(`✗ 拿不到 ${LOCK}，拒绝并发改写 src/data`);
-  return false;
-}
-function releaseLock() {
-  if (!locked) return;
-  locked = false;
-  try { rmSync(LOCK, { force: true }); } catch (_) {}
-}
-locked = acquireLock();
-if (!locked) process.exit(2);
-
+// 备份必须先于抢锁做完：锁文件里要写备份路径，进程被 SIGKILL 硬杀（信号处理器不跑）
+// 时，下一轮能凭它把 src/data 从投影救回来，而不是把腐蚀固化成「原始状态」。
 const TMPROOT = mkdtempSync(path.join(os.tmpdir(), 'era-src-data-'));
 const BACKUP = path.join(TMPROOT, 'data');
+
+// 独占锁：release 与 from-export（预览投影）抢同一把，拿不到就不碰 src/data。
+// 顺序不能颠倒：先抢锁再备份。反过来会把「上一轮崩溃留下的投影」当成原始状态，
+// 抢锁时刚救回来的数据又会被这份坏备份覆盖（实测过：救回来 11 条，结束还原成 3 条）。
+if (!acquire({ backup: BACKUP, label: 'release' })) {
+  rmSync(TMPROOT, { recursive: true, force: true });
+  process.exit(2);
+}
+
+// 抢到锁之后才备份 src/data（此时僵尸锁里的旧备份已经还原过，备份的是干净数据）。
 const hadData = existsSync('src/data');
 if (hadData) cpSync('src/data', BACKUP, { recursive: true });
 
@@ -69,27 +42,18 @@ let restored = !hadData;
 function restore(reason = '') {
   if (restored) return;
   restored = true;
-  if (!existsSync(path.join(BACKUP, 'events.json'))) {
+  if (!restoreDataFrom(BACKUP)) {
     console.error(`\n⚠ 备份缺失（${BACKUP}），src/data 未还原；请手动 git checkout -- src/data`);
     return;
   }
-  try {
-    const staging = path.join('src', '.data.restore');
-    rmSync(staging, { recursive: true, force: true });
-    cpSync(BACKUP, staging, { recursive: true });
-    rmSync('src/data', { recursive: true, force: true });
-    cpSync(staging, 'src/data', { recursive: true });
-    rmSync(staging, { recursive: true, force: true });
-    rmSync(TMPROOT, { recursive: true, force: true });
-    console.log(`\n↩ src/data 已还原（公开投影只是构建期状态${reason ? `，${reason}` : ''}）`);
-  } catch (e) {
-    console.error(`\n⚠ 还原 src/data 失败，请手动 git checkout -- src/data（${e.message}）`);
-  }
+  rmSync(TMPROOT, { recursive: true, force: true });
+  console.log(`\n↩ src/data 已还原（公开投影只是构建期状态${reason ? `，${reason}` : ''}）`);
 }
 
 process.on('exit', () => {
   restore();
   releaseLock();
+  try { rmSync(TMPROOT, { recursive: true, force: true }); } catch (_) {}
 });
 // node 在 SIGTERM/SIGINT 下不触发 'exit'（实测）：本地 Ctrl-C、CI 超时或取消都会把公开投影留在 src/data。
 for (const [sig, code] of [['SIGINT', 130], ['SIGTERM', 143], ['SIGHUP', 129]]) {
@@ -107,7 +71,7 @@ process.on('uncaughtException', (e) => {
 
 const step = (title, cmd, argv) => {
   console.log(`\n▶ ${title}`);
-  const r = spawnSync(cmd, argv, { stdio: 'inherit' });
+  const r = spawnSync(cmd, argv, { stdio: 'inherit', env: { ...process.env, ERA_LOCK_HELD: '1' } })
   if (r.status !== 0) {
     console.error(`✗ ${title} 失败 exit=${r.status}`);
     process.exit(r.status ?? 1);

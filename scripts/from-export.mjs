@@ -14,12 +14,23 @@
 import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { basename, dirname, join, resolve } from 'node:path';
+import { acquire, releaseLock, isDataDir, lockHeldByParent } from './ci/lib/release-lock.mjs';
 
 const args = process.argv.slice(2);
 const dirArg = args.indexOf('--dir');
 const outArg = args.indexOf('--out');
 const SRC = dirArg >= 0 ? args[dirArg + 1] : join(homedir(), '.dsh/era-work/data');
 const OUT = resolve(process.cwd(), outArg >= 0 ? args[outArg + 1] : 'src/data');
+// 只有写 src/data 才算「改仓库状态」，要跟 release 抢同一把锁；
+// 导出到 .era-tmp 的中间产物不锁。release 内部调它时带 ERA_LOCK_HELD=1 透传，避免自锁。
+if (!lockHeldByParent() && isDataDir(OUT)) {
+  if (!acquire({ backup: null, label: 'from-export' })) process.exit(2);
+  process.on('exit', releaseLock);
+  for (const [sig, code] of [['SIGINT', 130], ['SIGTERM', 143], ['SIGHUP', 129]]) {
+    process.on(sig, () => { releaseLock(); process.exit(code); });
+  }
+}
+
 // public = 只出已发布（发布门禁默认）；preview = 内部预览，含 pending。
 const modeArg = args.indexOf('--mode');
 const MODE = modeArg >= 0 ? args[modeArg + 1] : 'public';
@@ -36,7 +47,7 @@ const read = (name, fallback) => {
 };
 const day = (iso) => (iso ? String(iso).slice(0, 10) : null);
 
-const CATEGORY = { 中国经济与产业: 'industry', 全球宏观: 'economy', 未来趋势: 'technology' };
+const CATEGORY = { 中国经济与产业: 'industry', 全球宏观: 'economy', 未来趋势: 'technology', 科技与社会: 'technology' };
 const REGION = { 中国: 'china', 全球: 'global', 美国: 'us', 中东: 'asia', 欧洲: 'europe', 亚洲: 'asia' };
 const CRED = { multi_independent: 'high', single_primary: 'medium', secondary_only: 'low', unverified: 'low' };
 
@@ -76,7 +87,7 @@ const events = srcEvents.events.map((e) => {
     summary: e.summary,
     analysis: e.analysis ?? null,
     facts: e.facts ?? [],
-    metrics: e.metrics?.items ?? [],
+    metrics: (Array.isArray(e.metrics) ? e.metrics : e.metrics?.items ?? []).map((m) => ({ label: m.metric ?? m.name, value: `${m.value ?? '暂无'}${m.unit ?? ''}`, note: [m.period, m.scope ?? m.caliber].filter(Boolean).join(' · '), sourceUrl: m.sourceUrl })),
     scores: {
       structural: e.scores.structural,
       scope: e.scores.scope,
@@ -102,7 +113,7 @@ const events = srcEvents.events.map((e) => {
       reason: l.reason ?? null,
     })),
     timeline: revisions.map((r) => ({ date: day(r.at), title: r.action ?? r.kind ?? '修订', note: r.note ?? null })),
-    scoreHistory: [{ date: day(e.collectedAt), total: e.scores.total }],
+    scoreHistory: e.scoreHistory?.length ? e.scoreHistory.map((s) => ({ date: day(s.at ?? s.date), total: s.total ?? s.scores?.total ?? null, reason: s.reason ?? s.note })) : [{ date: day(e.collectedAt), total: e.scores.total }],
     watch: e.display?.watch ?? null,
     backfill: Boolean(e.retro?.isRetro),
   };
@@ -128,7 +139,7 @@ const trends = srcTrends.trends.map((t) => {
   const revisions = Array.isArray(t.revisions) ? t.revisions : [];
   return {
     id: t.id,
-    title: String(t.thesis).split(/[，,。；;]/)[0].slice(0, 30),
+    title: t.title || String(t.thesis).split(/[，,。；;]/)[0].slice(0, 30),
     thesis: t.thesis,
     domain: 'global',
     firstSeen: day(t.firstSeenAt),
@@ -137,7 +148,8 @@ const trends = srcTrends.trends.map((t) => {
     evidenceCount: t.viz?.evidenceCount ?? (t.evidenceRefs ?? []).length,
     supportCount: t.supportCount ?? null,
     counterCount: t.counterCount ?? null,
-    indicators: (t.indicators ?? []).map(stripDict),
+    indicators: (t.indicators ?? []).map((i) => typeof i === 'string' ? stripDict(i) : [i.name ?? i.metric, i.note ?? i.description].filter(Boolean).join('：')),
+    counterEvidence: (t.counterEvidence ?? []).map((c) => typeof c === 'string' ? { text: stripDict(c) } : c),
     judgment: t.currentJudgment ?? '',
     verifyBy: day(t.reviewBy),
     revisions: revisions.map((r) => ({
@@ -199,7 +211,8 @@ if (d0) {
 const meta = {
   site: 'ERA · 时代趋势雷达',
   generatedAt: srcEvents.generatedAt ?? new Date().toISOString(),
-  window: { from: dates[0] ?? null, to: dates[dates.length - 1] ?? null },
+  window: { from: '2026-05-13', to: '2026-11-13' },
+  coverage: { firstEvent: dates[0] ?? null, lastEvent: dates[dates.length - 1] ?? null },
   counts: {
     events: events.length,
     trends: trends.length,
@@ -233,6 +246,17 @@ writeFileSync(join(OUT, 'events.json'), JSON.stringify(events, null, 2) + '\n');
 writeFileSync(join(OUT, 'trends.json'), JSON.stringify(trends, null, 2) + '\n');
 writeFileSync(join(OUT, 'forecasts.json'), JSON.stringify(forecasts, null, 2) + '\n');
 writeFileSync(join(OUT, 'meta.json'), JSON.stringify(meta, null, 2) + '\n');
+
+// Industry comparisons are derived from a verified event's original same-period table.
+const industrial = srcEvents.events.find((e) => e.status === 'published' && e.industryTable?.rows?.length);
+const table = industrial?.industryTable;
+const china = {
+  macro: industrial ? (Array.isArray(industrial.metrics) ? industrial.metrics : industrial.metrics?.items ?? []).map((m) => ({ label: m.metric ?? m.name, value: `${m.value}${m.unit ?? ''}`, note: m.period })) : [],
+  samples: (table?.rows ?? []).map((r) => ({ ...r, scope: table.period, note: `${table.unit}；同行业同期间，不能据单期结果断言长期结构变化。`, sourceUrl: table.sourceUrl, eventId: industrial.id })),
+  source: table ? { url: table.sourceUrl, title: table.sourceTitle, period: table.period } : null,
+  missing: ['本表为一个累计区间的行业横截面；仍需连续多期同口径数据验证持续性。'],
+};
+writeFileSync(join(OUT, 'china.json'), JSON.stringify(china, null, 2) + '\n');
 
 console.log(
   JSON.stringify(
