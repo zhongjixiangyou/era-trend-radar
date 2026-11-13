@@ -107,6 +107,16 @@ function render(cfg, doc) {
 function main() {
   const args = parseArgs();
   for (const k of ["content", "out", "report"]) if (args[k] === true) process.exit(exitForSafe("usage_error", 2));
+  // --expect 写错（--expect=xxx、裸 --expect）必须当场拒绝，不能退回「产物自证形态」：
+  // 这条门禁存在的意义就是不让产物决定自己该长什么样。放在构建之前，坏参数不浪费一次全量构建。
+  {
+    const hasExpect = Object.prototype.hasOwnProperty.call(args, "expect");
+    const raw = args.expect;
+    if (hasExpect && !(typeof raw === "string" && (raw === "public" || raw === "preview"))) {
+      console.error(`✗ --expect 只能是 public|preview（收到 ${JSON.stringify(raw ?? null)}）`);
+      process.exit(exitForSafe("usage_error", 2));
+    }
+  }
   const cfg = loadConfig(args.config || undefined);
   const contentDir = resolvePath(args.content || cfg.data.dir);
   const dataFile = path.join(contentDir, cfg.data.file);
@@ -173,9 +183,12 @@ function main() {
     const artifactPreview = !looksPublic;
     // 形态由调用方声明（deploy 传 --expect public），不让产物自证：
     // 公开投影里只要混进一条 pending，全站就会渲染横幅，靠产物反推会把该失败的构建归成「预览产物」放行。
+    // 传没传和传得对不对要分开判：裸 `--expect` 解析成 true、写错值也是个字符串，
+    // 只判「是不是合法字符串」会让「传了但传错」退回成「没传」，门禁静默失效。
+    const hasExpect = Object.prototype.hasOwnProperty.call(args, "expect");
     const expect = typeof args.expect === "string" ? args.expect : null;
-    const expectOk = !expect || expect === "public" || expect === "preview";
-    const classOk = !expect || (expect === "public" ? looksPublic : artifactPreview);
+    const expectOk = !hasExpect || expect === "public" || expect === "preview";
+    const classOk = !hasExpect || (expect === "public" ? looksPublic : artifactPreview);
     const leakOk = looksPublic ? leakHits.length === 0 : guards.ok;
     // 导出入口没配、或导出 0 个文件，等于门禁什么都没比，不能算 healthy（以前这种是静默放行）。
     const exportConfigured = exportCmd.length > 0;
@@ -219,7 +232,7 @@ function main() {
         ? `入口构建 ${files.length} 文件；${compared.length} 个派生文件与 content/ 无漂移` +
           (artifactPreview ? `；预览产物放行 ${leakHits.length} 处 pending（横幅/noindex 已校验）` : `；公开产物无 pending 泄漏`)
         : [
-            !expectOk ? `--expect 只能是 public|preview，收到 ${expect}` : "",
+            !expectOk ? `--expect 只能是 public|preview，收到 ${JSON.stringify(args.expect ?? null)}` : "",
             !classOk ? `产物形态与 --expect ${expect} 不符（${looksPublic ? "公开" : "预览"}产物）` : "",
             !exportConfigured ? "导出入口未配置（entries.build.exportCmd），门禁未做任何比对" : "",
             exportConfigured && exportExit === 0 && compared.length === 0 ? "导出未产出任何文件，无从比对" : "",

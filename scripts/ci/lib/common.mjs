@@ -182,6 +182,13 @@ export function parseArgs(argv = process.argv.slice(2)) {
   for (let i = 0; i < argv.length; i += 1) {
     const a = argv[i];
     if (a.startsWith("--")) {
+      // --key=value 必须拆成 key/value：以前整串当键名，`--expect=public` 会解析出
+      // 名为 "expect=public" 的键，真正的 expect 从没被设置过，形态门禁就被静默关掉。
+      const eq = a.indexOf("=");
+      if (eq > 2) {
+        out[a.slice(2, eq)] = a.slice(eq + 1);
+        continue;
+      }
       const key = a.slice(2);
       const next = argv[i + 1];
       if (next && !next.startsWith("--")) {

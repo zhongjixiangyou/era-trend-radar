@@ -11,3 +11,5 @@ artifacts/
 reports/
 __pycache__/
 *.pyc
+src/.release.lock
+src/.data.restore
