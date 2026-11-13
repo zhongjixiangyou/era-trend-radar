@@ -7,6 +7,8 @@ import meta from '../data/meta.json';
 export type Score = {
   structural: number; scope: number; signal: number;
   novelty: number; timeliness: number; cross: number;
+  /** 当前总分：契约规定的唯一来源。缺失时才回退到公式计算。 */
+  total?: number;
 };
 
 export type EraEvent = {
@@ -52,8 +54,12 @@ export const siteMeta = meta as {
 };
 
 export function total(s: Score): number {
-  return Math.round(s.structural * 0.25 + s.scope * 0.20 + s.signal * 0.20 +
-    s.novelty * 0.15 + s.timeliness * 0.10 + s.cross * 0.10);
+  // scores.total 是唯一来源；没有才回退算（旧数据/外部导入）。
+  if (typeof s.total === 'number') return s.total;
+  // 与 scripts/validate.mjs 同一套算法：整数加权 + 半值向上，避免浮点 .5 漂移。
+  const scaled = s.structural * 25 + s.scope * 20 + s.signal * 20 +
+    s.novelty * 15 + s.timeliness * 10 + s.cross * 10;
+  return Math.floor((scaled + 50) / 100);
 }
 
 export const scoreLabels: [keyof Score, string][] = [
