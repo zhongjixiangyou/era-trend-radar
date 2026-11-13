@@ -110,7 +110,12 @@ def _coverage_comparable(event: dict, median_domains: int) -> bool | None:
 def _hist_reasons(event: dict, rel: bool | None, cov: bool | None, median_domains: int) -> list[str]:
     out = []
     if rel is None:
-        out.append("occurredAt 缺失或无法解析")
+        # 区分「字段缺失/无法解析」和「字段在、但没从原文核到发生日」——
+        # 后者才是常见情形，写错会让人以为数据丢了。
+        if parse_ts(event.get("occurredAt")) is None:
+            out.append("occurredAt 缺失或无法解析")
+        else:
+            out.append("发生日未从原文核实：字段存在且可解析，但没有可核的原文发生日证据")
     elif rel is False:
         out.append("occurredAt 晚于 collectedAt 或没有任何可回溯来源")
     if cov is None:
@@ -342,6 +347,8 @@ def main(argv=None) -> int:
     ap.add_argument("--out", default="data/emerging.json")
     ap.add_argument("--json", action="store_true", help="只打印，不写盘")
     ap.add_argument("--as-of", default=None, help="显式锚点时间（ISO8601，生产用本轮 UTC 运行时间）")
+    ap.add_argument("--only-published", action="store_true",
+                    help="只统计 status=published 的事件（公开构建必须加，预览模式不加）")
     ap.add_argument(
         "--as-of-from-data",
         action="store_true",
@@ -350,6 +357,12 @@ def main(argv=None) -> int:
     args = ap.parse_args(argv)
 
     root = Path(args.content)
+    if args.only_published:
+        _all = load_events(root)
+        _pub = [e for e in _all if e.get("status") == "published"]
+        root_events = _pub
+    else:
+        root_events = None
     if not (root / "events").is_dir():
         print(f"[emerging] 找不到 {root}/events", file=sys.stderr)
         return 2
@@ -365,7 +378,7 @@ def main(argv=None) -> int:
         source = "max(collectedAt)"
     else:
         as_of = datetime.now(timezone.utc)
-    payload = build(load_events(root), load_trend_ids(root), as_of, source, root)
+    payload = build(root_events if root_events is not None else load_events(root), load_trend_ids(root), as_of, source, root)
     text = json.dumps(payload, ensure_ascii=False, indent=2) + "\n"
     if args.json:
         print(text)

@@ -581,7 +581,14 @@ def validate_scores(ctx: Ctx, label: str, scores: Any, prefix: str = "scores.") 
         for dim in DIMS:
             rfld.text(dim, min_len=6, max_len=400)
         for key in sorted(set(rationale) - set(DIMS)):
-            ctx.warn("W_UNKNOWN_FIELD", label, f"{prefix}rationale.{key}", f"未知维度 {key}")
+            # 契约：维度名与 scores 一致（delta / crossDomain）。
+            # novelty / cross 是历史别名，不允许长期并存，直接报错而不是告警。
+            if key in {"novelty", "cross"}:
+                ctx.err("E_RATIONALE_ALIAS", label, f"{prefix}rationale.{key}",
+                        f"维度名 {key} 不在契约内；scores 与 rationale 必须同用 "
+                        f"{'delta' if key == 'novelty' else 'crossDomain'}")
+            else:
+                ctx.warn("W_UNKNOWN_FIELD", label, f"{prefix}rationale.{key}", f"未知维度 {key}")
 
     fld.text("scorerVersion", min_len=6, max_len=32, pattern=SCORER_VERSION_RE)
 

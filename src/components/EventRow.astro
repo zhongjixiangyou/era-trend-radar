@@ -27,6 +27,7 @@ const dims = [
     <div class="event-tags">
       <span class="tag">{regionLabel[event.region] ?? event.region}</span>
       <span class="tag">{categoryLabel[event.category] ?? event.category}</span>
+      {event.backfill && <span class="tag retro" title="事件首发时间晚于本轮采集，属于事后回溯补录">回溯补录</span>}
       {event.trends.slice(0, 3).map((tr: any) => {
         const known = trendById.get(tr.id);
         // 趋势没单独成页时不放链接，避免点进 404

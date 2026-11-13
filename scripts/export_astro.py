@@ -381,8 +381,7 @@ def load_content(root: Path, fmt: str) -> tuple[list[dict], list[dict], list[dic
     forecasts: list[dict] = []
     notes: list[str] = []
     suffixes = (".json",) if fmt == "json" else (".md", ".mdx")
-    # content/ 根目录的 MANIFEST.json 是二组的清单/哈希，不是内容条目，不参与导出。
-    files = [p for p in _iter_files(root, suffixes) if p.name != "MANIFEST.json"]
+    files = _iter_files(root, suffixes)
     if not files:
         raise ExportError(f"{root} 下没找到 {fmt} 输入文件")
     for path in files:
@@ -1150,7 +1149,11 @@ def _filter_trend_refs(trends: list[dict], public_ids: set[str]) -> list[dict]:
     out = []
     for t in trends:
         refs = [r for r in (t.get("evidenceRefs") or []) if r in public_ids]
-        out.append({**t, "evidenceRefs": refs})
+        evrefs = [r for r in (t.get("eventRefs") or [])
+                  if isinstance(r, dict) and r.get("eventId") in public_ids]
+        cev = [r for r in (t.get("counterEvidence") or [])
+               if not isinstance(r, dict) or r.get("eventId") in public_ids]
+        out.append({**t, "evidenceRefs": refs, "eventRefs": evrefs, "counterEvidence": cev})
     return out
 
 
@@ -1409,6 +1412,15 @@ def run(args) -> int:
 
     # 公开产物只收 published：pending 属于内部预览，不得进入公开导出与排行
     public_events = [e for e in events if e.get("status") == "published"]
+    # 趋势的 evidenceRefs 由事件侧 trendLinks 派生，避免两处手写漂移
+    linked: dict[str, set] = {}
+    for e in events:
+        for lk in (e.get("trendLinks") or []):
+            tid = lk.get("trendId")
+            if tid:
+                linked.setdefault(tid, set()).add(e["id"])
+    for t in trends:
+        t["evidenceRefs"] = sorted(set(t.get("evidenceRefs") or []) | linked.get(t["id"], set()))
     public_ids = {e["id"] for e in public_events}
     public_trends = [t for t in _filter_trend_refs(trends, public_ids) if t["evidenceRefs"]]
     public_forecasts = ([f for f in forecasts if set(f.get("eventRefs") or []) & public_ids]
