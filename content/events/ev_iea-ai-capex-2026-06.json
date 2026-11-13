@@ -1,0 +1,78 @@
+{
+  "id": "ev_iea-ai-capex-2026-06",
+  "dedupeKey": "ev:87ae2f4f15cb",
+  "title": "IEA：五家科技公司资本开支已超全球油气上游投资",
+  "summary": "IEA报告指出：五家科技公司（主要投向数据中心）资本开支已超过全球石油天然气生产投资；2025年数据中心用电增近20%。",
+  "facts": [
+    "IEA报告称，仅五家科技公司的资本开支（主要投向数据中心）已超过全球石油天然气生产投资。",
+    "2025年全球数据中心用电需求增长近20%。",
+    "报告以资本开支、AI使用量（OpenRouter）与电力需求增长并列展示AI与能源的耦合关系。"
+  ],
+  "analysis": "AI基础设施投资规模已可与油气上游比肩，电力成为约束变量。数据中心用电增速对电网与气电调峰形成压力，也解释了电力设备与储能需求的上行。",
+  "category": "未来趋势",
+  "region": "全球",
+  "occurredAt": "2026-06-03T10:00+02:00",
+  "firstReportedAt": "2026-06-03T10:00+02:00",
+  "collectedAt": "2026-11-13T14:58:00+08:00",
+  "sources": [
+    {
+      "url": "https://iea.blob.core.windows.net/assets/fcb583db-c3be-4c94-a799-9e42a9d5ba88/KeyQuestionsonEnergyAndAISlides.pdf",
+      "title": "Key Questions on Energy and AI (slides)",
+      "publisher": "国际能源署（IEA）",
+      "publishedAt": "2026-06-03",
+      "type": "primary",
+      "note": ""
+    }
+  ],
+  "scores": {
+    "structural": 21,
+    "scope": 18,
+    "signal": 16,
+    "delta": 12,
+    "timeliness": 5,
+    "crossDomain": 10,
+    "rationale": {
+      "structural": "资本开支与电力需求两条链交叉",
+      "scope": "全球科技与能源体系",
+      "signal": "投资规模对比是可量化信号",
+      "delta": "相较历史结构是明显变化",
+      "timeliness": "6月报告，趋势仍在延续",
+      "crossDomain": "牵连电力、半导体、能源与气候"
+    },
+    "total": 82,
+    "scorerVersion": "score/v1.2"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "官方原文逐项比对通过；单一来源，未获独立第二来源印证（按本轮口径可如实发布事实）"
+  },
+  "evidenceGrade": "single_primary",
+  "status": "pending",
+  "trendLinks": [
+    {
+      "trendId": "tr_ai-power-constraint",
+      "direction": "support",
+      "reason": "数据中心用电与资本开支同时上行，支持AI电力约束判断"
+    }
+  ],
+  "revisions": [],
+  "verification": {
+    "status": "passed",
+    "method": "curl 抓取官方原文，逐项比对数值后写入",
+    "checkedAt": "2026-11-13T14:58:00+08:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "原文：Capital expenditure from just five technology companies – largely on data centres – is now larger than global investment in oil and natural gas production; data centre electricity demand grew by almost 20% in 2025."
+      }
+    ],
+    "note": "仅核对原文所载数值与表述；分析段为本组判断，未混入事实"
+  },
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13T06:58:00Z",
+    "note": "事后补录：事件发生在先，本记录于 2026-11-13 补入；不构成当时预测。"
+  }
+}

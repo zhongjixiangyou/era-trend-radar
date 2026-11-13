@@ -1,25 +1,25 @@
 {
   "schemaVersion": "1",
-  "asOf": "2026-11-13T07:02:42.635069+00:00",
+  "asOf": "2026-11-13T07:11:12.839343+00:00",
   "windows": {
     "recent": {
-      "from": "2026-10-14T07:02:42.635069+00:00",
-      "to": "2026-11-13T07:02:42.635069+00:00",
+      "from": "2026-10-14T07:11:12.839343+00:00",
+      "to": "2026-11-13T07:11:12.839343+00:00",
       "days": 30
     },
     "prior": {
-      "from": "2026-09-14T07:02:42.635069+00:00",
-      "to": "2026-10-14T07:02:42.635069+00:00",
+      "from": "2026-09-14T07:11:12.839343+00:00",
+      "to": "2026-10-14T07:11:12.839343+00:00",
       "days": 30
     },
     "shortRecent": {
-      "from": "2026-11-06T07:02:42.635069+00:00",
-      "to": "2026-11-13T07:02:42.635069+00:00",
+      "from": "2026-11-06T07:11:12.839343+00:00",
+      "to": "2026-11-13T07:11:12.839343+00:00",
       "days": 7
     },
     "shortPrior": {
-      "from": "2026-10-30T07:02:42.635069+00:00",
-      "to": "2026-11-06T07:02:42.635069+00:00",
+      "from": "2026-10-30T07:11:12.839343+00:00",
+      "to": "2026-11-06T07:11:12.839343+00:00",
       "days": 7
     }
   },
@@ -35,7 +35,7 @@
     "ratioOnLowBase": "not_computed"
   },
   "excluded": {
-    "retroEvents": 62,
+    "retroEvents": 74,
     "retroIds": [
       "ev_ai-dc-power-161gw",
       "ev_antares-criticality-20260604",
@@ -51,18 +51,26 @@
       "ev_cms-dilepton-20260526",
       "ev_cn-carbon-peak-plan-2026",
       "ev_cn-cpi-2026-06",
+      "ev_cn-cpi-2026-08",
+      "ev_cn-cpi-2026-09",
+      "ev_cn-cpi-2026-10",
       "ev_cn-gdp-q3-2026",
       "ev_cn-pmi-2026-05",
+      "ev_cn-pmi-2026-08",
+      "ev_cn-pmi-2026-10",
       "ev_cn-pmi-sep-2026",
       "ev_cn-power-system-plan-2026",
       "ev_cn-profit-1-4",
       "ev_cn-profit-1-5",
       "ev_cn-profit-1-6",
+      "ev_cn-profit-1-7",
       "ev_cn-profit-1-8",
       "ev_cn-profit-1-9",
       "ev_cn-rare-earth-reporting-2026",
       "ev_cn-realestate-1-7",
+      "ev_cn-realestate-1-9",
       "ev_cn-renewable-plan-2026",
+      "ev_cn-retail-2026-09",
       "ev_cn-us-trade-consult-2026",
       "ev_doe-fusion-roadmap-20260609",
       "ev_doe-smr-supply-20260514",
@@ -72,11 +80,13 @@
       "ev_fayuvi-approval-20260917",
       "ev_fed-hike-sep",
       "ev_hera-didymos-20261111",
+      "ev_iea-ai-capex-2026-06",
       "ev_iea-oil-20260513",
       "ev_iea-oil-20260812",
       "ev_iea-oil-20260911",
       "ev_imf-weo-20261013",
       "ev_imf-weo-update-20260708",
+      "ev_jp-boj-rate-2026-06",
       "ev_mideast-war-6m",
       "ev_mmx-launch-20261020",
       "ev_mtgi2-launch-20260827",
@@ -90,6 +100,8 @@
       "ev_siri-ai-announcement-20260608",
       "ev_un-sdg-report-20260707",
       "ev_unity-criticality-20260701",
+      "ev_us-ai-youth-employment-2026",
+      "ev_us-fomc-hold-2026-06",
       "ev_voceryq-approval-20261030",
       "ev_who-health-worker-code-20260523",
       "ev_who-searo-trachoma-20260908",
@@ -111,7 +123,7 @@
   },
   "historical": {
     "note": "回溯补录：不参与实时增速。occurredAtReliable 与 coverageComparable 都成立才进「历史回溯观察」；否则只作历史事实展示。",
-    "count": 62,
+    "count": 74,
     "medianDomains": 2,
     "items": [
       {
@@ -250,6 +262,21 @@
         ]
       },
       {
+        "id": "ev_iea-ai-capex-2026-06",
+        "occurredAt": "2026-06-03T10:00+02:00",
+        "title": "IEA：五家科技公司资本开支已超全球油气上游投资",
+        "sourceDomains": 1,
+        "occurredAtReliable": null,
+        "coverageComparable": null,
+        "eligibleForHistoricalObservation": false,
+        "growthComputed": false,
+        "reasons": [
+          "发生日未从原文核实：字段存在且可解析，但没有可核的原文发生日证据",
+          "覆盖可比性未知：缺两个窗口的来源清单/采集成败/筛选方法证据（本事件独立域名 1，仅供参考，不作判定）",
+          "发生日未知：未在原文中核到明确发生日，不据此升级时间轴"
+        ]
+      },
+      {
         "id": "ev_antares-criticality-20260604",
         "occurredAt": "2026-06-04",
         "title": "Antares微型堆Mark-0完成零功率临界试验",
@@ -358,6 +385,36 @@
         "id": "ev_boj-rate-20260616",
         "occurredAt": "2026-06-16",
         "title": "日本央行把隔夜利率目标提高至约1%",
+        "sourceDomains": 1,
+        "occurredAtReliable": null,
+        "coverageComparable": null,
+        "eligibleForHistoricalObservation": false,
+        "growthComputed": false,
+        "reasons": [
+          "发生日未从原文核实：字段存在且可解析，但没有可核的原文发生日证据",
+          "覆盖可比性未知：缺两个窗口的来源清单/采集成败/筛选方法证据（本事件独立域名 1，仅供参考，不作判定）",
+          "发生日未知：未在原文中核到明确发生日，不据此升级时间轴"
+        ]
+      },
+      {
+        "id": "ev_jp-boj-rate-2026-06",
+        "occurredAt": "2026-06-16T12:00+09:00",
+        "title": "日本央行将政策利率设为1.0%，7比1通过",
+        "sourceDomains": 1,
+        "occurredAtReliable": null,
+        "coverageComparable": null,
+        "eligibleForHistoricalObservation": false,
+        "growthComputed": false,
+        "reasons": [
+          "发生日未从原文核实：字段存在且可解析，但没有可核的原文发生日证据",
+          "覆盖可比性未知：缺两个窗口的来源清单/采集成败/筛选方法证据（本事件独立域名 1，仅供参考，不作判定）",
+          "发生日未知：未在原文中核到明确发生日，不据此升级时间轴"
+        ]
+      },
+      {
+        "id": "ev_us-fomc-hold-2026-06",
+        "occurredAt": "2026-06-17T14:00-04:00",
+        "title": "美联储维持联邦基金利率3.50%—3.75%不变",
         "sourceDomains": 1,
         "occurredAtReliable": null,
         "coverageComparable": null,
@@ -595,6 +652,21 @@
         ]
       },
       {
+        "id": "ev_us-ai-youth-employment-2026",
+        "occurredAt": "2026-08-12T00:00-04:00",
+        "title": "斯坦福研究：AI暴露岗位22—25岁就业低19%",
+        "sourceDomains": 1,
+        "occurredAtReliable": null,
+        "coverageComparable": null,
+        "eligibleForHistoricalObservation": false,
+        "growthComputed": false,
+        "reasons": [
+          "发生日未从原文核实：字段存在且可解析，但没有可核的原文发生日证据",
+          "覆盖可比性未知：缺两个窗口的来源清单/采集成败/筛选方法证据（本事件独立域名 1，仅供参考，不作判定）",
+          "发生日未知：未在原文中核到明确发生日，不据此升级时间轴"
+        ]
+      },
+      {
         "id": "ev_apple-amc-houston-20260813",
         "occurredAt": "2026-08-13",
         "title": "苹果休斯敦先进制造中心开放，向中小企业提供免费培训",
@@ -685,9 +757,39 @@
         ]
       },
       {
+        "id": "ev_cn-profit-1-7",
+        "occurredAt": "2026-08-27T09:30+08:00",
+        "title": "1—7月规上工业企业利润同比增长17.6%",
+        "sourceDomains": 1,
+        "occurredAtReliable": null,
+        "coverageComparable": null,
+        "eligibleForHistoricalObservation": false,
+        "growthComputed": false,
+        "reasons": [
+          "发生日未从原文核实：字段存在且可解析，但没有可核的原文发生日证据",
+          "覆盖可比性未知：缺两个窗口的来源清单/采集成败/筛选方法证据（本事件独立域名 1，仅供参考，不作判定）",
+          "发生日未知：未在原文中核到明确发生日，不据此升级时间轴"
+        ]
+      },
+      {
         "id": "ev_mideast-war-6m",
         "occurredAt": "2026-08-28T00:00:00+08:00",
         "title": "中东战事半年：霍尔木兹受阻，布伦特一度突破90美元",
+        "sourceDomains": 1,
+        "occurredAtReliable": null,
+        "coverageComparable": null,
+        "eligibleForHistoricalObservation": false,
+        "growthComputed": false,
+        "reasons": [
+          "发生日未从原文核实：字段存在且可解析，但没有可核的原文发生日证据",
+          "覆盖可比性未知：缺两个窗口的来源清单/采集成败/筛选方法证据（本事件独立域名 1，仅供参考，不作判定）",
+          "发生日未知：未在原文中核到明确发生日，不据此升级时间轴"
+        ]
+      },
+      {
+        "id": "ev_cn-pmi-2026-08",
+        "occurredAt": "2026-08-31T09:30+08:00",
+        "title": "8月制造业PMI回升至49.8%，仍在收缩区间",
         "sourceDomains": 1,
         "occurredAtReliable": null,
         "coverageComparable": null,
@@ -733,6 +835,21 @@
         "id": "ev_apple-health-20260909",
         "occurredAt": "2026-09-09",
         "title": "苹果宣布更高频HRV和日常恢复评分，扩展可穿戴健康分析",
+        "sourceDomains": 1,
+        "occurredAtReliable": null,
+        "coverageComparable": null,
+        "eligibleForHistoricalObservation": false,
+        "growthComputed": false,
+        "reasons": [
+          "发生日未从原文核实：字段存在且可解析，但没有可核的原文发生日证据",
+          "覆盖可比性未知：缺两个窗口的来源清单/采集成败/筛选方法证据（本事件独立域名 1，仅供参考，不作判定）",
+          "发生日未知：未在原文中核到明确发生日，不据此升级时间轴"
+        ]
+      },
+      {
+        "id": "ev_cn-cpi-2026-08",
+        "occurredAt": "2026-09-09T09:30+08:00",
+        "title": "8月CPI同比上涨0.8%，食品价格继续下降",
         "sourceDomains": 1,
         "occurredAtReliable": null,
         "coverageComparable": null,
@@ -895,6 +1012,51 @@
         ]
       },
       {
+        "id": "ev_cn-cpi-2026-09",
+        "occurredAt": "2026-10-14T09:30+08:00",
+        "title": "9月CPI同比上涨0.9%，非食品价格上行",
+        "sourceDomains": 1,
+        "occurredAtReliable": null,
+        "coverageComparable": null,
+        "eligibleForHistoricalObservation": false,
+        "growthComputed": false,
+        "reasons": [
+          "发生日未从原文核实：字段存在且可解析，但没有可核的原文发生日证据",
+          "覆盖可比性未知：缺两个窗口的来源清单/采集成败/筛选方法证据（本事件独立域名 1，仅供参考，不作判定）",
+          "发生日未知：未在原文中核到明确发生日，不据此升级时间轴"
+        ]
+      },
+      {
+        "id": "ev_cn-realestate-1-9",
+        "occurredAt": "2026-10-19T10:00+08:00",
+        "title": "1—9月房地产开发投资同比下降20.6%",
+        "sourceDomains": 1,
+        "occurredAtReliable": null,
+        "coverageComparable": null,
+        "eligibleForHistoricalObservation": false,
+        "growthComputed": false,
+        "reasons": [
+          "发生日未从原文核实：字段存在且可解析，但没有可核的原文发生日证据",
+          "覆盖可比性未知：缺两个窗口的来源清单/采集成败/筛选方法证据（本事件独立域名 1，仅供参考，不作判定）",
+          "发生日未知：未在原文中核到明确发生日，不据此升级时间轴"
+        ]
+      },
+      {
+        "id": "ev_cn-retail-2026-09",
+        "occurredAt": "2026-10-19T10:00+08:00",
+        "title": "9月社会消费品零售总额同比增长1.1%",
+        "sourceDomains": 1,
+        "occurredAtReliable": null,
+        "coverageComparable": null,
+        "eligibleForHistoricalObservation": false,
+        "growthComputed": false,
+        "reasons": [
+          "发生日未从原文核实：字段存在且可解析，但没有可核的原文发生日证据",
+          "覆盖可比性未知：缺两个窗口的来源清单/采集成败/筛选方法证据（本事件独立域名 1，仅供参考，不作判定）",
+          "发生日未知：未在原文中核到明确发生日，不据此升级时间轴"
+        ]
+      },
+      {
         "id": "ev_mmx-launch-20261020",
         "occurredAt": "2026-10-20",
         "title": "日本MMX火星卫星探测器成功发射并分离",
@@ -970,9 +1132,39 @@
         ]
       },
       {
+        "id": "ev_cn-pmi-2026-10",
+        "occurredAt": "2026-10-31T09:30+08:00",
+        "title": "10月制造业PMI回落至49.3%，中小企业走弱",
+        "sourceDomains": 1,
+        "occurredAtReliable": null,
+        "coverageComparable": null,
+        "eligibleForHistoricalObservation": false,
+        "growthComputed": false,
+        "reasons": [
+          "发生日未从原文核实：字段存在且可解析，但没有可核的原文发生日证据",
+          "覆盖可比性未知：缺两个窗口的来源清单/采集成败/筛选方法证据（本事件独立域名 1，仅供参考，不作判定）",
+          "发生日未知：未在原文中核到明确发生日，不据此升级时间轴"
+        ]
+      },
+      {
         "id": "ev_wmo-climate-update-20261109",
         "occurredAt": "2026-11-09",
         "title": "WMO：2026年前九月全球温度高出工业化前约1.47℃",
+        "sourceDomains": 1,
+        "occurredAtReliable": null,
+        "coverageComparable": null,
+        "eligibleForHistoricalObservation": false,
+        "growthComputed": false,
+        "reasons": [
+          "发生日未从原文核实：字段存在且可解析，但没有可核的原文发生日证据",
+          "覆盖可比性未知：缺两个窗口的来源清单/采集成败/筛选方法证据（本事件独立域名 1，仅供参考，不作判定）",
+          "发生日未知：未在原文中核到明确发生日，不据此升级时间轴"
+        ]
+      },
+      {
+        "id": "ev_cn-cpi-2026-10",
+        "occurredAt": "2026-11-09T09:30+08:00",
+        "title": "10月CPI同比上涨0.7%，环比持平",
         "sourceDomains": 1,
         "occurredAtReliable": null,
         "coverageComparable": null,

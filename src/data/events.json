@@ -337,6 +337,67 @@
     "backfill": true
   },
   {
+    "id": "ev_cn-cpi-2026-10",
+    "title": "10月CPI同比上涨0.7%，环比持平",
+    "date": "2026-11-09",
+    "reportedAt": "2026-11-09",
+    "collectedAt": "2026-11-13",
+    "region": "china",
+    "category": "industry",
+    "summary": "国家统计局11月9日发布：10月CPI同比涨0.7%，环比持平；食品降2.9%、非食品涨1.5%；1—10月平均涨0.9%。",
+    "analysis": "CPI 同比由 0.9% 回落至 0.7%，食品降幅扩大到 2.9%，非食品维持 1.5%；核心与服务价格稳定，整体仍是低通胀格局。",
+    "facts": [
+      "10月全国居民消费价格同比上涨0.7%，环比持平。",
+      "城市涨0.7%、农村涨0.7%；食品价格下降2.9%，非食品价格上涨1.5%。",
+      "消费品价格上涨0.8%，服务价格上涨0.7%；1—10月平均CPI比上年同期上涨0.9%。"
+    ],
+    "metrics": [
+      {
+        "label": "CPI同比",
+        "value": "0.7%",
+        "note": "2026-10 · 全国"
+      }
+    ],
+    "scores": {
+      "structural": 14,
+      "scope": 15,
+      "signal": 10,
+      "delta": 9,
+      "timeliness": 6,
+      "crossDomain": 9,
+      "total": 63,
+      "rationale": {
+        "structural": "低通胀格局延续",
+        "scope": "覆盖全国城乡居民消费",
+        "signal": "食品降幅扩大拖累同比",
+        "delta": "较9月0.9%回落0.2个百分点",
+        "timeliness": "次月上旬发布，时效高",
+        "crossDomain": "牵连货币政策与消费复苏"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "国家统计局",
+        "url": "https://www.stats.gov.cn/sj/zxfb/202611/t20261109_1965795.html",
+        "date": "2026-11-09",
+        "official": true
+      }
+    ],
+    "trends": [],
+    "timeline": [],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 63
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
     "id": "ev_el-nino-11t",
     "title": "IFAD警告厄尔尼诺未来六年或致11万亿美元损失",
     "date": "2026-11-09",
@@ -544,6 +605,73 @@
     ],
     "watch": null,
     "backfill": false
+  },
+  {
+    "id": "ev_cn-pmi-2026-10",
+    "title": "10月制造业PMI回落至49.3%，中小企业走弱",
+    "date": "2026-10-31",
+    "reportedAt": "2026-10-31",
+    "collectedAt": "2026-11-13",
+    "region": "china",
+    "category": "industry",
+    "summary": "国家统计局10月31日发布：10月制造业PMI 49.3%，比上月降0.8个百分点；大型50.2%、中型48.4%、小型47.5%。",
+    "analysis": "PMI 由 9 月的 50.1% 回落至 49.3%，重回收缩区间，且中小型企业降幅更大；生产与新订单同时跌破临界点，四季度开局需求偏弱。",
+    "facts": [
+      "10月制造业采购经理指数（PMI）为49.3%，比上月下降0.8个百分点。",
+      "大型企业PMI 50.2%降0.4个百分点，仍高于临界点；中型48.4%降1.3个百分点；小型47.5%降1.4个百分点。",
+      "仅供应商配送时间指数高于临界点；生产、新订单、原材料库存、从业人员指数均低于临界点。"
+    ],
+    "metrics": [
+      {
+        "label": "制造业PMI",
+        "value": "49.3%",
+        "note": "2026-10 · 全国"
+      }
+    ],
+    "scores": {
+      "structural": 16,
+      "scope": 14,
+      "signal": 13,
+      "delta": 10,
+      "timeliness": 7,
+      "crossDomain": 8,
+      "total": 68,
+      "rationale": {
+        "structural": "景气指数重回收缩区间",
+        "scope": "覆盖全国制造业大中小型企业",
+        "signal": "生产与新订单同时跌破临界点",
+        "delta": "较9月下降0.8个百分点",
+        "timeliness": "月末当日发布，时效最高",
+        "crossDomain": "与四季度出口、投资开局相关"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "国家统计局",
+        "url": "https://www.stats.gov.cn/sj/zxfb/202610/t20261031_1965718.html",
+        "date": "2026-10-31",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_cn-industrial-margin-repair",
+        "effect": "weaken",
+        "reason": "PMI重回收缩区间且新订单跌破临界点，利润修复的需求基础转弱"
+      }
+    ],
+    "timeline": [],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 68
+      }
+    ],
+    "watch": null,
+    "backfill": true
   },
   {
     "id": "ev_voceryq-approval-20261030",
@@ -880,6 +1008,205 @@
       {
         "date": "2026-11-13",
         "total": 73
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_cn-retail-2026-09",
+    "title": "9月社会消费品零售总额同比增长1.1%",
+    "date": "2026-10-19",
+    "reportedAt": "2026-10-19",
+    "collectedAt": "2026-11-13",
+    "region": "china",
+    "category": "industry",
+    "summary": "国家统计局10月19日发布：1—9月社会消费品零售总额370001亿元，同比增1.1%；9月42433亿元增1.1%，除汽车外增3.9%。",
+    "analysis": "社零同比仅 1.1%，低于同期 GDP 增速，消费是内需中最弱的一环；剔除汽车后增速 2.8%，说明汽车拖累显著。线上与餐饮好于商品零售，限额以上单位连续负增长，反映大额耐用品与可选消费疲弱。",
+    "facts": [
+      "1—9月社会消费品零售总额370001亿元，同比增长1.1%；除汽车以外的消费品零售额340574亿元，增长2.8%。",
+      "9月社会消费品零售总额42433亿元，同比增长1.1%；除汽车以外的消费品零售额38792亿元，增长3.9%。",
+      "1—9月商品零售额328032亿元增1.0%，餐饮收入41969亿元增2.4%；网上零售额151471亿元增4.4%。",
+      "1—9月限额以上单位消费品零售额140387亿元下降1.5%，9月当月16873亿元下降2.1%。"
+    ],
+    "metrics": [
+      {
+        "label": "社会消费品零售总额",
+        "value": "370001亿元",
+        "note": "2026-01..09 · 全国"
+      },
+      {
+        "label": "社零同比",
+        "value": "1.1%",
+        "note": "2026-01..09 · 全国"
+      }
+    ],
+    "scores": {
+      "structural": 15,
+      "scope": 15,
+      "signal": 11,
+      "delta": 8,
+      "timeliness": 6,
+      "crossDomain": 8,
+      "total": 63,
+      "rationale": {
+        "structural": "社零是内需最直接的月度指标",
+        "scope": "覆盖全国城乡消费",
+        "signal": "增速低于GDP且限额以上负增长",
+        "delta": "较1—8月基本持平",
+        "timeliness": "次月中旬发布，时效较高",
+        "crossDomain": "牵连汽车、餐饮、线上零售与就业"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "国家统计局",
+        "url": "https://www.stats.gov.cn/sj/zxfb/202610/t20261019_1965614.html",
+        "date": "2026-10-19",
+        "official": true
+      }
+    ],
+    "trends": [],
+    "timeline": [],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 63
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_cn-realestate-1-9",
+    "title": "1—9月房地产开发投资同比下降20.6%",
+    "date": "2026-10-19",
+    "reportedAt": "2026-10-19",
+    "collectedAt": "2026-11-13",
+    "region": "china",
+    "category": "industry",
+    "summary": "国家统计局10月19日发布：1—9月房地产开发投资53364亿元，同比降20.6%；住宅41125亿元降20.5%；施工面积降12.8%。",
+    "analysis": "地产投资降幅由 1—8 月的 19.9% 扩大到 20.6%，住宅与施工面积同步走弱，说明开工端仍在收缩；这是内需与地方财政的主要拖累项。",
+    "facts": [
+      "1—9月全国房地产开发投资53364亿元，同比下降20.6%；其中住宅投资41125亿元，下降20.5%。",
+      "房地产开发企业房屋施工面积565221万平方米，同比下降12.8%；其中住宅施工面积392558万平方米，下降13.2%。"
+    ],
+    "metrics": [
+      {
+        "label": "房地产开发投资",
+        "value": "53364亿元",
+        "note": "2026-01..09 · 全国"
+      },
+      {
+        "label": "开发投资同比",
+        "value": "-20.6%",
+        "note": "2026-01..09 · 全国"
+      }
+    ],
+    "scores": {
+      "structural": 18,
+      "scope": 14,
+      "signal": 12,
+      "delta": 10,
+      "timeliness": 6,
+      "crossDomain": 8,
+      "total": 68,
+      "rationale": {
+        "structural": "地产投资是内需与财政的关键拖累",
+        "scope": "覆盖全国房地产开发企业",
+        "signal": "降幅扩大且施工端同步收缩",
+        "delta": "较1—8月19.9%扩大0.7个百分点",
+        "timeliness": "季度累计数据，按月更新",
+        "crossDomain": "牵连地方财政、建材与就业"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "国家统计局",
+        "url": "https://www.stats.gov.cn/sj/zxfb/202610/t20261019_1965615.html",
+        "date": "2026-10-19",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_cn-realestate-contraction",
+        "effect": "support",
+        "reason": "投资降幅扩大至20.6%，施工面积同步收缩"
+      }
+    ],
+    "timeline": [],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 68
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_cn-cpi-2026-09",
+    "title": "9月CPI同比上涨0.9%，非食品价格上行",
+    "date": "2026-10-14",
+    "reportedAt": "2026-10-14",
+    "collectedAt": "2026-11-13",
+    "region": "china",
+    "category": "industry",
+    "summary": "国家统计局10月14日发布：9月CPI同比涨0.9%，环比涨0.2%；食品降1.7%、非食品涨1.5%；1—9月平均涨0.9%。",
+    "analysis": "CPI 同比升至 0.9%，为近月高点，主要由非食品与服务推动；食品同比降幅扩大到 1.7%，猪价仍是最大拖累。整体通胀仍温和。",
+    "facts": [
+      "9月全国居民消费价格同比上涨0.9%，环比上涨0.2%。",
+      "城市涨0.9%、农村涨0.8%；食品价格下降1.7%，非食品价格上涨1.5%。",
+      "消费品价格上涨1.0%，服务价格上涨0.8%；1—9月平均CPI比上年同期上涨0.9%。"
+    ],
+    "metrics": [
+      {
+        "label": "CPI同比",
+        "value": "0.9%",
+        "note": "2026-09 · 全国"
+      }
+    ],
+    "scores": {
+      "structural": 14,
+      "scope": 15,
+      "signal": 10,
+      "delta": 9,
+      "timeliness": 5,
+      "crossDomain": 9,
+      "total": 62,
+      "rationale": {
+        "structural": "价格结构显示食品与非食品分化",
+        "scope": "覆盖全国城乡居民消费",
+        "signal": "非食品与服务推动同比走高",
+        "delta": "较8月0.8%上升0.1个百分点",
+        "timeliness": "次月中旬发布，时效较高",
+        "crossDomain": "影响利率判断与消费实际增速"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "国家统计局",
+        "url": "https://www.stats.gov.cn/sj/zxfb/202610/t20261014_1965477.html",
+        "date": "2026-10-14",
+        "official": true
+      }
+    ],
+    "trends": [],
+    "timeline": [],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 62
       }
     ],
     "watch": null,
@@ -1574,6 +1901,67 @@
     "backfill": true
   },
   {
+    "id": "ev_cn-cpi-2026-08",
+    "title": "8月CPI同比上涨0.8%，食品价格继续下降",
+    "date": "2026-09-09",
+    "reportedAt": "2026-09-09",
+    "collectedAt": "2026-11-13",
+    "region": "china",
+    "category": "industry",
+    "summary": "国家统计局9月9日发布：8月CPI同比涨0.8%，环比涨0.4%；食品降1.4%、非食品涨1.2%；1—8月平均涨0.9%。",
+    "analysis": "CPI 同比 0.8%，较 7 月 0.5% 回升，但仍处低位；食品（尤其猪肉）是拖累项，非食品与服务价格保持温和上行，需求侧通胀压力有限。",
+    "facts": [
+      "8月全国居民消费价格同比上涨0.8%，环比上涨0.4%。",
+      "城市涨0.8%、农村涨0.7%；食品价格下降1.4%，非食品价格上涨1.2%。",
+      "消费品价格上涨0.8%，服务价格上涨0.8%；1—8月平均CPI比上年同期上涨0.9%。"
+    ],
+    "metrics": [
+      {
+        "label": "CPI同比",
+        "value": "0.8%",
+        "note": "2026-08 · 全国"
+      }
+    ],
+    "scores": {
+      "structural": 14,
+      "scope": 15,
+      "signal": 10,
+      "delta": 8,
+      "timeliness": 5,
+      "crossDomain": 9,
+      "total": 61,
+      "rationale": {
+        "structural": "价格水平反映内需强弱",
+        "scope": "覆盖全国城乡居民消费",
+        "signal": "同比回升但仍在低位",
+        "delta": "较7月0.5%回升0.3个百分点",
+        "timeliness": "次月上旬发布，时效高",
+        "crossDomain": "牵连货币政策与居民实际收入"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "国家统计局",
+        "url": "https://www.stats.gov.cn/sj/zxfb/202609/t20260909_1965263.html",
+        "date": "2026-09-09",
+        "official": true
+      }
+    ],
+    "trends": [],
+    "timeline": [],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 61
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
     "id": "ev_apple-health-20260909",
     "title": "苹果宣布更高频HRV和日常恢复评分，扩展可穿戴健康分析",
     "date": "2026-09-09",
@@ -1777,6 +2165,73 @@
     "backfill": true
   },
   {
+    "id": "ev_cn-pmi-2026-08",
+    "title": "8月制造业PMI回升至49.8%，仍在收缩区间",
+    "date": "2026-08-31",
+    "reportedAt": "2026-08-31",
+    "collectedAt": "2026-11-13",
+    "region": "china",
+    "category": "industry",
+    "summary": "国家统计局8月31日发布：8月制造业PMI 49.8%，比上月升0.6个百分点；大型50.6%、中型49.4%、小型47.9%。",
+    "analysis": "PMI 回升 0.6 个百分点但仍未回到荣枯线，改善主要来自大型企业与生产端；中小企业继续收缩，就业相关分项仍弱。",
+    "facts": [
+      "8月制造业采购经理指数（PMI）为49.8%，比上月上升0.6个百分点，仍低于临界点。",
+      "大型企业PMI 50.6%升1.1个百分点；中型49.4%降0.3个百分点；小型47.9%升0.5个百分点。",
+      "生产指数、新订单指数、供应商配送时间指数高于临界点；原材料库存指数、从业人员指数低于临界点。"
+    ],
+    "metrics": [
+      {
+        "label": "制造业PMI",
+        "value": "49.8%",
+        "note": "2026-08 · 全国"
+      }
+    ],
+    "scores": {
+      "structural": 16,
+      "scope": 14,
+      "signal": 12,
+      "delta": 9,
+      "timeliness": 6,
+      "crossDomain": 8,
+      "total": 65,
+      "rationale": {
+        "structural": "景气指数领先于工业产出",
+        "scope": "覆盖全国制造业大中小型企业",
+        "signal": "回升但仍低于荣枯线",
+        "delta": "较7月上升0.6个百分点",
+        "timeliness": "月末当日发布，时效最高",
+        "crossDomain": "与出口订单、就业相互印证"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "国家统计局",
+        "url": "https://www.stats.gov.cn/sj/zxfb/202608/t20260831_1965154.html",
+        "date": "2026-08-31",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_cn-industrial-margin-repair",
+        "effect": "weaken",
+        "reason": "PMI 连续处于收缩区间，需求端不支持利润持续修复"
+      }
+    ],
+    "timeline": [],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 65
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
     "id": "ev_mideast-war-6m",
     "title": "中东战事半年：霍尔木兹受阻，布伦特一度突破90美元",
     "date": "2026-08-28",
@@ -1839,6 +2294,79 @@
       {
         "date": "2026-11-13",
         "total": 79
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_cn-profit-1-7",
+    "title": "1—7月规上工业企业利润同比增长17.6%",
+    "date": "2026-08-27",
+    "reportedAt": "2026-08-27",
+    "collectedAt": "2026-11-13",
+    "region": "china",
+    "category": "industry",
+    "summary": "国家统计局8月27日发布：1—7月规上工业企业利润45820.6亿元，同比增17.6%；营收80.92万亿元，利润率5.66%。",
+    "analysis": "利润增速由1—6月的18.7%回落至17.6%，上游采矿与电子仍是主要拉动，电热气水降幅扩大。利润率同比改善，但单月动能较上半年减弱。",
+    "facts": [
+      "1—7月规上工业企业实现利润总额45820.6亿元，同比增长17.6%。",
+      "采矿业利润6660.5亿元增34.9%，制造业34376.0亿元增18.8%，电力热力燃气及水生产和供应业4784.2亿元降5.8%。",
+      "营业收入80.92万亿元增6.5%，营业成本68.79万亿元增5.9%，营业收入利润率5.66%提高0.54个百分点。",
+      "国有控股14918.9亿元增16.3%，股份制35494.0亿元增23.6%，外商及港澳台10137.8亿元增1.2%，私营11352.2亿元增10.9%。"
+    ],
+    "metrics": [
+      {
+        "label": "利润总额",
+        "value": "45820.6亿元",
+        "note": "2026-01..07 · 规上工业"
+      },
+      {
+        "label": "营收利润率",
+        "value": "5.66%",
+        "note": "2026-01..07 · 规上工业"
+      }
+    ],
+    "scores": {
+      "structural": 17,
+      "scope": 13,
+      "signal": 11,
+      "delta": 9,
+      "timeliness": 6,
+      "crossDomain": 7,
+      "total": 63,
+      "rationale": {
+        "structural": "利润与成本结构反映工业供需",
+        "scope": "覆盖全部规模以上工业企业",
+        "signal": "增速回落但上游与电子仍强",
+        "delta": "较1—6月18.7%回落1.1个百分点",
+        "timeliness": "8月末发布，属当月核心数据",
+        "crossDomain": "牵连价格、出口与制造业投资"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "国家统计局",
+        "url": "https://www.stats.gov.cn/sj/zxfb/202608/t20260827_1965126.html",
+        "date": "2026-08-27",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_cn-industrial-margin-repair",
+        "effect": "support",
+        "reason": "1—7月营收利润率同比提高0.54个百分点"
+      }
+    ],
+    "timeline": [],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 63
       }
     ],
     "watch": null,
@@ -2244,6 +2772,64 @@
       {
         "date": "2026-11-13",
         "total": 53
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_us-ai-youth-employment-2026",
+    "title": "斯坦福研究：AI暴露岗位22—25岁就业低19%",
+    "date": "2026-08-12",
+    "reportedAt": "2026-08-12",
+    "collectedAt": "2026-11-13",
+    "region": "us",
+    "category": "technology",
+    "summary": "斯坦福8月论文用ADP数据发现：AI暴露职业中22—25岁就业比同类低19%，资深员工无同等差距，主要通过减少招聘。",
+    "analysis": "这是“canary”式证据：总量未见大规模替代，但入门岗位招聘收缩明显。对教育、职业起步与AI采用节奏有政策含义；样本为ADP数据，作者亦提示与全国调查存在差异，不能外推为全面失业。",
+    "facts": [
+      "论文使用ADP高频行政工资数据，覆盖数百万美国工人至2026年6月。",
+      "AI暴露职业中22—25岁劳动者就业比“与低暴露同龄人同步增长”的情形低19%；资深员工无同等差距。",
+      "该差距自2025年8月首次记录以来持续扩大。",
+      "调整主要通过减少招聘而非增加离职实现。",
+      "在AI主要替代人类任务的职业中下降集中；在互补型用途中就业持平或上升。",
+      "作者称这些是早期描述性指标（canaries），不是因果估计。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 19,
+      "scope": 16,
+      "signal": 16,
+      "delta": 12,
+      "timeliness": 5,
+      "crossDomain": 9,
+      "total": 77,
+      "rationale": {
+        "structural": "连接AI采用与劳动力市场结构",
+        "scope": "美国数千万工人样本",
+        "signal": "19%差距与招聘渠道是强信号",
+        "delta": "差距持续扩大",
+        "timeliness": "8月发布，仍在演化",
+        "crossDomain": "牵连教育、薪酬与产业政策"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "pending",
+    "sources": [
+      {
+        "name": "斯坦福数字经济实验室",
+        "url": "https://digitaleconomy.stanford.edu/app/uploads/2026/08/Canaries_August2026.pdf",
+        "date": "2026-08-12",
+        "official": true
+      }
+    ],
+    "trends": [],
+    "timeline": [],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 77
       }
     ],
     "watch": null,
@@ -3303,6 +3889,130 @@
     "backfill": true
   },
   {
+    "id": "ev_us-fomc-hold-2026-06",
+    "title": "美联储维持联邦基金利率3.50%—3.75%不变",
+    "date": "2026-06-17",
+    "reportedAt": "2026-06-17",
+    "collectedAt": "2026-11-13",
+    "region": "us",
+    "category": "economy",
+    "summary": "美联储6月17日FOMC声明：维持联邦基金利率目标区间3.50%—3.75%，重申2%通胀目标与充足准备金政策。",
+    "analysis": "在油价冲击与通胀偏高并存下按兵不动，政策重心偏向通胀风险。声明未给出降息路径，后续取决于能源价格与核心通胀，单次声明不足以推断转向。",
+    "facts": [
+      "6月17日FOMC决定将联邦基金利率目标区间维持在3.50%—3.75%。",
+      "声明称经济以稳健步伐扩张，但中东冲突带来不确定性升高；就业增长与劳动力供给同步，失业率变化不大。",
+      "声明称通胀相对2%目标仍偏高，部分反映能源等供应冲击。",
+      "委员会重申维持银行体系充足准备金的政策。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 19,
+      "scope": 15,
+      "signal": 13,
+      "delta": 10,
+      "timeliness": 5,
+      "crossDomain": 8,
+      "total": 70,
+      "rationale": {
+        "structural": "基准利率影响全球资产定价",
+        "scope": "美元体系外溢范围广",
+        "signal": "维持不变，信号强度中等",
+        "delta": "相对上次无变化",
+        "timeliness": "6月会议，仍在观察窗口",
+        "crossDomain": "牵连汇率、黄金与新兴市场"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "pending",
+    "sources": [
+      {
+        "name": "美国联邦储备委员会",
+        "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+        "date": "2026-06-17",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_global-rates-rehike",
+        "effect": "weaken",
+        "reason": "本次维持不变，未进一步加息"
+      }
+    ],
+    "timeline": [],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 70
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_jp-boj-rate-2026-06",
+    "title": "日本央行将政策利率设为1.0%，7比1通过",
+    "date": "2026-06-16",
+    "reportedAt": "2026-06-16",
+    "collectedAt": "2026-11-13",
+    "region": "other",
+    "category": "economy",
+    "summary": "日本央行6月16日决定将无担保隔夜拆借利率设为1.0%左右，7比1多数通过，6月17日生效。",
+    "analysis": "政策利率升至1%是日本正常化的又一步。声明把中东油价列为主要风险，意味着后续路径取决于能源价格与工资数据，而非单一路径。",
+    "facts": [
+      "6月16日货币政策会议以7比1多数决定，将无担保隔夜拆借利率引导至1.0%左右（原文称“指引变更”）。",
+      "补充存款便利利率设为1.0%，基本贷款利率1.25%，均自6月17日生效。",
+      "声明称日本经济温和复苏，但中东局势带来部分弱化，原油价格上涨对经济活动形成下行压力。",
+      "声明称企业利润处于高位、就业与收入状况改善，经济总体获得支撑。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 19,
+      "scope": 14,
+      "signal": 15,
+      "delta": 13,
+      "timeliness": 5,
+      "crossDomain": 8,
+      "total": 74,
+      "rationale": {
+        "structural": "利率决策通过汇率与资本流动传导",
+        "scope": "影响日本及全球套息交易",
+        "signal": "7比1投票与1%整数关口信号强",
+        "delta": "相较此前水平是明确上调",
+        "timeliness": "6月决策，仍有传导效应",
+        "crossDomain": "牵连汇率、债市与套息头寸"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "pending",
+    "sources": [
+      {
+        "name": "日本银行",
+        "url": "https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/k260616a.pdf",
+        "date": "2026-06-16",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_global-rates-rehike",
+        "effect": "support",
+        "reason": "主要央行再度加息，支持全球利率再紧缩判断"
+      }
+    ],
+    "timeline": [],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 74
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
     "id": "ev_boj-rate-20260616",
     "title": "日本央行把隔夜利率目标提高至约1%",
     "date": "2026-06-16",
@@ -3838,6 +4548,67 @@
       {
         "date": "2026-11-13",
         "total": 64
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_iea-ai-capex-2026-06",
+    "title": "IEA：五家科技公司资本开支已超全球油气上游投资",
+    "date": "2026-06-03",
+    "reportedAt": "2026-06-03",
+    "collectedAt": "2026-11-13",
+    "region": "global",
+    "category": "technology",
+    "summary": "IEA报告指出：五家科技公司（主要投向数据中心）资本开支已超过全球石油天然气生产投资；2025年数据中心用电增近20%。",
+    "analysis": "AI基础设施投资规模已可与油气上游比肩，电力成为约束变量。数据中心用电增速对电网与气电调峰形成压力，也解释了电力设备与储能需求的上行。",
+    "facts": [
+      "IEA报告称，仅五家科技公司的资本开支（主要投向数据中心）已超过全球石油天然气生产投资。",
+      "2025年全球数据中心用电需求增长近20%。",
+      "报告以资本开支、AI使用量（OpenRouter）与电力需求增长并列展示AI与能源的耦合关系。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 21,
+      "scope": 18,
+      "signal": 16,
+      "delta": 12,
+      "timeliness": 5,
+      "crossDomain": 10,
+      "total": 82,
+      "rationale": {
+        "structural": "资本开支与电力需求两条链交叉",
+        "scope": "全球科技与能源体系",
+        "signal": "投资规模对比是可量化信号",
+        "delta": "相较历史结构是明显变化",
+        "timeliness": "6月报告，趋势仍在延续",
+        "crossDomain": "牵连电力、半导体、能源与气候"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "pending",
+    "sources": [
+      {
+        "name": "国际能源署（IEA）",
+        "url": "https://iea.blob.core.windows.net/assets/fcb583db-c3be-4c94-a799-9e42a9d5ba88/KeyQuestionsonEnergyAndAISlides.pdf",
+        "date": "2026-06-03",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_ai-power-constraint",
+        "effect": "support",
+        "reason": "数据中心用电与资本开支同时上行，支持AI电力约束判断"
+      }
+    ],
+    "timeline": [],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 82
       }
     ],
     "watch": null,

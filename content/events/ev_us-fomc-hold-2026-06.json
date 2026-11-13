@@ -1,0 +1,79 @@
+{
+  "id": "ev_us-fomc-hold-2026-06",
+  "dedupeKey": "ev:468b7c1fad30",
+  "title": "美联储维持联邦基金利率3.50%—3.75%不变",
+  "summary": "美联储6月17日FOMC声明：维持联邦基金利率目标区间3.50%—3.75%，重申2%通胀目标与充足准备金政策。",
+  "facts": [
+    "6月17日FOMC决定将联邦基金利率目标区间维持在3.50%—3.75%。",
+    "声明称经济以稳健步伐扩张，但中东冲突带来不确定性升高；就业增长与劳动力供给同步，失业率变化不大。",
+    "声明称通胀相对2%目标仍偏高，部分反映能源等供应冲击。",
+    "委员会重申维持银行体系充足准备金的政策。"
+  ],
+  "analysis": "在油价冲击与通胀偏高并存下按兵不动，政策重心偏向通胀风险。声明未给出降息路径，后续取决于能源价格与核心通胀，单次声明不足以推断转向。",
+  "category": "全球宏观",
+  "region": "美国",
+  "occurredAt": "2026-06-17T14:00-04:00",
+  "firstReportedAt": "2026-06-17T14:00-04:00",
+  "collectedAt": "2026-11-13T14:58:00+08:00",
+  "sources": [
+    {
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+      "title": "Federal Reserve issues FOMC statement",
+      "publisher": "美国联邦储备委员会",
+      "publishedAt": "2026-06-17",
+      "type": "primary",
+      "note": ""
+    }
+  ],
+  "scores": {
+    "structural": 19,
+    "scope": 15,
+    "signal": 13,
+    "delta": 10,
+    "timeliness": 5,
+    "crossDomain": 8,
+    "rationale": {
+      "structural": "基准利率影响全球资产定价",
+      "scope": "美元体系外溢范围广",
+      "signal": "维持不变，信号强度中等",
+      "delta": "相对上次无变化",
+      "timeliness": "6月会议，仍在观察窗口",
+      "crossDomain": "牵连汇率、黄金与新兴市场"
+    },
+    "total": 70,
+    "scorerVersion": "score/v1.2"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "官方原文逐项比对通过；单一来源，未获独立第二来源印证（按本轮口径可如实发布事实）"
+  },
+  "evidenceGrade": "single_primary",
+  "status": "pending",
+  "trendLinks": [
+    {
+      "trendId": "tr_global-rates-rehike",
+      "direction": "weaken",
+      "reason": "本次维持不变，未进一步加息"
+    }
+  ],
+  "revisions": [],
+  "verification": {
+    "status": "passed",
+    "method": "curl 抓取官方原文，逐项比对数值后写入",
+    "checkedAt": "2026-11-13T14:58:00+08:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "原文：maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent；inflation remains elevated relative to the Committee's 2 percent goal。"
+      }
+    ],
+    "note": "仅核对原文所载数值与表述；分析段为本组判断，未混入事实"
+  },
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13T06:58:00Z",
+    "note": "事后补录：事件发生在先，本记录于 2026-11-13 补入；不构成当时预测。"
+  }
+}

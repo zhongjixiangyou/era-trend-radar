@@ -1,0 +1,91 @@
+{
+  "id": "ev_cn-pmi-2026-08",
+  "dedupeKey": "ev:cede297625de",
+  "title": "8月制造业PMI回升至49.8%，仍在收缩区间",
+  "summary": "国家统计局8月31日发布：8月制造业PMI 49.8%，比上月升0.6个百分点；大型50.6%、中型49.4%、小型47.9%。",
+  "facts": [
+    "8月制造业采购经理指数（PMI）为49.8%，比上月上升0.6个百分点，仍低于临界点。",
+    "大型企业PMI 50.6%升1.1个百分点；中型49.4%降0.3个百分点；小型47.9%升0.5个百分点。",
+    "生产指数、新订单指数、供应商配送时间指数高于临界点；原材料库存指数、从业人员指数低于临界点。"
+  ],
+  "analysis": "PMI 回升 0.6 个百分点但仍未回到荣枯线，改善主要来自大型企业与生产端；中小企业继续收缩，就业相关分项仍弱。",
+  "category": "中国经济与产业",
+  "region": "中国",
+  "occurredAt": "2026-08-31T09:30+08:00",
+  "firstReportedAt": "2026-08-31T09:30+08:00",
+  "collectedAt": "2026-11-13T15:02:00+08:00",
+  "sources": [
+    {
+      "url": "https://www.stats.gov.cn/sj/zxfb/202608/t20260831_1965154.html",
+      "title": "2026年8月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "publishedAt": "2026-08-31",
+      "type": "primary",
+      "note": ""
+    }
+  ],
+  "scores": {
+    "structural": 16,
+    "scope": 14,
+    "signal": 12,
+    "delta": 9,
+    "timeliness": 6,
+    "crossDomain": 8,
+    "rationale": {
+      "structural": "景气指数领先于工业产出",
+      "scope": "覆盖全国制造业大中小型企业",
+      "signal": "回升但仍低于荣枯线",
+      "delta": "较7月上升0.6个百分点",
+      "timeliness": "月末当日发布，时效最高",
+      "crossDomain": "与出口订单、就业相互印证"
+    },
+    "total": 65,
+    "scorerVersion": "score/v1.2"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "官方原文逐项比对通过；单一来源，未获独立第二来源印证（按本轮口径可如实发布事实）"
+  },
+  "evidenceGrade": "single_primary",
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_cn-industrial-margin-repair",
+      "direction": "weaken",
+      "reason": "PMI 连续处于收缩区间，需求端不支持利润持续修复"
+    }
+  ],
+  "revisions": [],
+  "verification": {
+    "status": "passed",
+    "method": "curl 抓取 NBS 官方原文，逐项比对数值后写入",
+    "checkedAt": "2026-11-13T15:02:00+08:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "原文：8月份制造业PMI为49.8%，比上月上升0.6个百分点；大型50.6%升1.1、中型49.4%降0.3、小型47.9%升0.5；生产、新订单、供应商配送时间高于临界点。"
+      }
+    ],
+    "note": "仅核对原文所载数值与表述；分析段为本组判断，未混入事实"
+  },
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13T07:02:00Z",
+    "note": "事后补录：事件发生在先，本记录于 2026-11-13 补入；不构成当时预测。"
+  },
+  "metrics": {
+    "metricSetId": "cn_pmi_2026_monthly",
+    "comparable": false,
+    "items": [
+      {
+        "metric": "制造业PMI",
+        "value": 49.8,
+        "unit": "%",
+        "period": "2026-08",
+        "scope": "全国"
+      }
+    ]
+  }
+}

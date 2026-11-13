@@ -1,0 +1,91 @@
+{
+  "id": "ev_cn-pmi-2026-10",
+  "dedupeKey": "ev:8dee73e70a27",
+  "title": "10月制造业PMI回落至49.3%，中小企业走弱",
+  "summary": "国家统计局10月31日发布：10月制造业PMI 49.3%，比上月降0.8个百分点；大型50.2%、中型48.4%、小型47.5%。",
+  "facts": [
+    "10月制造业采购经理指数（PMI）为49.3%，比上月下降0.8个百分点。",
+    "大型企业PMI 50.2%降0.4个百分点，仍高于临界点；中型48.4%降1.3个百分点；小型47.5%降1.4个百分点。",
+    "仅供应商配送时间指数高于临界点；生产、新订单、原材料库存、从业人员指数均低于临界点。"
+  ],
+  "analysis": "PMI 由 9 月的 50.1% 回落至 49.3%，重回收缩区间，且中小型企业降幅更大；生产与新订单同时跌破临界点，四季度开局需求偏弱。",
+  "category": "中国经济与产业",
+  "region": "中国",
+  "occurredAt": "2026-10-31T09:30+08:00",
+  "firstReportedAt": "2026-10-31T09:30+08:00",
+  "collectedAt": "2026-11-13T15:02:00+08:00",
+  "sources": [
+    {
+      "url": "https://www.stats.gov.cn/sj/zxfb/202610/t20261031_1965718.html",
+      "title": "2026年10月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "publishedAt": "2026-10-31",
+      "type": "primary",
+      "note": ""
+    }
+  ],
+  "scores": {
+    "structural": 16,
+    "scope": 14,
+    "signal": 13,
+    "delta": 10,
+    "timeliness": 7,
+    "crossDomain": 8,
+    "rationale": {
+      "structural": "景气指数重回收缩区间",
+      "scope": "覆盖全国制造业大中小型企业",
+      "signal": "生产与新订单同时跌破临界点",
+      "delta": "较9月下降0.8个百分点",
+      "timeliness": "月末当日发布，时效最高",
+      "crossDomain": "与四季度出口、投资开局相关"
+    },
+    "total": 68,
+    "scorerVersion": "score/v1.2"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "官方原文逐项比对通过；单一来源，未获独立第二来源印证（按本轮口径可如实发布事实）"
+  },
+  "evidenceGrade": "single_primary",
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_cn-industrial-margin-repair",
+      "direction": "weaken",
+      "reason": "PMI重回收缩区间且新订单跌破临界点，利润修复的需求基础转弱"
+    }
+  ],
+  "revisions": [],
+  "verification": {
+    "status": "passed",
+    "method": "curl 抓取 NBS 官方原文，逐项比对数值后写入",
+    "checkedAt": "2026-11-13T15:02:00+08:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "原文：10月制造业PMI为49.3%，比上月下降0.8个百分点；大型50.2%降0.4、中型48.4%降1.3、小型47.5%降1.4；生产、新订单、原材料库存、从业人员低于临界点。"
+      }
+    ],
+    "note": "仅核对原文所载数值与表述；分析段为本组判断，未混入事实"
+  },
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13T07:02:00Z",
+    "note": "事后补录：事件发生在先，本记录于 2026-11-13 补入；不构成当时预测。"
+  },
+  "metrics": {
+    "metricSetId": "cn_pmi_2026_monthly",
+    "comparable": false,
+    "items": [
+      {
+        "metric": "制造业PMI",
+        "value": 49.3,
+        "unit": "%",
+        "period": "2026-10",
+        "scope": "全国"
+      }
+    ]
+  }
+}

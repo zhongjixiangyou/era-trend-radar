@@ -1,0 +1,85 @@
+{
+  "id": "ev_cn-cpi-2026-09",
+  "dedupeKey": "ev:b625f13a134c",
+  "title": "9月CPI同比上涨0.9%，非食品价格上行",
+  "summary": "国家统计局10月14日发布：9月CPI同比涨0.9%，环比涨0.2%；食品降1.7%、非食品涨1.5%；1—9月平均涨0.9%。",
+  "facts": [
+    "9月全国居民消费价格同比上涨0.9%，环比上涨0.2%。",
+    "城市涨0.9%、农村涨0.8%；食品价格下降1.7%，非食品价格上涨1.5%。",
+    "消费品价格上涨1.0%，服务价格上涨0.8%；1—9月平均CPI比上年同期上涨0.9%。"
+  ],
+  "analysis": "CPI 同比升至 0.9%，为近月高点，主要由非食品与服务推动；食品同比降幅扩大到 1.7%，猪价仍是最大拖累。整体通胀仍温和。",
+  "category": "中国经济与产业",
+  "region": "中国",
+  "occurredAt": "2026-10-14T09:30+08:00",
+  "firstReportedAt": "2026-10-14T09:30+08:00",
+  "collectedAt": "2026-11-13T15:02:00+08:00",
+  "sources": [
+    {
+      "url": "https://www.stats.gov.cn/sj/zxfb/202610/t20261014_1965477.html",
+      "title": "2026年9月份居民消费价格同比上涨0.9%",
+      "publisher": "国家统计局",
+      "publishedAt": "2026-10-14",
+      "type": "primary",
+      "note": ""
+    }
+  ],
+  "scores": {
+    "structural": 14,
+    "scope": 15,
+    "signal": 10,
+    "delta": 9,
+    "timeliness": 5,
+    "crossDomain": 9,
+    "rationale": {
+      "structural": "价格结构显示食品与非食品分化",
+      "scope": "覆盖全国城乡居民消费",
+      "signal": "非食品与服务推动同比走高",
+      "delta": "较8月0.8%上升0.1个百分点",
+      "timeliness": "次月中旬发布，时效较高",
+      "crossDomain": "影响利率判断与消费实际增速"
+    },
+    "total": 62,
+    "scorerVersion": "score/v1.2"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "官方原文逐项比对通过；单一来源，未获独立第二来源印证（按本轮口径可如实发布事实）"
+  },
+  "evidenceGrade": "single_primary",
+  "status": "published",
+  "trendLinks": [],
+  "revisions": [],
+  "verification": {
+    "status": "passed",
+    "method": "curl 抓取 NBS 官方原文，逐项比对数值后写入",
+    "checkedAt": "2026-11-13T15:02:00+08:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "原文：9月CPI同比上涨0.9%、环比上涨0.2%；城市0.9%、农村0.8%；食品降1.7%、非食品涨1.5%；消费品1.0%、服务0.8%；1—9月平均涨0.9%。"
+      }
+    ],
+    "note": "仅核对原文所载数值与表述；分析段为本组判断，未混入事实"
+  },
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13T07:02:00Z",
+    "note": "事后补录：事件发生在先，本记录于 2026-11-13 补入；不构成当时预测。"
+  },
+  "metrics": {
+    "metricSetId": "cn_cpi_2026_monthly",
+    "comparable": false,
+    "items": [
+      {
+        "metric": "CPI同比",
+        "value": 0.9,
+        "unit": "%",
+        "period": "2026-09",
+        "scope": "全国"
+      }
+    ]
+  }
+}

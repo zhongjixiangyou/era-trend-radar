@@ -1,0 +1,79 @@
+{
+  "id": "ev_jp-boj-rate-2026-06",
+  "dedupeKey": "ev:1b94253dfe09",
+  "title": "日本央行将政策利率设为1.0%，7比1通过",
+  "summary": "日本央行6月16日决定将无担保隔夜拆借利率设为1.0%左右，7比1多数通过，6月17日生效。",
+  "facts": [
+    "6月16日货币政策会议以7比1多数决定，将无担保隔夜拆借利率引导至1.0%左右（原文称“指引变更”）。",
+    "补充存款便利利率设为1.0%，基本贷款利率1.25%，均自6月17日生效。",
+    "声明称日本经济温和复苏，但中东局势带来部分弱化，原油价格上涨对经济活动形成下行压力。",
+    "声明称企业利润处于高位、就业与收入状况改善，经济总体获得支撑。"
+  ],
+  "analysis": "政策利率升至1%是日本正常化的又一步。声明把中东油价列为主要风险，意味着后续路径取决于能源价格与工资数据，而非单一路径。",
+  "category": "全球宏观",
+  "region": "日本",
+  "occurredAt": "2026-06-16T12:00+09:00",
+  "firstReportedAt": "2026-06-16T12:00+09:00",
+  "collectedAt": "2026-11-13T14:58:00+08:00",
+  "sources": [
+    {
+      "url": "https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/k260616a.pdf",
+      "title": "Change in the Guideline for Money Market Operations",
+      "publisher": "日本银行",
+      "publishedAt": "2026-06-16",
+      "type": "primary",
+      "note": ""
+    }
+  ],
+  "scores": {
+    "structural": 19,
+    "scope": 14,
+    "signal": 15,
+    "delta": 13,
+    "timeliness": 5,
+    "crossDomain": 8,
+    "rationale": {
+      "structural": "利率决策通过汇率与资本流动传导",
+      "scope": "影响日本及全球套息交易",
+      "signal": "7比1投票与1%整数关口信号强",
+      "delta": "相较此前水平是明确上调",
+      "timeliness": "6月决策，仍有传导效应",
+      "crossDomain": "牵连汇率、债市与套息头寸"
+    },
+    "total": 74,
+    "scorerVersion": "score/v1.2"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "官方原文逐项比对通过；单一来源，未获独立第二来源印证（按本轮口径可如实发布事实）"
+  },
+  "evidenceGrade": "single_primary",
+  "status": "pending",
+  "trendLinks": [
+    {
+      "trendId": "tr_global-rates-rehike",
+      "direction": "support",
+      "reason": "主要央行再度加息，支持全球利率再紧缩判断"
+    }
+  ],
+  "revisions": [],
+  "verification": {
+    "status": "passed",
+    "method": "curl 抓取官方原文，逐项比对数值后写入",
+    "checkedAt": "2026-11-13T14:58:00+08:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "原文：by a 7-1 majority vote, to set the guideline ... around 1.0 percent；补充存款便利1.0%、基本贷款利率1.25%，自6月17日生效。"
+      }
+    ],
+    "note": "仅核对原文所载数值与表述；分析段为本组判断，未混入事实"
+  },
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13T06:58:00Z",
+    "note": "事后补录：事件发生在先，本记录于 2026-11-13 补入；不构成当时预测。"
+  }
+}

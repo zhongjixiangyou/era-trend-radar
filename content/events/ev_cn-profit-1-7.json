@@ -1,0 +1,99 @@
+{
+  "id": "ev_cn-profit-1-7",
+  "dedupeKey": "ev:845db42c2da3",
+  "title": "1—7月规上工业企业利润同比增长17.6%",
+  "summary": "国家统计局8月27日发布：1—7月规上工业企业利润45820.6亿元，同比增17.6%；营收80.92万亿元，利润率5.66%。",
+  "facts": [
+    "1—7月规上工业企业实现利润总额45820.6亿元，同比增长17.6%。",
+    "采矿业利润6660.5亿元增34.9%，制造业34376.0亿元增18.8%，电力热力燃气及水生产和供应业4784.2亿元降5.8%。",
+    "营业收入80.92万亿元增6.5%，营业成本68.79万亿元增5.9%，营业收入利润率5.66%提高0.54个百分点。",
+    "国有控股14918.9亿元增16.3%，股份制35494.0亿元增23.6%，外商及港澳台10137.8亿元增1.2%，私营11352.2亿元增10.9%。"
+  ],
+  "analysis": "利润增速由1—6月的18.7%回落至17.6%，上游采矿与电子仍是主要拉动，电热气水降幅扩大。利润率同比改善，但单月动能较上半年减弱。",
+  "category": "中国经济与产业",
+  "region": "中国",
+  "occurredAt": "2026-08-27T09:30+08:00",
+  "firstReportedAt": "2026-08-27T09:30+08:00",
+  "collectedAt": "2026-11-13T15:02:00+08:00",
+  "sources": [
+    {
+      "url": "https://www.stats.gov.cn/sj/zxfb/202608/t20260827_1965126.html",
+      "title": "2026年1—7月份全国规模以上工业企业利润增长17.6%",
+      "publisher": "国家统计局",
+      "publishedAt": "2026-08-27",
+      "type": "primary",
+      "note": ""
+    }
+  ],
+  "scores": {
+    "structural": 17,
+    "scope": 13,
+    "signal": 11,
+    "delta": 9,
+    "timeliness": 6,
+    "crossDomain": 7,
+    "rationale": {
+      "structural": "利润与成本结构反映工业供需",
+      "scope": "覆盖全部规模以上工业企业",
+      "signal": "增速回落但上游与电子仍强",
+      "delta": "较1—6月18.7%回落1.1个百分点",
+      "timeliness": "8月末发布，属当月核心数据",
+      "crossDomain": "牵连价格、出口与制造业投资"
+    },
+    "total": 63,
+    "scorerVersion": "score/v1.2"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "官方原文逐项比对通过；单一来源，未获独立第二来源印证（按本轮口径可如实发布事实）"
+  },
+  "evidenceGrade": "single_primary",
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_cn-industrial-margin-repair",
+      "direction": "support",
+      "reason": "1—7月营收利润率同比提高0.54个百分点"
+    }
+  ],
+  "revisions": [],
+  "verification": {
+    "status": "passed",
+    "method": "curl 抓取 NBS 官方原文，逐项比对数值后写入",
+    "checkedAt": "2026-11-13T15:02:00+08:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "原文：利润总额45820.6亿元、增长17.6%；采矿业6660.5亿元增34.9%、制造业34376.0亿元增18.8%、电热气水4784.2亿元降5.8%；营收80.92万亿元增6.5%，利润率5.66%提高0.54个百分点。"
+      }
+    ],
+    "note": "仅核对原文所载数值与表述；分析段为本组判断，未混入事实"
+  },
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13T07:02:00Z",
+    "note": "事后补录：事件发生在先，本记录于 2026-11-13 补入；不构成当时预测。"
+  },
+  "metrics": {
+    "metricSetId": "cn_industrial_profit_2026_cumulative",
+    "comparable": false,
+    "items": [
+      {
+        "metric": "利润总额",
+        "value": 45820.6,
+        "unit": "亿元",
+        "period": "2026-01..07",
+        "scope": "规上工业"
+      },
+      {
+        "metric": "营收利润率",
+        "value": 5.66,
+        "unit": "%",
+        "period": "2026-01..07",
+        "scope": "规上工业"
+      }
+    ]
+  }
+}

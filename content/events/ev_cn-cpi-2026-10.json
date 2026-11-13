@@ -1,0 +1,85 @@
+{
+  "id": "ev_cn-cpi-2026-10",
+  "dedupeKey": "ev:bf2b2c74a757",
+  "title": "10月CPI同比上涨0.7%，环比持平",
+  "summary": "国家统计局11月9日发布：10月CPI同比涨0.7%，环比持平；食品降2.9%、非食品涨1.5%；1—10月平均涨0.9%。",
+  "facts": [
+    "10月全国居民消费价格同比上涨0.7%，环比持平。",
+    "城市涨0.7%、农村涨0.7%；食品价格下降2.9%，非食品价格上涨1.5%。",
+    "消费品价格上涨0.8%，服务价格上涨0.7%；1—10月平均CPI比上年同期上涨0.9%。"
+  ],
+  "analysis": "CPI 同比由 0.9% 回落至 0.7%，食品降幅扩大到 2.9%，非食品维持 1.5%；核心与服务价格稳定，整体仍是低通胀格局。",
+  "category": "中国经济与产业",
+  "region": "中国",
+  "occurredAt": "2026-11-09T09:30+08:00",
+  "firstReportedAt": "2026-11-09T09:30+08:00",
+  "collectedAt": "2026-11-13T15:02:00+08:00",
+  "sources": [
+    {
+      "url": "https://www.stats.gov.cn/sj/zxfb/202611/t20261109_1965795.html",
+      "title": "2026年10月份居民消费价格同比上涨0.7%",
+      "publisher": "国家统计局",
+      "publishedAt": "2026-11-09",
+      "type": "primary",
+      "note": ""
+    }
+  ],
+  "scores": {
+    "structural": 14,
+    "scope": 15,
+    "signal": 10,
+    "delta": 9,
+    "timeliness": 6,
+    "crossDomain": 9,
+    "rationale": {
+      "structural": "低通胀格局延续",
+      "scope": "覆盖全国城乡居民消费",
+      "signal": "食品降幅扩大拖累同比",
+      "delta": "较9月0.9%回落0.2个百分点",
+      "timeliness": "次月上旬发布，时效高",
+      "crossDomain": "牵连货币政策与消费复苏"
+    },
+    "total": 63,
+    "scorerVersion": "score/v1.2"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "官方原文逐项比对通过；单一来源，未获独立第二来源印证（按本轮口径可如实发布事实）"
+  },
+  "evidenceGrade": "single_primary",
+  "status": "published",
+  "trendLinks": [],
+  "revisions": [],
+  "verification": {
+    "status": "passed",
+    "method": "curl 抓取 NBS 官方原文，逐项比对数值后写入",
+    "checkedAt": "2026-11-13T15:02:00+08:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "原文：10月CPI同比上涨0.7%、环比持平；城市0.7%、农村0.7%；食品降2.9%、非食品涨1.5%；消费品0.8%、服务0.7%；1—10月平均涨0.9%。"
+      }
+    ],
+    "note": "仅核对原文所载数值与表述；分析段为本组判断，未混入事实"
+  },
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13T07:02:00Z",
+    "note": "事后补录：事件发生在先，本记录于 2026-11-13 补入；不构成当时预测。"
+  },
+  "metrics": {
+    "metricSetId": "cn_cpi_2026_monthly",
+    "comparable": false,
+    "items": [
+      {
+        "metric": "CPI同比",
+        "value": 0.7,
+        "unit": "%",
+        "period": "2026-10",
+        "scope": "全国"
+      }
+    ]
+  }
+}

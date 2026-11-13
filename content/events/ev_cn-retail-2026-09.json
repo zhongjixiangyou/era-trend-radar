@@ -1,0 +1,93 @@
+{
+  "id": "ev_cn-retail-2026-09",
+  "dedupeKey": "ev:76460592fab2",
+  "title": "9月社会消费品零售总额同比增长1.1%",
+  "summary": "国家统计局10月19日发布：1—9月社会消费品零售总额370001亿元，同比增1.1%；9月42433亿元增1.1%，除汽车外增3.9%。",
+  "facts": [
+    "1—9月社会消费品零售总额370001亿元，同比增长1.1%；除汽车以外的消费品零售额340574亿元，增长2.8%。",
+    "9月社会消费品零售总额42433亿元，同比增长1.1%；除汽车以外的消费品零售额38792亿元，增长3.9%。",
+    "1—9月商品零售额328032亿元增1.0%，餐饮收入41969亿元增2.4%；网上零售额151471亿元增4.4%。",
+    "1—9月限额以上单位消费品零售额140387亿元下降1.5%，9月当月16873亿元下降2.1%。"
+  ],
+  "analysis": "社零同比仅 1.1%，低于同期 GDP 增速，消费是内需中最弱的一环；剔除汽车后增速 2.8%，说明汽车拖累显著。线上与餐饮好于商品零售，限额以上单位连续负增长，反映大额耐用品与可选消费疲弱。",
+  "category": "中国经济与产业",
+  "region": "中国",
+  "occurredAt": "2026-10-19T10:00+08:00",
+  "firstReportedAt": "2026-10-19T10:00+08:00",
+  "collectedAt": "2026-11-13T15:06:00+08:00",
+  "sources": [
+    {
+      "url": "https://www.stats.gov.cn/sj/zxfb/202610/t20261019_1965614.html",
+      "title": "2026年9月份社会消费品零售总额增长1.1%",
+      "publisher": "国家统计局",
+      "publishedAt": "2026-10-19",
+      "type": "primary",
+      "note": ""
+    }
+  ],
+  "scores": {
+    "structural": 15,
+    "scope": 15,
+    "signal": 11,
+    "delta": 8,
+    "timeliness": 6,
+    "crossDomain": 8,
+    "rationale": {
+      "structural": "社零是内需最直接的月度指标",
+      "scope": "覆盖全国城乡消费",
+      "signal": "增速低于GDP且限额以上负增长",
+      "delta": "较1—8月基本持平",
+      "timeliness": "次月中旬发布，时效较高",
+      "crossDomain": "牵连汽车、餐饮、线上零售与就业"
+    },
+    "total": 63,
+    "scorerVersion": "score/v1.2"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "官方原文逐项比对通过；单一来源，未获独立第二来源印证（按本轮口径可如实发布事实）"
+  },
+  "evidenceGrade": "single_primary",
+  "status": "published",
+  "trendLinks": [],
+  "revisions": [],
+  "verification": {
+    "status": "passed",
+    "method": "curl 抓取 NBS 官方原文，逐项比对数值后写入",
+    "checkedAt": "2026-11-13T15:06:00+08:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "原文：1—9月社零370001亿元增1.1%、除汽车外340574亿元增2.8%；9月42433亿元增1.1%、除汽车外38792亿元增3.9%；限额以上1—9月140387亿元降1.5%。"
+      }
+    ],
+    "note": "仅核对原文所载数值与表述；分析段为本组判断，未混入事实"
+  },
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13T07:06:00Z",
+    "note": "事后补录：事件发生在先，本记录于 2026-11-13 补入；不构成当时预测。"
+  },
+  "metrics": {
+    "metricSetId": "cn_retail_sales_2026_cumulative",
+    "comparable": false,
+    "items": [
+      {
+        "metric": "社会消费品零售总额",
+        "value": 370001,
+        "unit": "亿元",
+        "period": "2026-01..09",
+        "scope": "全国"
+      },
+      {
+        "metric": "社零同比",
+        "value": 1.1,
+        "unit": "%",
+        "period": "2026-01..09",
+        "scope": "全国"
+      }
+    ]
+  }
+}

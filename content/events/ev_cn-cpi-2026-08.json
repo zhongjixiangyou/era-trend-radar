@@ -1,0 +1,85 @@
+{
+  "id": "ev_cn-cpi-2026-08",
+  "dedupeKey": "ev:bb17cefb2268",
+  "title": "8月CPI同比上涨0.8%，食品价格继续下降",
+  "summary": "国家统计局9月9日发布：8月CPI同比涨0.8%，环比涨0.4%；食品降1.4%、非食品涨1.2%；1—8月平均涨0.9%。",
+  "facts": [
+    "8月全国居民消费价格同比上涨0.8%，环比上涨0.4%。",
+    "城市涨0.8%、农村涨0.7%；食品价格下降1.4%，非食品价格上涨1.2%。",
+    "消费品价格上涨0.8%，服务价格上涨0.8%；1—8月平均CPI比上年同期上涨0.9%。"
+  ],
+  "analysis": "CPI 同比 0.8%，较 7 月 0.5% 回升，但仍处低位；食品（尤其猪肉）是拖累项，非食品与服务价格保持温和上行，需求侧通胀压力有限。",
+  "category": "中国经济与产业",
+  "region": "中国",
+  "occurredAt": "2026-09-09T09:30+08:00",
+  "firstReportedAt": "2026-09-09T09:30+08:00",
+  "collectedAt": "2026-11-13T15:02:00+08:00",
+  "sources": [
+    {
+      "url": "https://www.stats.gov.cn/sj/zxfb/202609/t20260909_1965263.html",
+      "title": "2026年8月份居民消费价格同比上涨0.8%",
+      "publisher": "国家统计局",
+      "publishedAt": "2026-09-09",
+      "type": "primary",
+      "note": ""
+    }
+  ],
+  "scores": {
+    "structural": 14,
+    "scope": 15,
+    "signal": 10,
+    "delta": 8,
+    "timeliness": 5,
+    "crossDomain": 9,
+    "rationale": {
+      "structural": "价格水平反映内需强弱",
+      "scope": "覆盖全国城乡居民消费",
+      "signal": "同比回升但仍在低位",
+      "delta": "较7月0.5%回升0.3个百分点",
+      "timeliness": "次月上旬发布，时效高",
+      "crossDomain": "牵连货币政策与居民实际收入"
+    },
+    "total": 61,
+    "scorerVersion": "score/v1.2"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "官方原文逐项比对通过；单一来源，未获独立第二来源印证（按本轮口径可如实发布事实）"
+  },
+  "evidenceGrade": "single_primary",
+  "status": "published",
+  "trendLinks": [],
+  "revisions": [],
+  "verification": {
+    "status": "passed",
+    "method": "curl 抓取 NBS 官方原文，逐项比对数值后写入",
+    "checkedAt": "2026-11-13T15:02:00+08:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "原文：8月CPI同比上涨0.8%、环比上涨0.4%；城市0.8%、农村0.7%；食品降1.4%、非食品涨1.2%；消费品0.8%、服务0.8%；1—8月平均涨0.9%。"
+      }
+    ],
+    "note": "仅核对原文所载数值与表述；分析段为本组判断，未混入事实"
+  },
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13T07:02:00Z",
+    "note": "事后补录：事件发生在先，本记录于 2026-11-13 补入；不构成当时预测。"
+  },
+  "metrics": {
+    "metricSetId": "cn_cpi_2026_monthly",
+    "comparable": false,
+    "items": [
+      {
+        "metric": "CPI同比",
+        "value": 0.8,
+        "unit": "%",
+        "period": "2026-08",
+        "scope": "全国"
+      }
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "id": "ev_us-ai-youth-employment-2026",
+  "dedupeKey": "ev:ca3bb225ce32",
+  "title": "斯坦福研究：AI暴露岗位22—25岁就业低19%",
+  "summary": "斯坦福8月论文用ADP数据发现：AI暴露职业中22—25岁就业比同类低19%，资深员工无同等差距，主要通过减少招聘。",
+  "facts": [
+    "论文使用ADP高频行政工资数据，覆盖数百万美国工人至2026年6月。",
+    "AI暴露职业中22—25岁劳动者就业比“与低暴露同龄人同步增长”的情形低19%；资深员工无同等差距。",
+    "该差距自2025年8月首次记录以来持续扩大。",
+    "调整主要通过减少招聘而非增加离职实现。",
+    "在AI主要替代人类任务的职业中下降集中；在互补型用途中就业持平或上升。",
+    "作者称这些是早期描述性指标（canaries），不是因果估计。"
+  ],
+  "analysis": "这是“canary”式证据：总量未见大规模替代，但入门岗位招聘收缩明显。对教育、职业起步与AI采用节奏有政策含义；样本为ADP数据，作者亦提示与全国调查存在差异，不能外推为全面失业。",
+  "category": "科技与社会",
+  "region": "美国",
+  "occurredAt": "2026-08-12T00:00-04:00",
+  "firstReportedAt": "2026-08-12T00:00-04:00",
+  "collectedAt": "2026-11-13T14:58:00+08:00",
+  "sources": [
+    {
+      "url": "https://digitaleconomy.stanford.edu/app/uploads/2026/08/Canaries_August2026.pdf",
+      "title": "Canaries in the Coal Mine? Six Facts about the Recent Employment Effects of Artificial Intelligence",
+      "publisher": "斯坦福数字经济实验室",
+      "publishedAt": "2026-08-12",
+      "type": "primary",
+      "note": ""
+    }
+  ],
+  "scores": {
+    "structural": 19,
+    "scope": 16,
+    "signal": 16,
+    "delta": 12,
+    "timeliness": 5,
+    "crossDomain": 9,
+    "rationale": {
+      "structural": "连接AI采用与劳动力市场结构",
+      "scope": "美国数千万工人样本",
+      "signal": "19%差距与招聘渠道是强信号",
+      "delta": "差距持续扩大",
+      "timeliness": "8月发布，仍在演化",
+      "crossDomain": "牵连教育、薪酬与产业政策"
+    },
+    "total": 77,
+    "scorerVersion": "score/v1.2"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "官方原文逐项比对通过；单一来源，未获独立第二来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "status": "pending",
+  "trendLinks": [],
+  "revisions": [],
+  "verification": {
+    "status": "passed",
+    "method": "curl 抓取官方原文，逐项比对数值后写入",
+    "checkedAt": "2026-11-13T14:58:00+08:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "原文摘要：no evidence of widespread, economy-wide job displacement；employment of young workers (ages 22–25) in AI-exposed occupations now stands 19% below…；operates primarily through reduced hiring。"
+      }
+    ],
+    "note": "仅核对原文数值与表述；分析为本组判断"
+  },
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13T06:58:00Z",
+    "note": "事后补录：事件发生在先，本记录于 2026-11-13 补入；不构成当时预测。"
+  },
+  "trendIds": []
+}

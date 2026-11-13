@@ -1,0 +1,97 @@
+{
+  "id": "ev_cn-realestate-1-9",
+  "dedupeKey": "ev:1fe203b876a8",
+  "title": "1—9月房地产开发投资同比下降20.6%",
+  "summary": "国家统计局10月19日发布：1—9月房地产开发投资53364亿元，同比降20.6%；住宅41125亿元降20.5%；施工面积降12.8%。",
+  "facts": [
+    "1—9月全国房地产开发投资53364亿元，同比下降20.6%；其中住宅投资41125亿元，下降20.5%。",
+    "房地产开发企业房屋施工面积565221万平方米，同比下降12.8%；其中住宅施工面积392558万平方米，下降13.2%。"
+  ],
+  "analysis": "地产投资降幅由 1—8 月的 19.9% 扩大到 20.6%，住宅与施工面积同步走弱，说明开工端仍在收缩；这是内需与地方财政的主要拖累项。",
+  "category": "中国经济与产业",
+  "region": "中国",
+  "occurredAt": "2026-10-19T10:00+08:00",
+  "firstReportedAt": "2026-10-19T10:00+08:00",
+  "collectedAt": "2026-11-13T15:02:00+08:00",
+  "sources": [
+    {
+      "url": "https://www.stats.gov.cn/sj/zxfb/202610/t20261019_1965615.html",
+      "title": "2026年1—9月份全国房地产市场基本情况",
+      "publisher": "国家统计局",
+      "publishedAt": "2026-10-19",
+      "type": "primary",
+      "note": ""
+    }
+  ],
+  "scores": {
+    "structural": 18,
+    "scope": 14,
+    "signal": 12,
+    "delta": 10,
+    "timeliness": 6,
+    "crossDomain": 8,
+    "rationale": {
+      "structural": "地产投资是内需与财政的关键拖累",
+      "scope": "覆盖全国房地产开发企业",
+      "signal": "降幅扩大且施工端同步收缩",
+      "delta": "较1—8月19.9%扩大0.7个百分点",
+      "timeliness": "季度累计数据，按月更新",
+      "crossDomain": "牵连地方财政、建材与就业"
+    },
+    "total": 68,
+    "scorerVersion": "score/v1.2"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "官方原文逐项比对通过；单一来源，未获独立第二来源印证（按本轮口径可如实发布事实）"
+  },
+  "evidenceGrade": "single_primary",
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_cn-realestate-contraction",
+      "direction": "support",
+      "reason": "投资降幅扩大至20.6%，施工面积同步收缩"
+    }
+  ],
+  "revisions": [],
+  "verification": {
+    "status": "passed",
+    "method": "curl 抓取 NBS 官方原文，逐项比对数值后写入",
+    "checkedAt": "2026-11-13T15:02:00+08:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "原文：1—9月房地产开发投资53364亿元、下降20.6%；住宅投资41125亿元、下降20.5%；房屋施工面积565221万平方米、下降12.8%，住宅392558万平方米、下降13.2%。"
+      }
+    ],
+    "note": "仅核对原文所载数值与表述；分析段为本组判断，未混入事实"
+  },
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13T07:02:00Z",
+    "note": "事后补录：事件发生在先，本记录于 2026-11-13 补入；不构成当时预测。"
+  },
+  "metrics": {
+    "metricSetId": "cn_realestate_investment_2026_cumulative",
+    "comparable": false,
+    "items": [
+      {
+        "metric": "房地产开发投资",
+        "value": 53364,
+        "unit": "亿元",
+        "period": "2026-01..09",
+        "scope": "全国"
+      },
+      {
+        "metric": "开发投资同比",
+        "value": -20.6,
+        "unit": "%",
+        "period": "2026-01..09",
+        "scope": "全国"
+      }
+    ]
+  }
+}
