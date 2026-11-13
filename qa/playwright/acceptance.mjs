@@ -4,7 +4,7 @@
 //   脚本自己起 preview：node playwright/acceptance.mjs --serve
 // 退出码：0 全过 / 1 有失败 / 2 环境问题（服务连不上、dist 不存在）
 import { spawn } from 'node:child_process';
-import { existsSync } from 'node:fs';
+import { existsSync, statSync } from 'node:fs';
 import path from 'node:path';
 import { chromium } from 'playwright';
 import { getRoutes, getSearchCases, publishedEventCount, previewMode, allDetailPaths, pendingEventIds, SAMPLE_EVENT_ID } from './routes.mjs';
@@ -206,6 +206,16 @@ for (const r of routes) {
 
 // 3) 横向溢出（默认 320/390/430，可用 WIDTHS 覆盖）
 const WIDTHS = (process.env.WIDTHS || '320,390,430').split(',').map(Number).filter(Boolean);
+// 0) 构建并发保护：跑的过程中 dist 被重建过，这一轮结论作废（不是站点 bug）
+const distSig = () => {
+  try {
+    const st = statSync(path.resolve(process.cwd(), 'dist/index.html'));
+    return `${st.mtimeMs}:${st.size}`;
+  } catch {
+    return 'missing';
+  }
+};
+const sigAtStart = distSig();
 console.log(`\n[3/6] 横向溢出 ${WIDTHS.join('/')}px`);
 for (const r of routes) {
   const bad = [];
@@ -473,6 +483,13 @@ const report = {
   screens: shots,
 };
 const reportPath = await writeReport(report);
+
+// 收尾：确认这一轮没有被并发构建打断
+const sigAtEnd = distSig();
+if (sigAtStart !== sigAtEnd) {
+  console.log(`\n[!] 本轮作废：dist/index.html 在运行期间被重建（${sigAtStart} → ${sigAtEnd}），上面的红都是构建并发造成的假象，不是站点 bug。`);
+  process.exitCode = 2;
+}
 
 console.log(`\n==== ${failed.length === 0 ? '全过' : `${failed.length} 项失败`} ====`);
 console.log(`pass ${report.summary.pass} / fail ${report.summary.fail} / skip ${report.summary.skip}`);

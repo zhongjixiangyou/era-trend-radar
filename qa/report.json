@@ -1,6 +1,6 @@
 {
-  "ok": false,
-  "generatedAt": "2026-11-13T06:41:32.100Z",
+  "ok": true,
+  "generatedAt": "2026-11-13T06:42:33.531Z",
   "base": {
     "mode": "base",
     "origin": "http://127.0.0.1:4321",
@@ -8,8 +8,8 @@
   },
   "summary": {
     "total": 40,
-    "pass": 37,
-    "fail": 2,
+    "pass": 39,
+    "fail": 0,
     "skip": 1
   },
   "checks": [
@@ -529,8 +529,8 @@
     },
     {
       "id": "events:sort",
-      "name": "3/4 个排序键生效",
-      "status": "fail",
+      "name": "4 个排序键全部生效",
+      "status": "pass",
       "detail": {
         "detail": [
           {
@@ -545,27 +545,27 @@
           },
           {
             "key": "trends",
-            "pressed": null,
+            "pressed": "true",
             "changed": false
           },
           {
             "key": "date",
             "pressed": "true",
-            "changed": false
+            "changed": true
           }
         ]
       }
     },
     {
       "id": "detail:score-history",
-      "name": "详情页 HTTP 404（/events/ev_cn-nev-oct/），页面本身打不开",
-      "status": "fail",
+      "name": "评分历史渲染 1 条",
+      "status": "pass",
       "detail": {
-        "historyRows": 0,
+        "historyRows": 1,
         "timeline": 0,
-        "title": "404:  Not Found",
-        "hasScoreBlock": false,
-        "status": 404
+        "title": "10月新能源车销量占比64.3%，出口同比增1.4倍",
+        "hasScoreBlock": true,
+        "status": 200
       }
     },
     {
