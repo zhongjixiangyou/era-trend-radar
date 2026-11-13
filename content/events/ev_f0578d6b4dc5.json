@@ -1,0 +1,84 @@
+{
+  "id": "ev_f0578d6b4dc5",
+  "dedupeKey": "ev:a0928a9f2cf5",
+  "title": "“达尔富拉姆事件”88周年纪念活动在澳大利亚伍伦贡市举行",
+  "summary": "“达尔富拉姆事件”88周年纪念活动在澳大利亚伍伦贡市举行",
+  "facts": [
+    "“达尔富拉姆事件”88周年纪念活动在澳大利亚伍伦贡市举行"
+  ],
+  "analysis": "中国口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "中国经济与产业",
+  "region": "中国",
+  "occurredAt": "2026-11-13T15:23:08+08:00",
+  "firstReportedAt": "2026-11-13T15:23:08+08:00",
+  "collectedAt": "2026-11-13T15:39:54+08:00",
+  "sources": [
+    {
+      "url": "http://www.chinanews.com.cn/tp/hd2011/2026/11-13/1210704.shtml",
+      "title": "“达尔富拉姆事件”88周年纪念活动在澳大利亚伍伦贡市举行",
+      "publisher": "中国新闻网",
+      "publishedAt": "2026-11-13T15:23:08+08:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 18,
+    "scope": 16,
+    "signal": 8,
+    "delta": 5,
+    "timeliness": 4,
+    "crossDomain": 3,
+    "total": 54,
+    "rationale": {
+      "structural": "中国类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（中国）",
+      "signal": "命中 0 个信号词",
+      "delta": "命中 0 个变化词",
+      "timeliness": "距采集约 30 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "passed",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-13T15:39:54+08:00",
+    "note": "原文可达，标题片段「达尔富拉姆事件88周年纪」在页面中出现",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "原文可达，标题片段「达尔富拉姆事件88周年纪」在页面中出现"
+      }
+    ]
+  },
+  "status": "published",
+  "trendLinks": [],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-13T15:23:08+08:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 18,
+        "scope": 16,
+        "signal": 8,
+        "delta": 5,
+        "timeliness": 4,
+        "crossDomain": 3,
+        "total": 54
+      }
+    }
+  ],
+  "linkHistory": []
+}

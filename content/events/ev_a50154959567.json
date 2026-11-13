@@ -1,0 +1,90 @@
+{
+  "id": "ev_a50154959567",
+  "dedupeKey": "ev:ec62834547ae",
+  "title": "首钢集团在北京成立住房租赁公司，注册资本100万元",
+  "summary": "36氪获悉，天眼查App显示，近日，北京古承住房租赁有限公司成立，法定代表人为张宣栋，注册资本100万元人民币，注册地址位于北京市石景山区，经营范围包括住房租赁、企业管理、非居住房地产租赁和物业管理。股东信息显示，该公司由首钢集团有限公司全",
+  "facts": [
+    "36氪获悉，天眼查App显示，近日，北京古承住房租赁有限公司成立，法定代表人为张宣栋，注册资本100万元人民币，注册地址位于北京市石景山区，经营范围包括住房租赁、企业管理、非居住房地产租赁和物业管理。股东信息显示，该公司由首钢集团有限公司全"
+  ],
+  "analysis": "科技口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "科技与社会",
+  "region": "中国",
+  "occurredAt": "2026-11-13T15:39:54+08:00",
+  "firstReportedAt": "2026-11-13T15:39:54+08:00",
+  "collectedAt": "2026-11-13T15:39:54+08:00",
+  "sources": [
+    {
+      "url": "https://36kr.com/newsflashes/4067805652243593?f=rss",
+      "title": "首钢集团在北京成立住房租赁公司，注册资本100万元",
+      "publisher": "36氪",
+      "publishedAt": "2026-11-13T15:39:54+08:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 15,
+    "scope": 16,
+    "signal": 8,
+    "delta": 5,
+    "timeliness": 4,
+    "crossDomain": 3,
+    "total": 51,
+    "rationale": {
+      "structural": "科技类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（中国）",
+      "signal": "命中 0 个信号词",
+      "delta": "命中 0 个变化词",
+      "timeliness": "距采集约 30 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "pending",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-13T15:39:54+08:00",
+    "note": "原文可达但未匹配到标题片段「首钢集团在北京成立住房租」",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "unknown",
+        "evidence": "原文可达但未匹配到标题片段「首钢集团在北京成立住房租」"
+      }
+    ]
+  },
+  "status": "pending",
+  "trendLinks": [
+    {
+      "trendId": "tr_cn-realestate-contraction",
+      "direction": "support",
+      "reason": "关键词命中：房地产、地产（规则关联，非人工判定）"
+    }
+  ],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-13T15:39:54+08:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 15,
+        "scope": 16,
+        "signal": 8,
+        "delta": 5,
+        "timeliness": 4,
+        "crossDomain": 3,
+        "total": 51
+      }
+    }
+  ],
+  "linkHistory": []
+}

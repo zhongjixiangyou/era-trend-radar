@@ -1,0 +1,95 @@
+{
+  "id": "ev_b0c596336b85",
+  "dedupeKey": "ev:6c48c2d1a9c3",
+  "title": "Bond yields just saw their biggest surge since 2022 as expectations grow for more Fed rate hikes",
+  "summary": "Fed Chair Warsh’s quiet style of communicating interest-rate policy has led to more volatile markets.",
+  "facts": [
+    "Fed Chair Warsh’s quiet style of communicating interest-rate policy has led to more volatile markets."
+  ],
+  "analysis": "市场口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "全球宏观",
+  "region": "全球",
+  "occurredAt": "2026-11-13T06:16:00+08:00",
+  "firstReportedAt": "2026-11-13T06:16:00+08:00",
+  "collectedAt": "2026-11-13T15:39:54+08:00",
+  "sources": [
+    {
+      "url": "https://www.marketwatch.com/story/bond-yields-just-saw-their-biggest-surge-since-2022-as-expectations-grow-for-more-fed-rate-hikes-d0a4f195?mod=mw_rss_topstories",
+      "title": "Bond yields just saw their biggest surge since 2022 as expectations grow for more Fed rate hikes",
+      "publisher": "MarketWatch",
+      "publishedAt": "2026-11-13T06:16:00+08:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 18,
+    "scope": 16,
+    "signal": 11,
+    "delta": 9,
+    "timeliness": 4,
+    "crossDomain": 3,
+    "total": 61,
+    "rationale": {
+      "structural": "市场类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（全球）",
+      "signal": "命中 1 个信号词：AI",
+      "delta": "命中 1 个变化词：surge",
+      "timeliness": "距采集约 30 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "pending",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-13T15:39:54+08:00",
+    "note": "取原文失败：HTTPError",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "unknown",
+        "evidence": "取原文失败：HTTPError"
+      }
+    ]
+  },
+  "status": "pending",
+  "trendLinks": [
+    {
+      "trendId": "tr_global-rates-rehike",
+      "direction": "support",
+      "reason": "关键词命中：Fed、rate hike（规则关联，非人工判定）"
+    },
+    {
+      "trendId": "tr_ai-power-constraint",
+      "direction": "support",
+      "reason": "关键词命中：AI（规则关联，非人工判定）"
+    }
+  ],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-13T06:16:00+08:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 18,
+        "scope": 16,
+        "signal": 11,
+        "delta": 9,
+        "timeliness": 4,
+        "crossDomain": 3,
+        "total": 61
+      }
+    }
+  ],
+  "linkHistory": []
+}

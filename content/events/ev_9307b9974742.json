@@ -1,0 +1,90 @@
+{
+  "id": "ev_9307b9974742",
+  "dedupeKey": "ev:8b2eceb65b11",
+  "title": "两部门：加大新型储能产业支持力度",
+  "summary": "36氪获悉，国家发展改革委、国家能源局印发《“十五五”新型储能实施方案》。其中提出，引导民营企业与高校、科研院所等协同创新，支持民营企业参与新型储能领域科技重大专项评选和投资新型储能。用好新型政策性金融工具、制造业中长期贷款、地方政府专项债",
+  "facts": [
+    "36氪获悉，国家发展改革委、国家能源局印发《“十五五”新型储能实施方案》。其中提出，引导民营企业与高校、科研院所等协同创新，支持民营企业参与新型储能领域科技重大专项评选和投资新型储能。用好新型政策性金融工具、制造业中长期贷款、地方政府专项债"
+  ],
+  "analysis": "科技口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "科技与社会",
+  "region": "中国",
+  "occurredAt": "2026-11-13T15:39:54+08:00",
+  "firstReportedAt": "2026-11-13T15:39:54+08:00",
+  "collectedAt": "2026-11-13T15:39:54+08:00",
+  "sources": [
+    {
+      "url": "https://36kr.com/newsflashes/4067850986378372?f=rss",
+      "title": "两部门：加大新型储能产业支持力度",
+      "publisher": "36氪",
+      "publishedAt": "2026-11-13T15:39:54+08:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 15,
+    "scope": 16,
+    "signal": 11,
+    "delta": 5,
+    "timeliness": 4,
+    "crossDomain": 3,
+    "total": 54,
+    "rationale": {
+      "structural": "科技类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（中国）",
+      "signal": "命中 1 个信号词：能源",
+      "delta": "命中 0 个变化词",
+      "timeliness": "距采集约 30 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "pending",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-13T15:39:54+08:00",
+    "note": "原文可达但未匹配到标题片段「两部门加大新型储能产业支」",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "unknown",
+        "evidence": "原文可达但未匹配到标题片段「两部门加大新型储能产业支」"
+      }
+    ]
+  },
+  "status": "pending",
+  "trendLinks": [
+    {
+      "trendId": "tr_science-manufacturing-transfer",
+      "direction": "support",
+      "reason": "关键词命中：制造（规则关联，非人工判定）"
+    }
+  ],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-13T15:39:54+08:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 15,
+        "scope": 16,
+        "signal": 11,
+        "delta": 5,
+        "timeliness": 4,
+        "crossDomain": 3,
+        "total": 54
+      }
+    }
+  ],
+  "linkHistory": []
+}

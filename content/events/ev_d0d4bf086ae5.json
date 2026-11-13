@@ -1,0 +1,90 @@
+{
+  "id": "ev_d0d4bf086ae5",
+  "dedupeKey": "ev:ff447842ecb2",
+  "title": "Jensen Huang was having a third affair, Reuters reports",
+  "summary": "Reuters is withholding the name of the new employee linked to Huang, but says she is an employee of Nvidia.",
+  "facts": [
+    "Reuters is withholding the name of the new employee linked to Huang, but says she is an employee of Nvidia."
+  ],
+  "analysis": "科技口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "科技与社会",
+  "region": "全球",
+  "occurredAt": "2026-11-13T04:26:47+08:00",
+  "firstReportedAt": "2026-11-13T04:26:47+08:00",
+  "collectedAt": "2026-11-13T15:39:54+08:00",
+  "sources": [
+    {
+      "url": "https://techcrunch.com/2026/11/12/jensen-huang-was-having-a-third-affair-reuters-reports/",
+      "title": "Jensen Huang was having a third affair, Reuters reports",
+      "publisher": "TechCrunch",
+      "publishedAt": "2026-11-13T04:26:47+08:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 15,
+    "scope": 16,
+    "signal": 11,
+    "delta": 5,
+    "timeliness": 4,
+    "crossDomain": 3,
+    "total": 54,
+    "rationale": {
+      "structural": "科技类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（全球）",
+      "signal": "命中 1 个信号词：AI",
+      "delta": "命中 0 个变化词",
+      "timeliness": "距采集约 30 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "passed",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-13T15:39:54+08:00",
+    "note": "原文可达，标题片段「jensenhuangw」在页面中出现",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "原文可达，标题片段「jensenhuangw」在页面中出现"
+      }
+    ]
+  },
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_ai-power-constraint",
+      "direction": "support",
+      "reason": "关键词命中：AI（规则关联，非人工判定）"
+    }
+  ],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-13T04:26:47+08:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 15,
+        "scope": 16,
+        "signal": 11,
+        "delta": 5,
+        "timeliness": 4,
+        "crossDomain": 3,
+        "total": 54
+      }
+    }
+  ],
+  "linkHistory": []
+}

@@ -1,0 +1,90 @@
+{
+  "id": "ev_cd5ddf356d5a",
+  "dedupeKey": "ev:2bc43a0c62bd",
+  "title": "英国财政大臣：必须建设更多数据中心",
+  "summary": "据报道，英国财政大臣表示，英国需要拥抱人工智能并投资数据中心，因为这将为国家带来“生产力革命”，并提升普通工人的工资。英国需要“最大限度地把握”人工智能带来的机遇。人工智能有望为英国吸引大规模投资，并认为英国需要发展自主可控的人工智能，以促",
+  "facts": [
+    "据报道，英国财政大臣表示，英国需要拥抱人工智能并投资数据中心，因为这将为国家带来“生产力革命”，并提升普通工人的工资。英国需要“最大限度地把握”人工智能带来的机遇。人工智能有望为英国吸引大规模投资，并认为英国需要发展自主可控的人工智能，以促"
+  ],
+  "analysis": "科技口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "科技与社会",
+  "region": "中国",
+  "occurredAt": "2026-11-13T15:39:54+08:00",
+  "firstReportedAt": "2026-11-13T15:39:54+08:00",
+  "collectedAt": "2026-11-13T15:39:54+08:00",
+  "sources": [
+    {
+      "url": "https://36kr.com/newsflashes/4067852926080133?f=rss",
+      "title": "英国财政大臣：必须建设更多数据中心",
+      "publisher": "36氪",
+      "publishedAt": "2026-11-13T15:39:54+08:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 15,
+    "scope": 16,
+    "signal": 11,
+    "delta": 5,
+    "timeliness": 4,
+    "crossDomain": 3,
+    "total": 54,
+    "rationale": {
+      "structural": "科技类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（中国）",
+      "signal": "命中 1 个信号词：人工智能",
+      "delta": "命中 0 个变化词",
+      "timeliness": "距采集约 30 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "pending",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-13T15:39:54+08:00",
+    "note": "原文可达但未匹配到标题片段「英国财政大臣必须建设更多」",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "unknown",
+        "evidence": "原文可达但未匹配到标题片段「英国财政大臣必须建设更多」"
+      }
+    ]
+  },
+  "status": "pending",
+  "trendLinks": [
+    {
+      "trendId": "tr_ai-power-constraint",
+      "direction": "support",
+      "reason": "关键词命中：数据中心（规则关联，非人工判定）"
+    }
+  ],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-13T15:39:54+08:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 15,
+        "scope": 16,
+        "signal": 11,
+        "delta": 5,
+        "timeliness": 4,
+        "crossDomain": 3,
+        "total": 54
+      }
+    }
+  ],
+  "linkHistory": []
+}

@@ -1,0 +1,84 @@
+{
+  "id": "ev_0a11b65bc677",
+  "dedupeKey": "ev:af0eba3e53a9",
+  "title": "民族传统体育“动静相宜” 四川攀枝花赛场蹴球珍珠球各展魅力",
+  "summary": "中新网攀枝花11月13日电 (袁牟知博)在一片平整的场地上，一名蹴球运动员俯身，脚底抵住球，目光在球与球之间反复丈量，然后抬脚轻蹴，球贴地滑出，清脆的撞击声后，场边有人低声叫好。另一边的珍珠球赛场，水区队员运球突破，封锁区两名队员挥拍封堵，",
+  "facts": [
+    "中新网攀枝花11月13日电 (袁牟知博)在一片平整的场地上，一名蹴球运动员俯身，脚底抵住球，目光在球与球之间反复丈量，然后抬脚轻蹴，球贴地滑出，清脆的撞击声后，场边有人低声叫好。另一边的珍珠球赛场，水区队员运球突破，封锁区两名队员挥拍封堵，"
+  ],
+  "analysis": "中国口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "中国经济与产业",
+  "region": "中国",
+  "occurredAt": "2026-11-13T15:30:54+08:00",
+  "firstReportedAt": "2026-11-13T15:30:54+08:00",
+  "collectedAt": "2026-11-13T15:39:54+08:00",
+  "sources": [
+    {
+      "url": "https://www.chinanews.com.cn/ty/2026/11-13/10731472.shtml",
+      "title": "民族传统体育“动静相宜” 四川攀枝花赛场蹴球珍珠球各展魅力",
+      "publisher": "中国新闻网",
+      "publishedAt": "2026-11-13T15:30:54+08:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 18,
+    "scope": 16,
+    "signal": 8,
+    "delta": 9,
+    "timeliness": 4,
+    "crossDomain": 3,
+    "total": 58,
+    "rationale": {
+      "structural": "中国类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（中国）",
+      "signal": "命中 0 个信号词",
+      "delta": "命中 1 个变化词：突破",
+      "timeliness": "距采集约 30 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "passed",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-13T15:39:54+08:00",
+    "note": "原文可达，标题片段「民族传统体育动静相宜四川」在页面中出现",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "原文可达，标题片段「民族传统体育动静相宜四川」在页面中出现"
+      }
+    ]
+  },
+  "status": "published",
+  "trendLinks": [],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-13T15:30:54+08:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 18,
+        "scope": 16,
+        "signal": 8,
+        "delta": 9,
+        "timeliness": 4,
+        "crossDomain": 3,
+        "total": 58
+      }
+    }
+  ],
+  "linkHistory": []
+}
