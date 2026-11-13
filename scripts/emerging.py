@@ -81,22 +81,30 @@ def _domains_of(event: dict) -> set[str]:
 
 
 def _occurred_at_reliable(event: dict) -> bool | None:
-    """发生日是否可靠：可解析、不晚于采集时刻、且至少有一条来源可回溯。"""
+    """发生日是否可靠：需原文明确写出发生日。
+
+    只用「能解析 + 不晚于采集时刻 + 有来源」不足以判可靠——那可能只是把
+    发布日期当成了发生日。当前 content 没有逐条记录原文里的发生日字段，
+    因此除发生日晚于采集时刻这种硬矛盾外，一律返回 None（未知）。
+    """
     occurred = parse_ts(event.get("occurredAt"))
     collected = parse_ts(event.get("collectedAt"))
     if occurred is None:
         return None
     if collected is not None and occurred > collected:
         return False
-    return bool(_domains_of(event))
+    return None
 
 
 def _coverage_comparable(event: dict, median_domains: int) -> bool | None:
-    """来源覆盖是否可比：用「独立域名数 >= 非回溯事件中位数」作可测代理，不是真值。"""
-    domains = _domains_of(event)
-    if not domains:
-        return None
-    return len(domains) >= max(median_domains, 1)
+    """来源覆盖是否可比：当前一律 unknown。
+
+    独立域名数高于中位数**不能**证明两个历史窗口的采集覆盖可比（中位数来自
+    当前批次，不含历史窗口的来源清单与采集成败）。要判可比至少需要：
+    两个窗口各自的来源清单、每源采集成功/缺失、以及筛选方法一致。
+    域名数只作为诊断量输出（domainCount / medianDomains），不参与判定。
+    """
+    return None
 
 
 def _hist_reasons(event: dict, rel: bool | None, cov: bool | None, median_domains: int) -> list[str]:
@@ -106,9 +114,11 @@ def _hist_reasons(event: dict, rel: bool | None, cov: bool | None, median_domain
     elif rel is False:
         out.append("occurredAt 晚于 collectedAt 或没有任何可回溯来源")
     if cov is None:
-        out.append("无来源，无法判断覆盖可比性")
+        out.append(f"覆盖可比性未知：缺两个窗口的来源清单/采集成败/筛选方法证据（本事件独立域名 {len(_domains_of(event))}，仅供参考，不作判定）")
     elif cov is False:
-        out.append(f"独立域名 {len(_domains_of(event))} < 非回溯中位数 {max(median_domains, 1)}，覆盖不可比，不计算增速")
+        out.append("覆盖不可比，不计算增速")
+    if rel is None:
+        out.append("发生日未知：未在原文中核到明确发生日，不据此升级时间轴")
     if rel is True and cov is True:
         out.append("发生日可靠且覆盖可比：可单列历史回溯观察，仍不计实时增速")
     return out

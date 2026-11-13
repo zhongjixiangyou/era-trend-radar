@@ -1,96 +1,96 @@
 {
- "id": "ev_cn-nev-oct",
- "dedupeKey": "ev:0e34e4c15e96",
- "title": "10月新能源车销量占比64.3%，出口同比增1.4倍",
- "summary": "新能源车国内销量同比降幅连续7个月超20%，增长几乎全部来自出口。",
- "facts": [
-  "新能源车销量194万辆，同比+13.1%",
-  "新能源车出口60.6万辆，同比+1.4倍",
-  "新能源车占新车销量64.3%",
-  "国内新能源车销量同比降幅连续7个月超过20%"
- ],
- "analysis": "占比继续上升但国内销量收缩，说明总量在靠出口支撑；出口高增能否持续取决于关税与本地化产能，不宜直接当作需求强劲。",
- "category": "中国经济与产业",
- "region": "中国",
- "occurredAt": "2026-11-11T00:00:00+08:00",
- "firstReportedAt": "2026-11-11T00:00:00+08:00",
- "collectedAt": "2026-11-13T13:30:00+08:00",
- "sources": [
-  {
-   "url": "http://news.china.com.cn/2026-11/11/content_118770578.shtml",
-   "title": "10月新能源汽车销量占比达64.3%",
-   "publisher": "中国网/新华社",
-   "publishedAt": "2026-11-11T00:00:00+08:00",
-   "type": "primary"
-  },
-  {
-   "url": "https://www.jwview.com/jingwei/html/m/11-11/696575.shtml",
-   "title": "中汽协：10月新能源汽车出口同比增长1.4倍",
-   "publisher": "中新经纬",
-   "publishedAt": "2026-11-11T00:00:00+08:00",
-   "type": "corroboration",
-   "note": "同源中汽协数据"
-  }
- ],
- "scores": {
-  "structural": 18,
-  "scope": 16,
-  "signal": 17,
-  "delta": 13,
-  "timeliness": 9,
-  "crossDomain": 8,
-  "total": 81,
-  "rationale": {
-   "structural": "增长动力从内需切换到出口，改变产业对国内需求的依赖",
-   "scope": "影响整车、电池、零部件与海运物流",
-   "signal": "为“内需收缩、出口补位”提供第7个月证据",
-   "delta": "首次给出出口1.4倍与国内降幅7个月的结构对比",
-   "timeliness": "10月数据，最新一期",
-   "crossDomain": "与贸易摩擦、海外本地化建厂直接相关"
-  },
-  "scorerVersion": "score/v1.0"
- },
- "credibility": {
-  "level": "partial",
-  "basis": "中汽协口径，两家媒体同源转述，未见协会原始发布页"
- },
- "evidenceGrade": "multi_independent",
- "verification": {
-  "status": "passed",
-  "method": "verify_sources/http",
-  "note": "verify_sources.py 自动核验（HTTP），以 checks 为准",
-  "checks": [
-   {
-    "kind": "http",
-    "result": "pass",
-    "evidence": "HTTP 200 http://news.china.com.cn/2026-11/11/content_118770578.shtml（OK）"
-   },
-   {
-    "kind": "http",
-    "result": "pass",
-    "evidence": "HTTP 200 https://www.jwview.com/jingwei/html/m/11-11/696575.shtml（页面无发布日期（日期未核））"
-   },
-   {
-    "kind": "primary_present",
-    "result": "pass",
-    "evidence": "primary 1 条"
-   }
+  "id": "ev_cn-nev-oct",
+  "dedupeKey": "ev:0e34e4c15e96",
+  "title": "10月新能源车销量占比64.3%，出口同比增1.4倍",
+  "summary": "新能源车国内销量同比降幅连续7个月超20%，增长几乎全部来自出口。",
+  "facts": [
+    "新能源车销量194万辆，同比+13.1%",
+    "新能源车出口60.6万辆，同比+1.4倍",
+    "新能源车占新车销量64.3%",
+    "国内新能源车销量同比降幅连续7个月超过20%"
   ],
-  "checkedAt": "2026-11-13T13:54:29+08:00"
- },
- "status": "pending",
- "trendLinks": [
-  {
-   "trendId": "tr_cn-nev-demand-shift",
-   "direction": "support",
-   "reason": "出口+1.4倍与国内连续7个月降幅>20%同时成立"
-  }
- ],
- "revisions": [],
- "forecastRefs": [],
- "retro": {
-  "isRetro": false
- },
- "scoreHistory": [],
- "linkHistory": []
+  "analysis": "占比继续上升但国内销量收缩，说明总量在靠出口支撑；出口高增能否持续取决于关税与本地化产能，不宜直接当作需求强劲。",
+  "category": "中国经济与产业",
+  "region": "中国",
+  "occurredAt": "2026-11-11T00:00:00+08:00",
+  "firstReportedAt": "2026-11-11T00:00:00+08:00",
+  "collectedAt": "2026-11-13T13:30:00+08:00",
+  "sources": [
+    {
+      "url": "http://news.china.com.cn/2026-11/11/content_118770578.shtml",
+      "title": "10月新能源汽车销量占比达64.3%",
+      "publisher": "中国网/新华社",
+      "publishedAt": "2026-11-11T00:00:00+08:00",
+      "type": "primary"
+    },
+    {
+      "url": "https://www.jwview.com/jingwei/html/m/11-11/696575.shtml",
+      "title": "中汽协：10月新能源汽车出口同比增长1.4倍",
+      "publisher": "中新经纬",
+      "publishedAt": "2026-11-11T00:00:00+08:00",
+      "type": "corroboration",
+      "note": "同源中汽协数据"
+    }
+  ],
+  "scores": {
+    "structural": 18,
+    "scope": 16,
+    "signal": 17,
+    "delta": 13,
+    "timeliness": 9,
+    "crossDomain": 8,
+    "total": 81,
+    "rationale": {
+      "structural": "增长动力从内需切换到出口，改变产业对国内需求的依赖",
+      "scope": "影响整车、电池、零部件与海运物流",
+      "signal": "为“内需收缩、出口补位”提供第7个月证据",
+      "delta": "首次给出出口1.4倍与国内降幅7个月的结构对比",
+      "timeliness": "10月数据，最新一期",
+      "crossDomain": "与贸易摩擦、海外本地化建厂直接相关"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "中汽协口径，两家媒体同源转述，未见协会原始发布页"
+  },
+  "evidenceGrade": "multi_independent",
+  "verification": {
+    "status": "pending",
+    "method": "verify_sources/http",
+    "note": "仅完成链接检查（HTTP 可访问），未取得并核对原文，不等于事实核验通过；取到原文事实后再改 passed。",
+    "checks": [
+      {
+        "kind": "http",
+        "result": "pass",
+        "evidence": "HTTP 200 http://news.china.com.cn/2026-11/11/content_118770578.shtml（OK）"
+      },
+      {
+        "kind": "http",
+        "result": "pass",
+        "evidence": "HTTP 200 https://www.jwview.com/jingwei/html/m/11-11/696575.shtml（页面无发布日期（日期未核））"
+      },
+      {
+        "kind": "primary_present",
+        "result": "pass",
+        "evidence": "primary 1 条"
+      }
+    ],
+    "checkedAt": "2026-11-13T13:54:29+08:00"
+  },
+  "status": "pending",
+  "trendLinks": [
+    {
+      "trendId": "tr_cn-nev-demand-shift",
+      "direction": "support",
+      "reason": "出口+1.4倍与国内连续7个月降幅>20%同时成立"
+    }
+  ],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [],
+  "linkHistory": []
 }

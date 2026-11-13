@@ -1,0 +1,81 @@
+{
+  "id": "ev_cn-gdp-q3-2026",
+  "dedupeKey": "ev:6beb4784a07a",
+  "title": "中国三季度GDP同比增长4.5%，前三季度4.6%",
+  "summary": "三季度GDP 37.54万亿元、同比+4.5%；前三季度107.11万亿元、+4.6%，单季增速较累计低0.1个百分点",
+  "facts": [
+    "三季度GDP 375367亿元，同比+4.5%；前三季度1071071亿元，+4.6%",
+    "第一产业三季度27472亿元/+3.6%，前三季度58994亿元/+3.7%",
+    "第二产业三季度133349亿元/+3.4%，前三季度383822亿元/+3.8%",
+    "第三产业三季度214546亿元/+5.2%，前三季度628255亿元/+5.2%",
+    "制造业三季度93342亿元/+5.9%，建筑业21168亿元/-4.4%"
+  ],
+  "analysis": "单季4.5%低于累计4.6%，意味着四季度需维持同等强度才能守住全年目标；本次只核对总量与三次产业增速，分行业结构判断待补数据，不作结论。",
+  "category": "中国经济与产业",
+  "region": "中国",
+  "occurredAt": "2026-10-20T09:30:00+08:00",
+  "firstReportedAt": "2026-10-20T09:30:00+08:00",
+  "collectedAt": "2026-11-13T13:30:00+08:00",
+  "sources": [
+    {
+      "url": "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202610/t20261020_1965658.html",
+      "title": "2026年三季度GDP初步核算数据",
+      "publisher": "国家统计局",
+      "publishedAt": "2026-10-20T09:30:00+08:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 19,
+    "scope": 16,
+    "signal": 9,
+    "delta": 7,
+    "timeliness": 9,
+    "crossDomain": 5,
+    "total": 65,
+    "rationale": {
+      "structural": "季度GDP是总量口径，结构变化需分行业数据支撑",
+      "scope": "覆盖全国三次产业",
+      "signal": "为增长中枢判断提供季度锚点",
+      "delta": "较二季度口径未变，属增量确认而非突变",
+      "timeliness": "10-20发布，距采集23天",
+      "crossDomain": "与财政、就业、消费数据联动"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "国家统计局原文核对通过，但只有单一官方来源，未获独立印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "passed",
+    "method": "ego_browser/innerText",
+    "checkedAt": "2026-11-13T14:16:30+08:00",
+    "note": "经批准的浏览器通道取原文表格逐格核对，非 HTTP 状态检查",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "浏览器打开原文表1逐格核对：GDP 375367/1071071、4.5/4.6；二产 133349/383822、3.4/3.8；三产 214546/628255、5.2/5.2"
+      }
+    ]
+  },
+  "status": "published",
+  "trendLinks": [],
+  "revisions": [
+    {
+      "at": "2026-11-13T14:26:00Z",
+      "by": "coder-2",
+      "note": "status pending→published：官方原文 source_text 核对通过、单一官方来源（single_primary），按显式提升规则发布"
+    }
+  ],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-10-20",
+    "note": "2026-10-20 发布，2026-11-13 回溯补录并核对原文"
+  },
+  "scoreHistory": [],
+  "linkHistory": []
+}

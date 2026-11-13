@@ -55,9 +55,9 @@
   },
   "evidenceGrade": "single_primary",
   "verification": {
-    "status": "passed",
+    "status": "pending",
     "method": "verify_sources/http",
-    "note": "verify_sources.py 自动核验（HTTP），以 checks 为准",
+    "note": "核验未闭合：存在 1 条 unknown 检查（HTTP 200 https://about.bnef.com/insights）。不得以声明视为通过，补齐原文事实后再改 passed。",
     "checks": [
       {
         "kind": "http",
@@ -90,7 +90,7 @@
   "retro": {
     "isRetro": true,
     "asOf": "2026-09-17",
-    "note": "2026-09-17 事件发生，2026-11-13 研究回溯补录，非当时实时采集"
+    "note": "2026-09 见报，2026-11-13 补录入库，非当时判断"
   },
   "scoreHistory": [],
   "linkHistory": []

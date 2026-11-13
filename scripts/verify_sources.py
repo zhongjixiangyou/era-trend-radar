@@ -19,7 +19,10 @@ import html as html_mod
 import json
 import os
 import re
+import shutil
+import subprocess
 import sys
+import tempfile
 import unicodedata
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -187,6 +190,49 @@ def bigram_cover(expected, body):
     return sum(1 for g in ga if g in b) / len(ga)
 
 
+STOPWORDS = {
+    "the", "and", "for", "with", "that", "this", "from", "were", "have", "has",
+    "its", "not", "but", "are", "was", "will", "into", "than", "then", "their",
+}
+ASCII_WORD_RE = re.compile(r"[A-Za-z][A-Za-z0-9\-']{3,}")
+
+
+def ascii_token_cover(expected, body):
+    """英文来源标题的关键词在页面正文里的覆盖率（用于页头标题是站名/模板的页面）。"""
+    toks = [
+        t.lower() for t in ASCII_WORD_RE.findall(expected or "")
+        if t.lower() not in STOPWORDS
+    ]
+    if not toks or not body:
+        return 0.0
+    low = body.lower()
+    return sum(1 for t in toks if t in low) / len(toks)
+
+
+def pdf_text(path):
+    """用 pdftotext 抽 PDF 正文（最多前 3 页）；没有工具就返回空串。"""
+    exe = shutil.which("pdftotext")
+    if not exe:
+        return ""
+    try:
+        out = subprocess.run(
+            [exe, "-q", "-l", "3", path, "-"],
+            capture_output=True, timeout=30,
+        )
+        return re.sub(r"\s+", " ", out.stdout.decode("utf-8", "ignore")).strip()[:8000]
+    except Exception:
+        return ""
+
+
+def pdf_title(txt):
+    """PDF 没有 <title>，取正文首段里像标题的一行。"""
+    for line in re.split(r"(?<=[.!?])\s{2,}|\n", txt)[:40]:
+        line = line.strip()
+        if 20 <= len(line) <= 200 and cjk_ratio(line) < 0.3:
+            return line
+    return ""
+
+
 # ---------------------------------------------------------------- 输入
 
 
@@ -282,6 +328,19 @@ def check_url(url, timeout, retries):
                         html
                     )
                     result["page_text"] = extract_text(html)
+                elif "pdf" in ctype.lower():
+                    fd, tmp = tempfile.mkstemp(suffix=".pdf")
+                    try:
+                        with os.fdopen(fd, "wb") as fh:
+                            fh.write(raw)
+                        txt = pdf_text(tmp)
+                    finally:
+                        try:
+                            os.unlink(tmp)
+                        except OSError:
+                            pass
+                    result["page_text"] = txt
+                    result["page_title"] = pdf_title(txt)
                 else:
                     result["page_title"] = ""
                 result["error"] = ""
@@ -347,8 +406,18 @@ def judge_source(src, fetched, deadline_dt, title_gate=True):
             and cjk_ratio(expected_title) >= 0.3
             and cjk_ratio(page_title) < 0.05
         )
+        tok_cover = 0.0
+        if expected_title and cjk_ratio(expected_title) < 0.3:
+            tok_cover = ascii_token_cover(
+                expected_title, fetched.get("page_text", "")
+            )
         if cross_lang:
             info.append("跨语种页面（英文标题），标题相似度不适用，仅核 HTTP")
+        elif tok_cover >= 0.7 and (not page_title or (ratio is not None and ratio < 0.4)):
+            info.append(
+                f"页头标题不可用，正文含来源标题关键词 {tok_cover:.2f}"
+                "（PDF/页面正文核对）"
+            )
         elif not page_title:
             block.append("页面无标题可核")
         elif ratio is not None and ratio < 0.12:

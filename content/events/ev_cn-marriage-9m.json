@@ -1,109 +1,109 @@
 {
- "id": "ev_cn-marriage-9m",
- "dedupeKey": "ev:c626df6031cf",
- "title": "前三季度结婚登记464.8万对，同比下降9.8%",
- "summary": "2025年的短暂反弹未能延续，人口学家预计2027年出生人数明显下降。",
- "facts": [
-  "前三季度结婚登记464.8万对",
-  "同比下降9.8%",
-  "2026年上半年327.5万对，同比-7.5%",
-  "2025年出生人口792万，首次跌破800万"
- ],
- "analysis": "结婚登记是出生人口的领先指标；连续下降意味着2027-2028年出生人口仍有下行压力，但登记数受婚假、补贴等短期政策扰动。",
- "category": "中国经济与产业",
- "region": "中国",
- "occurredAt": "2026-11-05T00:00:00+08:00",
- "firstReportedAt": "2026-11-05T00:00:00+08:00",
- "collectedAt": "2026-11-13T13:30:00+08:00",
- "sources": [
-  {
-   "url": "https://www.cnr.cn/mspd/sywzl/20261107/t20261107_527865143.shtml",
-   "title": "前三季度全国结婚登记464.8万对",
-   "publisher": "央广网",
-   "publishedAt": "2026-11-07T00:00:00+08:00",
-   "type": "primary"
-  },
-  {
-   "url": "https://www.scmp.com/economy/economic-indicators/article/3373383/china-sees-nearly-10-decline-marriages-2026-so-far-foreshadowing-lower-birth-rate",
-   "title": "China sees nearly 10% decline in marriages in 2026 so far",
-   "publisher": "SCMP",
-   "publishedAt": "2026-11-05T00:00:00+08:00",
-   "type": "corroboration",
-   "note": "引民政部数据"
-  },
-  {
-   "url": "https://www.voachinese.com/a/china-s-marriage-registrations-are-falling-at-an-accelerating-pace-in-2026-20261105/8219391.html",
-   "title": "中国结婚登记数2026年加速下降",
-   "publisher": "VOA中文",
-   "publishedAt": "2026-11-05T00:00:00+08:00",
-   "type": "corroboration",
-   "note": "与SCMP可能同引民政部，独立性待查"
-  }
- ],
- "scores": {
-  "structural": 19,
-  "scope": 14,
-  "signal": 16,
-  "delta": 10,
-  "timeliness": 8,
-  "crossDomain": 7,
-  "total": 74,
-  "rationale": {
-   "structural": "改变长期住房、教育、消费与劳动力供给",
-   "scope": "全国，影响未来20年人口结构",
-   "signal": "为“人口下行加速”趋势提供领先指标",
-   "delta": "从上半年-7.5%扩大到前三季度-9.8%",
-   "timeliness": "最新季度数据",
-   "crossDomain": "连接地产、消费、社保与地方财政"
-  },
-  "scorerVersion": "score/v1.0"
- },
- "credibility": {
-  "level": "partial",
-  "basis": "两家媒体均引民政部，尚未取得民政部原始发布"
- },
- "evidenceGrade": "single_primary",
- "verification": {
-  "status": "passed",
-  "method": "verify_sources/http",
-  "note": "verify_sources.py 自动核验（HTTP），以 checks 为准",
-  "checks": [
-   {
-    "kind": "http",
-    "result": "pass",
-    "evidence": "HTTP 200 https://www.cnr.cn/mspd/sywzl/20261107/t20261107_527865143.shtml（OK）"
-   },
-   {
-    "kind": "http",
-    "result": "unknown",
-    "evidence": "HTTP 403 https://www.scmp.com/economy/economic-indicators/article/3373383/china-sees-nearly-10-decline-marriages-2026-so-far-foreshadowing-lower-birth-rate（被拦截或服务端错误，无法核验，需人工确认）"
-   },
-   {
-    "kind": "http",
-    "result": "unknown",
-    "evidence": "HTTP 200 https://www.voachinese.com/a/china-s-marriage-registrations-are-falling-at-an-accelerating-pace-in-2026-20261105/8219391.html（标题相似度低，需人工确认）"
-   },
-   {
-    "kind": "primary_present",
-    "result": "pass",
-    "evidence": "primary 1 条"
-   }
+  "id": "ev_cn-marriage-9m",
+  "dedupeKey": "ev:c626df6031cf",
+  "title": "前三季度结婚登记464.8万对，同比下降9.8%",
+  "summary": "2025年的短暂反弹未能延续，人口学家预计2027年出生人数明显下降。",
+  "facts": [
+    "前三季度结婚登记464.8万对",
+    "同比下降9.8%",
+    "2026年上半年327.5万对，同比-7.5%",
+    "2025年出生人口792万，首次跌破800万"
   ],
-  "checkedAt": "2026-11-13T14:03:06+08:00"
- },
- "status": "pending",
- "trendLinks": [
-  {
-   "trendId": "tr_cn-demographic-decline",
-   "direction": "support",
-   "reason": "降幅由7.5%扩大到9.8%，趋势加速"
-  }
- ],
- "revisions": [],
- "forecastRefs": [],
- "retro": {
-  "isRetro": false
- },
- "scoreHistory": [],
- "linkHistory": []
+  "analysis": "结婚登记是出生人口的领先指标；连续下降意味着2027-2028年出生人口仍有下行压力，但登记数受婚假、补贴等短期政策扰动。",
+  "category": "中国经济与产业",
+  "region": "中国",
+  "occurredAt": "2026-11-05T00:00:00+08:00",
+  "firstReportedAt": "2026-11-05T00:00:00+08:00",
+  "collectedAt": "2026-11-13T13:30:00+08:00",
+  "sources": [
+    {
+      "url": "https://www.cnr.cn/mspd/sywzl/20261107/t20261107_527865143.shtml",
+      "title": "前三季度全国结婚登记464.8万对",
+      "publisher": "央广网",
+      "publishedAt": "2026-11-07T00:00:00+08:00",
+      "type": "primary"
+    },
+    {
+      "url": "https://www.scmp.com/economy/economic-indicators/article/3373383/china-sees-nearly-10-decline-marriages-2026-so-far-foreshadowing-lower-birth-rate",
+      "title": "China sees nearly 10% decline in marriages in 2026 so far",
+      "publisher": "SCMP",
+      "publishedAt": "2026-11-05T00:00:00+08:00",
+      "type": "corroboration",
+      "note": "引民政部数据"
+    },
+    {
+      "url": "https://www.voachinese.com/a/china-s-marriage-registrations-are-falling-at-an-accelerating-pace-in-2026-20261105/8219391.html",
+      "title": "中国结婚登记数2026年加速下降",
+      "publisher": "VOA中文",
+      "publishedAt": "2026-11-05T00:00:00+08:00",
+      "type": "corroboration",
+      "note": "与SCMP可能同引民政部，独立性待查"
+    }
+  ],
+  "scores": {
+    "structural": 19,
+    "scope": 14,
+    "signal": 16,
+    "delta": 10,
+    "timeliness": 8,
+    "crossDomain": 7,
+    "total": 74,
+    "rationale": {
+      "structural": "改变长期住房、教育、消费与劳动力供给",
+      "scope": "全国，影响未来20年人口结构",
+      "signal": "为“人口下行加速”趋势提供领先指标",
+      "delta": "从上半年-7.5%扩大到前三季度-9.8%",
+      "timeliness": "最新季度数据",
+      "crossDomain": "连接地产、消费、社保与地方财政"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "两家媒体均引民政部，尚未取得民政部原始发布"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "pending",
+    "method": "verify_sources/http",
+    "note": "核验未闭合：存在 2 条 unknown 检查（HTTP 403 https://www.scmp.com/economy/ec；HTTP 200 https://www.voachinese.com/a/ch）。不得以声明视为通过，补齐原文事实后再改 passed。",
+    "checks": [
+      {
+        "kind": "http",
+        "result": "pass",
+        "evidence": "HTTP 200 https://www.cnr.cn/mspd/sywzl/20261107/t20261107_527865143.shtml（OK）"
+      },
+      {
+        "kind": "http",
+        "result": "unknown",
+        "evidence": "HTTP 403 https://www.scmp.com/economy/economic-indicators/article/3373383/china-sees-nearly-10-decline-marriages-2026-so-far-foreshadowing-lower-birth-rate（被拦截或服务端错误，无法核验，需人工确认）"
+      },
+      {
+        "kind": "http",
+        "result": "unknown",
+        "evidence": "HTTP 200 https://www.voachinese.com/a/china-s-marriage-registrations-are-falling-at-an-accelerating-pace-in-2026-20261105/8219391.html（标题相似度低，需人工确认）"
+      },
+      {
+        "kind": "primary_present",
+        "result": "pass",
+        "evidence": "primary 1 条"
+      }
+    ],
+    "checkedAt": "2026-11-13T14:03:06+08:00"
+  },
+  "status": "pending",
+  "trendLinks": [
+    {
+      "trendId": "tr_cn-demographic-decline",
+      "direction": "support",
+      "reason": "降幅由7.5%扩大到9.8%，趋势加速"
+    }
+  ],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [],
+  "linkHistory": []
 }

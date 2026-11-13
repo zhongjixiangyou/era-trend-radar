@@ -623,6 +623,18 @@ def verification(ctx: Ctx, label: str, value: Any) -> None:
             c.text("evidence", min_len=2, max_len=300, required=False)
             for key in sorted(set(item) - {"kind", "result", "evidence"}):
                 ctx.warn("W_UNKNOWN_FIELD", label, f"verification.checks[{i}].{key}", f"未知字段 {key}")
+        # passed 不得与 unknown 检查共存：靠声明过门，等于没核验
+        if value.get("status") == "passed":
+            unk = [i for i, it in enumerate(checks)
+                   if isinstance(it, dict) and it.get("result") == "unknown"]
+            if unk:
+                ctx.err("VERIFY_PASS_WITH_UNKNOWN", label, "verification.status",
+                        f"status=passed 但 checks 里有 {len(unk)} 条 unknown（索引 {unk}）："
+                        "未闭合的核验不得判通过，请补原文事实或降为 pending")
+            if not any(isinstance(it, dict) and it.get("kind") == "source_text" for it in checks):
+                ctx.err("VERIFY_PASS_LINK_ONLY", label, "verification.status",
+                        "status=passed 但没有任何 kind=source_text 的原文核对记录："
+                        "HTTP 可访问只是链接检查，不等于事实核验通过，请降为 pending")
     for key in sorted(set(value) - {"status", "method", "checkedAt", "checks", "note"}):
         ctx.warn("W_UNKNOWN_FIELD", label, f"verification.{key}", f"未知字段 {key}")
 

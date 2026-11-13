@@ -1,0 +1,80 @@
+{
+  "id": "ev_cn-pmi-sep-2026",
+  "dedupeKey": "ev:db86659939e2",
+  "title": "9月制造业PMI回升至50.1%，重回扩张区间",
+  "summary": "9月制造业PMI 50.1%、环比+0.3pp；大型企业50.6持平，中型49.7、小型48.9仍在临界点下",
+  "facts": [
+    "9月制造业PMI 50.1%，比上月上升0.3个百分点，升至扩张区间",
+    "大型企业PMI 50.6%，与上月持平，高于临界点",
+    "中型企业49.7%、小型企业48.9%，分别上升0.3和1.0个百分点，均低于临界点",
+    "生产指数51.7%，比上月上升1.3个百分点；新订单指数高于临界点"
+  ],
+  "analysis": "PMI重回扩张主要靠大型企业与中小企业边际改善，但中、小型仍在临界点下，扩张基础不牢；单月回升不足以判断趋势反转。",
+  "category": "中国经济与产业",
+  "region": "中国",
+  "occurredAt": "2026-09-30T09:30:00+08:00",
+  "firstReportedAt": "2026-09-30T09:30:00+08:00",
+  "collectedAt": "2026-11-13T13:30:00+08:00",
+  "sources": [
+    {
+      "url": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260930_1965449.html",
+      "title": "2026年9月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "publishedAt": "2026-09-30T09:30:00+08:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 10,
+    "scope": 9,
+    "signal": 7,
+    "delta": 6,
+    "timeliness": 8,
+    "crossDomain": 4,
+    "total": 44,
+    "rationale": {
+      "structural": "单月景气指标，结构信息有限",
+      "scope": "仅制造业与分规模企业",
+      "signal": "为扩张/收缩切换提供边际信号",
+      "delta": "环比+0.3pp属小幅改善",
+      "timeliness": "9-30发布，距采集44天",
+      "crossDomain": "与工业利润、出口数据弱联动"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "国家统计局原文核对通过，但只有单一官方来源，未获独立印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "passed",
+    "method": "ego_browser/innerText",
+    "checkedAt": "2026-11-13T14:16:30+08:00",
+    "note": "经批准的浏览器通道取原文核对，非 HTTP 状态检查",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "浏览器打开原文核对：PMI 50.1%+0.3pp、大型50.6持平、中型49.7+0.3pp、小型48.9+1.0pp、生产指数51.7%+1.3pp"
+      }
+    ]
+  },
+  "status": "published",
+  "trendLinks": [],
+  "revisions": [
+    {
+      "at": "2026-11-13T14:26:00Z",
+      "by": "coder-2",
+      "note": "status pending→published：官方原文 source_text 核对通过、单一官方来源（single_primary），按显式提升规则发布"
+    }
+  ],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-09-30",
+    "note": "2026-09-30 发布，2026-11-13 回溯补录并核对原文"
+  },
+  "scoreHistory": [],
+  "linkHistory": []
+}

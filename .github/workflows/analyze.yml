@@ -56,14 +56,10 @@ jobs:
         continue-on-error: true
         run: node scripts/ci/entry-run.mjs --name scoreCheck --report reports/score-check.json
 
-      - name: Validate merged data (schema gate)
-        if: always()
-        continue-on-error: true
-        run: node scripts/ci/validate.mjs --report reports/validate.json
 
       - name: Gate statuses
         if: always()
-        run: node scripts/ci/gate.mjs --require analyze,entry-validate,entry-scoreCheck,validate --report reports/gate.json
+        run: node scripts/ci/gate.mjs --require analyze,entry-validate,entry-scoreCheck --report reports/gate.json
 
       - name: Fact check (counter evidence trail)
         if: always()

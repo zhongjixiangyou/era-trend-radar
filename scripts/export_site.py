@@ -843,6 +843,8 @@ def render_report(ctx: dict) -> str:
     add("# 站点导出对照表（v1 → 契约 v1）")
     add("")
     add(f"- 生成时间：{ctx['generatedAt']}")
+    if ctx.get("contentDigest"):
+        add(f"- 内容快照：content@{ctx['contentDigest']}")
     add(f"- 输入（v1）：`{ctx['data_dir']}`")
     add(f"- 站点基线：`{ctx['site_dir']}`（只读）")
     add(f"- 输出：`{ctx['out_dir']}`" + ("（已另写 src/data）" if ctx["wrote_src"] else "（暂存，未写 src/data）"))
@@ -966,6 +968,142 @@ def render_report(ctx: dict) -> str:
     return "\n".join(lines) + "\n"
 
 
+
+# ---------------------------------------------------------------- 文本保形写盘（只增不删）
+
+
+def _compact(obj) -> str:
+    return json.dumps(obj, ensure_ascii=False, separators=(", ", ": "))
+
+
+def _append_blocks(text: str, items: list) -> str:
+    """在 JSON 数组末尾追加元素，保留原文其余字节。"""
+    if not items:
+        return text
+    lines = text.rstrip("\n").split("\n")
+    close = max(i for i, l in enumerate(lines) if l.rstrip() == "]")
+    head = lines[:close]
+    while head and head[-1].strip() == "":
+        head.pop()
+    if head and head[-1].rstrip().endswith("}"):
+        head[-1] = head[-1].rstrip() + ","
+    for k, obj in enumerate(items):
+        for line in json.dumps(obj, ensure_ascii=False, indent=2).split("\n"):
+            head.append("  " + line)
+        if k < len(items) - 1:
+            head[-1] += ","
+    return "\n".join(head + ["]"]) + "\n"
+
+
+def _entry_bounds(lines: list, entry_id: str):
+    id_line = None
+    for i, l in enumerate(lines):
+        if l.strip().startswith(f'"id": "{entry_id}"'):
+            id_line = i
+            break
+    if id_line is None:
+        return None
+    start = id_line
+    while start > 0 and lines[start] != "  {":
+        start -= 1
+    end = id_line
+    while end < len(lines) and lines[end] != "  }":
+        end += 1
+    if lines[start] != "  {" or end >= len(lines):
+        return None
+    return start, end
+
+
+def _patch_trend_entry(block: list, new: dict) -> list:
+    """只改 indicators / judgment / revisions 三者，其余行不动。"""
+    out = list(block)
+    for i, l in enumerate(out):
+        s = l.strip()
+        if s.startswith('"indicators":'):
+            suffix = "," if s.endswith(",") else ""
+            out[i] = '    "indicators": ' + _compact(new["indicators"]) + suffix
+        elif s.startswith('"judgment":'):
+            suffix = "," if s.endswith(",") else ""
+            out[i] = '    "judgment": ' + json.dumps(new["judgment"], ensure_ascii=False) + suffix
+    start = next((i for i, l in enumerate(out) if l.strip().startswith('"revisions": [')), None)
+    if start is not None:
+        close = next((i for i in range(start + 1, len(out)) if out[i].strip() == "]"), None)
+        if close is not None:
+            extra = new["revisions"][len(json.loads("[" + ",".join(x.strip().rstrip(",") for x in out[start + 1:close]) + "]")):]
+            if extra:
+                if out[close - 1].strip().endswith("}"):
+                    out[close - 1] = out[close - 1].rstrip().rstrip(",") + ","
+                for k, item in enumerate(extra):
+                    line = "      " + _compact(item)
+                    if k < len(extra) - 1:
+                        line += ","
+                    out.insert(close + k, line)
+    return out
+
+
+def _patch_meta_text(text: str, meta: dict) -> str:
+    lines = text.rstrip("\n").split("\n")
+    for i, l in enumerate(lines):
+        s = l.strip()
+        if s.startswith('"generatedAt":'):
+            lines[i] = '  "generatedAt": ' + json.dumps(meta["generatedAt"], ensure_ascii=False) + ("," if s.endswith(",") else "")
+        elif s.startswith('"counts":'):
+            c = meta["counts"]
+            lines[i] = '  "counts": { "events": %d, "trends": %d, "forecasts": %d }%s' % (
+                c["events"], c["trends"], c["forecasts"], "," if s.endswith(",") else ""
+            )
+        elif s.startswith('"window":') and isinstance(meta.get("window"), dict):
+            w = meta["window"]
+            lines[i] = '  "window": { "from": %s, "to": %s }%s' % (
+                json.dumps(w.get("from")), json.dumps(w.get("to")), "," if s.endswith(",") else ""
+            )
+    return "\n".join(lines) + "\n"
+
+
+def preserve_file(baseline_text: str, key: str, payload: list | dict) -> tuple[str, bool]:
+    """把 payload 保形写入 baseline_text；返回 (文本, 是否完全保形)。"""
+    try:
+        old = json.loads(baseline_text)
+    except json.JSONDecodeError:
+        return json.dumps(payload, ensure_ascii=False, indent=2) + "\n", False
+    if key == "meta":
+        text = _patch_meta_text(baseline_text, payload)
+        return text, json.loads(text) == payload
+    items = payload or []
+    if old == payload:
+        return baseline_text, True
+    new_items = [x for x in items if x not in old]
+    text = _append_blocks(baseline_text, new_items)
+    try:
+        if json.loads(text) != items:
+            return json.dumps(items, ensure_ascii=False, indent=2) + "\n", False
+    except json.JSONDecodeError:
+        return json.dumps(items, ensure_ascii=False, indent=2) + "\n", False
+    return text, True
+
+
+def preserve_trends(baseline_text: str, items: list) -> tuple[str, bool]:
+    old = json.loads(baseline_text)
+    old_by = {o["id"]: o for o in old}
+    text = baseline_text
+    for item in items:
+        prev = old_by.get(item["id"])
+        if prev is None or prev == item:
+            continue
+        lines = text.rstrip("\n").split("\n")
+        b = _entry_bounds(lines, item["id"])
+        if not b:
+            return json.dumps(items, ensure_ascii=False, indent=2) + "\n", False
+        start, end = b
+        patched = _patch_trend_entry(lines[start:end + 1], item)
+        text = "\n".join(lines[:start] + patched + lines[end + 1:]) + "\n"
+    new_items = [x for x in items if x["id"] not in old_by]
+    text = _append_blocks(text, new_items)
+    try:
+        return text, json.loads(text) == items
+    except json.JSONDecodeError:
+        return json.dumps(items, ensure_ascii=False, indent=2) + "\n", False
+
 # ---------------------------------------------------------------- 主流程
 
 
@@ -1050,6 +1188,7 @@ def build(args) -> dict:
         return field_diff(site[kind], {"events": new_events, "trends": new_trends, "forecasts": new_forecasts}[kind])
 
     ctx = {
+        "contentDigest": str(getattr(args, "content_digest", "") or ""),
         "generatedAt": meta["generatedAt"],
         "data_dir": str(data_dir),
         "site_dir": str(site_dir),
@@ -1092,6 +1231,8 @@ def main(argv=None) -> int:
     parser.add_argument("--write-src", action="store_true", help="人工放行后再写站点 src/data（仍按只增不删合并）")
     parser.add_argument("--no-merge", action="store_true", help="只输出本批（用于看覆盖效果，不合并站点现有条目）")
     parser.add_argument("--dry-run", action="store_true", help="只出对照表，不写任何 JSON")
+    parser.add_argument("--content-digest", default="", help="content 树哈希，写进对照表表头（如 c928890acdb8e762）")
+    parser.add_argument("--preserve-format", action="store_true", help="写盘时保留基线文件原文，只追加/最小改动（git diff 只出新增）")
     parser.add_argument("--json", dest="as_json", action="store_true", help="机器可读输出（人类提示走 stderr）")
     args = parser.parse_args(argv)
 
@@ -1108,15 +1249,42 @@ def main(argv=None) -> int:
     wrote: list = []
     if not args.dry_run:
         out_dir = ctx["out_dir_path"]
-        for name, key in (("events.json", "events"), ("trends.json", "trends"), ("forecasts.json", "forecasts"), ("snapshots.json", "snapshots")):
-            write_json(out_dir / name, ctx["payload"][key])
-        write_json(out_dir / "meta.json", ctx["payload"]["meta"])
+        def emit(dest: Path) -> None:
+            if args.preserve_format:
+                base = Path(args.site).expanduser().resolve() / "src" / "data"
+                for name, key in (("events.json", "events"), ("trends.json", "trends"), ("forecasts.json", "forecasts"), ("snapshots.json", "snapshots")):
+                    bpath = base / name
+                    if bpath.exists():
+                        raw = bpath.read_text(encoding="utf-8")
+                        if key == "trends":
+                            text, ok = preserve_trends(raw, ctx["payload"][key])
+                        else:
+                            text, ok = preserve_file(raw, key, ctx["payload"][key])
+                        if not ok:
+                            print(f"WARN: {name} 保形失败，退回整文件重写", file=sys.stderr)
+                        dest.mkdir(parents=True, exist_ok=True)
+                        (dest / name).write_text(text, encoding="utf-8")
+                    else:
+                        write_json(dest / name, ctx["payload"][key])
+                mpath = base / "meta.json"
+                if mpath.exists():
+                    text, ok = preserve_file(mpath.read_text(encoding="utf-8"), "meta", ctx["payload"]["meta"])
+                    if not ok:
+                        print("WARN: meta.json 保形失败，退回整文件重写", file=sys.stderr)
+                    dest.mkdir(parents=True, exist_ok=True)
+                    (dest / "meta.json").write_text(text, encoding="utf-8")
+                else:
+                    write_json(dest / "meta.json", ctx["payload"]["meta"])
+            else:
+                for name, key in (("events.json", "events"), ("trends.json", "trends"), ("forecasts.json", "forecasts"), ("snapshots.json", "snapshots")):
+                    write_json(dest / name, ctx["payload"][key])
+                write_json(dest / "meta.json", ctx["payload"]["meta"])
+
+        emit(out_dir)
         wrote.append(str(out_dir))
         if args.write_src:
             src = Path(args.site).expanduser().resolve() / "src" / "data"
-            for name, key in (("events.json", "events"), ("trends.json", "trends"), ("forecasts.json", "forecasts"), ("snapshots.json", "snapshots")):
-                write_json(src / name, ctx["payload"][key])
-            write_json(src / "meta.json", ctx["payload"]["meta"])
+            emit(src)
             ctx["wrote_src"] = True
             wrote.append(str(src))
             ctx["report_path"].write_text(render_report(ctx), encoding="utf-8")
@@ -1131,6 +1299,7 @@ def main(argv=None) -> int:
                     "wrote": wrote,
                     "report": str(ctx["report_path"]),
                     "writeSrc": ctx["wrote_src"],
+                    "contentDigest": ctx.get("contentDigest", ""),
                 },
                 ensure_ascii=False,
                 indent=2,

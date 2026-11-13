@@ -381,7 +381,8 @@ def load_content(root: Path, fmt: str) -> tuple[list[dict], list[dict], list[dic
     forecasts: list[dict] = []
     notes: list[str] = []
     suffixes = (".json",) if fmt == "json" else (".md", ".mdx")
-    files = _iter_files(root, suffixes)
+    # content/ 根目录的 MANIFEST.json 是二组的清单/哈希，不是内容条目，不参与导出。
+    files = [p for p in _iter_files(root, suffixes) if p.name != "MANIFEST.json"]
     if not files:
         raise ExportError(f"{root} 下没找到 {fmt} 输入文件")
     for path in files:
@@ -1144,6 +1145,15 @@ def check_schema_alignment(schema_dir: Path) -> list[str]:
 # --------------------------------------------------------------------------
 # 写出
 # --------------------------------------------------------------------------
+def _filter_trend_refs(trends: list[dict], public_ids: set[str]) -> list[dict]:
+    """公开导出：趋势只保留指向 published 事件的 evidenceRefs，避免链到内部记录。"""
+    out = []
+    for t in trends:
+        refs = [r for r in (t.get("evidenceRefs") or []) if r in public_ids]
+        out.append({**t, "evidenceRefs": refs})
+    return out
+
+
 def _write_json(path: Path, payload: dict) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     text = json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=False) + "\n"
@@ -1396,8 +1406,28 @@ def run(args) -> int:
 
     errors = ev_errors + tr_errors + fc_errors
     generated_at = datetime.now().astimezone().replace(microsecond=0).isoformat()
+
+    # 公开产物只收 published：pending 属于内部预览，不得进入公开导出与排行
+    public_events = [e for e in events if e.get("status") == "published"]
+    public_ids = {e["id"] for e in public_events}
+    public_trends = [t for t in _filter_trend_refs(trends, public_ids) if t["evidenceRefs"]]
+    public_forecasts = ([f for f in forecasts if set(f.get("eventRefs") or []) & public_ids]
+                        if public_ids else []) if forecasts else forecasts
+
     events_payload, trends_payload, forecasts_payload, counts = build_payload(
-        events, trends, generated_at, notes, warnings, forecasts
+        public_events, public_trends, generated_at, notes, warnings, public_forecasts
+    )
+    counts["contentTotal"] = len(events)
+    counts["publicExported"] = len(public_events)
+    counts["publicTrends"] = len(public_trends)
+    if not public_events:
+        warnings.append(
+            f"公开导出 0 条：content 有 {len(events)} 条但 published=0；"
+            "pending 只写 preview/，不会出现在公开产物里"
+        )
+    # 内部预览：全部记录（含 pending），只写到 out/preview/，不参与线上
+    preview_events_payload, preview_trends_payload, preview_forecasts_payload, _pc = build_payload(
+        events, trends, generated_at, list(notes), [], forecasts
     )
 
     if args.as_json:
@@ -1415,6 +1445,8 @@ def run(args) -> int:
         print(json.dumps(report, ensure_ascii=False, indent=2))
     else:
         print(f"[export] 输入 {args.format}: {content_root}")
+        print(f"[export] mode={args.mode} · content {counts['contentTotal']} 条 · published {counts['published']} 条 · "
+              f"公开导出 {counts['publicExported']} 条（pending 只进 preview/）")
         print(f"[export] events {counts['events']}（published {counts['published']} / "
               f"pending {counts['pending']}）· trends {counts['trends']} · "
               f"头条 {counts['headline']} · 首页 {counts['homepage']}")
@@ -1437,16 +1469,25 @@ def run(args) -> int:
         say(args, "[export] --check：只校验，不写盘。")
         return 0
 
-    events_path = out_root / "events.json"
-    trends_path = out_root / "trends.json"
-    _write_json(events_path, events_payload)
-    _write_json(trends_path, trends_payload)
-    say(args, f"[export] 写出 {events_path}（{len(events)} 条）")
-    say(args, f"[export] 写出 {trends_path}（{len(trends)} 条）")
-    if forecasts_payload is not None:
-        forecasts_path = out_root / "forecasts.json"
-        _write_json(forecasts_path, forecasts_payload)
-        say(args, f"[export] 写出 {forecasts_path}（{len(forecasts)} 条）")
+    if args.mode in ("public", "both"):
+        events_path = out_root / "events.json"
+        trends_path = out_root / "trends.json"
+        _write_json(events_path, events_payload)
+        _write_json(trends_path, trends_payload)
+        say(args, f"[export] 公开写出 {events_path}（{len(public_events)} 条 published）")
+        say(args, f"[export] 公开写出 {trends_path}（{len(public_trends)} 条）")
+        if forecasts_payload is not None:
+            forecasts_path = out_root / "forecasts.json"
+            _write_json(forecasts_path, forecasts_payload)
+            say(args, f"[export] 公开写出 {forecasts_path}（{len(public_forecasts or [])} 条）")
+
+    if args.mode in ("preview", "both"):
+        preview_root = out_root / "preview"
+        _write_json(preview_root / "events.json", preview_events_payload)
+        _write_json(preview_root / "trends.json", preview_trends_payload)
+        if preview_forecasts_payload is not None:
+            _write_json(preview_root / "forecasts.json", preview_forecasts_payload)
+        say(args, f"[export] 内部预览写出 {preview_root}（{len(events)} 条，含 pending，禁止上线）")
     return 0
 
 
@@ -1533,6 +1574,11 @@ def main(argv: list[str] | None = None) -> int:
         help="json=纯 JSON（默认）；collections=Astro content collections 的 md frontmatter",
     )
     parser.add_argument("--check", action="store_true", help="只校验，不写盘")
+    parser.add_argument(
+        "--mode", choices=("public", "preview", "both"), default="public",
+        help="public=只写公开产物（仅 published，CI/Pages 只能用它）；"
+             "preview=只写内部预览（含 pending）；both=两者都写（本地调试）",
+    )
     parser.add_argument("--lenient", action="store_true", help="有硬错误也照样导出（不推荐）")
     parser.add_argument("--json", action="store_true", dest="as_json", help="机器可读输出")
     parser.add_argument("--selftest", action="store_true", help="跑内置自检")

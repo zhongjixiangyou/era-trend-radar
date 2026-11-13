@@ -2,11 +2,10 @@
   "id": "ev_nrc-smr-first",
   "dedupeKey": "ev:dff85a964548",
   "title": "美国NRC批准首座小型模块化反应堆建设",
-  "summary": "美国核管会（NRC）批准首座小型模块化反应堆（SMR）建设许可，项目方为 X-energy；随后亚马逊与美国电力公司 AEP 宣布在印第安纳州合作推进 SMR 项目。",
+  "summary": "2026年9月29日，美国核管会（NRC）批准 TVA 在 Clinch River 建设首座小型模块化反应堆（SMR）的建设许可，采用 GE Hitachi 的 BWRX-300 设计。",
   "facts": [
     "2026年9月29日，NRC 批准首座小型模块化反应堆（SMR）建设许可",
-    "项目方为X-energy",
-    "此后亚马逊与AEP宣布在印第安纳州合作SMR项目"
+    "项目由 TVA 申请，采用 GE Hitachi 的 BWRX-300 设计"
   ],
   "analysis": "许可只是建设起点，首堆工期与成本仍可能超支；真正的信号是科技公司开始直接为核电买单。",
   "category": "未来趋势",
@@ -16,19 +15,19 @@
   "collectedAt": "2026-11-13T13:30:00+08:00",
   "sources": [
     {
-      "url": "https://www.nrc.gov/about-nrc/news-releases/2026/26-079",
-      "title": "NRC approves first SMR construction permit",
-      "publisher": "美国核管会",
-      "publishedAt": "2026-09-29T00:00:00+08:00",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2026-10-05/html/2026-20345.htm",
+      "title": "Tennessee Valley Authority; Clinch River Nuclear Unit 1; Construction Permit and Record of Decision",
+      "publisher": "美国联邦公报（NRC 公告）",
+      "publishedAt": "2026-10-05T00:00:00+08:00",
       "type": "primary"
     },
     {
-      "url": "https://investors.x-energy.com/news-releases/news-release-details/x-energy-amazon-american-electric-power-partner-bring-smr",
-      "title": "X-energy, Amazon and AEP partner to bring SMR",
-      "publisher": "X-energy",
-      "publishedAt": "2026-10-19T00:00:00+08:00",
+      "url": "https://s205.q4cdn.com/318912997/files/doc_news/2026/Sep/30/9-28-26-TVA-Clinch-River-Nuclear-CPA-Event-News-Release.pdf",
+      "title": "TVA First U.S. Utility to Receive Construction Permit for BWRX-300",
+      "publisher": "美国田纳西河谷管理局（TVA）",
+      "publishedAt": "2026-09-29T00:00:00+08:00",
       "type": "corroboration",
-      "note": "企业公告，独立于监管机构"
+      "note": "项目方公告：Clinch River 采用 GE Hitachi BWRX-300 设计"
     }
   ],
   "scores": {
@@ -51,23 +50,23 @@
   },
   "credibility": {
     "level": "partial",
-    "basis": "NRC官方公告与企业公告，尚未核对许可文件细节"
+    "basis": "NRC 联邦公报公告 + TVA 官方新闻稿，尚未核对许可文件细节"
   },
-  "evidenceGrade": "unverified",
+  "evidenceGrade": "multi_independent",
   "verification": {
     "status": "pending",
     "method": "verify_sources/http",
-    "note": "verify_sources.py 自动核验（HTTP），以 checks 为准",
+    "note": "仅完成链接检查（HTTP 可访问），未取得并核对原文，不等于事实核验通过；取到原文事实后再改 passed。",
     "checks": [
       {
         "kind": "http",
-        "result": "unknown",
-        "evidence": "HTTP 403 https://www.nrc.gov/about-nrc/news-releases/2026/26-079（被拦截或服务端错误，无法核验，需人工确认）"
+        "result": "pass",
+        "evidence": "HTTP 200 https://www.govinfo.gov/content/pkg/FR-2026-10-05/html/2026-20345.htm（页头标题不可用，正文含来源标题关键词 1.00（PDF/页面正文核对）；页面无发布日期（日期未核））"
       },
       {
         "kind": "http",
-        "result": "unknown",
-        "evidence": "HTTP - https://investors.x-energy.com/news-releases/news-release-details/x-energy-amazon-american-electric-power-partner-bring-smr（请求失败：The read operation timed out（网络层失败，不等于死链，可重试））"
+        "result": "pass",
+        "evidence": "HTTP 200 https://s205.q4cdn.com/318912997/files/doc_news/2026/Sep/30/9-28-26-TVA-Clinch-River-Nuclear-CPA-Event-News-Release.pdf（页头标题不可用，正文含来源标题关键词 1.00（PDF/页面正文核对）；页面无发布日期（日期未核））"
       },
       {
         "kind": "primary_present",
@@ -75,7 +74,7 @@
         "evidence": "primary 1 条"
       }
     ],
-    "checkedAt": "2026-11-13T13:54:29+08:00"
+    "checkedAt": "2026-11-13T14:11:28+08:00"
   },
   "status": "pending",
   "trendLinks": [
@@ -90,7 +89,7 @@
   "retro": {
     "isRetro": true,
     "asOf": "2026-09-29",
-    "note": "2026-09-29 许可发放，2026-11-13 回溯补录，非当时实时采集"
+    "note": "2026-09 见报，2026-11-13 补录入库，非当时判断"
   },
   "scoreHistory": [],
   "linkHistory": []

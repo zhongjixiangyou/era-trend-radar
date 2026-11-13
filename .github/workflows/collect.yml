@@ -56,11 +56,11 @@ jobs:
       - name: Validate (schema gate)
         if: always()
         continue-on-error: true
-        run: node scripts/ci/validate.mjs --report reports/validate.json
+        run: node scripts/ci/entry-run.mjs --name validate --report reports/validate-content.json
 
       - name: Gate statuses
         if: always()
-        run: node scripts/ci/gate.mjs --require collect,validate --report reports/gate.json
+        run: node scripts/ci/gate.mjs --require collect,entry-validate --report reports/gate.json
 
       - name: Configure git
         run: |

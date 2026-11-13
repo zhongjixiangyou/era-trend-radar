@@ -11,7 +11,7 @@ import { href } from '../lib/url';
 
 const ranked = [...publishedEvents].sort((a, b) => total(b.scores) - total(a.scores));
 const lead = ranked[0];
-const rest = publishedEvents.filter((e) => e.id !== lead.id).slice(0, 6);
+const rest = lead ? publishedEvents.filter((e) => e.id !== lead.id).slice(0, 6) : [];
 
 const topTrends = [...allTrends].sort((a, b) => (b.evidenceCount ?? 0) - (a.evidenceCount ?? 0));
 const maxEvidence = Math.max(1, ...allTrends.map((t) => t.evidenceCount ?? 0));
@@ -33,10 +33,20 @@ const contents = [
   },
 ];
 
-const leadTotal = total(lead.scores);
+const leadTotal = lead ? total(lead.scores) : 0;
 ---
 
 <Base active="home">
+  {!lead && (
+    <section class="lead-empty">
+      <div class="kicker">本期尚无通过发布校验的事件</div>
+      <h1>还没有可以公开的记录。</h1>
+      <p class="standfirst">
+        content/ 里现有 {siteMeta.counts.pending} 条候选，全部处于待核实状态；公开构建不展示未通过发布校验的记录，也不用旧数据凑版面。
+      </p>
+    </section>
+  )}
+  {lead && (
   <section class="lead">
     <div class="lead-main">
       <div class="kicker">本期头条 · 全球利率</div>
@@ -56,6 +66,7 @@ const leadTotal = total(lead.scores);
       ))}
     </aside>
   </section>
+  )}
 
   <section class="contents" aria-label="本期要目">
     {contents.map((col) => (

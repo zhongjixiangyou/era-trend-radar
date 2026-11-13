@@ -56,9 +56,9 @@ function readJson(file) {
 
 // 与 src/lib/data.ts:74-76 同一口径：一条已发布都没有时整站按内部预览渲染，候选全可见
 export function previewMode() {
-  // 与 src/lib/data.ts 同口径（admin d24a6d4 起：只要还有 pending 就是预览态）
-  const p = readJson('meta.json').preview ?? {};
-  return (p.pending ?? 0) > 0;
+  // 与 src/lib/data.ts:80 同口径（651cbcc 起）：数据集里有 pending 事件就是预览态。
+  // 不看 meta 计数——构建期 meta 可能是公开投影的，计数会指错。
+  return readJson('events.json').some((e) => e.status === 'pending');
 }
 
 function visibleEvents() {
