@@ -17,8 +17,9 @@ import { join, resolve } from 'node:path';
 
 const args = process.argv.slice(2);
 const dirArg = args.indexOf('--dir');
+const outArg = args.indexOf('--out');
 const SRC = dirArg >= 0 ? args[dirArg + 1] : join(homedir(), '.dsh/era-work/data');
-const OUT = resolve(process.cwd(), 'src/data');
+const OUT = resolve(process.cwd(), outArg >= 0 ? args[outArg + 1] : 'src/data');
 
 const read = (name) => JSON.parse(readFileSync(join(SRC, name), 'utf8'));
 const day = (iso) => (iso ? String(iso).slice(0, 10) : null);
@@ -32,7 +33,8 @@ const srcTrends = read('trends.json');
 const srcForecasts = read('forecasts.json');
 
 const events = srcEvents.events.map((e) => {
-  const verified = e.verification?.status === 'passed';
+  // 发布状态只认导出里的 status，不拿 verification 反推：核验通过 ≠ 已发布。
+  const published = e.status === 'published';
   const revisions = Array.isArray(e.revisions) ? e.revisions : [];
   return {
     id: e.id,
@@ -58,7 +60,7 @@ const events = srcEvents.events.map((e) => {
     },
     credibility: CRED[e.evidenceGrade] ?? 'low',
     evidenceGrade: e.evidenceGrade ?? null,
-    status: verified ? 'partial' : 'pending',
+    status: published ? 'confirmed' : 'pending',
     sources: (e.sources ?? []).map((s) => ({
       name: s.publisher ?? s.title ?? s.url,
       url: s.url,
@@ -139,7 +141,17 @@ const meta = {
   site: 'ERA · 时代趋势雷达',
   generatedAt: srcEvents.generatedAt ?? new Date().toISOString(),
   window: { from: dates[0] ?? null, to: dates[dates.length - 1] ?? null },
-  counts: { events: events.length, trends: trends.length, forecasts: forecasts.length },
+  counts: {
+    events: events.length,
+    trends: trends.length,
+    forecasts: forecasts.length,
+    published: events.filter((e) => e.status !== 'pending').length,
+    pending: events.filter((e) => e.status === 'pending').length,
+  },
+  preview: {
+    published: events.filter((e) => e.status !== 'pending').length,
+    pending: events.filter((e) => e.status === 'pending').length,
+  },
   dataSource: 'content/ → export_astro.py（v1）',
   projection: 'scripts/from-export.mjs',
   runStatus: srcEvents.gates ? 'ok' : 'unknown',

@@ -1,4 +1,4 @@
-// ERA 验收主脚本：8 条路由 200 / 子路径资源 / 390×844 无溢出 / 筛选 / 时间线 / 截图
+// ERA 验收主脚本：9 条路由 200 / 子路径资源 / 320·390·430 无溢出 / 筛选·搜索·排序 / 评分历史 / 导航 / 截图
 // 用法：
 //   BASE_URL 已起服务：ORIGIN=http://127.0.0.1:4321 node playwright/acceptance.mjs
 //   脚本自己起 preview：node playwright/acceptance.mjs --serve
@@ -7,7 +7,7 @@ import { spawn } from 'node:child_process';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { chromium } from 'playwright';
-import { getRoutes } from './routes.mjs';
+import { getRoutes, getSearchCases, publishedEventCount, previewMode } from './routes.mjs';
 import {
   BASE_PATH, ORIGIN, findUnprefixedAssets, makeChecker, resolveBase, saveScreenshot,
   scanOverflow, writeReport,
@@ -187,8 +187,20 @@ if (!rowSel) {
   fail('events:rows', '找不到事件行');
 } else {
   const total0 = await visibleRows();
-  if (total0 === 0) fail('events:rows', '一条事件行都看不到', { selector: rowSel });
-  else pass('events:rows', `事件行 ${total0} 条`, { selector: rowSel });
+  const expected = publishedEventCount();
+  if (expected === 0) {
+    fail('events:rows', '数据里 0 条已发布事件（status 全是 pending），页面空列表', { selector: rowSel, rows: total0 });
+  } else if (total0 === expected) {
+    pass('events:rows', `事件行 ${total0} 条，与已发布数一致`, { selector: rowSel, expected });
+  } else {
+    fail('events:rows', `页面 ${total0} 行，数据里已发布 ${expected} 条，对不上`, { selector: rowSel, rows: total0, expected });
+  }
+}
+
+if (previewMode()) {
+  const banner = page.locator('.stale-banner', { hasText: '内部预览' });
+  if (await banner.count()) pass('events:banner', '预览模式：内部预览横幅在');
+  else fail('events:banner', 'previewMode 为真（0 已发布 / 有候选），但页面没有「内部预览」横幅');
 }
 
 // 筛选：按 data-filter 分组，跳过 data-value=all 的「全部」
@@ -238,24 +250,37 @@ if (!(await searchBox.count())) {
 } else {
   await page.goto(eventsUrl, { waitUntil: 'load' });
   const before = await visibleRows();
+  const sc = getSearchCases();
   const cases = [
-    { kw: '美国10', min: 1, why: '无空格应命中「美国 10 月」' },
-    { kw: '美国 10', min: 1, why: '带空格' },
-    { kw: 'CPI', min: 1, why: '英文大小写' },
-  ];
+    sc.base && { kw: sc.base, min: 1, why: '标题原词' },
+    sc.spaced && { kw: sc.spaced, min: 1, why: '中间插空格，归一化后应同样命中', sameAs: sc.base },
+    sc.latin && { kw: sc.latin.toLowerCase(), min: 1, why: '英文小写（标题里是大写）' },
+  ].filter(Boolean);
+  if (cases.length === 0) {
+    fail('events:search', '取不到可用搜索词（数据里没有已发布事件），无法验证归一化');
+  }
   const detail = [];
+  const counts = new Map();
   let ok = 0;
+  if (cases.length === 0) { /* 已在上面记失败，跳过执行 */ }
   for (const c of cases) {
     await page.goto(eventsUrl, { waitUntil: 'load' });
     await searchBox.fill(c.kw).catch(() => {});
     await page.waitForTimeout(450);
     const after = await visibleRows();
+    counts.set(c.kw, after);
     const good = after >= c.min && after <= before;
     if (good) ok++;
     detail.push({ kw: c.kw, after, ok: good, why: c.why });
   }
-  if (ok === cases.length) pass('events:search', `${cases.length} 个关键词全部命中`, { detail });
-  else fail('events:search', `${cases.length - ok}/${cases.length} 个关键词没命中`, { detail });
+  const mismatched = cases.filter((c) => c.sameAs && counts.get(c.kw) !== counts.get(c.sameAs));
+  if (cases.length > 0 && ok === cases.length && mismatched.length === 0)
+    pass('events:search', `${cases.length} 个关键词全部命中，空格变体与基准同条数`, { detail });
+  else if (cases.length > 0)
+    fail('events:search', `${cases.length - ok}/${cases.length} 个关键词没命中${mismatched.length ? '，空格变体条数不一致' : ''}`, {
+      detail,
+      mismatched: mismatched.map((c) => ({ kw: c.kw, got: counts.get(c.kw), base: counts.get(c.sameAs) })),
+    });
 }
 
 // 排序（按钮组 data-sort）
@@ -286,39 +311,33 @@ if (!(await sortBtns.count())) {
 console.log('\n[5/6] 事件详情');
 const detailRoute = routes.find((r) => r.kind === 'detail' && r.path.startsWith('/events/'));
 if (!detailRoute) {
-  skip('detail:timeline', '路由表里没有事件详情页');
+  skip('detail:score-history', '路由表里没有事件详情页');
 } else {
   await page.goto(urlFor(detailRoute.path), { waitUntil: 'load' }).catch(() => {});
-  const tl = page.locator('.timeline, [data-testid="timeline"]').first();
-  const hasTl = await tl.count();
-  const entries = hasTl ? await tl.locator('li, [data-testid="timeline-item"]').count() : 0;
-  const toggle = page.locator('[data-testid="timeline-toggle"]');
-  const toggleCount = await toggle.count();
-
-  if (!hasTl) {
-    fail('detail:timeline', '详情页找不到时间线（.timeline）');
-  } else if (toggleCount) {
-    const textBefore = await page.locator('body').innerText();
-    const expandedBefore = await toggle.first().getAttribute('aria-expanded');
-    await toggle.first().click({ timeout: 4000 }).catch(() => {});
-    await page.waitForTimeout(300);
-    const expandedAfter = await toggle.first().getAttribute('aria-expanded');
-    const textAfter = await page.locator('body').innerText();
-    if (expandedAfter === 'true' || textAfter.length !== textBefore.length) {
-      pass('detail:timeline', '时间线可展开', { expandedBefore, expandedAfter, entries });
-    } else {
-      fail('detail:timeline', '点击展开按钮无变化', { expandedBefore, expandedAfter, entries });
-    }
+  const info = await page.evaluate(() => {
+    const blocks = [...document.querySelectorAll('.aside-block, aside > div')];
+    const hb = blocks.find((b) => /评分历史/.test(b.querySelector('h3')?.textContent || ''));
+    const rows = hb
+      ? [...hb.children].filter((c) => c.tagName === 'DIV' && /\d{4}[.\-/]/.test(c.textContent || '')).length
+      : 0;
+    return {
+      historyRows: rows,
+      timeline: document.querySelectorAll('.timeline').length,
+      title: (document.querySelector('h1')?.textContent || '').trim(),
+      hasScoreBlock: !!hb,
+    };
+  });
+  if (info.historyRows > 0) {
+    pass('detail:score-history', `评分历史渲染 ${info.historyRows} 条`, info);
   } else {
-    const visible = await tl.isVisible();
-    const textLen = (await tl.innerText().catch(() => '')).length;
-    if (visible && (entries > 0 || textLen > 10)) {
-      pass('detail:timeline', `时间线常驻展示（${entries || '?'} 条，无折叠交互）`, {
-        entries, note: '派活写的是「时间线可展开」，当前没有折叠交互，需主管确认是否算达成',
-      });
-    } else {
-      fail('detail:timeline', '时间线存在但不可见/为空', { visible, entries, textLen });
-    }
+    fail(
+      'detail:score-history',
+      info.hasScoreBlock ? '评分历史块在但没有行' : '详情页没有渲染评分历史侧栏块',
+      info,
+    );
+  }
+  if (info.timeline === 0) {
+    console.log('  NOTE  v1 数据没有 timeline 字段（11 条事件 0 条），时间线验收项本轮无对象');
   }
 }
 

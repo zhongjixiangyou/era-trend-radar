@@ -1,0 +1,1132 @@
+{
+  "schemaVersion": "1",
+  "generatedAt": "2026-11-13T14:19:24+08:00",
+  "gates": {
+    "homepageMinTotal": 50,
+    "headlineMinTotal": 50,
+    "headlineRequiresVerified": true
+  },
+  "counts": {
+    "events": 8,
+    "trends": 7,
+    "published": 0,
+    "pending": 8,
+    "headline": 0,
+    "homepage": 0,
+    "forecasts": 2,
+    "forecastsOpen": 2
+  },
+  "rankings": {
+    "importance": [
+      "ev_ai-dc-power-161gw",
+      "ev_fed-hike-sep",
+      "ev_cn-profit-1-8",
+      "ev_cn-nev-oct",
+      "ev_mideast-war-6m",
+      "ev_nrc-smr-first",
+      "ev_el-nino-11t",
+      "ev_cn-marriage-9m"
+    ],
+    "confidence": [
+      "ev_cn-nev-oct",
+      "ev_ai-dc-power-161gw",
+      "ev_cn-marriage-9m",
+      "ev_cn-profit-1-8",
+      "ev_fed-hike-sep",
+      "ev_mideast-war-6m",
+      "ev_el-nino-11t",
+      "ev_nrc-smr-first"
+    ],
+    "heat": [
+      "ev_cn-marriage-9m",
+      "ev_ai-dc-power-161gw",
+      "ev_cn-nev-oct",
+      "ev_cn-profit-1-8",
+      "ev_el-nino-11t",
+      "ev_fed-hike-sep",
+      "ev_nrc-smr-first",
+      "ev_mideast-war-6m"
+    ],
+    "time": [
+      "ev_cn-nev-oct",
+      "ev_el-nino-11t",
+      "ev_cn-marriage-9m",
+      "ev_nrc-smr-first",
+      "ev_cn-profit-1-8",
+      "ev_ai-dc-power-161gw",
+      "ev_fed-hike-sep",
+      "ev_mideast-war-6m"
+    ]
+  },
+  "stats": {
+    "byCategory": [
+      {
+        "label": "中国经济与产业",
+        "value": 3
+      },
+      {
+        "label": "全球宏观",
+        "value": 3
+      },
+      {
+        "label": "未来趋势",
+        "value": 2
+      }
+    ],
+    "byMonth": [
+      {
+        "label": "2026-08",
+        "value": 1
+      },
+      {
+        "label": "2026-09",
+        "value": 4
+      },
+      {
+        "label": "2026-11",
+        "value": 3
+      }
+    ],
+    "byEvidenceGrade": [
+      {
+        "label": "multi_independent",
+        "value": 1
+      },
+      {
+        "label": "secondary_only",
+        "value": 1
+      },
+      {
+        "label": "single_primary",
+        "value": 5
+      },
+      {
+        "label": "unverified",
+        "value": 1
+      }
+    ],
+    "scoreBuckets": [
+      {
+        "label": "70-79",
+        "value": 4
+      },
+      {
+        "label": "80-89",
+        "value": 4
+      }
+    ],
+    "trendDirections": [
+      {
+        "label": "support",
+        "value": 8
+      }
+    ],
+    "trendStages": [
+      {
+        "label": "emerging",
+        "value": 2
+      },
+      {
+        "label": "strengthening",
+        "value": 5
+      }
+    ]
+  },
+  "events": [
+    {
+      "id": "ev_cn-nev-oct",
+      "dedupeKey": "ev:0e34e4c15e96",
+      "title": "10月新能源车销量占比64.3%，出口同比增1.4倍",
+      "summary": "新能源车国内销量同比降幅连续7个月超20%，增长几乎全部来自出口。",
+      "facts": [
+        "新能源车销量194万辆，同比+13.1%",
+        "新能源车出口60.6万辆，同比+1.4倍",
+        "新能源车占新车销量64.3%",
+        "国内新能源车销量同比降幅连续7个月超过20%"
+      ],
+      "analysis": "占比继续上升但国内销量收缩，说明总量在靠出口支撑；出口高增能否持续取决于关税与本地化产能，不宜直接当作需求强劲。",
+      "category": "中国经济与产业",
+      "region": "中国",
+      "occurredAt": "2026-11-11T00:00:00+08:00",
+      "firstReportedAt": "2026-11-11T00:00:00+08:00",
+      "collectedAt": "2026-11-13T13:30:00+08:00",
+      "sources": [
+        {
+          "url": "http://news.china.com.cn/2026-11/11/content_118770578.shtml",
+          "title": "10月新能源汽车销量占比达64.3%",
+          "publisher": "中国网/新华社",
+          "publishedAt": "2026-11-11T00:00:00+08:00",
+          "type": "primary"
+        },
+        {
+          "url": "https://www.jwview.com/jingwei/html/m/11-11/696575.shtml",
+          "title": "中汽协：10月新能源汽车出口同比增长1.4倍",
+          "publisher": "中新经纬",
+          "publishedAt": "2026-11-11T00:00:00+08:00",
+          "type": "corroboration",
+          "note": "同源中汽协数据"
+        }
+      ],
+      "scores": {
+        "structural": 18,
+        "scope": 16,
+        "signal": 17,
+        "delta": 13,
+        "timeliness": 9,
+        "crossDomain": 8,
+        "total": 81,
+        "rationale": {
+          "structural": "增长动力从内需切换到出口，改变产业对国内需求的依赖",
+          "scope": "影响整车、电池、零部件与海运物流",
+          "signal": "为“内需收缩、出口补位”提供第7个月证据",
+          "delta": "首次给出出口1.4倍与国内降幅7个月的结构对比",
+          "timeliness": "10月数据，最新一期",
+          "crossDomain": "与贸易摩擦、海外本地化建厂直接相关"
+        },
+        "scorerVersion": "score/v1.0"
+      },
+      "credibility": {
+        "level": "partial",
+        "basis": "中汽协口径，两家媒体同源转述，未见协会原始发布页"
+      },
+      "evidenceGrade": "multi_independent",
+      "verification": {
+        "status": "passed",
+        "method": "verify_sources/http",
+        "checkedAt": "2026-11-13T13:54:29+08:00",
+        "checks": [
+          {
+            "kind": "http",
+            "result": "pass",
+            "evidence": "HTTP 200 http://news.china.com.cn/2026-11/11/content_118770578.shtml（OK）"
+          },
+          {
+            "kind": "http",
+            "result": "pass",
+            "evidence": "HTTP 200 https://www.jwview.com/jingwei/html/m/11-11/696575.shtml（页面无发布日期（日期未核））"
+          },
+          {
+            "kind": "primary_present",
+            "result": "pass",
+            "evidence": "primary 1 条"
+          }
+        ],
+        "note": "verify_sources.py 自动核验（HTTP），以 checks 为准"
+      },
+      "status": "pending",
+      "trendLinks": [
+        {
+          "trendId": "tr_cn-nev-demand-shift",
+          "direction": "support",
+          "reason": "出口+1.4倍与国内连续7个月降幅>20%同时成立"
+        }
+      ],
+      "trendIds": [
+        "tr_cn-nev-demand-shift"
+      ],
+      "revisions": [],
+      "forecastRefs": [],
+      "retro": {
+        "isRetro": false,
+        "asOf": "",
+        "note": ""
+      },
+      "display": {
+        "public": false,
+        "homepage": false,
+        "headline": false,
+        "reasons": [
+          "status 不是 published"
+        ]
+      },
+      "viz": {
+        "importance": 81,
+        "confidenceRank": 4,
+        "confidenceLabel": "多源独立",
+        "evidenceGrade": "multi_independent",
+        "heat": 2,
+        "heatBasis": "distinct_domains",
+        "heatWindow": {
+          "from": "2026-11-11T00:00:00+08:00",
+          "to": "2026-11-13T13:30:00+08:00"
+        },
+        "sourceDomains": [
+          "news.china.com.cn",
+          "jwview.com"
+        ]
+      }
+    },
+    {
+      "id": "ev_el-nino-11t",
+      "dedupeKey": "ev:b7dc67e6cdb9",
+      "title": "IFAD警告厄尔尼诺未来六年或致11万亿美元损失",
+      "summary": "气候冲击叠加能源与化肥涨价，威胁全球粮食安全与低收入国家债务。",
+      "facts": [
+        "潜在收入损失最高11万亿美元，跨度6年",
+        "IFAD在COP31发布",
+        "风险传导路径包括粮食减产、粮价上涨与化肥能源成本"
+      ],
+      "analysis": "损失估算是情景推演而非既成事实；但粮食进口国财政与债务压力是可比的历史机制，值得作为中期风险跟踪。",
+      "category": "全球宏观",
+      "region": "全球",
+      "occurredAt": "2026-11-09T00:00:00+08:00",
+      "firstReportedAt": "2026-11-09T00:00:00+08:00",
+      "collectedAt": "2026-11-13T13:30:00+08:00",
+      "sources": [
+        {
+          "url": "https://www.downtoearth.org.in/climate-change/cop31-el-ni%C3%B1o-could-cause-11-trillion-in-global-income-losses-threaten-food-security-ifad-warns",
+          "title": "COP31: El Niño could cause $11 trillion in global income losses",
+          "publisher": "Down To Earth",
+          "publishedAt": "2026-11-09T00:00:00+08:00",
+          "type": "primary"
+        },
+        {
+          "url": "https://www.edie.net/cop31-el-nino-could-cause-11trn-in-losses-in-the-next-six-years/",
+          "title": "COP31: El Niño could cause $11trn in losses in the next six years",
+          "publisher": "edie",
+          "publishedAt": "2026-11-09T00:00:00+08:00",
+          "type": "corroboration",
+          "note": "独立媒体，同引IFAD报告"
+        }
+      ],
+      "scores": {
+        "structural": 16,
+        "scope": 19,
+        "signal": 14,
+        "delta": 11,
+        "timeliness": 9,
+        "crossDomain": 9,
+        "total": 78,
+        "rationale": {
+          "structural": "气候波动通过粮食与化肥价格传导到通胀与债务",
+          "scope": "全球，低收入进口国最脆弱",
+          "signal": "为“气候-粮食-通胀”链条提供量化风险",
+          "delta": "首次给出6年11万亿美元的跨度估算",
+          "timeliness": "COP31当期",
+          "crossDomain": "连接农业、能源、通胀与主权债务"
+        },
+        "scorerVersion": "score/v1.0"
+      },
+      "credibility": {
+        "level": "partial",
+        "basis": "IFAD报告经两家媒体报道，未取得报告原文"
+      },
+      "evidenceGrade": "secondary_only",
+      "verification": {
+        "status": "pending",
+        "method": "verify_sources/http",
+        "checkedAt": "2026-11-13T13:54:29+08:00",
+        "checks": [
+          {
+            "kind": "http",
+            "result": "unknown",
+            "evidence": "HTTP 200 https://www.downtoearth.org.in/climate-change/cop31-el-ni%C3%B1o-could-cause-11-trillion-in-global-income-losses-threaten-food-security-ifad-warns（标题部分匹配）"
+          },
+          {
+            "kind": "http",
+            "result": "pass",
+            "evidence": "HTTP 200 https://www.edie.net/cop31-el-nino-could-cause-11trn-in-losses-in-the-next-six-years/（OK）"
+          },
+          {
+            "kind": "primary_present",
+            "result": "pass",
+            "evidence": "primary 1 条"
+          }
+        ],
+        "note": "verify_sources.py 自动核验（HTTP），以 checks 为准"
+      },
+      "status": "pending",
+      "trendLinks": [
+        {
+          "trendId": "tr_climate-food-inflation",
+          "direction": "support",
+          "reason": "给出气候冲击到收入损失的量化路径"
+        }
+      ],
+      "trendIds": [
+        "tr_climate-food-inflation"
+      ],
+      "revisions": [],
+      "forecastRefs": [],
+      "retro": {
+        "isRetro": false,
+        "asOf": "",
+        "note": ""
+      },
+      "display": {
+        "public": false,
+        "homepage": false,
+        "headline": false,
+        "reasons": [
+          "status 不是 published"
+        ]
+      },
+      "viz": {
+        "importance": 78,
+        "confidenceRank": 2,
+        "confidenceLabel": "二手转述",
+        "evidenceGrade": "secondary_only",
+        "heat": 2,
+        "heatBasis": "distinct_domains",
+        "heatWindow": {
+          "from": "2026-11-09T00:00:00+08:00",
+          "to": "2026-11-13T13:30:00+08:00"
+        },
+        "sourceDomains": [
+          "downtoearth.org.in",
+          "edie.net"
+        ]
+      }
+    },
+    {
+      "id": "ev_cn-marriage-9m",
+      "dedupeKey": "ev:c626df6031cf",
+      "title": "前三季度结婚登记464.8万对，同比下降9.8%",
+      "summary": "2025年的短暂反弹未能延续，人口学家预计2027年出生人数明显下降。",
+      "facts": [
+        "前三季度结婚登记464.8万对",
+        "同比下降9.8%",
+        "2026年上半年327.5万对，同比-7.5%",
+        "2025年出生人口792万，首次跌破800万"
+      ],
+      "analysis": "结婚登记是出生人口的领先指标；连续下降意味着2027-2028年出生人口仍有下行压力，但登记数受婚假、补贴等短期政策扰动。",
+      "category": "中国经济与产业",
+      "region": "中国",
+      "occurredAt": "2026-11-05T00:00:00+08:00",
+      "firstReportedAt": "2026-11-05T00:00:00+08:00",
+      "collectedAt": "2026-11-13T13:30:00+08:00",
+      "sources": [
+        {
+          "url": "https://www.cnr.cn/mspd/sywzl/20261107/t20261107_527865143.shtml",
+          "title": "前三季度全国结婚登记464.8万对",
+          "publisher": "央广网",
+          "publishedAt": "2026-11-07T00:00:00+08:00",
+          "type": "primary"
+        },
+        {
+          "url": "https://www.scmp.com/economy/economic-indicators/article/3373383/china-sees-nearly-10-decline-marriages-2026-so-far-foreshadowing-lower-birth-rate",
+          "title": "China sees nearly 10% decline in marriages in 2026 so far",
+          "publisher": "SCMP",
+          "publishedAt": "2026-11-05T00:00:00+08:00",
+          "type": "corroboration",
+          "note": "引民政部数据"
+        },
+        {
+          "url": "https://www.voachinese.com/a/china-s-marriage-registrations-are-falling-at-an-accelerating-pace-in-2026-20261105/8219391.html",
+          "title": "中国结婚登记数2026年加速下降",
+          "publisher": "VOA中文",
+          "publishedAt": "2026-11-05T00:00:00+08:00",
+          "type": "corroboration",
+          "note": "与SCMP可能同引民政部，独立性待查"
+        }
+      ],
+      "scores": {
+        "structural": 19,
+        "scope": 14,
+        "signal": 16,
+        "delta": 10,
+        "timeliness": 8,
+        "crossDomain": 7,
+        "total": 74,
+        "rationale": {
+          "structural": "改变长期住房、教育、消费与劳动力供给",
+          "scope": "全国，影响未来20年人口结构",
+          "signal": "为“人口下行加速”趋势提供领先指标",
+          "delta": "从上半年-7.5%扩大到前三季度-9.8%",
+          "timeliness": "最新季度数据",
+          "crossDomain": "连接地产、消费、社保与地方财政"
+        },
+        "scorerVersion": "score/v1.0"
+      },
+      "credibility": {
+        "level": "partial",
+        "basis": "两家媒体均引民政部，尚未取得民政部原始发布"
+      },
+      "evidenceGrade": "single_primary",
+      "verification": {
+        "status": "passed",
+        "method": "verify_sources/http",
+        "checkedAt": "2026-11-13T14:03:06+08:00",
+        "checks": [
+          {
+            "kind": "http",
+            "result": "pass",
+            "evidence": "HTTP 200 https://www.cnr.cn/mspd/sywzl/20261107/t20261107_527865143.shtml（OK）"
+          },
+          {
+            "kind": "http",
+            "result": "unknown",
+            "evidence": "HTTP 403 https://www.scmp.com/economy/economic-indicators/article/3373383/china-sees-nearly-10-decline-marriages-2026-so-far-foreshadowing-lower-birth-rate（被拦截或服务端错误，无法核验，需人工确认）"
+          },
+          {
+            "kind": "http",
+            "result": "unknown",
+            "evidence": "HTTP 200 https://www.voachinese.com/a/china-s-marriage-registrations-are-falling-at-an-accelerating-pace-in-2026-20261105/8219391.html（标题相似度低，需人工确认）"
+          },
+          {
+            "kind": "primary_present",
+            "result": "pass",
+            "evidence": "primary 1 条"
+          }
+        ],
+        "note": "verify_sources.py 自动核验（HTTP），以 checks 为准"
+      },
+      "status": "pending",
+      "trendLinks": [
+        {
+          "trendId": "tr_cn-demographic-decline",
+          "direction": "support",
+          "reason": "降幅由7.5%扩大到9.8%，趋势加速"
+        }
+      ],
+      "trendIds": [
+        "tr_cn-demographic-decline"
+      ],
+      "revisions": [],
+      "forecastRefs": [],
+      "retro": {
+        "isRetro": false,
+        "asOf": "",
+        "note": ""
+      },
+      "display": {
+        "public": false,
+        "homepage": false,
+        "headline": false,
+        "reasons": [
+          "status 不是 published"
+        ]
+      },
+      "viz": {
+        "importance": 74,
+        "confidenceRank": 3,
+        "confidenceLabel": "单一官方",
+        "evidenceGrade": "single_primary",
+        "heat": 3,
+        "heatBasis": "distinct_domains",
+        "heatWindow": {
+          "from": "2026-11-05T00:00:00+08:00",
+          "to": "2026-11-13T13:30:00+08:00"
+        },
+        "sourceDomains": [
+          "cnr.cn",
+          "scmp.com",
+          "voachinese.com"
+        ]
+      }
+    },
+    {
+      "id": "ev_nrc-smr-first",
+      "dedupeKey": "ev:dff85a964548",
+      "title": "美国NRC批准首座小型模块化反应堆建设",
+      "summary": "美国核管会（NRC）批准首座小型模块化反应堆（SMR）建设许可，项目方为 X-energy；随后亚马逊与美国电力公司 AEP 宣布在印第安纳州合作推进 SMR 项目。",
+      "facts": [
+        "2026年9月29日，NRC 批准首座小型模块化反应堆（SMR）建设许可",
+        "项目方为X-energy",
+        "此后亚马逊与AEP宣布在印第安纳州合作SMR项目"
+      ],
+      "analysis": "许可只是建设起点，首堆工期与成本仍可能超支；真正的信号是科技公司开始直接为核电买单。",
+      "category": "未来趋势",
+      "region": "美国",
+      "occurredAt": "2026-09-29T00:00:00+08:00",
+      "firstReportedAt": "2026-09-29T00:00:00+08:00",
+      "collectedAt": "2026-11-13T13:30:00+08:00",
+      "sources": [
+        {
+          "url": "https://www.nrc.gov/about-nrc/news-releases/2026/26-079",
+          "title": "NRC approves first SMR construction permit",
+          "publisher": "美国核管会",
+          "publishedAt": "2026-09-29T00:00:00+08:00",
+          "type": "primary"
+        },
+        {
+          "url": "https://investors.x-energy.com/news-releases/news-release-details/x-energy-amazon-american-electric-power-partner-bring-smr",
+          "title": "X-energy, Amazon and AEP partner to bring SMR",
+          "publisher": "X-energy",
+          "publishedAt": "2026-10-19T00:00:00+08:00",
+          "type": "corroboration",
+          "note": "企业公告，独立于监管机构"
+        }
+      ],
+      "scores": {
+        "structural": 20,
+        "scope": 13,
+        "signal": 17,
+        "delta": 12,
+        "timeliness": 8,
+        "crossDomain": 9,
+        "total": 79,
+        "rationale": {
+          "structural": "为数据中心提供稳定的零碳基荷电源选项",
+          "scope": "美国电力市场与核电供应链",
+          "signal": "“AI电力约束”从预测进入建设阶段",
+          "delta": "首个建设许可，此前只有设计认证",
+          "timeliness": "9月末，仍在项目早期",
+          "crossDomain": "连接AI算力、核电、气候目标"
+        },
+        "scorerVersion": "score/v1.0"
+      },
+      "credibility": {
+        "level": "partial",
+        "basis": "NRC官方公告与企业公告，尚未核对许可文件细节"
+      },
+      "evidenceGrade": "unverified",
+      "verification": {
+        "status": "pending",
+        "method": "verify_sources/http",
+        "checkedAt": "2026-11-13T13:54:29+08:00",
+        "checks": [
+          {
+            "kind": "http",
+            "result": "unknown",
+            "evidence": "HTTP 403 https://www.nrc.gov/about-nrc/news-releases/2026/26-079（被拦截或服务端错误，无法核验，需人工确认）"
+          },
+          {
+            "kind": "http",
+            "result": "unknown",
+            "evidence": "HTTP - https://investors.x-energy.com/news-releases/news-release-details/x-energy-amazon-american-electric-power-partner-bring-smr（请求失败：The read operation timed out（网络层失败，不等于死链，可重试））"
+          },
+          {
+            "kind": "primary_present",
+            "result": "pass",
+            "evidence": "primary 1 条"
+          }
+        ],
+        "note": "verify_sources.py 自动核验（HTTP），以 checks 为准"
+      },
+      "status": "pending",
+      "trendLinks": [
+        {
+          "trendId": "tr_ai-power-constraint",
+          "direction": "support",
+          "reason": "SMR进入建设意味着供给端开始响应电力缺口"
+        }
+      ],
+      "trendIds": [
+        "tr_ai-power-constraint"
+      ],
+      "revisions": [],
+      "forecastRefs": [],
+      "retro": {
+        "isRetro": true,
+        "asOf": "2026-09-29",
+        "note": "2026-09-29 许可发放，2026-11-13 回溯补录，非当时实时采集"
+      },
+      "display": {
+        "public": false,
+        "homepage": false,
+        "headline": false,
+        "reasons": [
+          "status 不是 published"
+        ]
+      },
+      "viz": {
+        "importance": 79,
+        "confidenceRank": 1,
+        "confidenceLabel": "未核验",
+        "evidenceGrade": "unverified",
+        "heat": 2,
+        "heatBasis": "distinct_domains",
+        "heatWindow": {
+          "from": "2026-09-29T00:00:00+08:00",
+          "to": "2026-11-13T13:30:00+08:00"
+        },
+        "sourceDomains": [
+          "nrc.gov",
+          "investors.x-energy.com"
+        ]
+      }
+    },
+    {
+      "id": "ev_cn-profit-1-8",
+      "dedupeKey": "ev:1a7c49772758",
+      "title": "1-8月规上工业企业利润同比增长15.7%",
+      "summary": "1—8 月规上工业企业利润总额 52,719.8 亿元，同比增长 15.7%。营业收入利润率 5.66%，同比提高 0.44 个百分点；电子设备制造业利润增长 1.1 倍，有色金属、煤炭、化工分别增长 82.9%、51.6%、51.0%。",
+      "facts": [
+        "利润总额52,719.8亿元，同比+15.7%",
+        "营业收入93.09万亿元，同比+6.6%",
+        "营业收入利润率5.66%，同比提高0.44个百分点",
+        "电子设备制造业利润同比+1.1倍，有色金属+82.9%，煤炭+51.6%，化工+51.0%"
+      ],
+      "analysis": "利润增速高于营收增速，说明利润率在修复；但电子、有色等上游高增可能来自价格与基数，不能直接外推为全面景气。",
+      "category": "中国经济与产业",
+      "region": "中国",
+      "occurredAt": "2026-09-28T00:00:00+08:00",
+      "firstReportedAt": "2026-09-28T00:00:00+08:00",
+      "collectedAt": "2026-11-13T13:30:00+08:00",
+      "sources": [
+        {
+          "url": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html",
+          "title": "2026年1—8月份全国规模以上工业企业利润增长15.7%",
+          "publisher": "国家统计局",
+          "publishedAt": "2026-09-28T00:00:00+08:00",
+          "type": "primary"
+        },
+        {
+          "url": "https://english.www.gov.cn/archive/statistics/202609/28/content_WS6ab9d6f1c6d00ca5f9a0d7e5.html",
+          "title": "Industrial profits up 15.7% in first eight months",
+          "publisher": "Gov.cn",
+          "publishedAt": "2026-09-28T00:00:00+08:00",
+          "type": "corroboration",
+          "note": "同源发布，不计独立佐证"
+        }
+      ],
+      "scores": {
+        "structural": 20,
+        "scope": 17,
+        "signal": 18,
+        "delta": 12,
+        "timeliness": 7,
+        "crossDomain": 8,
+        "total": 82,
+        "rationale": {
+          "structural": "利润与营收剪刀差持续6个月以上，指向企业盈利结构变化",
+          "scope": "覆盖全部规上工业41个大类行业",
+          "signal": "为“工业利润率修复”趋势提供第6个月连续证据",
+          "delta": "新增分行业拆分，电子与上游分化首次清晰",
+          "timeliness": "1-8月数据在9月末发布，仍在当期",
+          "crossDomain": "上游涨价同时影响制造业成本与CPI/PPI"
+        },
+        "scorerVersion": "score/v1.0"
+      },
+      "credibility": {
+        "level": "partial",
+        "basis": "官方一手统计，但尚未逐项比对原文表格；独立佐证与官方同源"
+      },
+      "evidenceGrade": "single_primary",
+      "verification": {
+        "status": "passed",
+        "method": "verify_sources/http",
+        "checkedAt": "2026-11-13T13:54:29+08:00",
+        "checks": [
+          {
+            "kind": "http",
+            "result": "pass",
+            "evidence": "HTTP 200 https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260928_1965425.html（页面无发布日期（日期未核））"
+          },
+          {
+            "kind": "http",
+            "result": "unknown",
+            "evidence": "HTTP 200 https://english.www.gov.cn/archive/statistics/202609/28/content_WS6ab9d6f1c6d00ca5f9a0d7e5.html（标题部分匹配）"
+          },
+          {
+            "kind": "primary_present",
+            "result": "pass",
+            "evidence": "primary 1 条"
+          }
+        ],
+        "note": "verify_sources.py 自动核验（HTTP），以 checks 为准"
+      },
+      "status": "pending",
+      "trendLinks": [
+        {
+          "trendId": "tr_cn-industrial-margin-repair",
+          "direction": "support",
+          "reason": "利润率同比提高0.44pp，且为连续第4个月两位数利润增长"
+        }
+      ],
+      "trendIds": [
+        "tr_cn-industrial-margin-repair"
+      ],
+      "revisions": [],
+      "forecastRefs": [],
+      "retro": {
+        "isRetro": true,
+        "asOf": "2026-09-28",
+        "note": "2026-09-28 数据发布，2026-11-13 回溯补录；1-8月分行业口径，不得与1-9月总量混算"
+      },
+      "display": {
+        "public": false,
+        "homepage": false,
+        "headline": false,
+        "reasons": [
+          "status 不是 published"
+        ]
+      },
+      "viz": {
+        "importance": 82,
+        "confidenceRank": 3,
+        "confidenceLabel": "单一官方",
+        "evidenceGrade": "single_primary",
+        "heat": 2,
+        "heatBasis": "distinct_domains",
+        "heatWindow": {
+          "from": "2026-09-28T00:00:00+08:00",
+          "to": "2026-11-13T13:30:00+08:00"
+        },
+        "sourceDomains": [
+          "stats.gov.cn",
+          "english.www.gov.cn"
+        ]
+      }
+    },
+    {
+      "id": "ev_ai-dc-power-161gw",
+      "dedupeKey": "ev:2424e13d5315",
+      "title": "2026年全球数据中心电力需求达161GW，同比增31%",
+      "summary": "据 TrendForce 数据，2026 年全球数据中心电力需求达 161GW，同比增长 31%，AI 服务器是主要拉动；BloombergNEF 同期提示，数据中心电力需求上升将带来新的气候挑战。",
+      "facts": [
+        "2026年全球数据中心电力需求161GW，同比增长31%",
+        "AI服务器为主要驱动",
+        "BNEF 同期提示数据中心电力需求上升带来气候挑战"
+      ],
+      "analysis": "算力扩张的瓶颈正从芯片供给转向电力与并网；若电力交付慢于GPU交付，AI资本开支的节奏会被迫改变。",
+      "category": "未来趋势",
+      "region": "全球",
+      "occurredAt": "2026-09-17T00:00:00+08:00",
+      "firstReportedAt": "2026-09-17T00:00:00+08:00",
+      "collectedAt": "2026-11-13T13:30:00+08:00",
+      "sources": [
+        {
+          "url": "https://www.communicationstoday.co.in/ai-servers-drive-31-surge-in-global-data-centre-power-demand/",
+          "title": "AI servers drive 31% surge in global data centre power demand",
+          "publisher": "Communications Today（引TrendForce）",
+          "publishedAt": "2026-09-17T00:00:00+08:00",
+          "type": "primary"
+        },
+        {
+          "url": "https://about.bnef.com/insights/data-centers/data-center-power-demand-is-set-to-surge-raising-new-climate-challenges-bloombergnef/",
+          "title": "Data center power demand set to surge, raising new climate challenges",
+          "publisher": "BloombergNEF",
+          "publishedAt": "2026-09-15T00:00:00+08:00",
+          "type": "corroboration",
+          "note": "独立机构，口径为电力需求增长趋势"
+        }
+      ],
+      "scores": {
+        "structural": 21,
+        "scope": 18,
+        "signal": 19,
+        "delta": 12,
+        "timeliness": 8,
+        "crossDomain": 10,
+        "total": 88,
+        "rationale": {
+          "structural": "把AI扩张的约束从半导体移到能源基础设施",
+          "scope": "全球数据中心、电网、发电与设备供应链",
+          "signal": "为“AI电力约束”趋势提供量化锚点",
+          "delta": "首次给出161GW与31%的年度口径",
+          "timeliness": "2026全年预测，当期有效",
+          "crossDomain": "连接AI、电力、核电、气候政策"
+        },
+        "scorerVersion": "score/v1.0"
+      },
+      "credibility": {
+        "level": "partial",
+        "basis": "研究机构口径，TrendForce与BNEF两家独立，但未核对原始报告"
+      },
+      "evidenceGrade": "single_primary",
+      "verification": {
+        "status": "passed",
+        "method": "verify_sources/http",
+        "checkedAt": "2026-11-13T13:54:29+08:00",
+        "checks": [
+          {
+            "kind": "http",
+            "result": "pass",
+            "evidence": "HTTP 200 https://www.communicationstoday.co.in/ai-servers-drive-31-surge-in-global-data-centre-power-demand/（OK）"
+          },
+          {
+            "kind": "http",
+            "result": "unknown",
+            "evidence": "HTTP 200 https://about.bnef.com/insights/data-centers/data-center-power-demand-is-set-to-surge-raising-new-climate-challenges-bloombergnef/（记录日期 2026-09-15 与页面 2026-11-11 相差>3天）"
+          },
+          {
+            "kind": "primary_present",
+            "result": "pass",
+            "evidence": "primary 1 条"
+          }
+        ],
+        "note": "verify_sources.py 自动核验（HTTP），以 checks 为准"
+      },
+      "status": "pending",
+      "trendLinks": [
+        {
+          "trendId": "tr_ai-power-constraint",
+          "direction": "support",
+          "reason": "需求增速31%远高于电网扩容速度"
+        }
+      ],
+      "trendIds": [
+        "tr_ai-power-constraint"
+      ],
+      "revisions": [],
+      "forecastRefs": [],
+      "retro": {
+        "isRetro": true,
+        "asOf": "2026-09-17",
+        "note": "2026-09-17 事件发生，2026-11-13 研究回溯补录，非当时实时采集"
+      },
+      "display": {
+        "public": false,
+        "homepage": false,
+        "headline": false,
+        "reasons": [
+          "status 不是 published"
+        ]
+      },
+      "viz": {
+        "importance": 88,
+        "confidenceRank": 3,
+        "confidenceLabel": "单一官方",
+        "evidenceGrade": "single_primary",
+        "heat": 2,
+        "heatBasis": "distinct_domains",
+        "heatWindow": {
+          "from": "2026-09-17T00:00:00+08:00",
+          "to": "2026-11-13T13:30:00+08:00"
+        },
+        "sourceDomains": [
+          "communicationstoday.co.in",
+          "about.bnef.com"
+        ]
+      }
+    },
+    {
+      "id": "ev_fed-hike-sep",
+      "dedupeKey": "ev:8a1f7775592f",
+      "title": "美联储重启加息25个基点，12比0全票通过",
+      "summary": "为3年2个月来首次加息，政策利率升至3.75%-4.00%，16名官员预计年内还会加。",
+      "facts": [
+        "美联储联邦公开市场委员会（FOMC）加息25个基点",
+        "联邦基金利率目标区间升至3.75%-4.00%",
+        "FOMC 以12比0通过加息",
+        "为3年2个月来首次加息",
+        "16名官员预计年内继续加息"
+      ],
+      "analysis": "全票加息意味着委员会对通胀的判断一致；但市场此前普遍预期按兵不动，政策路径的预期差可能放大资产波动。",
+      "category": "全球宏观",
+      "region": "美国",
+      "occurredAt": "2026-09-16T00:00:00+08:00",
+      "firstReportedAt": "2026-09-17T00:00:00+08:00",
+      "collectedAt": "2026-11-13T13:30:00+08:00",
+      "sources": [
+        {
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
+          "title": "Federal Reserve Board - Federal Reserve issues FOMC statement",
+          "publisher": "Federal Reserve Board",
+          "publishedAt": "2026-09-16T00:00:00+08:00",
+          "type": "primary"
+        },
+        {
+          "url": "https://finance.sina.com.cn/jjxw/2026-09-17/doc-inisaiep4453541.shtml",
+          "title": "美联储宣布加息25个基点",
+          "publisher": "新浪财经",
+          "publishedAt": "2026-09-17T00:00:00+08:00",
+          "type": "corroboration",
+          "note": "转述FOMC声明，未见federalreserve.gov原文"
+        }
+      ],
+      "scores": {
+        "structural": 22,
+        "scope": 20,
+        "signal": 16,
+        "delta": 10,
+        "timeliness": 8,
+        "crossDomain": 9,
+        "total": 85,
+        "rationale": {
+          "structural": "改变全球无风险利率中枢与美元流动性",
+          "scope": "影响所有美元资产、新兴市场汇率与跨境资本",
+          "signal": "为“全球利率二次上行”提供关键节点",
+          "delta": "推翻市场此前的降息预期",
+          "timeliness": "9月会议，仍在政策窗口内",
+          "crossDomain": "与黄金、油价、AI资本开支估值同时相关"
+        },
+        "scorerVersion": "score/v1.0"
+      },
+      "credibility": {
+        "level": "unverified",
+        "basis": "仅二手转述，尚未取得FOMC官方声明原文"
+      },
+      "evidenceGrade": "single_primary",
+      "verification": {
+        "status": "passed",
+        "method": "verify_sources/http",
+        "checkedAt": "2026-11-13T14:03:06+08:00",
+        "checks": [
+          {
+            "kind": "http",
+            "result": "pass",
+            "evidence": "HTTP 200 https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm（页面无发布日期（日期未核））"
+          },
+          {
+            "kind": "http",
+            "result": "unknown",
+            "evidence": "HTTP 200 https://finance.sina.com.cn/jjxw/2026-09-17/doc-inisaiep4453541.shtml（标题相似度低，需人工确认）"
+          },
+          {
+            "kind": "primary_present",
+            "result": "pass",
+            "evidence": "primary 1 条"
+          }
+        ],
+        "note": "待抓 federalreserve.gov 声明原文"
+      },
+      "status": "pending",
+      "trendLinks": [
+        {
+          "trendId": "tr_global-rates-rehike",
+          "direction": "support",
+          "reason": "首次加息且全票，确认政策转向"
+        }
+      ],
+      "trendIds": [
+        "tr_global-rates-rehike"
+      ],
+      "revisions": [],
+      "forecastRefs": [],
+      "retro": {
+        "isRetro": true,
+        "asOf": "2026-09-16",
+        "note": "2026-09-16 议息决议，2026-11-13 回溯补录，非当时实时采集"
+      },
+      "display": {
+        "public": false,
+        "homepage": false,
+        "headline": false,
+        "reasons": [
+          "status 不是 published"
+        ]
+      },
+      "viz": {
+        "importance": 85,
+        "confidenceRank": 3,
+        "confidenceLabel": "单一官方",
+        "evidenceGrade": "single_primary",
+        "heat": 2,
+        "heatBasis": "distinct_domains",
+        "heatWindow": {
+          "from": "2026-09-16T00:00:00+08:00",
+          "to": "2026-11-13T13:30:00+08:00"
+        },
+        "sourceDomains": [
+          "federalreserve.gov",
+          "finance.sina.com.cn"
+        ]
+      }
+    },
+    {
+      "id": "ev_mideast-war-6m",
+      "dedupeKey": "ev:9fb638b933a7",
+      "title": "中东战事半年：霍尔木兹受阻，布伦特一度突破90美元",
+      "summary": "全球油气贸易被迫重构，美国宣布对伊朗新制裁，油价仍明显高于战前。",
+      "facts": [
+        "战事自2026年2月底爆发，至8月底满半年",
+        "霍尔木兹海峡通行受阻",
+        "布伦特原油一度突破90美元/桶",
+        "美国宣布对伊朗新一轮制裁"
+      ],
+      "analysis": "半年节点本身不是新事件，新信息是贸易流重构与制裁升级；油价高位对通胀的二次传导是主要观察点。",
+      "category": "全球宏观",
+      "region": "中东",
+      "occurredAt": "2026-08-28T00:00:00+08:00",
+      "firstReportedAt": "2026-08-28T00:00:00+08:00",
+      "collectedAt": "2026-11-13T13:30:00+08:00",
+      "sources": [
+        {
+          "url": "https://www.news.cn/world/20260828/70f8aefdb1984656bc983ca7885da65c/c.html",
+          "title": "国际观察丨从短期波动到趋势重构——中东战事冲击世界经济半年盘点",
+          "publisher": "新华社",
+          "publishedAt": "2026-08-28T00:00:00+08:00",
+          "type": "primary"
+        },
+        {
+          "url": "https://www.news.cn/20260813/30a794943d51436f9ff2e53f1e97ebde/c.html",
+          "title": "新闻分析丨供需失衡加剧全球能源市场风险",
+          "publisher": "新华社",
+          "publishedAt": "2026-08-13T00:00:00+08:00",
+          "type": "corroboration",
+          "note": "同一通讯社，不计独立"
+        }
+      ],
+      "scores": {
+        "structural": 21,
+        "scope": 20,
+        "signal": 15,
+        "delta": 8,
+        "timeliness": 5,
+        "crossDomain": 10,
+        "total": 79,
+        "rationale": {
+          "structural": "重塑能源贸易路线与航运保险成本",
+          "scope": "全球石油贸易与亚洲炼厂",
+          "signal": "为“地缘-能源-通胀”链条提供持续证据",
+          "delta": "半年节点的贸易流重构细节",
+          "timeliness": "8月报道，事件仍在演进",
+          "crossDomain": "连接能源、航运、通胀与外交"
+        },
+        "scorerVersion": "score/v1.0"
+      },
+      "credibility": {
+        "level": "partial",
+        "basis": "新华社一手报道，但为通讯社单一来源"
+      },
+      "evidenceGrade": "single_primary",
+      "verification": {
+        "status": "passed",
+        "method": "verify_sources/http",
+        "checkedAt": "2026-11-13T14:03:06+08:00",
+        "checks": [
+          {
+            "kind": "http",
+            "result": "pass",
+            "evidence": "HTTP 200 https://www.news.cn/world/20260828/70f8aefdb1984656bc983ca7885da65c/c.html（OK）"
+          },
+          {
+            "kind": "http",
+            "result": "pass",
+            "evidence": "HTTP 200 https://www.news.cn/20260813/30a794943d51436f9ff2e53f1e97ebde/c.html（OK）"
+          },
+          {
+            "kind": "primary_present",
+            "result": "pass",
+            "evidence": "primary 1 条"
+          }
+        ],
+        "note": "verify_sources.py 自动核验（HTTP），以 checks 为准"
+      },
+      "status": "pending",
+      "trendLinks": [
+        {
+          "trendId": "tr_geopolitics-energy-premium",
+          "direction": "support",
+          "reason": "霍尔木兹受阻直接抬升能源风险溢价"
+        }
+      ],
+      "trendIds": [
+        "tr_geopolitics-energy-premium"
+      ],
+      "revisions": [],
+      "forecastRefs": [],
+      "retro": {
+        "isRetro": true,
+        "asOf": "2026-08-28",
+        "note": "战事始于2026年2月底，早于半年窗口；本条只收录5-13后的半年盘点与新制裁，背景时间如实标注"
+      },
+      "display": {
+        "public": false,
+        "homepage": false,
+        "headline": false,
+        "reasons": [
+          "status 不是 published"
+        ]
+      },
+      "viz": {
+        "importance": 79,
+        "confidenceRank": 3,
+        "confidenceLabel": "单一官方",
+        "evidenceGrade": "single_primary",
+        "heat": 1,
+        "heatBasis": "distinct_domains",
+        "heatWindow": {
+          "from": "2026-08-28T00:00:00+08:00",
+          "to": "2026-11-13T13:30:00+08:00"
+        },
+        "sourceDomains": [
+          "news.cn"
+        ]
+      }
+    }
+  ]
+}

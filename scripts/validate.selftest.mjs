@@ -2,9 +2,12 @@
 /**
  * validate.mjs 的自测 —— 用内置夹具，不读 src/data。
  *
- * 为什么不用真实数据：真实数据会被别的组随时改动，数据一脏自测先变红，
- * 失败信息就分不清是校验器错了还是数据错了（2026-11-13 真出现过一次）。
- * 自测只回答「校验器本身还对不对」，真实数据的问题交给 CI 跑 validate.mjs。
+ * 为什么不用真实数据：真实数据会被别的组随时替换（2026-11-13 一天内换了两套口径），
+ * 数据一脏自测先变红，就分不清是校验器错了还是数据错了。
+ * 自测只回答「校验器本身还对不对」。
+ *
+ * 夹具口径 = era-schema v1：id 用下划线（ev_/tr_/fc_），
+ * 六维是分项得分（满分 25/20/20/15/10/10），total 直接相加，不加权、不取整。
  *
  *   node scripts/validate.selftest.mjs            全部用例
  *   node scripts/validate.selftest.mjs --verbose  打印每例命中的错误码
@@ -20,8 +23,8 @@ import { fileURLToPath } from 'node:url';
 const here = dirname(fileURLToPath(import.meta.url));
 const verbose = process.argv.includes('--verbose');
 
-// ────────────────────────── 夹具：最小合法数据集 ──────────────────────────
-// 六维 80/70/60/50/40/30 → 加权 60.5 → 总分 61（顺带覆盖「半值向上」）
+// ────────────────────────── 夹具：最小合法数据集（v1 口径） ──────────────────────────
+// Alpha：18+16+17+13+9+8 = 81   Beta：15+12+10+8+6+5 = 56
 const FIXTURE = {
   'meta.json': {
     site: 'ERA · 时代趋势雷达（自测夹具）',
@@ -35,7 +38,7 @@ const FIXTURE = {
   },
   'events.json': [
     {
-      id: 'ev-20260105-fixture-alpha',
+      id: 'ev_fixture-alpha',
       title: '自测夹具事件 Alpha',
       date: '2026-01-05',
       reportedAt: '2026-01-05',
@@ -45,18 +48,34 @@ const FIXTURE = {
       summary: '这是一条用于自测的合成事件，不指向任何真实主体，也不构成任何判断。',
       facts: ['事实一：夹具数据，用于测试校验器', '事实二：夹具数据，用于测试校验器'],
       metrics: [{ label: '夹具指标', value: '1', note: '夹具' }],
-      scores: { structural: 80, scope: 70, signal: 60, novelty: 50, timeliness: 40, cross: 30, total: 61 },
+      scores: {
+        structural: 18,
+        scope: 16,
+        signal: 17,
+        novelty: 13,
+        timeliness: 9,
+        cross: 8,
+        total: 81,
+        rationale: {
+          structural: '夹具：结构性影响的分项理由',
+          scope: '夹具：影响范围的分项理由',
+          signal: '夹具：信号价值的分项理由',
+          delta: '夹具：信息增量的分项理由',
+          timeliness: '夹具：时效性的分项理由',
+          crossDomain: '夹具：跨领域的分项理由',
+        },
+      },
       credibility: 'high',
       status: 'confirmed',
       sources: [{ name: '夹具来源', url: 'https://example.com/fixture-alpha', date: '2026-01-05', official: true }],
-      trends: [{ id: 'tr-fixture-alpha', effect: 'support', reason: '夹具关系' }],
+      trends: [{ id: 'tr_fixture-alpha', effect: 'support', reason: '夹具关系' }],
       timeline: [{ date: '2026-01-05', title: '夹具', note: '夹具' }],
-      scoreHistory: [{ date: '2026-01-10', total: 61, reason: '回溯首评：六维加权 60.5，半值向上得 61' }],
+      scoreHistory: [{ date: '2026-01-10', total: 81, reason: '回溯首评：六维分项 18+16+17+13+9+8=81' }],
       watch: '夹具，无需观察。',
       backfill: true,
     },
     {
-      id: 'ev-20260106-fixture-beta',
+      id: 'ev_fixture-beta',
       title: '自测夹具事件 Beta',
       date: '2026-01-06',
       reportedAt: '2026-01-06',
@@ -66,20 +85,20 @@ const FIXTURE = {
       summary: '第二条合成事件，用来让夹具里有多条事件、多个趋势引用，验证批量路径。',
       facts: ['事实一：夹具数据', '事实二：夹具数据'],
       metrics: [{ label: '夹具指标', value: '2', note: '夹具' }],
-      scores: { structural: 60, scope: 60, signal: 60, novelty: 40, timeliness: 40, cross: 40, total: 53 },
+      scores: { structural: 15, scope: 12, signal: 10, novelty: 8, timeliness: 6, cross: 5, total: 56 },
       credibility: 'medium',
       status: 'confirmed',
       sources: [{ name: '夹具来源', url: 'https://example.org/fixture-beta', date: '2026-01-06', official: false }],
-      trends: [{ id: 'tr-fixture-beta', effect: 'weaken', reason: '夹具关系' }],
+      trends: [{ id: 'tr_fixture-beta', effect: 'weaken', reason: '夹具关系' }],
       timeline: [{ date: '2026-01-06', title: '夹具', note: '夹具' }],
-      scoreHistory: [{ date: '2026-01-10', total: 53, reason: '回溯首评：六维加权 53' }],
+      scoreHistory: [{ date: '2026-01-10', total: 56 }],
       watch: '夹具，无需观察。',
       backfill: true,
     },
   ],
   'trends.json': [
     {
-      id: 'tr-fixture-alpha',
+      id: 'tr_fixture-alpha',
       title: '夹具趋势 Alpha',
       thesis: '夹具论点，用于测试修订链与置信度一致性。',
       domain: 'technology',
@@ -92,7 +111,7 @@ const FIXTURE = {
       revisions: [{ date: '2026-01-01', from: null, to: 55, reason: '首次建立' }],
     },
     {
-      id: 'tr-fixture-beta',
+      id: 'tr_fixture-beta',
       title: '夹具趋势 Beta',
       thesis: '第二条夹具论点。',
       domain: 'industry',
@@ -107,13 +126,13 @@ const FIXTURE = {
   ],
   'forecasts.json': [
     {
-      id: 'fc-202601-fixture',
+      id: 'fc_2026-fixture',
       claim: '夹具判断：用于测试置信度与历史末条一致。',
       madeAt: '2026-01-02',
       dueBy: '2026-06-30',
       confidence: 62,
       status: 'open',
-      trendId: 'tr-fixture-alpha',
+      trendId: 'tr_fixture-alpha',
       support: ['夹具支持'],
       counter: ['夹具反证'],
       history: [{ date: '2026-01-02', confidence: 62, reason: '首次提出' }],
@@ -126,8 +145,8 @@ const FIXTURE = {
       date: '2026-01-10',
       title: '第 1 周 · 夹具快照',
       summary: '夹具快照摘要。',
-      eventIds: ['ev-20260105-fixture-alpha'],
-      trendChanges: [{ trendId: 'tr-fixture-beta', from: 'emerging', to: 'strengthening', reason: '夹具变更' }],
+      eventIds: ['ev_fixture-alpha'],
+      trendChanges: [{ trendId: 'tr_fixture-beta', from: 'emerging', to: 'strengthening', reason: '夹具变更' }],
     },
   ],
 };
@@ -179,22 +198,34 @@ const warnCodes = (r) => (r.out?.warnings ?? []).map((x) => x.code);
 const cases = [
   { name: '夹具数据应通过', expect: { code: 0 }, mutate: null },
 
-  // 总分与评分历史
+  // id
+  { name: 'id 格式不对（大写）', expect: { code: 1, code_: 'FORMAT' }, mutate: (d) => { ev(d)[0].id = 'EV_bad-id'; } },
+  { name: 'id 重复', expect: { code: 1, code_: 'DUPLICATE' }, mutate: (d) => { ev(d)[1].id = ev(d)[0].id; } },
+
+  // 总分与评分历史（v1：直接相加）
   { name: 'scores.total 缺失', expect: { code: 1, code_: 'RANGE' }, mutate: (d) => delete ev(d)[0].scores.total },
-  { name: 'scores.total 与六维不符（61 写成 60，即半值向下）', expect: { code: 1, code_: 'TOTAL_MISMATCH' }, mutate: (d) => { ev(d)[0].scores.total = 60; } },
-  { name: '六维越界', expect: { code: 1, code_: 'RANGE' }, mutate: (d) => { ev(d)[0].scores.structural = 120; } },
+  { name: 'total 与六维合计不符（81 写成 80）', expect: { code: 1, code_: 'TOTAL_MISMATCH' }, mutate: (d) => { ev(d)[0].scores.total = 80; } },
+  { name: 'structural 超 25', expect: { code: 1, code_: 'RANGE' }, mutate: (d) => { ev(d)[0].scores.structural = 26; } },
+  { name: 'scope 超 20（各维上限不同）', expect: { code: 1, code_: 'RANGE' }, mutate: (d) => { ev(d)[0].scores.scope = 21; } },
   { name: '同日两条评分（非递减，允许）', expect: { code: 0 }, mutate: (d) => {
     const e = ev(d)[0];
-    e.scoreHistory.push({ date: e.scoreHistory[0].date, total: 61, reason: '同一天二次修订' });
+    e.scoreHistory.push({ date: e.scoreHistory[0].date, total: 81, reason: '同一天二次修订' });
+  } },
+  { name: '改过分却没写 reason（只警告，exit 0）', expect: { code: 0, warn_: 'HISTORY_REASON' }, mutate: (d) => {
+    const e = ev(d)[0];
+    e.scoreHistory.push({ date: e.scoreHistory[0].date, total: 81 });
   } },
   { name: '评分历史日期倒退', expect: { code: 1, code_: 'ORDER' }, mutate: (d) => {
-    ev(d)[0].scoreHistory.push({ date: '2025-12-01', total: 61, reason: '比前一条更早' });
+    ev(d)[0].scoreHistory.push({ date: '2025-12-01', total: 81, reason: '比前一条更早' });
   } },
   { name: '篡改历史末条（不追加）', expect: { code: 1, code_: 'HISTORY_TAIL' }, mutate: (d) => {
-    ev(d)[0].scoreHistory[0].total = 60;
+    ev(d)[0].scoreHistory[0].total = 80;
   } },
   { name: '首条评分日期不等于采集日', expect: { code: 1, code_: 'HISTORY_HEAD' }, mutate: (d) => {
     ev(d)[0].scoreHistory[0].date = '2026-01-01';
+  } },
+  { name: 'rationale 缺分项只警告（exit 0）', expect: { code: 0, warn_: 'RATIONALE' }, mutate: (d) => {
+    delete ev(d)[0].scores.rationale.structural;
   } },
 
   // 时间链
@@ -202,13 +233,17 @@ const cases = [
   { name: 'collectedAt 早于 reportedAt', expect: { code: 1, code_: 'ORDER' }, mutate: (d) => { ev(d)[0].collectedAt = '2020-01-01'; } },
 
   // 四类引用
-  { name: '事件→趋势断链', expect: { code: 1, code_: 'DANGLING' }, mutate: (d) => { ev(d)[0].trends[0].id = 'tr-nope'; } },
-  { name: '判断→趋势断链', expect: { code: 1, code_: 'DANGLING' }, mutate: (d) => { fc(d)[0].trendId = 'tr-nope'; } },
-  { name: '快照→事件断链', expect: { code: 1, code_: 'DANGLING' }, mutate: (d) => { sn(d)[0].eventIds.push('ev-20260101-nope'); } },
-  { name: '快照→趋势变更断链', expect: { code: 1, code_: 'DANGLING' }, mutate: (d) => { sn(d)[0].trendChanges[0].trendId = 'tr-nope'; } },
+  { name: '事件→趋势断链', expect: { code: 1, code_: 'DANGLING' }, mutate: (d) => { ev(d)[0].trends[0].id = 'tr_nope'; } },
+  { name: '判断→趋势断链', expect: { code: 1, code_: 'DANGLING' }, mutate: (d) => { fc(d)[0].trendId = 'tr_nope'; } },
+  { name: '快照→事件断链', expect: { code: 1, code_: 'DANGLING' }, mutate: (d) => { sn(d)[0].eventIds.push('ev_nope'); } },
+  { name: '快照→趋势变更断链', expect: { code: 1, code_: 'DANGLING' }, mutate: (d) => { sn(d)[0].trendChanges[0].trendId = 'tr_nope'; } },
   { name: '快照 summary 为空', expect: { code: 1, code_: 'REQUIRED' }, mutate: (d) => { sn(d)[0].summary = '  '; } },
+  { name: 'snapshots 为空数组允许（exit 0）', expect: { code: 0 }, mutate: (d) => {
+    d['snapshots.json'] = [];
+    d['meta.json'].counts.snapshots = 0;
+  } },
 
-  // 修订链三条（此前零覆盖）
+  // 修订链三条
   { name: '修订 from 与上一条 to 不连续', expect: { code: 1, code_: 'REVISION_CHAIN' }, mutate: (d) => {
     tr(d)[0].revisions.push({ date: '2026-01-03', from: 50, to: 58, reason: '跳号' });
   } },
@@ -246,7 +281,7 @@ const cases = [
   // 警告不拦发布
   { name: '孤儿趋势只警告（exit 0）', expect: { code: 0, warn_: 'ORPHAN' }, mutate: (d) => {
     const t = structuredClone(tr(d)[0]);
-    t.id = 'tr-fixture-orphan';
+    t.id = 'tr_fixture-orphan';
     t.title = '没人引用的夹具趋势';
     tr(d).push(t);
     d['meta.json'].counts.trends += 1;

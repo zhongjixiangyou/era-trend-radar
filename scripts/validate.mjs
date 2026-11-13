@@ -67,8 +67,6 @@ const ID_RE = {
 const DIMS = ['structural', 'scope', 'signal', 'novelty', 'timeliness', 'cross'];
 // v1 口径：六维本身就是分项得分（满分 25/20/20/15/10/10），总分 = 六项直接相加。
 const CAPS = { structural: 25, scope: 20, signal: 20, novelty: 15, timeliness: 10, cross: 10 };
-/** 半值向上取整，与契约「四舍五入、.5 向上」一致；scaled 为 ×100 的整数 */
-const roundHalfUp = (scaled) => Math.floor((scaled + 50) / 100);
 const REGIONS = ['global', 'china', 'us', 'europe', 'asia', 'other'];
 const CATEGORIES = ['technology', 'economy', 'industry', 'society', 'policy', 'energy', 'demography'];
 const EFFECTS = ['support', 'weaken', 'challenge'];
@@ -167,6 +165,17 @@ uniqueIds(snapshots, 'snapshots', ID_RE.snapshot);
         sum += v;
       }
     }
+    if (e.scores.rationale !== undefined) {
+      if (!isObj(e.scores.rationale)) {
+        push(`${p}.scores.rationale`, 'TYPE', 'rationale 必须是对象');
+      } else {
+        const alias = { novelty: ['novelty', 'delta'], cross: ['cross', 'crossDomain'] };
+        const missing = DIMS.filter((d) => (alias[d] ?? [d]).every((k) => !isNonEmptyStr(e.scores.rationale[k])));
+        if (missing.length > 0) {
+          warn(`${p}.scores.rationale`, 'RATIONALE', `缺 ${missing.join('/')} 的分项理由（v1 允许用 delta 代 novelty、crossDomain 代 cross）`);
+        }
+      }
+    }
     if (!isInt(e.scores.total) || e.scores.total < 0 || e.scores.total > 100) {
       push(`${p}.scores.total`, 'RANGE', 'scores.total 是当前分的唯一来源，必须是 0–100 的整数');
     } else if (ok) {
@@ -198,6 +207,14 @@ uniqueIds(snapshots, 'snapshots', ID_RE.snapshot);
         push(`${p}.scoreHistory[${j}].reason`, 'REQUIRED', 'reason 不能是空字符串');
       }
     });
+    // 只有一次评分（首次建立）不需要理由；改过一次分却不写为什么，等于留痕没留字
+    if (e.scoreHistory.length > 1) {
+      const noReason = e.scoreHistory.filter((h) => !isNonEmptyStr(h?.reason)).length;
+      if (noReason > 0) {
+        warn(`${p}.scoreHistory`, 'HISTORY_REASON',
+          `${e.scoreHistory.length} 条评分里有 ${noReason} 条没写 reason；改分要能回答「为什么改」，补上理由再发布`);
+      }
+    }
     const lastH = e.scoreHistory[e.scoreHistory.length - 1];
     if (isInt(e.scores?.total) && lastH?.total !== e.scores.total) {
       push(`${p}.scoreHistory[${e.scoreHistory.length - 1}].total`, 'HISTORY_TAIL',

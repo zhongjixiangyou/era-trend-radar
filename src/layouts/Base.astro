@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { siteMeta, fmtDate, weekday } from '../lib/data';
+import { siteMeta, fmtDate, weekday, previewMode } from '../lib/data';
 import { href } from '../lib/url';
 
 interface Props {
@@ -67,6 +67,11 @@ const stale = siteMeta.runStatus && siteMeta.runStatus !== 'ok';
         ))}
       </nav>
 
+      {previewMode && (
+        <div class="stale-banner">
+          内部预览：{siteMeta.preview?.pending ?? 0} 条候选尚未通过发布校验，{siteMeta.preview?.published ?? 0} 条已发布。以下内容不作为公开结论，发布校验通过后横幅自动消失。
+        </div>
+      )}
       {stale && (
         <div class="stale-banner">
           数据状态：{siteMeta.runStatus}。最近一次成功采集 {siteMeta.lastSuccessfulRun ? fmtDate(siteMeta.lastSuccessfulRun.slice(0, 10)) : '未知'}，页面内容可能滞后。

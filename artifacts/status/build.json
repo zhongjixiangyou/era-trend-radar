@@ -1,6 +1,6 @@
 {
   "tool": "build",
-  "status": "failed",
-  "at": "2026-11-13T06:11:53.648Z",
-  "message": "派生层漂移 3 个：漂移 events.json, 漂移 forecasts.json, 漂移 trends.json"
+  "status": "healthy",
+  "at": "2026-11-13T06:19:25.766Z",
+  "message": "入口构建 24 文件；3 个派生文件与 content/ 无漂移"
 }

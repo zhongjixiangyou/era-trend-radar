@@ -30,7 +30,7 @@ const domainCn = trend.domain === 'global' ? '全球' : trend.domain === 'china'
     <p class="standfirst" style="max-width:42em">{trend.thesis}</p>
     <div class="byline" style="margin-bottom:30px">
       <span class={`status ${trend.status}`}>{statusLabel[trend.status]}</span>
-      <span style="margin-left:10px">置信 {trend.confidence}</span>
+      <span style="margin-left:10px">证据 {trend.evidenceCount ?? 0} 条</span>
       <span style="margin-left:10px">验证期限 {trend.verifyBy ? fmtDate(trend.verifyBy) : '未设定'}</span>
     </div>
 

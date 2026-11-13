@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "1",
+  "generatedAt": "2026-11-13T14:19:24+08:00",
+  "counts": {
+    "forecasts": 2,
+    "open": 2
+  },
+  "forecasts": [
+    {
+      "id": "fc_fed-no-cut-2026",
+      "statement": "2026年12月31日前，美联储不会下调联邦基金利率目标区间",
+      "createdAt": "2026-11-13T13:30:00+08:00",
+      "resolveBy": "2026-12-31T00:00:00+08:00",
+      "probability": 0.72,
+      "rationale": "9月刚重启加息且12比0全票，16名官员预计年内继续加息；通胀未回到目标前，降息缺乏委员会基础。关键假设：不再出现系统性金融事件迫使紧急宽松。",
+      "indicators": [
+        "FOMC 10月/12月声明与投票",
+        "联邦基金利率目标区间",
+        "核心PCE同比"
+      ],
+      "linkedTrendIds": [
+        "tr_global-rates-rehike"
+      ],
+      "evidenceRefs": [
+        "ev_fed-hike-sep"
+      ],
+      "status": "open",
+      "resolution": null,
+      "revisions": [
+        {
+          "at": "2026-11-13T13:30:00+08:00",
+          "by": "二组",
+          "note": "首次判断，概率0.72"
+        }
+      ],
+      "overdue": false
+    },
+    {
+      "id": "fc_ai-power-delay-2027",
+      "statement": "2027年6月30日前，至少一家超大规模云厂商公开披露因电力或并网约束推迟数据中心上线",
+      "createdAt": "2026-11-13T13:30:00+08:00",
+      "resolveBy": "2027-06-30T00:00:00+08:00",
+      "probability": 0.45,
+      "rationale": "电力需求增速31%高于电网扩容；但厂商可先用燃气轮机与长期PPA缓解，公开承认延期有声誉成本，故概率低于五成。",
+      "indicators": [
+        "四大云厂商财报电话会与资本开支说明",
+        "公开宣布延期的数据中心项目数",
+        "并网排队时长（PJM/ERCOT）"
+      ],
+      "linkedTrendIds": [
+        "tr_ai-power-constraint"
+      ],
+      "evidenceRefs": [
+        "ev_ai-dc-power-161gw",
+        "ev_nrc-smr-first"
+      ],
+      "status": "open",
+      "resolution": null,
+      "revisions": [
+        {
+          "at": "2026-11-13T13:30:00+08:00",
+          "by": "二组",
+          "note": "首次判断，概率0.45"
+        }
+      ],
+      "overdue": false
+    }
+  ]
+}

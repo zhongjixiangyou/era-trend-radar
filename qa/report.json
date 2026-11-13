@@ -1,15 +1,15 @@
 {
-  "ok": false,
-  "generatedAt": "2026-11-13T06:10:32.257Z",
+  "ok": true,
+  "generatedAt": "2026-11-13T06:19:16.757Z",
   "base": {
     "mode": "base",
     "origin": "http://127.0.0.1:4321",
     "rootPath": "/era-trend-radar"
   },
   "summary": {
-    "total": 36,
-    "pass": 35,
-    "fail": 1,
+    "total": 37,
+    "pass": 37,
+    "fail": 0,
     "skip": 0
   },
   "checks": [
@@ -33,11 +33,11 @@
     },
     {
       "id": "route:event-detail",
-      "name": "/events/ev-20261014-us-cpi-sept/ → 200",
+      "name": "/events/ev_cn-nev-oct/ → 200",
       "status": "pass",
       "detail": {
-        "url": "http://127.0.0.1:4321/era-trend-radar/events/ev-20261014-us-cpi-sept/",
-        "title": "美国 9 月 CPI 同比升至 3.7%，降息叙事首次被打断 · ERA 时代趋势雷达"
+        "url": "http://127.0.0.1:4321/era-trend-radar/events/ev_cn-nev-oct/",
+        "title": "10月新能源车销量占比64.3%，出口同比增1.4倍 · ERA 时代趋势雷达"
       }
     },
     {
@@ -60,11 +60,11 @@
     },
     {
       "id": "route:trend-detail",
-      "name": "/trends/tr-fed-hike-cycle/ → 200",
+      "name": "/trends/tr_climate-food-inflation/ → 200",
       "status": "pass",
       "detail": {
-        "url": "http://127.0.0.1:4321/era-trend-radar/trends/tr-fed-hike-cycle/",
-        "title": "美联储重回加息通道，全球贴现率重新上行 · ERA 时代趋势雷达"
+        "url": "http://127.0.0.1:4321/era-trend-radar/trends/tr_climate-food-inflation/",
+        "title": "气候波动正通过粮食与化肥价格重新进入全球通胀链条 · ERA 时代趋势雷达"
       }
     },
     {
@@ -108,7 +108,7 @@
     },
     {
       "id": "assets:event-detail",
-      "name": "/events/ev-20261014-us-cpi-sept/ 资源前缀正确",
+      "name": "/events/ev_cn-nev-oct/ 资源前缀正确",
       "status": "pass",
       "detail": {}
     },
@@ -126,7 +126,7 @@
     },
     {
       "id": "assets:trend-detail",
-      "name": "/trends/tr-fed-hike-cycle/ 资源前缀正确",
+      "name": "/trends/tr_climate-food-inflation/ 资源前缀正确",
       "status": "pass",
       "detail": {}
     },
@@ -180,17 +180,17 @@
         "detail": {
           "320": {
             "overflow": 0,
-            "offenders": 0,
+            "offenders": 2,
             "clipped": 3
           },
           "390": {
             "overflow": 0,
-            "offenders": 0,
+            "offenders": 2,
             "clipped": 2
           },
           "430": {
             "overflow": 0,
-            "offenders": 0,
+            "offenders": 2,
             "clipped": 1
           }
         }
@@ -198,7 +198,7 @@
     },
     {
       "id": "overflow:event-detail",
-      "name": "/events/ev-20261014-us-cpi-sept/ 320/390/430 全部 0 溢出",
+      "name": "/events/ev_cn-nev-oct/ 320/390/430 全部 0 溢出",
       "status": "pass",
       "detail": {
         "detail": {
@@ -222,116 +222,24 @@
     },
     {
       "id": "overflow:emerging",
-      "name": "/emerging/ 在 320/390/430px 溢出",
-      "status": "fail",
+      "name": "/emerging/ 320/390/430 全部 0 溢出",
+      "status": "pass",
       "detail": {
-        "bad": [
-          {
-            "width": 320,
-            "overflow": 146,
-            "offenders": [
-              {
-                "selector": "table.ledger.em-table",
-                "right": 466,
-                "left": 18,
-                "width": 448,
-                "over": 146,
-                "text": "领域状态近 30 天独立来源前 30 天近 7 天增速判定气候与粮食通胀观察积累"
-              },
-              {
-                "selector": "thead",
-                "right": 466,
-                "left": 18,
-                "width": 448,
-                "over": 146,
-                "text": "领域状态近 30 天独立来源前 30 天近 7 天增速判定"
-              },
-              {
-                "selector": "tr",
-                "right": 466,
-                "left": 18,
-                "width": 448,
-                "over": 146,
-                "text": "领域状态近 30 天独立来源前 30 天近 7 天增速判定"
-              }
-            ]
-          },
-          {
-            "width": 390,
-            "overflow": 76,
-            "offenders": [
-              {
-                "selector": "table.ledger.em-table",
-                "right": 466,
-                "left": 18,
-                "width": 448,
-                "over": 76,
-                "text": "领域状态近 30 天独立来源前 30 天近 7 天增速判定气候与粮食通胀观察积累"
-              },
-              {
-                "selector": "thead",
-                "right": 466,
-                "left": 18,
-                "width": 448,
-                "over": 76,
-                "text": "领域状态近 30 天独立来源前 30 天近 7 天增速判定"
-              },
-              {
-                "selector": "tr",
-                "right": 466,
-                "left": 18,
-                "width": 448,
-                "over": 76,
-                "text": "领域状态近 30 天独立来源前 30 天近 7 天增速判定"
-              }
-            ]
-          },
-          {
-            "width": 430,
-            "overflow": 36,
-            "offenders": [
-              {
-                "selector": "table.ledger.em-table",
-                "right": 466,
-                "left": 18,
-                "width": 448,
-                "over": 36,
-                "text": "领域状态近 30 天独立来源前 30 天近 7 天增速判定气候与粮食通胀观察积累"
-              },
-              {
-                "selector": "thead",
-                "right": 466,
-                "left": 18,
-                "width": 448,
-                "over": 36,
-                "text": "领域状态近 30 天独立来源前 30 天近 7 天增速判定"
-              },
-              {
-                "selector": "tr",
-                "right": 466,
-                "left": 18,
-                "width": 448,
-                "over": 36,
-                "text": "领域状态近 30 天独立来源前 30 天近 7 天增速判定"
-              }
-            ]
-          }
-        ],
         "detail": {
           "320": {
-            "overflow": 146,
-            "offenders": 8,
-            "clipped": 3
+            "overflow": 0,
+            "offenders": 0,
+            "clipped": 8
           },
           "390": {
-            "overflow": 76,
-            "offenders": 8,
-            "clipped": 2
+            "overflow": 0,
+            "offenders": 0,
+            "clipped": 8
           },
           "430": {
-            "overflow": 36,
-            "offenders": 8,
-            "clipped": 1
+            "overflow": 0,
+            "offenders": 0,
+            "clipped": 8
           }
         }
       }
@@ -362,7 +270,7 @@
     },
     {
       "id": "overflow:trend-detail",
-      "name": "/trends/tr-fed-hike-cycle/ 320/390/430 全部 0 溢出",
+      "name": "/trends/tr_climate-food-inflation/ 320/390/430 全部 0 溢出",
       "status": "pass",
       "detail": {
         "detail": {
@@ -439,7 +347,7 @@
       "detail": {
         "detail": {
           "320": {
-            "overflow": 1,
+            "overflow": 0,
             "offenders": 0,
             "clipped": 3
           },
@@ -458,11 +366,18 @@
     },
     {
       "id": "events:rows",
-      "name": "事件行 10 条",
+      "name": "事件行 11 条，与已发布数一致",
       "status": "pass",
       "detail": {
-        "selector": ".event-row"
+        "selector": ".event-row",
+        "expected": 11
       }
+    },
+    {
+      "id": "events:banner",
+      "name": "预览模式：内部预览横幅在",
+      "status": "pass",
+      "detail": {}
     },
     {
       "id": "events:filter:category",
@@ -471,26 +386,26 @@
       "detail": {
         "detail": [
           {
-            "value": "economy",
-            "label": "经济",
-            "before": 10,
+            "value": "industry",
+            "label": "产业",
+            "before": 11,
             "after": 6,
             "pressed": "true",
             "ok": true
           },
           {
-            "value": "industry",
-            "label": "产业",
-            "before": 10,
-            "after": 1,
+            "value": "economy",
+            "label": "经济",
+            "before": 11,
+            "after": 3,
             "pressed": "true",
             "ok": true
           },
           {
             "value": "technology",
             "label": "科技",
-            "before": 10,
-            "after": 3,
+            "before": 11,
+            "after": 2,
             "pressed": "true",
             "ok": true
           }
@@ -499,31 +414,39 @@
     },
     {
       "id": "events:filter:region",
-      "name": "region 3 个筛选项全部生效",
+      "name": "region 4 个筛选项全部生效",
       "status": "pass",
       "detail": {
         "detail": [
           {
-            "value": "global",
-            "label": "全球",
-            "before": 10,
-            "after": 1,
+            "value": "china",
+            "label": "中国",
+            "before": 11,
+            "after": 6,
             "pressed": "true",
             "ok": true
           },
           {
-            "value": "china",
-            "label": "中国",
-            "before": 10,
-            "after": 6,
+            "value": "global",
+            "label": "全球",
+            "before": 11,
+            "after": 2,
             "pressed": "true",
             "ok": true
           },
           {
             "value": "us",
             "label": "美国",
-            "before": 10,
-            "after": 3,
+            "before": 11,
+            "after": 2,
+            "pressed": "true",
+            "ok": true
+          },
+          {
+            "value": "asia",
+            "label": "亚洲",
+            "before": 11,
+            "after": 1,
             "pressed": "true",
             "ok": true
           }
@@ -532,27 +455,27 @@
     },
     {
       "id": "events:search",
-      "name": "3 个关键词全部命中",
+      "name": "3 个关键词全部命中，空格变体与基准同条数",
       "status": "pass",
       "detail": {
         "detail": [
           {
-            "kw": "美国10",
+            "kw": "月新能源车销",
             "after": 1,
             "ok": true,
-            "why": "无空格应命中「美国 10 月」"
+            "why": "标题原词"
           },
           {
-            "kw": "美国 10",
+            "kw": "月新能 源车销",
             "after": 1,
             "ok": true,
-            "why": "带空格"
+            "why": "中间插空格，归一化后应同样命中"
           },
           {
-            "kw": "CPI",
-            "after": 2,
+            "kw": "ifad",
+            "after": 1,
             "ok": true,
-            "why": "英文大小写"
+            "why": "英文小写（标题里是大写）"
           }
         ]
       }
@@ -571,12 +494,12 @@
           {
             "key": "confidence",
             "pressed": "true",
-            "changed": false
+            "changed": true
           },
           {
             "key": "trends",
             "pressed": "true",
-            "changed": true
+            "changed": false
           },
           {
             "key": "date",
@@ -587,12 +510,14 @@
       }
     },
     {
-      "id": "detail:timeline",
-      "name": "时间线常驻展示（1 条，无折叠交互）",
+      "id": "detail:score-history",
+      "name": "评分历史渲染 1 条",
       "status": "pass",
       "detail": {
-        "entries": 1,
-        "note": "派活写的是「时间线可展开」，当前没有折叠交互，需主管确认是否算达成"
+        "historyRows": 1,
+        "timeline": 0,
+        "title": "10月新能源车销量占比64.3%，出口同比增1.4倍",
+        "hasScoreBlock": true
       }
     },
     {

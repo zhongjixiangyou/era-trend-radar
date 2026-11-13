@@ -945,3 +945,25 @@ h1, h2, h3, h4 {
 @media (max-width: 860px) {
   .table-hint { display: block; font-size: 11px; color: var(--ink-3); margin: 8px 0 0; }
 }
+
+/* 一组前端：评分历史的 reason（方案 A）
+   有 reason 才多一行；没有就还是原来的一行，不留空白行。
+   最多 2 行，完整文字在 title 里。 */
+.sh-item { padding: 5px 0; border-bottom: 1px solid var(--rule); }
+.sh-item:last-child { border-bottom: 0; }
+.sh-line { display: flex; justify-content: space-between; gap: 10px; font-size: 12px; }
+.sh-reason {
+  margin: 3px 0 0;
+  font-size: 11px;
+  line-height: 1.55;
+  color: var(--ink-3);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 860px) {
+  .sh-reason { font-size: 11.5px; }
+}

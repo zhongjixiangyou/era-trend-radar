@@ -18,7 +18,7 @@ const pct = (d: string) =>
   <div class="strip-head">
     <a class="strip-title" href={href(`/trends/${trend.id}/`)}>{trend.title}</a>
     <span class={`status ${trend.status}`}>{statusLabel[trend.status]}</span>
-    <span class="strip-conf mono">{trend.confidence}</span>
+    <span class="strip-conf mono">{trend.confidence === null || trend.confidence === undefined ? `证据 ${trend.evidenceCount ?? 0}` : trend.confidence}</span>
   </div>
   <div class="strip-track">
     {events.map((e) => {

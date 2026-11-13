@@ -132,9 +132,12 @@ const statusCn = event.status === 'confirmed' ? '已核实' : event.status === '
         <div class="aside-block">
           <h3>评分历史</h3>
           {(event.scoreHistory ?? []).map((h: any) => (
-            <div style="display:flex;justify-content:space-between;gap:10px;font-size:12px;padding:5px 0;border-bottom:1px solid var(--rule)">
-              <span class="mono" style="color:var(--ink-3)">{fmtDate(h.date)}</span>
-              <span class="mono">{h.total}</span>
+            <div class="sh-item">
+              <div class="sh-line">
+                <span class="mono" style="color:var(--ink-3)">{fmtDate(h.date)}</span>
+                <span class="mono">{h.total}</span>
+              </div>
+              {h.reason ? <p class="sh-reason" title={h.reason}>{h.reason}</p> : null}
             </div>
           ))}
         </div>

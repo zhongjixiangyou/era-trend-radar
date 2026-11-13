@@ -251,7 +251,7 @@ def convert_event(ev: dict, notes: list, trend_id_map: dict | None = None) -> di
 
     summary = str(ev.get("summary") or "").strip()
     if len(summary) < 80:
-        notes.append(f"{out_id}：summary {len(summary)} 字 < 契约建议 80–160 字（未改内容，留待人工补写）")
+        notes.append(f"{out_id}：summary {len(summary)} 字 < 契约建议 80–120 字（未改内容，留待人工补写）")
 
     source_list = [convert_source(s) for s in (ev.get("sources") or [])]
     trend_links = []

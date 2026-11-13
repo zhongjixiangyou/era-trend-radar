@@ -13,7 +13,8 @@ const ranked = [...publishedEvents].sort((a, b) => total(b.scores) - total(a.sco
 const lead = ranked[0];
 const rest = publishedEvents.filter((e) => e.id !== lead.id).slice(0, 6);
 
-const topTrends = [...allTrends].sort((a, b) => b.confidence - a.confidence);
+const topTrends = [...allTrends].sort((a, b) => (b.evidenceCount ?? 0) - (a.evidenceCount ?? 0));
+const maxEvidence = Math.max(1, ...allTrends.map((t) => t.evidenceCount ?? 0));
 const openForecasts = allForecasts.filter((f) => f.status === 'open');
 const latestSnap = allSnapshots[0];
 
@@ -100,8 +101,8 @@ const leadTotal = total(lead.scores);
           <p class="trend-thesis">{t.thesis}</p>
           <div class="conf">
             <span class={`status ${t.status}`}>{statusLabel[t.status]}</span>
-            <span class="conf-bar"><i style={`width:${t.confidence}%`}></i></span>
-            <span class="v">{t.confidence}</span>
+            <span class="conf-bar"><i style={`width:${Math.round(((t.evidenceCount ?? 0) / maxEvidence) * 100)}%`}></i></span>
+            <span class="v">证据 {t.evidenceCount ?? 0}</span>
           </div>
         </div>
       </div>

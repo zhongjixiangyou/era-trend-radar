@@ -49,7 +49,8 @@ export const allForecasts = forecasts as EraForecast[];
 export const allSnapshots = snapshots as EraSnapshot[];
 export const siteMeta = meta as {
   site: string; generatedAt: string; window: { from: string; to: string };
-  counts: { events: number; trends: number; forecasts: number };
+  counts: { events: number; trends: number; forecasts: number; published?: number; pending?: number };
+  preview?: { published: number; pending: number };
   editorNote?: string; runStatus?: string; lastSuccessfulRun?: string; issue?: string;
 };
 
@@ -70,7 +71,9 @@ export const scoreLabels: [keyof Score, string][] = [
 ];
 
 export const sortedEvents = [...allEvents].sort((a, b) => b.date.localeCompare(a.date));
-export const publishedEvents = sortedEvents.filter((e) => e.status !== 'pending');
+/** 公开导出里一条 published 都没有时，整站按「内部预览」渲染：候选可见但必须挂横幅。 */
+export const previewMode = (siteMeta.preview?.published ?? 0) === 0 && (siteMeta.preview?.pending ?? 0) > 0;
+export const publishedEvents = sortedEvents.filter((e) => previewMode || e.status !== 'pending');
 export const trendById = new Map(allTrends.map((t) => [t.id, t]));
 export const eventById = new Map(allEvents.map((e) => [e.id, e]));
 

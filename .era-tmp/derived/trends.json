@@ -1,429 +1,191 @@
-{
-  "schemaVersion": "1",
-  "generatedAt": "2026-11-13T14:11:52+08:00",
-  "gates": {
-    "homepageMinTotal": 50,
-    "headlineMinTotal": 50,
-    "headlineRequiresVerified": true
+[
+  {
+    "id": "tr_climate-food-inflation",
+    "title": "气候波动正通过粮食与化肥价格重新进入全球通胀链条",
+    "thesis": "气候波动正通过粮食与化肥价格重新进入全球通胀链条",
+    "domain": "global",
+    "firstSeen": "2026-11-09",
+    "status": "emerging",
+    "confidence": null,
+    "evidenceCount": 1,
+    "supportCount": 1,
+    "counterCount": 0,
+    "indicators": [
+      "厄尔尼诺潜在收入损失',  — IFAD估算6年最高11万亿美元",
+      "粮价指数',  — 待接入FAO月度数据",
+      "化肥价格',  — 受能源成本传导"
+    ],
+    "judgment": "置信度低。机制成立但只有一条证据，且为情景估算；需FAO粮价与化肥价格连续3个月数据。",
+    "verifyBy": "2027-03-31",
+    "revisions": [
+      {
+        "date": "2026-11-13",
+        "from": null,
+        "to": null,
+        "reason": "首次建立，阶段emerging，证据仅1条"
+      }
+    ]
   },
-  "counts": {
-    "trends": 7
+  {
+    "id": "tr_geopolitics-energy-premium",
+    "title": "中东冲突把能源风险溢价结构性抬高",
+    "thesis": "中东冲突把能源风险溢价结构性抬高，油价中枢高于战前",
+    "domain": "global",
+    "firstSeen": "2026-08-28",
+    "status": "strengthening",
+    "confidence": null,
+    "evidenceCount": 1,
+    "supportCount": 1,
+    "counterCount": 0,
+    "indicators": [
+      "布伦特原油',  — 一度突破90美元/桶",
+      "霍尔木兹通行量',  — 受阻",
+      "航运保险成本',  — 待接入"
+    ],
+    "judgment": "置信度中。供给冲击明确，但需求下修是反向力量；观察布伦特能否站稳85美元以上。",
+    "verifyBy": "2027-01-31",
+    "revisions": [
+      {
+        "date": "2026-11-13",
+        "from": null,
+        "to": null,
+        "reason": "首次建立，阶段strengthening"
+      }
+    ]
   },
-  "trends": [
-    {
-      "id": "tr_climate-food-inflation",
-      "title": "气候→食品通胀",
-      "thesis": "气候波动正通过粮食与化肥价格重新进入全球通胀链条",
-      "firstSeenAt": "2026-11-09T00:00:00+08:00",
-      "stage": "emerging",
-      "indicators": [
-        "{'name': '厄尔尼诺潜在收入损失', 'note': 'IFAD估算6年最高11万亿美元'}",
-        "{'name': '粮价指数', 'note': '待接入FAO月度数据'}",
-        "{'name': '化肥价格', 'note': '受能源成本传导'}"
-      ],
-      "evidenceRefs": [
-        "ev_el-nino-11t"
-      ],
-      "counterEvidence": [
-        "{'text': '11万亿美元是情景推演而非观测值，不能当作基准预测'}",
-        "{'text': '全球粮食库存消费比仍高于2022年，短期缓冲存在'}"
-      ],
-      "currentJudgment": "置信度低。机制成立但只有一条证据，且为情景估算；需FAO粮价与化肥价格连续3个月数据。",
-      "reviewBy": "2027-03-31T00:00:00+08:00",
-      "revisions": [
-        {
-          "at": "2026-11-13T13:30:00+08:00",
-          "by": "二组",
-          "note": "首次建立，阶段emerging，证据仅1条"
-        }
-      ],
-      "eventRefs": [
-        {
-          "eventId": "ev_el-nino-11t",
-          "direction": "support",
-          "reason": "给出气候冲击到收入损失的量化路径",
-          "occurredAt": "2026-11-09T00:00:00+08:00",
-          "title": "IFAD警告厄尔尼诺未来六年或致11万亿美元损失"
-        }
-      ],
-      "supportCount": 1,
-      "counterCount": 0,
-      "viz": {
-        "title": "气候→食品通胀",
-        "evidenceCount": 1,
-        "directionCounts": {
-          "support": 1,
-          "weaken": 0,
-          "challenge": 0
-        },
-        "counterEvidenceCount": 2,
-        "stage": "emerging"
-      },
-      "evidenceSeries": [
-        {
-          "date": "2026-11-09",
-          "eventId": "ev_el-nino-11t",
-          "direction": "support"
-        }
-      ]
-    },
-    {
-      "id": "tr_geopolitics-energy-premium",
-      "title": "地缘能源溢价",
-      "thesis": "中东冲突把能源风险溢价结构性抬高，油价中枢高于战前",
-      "firstSeenAt": "2026-08-28T00:00:00+08:00",
-      "stage": "strengthening",
-      "indicators": [
-        "{'name': '布伦特原油', 'note': '一度突破90美元/桶'}",
-        "{'name': '霍尔木兹通行量', 'note': '受阻'}",
-        "{'name': '航运保险成本', 'note': '待接入'}"
-      ],
-      "evidenceRefs": [
-        "ev_mideast-war-6m"
-      ],
-      "counterEvidence": [
-        "{'text': 'OPEC连续6个月下调需求增长，需求侧走弱可能压过供给溢价'}",
-        "{'text': '美国与OPEC闲置产能可部分对冲'}"
-      ],
-      "currentJudgment": "置信度中。供给冲击明确，但需求下修是反向力量；观察布伦特能否站稳85美元以上。",
-      "reviewBy": "2027-01-31T00:00:00+08:00",
-      "revisions": [
-        {
-          "at": "2026-11-13T13:30:00+08:00",
-          "by": "二组",
-          "note": "首次建立，阶段strengthening"
-        }
-      ],
-      "eventRefs": [
-        {
-          "eventId": "ev_mideast-war-6m",
-          "direction": "support",
-          "reason": "霍尔木兹受阻直接抬升能源风险溢价",
-          "occurredAt": "2026-08-28T00:00:00+08:00",
-          "title": "中东战事半年：霍尔木兹受阻，布伦特一度突破90美元"
-        }
-      ],
-      "supportCount": 1,
-      "counterCount": 0,
-      "viz": {
-        "title": "地缘能源溢价",
-        "evidenceCount": 1,
-        "directionCounts": {
-          "support": 1,
-          "weaken": 0,
-          "challenge": 0
-        },
-        "counterEvidenceCount": 2,
-        "stage": "strengthening"
-      },
-      "evidenceSeries": [
-        {
-          "date": "2026-08-28",
-          "eventId": "ev_mideast-war-6m",
-          "direction": "support"
-        }
-      ]
-    },
-    {
-      "id": "tr_cn-nev-demand-shift",
-      "title": "新能源车需求换挡",
-      "thesis": "中国新能源车的增长动力由内需转向出口，国内需求持续收缩",
-      "firstSeenAt": "2026-08-12T00:00:00+08:00",
-      "stage": "emerging",
-      "indicators": [
-        "{'name': 'NEV国内销量同比', 'note': '连续7个月降幅超20%'}",
-        "{'name': 'NEV出口同比', 'note': '10月+1.4倍'}",
-        "{'name': 'NEV占新车销量比', 'note': '10月64.3%'}"
-      ],
-      "evidenceRefs": [
-        "ev_cn-nev-oct"
-      ],
-      "counterEvidence": [
-        "{'text': '占比上升部分来自燃油车下滑更快，不等于NEV绝对需求扩张'}",
-        "{'text': '出口面临欧盟与新兴市场关税及本地化要求，1.4倍增速难以线性外推'}",
-        "{'text': '2025年同期基数偏低，需看两年复合增速'}"
-      ],
-      "currentJudgment": "置信度中低。出口补位成立，但“内需持续收缩”只有7个月证据，且受基数与政策扰动；若国内销量降幅收窄至10%以内则降级。",
-      "reviewBy": "2027-01-31T00:00:00+08:00",
-      "revisions": [
-        {
-          "at": "2026-11-13T13:30:00+08:00",
-          "by": "二组",
-          "note": "首次建立，阶段emerging，仅有1条事件支撑"
-        }
-      ],
-      "eventRefs": [
-        {
-          "eventId": "ev_cn-nev-oct",
-          "direction": "support",
-          "reason": "出口+1.4倍与国内连续7个月降幅>20%同时成立",
-          "occurredAt": "2026-11-11T00:00:00+08:00",
-          "title": "10月新能源车销量占比64.3%，出口同比增1.4倍"
-        }
-      ],
-      "supportCount": 1,
-      "counterCount": 0,
-      "viz": {
-        "title": "新能源车需求换挡",
-        "evidenceCount": 1,
-        "directionCounts": {
-          "support": 1,
-          "weaken": 0,
-          "challenge": 0
-        },
-        "counterEvidenceCount": 3,
-        "stage": "emerging"
-      },
-      "evidenceSeries": [
-        {
-          "date": "2026-11-11",
-          "eventId": "ev_cn-nev-oct",
-          "direction": "support"
-        }
-      ]
-    },
-    {
-      "id": "tr_cn-demographic-decline",
-      "title": "婚育与人口下行",
-      "thesis": "中国结婚与出生人数进入加速下行段，2027年后出生人口再下台阶",
-      "firstSeenAt": "2026-08-12T00:00:00+08:00",
-      "stage": "strengthening",
-      "indicators": [
-        "{'name': '结婚登记对数', 'note': '前三季度464.8万对，-9.8%'}",
-        "{'name': '出生人口', 'note': '2025年792万，首次跌破800万'}",
-        "{'name': '育儿补贴覆盖', 'note': '2026年发放2516万人'}"
-      ],
-      "evidenceRefs": [
-        "ev_cn-marriage-9m"
-      ],
-      "counterEvidence": [
-        "{'text': '育儿补贴与婚假延长可能带来短期反弹，2025年就曾出现'}",
-        "{'text': '结婚数不等于生育数，未婚生育与再婚口径变化会影响结论'}"
-      ],
-      "currentJudgment": "置信度中高。领先指标连续下行，但政策脉冲会制造季度波动，需看两年复合增速。",
-      "reviewBy": "2027-02-28T00:00:00+08:00",
-      "revisions": [
-        {
-          "at": "2026-11-13T13:30:00+08:00",
-          "by": "二组",
-          "note": "首次建立，阶段strengthening"
-        }
-      ],
-      "eventRefs": [
-        {
-          "eventId": "ev_cn-marriage-9m",
-          "direction": "support",
-          "reason": "降幅由7.5%扩大到9.8%，趋势加速",
-          "occurredAt": "2026-11-05T00:00:00+08:00",
-          "title": "前三季度结婚登记464.8万对，同比下降9.8%"
-        }
-      ],
-      "supportCount": 1,
-      "counterCount": 0,
-      "viz": {
-        "title": "婚育与人口下行",
-        "evidenceCount": 1,
-        "directionCounts": {
-          "support": 1,
-          "weaken": 0,
-          "challenge": 0
-        },
-        "counterEvidenceCount": 2,
-        "stage": "strengthening"
-      },
-      "evidenceSeries": [
-        {
-          "date": "2026-11-05",
-          "eventId": "ev_cn-marriage-9m",
-          "direction": "support"
-        }
-      ]
-    },
-    {
-      "id": "tr_global-rates-rehike",
-      "title": "全球利率再紧缩",
-      "thesis": "全球利率在2026年重新上行，美联储与日本央行同步收紧",
-      "firstSeenAt": "2026-06-16T00:00:00+08:00",
-      "stage": "strengthening",
-      "indicators": [
-        "{'name': '美联储政策利率', 'note': '2026-09加息至3.75%-4.00%'}",
-        "{'name': '日本央行政策利率', 'note': '6月1%、9月升至31年高位'}",
-        "{'name': '10年期美债收益率', 'note': '2026-11-05为4.87%'}"
-      ],
-      "evidenceRefs": [
-        "ev_fed-hike-sep"
-      ],
-      "counterEvidence": [
-        "{'text': '美国10月CPI超预期后金价单日跌3%，说明市场仍在博弈加息终点而非无限上行'}",
-        "{'text': '若就业快速走弱，紧缩可能提前结束'}"
-      ],
-      "currentJudgment": "置信度中高。两家主要央行同向收紧，但市场对终点分歧大；观察核心PCE与12月会议。",
-      "reviewBy": "2026-12-31T00:00:00+08:00",
-      "revisions": [
-        {
-          "at": "2026-11-13T13:30:00+08:00",
-          "by": "二组",
-          "note": "首次建立，阶段strengthening"
-        }
-      ],
-      "eventRefs": [
-        {
-          "eventId": "ev_fed-hike-sep",
-          "direction": "support",
-          "reason": "首次加息且全票，确认政策转向",
-          "occurredAt": "2026-09-16T00:00:00+08:00",
-          "title": "美联储重启加息25个基点，12比0全票通过"
-        }
-      ],
-      "supportCount": 1,
-      "counterCount": 0,
-      "viz": {
-        "title": "全球利率再紧缩",
-        "evidenceCount": 1,
-        "directionCounts": {
-          "support": 1,
-          "weaken": 0,
-          "challenge": 0
-        },
-        "counterEvidenceCount": 2,
-        "stage": "strengthening"
-      },
-      "evidenceSeries": [
-        {
-          "date": "2026-09-16",
-          "eventId": "ev_fed-hike-sep",
-          "direction": "support"
-        }
-      ]
-    },
-    {
-      "id": "tr_ai-power-constraint",
-      "title": "AI 电力约束",
-      "thesis": "AI算力扩张的约束正从芯片供给转向电力与并网能力",
-      "firstSeenAt": "2026-06-03T00:00:00+08:00",
-      "stage": "strengthening",
-      "indicators": [
-        "{'name': '全球数据中心电力需求', 'note': '2026年161GW，同比+31%'}",
-        "{'name': '科技公司资本开支 vs 油气上游', 'note': 'IEA：五家科技公司已超过全球油气上游投资'}",
-        "{'name': 'SMR/核电建设许可', 'note': 'NRC首座SMR建设许可'}"
-      ],
-      "evidenceRefs": [
-        "ev_ai-dc-power-161gw",
-        "ev_nrc-smr-first"
-      ],
-      "counterEvidence": [
-        "{'text': 'AI泡沫论若导致资本开支下修，电力约束会先消失而不是先解决', 'url': 'https://news.qq.com/rain/a/20261110A0DFHU00'}",
-        "{'text': '芯片能效每年提升，单位算力耗电下降可能部分抵消需求增长'}",
-        "{'text': 'SMR首堆工期通常5-10年，2027年前难形成有效供给'}"
-      ],
-      "currentJudgment": "置信度中高。需求侧证据强（161GW、+31%），供给侧才刚起步；真正可验证的是2027年是否出现因电力延期上线的数据中心。",
-      "reviewBy": "2027-01-31T00:00:00+08:00",
-      "revisions": [
-        {
-          "at": "2026-11-13T13:30:00+08:00",
-          "by": "二组",
-          "note": "首次建立，阶段strengthening，连接数据中心电力与SMR两条证据链"
-        }
-      ],
-      "eventRefs": [
-        {
-          "eventId": "ev_nrc-smr-first",
-          "direction": "support",
-          "reason": "SMR进入建设意味着供给端开始响应电力缺口",
-          "occurredAt": "2026-09-29T00:00:00+08:00",
-          "title": "美国NRC批准首座小型模块化反应堆建设"
-        },
-        {
-          "eventId": "ev_ai-dc-power-161gw",
-          "direction": "support",
-          "reason": "需求增速31%远高于电网扩容速度",
-          "occurredAt": "2026-09-17T00:00:00+08:00",
-          "title": "2026年全球数据中心电力需求达161GW，同比增31%"
-        }
-      ],
-      "supportCount": 2,
-      "counterCount": 0,
-      "viz": {
-        "title": "AI 电力约束",
-        "evidenceCount": 2,
-        "directionCounts": {
-          "support": 2,
-          "weaken": 0,
-          "challenge": 0
-        },
-        "counterEvidenceCount": 3,
-        "stage": "strengthening"
-      },
-      "evidenceSeries": [
-        {
-          "date": "2026-09-17",
-          "eventId": "ev_ai-dc-power-161gw",
-          "direction": "support"
-        },
-        {
-          "date": "2026-09-29",
-          "eventId": "ev_nrc-smr-first",
-          "direction": "support"
-        }
-      ]
-    },
-    {
-      "id": "tr_cn-industrial-margin-repair",
-      "title": "工业利润修复",
-      "thesis": "中国规上工业利润增速持续快于营收增速，利润率在修复而非仅靠价格反弹",
-      "firstSeenAt": "2026-05-27T00:00:00+08:00",
-      "stage": "strengthening",
-      "indicators": [
-        "{'name': '营业收入利润率（累计）', 'note': '2026年1-8月5.66%，同比+0.44pp'}",
-        "{'name': '利润总额同比', 'note': '连续4个月回落但仍两位数'}",
-        "{'name': '分行业利润分化', 'note': '电子、有色、煤炭高增，下游消费品偏弱'}"
-      ],
-      "evidenceRefs": [
-        "ev_cn-profit-1-8"
-      ],
-      "counterEvidence": [
-        "{'text': '光伏组件集采最低价0.710元/瓦跌破成本指数，部分行业利润并未修复', 'url': 'https://news.qq.com/rain/a/20260923A0946I00'}",
-        "{'text': '房地产开发投资1-8月-19.9%，地产链拖累仍在扩大', 'url': 'https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202609/t20260915_1965310.html'}",
-        "{'text': '单期增长只能称表现，不能据此判结构改善'}"
-      ],
-      "currentJudgment": "置信度中。利润率修复有连续6个月证据，但分化明显：上游与电子强、地产链与光伏弱。若9-10月利润率回落至5.5%以下，趋势降级为stable。",
-      "reviewBy": "2026-12-15T00:00:00+08:00",
-      "revisions": [
-        {
-          "at": "2026-11-13T13:30:00+08:00",
-          "by": "二组",
-          "note": "首次建立，阶段strengthening，证据为1-8月利润数据"
-        }
-      ],
-      "eventRefs": [
-        {
-          "eventId": "ev_cn-profit-1-8",
-          "direction": "support",
-          "reason": "利润率同比提高0.44pp，且为连续第4个月两位数利润增长",
-          "occurredAt": "2026-09-28T00:00:00+08:00",
-          "title": "1-8月规上工业企业利润同比增长15.7%"
-        }
-      ],
-      "supportCount": 1,
-      "counterCount": 0,
-      "viz": {
-        "title": "工业利润修复",
-        "evidenceCount": 1,
-        "directionCounts": {
-          "support": 1,
-          "weaken": 0,
-          "challenge": 0
-        },
-        "counterEvidenceCount": 3,
-        "stage": "strengthening"
-      },
-      "evidenceSeries": [
-        {
-          "date": "2026-09-28",
-          "eventId": "ev_cn-profit-1-8",
-          "direction": "support"
-        }
-      ]
-    }
-  ]
-}
+  {
+    "id": "tr_cn-nev-demand-shift",
+    "title": "中国新能源车的增长动力由内需转向出口",
+    "thesis": "中国新能源车的增长动力由内需转向出口，国内需求持续收缩",
+    "domain": "global",
+    "firstSeen": "2026-08-12",
+    "status": "emerging",
+    "confidence": null,
+    "evidenceCount": 1,
+    "supportCount": 1,
+    "counterCount": 0,
+    "indicators": [
+      "NEV国内销量同比',  — 连续7个月降幅超20%",
+      "NEV出口同比',  — 10月+1.4倍",
+      "NEV占新车销量比',  — 10月64.3%"
+    ],
+    "judgment": "置信度中低。出口补位成立，但“内需持续收缩”只有7个月证据，且受基数与政策扰动；若国内销量降幅收窄至10%以内则降级。",
+    "verifyBy": "2027-01-31",
+    "revisions": [
+      {
+        "date": "2026-11-13",
+        "from": null,
+        "to": null,
+        "reason": "首次建立，阶段emerging，仅有1条事件支撑"
+      }
+    ]
+  },
+  {
+    "id": "tr_cn-demographic-decline",
+    "title": "中国结婚与出生人数进入加速下行段",
+    "thesis": "中国结婚与出生人数进入加速下行段，2027年后出生人口再下台阶",
+    "domain": "global",
+    "firstSeen": "2026-08-12",
+    "status": "strengthening",
+    "confidence": null,
+    "evidenceCount": 1,
+    "supportCount": 1,
+    "counterCount": 0,
+    "indicators": [
+      "结婚登记对数',  — 前三季度464.8万对，-9.8%",
+      "出生人口',  — 2025年792万，首次跌破800万",
+      "育儿补贴覆盖',  — 2026年发放2516万人"
+    ],
+    "judgment": "置信度中高。领先指标连续下行，但政策脉冲会制造季度波动，需看两年复合增速。",
+    "verifyBy": "2027-02-28",
+    "revisions": [
+      {
+        "date": "2026-11-13",
+        "from": null,
+        "to": null,
+        "reason": "首次建立，阶段strengthening"
+      }
+    ]
+  },
+  {
+    "id": "tr_global-rates-rehike",
+    "title": "全球利率在2026年重新上行",
+    "thesis": "全球利率在2026年重新上行，美联储与日本央行同步收紧",
+    "domain": "global",
+    "firstSeen": "2026-06-16",
+    "status": "strengthening",
+    "confidence": null,
+    "evidenceCount": 1,
+    "supportCount": 1,
+    "counterCount": 0,
+    "indicators": [
+      "美联储政策利率',  — 2026-09加息至3.75%-4.00%",
+      "日本央行政策利率',  — 6月1%、9月升至31年高位",
+      "10年期美债收益率',  — 2026-11-05为4.87%"
+    ],
+    "judgment": "置信度中高。两家主要央行同向收紧，但市场对终点分歧大；观察核心PCE与12月会议。",
+    "verifyBy": "2026-12-31",
+    "revisions": [
+      {
+        "date": "2026-11-13",
+        "from": null,
+        "to": null,
+        "reason": "首次建立，阶段strengthening"
+      }
+    ]
+  },
+  {
+    "id": "tr_ai-power-constraint",
+    "title": "AI算力扩张的约束正从芯片供给转向电力与并网能力",
+    "thesis": "AI算力扩张的约束正从芯片供给转向电力与并网能力",
+    "domain": "global",
+    "firstSeen": "2026-06-03",
+    "status": "strengthening",
+    "confidence": null,
+    "evidenceCount": 2,
+    "supportCount": 2,
+    "counterCount": 0,
+    "indicators": [
+      "全球数据中心电力需求',  — 2026年161GW，同比+31%",
+      "科技公司资本开支 vs 油气上游',  — IEA：五家科技公司已超过全球油气上游投资",
+      "SMR/核电建设许可',  — NRC首座SMR建设许可"
+    ],
+    "judgment": "置信度中高。需求侧证据强（161GW、+31%），供给侧才刚起步；真正可验证的是2027年是否出现因电力延期上线的数据中心。",
+    "verifyBy": "2027-01-31",
+    "revisions": [
+      {
+        "date": "2026-11-13",
+        "from": null,
+        "to": null,
+        "reason": "首次建立，阶段strengthening，连接数据中心电力与SMR两条证据链"
+      }
+    ]
+  },
+  {
+    "id": "tr_cn-industrial-margin-repair",
+    "title": "中国规上工业利润增速持续快于营收增速",
+    "thesis": "中国规上工业利润增速持续快于营收增速，利润率在修复而非仅靠价格反弹",
+    "domain": "global",
+    "firstSeen": "2026-05-27",
+    "status": "strengthening",
+    "confidence": null,
+    "evidenceCount": 1,
+    "supportCount": 1,
+    "counterCount": 0,
+    "indicators": [
+      "营业收入利润率（累计）',  — 2026年1-8月5.66%，同比+0.44pp",
+      "利润总额同比',  — 连续4个月回落但仍两位数",
+      "分行业利润分化',  — 电子、有色、煤炭高增，下游消费品偏弱"
+    ],
+    "judgment": "置信度中。利润率修复有连续6个月证据，但分化明显：上游与电子强、地产链与光伏弱。若9-10月利润率回落至5.5%以下，趋势降级为stable。",
+    "verifyBy": "2026-12-15",
+    "revisions": [
+      {
+        "date": "2026-11-13",
+        "from": null,
+        "to": null,
+        "reason": "首次建立，阶段strengthening，证据为1-8月利润数据"
+      }
+    ]
+  }
+]

@@ -89,6 +89,7 @@ const asOfCn = data.asOf.slice(0, 16).replace('T', ' ');
     <span class="count-line" id="em-dir" style="margin-left:8px">降序 ↓</span>
     </div>
 
+    <div class="ledger-scroll">
     <table class="ledger em-table">
       <thead>
         <tr>
@@ -122,6 +123,7 @@ const asOfCn = data.asOf.slice(0, 16).replace('T', ' ');
         ))}
       </tbody>
     </table>
+    </div>
     <p class="em-note">
       前 30 天不足 {data.rules.lowBasePrior} 条时标为低基数，只给原始计数、不换算增长率——从 0 涨到 1 不是「无限增长」。同一事件被十家转载只算 1 个来源。
     </p>

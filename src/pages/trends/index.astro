@@ -14,7 +14,8 @@ const rows = allTrends.map((t) => {
   return { ...t, count: related.length, heat, avg };
 });
 
-const byConfidence = [...rows].sort((a, b) => b.confidence - a.confidence);
+const byEvidence = [...rows].sort((a, b) => (b.evidenceCount ?? 0) - (a.evidenceCount ?? 0));
+const maxEvidence = Math.max(1, ...rows.map((t) => t.evidenceCount ?? 0));
 const domainCn = (d: string) =>
   d === 'global' ? '全球' : d === 'china' ? '中国' : (categoryLabel[d] ?? d);
 ---
@@ -51,15 +52,16 @@ const domainCn = (d: string) =>
   <div class="section-head">
     <div>
       <span class="num">排行</span>
-      <h2 style="margin-top:6px">置信度</h2>
+      <h2 style="margin-top:6px">证据条数</h2>
     </div>
-    <span class="more">0—100，越高越有把握</span>
+    <span class="more">已核实来源条数，不是判断准确率</span>
   </div>
 
   <RankBars
-    items={byConfidence.map((t) => ({
+    items={byEvidence.map((t) => ({
       label: t.title,
-      value: t.confidence,
+      value: t.evidenceCount ?? 0,
+      max: maxEvidence,
       sub: `${statusLabel[t.status]} · ${t.count} 条事件`,
       href: href(`/trends/${t.id}/`),
     }))}
@@ -80,7 +82,7 @@ const domainCn = (d: string) =>
         <th>趋势</th>
         <th>领域</th>
         <th>状态</th>
-        <th class="sortable" data-key="confidence" aria-sort="none">置信度</th>
+        <th class="sortable" data-key="evidence" aria-sort="none">证据</th>
         <th class="sortable" data-key="heat" aria-sort="none">热度</th>
         <th class="sortable" data-key="count" aria-sort="none">事件数</th>
         <th class="sortable" data-key="firstSeen" aria-sort="none">首次出现</th>
@@ -90,7 +92,7 @@ const domainCn = (d: string) =>
     <tbody>
       {rows.map((t) => (
         <tr
-          data-confidence={t.confidence}
+          data-evidence={t.evidenceCount ?? -1}
           data-heat={t.heat}
           data-count={t.count}
           data-firstseen={t.firstSeen}
@@ -98,7 +100,7 @@ const domainCn = (d: string) =>
           <td><a href={href(`/trends/${t.id}/`)} style="font-family:var(--serif);font-size:15px">{t.title}</a></td>
           <td>{domainCn(t.domain)}</td>
           <td><span class={`status ${t.status}`}>{statusLabel[t.status]}</span></td>
-          <td class="num">{t.confidence}</td>
+          <td class="num">{t.evidenceCount ?? 0}</td>
           <td class="num">{t.heat}</td>
           <td class="num">{t.count}</td>
           <td class="num">{fmtDate(t.firstSeen)}</td>
@@ -110,7 +112,7 @@ const domainCn = (d: string) =>
   </div>
   <p class="table-hint">窄屏放不下 8 列，表格可左右滑动。</p>
   <p style="font-size:11px;color:var(--ink-3);margin-top:10px;max-width:52em;line-height:1.7">
-    热度 = 该趋势关联事件的重要度之和，衡量它当前占据了多少结构性注意力，不是预测准确率。缺数据的趋势热度记 0，排在末尾，不补估值。
+    证据 = 该趋势已核实来源条数，空着就是还没补够，不补估值。热度 = 该趋势关联事件的重要度之和，衡量它当前占据了多少结构性注意力，不是预测准确率。缺数据的趋势热度记 0，排在末尾，不补估值。
   </p>
 </Base>
 
@@ -135,6 +137,10 @@ const domainCn = (d: string) =>
         .sort((a, b) => {
           const va = val(a);
           const vb = val(b);
+          // 缺值（-1）永远排末，不假装它是 0 分。
+          if (va === -1 && vb === -1) return 0;
+          if (va === -1) return 1;
+          if (vb === -1) return -1;
           const c = typeof va === 'string' ? va.localeCompare(vb) : va - vb;
           return dir === 'ascending' ? c : -c;
         })
