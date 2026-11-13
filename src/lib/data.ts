@@ -6,7 +6,7 @@ import meta from '../data/meta.json';
 
 export type Score = {
   structural: number; scope: number; signal: number;
-  novelty: number; timeliness: number; cross: number;
+  delta: number; timeliness: number; crossDomain: number;
   /** 当前总分：契约规定的唯一来源。缺失时才回退到公式计算。 */
   total?: number;
 };
@@ -58,25 +58,26 @@ export function total(s: Score): number {
   // scores.total 是唯一来源；没有才回退算（旧数据/外部导入）。
   if (typeof s.total === 'number') return s.total;
   // v1 口径：六维本身就是分项得分（满分 25/20/20/15/10/10），总分直接相加，无加权、无半值问题。
-  return s.structural + s.scope + s.signal + s.novelty + s.timeliness + s.cross;
+  return s.structural + s.scope + s.signal + s.delta + s.timeliness + s.crossDomain;
 }
 
 export const scoreLabels: [keyof Score, string][] = [
   ['structural', '结构性影响'],
   ['scope', '影响范围'],
   ['signal', '趋势信号'],
-  ['novelty', '信息增量'],
+  ['delta', '信息增量'],
   ['timeliness', '时效性'],
-  ['cross', '跨领域'],
+  ['crossDomain', '跨领域'],
 ];
 
 export const sortedEvents = [...allEvents].sort((a, b) => b.date.localeCompare(a.date));
 /**
- * 只要数据集里还有 pending，整站就按「内部预览」渲染：候选可见，但必须挂横幅 + noindex。
- * 早先判据是「published===0」，导致 3 条已确认 + 8 条候选时会掉进非预览态，
- * 候选内容静默露出而没有任何提示——那正是半发布状态，不能算正式站点。
+ * 数据集里只要还有 pending 事件，整站就按「内部预览」渲染：候选可见，但必须挂横幅 + noindex。
+ * 判据看数据集本身（allEvents 里有没有 pending），不看 meta 里的 content 计数——
+ * 公开投影只装已发布事件，用 content 计数判会让正式产物也挂上预览横幅。
+ * 早先判据是「published===0」，3 条已确认 + 8 条候选时会掉进非预览态，等于半发布。
  */
-export const previewMode = (siteMeta.preview?.pending ?? 0) > 0;
+export const previewMode = sortedEvents.some((e) => e.status === 'pending');
 export const publishedEvents = sortedEvents.filter((e) => previewMode || e.status !== 'pending');
 export const trendById = new Map(allTrends.map((t) => [t.id, t]));
 export const eventById = new Map(allEvents.map((e) => [e.id, e]));

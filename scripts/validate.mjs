@@ -64,9 +64,9 @@ const ID_RE = {
   forecast: /^(fc-\d{6}-[a-z0-9-]{1,40}|fc_[a-z0-9][a-z0-9-]{0,60})$/,
   snapshot: /^snap-\d{4}-\d{2}-\d{2}$/,
 };
-const DIMS = ['structural', 'scope', 'signal', 'novelty', 'timeliness', 'cross'];
+const DIMS = ['structural', 'scope', 'signal', 'delta', 'timeliness', 'crossDomain'];
 // v1 口径：六维本身就是分项得分（满分 25/20/20/15/10/10），总分 = 六项直接相加。
-const CAPS = { structural: 25, scope: 20, signal: 20, novelty: 15, timeliness: 10, cross: 10 };
+const CAPS = { structural: 25, scope: 20, signal: 20, delta: 15, timeliness: 10, crossDomain: 10 };
 const REGIONS = ['global', 'china', 'us', 'europe', 'asia', 'other'];
 const CATEGORIES = ['technology', 'economy', 'industry', 'society', 'policy', 'energy', 'demography'];
 const EFFECTS = ['support', 'weaken', 'challenge'];
@@ -169,9 +169,9 @@ uniqueIds(snapshots, 'snapshots', ID_RE.snapshot);
       if (!isObj(e.scores.rationale)) {
         push(`${p}.scores.rationale`, 'TYPE', 'rationale 必须是对象');
       } else {
-        // 规范键名与 scores 对齐（novelty / cross）；delta / crossDomain 是二组旧导出的名字，
-        // 迁移窗口内继续认，但每份数据提醒一次，别让新旧两套名字长期并存。
-        const legacy = { novelty: 'delta', cross: 'crossDomain' };
+        // 键名以 schema/event.schema.json 为准：delta=变化幅度、crossDomain=跨领域。
+        // novelty / cross 是早期站点投影用过的短名，迁移窗口内继续认，但会提示一次。
+        const legacy = { delta: 'novelty', crossDomain: 'cross' };
         const missing = [];
         const aliased = [];
         for (const d of DIMS) {

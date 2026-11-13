@@ -164,10 +164,12 @@
       ],
       "out": "dist",
       "report": "reports/build.json",
-      "note": "Astro 入口：content/ → export_astro.py（v1）→ from-export.mjs（站点投影）写 .era-tmp/derived，与 src/data 逐文件比对（漂移即失败），再 pnpm build；产物必须含 index.html 且无 _intake。",
+      "note": "Astro 入口：content/ → export_astro.py（v1）→ from-export.mjs 写 .era-tmp/derived，与仓库里的 src/data（内部预览投影）逐文件比对（漂移即失败）；随后跑真实入口 pnpm build（public 模式：只出 published、Astro 构建、产物泄漏检查，构建期覆盖 src/data 后还原）。src/data 不是发布产物，公开产物是 dist。",
       "exportCmd": [
         "node",
-        "scripts/ci/derive.mjs"
+        "scripts/ci/derive.mjs",
+        "--mode",
+        "preview"
       ],
       "exportOut": ".era-tmp/derived",
       "derivedDir": "src/data"

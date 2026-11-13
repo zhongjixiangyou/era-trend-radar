@@ -41,24 +41,18 @@ const REGION = { 中国: 'china', 全球: 'global', 美国: 'us', 中东: 'asia'
 const CRED = { multi_independent: 'high', single_primary: 'medium', secondary_only: 'low', unverified: 'low' };
 
 // 公开导出没有 pending，所以候选数只能从 content/ 权威源直接数，不能从导出推。
+// 只数 events：meta.preview.pending 与 previewMode（有 pending 事件即预览）同口径。
+// 早先把 trends/forecasts 的未发布记录也算进来，得到 10 而 events 实际 8，门禁与页面各说各话。
 const contentPending = (() => {
-  // 优先用二组的 content/MANIFEST.json（它按状态统计过）；没有清单再逐文件数。
-  try {
-    const mf = JSON.parse(readFileSync(resolve(process.cwd(), 'content/MANIFEST.json'), 'utf8'));
-    const ev = mf?.counts?.events;
-    if (ev && typeof ev.pending === 'number') return ev.pending;
-  } catch (_) {}
+  const dir = resolve(process.cwd(), 'content', 'events');
+  if (!existsSync(dir)) return 0;
   let n = 0;
-  for (const kind of ['events', 'trends', 'forecasts']) {
-    const dir = resolve(process.cwd(), 'content', kind);
-    if (!existsSync(dir)) continue;
-    for (const name of readdirSync(dir)) {
-      if (!name.endsWith('.json')) continue;
-      try {
-        const doc = JSON.parse(readFileSync(join(dir, name), 'utf8'));
-        if (doc.status && doc.status !== 'published') n++;
-      } catch (_) {}
-    }
+  for (const name of readdirSync(dir)) {
+    if (!name.endsWith('.json')) continue;
+    try {
+      const doc = JSON.parse(readFileSync(join(dir, name), 'utf8'));
+      if (doc.status !== 'published') n++;
+    } catch (_) {}
   }
   return n;
 })();
@@ -87,9 +81,9 @@ const events = srcEvents.events.map((e) => {
       structural: e.scores.structural,
       scope: e.scores.scope,
       signal: e.scores.signal,
-      novelty: e.scores.delta,
+      delta: e.scores.delta,
       timeliness: e.scores.timeliness,
-      cross: e.scores.crossDomain,
+      crossDomain: e.scores.crossDomain,
       total: e.scores.total,
       rationale: e.scores.rationale ?? null,
     },
@@ -177,6 +171,14 @@ const publicTrends = MODE === 'public' ? trends.filter((t) => publicEvents.some(
 const publicTrendIds = new Set(publicTrends.map((t) => t.id));
 const publicForecasts = MODE === 'public' ? forecasts.filter((f) => f.trendId && publicTrendIds.has(f.trendId)) : forecasts;
 if (MODE === 'public') {
+  // 判断里的证据引用也必须过发布闸：pending 事件的 ID 出现在公开产物里同样算泄漏，
+  // 不能只过滤事件数组而把引用留在判断页。
+  const publicEventIds = new Set(publicEvents.map((e) => e.id));
+  const keepRef = (r) => publicEventIds.has(typeof r === 'string' ? r : (r?.eventId ?? r?.id));
+  for (const f of forecasts) {
+    f.support = (f.support || []).filter(keepRef);
+    f.counter = (f.counter || []).filter(keepRef);
+  }
   events.length = 0;
   events.push(...publicEvents);
   trends.length = 0;
