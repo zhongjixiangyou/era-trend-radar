@@ -69,15 +69,26 @@ const statusCn = event.status === 'confirmed' ? '已核实' : event.status === '
 
         <h3 style="font-family:var(--sans);font-size:10.5px;letter-spacing:.16em;color:var(--ink-3);font-weight:500;margin:34px 0 8px">它与哪些趋势有关</h3>
         <div class="rel">
-          {event.trends.map((tr: any) => (
-            <div>
-              <a href={href(`/trends/${tr.id}/`)}>
-                <span class={`status effect-${tr.effect}`} style="margin-right:8px">{effectLabel[tr.effect]}</span>
-                {trendById.get(tr.id)?.title ?? tr.id}
-              </a>
-              {tr.reason && <div class="why">{tr.reason}</div>}
-            </div>
-          ))}
+          {event.trends.map((tr: any) => {
+            const known = trendById.get(tr.id);
+            // 趋势没单独成页时不放链接，避免点进 404
+            return (
+              <div>
+                {known ? (
+                  <a href={href(`/trends/${tr.id}/`)}>
+                    <span class={`status effect-${tr.effect}`} style="margin-right:8px">{effectLabel[tr.effect]}</span>
+                    {known.title}
+                  </a>
+                ) : (
+                  <span title="该趋势暂未单独成页">
+                    <span class={`status effect-${tr.effect}`} style="margin-right:8px">{effectLabel[tr.effect]}</span>
+                    {tr.id}
+                  </span>
+                )}
+                {tr.reason && <div class="why">{tr.reason}</div>}
+              </div>
+            );
+          })}
         </div>
 
         {(event.timeline ?? []).length > 0 && (

@@ -45,7 +45,7 @@ const points = events.map((e) => ({
     <span class="more">{events.length} 条 · 截至 {siteMeta.window.to}</span>
   </div>
 
-  <Scatter items={points} from={siteMeta.window.from} to={siteMeta.window.to} />
+  {points.length > 0 && <Scatter items={points} from={siteMeta.window.from} to={siteMeta.window.to} />}
 
   <DistGrid items={points} />
 

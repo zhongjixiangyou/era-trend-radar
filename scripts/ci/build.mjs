@@ -7,6 +7,67 @@ import path from "node:path";
 import { loadConfig, parseArgs, readJson, writeJson, resolvePath, ensureDir, relative, sha256, run } from "./lib/common.mjs";
 import { emitStatus, exitFor } from "./lib/status.mjs";
 import { entryOf } from "./lib/entry.mjs";
+import { previewState, checkPreviewGuards } from "./lib/preview-guards.mjs";
+
+function pendingIds(contentDir) {
+  const ids = new Set();
+  const dir = path.join(contentDir, "events");
+  if (!fs.existsSync(dir)) return ids;
+  for (const f of fs.readdirSync(dir)) {
+    if (!f.endsWith(".json")) continue;
+    let j;
+    try { j = JSON.parse(fs.readFileSync(path.join(dir, f), "utf8")); } catch (_) { continue; }
+    const recs = Array.isArray(j) ? j : (Array.isArray(j.events) ? j.events : [j]);
+    for (const r of recs) if (r && typeof r.id === "string" && r.status !== "published") ids.add(r.id);
+  }
+  return ids;
+}
+function scanLeak(distDir, ids) {
+  const hits = [];
+  if (!ids.size) return hits;
+  for (const rel of walk(distDir)) {
+    if (!/\.(html|json|js|mjs|csv|txt|xml|svg)$/.test(rel)) continue;
+    const abs = path.join(distDir, rel);
+    let text;
+    try { text = fs.readFileSync(abs, "utf8"); } catch (_) { continue; }
+    for (const id of ids) if (text.includes(id)) hits.push(`${rel}:${id}`);
+  }
+  return hits;
+}
+
+function canonicalize(v) {
+  if (Array.isArray(v)) return v.map(canonicalize);
+  if (v && typeof v === "object") {
+    const out = {};
+    // 窗口对象（带 days 的 from/to）随 asOf 滑动，属于非确定时间，不算漂移。
+    const isWindow = typeof v.days === "number" && ("from" in v || "to" in v);
+    for (const k of Object.keys(v).sort()) {
+      if (k === "generatedAt" || k === "generated_at" || k === "asOf" ||
+          (isWindow && (k === "from" || k === "to"))) { out[k] = "<volatile>"; continue; }
+      out[k] = canonicalize(v[k]);
+    }
+    return out;
+  }
+  return v;
+}
+function markVolatile(v) {
+  // asOf 只有明确标为运行时刻（asOfSource=run_time）时才算非确定字段；
+  // 显式 --as-of 或数据回放得到的 asOf 属于内容，必须参与比对。
+  if (v && typeof v === "object" && !Array.isArray(v)) {
+    if (v.asOfSource === "run_time" && Object.prototype.hasOwnProperty.call(v, "asOf")) v.asOf = "<volatile>";
+  }
+  return v;
+}
+function canonHash(file) {
+  const text = fs.readFileSync(file, "utf8");
+  let parsed;
+  try { parsed = JSON.parse(text); } catch (_) { return sha256(text); }
+  return sha256(JSON.stringify(canonicalize(markVolatile(parsed))));
+}
+function shapeKind(file) {
+  try { const j = JSON.parse(fs.readFileSync(file, "utf8")); return Array.isArray(j) ? "array" : (j && typeof j === "object" ? "object" : "scalar"); }
+  catch (_) { return "raw"; }
+}
 
 const TOOL = "build";
 
@@ -61,16 +122,28 @@ function main() {
     if (exportCmd.length) {
       fs.rmSync(tmpDir, { recursive: true, force: true });
       ensureDir(tmpDir);
-      const er = run(exportCmd[0], exportCmd.slice(1), { timeoutMs: 5 * 60 * 1000 });
-      exportExit = er.status;
-      exportErr = (er.stderr || "").split("\n").slice(-5).join("\n");
-      if (er.status === 0) {
+      const chain = Array.isArray(ecfg.exportChain) && ecfg.exportChain.length ? ecfg.exportChain : [exportCmd];
+      let chainOk = true;
+      for (const step of chain) {
+        const er = run(step[0], step.slice(1), { timeoutMs: 5 * 60 * 1000 });
+        exportExit = er.status;
+        if (er.status !== 0) {
+          chainOk = false;
+          exportErr = `步骤 ${step[0]} 失败：` + (er.stderr || "").split("\n").slice(-5).join("\n");
+          break;
+        }
+      }
+      if (chainOk) {
         for (const rel of walk(tmpDir)) {
           compared.push(rel);
           const mine = path.join(tmpDir, rel);
           const theirs = path.join(derivedDir, rel);
           if (!fs.existsSync(theirs)) drift.push(`缺 ${rel}`);
-          else if (sha256(fs.readFileSync(mine)) !== sha256(fs.readFileSync(theirs))) drift.push(`漂移 ${rel}`);
+          else if (canonHash(mine) !== canonHash(theirs)) {
+            if (process.env.ERA_DEBUG_DRIFT) console.error(`[drift] ${rel} a=${canonHash(mine).slice(0,10)} b=${canonHash(theirs).slice(0,10)}`);
+            const a = shapeKind(mine), b = shapeKind(theirs);
+            drift.push(a !== b ? `阶段不一致 ${rel}（导出版本 ${a} / 仓库 ${b}）` : `漂移 ${rel}`);
+          }
         }
       }
     }
@@ -79,11 +152,24 @@ function main() {
     const files = walk(distDir);
     const intakeHits = files.filter((p) => p.includes("_intake"));
     const hasIndex = files.includes("index.html");
+    const pending = pendingIds(resolvePath("content"));
+    const leakHits = scanLeak(distDir, pending);
+    // 产物形态由 dist 自己说了算：全站都没有横幅 = 公开产物（此时一条 pending 都不许泄漏）；
+    // 否则是预览产物（必须每页横幅 + noindex，允许 pending 进产物）。
+    // 不能拿 src/data 的 meta 判：构建期 src/data 被临时换成公开投影、退出时又还原，
+    // 门禁读 meta 时两边口径会打架（2026-11-13 实测：公开产物 10 页被判「缺横幅」而失败）。
+    const pv = previewState(derivedDir);
+    const guards = checkPreviewGuards(distDir, files, pending);
+    const noBannerAtAll = guards.pages > 0 && guards.noBanner.length === guards.pages;
+    const looksPublic = noBannerAtAll && guards.noNoindex.length === guards.pages;
+    const artifactPreview = !looksPublic;
+    const leakOk = looksPublic ? leakHits.length === 0 : guards.ok;
     const ok =
       (exportCmd.length === 0 || exportExit === 0) &&
       drift.length === 0 &&
       res.status === 0 &&
       intakeHits.length === 0 &&
+      leakOk &&
       hasIndex;
 
     const report = {
@@ -100,16 +186,26 @@ function main() {
       files: files.length,
       hasIndex,
       intakeLeak: intakeHits,
+      preview: artifactPreview,
+      previewState: { published: pv.published, pending: pv.pending, artifact: looksPublic ? "public" : "preview" },
+      previewGuards: artifactPreview ? guards : null,
+      pendingChecked: pending.size,
+      // 预览产物里 pending 是放行项，不要把几十处当成错误读
+      pendingLeak: artifactPreview ? [] : leakHits.slice(0, 10),
+      pendingSeen: artifactPreview ? leakHits.length : 0,
       parity: drift.length === 0 && compared.length > 0 ? "derived==content" : null,
       status: ok ? "healthy" : "failed",
       message: ok
-        ? `入口构建 ${files.length} 文件；${compared.length} 个派生文件与 content/ 无漂移`
+        ? `入口构建 ${files.length} 文件；${compared.length} 个派生文件与 content/ 无漂移` +
+          (artifactPreview ? `；预览产物放行 ${leakHits.length} 处 pending（横幅/noindex 已校验）` : `；公开产物无 pending 泄漏`)
         : [
+            artifactPreview && !leakOk ? `预览产物护栏不全：${guards.summary}` : "",
             exportExit !== 0 && exportCmd.length ? `导出失败 exit=${exportExit} ${exportErr}` : "",
             drift.length ? `派生层漂移 ${drift.length} 个：${drift.slice(0, 5).join(", ")}` : "",
             res.status !== 0 ? `构建失败 exit=${res.status} ${(res.stderr || "").split("\n").slice(-3).join(" ")}` : "",
             !hasIndex ? "产物缺 index.html" : "",
             intakeHits.length ? `产物泄漏 _intake：${intakeHits.slice(0, 3).join(",")}` : "",
+            looksPublic && leakHits.length ? `公开产物泄漏未发布记录 ${leakHits.length} 处：${leakHits.slice(0, 5).join(",")}` : "",
           ]
             .filter(Boolean)
             .join("；"),

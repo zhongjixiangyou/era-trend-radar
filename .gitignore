@@ -6,3 +6,8 @@ qa/node_modules/
 .DS_Store
 *.log
 qa/screens/
+.era-tmp/
+artifacts/
+reports/
+__pycache__/
+*.pyc

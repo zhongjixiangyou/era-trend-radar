@@ -56,8 +56,9 @@ function readJson(file) {
 
 // 与 src/lib/data.ts:74-76 同一口径：一条已发布都没有时整站按内部预览渲染，候选全可见
 export function previewMode() {
+  // 与 src/lib/data.ts 同口径（admin d24a6d4 起：只要还有 pending 就是预览态）
   const p = readJson('meta.json').preview ?? {};
-  return (p.published ?? 0) === 0 && (p.pending ?? 0) > 0;
+  return (p.pending ?? 0) > 0;
 }
 
 function visibleEvents() {
@@ -79,4 +80,16 @@ export function getSearchCases() {
     spaced: cn ? `${cn.slice(0, 3)} ${cn.slice(3, 6)}` : null,
     latin: (all.match(/[A-Za-z]{2,}/) || [])[0] || null,
   };
+}
+
+// 数据里每条事件/趋势都应有独立明细页：扫一遍，避免只抽 1 条漏掉坏记录
+export function allDetailPaths() {
+  const ev = readJson('events.json').map((e) => `/events/${e.id}/`);
+  const tr = readJson('trends.json').map((t) => `/trends/${t.id}/`);
+  return [...ev, ...tr];
+}
+
+// 非预览态下，pending 候选的明细页不该在产物里（否则等于把未发布条目公开）
+export function pendingEventIds() {
+  return readJson('events.json').filter((e) => e.status === 'pending').map((e) => e.id);
 }

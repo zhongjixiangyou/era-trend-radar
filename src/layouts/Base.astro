@@ -41,6 +41,8 @@ const stale = siteMeta.runStatus && siteMeta.runStatus !== 'ok';
     </script>
     <title>{pageTitle}</title>
     <meta name="description" content={pageDesc} />
+    {/* 预览态（published 0 条）：候选内容会进产物，必须阻止搜索引擎收录 */}
+    {previewMode && <meta name="robots" content="noindex, nofollow" />}
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={pageDesc} />
     <meta name="theme-color" content="#f7f2e8" media="(prefers-color-scheme: light)" />
@@ -68,7 +70,7 @@ const stale = siteMeta.runStatus && siteMeta.runStatus !== 'ok';
       </nav>
 
       {previewMode && (
-        <div class="stale-banner">
+        <div class="stale-banner" data-preview="true">
           内部预览：{siteMeta.preview?.pending ?? 0} 条候选尚未通过发布校验，{siteMeta.preview?.published ?? 0} 条已发布。以下内容不作为公开结论，发布校验通过后横幅自动消失。
         </div>
       )}

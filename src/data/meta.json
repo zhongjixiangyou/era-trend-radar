@@ -1,6 +1,6 @@
 {
   "site": "ERA · 时代趋势雷达",
-  "generatedAt": "2026-11-13T14:30:41+08:00",
+  "generatedAt": "2026-11-13T14:38:05+08:00",
   "window": {
     "from": "2026-08-28",
     "to": "2026-11-11"
@@ -10,11 +10,11 @@
     "trends": 7,
     "forecasts": 2,
     "published": 3,
-    "pending": 10
+    "pending": 8
   },
   "preview": {
     "published": 3,
-    "pending": 10
+    "pending": 8
   },
   "mode": "preview",
   "dataSource": "content/ → export_astro.py（v1）",

@@ -7,7 +7,7 @@ import { spawn } from 'node:child_process';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { chromium } from 'playwright';
-import { getRoutes, getSearchCases, publishedEventCount, previewMode } from './routes.mjs';
+import { getRoutes, getSearchCases, publishedEventCount, previewMode, allDetailPaths, pendingEventIds, SAMPLE_EVENT_ID } from './routes.mjs';
 import {
   BASE_PATH, ORIGIN, findUnprefixedAssets, makeChecker, resolveBase, saveScreenshot,
   scanOverflow, writeReport,
@@ -138,6 +138,58 @@ for (const r of routes) {
   await page.waitForTimeout(150);
 }
 
+// 1b) 全部明细页扫一遍（数据驱动，别只抽 1 条）
+const detailPaths = allDetailPaths();
+const sweepBad = [];
+for (const p of detailPaths) {
+  const resp = await page.goto(urlFor(p), { waitUntil: 'load' }).catch(() => null);
+  const st = resp?.status() ?? 0;
+  if (st !== 200) sweepBad.push({ path: p, status: st });
+}
+if (detailPaths.length === 0) skip('routes:detail-sweep', '数据里没有明细条目');
+else if (sweepBad.length === 0) pass('routes:detail-sweep', `${detailPaths.length} 个明细页全部 200`, { count: detailPaths.length });
+else fail('routes:detail-sweep', `${sweepBad.length}/${detailPaths.length} 个明细页异常`, { bad: sweepBad.slice(0, 6) });
+
+// 1c) 候选泄漏：非预览态下 pending 条目不许有可访问的明细页
+const pvMode = previewMode();
+const pendingIds = pendingEventIds();
+if (pendingIds.length === 0) {
+  skip('leak:pending-pages', '数据里没有 pending 条目');
+} else if (pvMode) {
+  skip('leak:pending-pages', `预览态，pending ${pendingIds.length} 条允许进产物（须有横幅 + noindex）`);
+} else {
+  const leaked = [];
+  for (const id of pendingIds) {
+    const resp = await page.goto(urlFor(`/events/${id}/`), { waitUntil: 'domcontentloaded' }).catch(() => null);
+    if ((resp?.status() ?? 0) === 200) leaked.push(id);
+  }
+  if (leaked.length === 0) pass('leak:pending-pages', `${pendingIds.length} 条 pending 均无明细页`);
+  else fail('leak:pending-pages', `${leaked.length}/${pendingIds.length} 条 pending 明细页可直接访问（页面无 noindex/横幅）`, { leaked: leaked.slice(0, 6) });
+}
+
+// 1d) 预览护栏：pending>0 时，页面必须同时有 noindex + data-preview 锚点 + 横幅
+if (!previewMode()) {
+  skip('preview:guards', '当前非预览态（pending=0），不要求横幅/noindex');
+} else {
+  const targets = [
+    ['/', urlFor('/')],
+    ['/events/', urlFor('/events/')],
+    [`/events/${SAMPLE_EVENT_ID}/`, urlFor(`/events/${SAMPLE_EVENT_ID}/`)],
+  ];
+  const bad = [];
+  for (const [name, u] of targets) {
+    const resp = await page.goto(u, { waitUntil: 'load' }).catch(() => null);
+    const g = await page.evaluate(() => ({
+      noindex: Boolean(document.querySelector('meta[name="robots"][content*="noindex"]')),
+      anchor: Boolean(document.querySelector('[data-preview="true"]')),
+      banner: Boolean(document.querySelector('.stale-banner')),
+    }));
+    if ((resp?.status() ?? 0) !== 200 || !g.noindex || !g.anchor) bad.push({ page: name, status: resp?.status() ?? 0, ...g });
+  }
+  if (bad.length === 0) pass('preview:guards', `${targets.length} 页均有 noindex + data-preview 锚点`);
+  else fail('preview:guards', `${bad.length}/${targets.length} 页护栏不全`, { bad });
+}
+
 // 2) Pages 子路径：资源不得绕过 base
 console.log('\n[2/6] 子路径资源前缀');
 for (const r of routes) {
@@ -160,12 +212,15 @@ for (const r of routes) {
   const detail = {};
   for (const w of WIDTHS) {
     await page.setViewportSize({ width: w, height: 844 });
-    await page.goto(urlFor(r.path), { waitUntil: 'load' }).catch(() => {});
+    const resp = await page.goto(urlFor(r.path), { waitUntil: 'load' }).catch(() => null);
+    const status = resp?.status() ?? 0;
     const o = await scanOverflow(page);
-    detail[w] = { overflow: o.docOverflow, offenders: o.offenders.length, clipped: o.clipped.length };
-    if (o.docOverflow > 1) bad.push({ width: w, overflow: o.docOverflow, offenders: o.offenders.slice(0, 3) });
+    detail[w] = { status, overflow: o.docOverflow, offenders: o.offenders.length, clipped: o.clipped.length };
+    if (status !== 200) bad.push({ width: w, status, why: 'HTTP 不是 200（404 页也会量出 0 溢出）' });
+    else if (o.docOverflow > 1) bad.push({ width: w, overflow: o.docOverflow, offenders: o.offenders.slice(0, 3) });
   }
   if (!bad.length) pass(`overflow:${r.name}`, `${r.path} ${WIDTHS.join('/')} 全部 0 溢出`, { detail });
+  else if (bad.some((b) => b.status && b.status !== 200)) fail(`overflow:${r.name}`, `${r.path} 有 ${bad.length} 档打不开`, { bad, detail });
   else fail(`overflow:${r.name}`, `${r.path} 在 ${bad.map((b) => b.width).join('/')}px 溢出`, { bad, detail });
 }
 await page.setViewportSize({ width: 390, height: 844 });
@@ -291,17 +346,26 @@ if (!(await sortBtns.count())) {
   const keys = await sortBtns.evaluateAll((bs) => bs.map((b) => b.dataset.sort));
   const detail = [];
   let ok = 0;
+  const rowFirst = async () => page.locator(rowSel || '.event-row').first().innerText().catch(() => '');
   for (const key of keys) {
     await page.goto(eventsUrl, { waitUntil: 'load' });
-    const firstBefore = await page.locator(rowSel || '.event-row').first().innerText().catch(() => '');
     const btn = page.locator(`button[data-sort="${key}"]`).first();
+    // 默认排序键点了顺序本来就不变：先切到另一个键，再点回来才算真测试
+    if ((await btn.getAttribute('aria-pressed').catch(() => null)) === 'true') {
+      const other = keys.find((k) => k !== key);
+      if (other) {
+        await page.locator(`button[data-sort="${other}"]`).first().click({ timeout: 4000 }).catch(() => {});
+        await page.waitForTimeout(250);
+      }
+    }
+    const before = await rowFirst();
     await btn.click({ timeout: 4000 }).catch(() => {});
     await page.waitForTimeout(300);
-    const firstAfter = await page.locator(rowSel || '.event-row').first().innerText().catch(() => '');
+    const after = await rowFirst();
     const pressed = await btn.getAttribute('aria-pressed').catch(() => null);
-    const good = firstBefore !== firstAfter || pressed === 'true';
-    if (good) ok++;
-    detail.push({ key, pressed, changed: firstBefore !== firstAfter });
+    // 判定标准：点完 aria-pressed 必须变 true（证明处理器跑了）；顺序变化作为附带信息
+    if (pressed === 'true') ok++;
+    detail.push({ key, pressed, changed: before !== after });
   }
   if (ok === keys.length) pass('events:sort', `${keys.length} 个排序键全部生效`, { detail });
   else fail('events:sort', `${ok}/${keys.length} 个排序键生效`, { detail });
@@ -313,7 +377,8 @@ const detailRoute = routes.find((r) => r.kind === 'detail' && r.path.startsWith(
 if (!detailRoute) {
   skip('detail:score-history', '路由表里没有事件详情页');
 } else {
-  await page.goto(urlFor(detailRoute.path), { waitUntil: 'load' }).catch(() => {});
+  const dResp = await page.goto(urlFor(detailRoute.path), { waitUntil: 'load' }).catch(() => null);
+  const dStatus = dResp?.status() ?? 0;
   const info = await page.evaluate(() => {
     const blocks = [...document.querySelectorAll('.aside-block, aside > div')];
     const hb = blocks.find((b) => /评分历史/.test(b.querySelector('h3')?.textContent || ''));
@@ -327,8 +392,10 @@ if (!detailRoute) {
       hasScoreBlock: !!hb,
     };
   });
-  if (info.historyRows > 0) {
-    pass('detail:score-history', `评分历史渲染 ${info.historyRows} 条`, info);
+  if (dStatus !== 200) {
+    fail('detail:score-history', `详情页 HTTP ${dStatus}（${detailRoute.path}），页面本身打不开`, { ...info, status: dStatus });
+  } else if (info.historyRows > 0) {
+    pass('detail:score-history', `评分历史渲染 ${info.historyRows} 条`, { ...info, status: dStatus });
   } else {
     fail(
       'detail:score-history',
@@ -337,7 +404,7 @@ if (!detailRoute) {
     );
   }
   if (info.timeline === 0) {
-    console.log('  NOTE  v1 数据没有 timeline 字段（11 条事件 0 条），时间线验收项本轮无对象');
+    console.log(`  NOTE  数据里 ${publishedEventCount()} 条事件，timeline 字段 0 条，时间线验收项本轮无对象`);
   }
 }
 
