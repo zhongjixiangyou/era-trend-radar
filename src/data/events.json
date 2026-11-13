@@ -36,7 +36,8 @@
       "signal": 76,
       "novelty": 52,
       "timeliness": 92,
-      "cross": 72
+      "cross": 72,
+      "total": 79
     },
     "credibility": "high",
     "status": "confirmed",
@@ -114,7 +115,8 @@
       "signal": 80,
       "novelty": 48,
       "timeliness": 90,
-      "cross": 65
+      "cross": 65,
+      "total": 75
     },
     "credibility": "high",
     "status": "confirmed",
@@ -197,7 +199,8 @@
       "signal": 82,
       "novelty": 58,
       "timeliness": 90,
-      "cross": 60
+      "cross": 60,
+      "total": 73
     },
     "credibility": "high",
     "status": "confirmed",
@@ -275,7 +278,8 @@
       "signal": 85,
       "novelty": 66,
       "timeliness": 90,
-      "cross": 62
+      "cross": 62,
+      "total": 73
     },
     "credibility": "high",
     "status": "confirmed",
@@ -358,7 +362,8 @@
       "signal": 74,
       "novelty": 50,
       "timeliness": 78,
-      "cross": 55
+      "cross": 55,
+      "total": 70
     },
     "credibility": "high",
     "status": "confirmed",
@@ -425,7 +430,8 @@
       "signal": 68,
       "novelty": 45,
       "timeliness": 75,
-      "cross": 45
+      "cross": 45,
+      "total": 65
     },
     "credibility": "high",
     "status": "confirmed",
@@ -497,7 +503,8 @@
       "signal": 70,
       "novelty": 35,
       "timeliness": 80,
-      "cross": 60
+      "cross": 60,
+      "total": 74
     },
     "credibility": "high",
     "status": "confirmed",
@@ -560,7 +567,8 @@
       "signal": 84,
       "novelty": 62,
       "timeliness": 82,
-      "cross": 65
+      "cross": 65,
+      "total": 74
     },
     "credibility": "high",
     "status": "confirmed",
@@ -615,7 +623,8 @@
       "signal": 78,
       "novelty": 60,
       "timeliness": 80,
-      "cross": 55
+      "cross": 55,
+      "total": 65
     },
     "credibility": "medium",
     "status": "confirmed",
@@ -687,7 +696,8 @@
       "signal": 72,
       "novelty": 40,
       "timeliness": 85,
-      "cross": 70
+      "cross": 70,
+      "total": 75
     },
     "credibility": "high",
     "status": "confirmed",
