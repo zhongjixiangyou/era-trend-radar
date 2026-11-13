@@ -8,6 +8,7 @@ import {
   total, fmtDate, statusLabel, forecastStatusLabel, trendById,
 } from '../lib/data';
 import { href } from '../lib/url';
+import cluesData from '../data/clues.json';
 
 const ranked = [...publishedEvents].sort((a, b) => total(b.scores) - total(a.scores));
 const lead = ranked[0];
@@ -255,4 +256,8 @@ const leadTotal = lead ? total(lead.scores) : 0;
       <p class="count-line">快照从下一期开始记录。按月份浏览过去半年的已核实事件；回溯分析标明研究时间，不冒充当时判断。</p>
     </div>
   )}
+
+  <p class="count-line" style="margin-top:20px">
+    另有 {(cluesData as any[]).length} 条待核线索单独成区：<a href={href('/clues/')}>线索区 →</a>。它们不计入上面的已核实数量。
+  </p>
 </Base>
