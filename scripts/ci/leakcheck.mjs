@@ -51,8 +51,13 @@ let pendingStatusHits = 0;
 
 for (const file of files) {
   const text = fs.readFileSync(file, 'utf8');
+  const rel = path.relative(DIST, file).split(path.sep).join('/');
+  const clueFile = rel.startsWith('clues/');
+  const clueMarked = clueFile && text.includes('data-lead-region="true"') && /媒体线索|待核原文/.test(text);
   for (const p of pending) {
-    if (text.includes(p.id)) hits.push({ file: path.relative(DIST, file), id: p.id, kind: p.kind, status: p.status });
+    if (!text.includes(p.id)) continue;
+    if (clueMarked) continue; // 线索区：显式标注「未核官方原文」，不参与已核实统计
+    hits.push({ file: rel, id: p.id, kind: p.kind, status: p.status });
   }
   if (/"status"\s*:\s*"pending"/.test(text)) pendingStatusHits++;
 }

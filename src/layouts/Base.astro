@@ -7,9 +7,10 @@ interface Props {
   title?: string;
   description?: string;
   active?: string;
+  noindex?: boolean;
 }
 
-const { title, description, active } = Astro.props;
+const { title, description, active, noindex } = Astro.props;
 
 const nav = [
   { key: 'home', label: '首页', path: '/' },
@@ -19,6 +20,7 @@ const nav = [
   { key: 'china', label: '中国产业', path: '/china/' },
   { key: 'forecasts', label: '判断追踪', path: '/forecasts/' },
   { key: 'archive', label: '历史档案', path: '/archive/' },
+  { key: 'clues', label: '线索', path: '/clues/' },
 ];
 
 const pageTitle = title ? `${title} · ERA 时代趋势雷达` : 'ERA · 时代趋势雷达';
@@ -43,6 +45,7 @@ const stale = siteMeta.runStatus && siteMeta.runStatus !== 'ok';
     <meta name="description" content={pageDesc} />
     {/* 预览态（published 0 条）：候选内容会进产物，必须阻止搜索引擎收录 */}
     {previewMode && <meta name="robots" content="noindex, nofollow" />}
+    {!previewMode && noindex && <meta name="robots" content="noindex, follow" />}
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={pageDesc} />
     <meta name="theme-color" content="#f7f2e8" media="(prefers-color-scheme: light)" />

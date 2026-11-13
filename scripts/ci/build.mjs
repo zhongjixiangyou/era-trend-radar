@@ -177,7 +177,10 @@ function main() {
     // 不能拿 src/data 的 meta 判：构建期 src/data 被临时换成公开投影、退出时又还原，
     // 门禁读 meta 时两边口径会打架（2026-11-13 实测：公开产物 10 页被判「缺横幅」而失败）。
     const pv = previewState(derivedDir);
-    const guards = checkPreviewGuards(distDir, files, pending);
+    // 线索区在公开产物里也带 noindex（三组契约），不能拿它反推「整站是预览产物」，
+    // 否则公开构建会被误判成预览并要求每页挂横幅。
+    const guardFiles = files.filter((f) => !f.startsWith('clues/'));
+    const guards = checkPreviewGuards(distDir, guardFiles, pending);
     const noBannerAtAll = guards.pages > 0 && guards.noBanner.length === guards.pages;
     const looksPublic = noBannerAtAll && guards.noNoindex.length === guards.pages;
     const artifactPreview = !looksPublic;

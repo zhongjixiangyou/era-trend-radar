@@ -1,0 +1,83 @@
+---
+import Base from '../layouts/Base.astro';
+import clues from '../data/clues.json';
+import { categoryLabel, regionLabel, fmtDate } from '../lib/data';
+
+const items = (clues as any[]).slice();
+const cats = [...new Set(items.map((i) => i.category).filter(Boolean))];
+const label = (c: string) => categoryLabel[c] ?? c;
+const reg = (r: string) => regionLabel[r] ?? r;
+const leadCount = items.length;
+---
+
+<Base
+  title="线索区"
+  active="clues"
+  noindex={true}
+  description="未经官方原文核对的媒体线索，按发生时间排列，不构成结论，不计入已核实数量。"
+>
+  <div class="section-head" style="margin-top:34px">
+    <div>
+      <span class="num">线索区 / LEADS</span>
+      <h2 style="margin-top:6px">待核线索</h2>
+    </div>
+    <span class="more">共 {leadCount} 条 · 不计入已核实</span>
+  </div>
+
+  <div class="clues-banner" data-lead-region="true">
+    <b>以下为待核实线索</b>，未经过官方原文核对，不构成结论，也不计入「已核实」数量。点标题去原站看原文。
+  </div>
+
+  <div class="filters" role="group" aria-label="按类别筛选线索">
+    <span class="count-line" style="margin:0 8px 0 0">类别</span>
+    <button class="chip" data-clue-cat="all" aria-pressed="true">全部</button>
+    {cats.map((c) => (
+      <button class="chip" data-clue-cat={c} aria-pressed="false">{label(c)}</button>
+    ))}
+  </div>
+
+  <p class="count-line" id="clue-count">共 {leadCount} 条</p>
+
+  <ul class="clue-list" id="clue-list">
+    {items.map((it) => (
+      <li class="clue-row" data-cat={it.category ?? ''} data-lead-region="true">
+        <span class="clue-date">{it.occurredAt ? fmtDate(it.occurredAt) : '日期未核'}</span>
+        <div>
+          <a class="clue-title" href={it.sourceUrl || '#'} target="_blank" rel="nofollow noopener noreferrer">{it.title}</a>
+          {it.summary && <p class="clue-sum">{it.summary}</p>}
+        </div>
+        <div class="clue-meta">
+          <span class="clue-label">{it.statusLabel}</span>
+          {it.sourceDomain && <span>{it.sourceDomain}</span>}
+          {it.region && <span>{reg(it.region)}</span>}
+        </div>
+      </li>
+    ))}
+  </ul>
+  <p class="count-line" id="clue-empty" hidden>这个类别下没有线索。</p>
+
+  <p class="dist-note" style="margin-top:26px">
+    线索数 = 库内未发布记录数；已核实数 = 通过发布校验的 published 数。两者互不换算，也不合并成一个总数。
+    「媒体线索」只做了标题与链接可达匹配；「待核原文」有一手来源线索但未完成逐项核对。
+  </p>
+</Base>
+
+<script>
+  const rows = Array.from(document.querySelectorAll('.clue-row'));
+  const countEl = document.getElementById('clue-count');
+  const emptyEl = document.getElementById('clue-empty');
+  document.querySelectorAll('[data-clue-cat]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const cat = (btn as HTMLElement).dataset.clueCat;
+      let n = 0;
+      for (const row of rows) {
+        const show = cat === 'all' || (row as HTMLElement).dataset.cat === cat;
+        (row as HTMLElement).hidden = !show;
+        if (show) n++;
+      }
+      document.querySelectorAll('[data-clue-cat]').forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+      if (countEl) countEl.textContent = `共 ${n} 条`;
+      if (emptyEl) (emptyEl as HTMLElement).hidden = n > 0;
+    });
+  });
+</script>

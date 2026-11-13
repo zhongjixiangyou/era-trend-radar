@@ -46,4 +46,33 @@ if (MODE === 'public') {
 }
 run('python3', ['scripts/emerging.py', '--content', emergingContent, '--out', '.era-tmp/derived/emerging.json']);
 
+// 线索区（三组契约 v0.1）：非 published 记录的受限投影，只给允许字段。
+// 禁止 scores / trendLinks / forecastRefs / credibility / verification —— 有分数就会被当成排行。
+const clues = [];
+for (const name of readdirSync('content/events')) {
+  if (!name.endsWith('.json')) continue;
+  const doc = JSON.parse(readFileSync('content/events/' + name, 'utf8'));
+  if (doc.status === 'published') continue;
+  const src = (doc.sources && doc.sources[0]) || {};
+  const url = typeof src.url === 'string' ? src.url : '';
+  let domain = '';
+  try { domain = url ? new URL(url).hostname.replace(/^www\./, '') : ''; } catch { domain = ''; }
+  clues.push({
+    id: doc.id,
+    title: doc.title,
+    summary: String(doc.summary || '').slice(0, 160),
+    occurredAt: doc.occurredAt || null,
+    firstReportedAt: doc.collectedAt || doc.firstReportedAt || null,
+    category: doc.category || null,
+    region: doc.region || null,
+    sourceDomain: domain,
+    sourceUrl: url,
+    evidenceGrade: doc.evidenceGrade || 'unverified',
+    statusLabel: doc.evidenceGrade === 'secondary_only' ? '媒体线索 · 未核官方原文' : '待核原文',
+  });
+}
+clues.sort((a, b) => String(b.occurredAt).localeCompare(String(a.occurredAt)));
+writeFileSync('.era-tmp/derived/clues.json', JSON.stringify(clues, null, 2) + '\n');
+console.log(`[clues] ${clues.length} 条待核线索 → .era-tmp/derived/clues.json`);
+
 console.log(`[derive] mode=${MODE}`);
