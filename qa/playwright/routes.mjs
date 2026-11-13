@@ -3,8 +3,8 @@
 // 第 8 条待主管确认（下注为 trends 详情页）；确认后只改这个文件。
 // 可用环境变量覆盖：ROUTES_JSON='[{"path":"/","name":"home"},...]'
 
-export const SAMPLE_EVENT_ID = process.env.SAMPLE_EVENT_ID || 'ev-20260715-chips-tariff';
-export const SAMPLE_TREND_ID = process.env.SAMPLE_TREND_ID || 'tr-ai-capex-supply-chain';
+export const SAMPLE_EVENT_ID = process.env.SAMPLE_EVENT_ID || 'ev-20261014-us-cpi-sept';
+export const SAMPLE_TREND_ID = process.env.SAMPLE_TREND_ID || 'tr-fed-hike-cycle';
 
 const DEFAULT_ROUTES = [
   { path: '/', name: 'home', kind: 'page' },

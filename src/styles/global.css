@@ -797,3 +797,44 @@ h1, h2, h3, h4 {
   .heat-cell { height: 22px; font-size: 9px; }
   .heat-label { font-size: 10.5px; }
 }
+
+/* 一组：散点图交互（独立块，勿覆盖） */
+.scatter { display: block; width: 100%; height: auto; }
+.scatter text { font-family: var(--mono); font-size: 10.5px; fill: var(--ink-3); }
+.scatter .grid { stroke: var(--rule-2); stroke-width: 1; }
+.scatter .axis { stroke: var(--rule); stroke-width: 1; }
+.scatter .pt { cursor: pointer; outline: none; }
+.scatter .pt .hit { fill: transparent; }
+.scatter .halo { fill: none; stroke: var(--ink); stroke-width: 1; r: 6.6px; opacity: 0; transition: opacity .12s ease; }
+.scatter .dot { fill: var(--accent); transition: r .12s ease; }
+.scatter .dot.med { fill: none; stroke: var(--accent); stroke-width: 1.5; }
+.scatter .dot.low { fill: none; stroke: var(--ink-3); stroke-width: 1.2; stroke-dasharray: 2 2; }
+.scatter .pt:hover .dot, .scatter .pt:focus-visible .dot { r: 4.4px; }
+.scatter .pt.sel .dot { r: 4.4px; }
+.scatter .pt.sel .halo, .scatter .pt:focus-visible .halo { opacity: 1; }
+.scatter .pt:focus { outline: none; }
+
+.scatter-info {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 2px 30px;
+  border-top: 1px solid var(--rule);
+  margin-top: 4px;
+  padding-top: 14px;
+  min-height: 96px;
+  align-items: start;
+}
+.si-meta { display: flex; flex-direction: column; gap: 2px; font-family: var(--mono); font-size: 11.5px; color: var(--ink-3); }
+.si-score { font-family: var(--serif); font-size: 32px; line-height: 1.05; color: var(--ink); margin: 2px 0 3px; }
+.si-score small { font-family: var(--sans); font-size: 11px; color: var(--ink-3); }
+.si-title { display: block; font-family: var(--serif); font-size: 17px; line-height: 1.5; }
+.si-summary { font-size: 12.5px; color: var(--ink-2); line-height: 1.75; margin: 4px 0 7px; }
+.si-link { font-size: 11.5px; }
+
+@media (max-width: 860px) {
+  .scatter-info { grid-template-columns: 1fr; gap: 6px; }
+  .si-meta { flex-direction: row; align-items: baseline; gap: 10px; }
+  .si-score { font-size: 22px; margin: 0; }
+  .scatter .pt .dot { r: 4.6px; }
+  .scatter .pt.sel .halo, .scatter .pt:focus-visible .halo { r: 7.6px; }
+}

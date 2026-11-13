@@ -1,6 +1,14 @@
 ---
 interface Props {
-  items: { date: string; score: number; title: string; id: string; credibility: string }[];
+  items: {
+    id: string;
+    date: string;
+    score: number;
+    title: string;
+    summary: string;
+    credibility: string;
+    href: string;
+  }[];
   from: string;
   to: string;
 }
@@ -25,21 +33,27 @@ const months: { x: number; label: string }[] = [];
 const start = new Date(t0);
 const cursor = new Date(Date.UTC(start.getUTCFullYear(), start.getUTCMonth(), 1));
 while (cursor.getTime() <= t1) {
-  const iso = cursor.toISOString().slice(0, 10);
-  months.push({ x: x(iso), label: `${cursor.getUTCMonth() + 1}月` });
+  months.push({ x: x(cursor.toISOString().slice(0, 10)), label: `${cursor.getUTCMonth() + 1}月` });
   cursor.setUTCMonth(cursor.getUTCMonth() + 1);
 }
-
 if (months.length === 0 || months[0].x > P.l + 1) {
   months.unshift({ x: P.l, label: `${start.getUTCMonth() + 1}月` });
 }
 
 const yTicks = [60, 70, 80];
 const dotClass = (c: string) => (c === 'high' ? '' : c === 'medium' ? 'med' : 'low');
+const gradeCn = (c: string) => (c === 'high' ? '高' : c === 'medium' ? '中' : '待核实');
+
+// 重叠点归为一组，点击时在同一组里循环
+const clusterKey = (date: string, score: number) =>
+  `${Math.round(x(date) / 11)}:${Math.round(y(score) / 11)}`;
+
+const points = [...items].sort((a, b) => b.date.localeCompare(a.date));
+const latest = points[0];
 ---
 
 <figure style="margin:0">
-  <svg class="scatter" viewBox={`0 0 ${W} ${H}`} role="img" aria-label="事件时间与重要度分布散点图">
+  <svg class="scatter" viewBox={`0 0 ${W} ${H}`} role="group" aria-label="事件时间与重要度分布，可选择圆点查看事件">
     {yTicks.map((v) => (
       <>
         <line class="grid" x1={P.l} y1={y(v)} x2={W - P.r} y2={y(v)} stroke-dasharray="1 3" />
@@ -54,13 +68,108 @@ const dotClass = (c: string) => (c === 'high' ? '' : c === 'medium' ? 'med' : 'l
     ))}
     <line class="axis" x1={P.l} y1={H - P.b} x2={W - P.r} y2={H - P.b} />
     <text x={P.l - 8} y={P.t + 2} text-anchor="end">重要度</text>
-    {items.map((e) => (
-      <circle class={dotClass(e.credibility)} cx={x(e.date)} cy={y(e.score)} r="4.2">
-        <title>{`${e.date} · ${e.score} 分 · ${e.title}`}</title>
-      </circle>
+
+    {points.map((e) => (
+      <g
+        class="pt"
+        tabindex="0"
+        role="button"
+        aria-label={`${e.date}，重要度 ${e.score}，${e.title}`}
+        data-cluster={clusterKey(e.date, e.score)}
+        data-date={e.date}
+        data-score={e.score}
+        data-grade={gradeCn(e.credibility)}
+        data-title={e.title}
+        data-summary={e.summary}
+        data-href={e.href}
+      >
+        <circle class="halo" cx={x(e.date)} cy={y(e.score)} r="9.5" />
+        <circle class="hit" cx={x(e.date)} cy={y(e.score)} r="13" />
+        <circle class={`dot ${dotClass(e.credibility)}`} cx={x(e.date)} cy={y(e.score)} r="4.2" />
+      </g>
     ))}
   </svg>
-  <figcaption style="font-size:11px;color:var(--ink-3);margin-top:6px">
-    横轴为发生时间，纵轴为重要度。实心=高可信，半实=中，空心=待核实。点密处是回溯补录，不代表当时事件更密集。
+
+  <div class="scatter-info" id="scatter-info" aria-live="polite">
+    <div class="si-meta">
+      <span class="si-date">{latest.date}</span>
+      <span class="si-score">{latest.score}<small> 分</small></span>
+      <span class="si-grade">证据等级 {gradeCn(latest.credibility)}</span>
+    </div>
+    <div class="si-body">
+      <a class="si-title" href={latest.href}>{latest.title}</a>
+      <p class="si-summary">{latest.summary}</p>
+      <a class="si-link" href={latest.href}>查看事件 →</a>
+    </div>
+  </div>
+
+  <figcaption style="font-size:11px;color:var(--ink-3);margin-top:8px;line-height:1.7">
+    点圆点（或 Tab 聚焦后回车）在上方查看事件；同一点有重叠时可连续点击切换。实心=高可信，半实=中，空心=待核实。
   </figcaption>
 </figure>
+
+<script>
+  const svg = document.querySelector('.scatter');
+  const info = document.getElementById('scatter-info');
+  const pts = Array.from(document.querySelectorAll('.scatter .pt'));
+
+  const clusters = new Map<string, Element[]>();
+  for (const p of pts) {
+    const k = (p as HTMLElement).dataset.cluster!;
+    if (!clusters.has(k)) clusters.set(k, []);
+    clusters.get(k)!.push(p);
+  }
+
+  let selected: Element | null = null;
+
+  function show(el: Element) {
+    const d = (el as HTMLElement).dataset;
+    if (!info) return;
+    info.innerHTML = `
+      <div class="si-meta">
+        <span class="si-date">${d.date}</span>
+        <span class="si-score">${d.score}<small> 分</small></span>
+        <span class="si-grade">证据等级 ${d.grade}</span>
+      </div>
+      <div class="si-body">
+        <a class="si-title" href="${d.href}">${d.title}</a>
+        <p class="si-summary">${d.summary}</p>
+        <a class="si-link" href="${d.href}">查看事件 →</a>
+      </div>`;
+  }
+
+  function select(el: Element) {
+    if (selected) selected.classList.remove('sel');
+    selected = el;
+    el.classList.add('sel');
+    show(el);
+  }
+
+  function activate(el: Element) {
+    const k = (el as HTMLElement).dataset.cluster!;
+    const group = clusters.get(k) || [el];
+    if (group.length > 1 && el === selected) {
+      const next = group[(group.indexOf(el) + 1) % group.length];
+      select(next);
+      return;
+    }
+    select(el);
+  }
+
+  pts.forEach((el) => {
+    el.addEventListener('click', () => activate(el));
+    el.addEventListener('focus', () => select(el));
+    el.addEventListener('keydown', (e) => {
+      const ev = e as KeyboardEvent;
+      if (ev.key === 'Enter' || ev.key === ' ') {
+        ev.preventDefault();
+        activate(el);
+      }
+    });
+    el.addEventListener('mouseenter', () => {
+      if (!selected) show(el);
+    });
+  });
+
+  if (pts.length > 0) select(pts[0]);
+</script>

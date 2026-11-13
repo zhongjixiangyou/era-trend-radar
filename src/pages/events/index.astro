@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import EventRow from '../../components/EventRow.astro';
 import Scatter from '../../components/Scatter.astro';
 import { publishedEvents, total, categoryLabel, regionLabel, siteMeta } from '../../lib/data';
+import { href } from '../../lib/url';
 
 const events = publishedEvents;
 const cats = [...new Set(events.map((e) => e.category))];
@@ -16,7 +17,9 @@ const points = events.map((e) => ({
   date: e.date,
   score: total(e.scores),
   title: e.title,
+  summary: e.summary,
   credibility: e.credibility,
+  href: href(`/events/${e.id}/`),
 }));
 ---
 

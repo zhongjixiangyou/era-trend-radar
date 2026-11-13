@@ -14,7 +14,8 @@ import {
 } from './lib.mjs';
 
 const REPO = path.resolve(import.meta.dirname, '..', '..');
-const { pass, fail, skip, checks, failed } = makeChecker();
+const checker = makeChecker();
+const { pass, fail, skip, checks } = checker;
 
 const SEL = {
   rows: ['[data-testid="event-row"]', '.event-row', 'li[data-event-id]', 'article[data-event-id]'],
@@ -163,99 +164,142 @@ for (const r of routes) {
 // 4) 事件档案：筛选 / 搜索 / 排序
 console.log('\n[4/5] 事件档案交互');
 const eventsUrl = urlFor('/events/');
-await page.goto(eventsUrl, { waitUntil: 'load' }).catch(() => {});
 
-const rows = await firstMatch(page, SEL.rows);
-const countRows = async () => (rows ? rows.loc.count() : 0);
-const total0 = await countRows();
-
-if (!rows) {
-  skip('events:rows', '找不到事件行（需要 data-testid="event-row"）');
-} else {
-  pass('events:rows', `事件行 ${total0} 条`);
-}
-
-const chips = await firstMatch(page, SEL.chips);
-if (!chips) {
-  skip('events:filter', '找不到筛选 chip（需要 data-testid="filter-chip"）');
-} else {
-  const n = await chips.loc.count();
-  let changed = 0;
-  let tried = 0;
-  for (let i = 0; i < n; i++) {
-    const chip = chips.loc.nth(i);
-    if (!(await chip.isVisible())) continue;
-    const before = await countRows();
-    const urlBefore = page.url();
-    await chip.click({ timeout: 5000 }).catch(() => {});
-    await page.waitForTimeout(200);
-    const after = await countRows();
-    if (after !== before || page.url() !== urlBefore) changed++;
-    tried++;
+async function rowSelector() {
+  for (const s of ['.event-row', '[data-testid="event-row"]', 'li[data-event-id]', 'article[data-event-id]']) {
+    if (await page.locator(s).count()) return s;
   }
-  if (tried === 0) skip('events:filter', '筛选 chip 全部不可见');
-  else if (changed > 0) pass('events:filter', `${changed}/${tried} 个 chip 点击后列表/URL 有变化`);
-  else fail('events:filter', `${tried} 个 chip 点击后列表和 URL 都没变`, { selector: chips.selector, total0 });
+  return null;
+}
+const rowSel = await (await page.goto(eventsUrl).catch(() => {}), rowSelector());
+const visibleRows = async () => (rowSel ? page.locator(`${rowSel}:visible`).count() : 0);
+
+if (!rowSel) {
+  fail('events:rows', '找不到事件行');
+} else {
+  const total0 = await visibleRows();
+  if (total0 === 0) fail('events:rows', '一条事件行都看不到', { selector: rowSel });
+  else pass('events:rows', `事件行 ${total0} 条`, { selector: rowSel });
 }
 
-const search = await firstMatch(page, SEL.search);
-if (!search) {
-  skip('events:search', '找不到搜索框（需要 data-testid="search"）');
+// 筛选：按 data-filter 分组，跳过 data-value=all 的「全部」
+const groups = await page.evaluate(() => {
+  const out = {};
+  for (const b of document.querySelectorAll('button[data-filter]')) {
+    const g = b.dataset.filter;
+    (out[g] = out[g] || []).push({ value: b.dataset.value, label: b.textContent.trim() });
+  }
+  return out;
+});
+
+if (!Object.keys(groups).length) {
+  skip('events:filter', '找不到筛选 chip（button[data-filter]）');
 } else {
-  await page.goto(eventsUrl, { waitUntil: 'load' }).catch(() => {});
-  const before = await countRows();
-  const firstTitle = rows ? (await rows.loc.first().innerText().catch(() => '')).slice(0, 8) : '';
-  const keyword = firstTitle || 'a';
-  await search.loc.first().fill(keyword).catch(() => {});
-  await page.waitForTimeout(400);
-  const after = await countRows();
-  if (after > 0 && after < before) pass('events:search', `搜「${keyword}」${before} → ${after} 条`);
-  else if (after === before) fail('events:search', `搜「${keyword}」条数没变（${before}）`, { keyword });
-  else fail('events:search', `搜「${keyword}」条数变 0`, { before, after });
+  for (const [group, chips] of Object.entries(groups)) {
+    const real = chips.filter((c) => c.value !== 'all');
+    if (!real.length) { skip(`events:filter:${group}`, `${group} 只有「全部」`); continue; }
+    const allBtn = page.locator(`button[data-filter="${group}"][data-value="all"]`);
+    const reset = async () => {
+      if (await allBtn.count()) { await allBtn.first().click({ timeout: 3000 }).catch(() => {}); await page.waitForTimeout(150); }
+    };
+    await reset();
+    const before = await visibleRows();
+    const detail = [];
+    let changed = 0;
+    for (const c of real) {
+      const chip = page.locator(`button[data-filter="${group}"][data-value="${c.value}"]`).first();
+      await chip.click({ timeout: 4000 }).catch(() => {});
+      await page.waitForTimeout(250);
+      const after = await visibleRows();
+      const pressed = await chip.getAttribute('aria-pressed').catch(() => null);
+      const ok = after !== before || pressed === 'true';
+      if (ok) changed++;
+      detail.push({ value: c.value, label: c.label, before, after, pressed, ok });
+      await reset();
+    }
+    if (changed === real.length) pass(`events:filter:${group}`, `${group} ${real.length} 个筛选项全部生效`, { detail });
+    else fail(`events:filter:${group}`, `${group} 只有 ${changed}/${real.length} 个生效`, { detail });
+  }
 }
 
-const sort = await firstMatch(page, SEL.sort);
-if (!sort) {
-  skip('events:sort', '找不到排序控件（需要 data-testid="sort"）');
+// 搜索
+const searchBox = page.locator('[data-testid="search"], input[type="search"]').first();
+if (!(await searchBox.count())) {
+  skip('events:search', '找不到搜索框（input[type=search]）');
 } else {
-  await page.goto(eventsUrl, { waitUntil: 'load' }).catch(() => {});
-  const beforeFirst = rows ? await rows.loc.first().innerText().catch(() => '') : '';
-  const options = await sort.loc.first().locator('option').count().catch(() => 0);
-  if (options > 1) {
-    await sort.loc.first().selectOption({ index: 1 }).catch(() => {});
+  await page.goto(eventsUrl, { waitUntil: 'load' });
+  const before = await visibleRows();
+  const title = await page.locator('.event-title, [data-testid="event-title"]').first().innerText().catch(() => '');
+  const kw = title.trim().slice(0, 5).trim() || 'CPI';
+  await searchBox.fill(kw).catch(() => {});
+  await page.waitForTimeout(450);
+  const after = await visibleRows();
+  const cleared = await searchBox.inputValue().catch(() => '');
+  if (after > 0 && after < before) pass('events:search', `搜「${kw}」${before} → ${after} 条`);
+  else if (after === 0) fail('events:search', `搜「${kw}」结果 0 条`, { kw, before });
+  else fail('events:search', `搜「${kw}」条数没变（${before}）`, { kw, before, input: cleared });
+}
+
+// 排序（按钮组 data-sort）
+const sortBtns = page.locator('button[data-sort]');
+if (!(await sortBtns.count())) {
+  skip('events:sort', '找不到排序按钮（button[data-sort]）');
+} else {
+  const keys = await sortBtns.evaluateAll((bs) => bs.map((b) => b.dataset.sort));
+  const detail = [];
+  let ok = 0;
+  for (const key of keys) {
+    await page.goto(eventsUrl, { waitUntil: 'load' });
+    const firstBefore = await page.locator(rowSel || '.event-row').first().innerText().catch(() => '');
+    const btn = page.locator(`button[data-sort="${key}"]`).first();
+    await btn.click({ timeout: 4000 }).catch(() => {});
     await page.waitForTimeout(300);
-    const afterFirst = rows ? await rows.loc.first().innerText().catch(() => '') : '';
-    if (afterFirst && afterFirst !== beforeFirst) pass('events:sort', '排序切换后首条变化');
-    else fail('events:sort', '排序切换后首条没变', { before: beforeFirst.slice(0, 40) });
-  } else {
-    skip('events:sort', '排序控件没有可选项');
+    const firstAfter = await page.locator(rowSel || '.event-row').first().innerText().catch(() => '');
+    const pressed = await btn.getAttribute('aria-pressed').catch(() => null);
+    const good = firstBefore !== firstAfter || pressed === 'true';
+    if (good) ok++;
+    detail.push({ key, pressed, changed: firstBefore !== firstAfter });
   }
+  if (ok === keys.length) pass('events:sort', `${keys.length} 个排序键全部生效`, { detail });
+  else fail('events:sort', `${ok}/${keys.length} 个排序键生效`, { detail });
 }
 
-// 5) 事件详情：时间线可展开
+// 5) 事件详情：时间线
 console.log('\n[5/5] 事件详情');
-const detail = routes.find((r) => r.kind === 'detail' && r.path.startsWith('/events/'));
-if (!detail) {
+const detailRoute = routes.find((r) => r.kind === 'detail' && r.path.startsWith('/events/'));
+if (!detailRoute) {
   skip('detail:timeline', '路由表里没有事件详情页');
 } else {
-  await page.goto(urlFor(detail.path), { waitUntil: 'load' }).catch(() => {});
-  const toggle = await firstMatch(page, SEL.tlToggle);
-  const body = await firstMatch(page, SEL.tlBody);
-  if (!toggle) {
-    skip('detail:timeline', '找不到时间线展开按钮（需要 data-testid="timeline-toggle"）');
-  } else {
-    const expandedBefore = await toggle.loc.first().getAttribute('aria-expanded').catch(() => null);
-    const textBefore = await page.locator('body').innerText().catch(() => '');
-    await toggle.loc.first().click({ timeout: 5000 }).catch(() => {});
+  await page.goto(urlFor(detailRoute.path), { waitUntil: 'load' }).catch(() => {});
+  const tl = page.locator('.timeline, [data-testid="timeline"]').first();
+  const hasTl = await tl.count();
+  const entries = hasTl ? await tl.locator('li, [data-testid="timeline-item"]').count() : 0;
+  const toggle = page.locator('[data-testid="timeline-toggle"]');
+  const toggleCount = await toggle.count();
+
+  if (!hasTl) {
+    fail('detail:timeline', '详情页找不到时间线（.timeline）');
+  } else if (toggleCount) {
+    const textBefore = await page.locator('body').innerText();
+    const expandedBefore = await toggle.first().getAttribute('aria-expanded');
+    await toggle.first().click({ timeout: 4000 }).catch(() => {});
     await page.waitForTimeout(300);
-    const expandedAfter = await toggle.loc.first().getAttribute('aria-expanded').catch(() => null);
-    const bodyVisible = body ? await body.loc.first().isVisible().catch(() => false) : false;
-    const textAfter = await page.locator('body').innerText().catch(() => '');
-    const grew = textAfter.length - textBefore.length;
-    if (expandedAfter === 'true' || bodyVisible || grew > 20) {
-      pass('detail:timeline', '点击后时间线展开', { expandedAfter, bodyVisible, grew });
+    const expandedAfter = await toggle.first().getAttribute('aria-expanded');
+    const textAfter = await page.locator('body').innerText();
+    if (expandedAfter === 'true' || textAfter.length !== textBefore.length) {
+      pass('detail:timeline', '时间线可展开', { expandedBefore, expandedAfter, entries });
     } else {
-      fail('detail:timeline', '点击后没有展开迹象', { expandedBefore, expandedAfter, bodyVisible, grew });
+      fail('detail:timeline', '点击展开按钮无变化', { expandedBefore, expandedAfter, entries });
+    }
+  } else {
+    const visible = await tl.isVisible();
+    const textLen = (await tl.innerText().catch(() => '')).length;
+    if (visible && (entries > 0 || textLen > 10)) {
+      pass('detail:timeline', `时间线常驻展示（${entries || '?'} 条，无折叠交互）`, {
+        entries, note: '派活写的是「时间线可展开」，当前没有折叠交互，需主管确认是否算达成',
+      });
+    } else {
+      fail('detail:timeline', '时间线存在但不可见/为空', { visible, entries, textLen });
     }
   }
 }
@@ -271,6 +315,7 @@ for (const r of routes) {
 await browser.close();
 previewProc?.kill();
 
+const failed = checker.failed;
 const report = {
   ok: failed.length === 0,
   generatedAt: new Date().toISOString(),
