@@ -1,0 +1,93 @@
+{
+  "id": "ev_cn-iva-2026-09",
+  "dedupeKey": "ev:7e0778de6789",
+  "title": "9月规上工业增加值同比增长5.5%，制造业增6.0%",
+  "summary": "国家统计局10月19日发布：9月规上工业增加值同比增5.5%，比上月加快0.3个百分点；1—9月增5.3%，制造业增6.0%。",
+  "facts": [
+    "9月规模以上工业增加值同比实际增长5.5%，增速比上月加快0.3个百分点；环比增长0.61%。",
+    "1—9月规模以上工业增加值同比增长5.3%。",
+    "分三大门类：9月采矿业增1.3%，制造业增6.0%，电力热力燃气及水生产和供应业增5.6%。",
+    "分经济类型：9月国有控股增3.6%，股份制增6.0%，外商及港澳台增3.7%，私营增3.8%。"
+  ],
+  "analysis": "工业增加值 5.5% 与 9 月 PMI 回升至 50.1 相互印证，制造业 6.0% 强于整体；但 10 月 PMI 回落到 49.3，说明这一改善未能延续到四季度。",
+  "category": "中国经济与产业",
+  "region": "中国",
+  "occurredAt": "2026-10-19T10:00+08:00",
+  "firstReportedAt": "2026-10-19T10:00+08:00",
+  "collectedAt": "2026-11-13T15:20:00+08:00",
+  "sources": [
+    {
+      "url": "https://www.stats.gov.cn/sj/zxfb/202610/t20261019_1965617.html",
+      "title": "2026年9月份规模以上工业增加值增长5.5%",
+      "publisher": "国家统计局",
+      "publishedAt": "2026-10-19",
+      "type": "primary",
+      "note": ""
+    }
+  ],
+  "scores": {
+    "structural": 16,
+    "scope": 14,
+    "signal": 12,
+    "delta": 9,
+    "timeliness": 6,
+    "crossDomain": 8,
+    "rationale": {
+      "structural": "外贸与产出是外需与工业景气的直接读数",
+      "scope": "覆盖全国海关口径/规上工业",
+      "signal": "增速方向明确且幅度显著",
+      "delta": "较上月与上年同期均有变化",
+      "timeliness": "月度发布，时效高",
+      "crossDomain": "牵连就业、汇率与产业政策"
+    },
+    "total": 65,
+    "scorerVersion": "score/v1.2"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "官方原文逐项比对通过；单一来源，未获独立第二来源印证（按本轮口径可如实发布事实）"
+  },
+  "evidenceGrade": "single_primary",
+  "status": "published",
+  "trendLinks": [],
+  "revisions": [],
+  "verification": {
+    "status": "passed",
+    "method": "curl 抓取官方原文表格，逐项比对数值后写入",
+    "checkedAt": "2026-11-13T15:20:00+08:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "原文：9月规上工业增加值同比实际增长5.5%，比上月加快0.3个百分点，环比增长0.61%；1—9月增长5.3%；采矿业1.3%、制造业6.0%、电热气水5.6%；国有3.6%、股份制6.0%、外商3.7%、私营3.8%。"
+      }
+    ],
+    "note": "仅核对原文表格数值；分析段为本组判断"
+  },
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13T07:20:00Z",
+    "note": "事后补录：事件发生在先，本记录于 2026-11-13 补入；不构成当时预测。"
+  },
+  "metrics": {
+    "metricSetId": "cn_industrial_output_2026_monthly",
+    "comparable": false,
+    "items": [
+      {
+        "metric": "规上工业增加值同比",
+        "value": 5.5,
+        "unit": "%",
+        "period": "2026-09",
+        "scope": "规上工业"
+      },
+      {
+        "metric": "制造业增加值同比",
+        "value": 6.0,
+        "unit": "%",
+        "period": "2026-09",
+        "scope": "规上工业"
+      }
+    ]
+  }
+}

@@ -1,25 +1,25 @@
 {
   "schemaVersion": "1",
-  "asOf": "2026-11-13T07:14:35.168583+00:00",
+  "asOf": "2026-11-13T07:19:17.728107+00:00",
   "windows": {
     "recent": {
-      "from": "2026-10-14T07:14:35.168583+00:00",
-      "to": "2026-11-13T07:14:35.168583+00:00",
+      "from": "2026-10-14T07:19:17.728107+00:00",
+      "to": "2026-11-13T07:19:17.728107+00:00",
       "days": 30
     },
     "prior": {
-      "from": "2026-09-14T07:14:35.168583+00:00",
-      "to": "2026-10-14T07:14:35.168583+00:00",
+      "from": "2026-09-14T07:19:17.728107+00:00",
+      "to": "2026-10-14T07:19:17.728107+00:00",
       "days": 30
     },
     "shortRecent": {
-      "from": "2026-11-06T07:14:35.168583+00:00",
-      "to": "2026-11-13T07:14:35.168583+00:00",
+      "from": "2026-11-06T07:19:17.728107+00:00",
+      "to": "2026-11-13T07:19:17.728107+00:00",
       "days": 7
     },
     "shortPrior": {
-      "from": "2026-10-30T07:14:35.168583+00:00",
-      "to": "2026-11-06T07:14:35.168583+00:00",
+      "from": "2026-10-30T07:19:17.728107+00:00",
+      "to": "2026-11-06T07:19:17.728107+00:00",
       "days": 7
     }
   },
@@ -35,7 +35,7 @@
     "ratioOnLowBase": "not_computed"
   },
   "excluded": {
-    "retroEvents": 74,
+    "retroEvents": 77,
     "retroIds": [
       "ev_ai-dc-power-161gw",
       "ev_antares-criticality-20260604",
@@ -54,7 +54,10 @@
       "ev_cn-cpi-2026-08",
       "ev_cn-cpi-2026-09",
       "ev_cn-cpi-2026-10",
+      "ev_cn-exports-2026-09",
+      "ev_cn-exports-2026-10",
       "ev_cn-gdp-q3-2026",
+      "ev_cn-iva-2026-09",
       "ev_cn-pmi-2026-05",
       "ev_cn-pmi-2026-08",
       "ev_cn-pmi-2026-10",
@@ -123,7 +126,7 @@
   },
   "historical": {
     "note": "回溯补录：不参与实时增速。occurredAtReliable 与 coverageComparable 都成立才进「历史回溯观察」；否则只作历史事实展示。",
-    "count": 74,
+    "count": 77,
     "medianDomains": 2,
     "items": [
       {
@@ -1027,6 +1030,36 @@
         ]
       },
       {
+        "id": "ev_cn-exports-2026-09",
+        "occurredAt": "2026-10-15T00:00+08:00",
+        "title": "9月出口同比增长36.3%，前三季度顺差9381亿美元",
+        "sourceDomains": 1,
+        "occurredAtReliable": null,
+        "coverageComparable": null,
+        "eligibleForHistoricalObservation": false,
+        "growthComputed": false,
+        "reasons": [
+          "发生日未从原文核实：字段存在且可解析，但没有可核的原文发生日证据",
+          "覆盖可比性未知：缺两个窗口的来源清单/采集成败/筛选方法证据（本事件独立域名 1，仅供参考，不作判定）",
+          "发生日未知：未在原文中核到明确发生日，不据此升级时间轴"
+        ]
+      },
+      {
+        "id": "ev_cn-iva-2026-09",
+        "occurredAt": "2026-10-19T10:00+08:00",
+        "title": "9月规上工业增加值同比增长5.5%，制造业增6.0%",
+        "sourceDomains": 1,
+        "occurredAtReliable": null,
+        "coverageComparable": null,
+        "eligibleForHistoricalObservation": false,
+        "growthComputed": false,
+        "reasons": [
+          "发生日未从原文核实：字段存在且可解析，但没有可核的原文发生日证据",
+          "覆盖可比性未知：缺两个窗口的来源清单/采集成败/筛选方法证据（本事件独立域名 1，仅供参考，不作判定）",
+          "发生日未知：未在原文中核到明确发生日，不据此升级时间轴"
+        ]
+      },
+      {
         "id": "ev_cn-realestate-1-9",
         "occurredAt": "2026-10-19T10:00+08:00",
         "title": "1—9月房地产开发投资同比下降20.6%",
@@ -1165,6 +1198,21 @@
         "id": "ev_cn-cpi-2026-10",
         "occurredAt": "2026-11-09T09:30+08:00",
         "title": "10月CPI同比上涨0.7%，环比持平",
+        "sourceDomains": 1,
+        "occurredAtReliable": null,
+        "coverageComparable": null,
+        "eligibleForHistoricalObservation": false,
+        "growthComputed": false,
+        "reasons": [
+          "发生日未从原文核实：字段存在且可解析，但没有可核的原文发生日证据",
+          "覆盖可比性未知：缺两个窗口的来源清单/采集成败/筛选方法证据（本事件独立域名 1，仅供参考，不作判定）",
+          "发生日未知：未在原文中核到明确发生日，不据此升级时间轴"
+        ]
+      },
+      {
+        "id": "ev_cn-exports-2026-10",
+        "occurredAt": "2026-11-10T00:00+08:00",
+        "title": "10月出口同比增长35.2%，环比回落7.8%",
         "sourceDomains": 1,
         "occurredAtReliable": null,
         "coverageComparable": null,

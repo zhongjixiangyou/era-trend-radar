@@ -1,0 +1,100 @@
+{
+  "id": "ev_cn-exports-2026-09",
+  "dedupeKey": "ev:691f70669977",
+  "title": "9月出口同比增长36.3%，前三季度顺差9381亿美元",
+  "summary": "海关总署10月15日发布：9月出口4471.8亿美元同比增36.3%，进口3136.5亿美元增31.0%，顺差1335.3亿美元。",
+  "facts": [
+    "9月进出口总值7608.4亿美元，同比增长34.1%，环比增长11.2%；前三季度累计58032.8亿美元，同比增长23.8%。",
+    "9月出口4471.8亿美元，同比增长36.3%；前三季度出口33707.0亿美元，同比增长21.3%。",
+    "9月进口3136.5亿美元，同比增长31.0%；前三季度进口24325.8亿美元，同比增长27.5%。",
+    "9月贸易顺差1335.3亿美元；前三季度累计顺差9381.1亿美元。"
+  ],
+  "analysis": "出口同比 36.3% 是年内高位，进口同步高增说明内需与加工贸易都在恢复；顺差 1335 亿美元创单月高位，外需对三季度 GDP 形成明显支撑。",
+  "category": "中国经济与产业",
+  "region": "中国",
+  "occurredAt": "2026-10-15T00:00+08:00",
+  "firstReportedAt": "2026-10-15T00:00+08:00",
+  "collectedAt": "2026-11-13T15:20:00+08:00",
+  "sources": [
+    {
+      "url": "http://english.customs.gov.cn/Statics/9b00473b-656a-4e69-85c0-a1b96d45d32c.html",
+      "title": "China's Total Export & Import Values, Sep 2026 (in USD)",
+      "publisher": "海关总署（GACC）",
+      "publishedAt": "2026-10-15",
+      "type": "primary",
+      "note": ""
+    }
+  ],
+  "scores": {
+    "structural": 18,
+    "scope": 16,
+    "signal": 13,
+    "delta": 11,
+    "timeliness": 6,
+    "crossDomain": 9,
+    "rationale": {
+      "structural": "外贸与产出是外需与工业景气的直接读数",
+      "scope": "覆盖全国海关口径/规上工业",
+      "signal": "增速方向明确且幅度显著",
+      "delta": "较上月与上年同期均有变化",
+      "timeliness": "月度发布，时效高",
+      "crossDomain": "牵连就业、汇率与产业政策"
+    },
+    "total": 73,
+    "scorerVersion": "score/v1.2"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "官方原文逐项比对通过；单一来源，未获独立第二来源印证（按本轮口径可如实发布事实）"
+  },
+  "evidenceGrade": "single_primary",
+  "status": "published",
+  "trendLinks": [],
+  "revisions": [],
+  "verification": {
+    "status": "passed",
+    "method": "curl 抓取官方原文表格，逐项比对数值后写入",
+    "checkedAt": "2026-11-13T15:20:00+08:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "原文表格：9月出口4471.8、进口3136.5、总值7608.4（亿美元），同比+36.3%/+31.0%/+34.1%；1—9月出口33707.0、进口24325.8、总值58032.8，累计同比+21.3%/+27.5%/+23.8%；顺差1335.3/9381.1。"
+      }
+    ],
+    "note": "仅核对原文表格数值；分析段为本组判断"
+  },
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13T07:20:00Z",
+    "note": "事后补录：事件发生在先，本记录于 2026-11-13 补入；不构成当时预测。"
+  },
+  "metrics": {
+    "metricSetId": "cn_trade_usd_2026_monthly",
+    "comparable": false,
+    "items": [
+      {
+        "metric": "出口（美元）",
+        "value": 4471.8,
+        "unit": "亿美元",
+        "period": "2026-09",
+        "scope": "全国"
+      },
+      {
+        "metric": "出口同比",
+        "value": 36.3,
+        "unit": "%",
+        "period": "2026-09",
+        "scope": "全国"
+      },
+      {
+        "metric": "贸易顺差",
+        "value": 1335.3,
+        "unit": "亿美元",
+        "period": "2026-09",
+        "scope": "全国"
+      }
+    ]
+  }
+}

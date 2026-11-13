@@ -1,0 +1,100 @@
+{
+  "id": "ev_cn-exports-2026-10",
+  "dedupeKey": "ev:da21da2cacf4",
+  "title": "10月出口同比增长35.2%，环比回落7.8%",
+  "summary": "海关总署11月10日发布：10月出口4123.3亿美元同比增35.2%、环比降7.8%，进口3070.5亿美元增41.6%，顺差1052.8亿美元。",
+  "facts": [
+    "10月进出口总值7193.8亿美元，同比增长37.9%，环比下降5.5%；前10个月累计65229.3亿美元，同比增长25.3%。",
+    "10月出口4123.3亿美元，同比增长35.2%，环比下降7.8%；前10个月出口37827.6亿美元，同比增长22.7%。",
+    "10月进口3070.5亿美元，同比增长41.6%，环比下降2.2%；前10个月进口27401.7亿美元，同比增长29.0%。",
+    "10月贸易顺差1052.8亿美元；前10个月累计顺差10425.9亿美元。"
+  ],
+  "analysis": "出口同比仍高（35.2%），但环比 -7.8% 说明 9 月的抢出口/高基数效应在退；进口同比 41.6% 更强，顺差从 1335 亿回落到 1053 亿美元。外需仍是四季度主要支撑，但斜率在放缓。",
+  "category": "中国经济与产业",
+  "region": "中国",
+  "occurredAt": "2026-11-10T00:00+08:00",
+  "firstReportedAt": "2026-11-10T00:00+08:00",
+  "collectedAt": "2026-11-13T15:20:00+08:00",
+  "sources": [
+    {
+      "url": "http://english.customs.gov.cn/Statics/a0e840e1-2108-4b9d-9914-d668c02500ab.html",
+      "title": "China's Total Export & Import Values, Oct 2026 (in USD)",
+      "publisher": "海关总署（GACC）",
+      "publishedAt": "2026-11-10",
+      "type": "primary",
+      "note": ""
+    }
+  ],
+  "scores": {
+    "structural": 18,
+    "scope": 16,
+    "signal": 13,
+    "delta": 11,
+    "timeliness": 7,
+    "crossDomain": 9,
+    "rationale": {
+      "structural": "外贸与产出是外需与工业景气的直接读数",
+      "scope": "覆盖全国海关口径/规上工业",
+      "signal": "增速方向明确且幅度显著",
+      "delta": "较上月与上年同期均有变化",
+      "timeliness": "月度发布，时效高",
+      "crossDomain": "牵连就业、汇率与产业政策"
+    },
+    "total": 74,
+    "scorerVersion": "score/v1.2"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "官方原文逐项比对通过；单一来源，未获独立第二来源印证（按本轮口径可如实发布事实）"
+  },
+  "evidenceGrade": "single_primary",
+  "status": "published",
+  "trendLinks": [],
+  "revisions": [],
+  "verification": {
+    "status": "passed",
+    "method": "curl 抓取官方原文表格，逐项比对数值后写入",
+    "checkedAt": "2026-11-13T15:20:00+08:00",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "原文表格：10月出口4123.3、进口3070.5、总值7193.8（亿美元），同比+35.2%/+41.6%/+37.9%，环比-7.8%/-2.2%/-5.5%；1—10月出口37827.6、进口27401.7、总值65229.3，累计同比+22.7%/+29.0%/+25.3%；顺差1052.8/10425.9。"
+      }
+    ],
+    "note": "仅核对原文表格数值；分析段为本组判断"
+  },
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-13T07:20:00Z",
+    "note": "事后补录：事件发生在先，本记录于 2026-11-13 补入；不构成当时预测。"
+  },
+  "metrics": {
+    "metricSetId": "cn_trade_usd_2026_monthly",
+    "comparable": false,
+    "items": [
+      {
+        "metric": "出口（美元）",
+        "value": 4123.3,
+        "unit": "亿美元",
+        "period": "2026-10",
+        "scope": "全国"
+      },
+      {
+        "metric": "出口同比",
+        "value": 35.2,
+        "unit": "%",
+        "period": "2026-10",
+        "scope": "全国"
+      },
+      {
+        "metric": "贸易顺差",
+        "value": 1052.8,
+        "unit": "亿美元",
+        "period": "2026-10",
+        "scope": "全国"
+      }
+    ]
+  }
+}

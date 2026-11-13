@@ -337,6 +337,78 @@
     "backfill": true
   },
   {
+    "id": "ev_cn-exports-2026-10",
+    "title": "10月出口同比增长35.2%，环比回落7.8%",
+    "date": "2026-11-10",
+    "reportedAt": "2026-11-10",
+    "collectedAt": "2026-11-13",
+    "region": "china",
+    "category": "industry",
+    "summary": "海关总署11月10日发布：10月出口4123.3亿美元同比增35.2%、环比降7.8%，进口3070.5亿美元增41.6%，顺差1052.8亿美元。",
+    "analysis": "出口同比仍高（35.2%），但环比 -7.8% 说明 9 月的抢出口/高基数效应在退；进口同比 41.6% 更强，顺差从 1335 亿回落到 1053 亿美元。外需仍是四季度主要支撑，但斜率在放缓。",
+    "facts": [
+      "10月进出口总值7193.8亿美元，同比增长37.9%，环比下降5.5%；前10个月累计65229.3亿美元，同比增长25.3%。",
+      "10月出口4123.3亿美元，同比增长35.2%，环比下降7.8%；前10个月出口37827.6亿美元，同比增长22.7%。",
+      "10月进口3070.5亿美元，同比增长41.6%，环比下降2.2%；前10个月进口27401.7亿美元，同比增长29.0%。",
+      "10月贸易顺差1052.8亿美元；前10个月累计顺差10425.9亿美元。"
+    ],
+    "metrics": [
+      {
+        "label": "出口（美元）",
+        "value": "4123.3亿美元",
+        "note": "2026-10 · 全国"
+      },
+      {
+        "label": "出口同比",
+        "value": "35.2%",
+        "note": "2026-10 · 全国"
+      },
+      {
+        "label": "贸易顺差",
+        "value": "1052.8亿美元",
+        "note": "2026-10 · 全国"
+      }
+    ],
+    "scores": {
+      "structural": 18,
+      "scope": 16,
+      "signal": 13,
+      "delta": 11,
+      "timeliness": 7,
+      "crossDomain": 9,
+      "total": 74,
+      "rationale": {
+        "structural": "外贸与产出是外需与工业景气的直接读数",
+        "scope": "覆盖全国海关口径/规上工业",
+        "signal": "增速方向明确且幅度显著",
+        "delta": "较上月与上年同期均有变化",
+        "timeliness": "月度发布，时效高",
+        "crossDomain": "牵连就业、汇率与产业政策"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "海关总署（GACC）",
+        "url": "http://english.customs.gov.cn/Statics/a0e840e1-2108-4b9d-9914-d668c02500ab.html",
+        "date": "2026-11-10",
+        "official": true
+      }
+    ],
+    "trends": [],
+    "timeline": [],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 74
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
     "id": "ev_cn-cpi-2026-10",
     "title": "10月CPI同比上涨0.7%，环比持平",
     "date": "2026-11-09",
@@ -1014,6 +1086,73 @@
     "backfill": true
   },
   {
+    "id": "ev_cn-iva-2026-09",
+    "title": "9月规上工业增加值同比增长5.5%，制造业增6.0%",
+    "date": "2026-10-19",
+    "reportedAt": "2026-10-19",
+    "collectedAt": "2026-11-13",
+    "region": "china",
+    "category": "industry",
+    "summary": "国家统计局10月19日发布：9月规上工业增加值同比增5.5%，比上月加快0.3个百分点；1—9月增5.3%，制造业增6.0%。",
+    "analysis": "工业增加值 5.5% 与 9 月 PMI 回升至 50.1 相互印证，制造业 6.0% 强于整体；但 10 月 PMI 回落到 49.3，说明这一改善未能延续到四季度。",
+    "facts": [
+      "9月规模以上工业增加值同比实际增长5.5%，增速比上月加快0.3个百分点；环比增长0.61%。",
+      "1—9月规模以上工业增加值同比增长5.3%。",
+      "分三大门类：9月采矿业增1.3%，制造业增6.0%，电力热力燃气及水生产和供应业增5.6%。",
+      "分经济类型：9月国有控股增3.6%，股份制增6.0%，外商及港澳台增3.7%，私营增3.8%。"
+    ],
+    "metrics": [
+      {
+        "label": "规上工业增加值同比",
+        "value": "5.5%",
+        "note": "2026-09 · 规上工业"
+      },
+      {
+        "label": "制造业增加值同比",
+        "value": "6%",
+        "note": "2026-09 · 规上工业"
+      }
+    ],
+    "scores": {
+      "structural": 16,
+      "scope": 14,
+      "signal": 12,
+      "delta": 9,
+      "timeliness": 6,
+      "crossDomain": 8,
+      "total": 65,
+      "rationale": {
+        "structural": "外贸与产出是外需与工业景气的直接读数",
+        "scope": "覆盖全国海关口径/规上工业",
+        "signal": "增速方向明确且幅度显著",
+        "delta": "较上月与上年同期均有变化",
+        "timeliness": "月度发布，时效高",
+        "crossDomain": "牵连就业、汇率与产业政策"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "国家统计局",
+        "url": "https://www.stats.gov.cn/sj/zxfb/202610/t20261019_1965617.html",
+        "date": "2026-10-19",
+        "official": true
+      }
+    ],
+    "trends": [],
+    "timeline": [],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 65
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
     "id": "ev_cn-retail-2026-09",
     "title": "9月社会消费品零售总额同比增长1.1%",
     "date": "2026-10-19",
@@ -1146,6 +1285,78 @@
       {
         "date": "2026-11-13",
         "total": 68
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_cn-exports-2026-09",
+    "title": "9月出口同比增长36.3%，前三季度顺差9381亿美元",
+    "date": "2026-10-15",
+    "reportedAt": "2026-10-15",
+    "collectedAt": "2026-11-13",
+    "region": "china",
+    "category": "industry",
+    "summary": "海关总署10月15日发布：9月出口4471.8亿美元同比增36.3%，进口3136.5亿美元增31.0%，顺差1335.3亿美元。",
+    "analysis": "出口同比 36.3% 是年内高位，进口同步高增说明内需与加工贸易都在恢复；顺差 1335 亿美元创单月高位，外需对三季度 GDP 形成明显支撑。",
+    "facts": [
+      "9月进出口总值7608.4亿美元，同比增长34.1%，环比增长11.2%；前三季度累计58032.8亿美元，同比增长23.8%。",
+      "9月出口4471.8亿美元，同比增长36.3%；前三季度出口33707.0亿美元，同比增长21.3%。",
+      "9月进口3136.5亿美元，同比增长31.0%；前三季度进口24325.8亿美元，同比增长27.5%。",
+      "9月贸易顺差1335.3亿美元；前三季度累计顺差9381.1亿美元。"
+    ],
+    "metrics": [
+      {
+        "label": "出口（美元）",
+        "value": "4471.8亿美元",
+        "note": "2026-09 · 全国"
+      },
+      {
+        "label": "出口同比",
+        "value": "36.3%",
+        "note": "2026-09 · 全国"
+      },
+      {
+        "label": "贸易顺差",
+        "value": "1335.3亿美元",
+        "note": "2026-09 · 全国"
+      }
+    ],
+    "scores": {
+      "structural": 18,
+      "scope": 16,
+      "signal": 13,
+      "delta": 11,
+      "timeliness": 6,
+      "crossDomain": 9,
+      "total": 73,
+      "rationale": {
+        "structural": "外贸与产出是外需与工业景气的直接读数",
+        "scope": "覆盖全国海关口径/规上工业",
+        "signal": "增速方向明确且幅度显著",
+        "delta": "较上月与上年同期均有变化",
+        "timeliness": "月度发布，时效高",
+        "crossDomain": "牵连就业、汇率与产业政策"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "海关总署（GACC）",
+        "url": "http://english.customs.gov.cn/Statics/9b00473b-656a-4e69-85c0-a1b96d45d32c.html",
+        "date": "2026-10-15",
+        "official": true
+      }
+    ],
+    "trends": [],
+    "timeline": [],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 73
       }
     ],
     "watch": null,
