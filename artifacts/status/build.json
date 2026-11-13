@@ -1,6 +1,0 @@
-{
-  "tool": "build",
-  "status": "healthy",
-  "at": "2026-11-13T06:19:25.766Z",
-  "message": "入口构建 24 文件；3 个派生文件与 content/ 无漂移"
-}

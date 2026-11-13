@@ -71,8 +71,12 @@ export const scoreLabels: [keyof Score, string][] = [
 ];
 
 export const sortedEvents = [...allEvents].sort((a, b) => b.date.localeCompare(a.date));
-/** 公开导出里一条 published 都没有时，整站按「内部预览」渲染：候选可见但必须挂横幅。 */
-export const previewMode = (siteMeta.preview?.published ?? 0) === 0 && (siteMeta.preview?.pending ?? 0) > 0;
+/**
+ * 只要数据集里还有 pending，整站就按「内部预览」渲染：候选可见，但必须挂横幅 + noindex。
+ * 早先判据是「published===0」，导致 3 条已确认 + 8 条候选时会掉进非预览态，
+ * 候选内容静默露出而没有任何提示——那正是半发布状态，不能算正式站点。
+ */
+export const previewMode = (siteMeta.preview?.pending ?? 0) > 0;
 export const publishedEvents = sortedEvents.filter((e) => previewMode || e.status !== 'pending');
 export const trendById = new Map(allTrends.map((t) => [t.id, t]));
 export const eventById = new Map(allEvents.map((e) => [e.id, e]));
@@ -81,7 +85,8 @@ export function eventsForTrend(trendId: string) {
   return sortedEvents.filter((e) => e.trends.some((t) => t.id === trendId));
 }
 
-export function fmtDate(d: string): string {
+export function fmtDate(d: string | null | undefined): string {
+  if (!d) return '暂无';
   const [y, m, day] = d.split('-');
   return `${y}.${m}.${day}`;
 }

@@ -209,6 +209,201 @@
     "backfill": false
   },
   {
+    "id": "ev_cn-profit-1-9",
+    "title": "1—9月规上工业企业利润同比增长15.5%，利润率升至5.68%",
+    "date": "2026-10-27",
+    "reportedAt": "2026-10-27",
+    "collectedAt": "2026-11-13",
+    "region": "china",
+    "category": "industry",
+    "summary": "1—9月利润总额同比+15.5%，营收106.21万亿+6.6%，利润率5.68%、同比+0.44pp；采矿业+38.2%、电热气水-14.3%",
+    "analysis": "利润增速15.5%高于营收6.6%，且利润率同比+0.44pp，说明改善主要来自利润率而非规模扩张；但电热气水与黑色金属大幅下滑，行业分化明显。本条为1—9月口径，不得与1—8月分行业数据混算增速。",
+    "facts": [
+      "1—9月规上工业企业利润同比+15.5%",
+      "营业收入106.21万亿元/+6.6%；营业成本90.30万亿元/+6.1%",
+      "营业收入利润率5.68%，同比提高0.44个百分点",
+      "采矿业利润8813.7亿元/+38.2%；制造业45738.0亿元/+17.0%",
+      "电力热力燃气及水生产和供应业5785.6亿元/-14.3%；黑色金属冶炼和压延加工业-73.3%",
+      "外商及港澳台投资企业13371.4亿元/+0.5%；私营企业15091.3亿元/+8.7%"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 20,
+      "scope": 17,
+      "signal": 14,
+      "novelty": 9,
+      "timeliness": 9,
+      "cross": 7,
+      "total": 76,
+      "rationale": {
+        "structural": "利润率与利润增速剪刀差指向盈利结构变化",
+        "scope": "覆盖全部规上工业41个大类行业",
+        "signal": "为工业利润率修复趋势补上第7个月证据",
+        "delta": "较1—8月口径更新一期，未出现方向反转",
+        "timeliness": "10-27发布，距采集17天",
+        "crossDomain": "上游价格同时影响制造业成本与PPI"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "国家统计局",
+        "url": "https://www.stats.gov.cn/zwfwck/sjfb/202610/t20261027_1965697.html",
+        "date": "2026-10-27",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_cn-industrial-margin-repair",
+        "effect": "support",
+        "reason": "利润率同比+0.44pp，利润增速继续快于营收，支撑利润率修复判断"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "status pending→published：官方原文 source_text 核对通过、单一官方来源（single_primary），按显式提升规则发布"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 76
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_cn-gdp-q3-2026",
+    "title": "中国三季度GDP同比增长4.5%，前三季度4.6%",
+    "date": "2026-10-20",
+    "reportedAt": "2026-10-20",
+    "collectedAt": "2026-11-13",
+    "region": "china",
+    "category": "industry",
+    "summary": "三季度GDP 37.54万亿元、同比+4.5%；前三季度107.11万亿元、+4.6%，单季增速较累计低0.1个百分点",
+    "analysis": "单季4.5%低于累计4.6%，意味着四季度需维持同等强度才能守住全年目标；本次只核对总量与三次产业增速，分行业结构判断待补数据，不作结论。",
+    "facts": [
+      "三季度GDP 375367亿元，同比+4.5%；前三季度1071071亿元，+4.6%",
+      "第一产业三季度27472亿元/+3.6%，前三季度58994亿元/+3.7%",
+      "第二产业三季度133349亿元/+3.4%，前三季度383822亿元/+3.8%",
+      "第三产业三季度214546亿元/+5.2%，前三季度628255亿元/+5.2%",
+      "制造业三季度93342亿元/+5.9%，建筑业21168亿元/-4.4%"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 19,
+      "scope": 16,
+      "signal": 9,
+      "novelty": 7,
+      "timeliness": 9,
+      "cross": 5,
+      "total": 65,
+      "rationale": {
+        "structural": "季度GDP是总量口径，结构变化需分行业数据支撑",
+        "scope": "覆盖全国三次产业",
+        "signal": "为增长中枢判断提供季度锚点",
+        "delta": "较二季度口径未变，属增量确认而非突变",
+        "timeliness": "10-20发布，距采集23天",
+        "crossDomain": "与财政、就业、消费数据联动"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "国家统计局",
+        "url": "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202610/t20261020_1965658.html",
+        "date": "2026-10-20",
+        "official": true
+      }
+    ],
+    "trends": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "status pending→published：官方原文 source_text 核对通过、单一官方来源（single_primary），按显式提升规则发布"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 65
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
+    "id": "ev_cn-pmi-sep-2026",
+    "title": "9月制造业PMI回升至50.1%，重回扩张区间",
+    "date": "2026-09-30",
+    "reportedAt": "2026-09-30",
+    "collectedAt": "2026-11-13",
+    "region": "china",
+    "category": "industry",
+    "summary": "9月制造业PMI 50.1%、环比+0.3pp；大型企业50.6持平，中型49.7、小型48.9仍在临界点下",
+    "analysis": "PMI重回扩张主要靠大型企业与中小企业边际改善，但中、小型仍在临界点下，扩张基础不牢；单月回升不足以判断趋势反转。",
+    "facts": [
+      "9月制造业PMI 50.1%，比上月上升0.3个百分点，升至扩张区间",
+      "大型企业PMI 50.6%，与上月持平，高于临界点",
+      "中型企业49.7%、小型企业48.9%，分别上升0.3和1.0个百分点，均低于临界点",
+      "生产指数51.7%，比上月上升1.3个百分点；新订单指数高于临界点"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 10,
+      "scope": 9,
+      "signal": 7,
+      "novelty": 6,
+      "timeliness": 8,
+      "cross": 4,
+      "total": 44,
+      "rationale": {
+        "structural": "单月景气指标，结构信息有限",
+        "scope": "仅制造业与分规模企业",
+        "signal": "为扩张/收缩切换提供边际信号",
+        "delta": "环比+0.3pp属小幅改善",
+        "timeliness": "9-30发布，距采集44天",
+        "crossDomain": "与工业利润、出口数据弱联动"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "国家统计局",
+        "url": "https://www.stats.gov.cn/zwfwck/sjfb/202609/t20260930_1965449.html",
+        "date": "2026-09-30",
+        "official": true
+      }
+    ],
+    "trends": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "status pending→published：官方原文 source_text 核对通过、单一官方来源（single_primary），按显式提升规则发布"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 44
+      }
+    ],
+    "watch": null,
+    "backfill": true
+  },
+  {
     "id": "ev_nrc-smr-first",
     "title": "美国NRC批准首座小型模块化反应堆建设",
     "date": "2026-09-29",
@@ -216,12 +411,11 @@
     "collectedAt": "2026-11-13",
     "region": "us",
     "category": "technology",
-    "summary": "美国核管会（NRC）批准首座小型模块化反应堆（SMR）建设许可，项目方为 X-energy；随后亚马逊与美国电力公司 AEP 宣布在印第安纳州合作推进 SMR 项目。",
+    "summary": "2026年9月29日，美国核管会（NRC）批准 TVA 在 Clinch River 建设首座小型模块化反应堆（SMR）的建设许可，采用 GE Hitachi 的 BWRX-300 设计。",
     "analysis": "许可只是建设起点，首堆工期与成本仍可能超支；真正的信号是科技公司开始直接为核电买单。",
     "facts": [
       "2026年9月29日，NRC 批准首座小型模块化反应堆（SMR）建设许可",
-      "项目方为X-energy",
-      "此后亚马逊与AEP宣布在印第安纳州合作SMR项目"
+      "项目由 TVA 申请，采用 GE Hitachi 的 BWRX-300 设计"
     ],
     "metrics": [],
     "scores": {
@@ -241,20 +435,20 @@
         "crossDomain": "连接AI算力、核电、气候目标"
       }
     },
-    "credibility": "low",
-    "evidenceGrade": "unverified",
+    "credibility": "high",
+    "evidenceGrade": "multi_independent",
     "status": "pending",
     "sources": [
       {
-        "name": "美国核管会",
-        "url": "https://www.nrc.gov/about-nrc/news-releases/2026/26-079",
-        "date": "2026-09-29",
+        "name": "美国联邦公报（NRC 公告）",
+        "url": "https://www.govinfo.gov/content/pkg/FR-2026-10-05/html/2026-20345.htm",
+        "date": "2026-10-05",
         "official": true
       },
       {
-        "name": "X-energy",
-        "url": "https://investors.x-energy.com/news-releases/news-release-details/x-energy-amazon-american-electric-power-partner-bring-smr",
-        "date": "2026-10-19",
+        "name": "美国田纳西河谷管理局（TVA）",
+        "url": "https://s205.q4cdn.com/318912997/files/doc_news/2026/Sep/30/9-28-26-TVA-Clinch-River-Nuclear-CPA-Event-News-Release.pdf",
+        "date": "2026-09-29",
         "official": false
       }
     ],

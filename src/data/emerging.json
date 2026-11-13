@@ -1,25 +1,25 @@
 {
   "schemaVersion": "1",
-  "asOf": "2026-11-13T06:01:10.079996+00:00",
+  "asOf": "2026-11-13T06:30:41.970614+00:00",
   "windows": {
     "recent": {
-      "from": "2026-10-14T06:01:10.079996+00:00",
-      "to": "2026-11-13T06:01:10.079996+00:00",
+      "from": "2026-10-14T06:30:41.970614+00:00",
+      "to": "2026-11-13T06:30:41.970614+00:00",
       "days": 30
     },
     "prior": {
-      "from": "2026-09-14T06:01:10.079996+00:00",
-      "to": "2026-10-14T06:01:10.079996+00:00",
+      "from": "2026-09-14T06:30:41.970614+00:00",
+      "to": "2026-10-14T06:30:41.970614+00:00",
       "days": 30
     },
     "shortRecent": {
-      "from": "2026-11-06T06:01:10.079996+00:00",
-      "to": "2026-11-13T06:01:10.079996+00:00",
+      "from": "2026-11-06T06:30:41.970614+00:00",
+      "to": "2026-11-13T06:30:41.970614+00:00",
       "days": 7
     },
     "shortPrior": {
-      "from": "2026-10-30T06:01:10.079996+00:00",
-      "to": "2026-11-06T06:01:10.079996+00:00",
+      "from": "2026-10-30T06:30:41.970614+00:00",
+      "to": "2026-11-06T06:30:41.970614+00:00",
       "days": 7
     }
   },
@@ -35,30 +35,150 @@
     "ratioOnLowBase": "not_computed"
   },
   "excluded": {
-    "retroEvents": 1,
+    "retroEvents": 8,
     "retroIds": [
-      "ev_mideast-war-6m"
+      "ev_ai-dc-power-161gw",
+      "ev_cn-gdp-q3-2026",
+      "ev_cn-pmi-sep-2026",
+      "ev_cn-profit-1-8",
+      "ev_cn-profit-1-9",
+      "ev_fed-hike-sep",
+      "ev_mideast-war-6m",
+      "ev_nrc-smr-first"
     ],
     "duplicateEvents": 0
   },
   "totals": {
-    "events": 7,
+    "events": 3,
     "asOfSource": "run_time",
     "breakthroughAvailable": false,
     "breakthroughNote": "突破判定需 milestones[] 带出处；schema 当前无此字段，故所有突破计数为 0 且不可展示。",
     "scoreRevisionSignalNote": "scoreRevisionSignal 仅表示评分被上调，不得当技术/成本/采用突破。"
   },
   "historical": {
-    "note": "回溯补录：不参与实时增速；发生日可靠、来源覆盖可比的单列展示历史事实时间线。",
-    "count": 1,
+    "note": "回溯补录：不参与实时增速。occurredAtReliable 与 coverageComparable 都成立才进「历史回溯观察」；否则只作历史事实展示。",
+    "count": 8,
+    "medianDomains": 2,
     "items": [
       {
         "id": "ev_mideast-war-6m",
         "occurredAt": "2026-08-28T00:00:00+08:00",
         "title": "中东战事半年：霍尔木兹受阻，布伦特一度突破90美元",
         "sourceDomains": 1,
+        "occurredAtReliable": null,
         "coverageComparable": null,
-        "growthComputed": false
+        "eligibleForHistoricalObservation": false,
+        "growthComputed": false,
+        "reasons": [
+          "occurredAt 缺失或无法解析",
+          "覆盖可比性未知：缺两个窗口的来源清单/采集成败/筛选方法证据（本事件独立域名 1，仅供参考，不作判定）",
+          "发生日未知：未在原文中核到明确发生日，不据此升级时间轴"
+        ]
+      },
+      {
+        "id": "ev_fed-hike-sep",
+        "occurredAt": "2026-09-16T00:00:00+08:00",
+        "title": "美联储重启加息25个基点，12比0全票通过",
+        "sourceDomains": 2,
+        "occurredAtReliable": null,
+        "coverageComparable": null,
+        "eligibleForHistoricalObservation": false,
+        "growthComputed": false,
+        "reasons": [
+          "occurredAt 缺失或无法解析",
+          "覆盖可比性未知：缺两个窗口的来源清单/采集成败/筛选方法证据（本事件独立域名 2，仅供参考，不作判定）",
+          "发生日未知：未在原文中核到明确发生日，不据此升级时间轴"
+        ]
+      },
+      {
+        "id": "ev_ai-dc-power-161gw",
+        "occurredAt": "2026-09-17T00:00:00+08:00",
+        "title": "2026年全球数据中心电力需求达161GW，同比增31%",
+        "sourceDomains": 2,
+        "occurredAtReliable": null,
+        "coverageComparable": null,
+        "eligibleForHistoricalObservation": false,
+        "growthComputed": false,
+        "reasons": [
+          "occurredAt 缺失或无法解析",
+          "覆盖可比性未知：缺两个窗口的来源清单/采集成败/筛选方法证据（本事件独立域名 2，仅供参考，不作判定）",
+          "发生日未知：未在原文中核到明确发生日，不据此升级时间轴"
+        ]
+      },
+      {
+        "id": "ev_cn-profit-1-8",
+        "occurredAt": "2026-09-28T00:00:00+08:00",
+        "title": "1-8月规上工业企业利润同比增长15.7%",
+        "sourceDomains": 2,
+        "occurredAtReliable": null,
+        "coverageComparable": null,
+        "eligibleForHistoricalObservation": false,
+        "growthComputed": false,
+        "reasons": [
+          "occurredAt 缺失或无法解析",
+          "覆盖可比性未知：缺两个窗口的来源清单/采集成败/筛选方法证据（本事件独立域名 2，仅供参考，不作判定）",
+          "发生日未知：未在原文中核到明确发生日，不据此升级时间轴"
+        ]
+      },
+      {
+        "id": "ev_nrc-smr-first",
+        "occurredAt": "2026-09-29T00:00:00+08:00",
+        "title": "美国NRC批准首座小型模块化反应堆建设",
+        "sourceDomains": 2,
+        "occurredAtReliable": null,
+        "coverageComparable": null,
+        "eligibleForHistoricalObservation": false,
+        "growthComputed": false,
+        "reasons": [
+          "occurredAt 缺失或无法解析",
+          "覆盖可比性未知：缺两个窗口的来源清单/采集成败/筛选方法证据（本事件独立域名 2，仅供参考，不作判定）",
+          "发生日未知：未在原文中核到明确发生日，不据此升级时间轴"
+        ]
+      },
+      {
+        "id": "ev_cn-pmi-sep-2026",
+        "occurredAt": "2026-09-30T09:30:00+08:00",
+        "title": "9月制造业PMI回升至50.1%，重回扩张区间",
+        "sourceDomains": 1,
+        "occurredAtReliable": null,
+        "coverageComparable": null,
+        "eligibleForHistoricalObservation": false,
+        "growthComputed": false,
+        "reasons": [
+          "occurredAt 缺失或无法解析",
+          "覆盖可比性未知：缺两个窗口的来源清单/采集成败/筛选方法证据（本事件独立域名 1，仅供参考，不作判定）",
+          "发生日未知：未在原文中核到明确发生日，不据此升级时间轴"
+        ]
+      },
+      {
+        "id": "ev_cn-gdp-q3-2026",
+        "occurredAt": "2026-10-20T09:30:00+08:00",
+        "title": "中国三季度GDP同比增长4.5%，前三季度4.6%",
+        "sourceDomains": 1,
+        "occurredAtReliable": null,
+        "coverageComparable": null,
+        "eligibleForHistoricalObservation": false,
+        "growthComputed": false,
+        "reasons": [
+          "occurredAt 缺失或无法解析",
+          "覆盖可比性未知：缺两个窗口的来源清单/采集成败/筛选方法证据（本事件独立域名 1，仅供参考，不作判定）",
+          "发生日未知：未在原文中核到明确发生日，不据此升级时间轴"
+        ]
+      },
+      {
+        "id": "ev_cn-profit-1-9",
+        "occurredAt": "2026-10-27T09:30:00+08:00",
+        "title": "1—9月规上工业企业利润同比增长15.5%，利润率升至5.68%",
+        "sourceDomains": 1,
+        "occurredAtReliable": null,
+        "coverageComparable": null,
+        "eligibleForHistoricalObservation": false,
+        "growthComputed": false,
+        "reasons": [
+          "occurredAt 缺失或无法解析",
+          "覆盖可比性未知：缺两个窗口的来源清单/采集成败/筛选方法证据（本事件独立域名 1，仅供参考，不作判定）",
+          "发生日未知：未在原文中核到明确发生日，不据此升级时间轴"
+        ]
       }
     ]
   },
@@ -71,6 +191,7 @@
   "domains": [
     {
       "id": "tr_climate-food-inflation",
+      "title": "气候→食品通胀",
       "kind": "trend",
       "state": "insufficient",
       "growthRatio": null,
@@ -123,6 +244,7 @@
     },
     {
       "id": "tr_cn-demographic-decline",
+      "title": "婚育与人口下行",
       "kind": "trend",
       "state": "insufficient",
       "growthRatio": null,
@@ -130,7 +252,7 @@
       "reason": "近期事件 1 < 3",
       "recent": {
         "events": 1,
-        "distinctSources": 2,
+        "distinctSources": 3,
         "scoreRevisionSignal": 0,
         "scoreRevisionIds": [],
         "breakthroughEvents": 0,
@@ -162,7 +284,7 @@
       },
       "shortPrior": {
         "events": 1,
-        "distinctSources": 2,
+        "distinctSources": 3,
         "scoreRevisionSignal": 0,
         "scoreRevisionIds": [],
         "breakthroughEvents": 0,
@@ -175,6 +297,7 @@
     },
     {
       "id": "tr_cn-nev-demand-shift",
+      "title": "新能源车需求换挡",
       "kind": "trend",
       "state": "insufficient",
       "growthRatio": null,
@@ -231,6 +354,7 @@
     },
     {
       "id": "tr_ai-power-constraint",
+      "title": "AI 电力约束",
       "kind": "trend",
       "state": "insufficient",
       "growthRatio": null,
@@ -247,20 +371,14 @@
         "eventIds": []
       },
       "prior": {
-        "events": 2,
-        "distinctSources": 4,
-        "scoreRevisionSignal": 2,
-        "scoreRevisionIds": [
-          "ev_ai-dc-power-161gw",
-          "ev_nrc-smr-first"
-        ],
+        "events": 0,
+        "distinctSources": 0,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
         "breakthroughEvents": 0,
         "breakthroughIds": [],
         "breakthroughAvailable": false,
-        "eventIds": [
-          "ev_ai-dc-power-161gw",
-          "ev_nrc-smr-first"
-        ]
+        "eventIds": []
       },
       "shortRecent": {
         "events": 0,
@@ -285,6 +403,7 @@
     },
     {
       "id": "tr_cn-industrial-margin-repair",
+      "title": "工业利润修复",
       "kind": "trend",
       "state": "insufficient",
       "growthRatio": null,
@@ -301,18 +420,14 @@
         "eventIds": []
       },
       "prior": {
-        "events": 1,
-        "distinctSources": 2,
-        "scoreRevisionSignal": 1,
-        "scoreRevisionIds": [
-          "ev_cn-profit-1-8"
-        ],
+        "events": 0,
+        "distinctSources": 0,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
         "breakthroughEvents": 0,
         "breakthroughIds": [],
         "breakthroughAvailable": false,
-        "eventIds": [
-          "ev_cn-profit-1-8"
-        ]
+        "eventIds": []
       },
       "shortRecent": {
         "events": 0,
@@ -337,6 +452,7 @@
     },
     {
       "id": "tr_geopolitics-energy-premium",
+      "title": "地缘能源溢价",
       "kind": "trend",
       "state": "insufficient",
       "growthRatio": null,
@@ -385,6 +501,7 @@
     },
     {
       "id": "tr_global-rates-rehike",
+      "title": "全球利率再紧缩",
       "kind": "trend",
       "state": "insufficient",
       "growthRatio": null,
@@ -401,16 +518,14 @@
         "eventIds": []
       },
       "prior": {
-        "events": 1,
-        "distinctSources": 1,
+        "events": 0,
+        "distinctSources": 0,
         "scoreRevisionSignal": 0,
         "scoreRevisionIds": [],
         "breakthroughEvents": 0,
         "breakthroughIds": [],
         "breakthroughAvailable": false,
-        "eventIds": [
-          "ev_fed-hike-sep"
-        ]
+        "eventIds": []
       },
       "shortRecent": {
         "events": 0,
@@ -437,6 +552,7 @@
   "categories": [
     {
       "id": "中国经济与产业",
+      "title": "中国经济与产业",
       "kind": "category",
       "state": "insufficient",
       "growthRatio": null,
@@ -444,7 +560,7 @@
       "reason": "近期事件 2 < 3",
       "recent": {
         "events": 2,
-        "distinctSources": 4,
+        "distinctSources": 5,
         "scoreRevisionSignal": 1,
         "scoreRevisionIds": [
           "ev_cn-nev-oct"
@@ -458,18 +574,14 @@
         ]
       },
       "prior": {
-        "events": 1,
-        "distinctSources": 2,
-        "scoreRevisionSignal": 1,
-        "scoreRevisionIds": [
-          "ev_cn-profit-1-8"
-        ],
+        "events": 0,
+        "distinctSources": 0,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
         "breakthroughEvents": 0,
         "breakthroughIds": [],
         "breakthroughAvailable": false,
-        "eventIds": [
-          "ev_cn-profit-1-8"
-        ]
+        "eventIds": []
       },
       "shortRecent": {
         "events": 1,
@@ -487,7 +599,7 @@
       },
       "shortPrior": {
         "events": 1,
-        "distinctSources": 2,
+        "distinctSources": 3,
         "scoreRevisionSignal": 0,
         "scoreRevisionIds": [],
         "breakthroughEvents": 0,
@@ -500,6 +612,7 @@
     },
     {
       "id": "全球宏观",
+      "title": "全球宏观",
       "kind": "category",
       "state": "insufficient",
       "growthRatio": null,
@@ -518,16 +631,14 @@
         ]
       },
       "prior": {
-        "events": 1,
-        "distinctSources": 1,
+        "events": 0,
+        "distinctSources": 0,
         "scoreRevisionSignal": 0,
         "scoreRevisionIds": [],
         "breakthroughEvents": 0,
         "breakthroughIds": [],
         "breakthroughAvailable": false,
-        "eventIds": [
-          "ev_fed-hike-sep"
-        ]
+        "eventIds": []
       },
       "shortRecent": {
         "events": 1,
@@ -540,60 +651,6 @@
         "eventIds": [
           "ev_el-nino-11t"
         ]
-      },
-      "shortPrior": {
-        "events": 0,
-        "distinctSources": 0,
-        "scoreRevisionSignal": 0,
-        "scoreRevisionIds": [],
-        "breakthroughEvents": 0,
-        "breakthroughIds": [],
-        "breakthroughAvailable": false,
-        "eventIds": []
-      }
-    },
-    {
-      "id": "未来趋势",
-      "kind": "category",
-      "state": "insufficient",
-      "growthRatio": null,
-      "lowBase": false,
-      "reason": "近期事件 0 < 3",
-      "recent": {
-        "events": 0,
-        "distinctSources": 0,
-        "scoreRevisionSignal": 0,
-        "scoreRevisionIds": [],
-        "breakthroughEvents": 0,
-        "breakthroughIds": [],
-        "breakthroughAvailable": false,
-        "eventIds": []
-      },
-      "prior": {
-        "events": 2,
-        "distinctSources": 4,
-        "scoreRevisionSignal": 2,
-        "scoreRevisionIds": [
-          "ev_ai-dc-power-161gw",
-          "ev_nrc-smr-first"
-        ],
-        "breakthroughEvents": 0,
-        "breakthroughIds": [],
-        "breakthroughAvailable": false,
-        "eventIds": [
-          "ev_ai-dc-power-161gw",
-          "ev_nrc-smr-first"
-        ]
-      },
-      "shortRecent": {
-        "events": 0,
-        "distinctSources": 0,
-        "scoreRevisionSignal": 0,
-        "scoreRevisionIds": [],
-        "breakthroughEvents": 0,
-        "breakthroughIds": [],
-        "breakthroughAvailable": false,
-        "eventIds": []
       },
       "shortPrior": {
         "events": 0,
