@@ -1,0 +1,143 @@
+---
+import '../styles/global.css';
+import { siteMeta, fmtDate, weekday } from '../lib/data';
+import { href } from '../lib/url';
+
+interface Props {
+  title?: string;
+  description?: string;
+  active?: string;
+}
+
+const { title, description, active } = Astro.props;
+
+const nav = [
+  { key: 'home', label: '首页', path: '/' },
+  { key: 'events', label: '事件档案', path: '/events/' },
+  { key: 'trends', label: '趋势图谱', path: '/trends/' },
+  { key: 'china', label: '中国产业', path: '/china/' },
+  { key: 'forecasts', label: '判断追踪', path: '/forecasts/' },
+  { key: 'archive', label: '历史档案', path: '/archive/' },
+];
+
+const pageTitle = title ? `${title} · ERA 时代趋势雷达` : 'ERA · 时代趋势雷达';
+const pageDesc = description ?? '以事件为最小单位，向上归并为趋势信号与长期趋势的时代观察站。覆盖 2026 年 5 月以来的公开事实。';
+const stale = siteMeta.runStatus && siteMeta.runStatus !== 'ok';
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>
+      (function () {
+        try {
+          var pref = localStorage.getItem('era-theme');
+          if (pref === 'dark' || pref === 'light') document.documentElement.dataset.theme = pref;
+        } catch (e) {}
+      })();
+    </script>
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDesc} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta name="theme-color" content="#f7f2e8" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2314110c'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' fill='%23f7f2e8' text-anchor='middle'%3EE%3C/text%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="masthead">
+        <div class="brand">
+          <a href={href('/')} class="brand-mark">ERA</a>
+          <span class="brand-cn">时代趋势雷达</span>
+        </div>
+        <div class="dateline">
+          <div><b>{fmtDate(siteMeta.generatedAt.slice(0, 10))}</b> · {weekday(siteMeta.generatedAt.slice(0, 10))} · {siteMeta.issue ?? ''}</div>
+          <div>覆盖 {fmtDate(siteMeta.window.from)} — {fmtDate(siteMeta.window.to)}</div>
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="切换配色">跟随系统</button>
+        </div>
+      </header>
+
+      <nav class="nav" aria-label="主导航">
+        {nav.map((item) => (
+          <a href={href(item.path)} aria-current={active === item.key ? 'page' : undefined}>{item.label}</a>
+        ))}
+      </nav>
+
+      {stale && (
+        <div class="stale-banner">
+          数据状态：{siteMeta.runStatus}。最近一次成功采集 {siteMeta.lastSuccessfulRun ? fmtDate(siteMeta.lastSuccessfulRun.slice(0, 10)) : '未知'}，页面内容可能滞后。
+        </div>
+      )}
+
+      <main>
+        <slot />
+      </main>
+
+      <footer class="colophon">
+        <div>
+          <b>关于本站</b>
+          ERA 是一个自动更新的时代观察站，不是新闻聚合，也不是仪表盘。所有条目来自公开信息，回溯研究，逐条标注来源与可信度。
+        </div>
+        <div>
+          <b>方法</b>
+          事件按六维加权评分（结构 25 / 范围 20 / 信号 20 / 增量 15 / 时效 10 / 跨域 10），可信度独立于分数。低可信条目只进待核实队列，不上首页。
+        </div>
+        <div>
+          <b>更新与边界</b>
+          数据以 JSON 为唯一权威，页面由构建生成。内容不构成投资建议；判断可被证伪，证伪记录保留。
+          <br />
+          <a href={href('/archive/')}>历史档案</a> · <a href="https://github.com/zhongjixiangyou/era-trend-radar">源码</a>
+        </div>
+      </footer>
+    </div>
+    <script>
+      const btn = document.getElementById('theme-toggle');
+      const mq = window.matchMedia('(prefers-color-scheme: dark)');
+      const order = ['system', 'light', 'dark'];
+      const labels = { system: '跟随系统', light: '日间', dark: '夜间' };
+
+      function current() {
+        try {
+          return localStorage.getItem('era-theme') || 'system';
+        } catch (e) {
+          return 'system';
+        }
+      }
+
+      function render() {
+        if (!btn) return;
+        const m = current();
+        btn.textContent = labels[m];
+        btn.dataset.mode = m;
+        btn.setAttribute('aria-label', `配色：${labels[m]}，点击切换`);
+      }
+
+      function apply(m) {
+        try {
+          if (m === 'system') {
+            localStorage.removeItem('era-theme');
+            delete document.documentElement.dataset.theme;
+          } else {
+            localStorage.setItem('era-theme', m);
+            document.documentElement.dataset.theme = m;
+          }
+        } catch (e) {}
+        render();
+      }
+
+      btn?.addEventListener('click', () => {
+        const m = current();
+        apply(order[(order.indexOf(m) + 1) % order.length]);
+      });
+
+      mq.addEventListener?.('change', () => {
+        if (current() === 'system') render();
+      });
+
+      render();
+    </script>
+  </body>
+</html>

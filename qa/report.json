@@ -1,0 +1,11 @@
+{
+  "ok": false,
+  "env": "unreachable",
+  "base": {
+    "origin": "http://127.0.0.1:4321",
+    "basePath": "",
+    "mode": "none",
+    "reason": "连不上 http://127.0.0.1:4321（服务没起？）"
+  },
+  "checks": []
+}

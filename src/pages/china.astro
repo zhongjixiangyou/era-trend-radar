@@ -1,0 +1,474 @@
+---
+import Base from '../layouts/Base.astro';
+import china from '../data/china.json';
+import { href } from '../lib/url';
+import { CATEGORIES, UNKNOWN, groupSamples, fmtPct } from '../lib/china-growth.mjs';
+
+const samples = china.samples ?? [];
+const macro = china.macro ?? [];
+const missing = china.missing ?? [];
+
+const { groups, unknown } = groupSamples(samples);
+const usedCategories = groups.filter((g) => g.items.length > 0).length;
+
+const dirClass = (v) =>
+  v === null || v === undefined || !Number.isFinite(Number(v))
+    ? 'na'
+    : Number(v) > 0
+      ? 'up'
+      : Number(v) < 0
+        ? 'down'
+        : 'flat';
+---
+
+<Base
+  title="中国产业"
+  active="china"
+  description="按同口径收入与利润增速，把中国产业样本放进四个象限：同步增长、增收压利、周期修复、结构下降。口径不一致的样本单独列出，不硬归类。"
+>
+  <article class="cn">
+    <header class="cn-head">
+      <div class="kicker">CHINA DESK · 增速象限</div>
+      <h1>产业增速象限</h1>
+      <p class="standfirst">
+        收入还在涨、利润先掉下来，是最值得盯的一组。按同口径收入与利润增速把产业放进四个象限，
+        同向的是规模变化，背离的才是结构信号。
+      </p>
+      <p class="cn-caliber">
+        口径提示：本期样本混用上市公司合并口径（沪市整体、中芯国际）与全国工业口径（规上工业），
+        <b>横向只作方向参考，纵向不可比</b>。分行业同口径数据尚未补齐，见下文「还缺什么」。
+      </p>
+    </header>
+
+    <div class="cn-macro">
+      {
+        macro.map((m) => (
+          <div class="keyfig">
+            <div class="label">{m.label}</div>
+            <div class="value">{m.value}</div>
+            {m.note && <div class="note">{m.note}</div>}
+          </div>
+        ))
+      }
+    </div>
+
+    <p class="cn-tally">
+      本期样本 <b>{samples.length}</b> 条，落在 <b>{usedCategories}</b> 档，
+      另有 <b>{unknown.length}</b> 条因口径缺失未归类。
+    </p>
+
+    <nav class="cn-jump" aria-label="象限跳转">
+      {
+        CATEGORIES.map((c) => (
+          <a href={`#${c.key}`}>
+            {c.name}
+            <span class="cn-jump-n">{groups.find((g) => g.key === c.key)?.items.length ?? 0}</span>
+          </a>
+        ))
+      }
+      <a href="#unknown">
+        {UNKNOWN.name}
+        <span class="cn-jump-n">{unknown.length}</span>
+      </a>
+    </nav>
+
+    {
+      groups.map((g) => (
+        <section class="cn-quad" class:list={[g.items.length === 0 && 'is-empty']} id={g.key}>
+          <div class="section-head">
+            <h2>{g.name}</h2>
+            <span class="num">{String(g.items.length).padStart(2, '0')} 条</span>
+          </div>
+          <p class="cn-quad-desc">{g.desc}</p>
+
+          {g.items.length === 0 ? (
+            <p class="cn-empty">本期没有落在这一档的样本。</p>
+          ) : (
+            g.items.map((s) => (
+              <div class="cn-row">
+                <div class="cn-row-head">
+                  <b>{s.name}</b>
+                  {s.scope && <span class="tag">{s.scope}</span>}
+                </div>
+                <dl class="cn-nums">
+                  <div>
+                    <dt>收入</dt>
+                    <dd class={dirClass(s.revenueGrowth)}>{fmtPct(s.revenueGrowth)}</dd>
+                  </div>
+                  <div>
+                    <dt>利润</dt>
+                    <dd class={dirClass(s.profitGrowth)}>{fmtPct(s.profitGrowth)}</dd>
+                  </div>
+                </dl>
+                <p class="cn-row-note">
+                  {s.note}
+                  {s.eventId && (
+                    <a class="cn-event" href={href(`/events/${s.eventId}/`)}>
+                      {s.eventId}
+                    </a>
+                  )}
+                </p>
+              </div>
+            ))
+          )}
+        </section>
+      ))
+    }
+
+    <section class="cn-quad cn-quad-unknown" id="unknown">
+      <div class="section-head">
+        <h2>{UNKNOWN.name}</h2>
+        <span class="num">{String(unknown.length).padStart(2, '0')} 条</span>
+      </div>
+      <p class="cn-quad-desc">{UNKNOWN.desc}</p>
+
+      {
+        unknown.length === 0 ? (
+          <p class="cn-empty">所有样本都有两个增速，无需单列。</p>
+        ) : (
+          unknown.map((s) => (
+            <div class="cn-row">
+              <div class="cn-row-head">
+                <b>{s.name}</b>
+                {s.scope && <span class="tag">{s.scope}</span>}
+              </div>
+              <dl class="cn-nums">
+                <div>
+                  <dt>收入</dt>
+                  <dd class={dirClass(s.revenueGrowth)}>{fmtPct(s.revenueGrowth)}</dd>
+                </div>
+                <div>
+                  <dt>利润</dt>
+                  <dd class={dirClass(s.profitGrowth)}>{fmtPct(s.profitGrowth)}</dd>
+                </div>
+              </dl>
+              <p class="cn-row-note">
+                {s.note}
+                {s.eventId && (
+                  <a class="cn-event" href={href(`/events/${s.eventId}/`)}>
+                    {s.eventId}
+                  </a>
+                )}
+              </p>
+            </div>
+          ))
+        )
+      }
+    </section>
+
+    {
+      missing.length > 0 && (
+        <section id="gap">
+          <div class="section-head">
+            <h2>还缺什么</h2>
+            <span class="num">{String(missing.length).padStart(2, '0')} 项</span>
+          </div>
+          <ul class="fact-list">
+            {missing.map((m, i) => (
+              <li>
+                <span class="n">{String(i + 1).padStart(2, '0')}</span>
+                <span>{m}</span>
+              </li>
+            ))}
+          </ul>
+          <p class="cn-foot">
+            这一页宁可留空也不硬填：缺口径的样本单独列出，等数据到位再进象限。分行业口径补齐后，
+            这一页会自动重画，不需要改页面代码。
+          </p>
+        </section>
+      )
+    }
+
+    <section id="how">
+      <div class="section-head">
+        <h2>四类怎么分</h2>
+        <span class="num">判定规则</span>
+      </div>
+      <p class="cn-quad-desc">
+        只用同比增速的正负，不设阈值：收入 &gt; 0 且利润 &gt; 0 → 同步增长；收入 &gt; 0、利润 ≤ 0 → 增收压利；
+        收入 ≤ 0、利润 &gt; 0 → 周期修复；两者都 ≤ 0 → 结构下降。零计入「不增长」一侧，持平不算增长。
+        四类互斥，任一有效的两个数字必然落在其中一类；缺一项的进「口径待补」。
+      </p>
+      <table class="cn-table">
+        <thead>
+          <tr>
+            <th scope="col">收入同比</th>
+            <th scope="col">利润同比</th>
+            <th scope="col">归类</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="up">+</td><td class="up">+</td><td>同步增长</td></tr>
+          <tr><td class="up">+</td><td class="down">−</td><td>增收压利</td></tr>
+          <tr><td class="down">−</td><td class="up">+</td><td>周期修复</td></tr>
+          <tr><td class="down">−</td><td class="down">−</td><td>结构下降</td></tr>
+        </tbody>
+      </table>
+      <p class="cn-foot">
+        用正负号而不是「±1 个百分点」的死区，是为了让读者看到的数字和归类一致——
+        页面上写 +0.4%，就不该被归到下降那一类。
+      </p>
+    </section>
+  </article>
+</Base>
+
+<style>
+  .cn {
+    padding-bottom: 40px;
+  }
+  .cn-head {
+    padding: 34px 0 0;
+  }
+  .cn-head h1 {
+    font-family: var(--serif);
+    font-size: clamp(30px, 6vw, 46px);
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+    margin: 10px 0 16px;
+  }
+  .cn-head .standfirst {
+    max-width: 44em;
+  }
+  .cn-caliber {
+    max-width: 44em;
+    margin: 16px 0 0;
+    font-size: 12.5px;
+    line-height: 1.8;
+    color: var(--ink-3);
+    padding-left: 12px;
+    border-left: 2px solid var(--accent);
+  }
+  .cn-caliber b {
+    color: var(--ink-2);
+  }
+
+  .cn-macro {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0 32px;
+    margin: 36px 0 0;
+    border-top: 2px solid var(--ink);
+    padding-top: 18px;
+  }
+
+  .cn-tally {
+    margin: 26px 0 0;
+    font-size: 13px;
+    color: var(--ink-3);
+    font-variant-numeric: tabular-nums;
+  }
+  .cn-tally b {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .cn-jump {
+    display: flex;
+    gap: 0;
+    flex-wrap: wrap;
+    margin: 14px 0 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .cn-jump a {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    padding: 9px 16px 9px 0;
+    margin-right: 16px;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--ink-2);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  .cn-jump a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+  .cn-jump-n {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--ink-3);
+  }
+
+  .cn-quad {
+    scroll-margin-top: 18px;
+  }
+  .cn-quad-desc {
+    max-width: 40em;
+    margin: 0 0 6px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--ink-3);
+  }
+  .cn-empty {
+    padding: 18px 0;
+    font-size: 13px;
+    color: var(--ink-3);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .cn-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 6px 24px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .cn-row-head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+    min-width: 0;
+  }
+  .cn-row-head b {
+    font-family: var(--serif);
+    font-size: 19px;
+    font-weight: 600;
+  }
+
+  .cn-nums {
+    display: flex;
+    gap: 20px;
+    margin: 0;
+  }
+  .cn-nums > div {
+    text-align: right;
+  }
+  .cn-nums dt {
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    color: var(--ink-3);
+    margin-bottom: 1px;
+  }
+  .cn-nums dd {
+    margin: 0;
+    font-family: var(--mono);
+    font-size: 15px;
+    font-variant-numeric: tabular-nums;
+  }
+  .cn-nums dd.up {
+    color: var(--support);
+  }
+  .cn-nums dd.down {
+    color: var(--accent);
+  }
+  .cn-nums dd.flat,
+  .cn-nums dd.na {
+    color: var(--ink-3);
+  }
+
+  .cn-row-note {
+    grid-column: 1 / -1;
+    margin: 0;
+    font-size: 12.5px;
+    line-height: 1.75;
+    color: var(--ink-2);
+  }
+  .cn-event {
+    display: inline-block;
+    margin-left: 8px;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--ink-3);
+    word-break: break-all;
+  }
+  .cn-event:hover {
+    color: var(--accent);
+  }
+
+  .cn-quad-unknown .cn-row-head b {
+    color: var(--ink-2);
+  }
+
+  .cn-quad.is-empty .section-head {
+    margin-top: 34px;
+  }
+  .cn-quad.is-empty .cn-empty {
+    padding: 8px 0 0;
+    border-bottom: 0;
+  }
+
+  .cn-table {
+    width: 100%;
+    max-width: 420px;
+    border-collapse: collapse;
+    margin: 18px 0 0;
+    font-size: 13px;
+  }
+  .cn-table th {
+    text-align: left;
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    color: var(--ink-3);
+    font-weight: 500;
+    padding: 0 0 8px;
+    border-bottom: 1px solid var(--rule-2);
+  }
+  .cn-table td {
+    padding: 9px 0;
+    border-bottom: 1px solid var(--rule);
+    font-variant-numeric: tabular-nums;
+  }
+  .cn-table td.up {
+    color: var(--support);
+    font-family: var(--mono);
+  }
+  .cn-table td.down {
+    color: var(--accent);
+    font-family: var(--mono);
+  }
+
+  .cn-foot {
+    max-width: 40em;
+    margin: 16px 0 0;
+    font-size: 12.5px;
+    line-height: 1.8;
+    color: var(--ink-3);
+  }
+
+  @media (max-width: 860px) {
+    .cn-macro {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0 24px;
+    }
+    .cn-jump {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .cn-jump::-webkit-scrollbar {
+      display: none;
+    }
+    .cn-jump a {
+      flex: 0 0 auto;
+      white-space: nowrap;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .cn-row {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .cn-nums {
+      gap: 28px;
+    }
+    .cn-nums > div {
+      text-align: left;
+    }
+    .cn-nums dt {
+      display: inline;
+      margin-right: 6px;
+    }
+    .cn-nums dd {
+      display: inline;
+      font-size: 14px;
+    }
+    .cn-head h1 {
+      font-size: 28px;
+    }
+  }
+</style>

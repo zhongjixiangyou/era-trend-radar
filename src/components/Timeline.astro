@@ -1,0 +1,19 @@
+---
+import { fmtDate } from '../lib/data';
+
+interface Props {
+  items: { date: string; title: string; note?: string }[];
+}
+
+const { items } = Astro.props;
+---
+
+<ol class="timeline">
+  {items.map((it) => (
+    <li>
+      <div class="d">{fmtDate(it.date)}</div>
+      <div class="t">{it.title}</div>
+      {it.note && <div class="n">{it.note}</div>}
+    </li>
+  ))}
+</ol>

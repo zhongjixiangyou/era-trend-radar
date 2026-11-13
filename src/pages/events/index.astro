@@ -1,0 +1,167 @@
+---
+import Base from '../../layouts/Base.astro';
+import EventRow from '../../components/EventRow.astro';
+import Scatter from '../../components/Scatter.astro';
+import { publishedEvents, total, categoryLabel, regionLabel, siteMeta } from '../../lib/data';
+
+const events = publishedEvents;
+const cats = [...new Set(events.map((e) => e.category))];
+const regions = [...new Set(events.map((e) => e.region))];
+const catLabel = (c: string) => categoryLabel[c] ?? c;
+const regLabel = (r: string) => regionLabel[r] ?? r;
+const credRank = (c: string) => (c === 'high' ? 3 : c === 'medium' ? 2 : 1);
+
+const points = events.map((e) => ({
+  id: e.id,
+  date: e.date,
+  score: total(e.scores),
+  title: e.title,
+  credibility: e.credibility,
+}));
+---
+
+<Base title="事件档案" active="events" description="按时间与重要度检索 2026 年 5 月以来的公开事件，逐条标注来源、评分与可信度。">
+  <div class="section-head" style="margin-top:34px">
+    <div>
+      <span class="num">事件档案 / EVENTS</span>
+      <h2 style="margin-top:6px">全部事件</h2>
+    </div>
+    <span class="more">覆盖 {siteMeta.window.from} — {siteMeta.window.to}</span>
+  </div>
+
+  <p style="max-width:46em;color:var(--ink-2);font-size:14px;line-height:1.85">
+    每一条都是可核实的事实，不是评论。分数衡量它改变结构的程度，可信度衡量它是否站得住；两者分开，低可信条目只进待核实队列。
+  </p>
+
+  <div class="section-head" style="margin-top:40px">
+    <div>
+      <span class="num">分布</span>
+      <h2 style="margin-top:6px">事件的时间与重要度</h2>
+    </div>
+    <span class="more">{events.length} 条 · 截至 {siteMeta.window.to}</span>
+  </div>
+
+  <Scatter items={points} from={siteMeta.window.from} to={siteMeta.window.to} />
+
+  <div class="filters" role="group" aria-label="按类别筛选">
+    <span class="count-line" style="margin:0 8px 0 0">类别</span>
+    <button class="chip" data-filter="category" data-value="all" aria-pressed="true">全部</button>
+    {cats.map((c) => (
+      <button class="chip" data-filter="category" data-value={c} aria-pressed="false">{catLabel(c)}</button>
+    ))}
+  </div>
+
+  <div class="filters" role="group" aria-label="按地区筛选与排序">
+    <span class="count-line" style="margin:0 8px 0 0">地区</span>
+    <button class="chip" data-filter="region" data-value="all" aria-pressed="true">全部</button>
+    {regions.map((r) => (
+      <button class="chip" data-filter="region" data-value={r} aria-pressed="false">{regLabel(r)}</button>
+    ))}
+    <input class="search" type="search" placeholder="搜索标题或摘要" aria-label="搜索事件" />
+  </div>
+
+  <div class="filters" role="group" aria-label="排序">
+    <span class="count-line" style="margin:0 8px 0 0">排序</span>
+    <button class="chip" data-sort="score" aria-pressed="true">重要度</button>
+    <button class="chip" data-sort="confidence" aria-pressed="false">置信度</button>
+    <button class="chip" data-sort="trends" aria-pressed="false">关联趋势</button>
+    <button class="chip" data-sort="date" aria-pressed="false">时间</button>
+    <span class="count-line" id="dir-line" style="margin:0 0 0 10px">降序 ↓</span>
+  </div>
+
+  <p class="count-line" id="count">共 {events.length} 条</p>
+
+  <div class="event-list" id="list">
+    {events.map((e) => (
+      <div
+        class="filter-item"
+        data-category={e.category}
+        data-region={e.region}
+        data-score={total(e.scores)}
+        data-confidence={credRank(e.credibility)}
+        data-trends={e.trends.length}
+        data-date={e.date}
+        data-text={(e.title + ' ' + e.summary).toLowerCase()}
+      >
+        <EventRow event={e} />
+      </div>
+    ))}
+  </div>
+  <p class="count-line" id="empty" hidden>没有符合条件的事件。换个筛选试试。</p>
+</Base>
+
+<script>
+  const state = { category: 'all', region: 'all', q: '', sort: 'score', dir: 'desc' };
+  const list = document.getElementById('list');
+  const countEl = document.getElementById('count');
+  const emptyEl = document.getElementById('empty');
+  const dirEl = document.getElementById('dir-line');
+  const items = Array.from(document.querySelectorAll('.filter-item'));
+
+  const valueOf = (el, key) => {
+    if (key === 'date') return el.dataset.date || '';
+    if (key === 'confidence') return Number(el.dataset.confidence);
+    if (key === 'trends') return Number(el.dataset.trends);
+    return Number(el.dataset.score);
+  };
+
+  function apply() {
+    let visible = 0;
+    for (const el of items) {
+      const okCat = state.category === 'all' || el.dataset.category === state.category;
+      const okReg = state.region === 'all' || el.dataset.region === state.region;
+      const okQ = !state.q || (el.dataset.text || '').includes(state.q);
+      const show = okCat && okReg && okQ;
+      el.hidden = !show;
+      if (show) visible++;
+    }
+
+    const sign = state.dir === 'asc' ? 1 : -1;
+    items
+      .filter((el) => !el.hidden)
+      .sort((a, b) => {
+        const va = valueOf(a, state.sort);
+        const vb = valueOf(b, state.sort);
+        if (typeof va === 'string') return va.localeCompare(vb) * sign;
+        return (va - vb) * sign || Number(b.dataset.score) - Number(a.dataset.score);
+      })
+      .forEach((el) => list.appendChild(el));
+
+    if (countEl) countEl.textContent = `共 ${visible} 条 / ${items.length} 条`;
+    if (emptyEl) emptyEl.hidden = visible > 0;
+    if (dirEl) dirEl.textContent = state.dir === 'asc' ? '升序 ↑' : '降序 ↓';
+  }
+
+  document.querySelectorAll('[data-filter]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const key = btn.dataset.filter;
+      state[key] = btn.dataset.value;
+      document
+        .querySelectorAll(`[data-filter="${key}"]`)
+        .forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+      apply();
+    });
+  });
+
+  document.querySelectorAll('[data-sort]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const key = btn.dataset.sort;
+      if (state.sort === key) {
+        state.dir = state.dir === 'desc' ? 'asc' : 'desc';
+      } else {
+        state.sort = key;
+        state.dir = 'desc';
+      }
+      document.querySelectorAll('[data-sort]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.sort === key)));
+      apply();
+    });
+  });
+
+  const search = document.querySelector('.search');
+  search?.addEventListener('input', (e) => {
+    state.q = (e.target as HTMLInputElement).value.trim().toLowerCase();
+    apply();
+  });
+
+  apply();
+</script>

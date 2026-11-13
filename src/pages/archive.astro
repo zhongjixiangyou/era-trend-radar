@@ -1,0 +1,112 @@
+---
+import Base from '../layouts/Base.astro';
+import HeatGrid from '../components/HeatGrid.astro';
+import {
+  allSnapshots, sortedEvents, eventById, trendById, statusLabel, categoryLabel, fmtDate, total, siteMeta,
+} from '../lib/data';
+import { href } from '../lib/url';
+
+const months: { key: string; label: string; items: any[] }[] = [];
+const start = new Date(siteMeta.window.from + 'T00:00:00Z');
+const end = new Date(siteMeta.window.to + 'T00:00:00Z');
+for (let d = new Date(start.getFullYear(), start.getMonth(), 1); d <= end; d = new Date(d.getFullYear(), d.getMonth() + 1, 1)) {
+  const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
+  months.push({
+    key,
+    label: `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, '0')}`,
+    items: sortedEvents.filter((e) => e.date.startsWith(key)),
+  });
+}
+const totalEvents = sortedEvents.length;
+
+const cats = [...new Set(sortedEvents.map((e) => e.category))];
+const heatRows = cats.map((c) => ({
+  label: categoryLabel[c] ?? c,
+  cells: months.map((m) => ({ key: m.label, count: m.items.filter((e) => e.category === c).length })),
+}));
+---
+
+<Base title="历史档案" active="archive" description="按期回看：每一期收录了什么，趋势状态怎么变，事件按月份归档。">
+  <div class="section-head" style="margin-top:34px">
+    <div>
+      <span class="num">历史档案 / ARCHIVE</span>
+      <h2 style="margin-top:6px">按期回看</h2>
+    </div>
+    <span class="more">{allSnapshots.length} 期 · {totalEvents} 条事件</span>
+  </div>
+
+  <p style="max-width:46em;color:var(--ink-2);font-size:14px;line-height:1.85">
+    档案不是旧闻列表。每一期记录当时看到什么、怎么判断，以及后来哪些判断被修正。这是这个站唯一不能事后编辑的部分。
+  </p>
+
+  {allSnapshots.map((s) => (
+    <section style="border-top:2px solid var(--ink);padding:20px 0 28px;margin-top:36px">
+      <div class="kicker">{fmtDate(s.date)} · {s.period === 'weekly' ? '周' : '月'}</div>
+      <h2 style="font-size:26px;margin:0 0 12px">{s.title}</h2>
+      <p style="font-family:var(--serif);font-size:16.5px;line-height:1.85;color:var(--ink-2);max-width:52em">{s.summary}</p>
+
+      {(s.trendChanges ?? []).length > 0 && (
+        <div style="margin-top:12px;font-size:12.5px;color:var(--ink-3)">
+          {s.trendChanges?.map((c) => (
+            <div>· 趋势「{trendById.get(c.trendId)?.title ?? c.trendId}」{statusLabel[c.from] ?? c.from} → {statusLabel[c.to] ?? c.to}{c.reason ? `（${c.reason}）` : ''}</div>
+          ))}
+        </div>
+      )}
+
+      <table class="ledger" style="margin-top:18px">
+        <thead>
+          <tr><th>日期</th><th>事件</th><th>重要度</th><th>可信度</th></tr>
+        </thead>
+        <tbody>
+          {s.eventIds.map((id) => {
+            const e = eventById.get(id);
+            if (!e) return null;
+            return (
+              <tr>
+                <td class="num">{fmtDate(e.date)}</td>
+                <td><a href={href(`/events/${e.id}/`)}>{e.title}</a></td>
+                <td class="num">{total(e.scores)}</td>
+                <td>{e.credibility === 'high' ? '高' : e.credibility === 'medium' ? '中' : '待核实'}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </section>
+  ))}
+
+  <div class="section-head">
+    <div>
+      <span class="num">领域 × 时间</span>
+      <h2 style="margin-top:6px">事件密度</h2>
+    </div>
+    <span class="more">格子里的数字是当月该类事件数</span>
+  </div>
+
+  <HeatGrid months={months.map((m) => ({ key: m.key, label: m.label }))} rows={heatRows} />
+
+  <div class="section-head">
+    <div>
+      <span class="num">按月</span>
+      <h2 style="margin-top:6px">覆盖情况</h2>
+    </div>
+    <span class="more">空月份如实留空</span>
+  </div>
+
+  <table class="ledger">
+    <thead>
+      <tr><th>月份</th><th>收录</th><th>说明</th></tr>
+    </thead>
+    <tbody>
+      {months.map((m) => (
+        <tr>
+          <td class="num">{m.label}</td>
+          <td class="num">{m.items.length}</td>
+          <td style="font-size:12px;color:var(--ink-3)">
+            {m.items.length === 0 ? '回溯研究尚未覆盖，不代表当月没有事件' : m.items.slice(0, 2).map((e) => e.title).join('；')}
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</Base>

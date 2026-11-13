@@ -1,0 +1,23 @@
+---
+interface Props {
+  values: number[];
+  width?: number;
+  height?: number;
+}
+
+const { values, width = 120, height = 28 } = Astro.props;
+const min = Math.min(...values, 0);
+const max = Math.max(...values, 100);
+const span = max - min || 1;
+const step = values.length > 1 ? width / (values.length - 1) : width;
+const points = values
+  .map((v, i) => `${(i * step).toFixed(1)},${(height - ((v - min) / span) * height).toFixed(1)}`)
+  .join(' ');
+---
+
+<svg width={width} height={height} viewBox={`0 0 ${width} ${height}`} role="img" aria-label="置信度变化">
+  <polyline points={points} fill="none" stroke="currentColor" stroke-width="1.4" />
+  {values.map((v, i) => (
+    <circle cx={(i * step).toFixed(1)} cy={(height - ((v - min) / span) * height).toFixed(1)} r="1.8" fill="currentColor" />
+  ))}
+</svg>

@@ -1,0 +1,150 @@
+---
+import Base from '../layouts/Base.astro';
+import EventRow from '../components/EventRow.astro';
+import TrendStrip from '../components/TrendStrip.astro';
+import {
+  siteMeta, publishedEvents, allTrends, allForecasts, allSnapshots,
+  total, fmtDate, statusLabel, forecastStatusLabel, trendById,
+} from '../lib/data';
+import { href } from '../lib/url';
+
+const ranked = [...publishedEvents].sort((a, b) => total(b.scores) - total(a.scores));
+const lead = ranked[0];
+const rest = publishedEvents.filter((e) => e.id !== lead.id).slice(0, 6);
+
+const topTrends = [...allTrends].sort((a, b) => b.confidence - a.confidence);
+const openForecasts = allForecasts.filter((f) => f.status === 'open');
+const latestSnap = allSnapshots[0];
+
+const contents = [
+  {
+    head: '事件',
+    items: publishedEvents.slice(0, 4).map((e) => ({ text: e.title, url: href(`/events/${e.id}/`) })),
+  },
+  {
+    head: '趋势',
+    items: topTrends.slice(0, 3).map((t) => ({ text: t.title, url: href(`/trends/${t.id}/`) })),
+  },
+  {
+    head: '判断',
+    items: openForecasts.slice(0, 3).map((f) => ({ text: f.claim, url: href('/forecasts/') })),
+  },
+];
+
+const leadTotal = total(lead.scores);
+---
+
+<Base active="home">
+  <section class="lead">
+    <div class="lead-main">
+      <div class="kicker">本期头条 · 全球利率</div>
+      <h1><a href={href(`/events/${lead.id}/`)}>{lead.title}</a></h1>
+      <p class="standfirst">{lead.summary}</p>
+      <div class="byline">
+        {fmtDate(lead.date)} · 重要度 {leadTotal} · 可信度 {lead.credibility === 'high' ? '高' : lead.credibility === 'medium' ? '中' : '待核实'}
+      </div>
+    </div>
+    <aside class="lead-side">
+      {(lead.metrics ?? []).slice(0, 3).map((m: any) => (
+        <div class="keyfig">
+          <div class="label">{m.label}</div>
+          <div class="value">{m.value}</div>
+          {m.note && <div class="note">{m.note}</div>}
+        </div>
+      ))}
+    </aside>
+  </section>
+
+  <section class="contents" aria-label="本期要目">
+    {contents.map((col) => (
+      <ol>
+        <li style="border-bottom:1px solid var(--rule-2);padding-bottom:6px;margin-bottom:2px">
+          <span class="idx">要目</span>
+          <span class="t" style="font-weight:600;letter-spacing:.12em;font-size:12px">{col.head}</span>
+        </li>
+        {col.items.map((it, i) => (
+          <li>
+            <span class="idx">{String(i + 1).padStart(2, '0')}</span>
+            <a href={it.url}><span class="t">{it.text}</span></a>
+          </li>
+        ))}
+      </ol>
+    ))}
+  </section>
+
+  <div class="section-head">
+    <div>
+      <span class="num">01 / 事件</span>
+      <h2 style="margin-top:6px">最近发生的事</h2>
+    </div>
+    <a class="more" href={href('/events/')}>全部 {siteMeta.counts.events} 条 →</a>
+  </div>
+  <div class="event-list">
+    {rest.map((e) => <EventRow event={e} />)}
+  </div>
+
+  <div class="section-head">
+    <div>
+      <span class="num">02 / 趋势</span>
+      <h2 style="margin-top:6px">事件正在归并成什么</h2>
+    </div>
+    <a class="more" href={href('/trends/')}>趋势图谱 →</a>
+  </div>
+  <div class="trend-list">
+    {topTrends.slice(0, 4).map((t, i) => (
+      <div class="trend-item">
+        <div class="trend-num">{String(i + 1).padStart(2, '0')}</div>
+        <div>
+          <a class="trend-title" href={href(`/trends/${t.id}/`)}>{t.title}</a>
+          <p class="trend-thesis">{t.thesis}</p>
+          <div class="conf">
+            <span class={`status ${t.status}`}>{statusLabel[t.status]}</span>
+            <span class="conf-bar"><i style={`width:${t.confidence}%`}></i></span>
+            <span class="v">{t.confidence}</span>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div class="section-head">
+    <div>
+      <span class="num">03 / 判断</span>
+      <h2 style="margin-top:6px">可以被证伪的预测</h2>
+    </div>
+    <a class="more" href={href('/forecasts/')}>判断追踪 →</a>
+  </div>
+  <table class="ledger">
+    <thead>
+      <tr><th>判断</th><th>提出</th><th>到期</th><th>置信</th><th>状态</th></tr>
+    </thead>
+    <tbody>
+      {allForecasts.map((f) => (
+        <tr>
+          <td>{f.claim}</td>
+          <td class="num">{fmtDate(f.madeAt)}</td>
+          <td class="num">{fmtDate(f.dueBy)}</td>
+          <td class="num">{f.confidence}</td>
+          <td>{forecastStatusLabel[f.status]}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+
+  <div class="section-head">
+    <div>
+      <span class="num">04 / 档案</span>
+      <h2 style="margin-top:6px">最近一期</h2>
+    </div>
+    <a class="more" href={href('/archive/')}>历史档案 →</a>
+  </div>
+  <a href={href('/archive/')} style="display:block;border-top:1px solid var(--rule);padding-top:16px">
+    <div class="kicker">{latestSnap.title}</div>
+    <p style="font-family:var(--serif);font-size:18px;line-height:1.8;max-width:52em;color:var(--ink-2);margin:0">
+      {latestSnap.summary}
+    </p>
+    <div class="fc-meta" style="margin-top:12px">
+      {latestSnap.eventIds.length} 条事件 · {fmtDate(latestSnap.date)}
+    </div>
+  </a>
+</Base>

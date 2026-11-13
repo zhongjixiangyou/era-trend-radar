@@ -1,0 +1,66 @@
+---
+interface Props {
+  items: { date: string; score: number; title: string; id: string; credibility: string }[];
+  from: string;
+  to: string;
+}
+
+const { items, from, to } = Astro.props;
+
+const W = 920;
+const H = 250;
+const P = { l: 44, r: 16, t: 16, b: 26 };
+
+const t0 = Date.parse(from + 'T00:00:00Z');
+const t1 = Date.parse(to + 'T00:00:00Z');
+const x = (date: string) =>
+  P.l + ((Date.parse(date + 'T00:00:00Z') - t0) / (t1 - t0)) * (W - P.l - P.r);
+
+const yMin = 60;
+const yMax = 88;
+const y = (score: number) =>
+  P.t + (1 - (score - yMin) / (yMax - yMin)) * (H - P.t - P.b);
+
+const months: { x: number; label: string }[] = [];
+const start = new Date(t0);
+const cursor = new Date(Date.UTC(start.getUTCFullYear(), start.getUTCMonth(), 1));
+while (cursor.getTime() <= t1) {
+  const iso = cursor.toISOString().slice(0, 10);
+  months.push({ x: x(iso), label: `${cursor.getUTCMonth() + 1}月` });
+  cursor.setUTCMonth(cursor.getUTCMonth() + 1);
+}
+
+if (months.length === 0 || months[0].x > P.l + 1) {
+  months.unshift({ x: P.l, label: `${start.getUTCMonth() + 1}月` });
+}
+
+const yTicks = [60, 70, 80];
+const dotClass = (c: string) => (c === 'high' ? '' : c === 'medium' ? 'med' : 'low');
+---
+
+<figure style="margin:0">
+  <svg class="scatter" viewBox={`0 0 ${W} ${H}`} role="img" aria-label="事件时间与重要度分布散点图">
+    {yTicks.map((v) => (
+      <>
+        <line class="grid" x1={P.l} y1={y(v)} x2={W - P.r} y2={y(v)} stroke-dasharray="1 3" />
+        <text x={P.l - 8} y={y(v) + 3} text-anchor="end">{v}</text>
+      </>
+    ))}
+    {months.map((m) => (
+      <>
+        <line class="grid" x1={m.x} y1={P.t} x2={m.x} y2={H - P.b} stroke-dasharray="1 3" opacity="0.5" />
+        <text x={m.x} y={H - P.b + 14} text-anchor="middle">{m.label}</text>
+      </>
+    ))}
+    <line class="axis" x1={P.l} y1={H - P.b} x2={W - P.r} y2={H - P.b} />
+    <text x={P.l - 8} y={P.t + 2} text-anchor="end">重要度</text>
+    {items.map((e) => (
+      <circle class={dotClass(e.credibility)} cx={x(e.date)} cy={y(e.score)} r="4.2">
+        <title>{`${e.date} · ${e.score} 分 · ${e.title}`}</title>
+      </circle>
+    ))}
+  </svg>
+  <figcaption style="font-size:11px;color:var(--ink-3);margin-top:6px">
+    横轴为发生时间，纵轴为重要度。实心=高可信，半实=中，空心=待核实。点密处是回溯补录，不代表当时事件更密集。
+  </figcaption>
+</figure>

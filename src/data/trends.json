@@ -1,0 +1,80 @@
+[
+  {
+    "id": "tr-fed-hike-cycle",
+    "title": "美联储重回加息通道，全球贴现率重新上行",
+    "thesis": "通胀连续三个月超预期，市场叙事从「何时降息」转向「加到多高」。高估值资产、长久期债券与新兴市场汇率同时承压，而这一次的紧缩发生在财政赤字扩张的背景下。",
+    "domain": "global",
+    "firstSeen": "2026-10-14",
+    "status": "strengthening",
+    "confidence": 78,
+    "indicators": ["CPI 同比与环比", "核心 CPI", "12 月加息概率", "美元指数", "10 年期实际利率"],
+    "judgment": "若 12 月议息会议前核心 CPI 环比仍不低于 0.3%，美联储将在 12 月加息至少 25 个基点。",
+    "verifyBy": "2026-12-31",
+    "revisions": [
+      { "date": "2026-10-14", "from": null, "to": 62, "reason": "首次建立：9 月 CPI 同比 3.7% 超预期" },
+      { "date": "2026-11-12", "from": 62, "to": 78, "reason": "10 月 CPI 连续第三个月超预期，高盛、德银上调路径" }
+    ]
+  },
+  {
+    "id": "tr-cn-profit-recovery",
+    "title": "中国工业利润修复快于收入，但行业分化明显",
+    "thesis": "利润增速连续高于营收增速，说明改善来自利润率而非单纯放量：单位成本下降、价格因素企稳、财务费用回落。但上游资源与设备制造受益更多，中下游消费品仍受需求约束。",
+    "domain": "china",
+    "firstSeen": "2026-10-27",
+    "status": "strengthening",
+    "confidence": 66,
+    "indicators": ["规上工业利润增速", "营业收入利润率", "PPI", "上市公司净利增速"],
+    "judgment": "2026 年全年规上工业企业利润同比增速将保持两位数。",
+    "verifyBy": "2027-01-31",
+    "revisions": [
+      { "date": "2026-10-27", "from": null, "to": 58, "reason": "首次建立：1—9 月利润同比 +15.5%" },
+      { "date": "2026-11-04", "from": 58, "to": 66, "reason": "沪市三季报净利增速 6.0% 高于营收 3.8%，上市公司层面同向" }
+    ]
+  },
+  {
+    "id": "tr-ai-capex-supply-chain",
+    "title": "AI 资本开支沿供应链变成订单，但现金流尚未验证",
+    "thesis": "算力预算正在从承诺变成设备采购与交付，设备商、电力配套与数据中心建设先受益。但收入确认、折旧与融资成本开始反向拉扯估值，投入与兑现之间的时间差是本轮最大的风险点。",
+    "domain": "technology",
+    "firstSeen": "2026-11-12",
+    "status": "strengthening",
+    "confidence": 72,
+    "indicators": ["云厂商资本开支", "设备商订单", "数据中心电力配套投运", "ARR 兑现率"],
+    "judgment": "未来两个季度，AI 基础设施公司的资本开支增速仍将高于收入增速。",
+    "verifyBy": "2027-04-30",
+    "revisions": [
+      { "date": "2026-11-12", "from": null, "to": 72, "reason": "首次建立：Nebius 上调资本开支至 270 亿美元，同时推迟 ARR 目标" }
+    ]
+  },
+  {
+    "id": "tr-humanoid-mass-production",
+    "title": "人形机器人从样机走向量产，瓶颈在供应链不在需求",
+    "thesis": "2026 年被称作量产元年，整机厂产能规划快速抬升，商用场景从展示扩展到工厂、商超与文旅。但减速器、灵巧手与一致性交付仍是硬约束，「10 万台」更像目标而非产量。",
+    "domain": "technology",
+    "firstSeen": "2026-10-26",
+    "status": "emerging",
+    "confidence": 61,
+    "indicators": ["整机年产量", "核心零部件交期", "单台成本", "工业场景复购率"],
+    "judgment": "2026 年中国人形机器人实际产量将低于行业喊出的 10 万台目标。",
+    "verifyBy": "2027-01-31",
+    "revisions": [
+      { "date": "2026-10-26", "from": null, "to": 55, "reason": "首次建立：央视财经报道量产元年与 10 万台目标" },
+      { "date": "2026-10-29", "from": 55, "to": 61, "reason": "智元等厂商收入快速增长，需求侧得到验证" }
+    ]
+  },
+  {
+    "id": "tr-china-semiconductor-capacity",
+    "title": "国产晶圆产能利用率与盈利同步抬升",
+    "thesis": "成熟制程接近满产、价格企稳，折旧压力被利用率摊薄，毛利率随之修复。但先进制程仍受设备与出口管制约束，产能扩张的资本开支强度不会下降。",
+    "domain": "china",
+    "firstSeen": "2026-11-12",
+    "status": "strengthening",
+    "confidence": 68,
+    "indicators": ["产能利用率", "毛利率", "资本开支", "设备国产化率"],
+    "judgment": "2027 年上半年国产晶圆厂产能利用率仍将高于 90%。",
+    "verifyBy": "2027-06-30",
+    "revisions": [
+      { "date": "2026-11-12", "from": null, "to": 68, "reason": "首次建立：中芯国际 Q3 产能利用率 97.3%、毛利率 29.9%" }
+    ]
+  }
+]

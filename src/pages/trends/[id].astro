@@ -1,0 +1,102 @@
+---
+import Base from '../../layouts/Base.astro';
+import EventRow from '../../components/EventRow.astro';
+import {
+  allTrends, eventsForTrend, statusLabel, effectLabel, fmtDate, forecastStatusLabel,
+} from '../../lib/data';
+import { href } from '../../lib/url';
+import forecasts from '../../data/forecasts.json';
+
+export function getStaticPaths() {
+  return allTrends.map((trend) => ({ params: { id: trend.id }, props: { trend } }));
+}
+
+const { trend } = Astro.props;
+const events = eventsForTrend(trend.id);
+const groups = [
+  { effect: 'support', label: '支撑', items: events.filter((e) => e.trends.some((t: any) => t.id === trend.id && t.effect === 'support')) },
+  { effect: 'weaken', label: '削弱', items: events.filter((e) => e.trends.some((t: any) => t.id === trend.id && t.effect === 'weaken')) },
+  { effect: 'challenge', label: '挑战', items: events.filter((e) => e.trends.some((t: any) => t.id === trend.id && t.effect === 'challenge')) },
+].filter((g) => g.items.length > 0);
+
+const relatedForecasts = (forecasts as any[]).filter((f) => f.trendId === trend.id);
+const domainCn = trend.domain === 'global' ? '全球' : trend.domain === 'china' ? '中国' : trend.domain === 'technology' ? '科技' : trend.domain;
+---
+
+<Base title={trend.title} description={trend.thesis} active="trends">
+  <article style="padding-top:34px">
+    <div class="kicker">趋势 · {domainCn} · 首次出现 {fmtDate(trend.firstSeen)}</div>
+    <h1 style="font-size:clamp(30px,3.8vw,46px);line-height:1.22;margin:0 0 18px;max-width:18em">{trend.title}</h1>
+    <p class="standfirst" style="max-width:42em">{trend.thesis}</p>
+    <div class="byline" style="margin-bottom:30px">
+      <span class={`status ${trend.status}`}>{statusLabel[trend.status]}</span>
+      <span style="margin-left:10px">置信 {trend.confidence}</span>
+      <span style="margin-left:10px">验证期限 {trend.verifyBy ? fmtDate(trend.verifyBy) : '未设定'}</span>
+    </div>
+
+    <div class="watch" style="margin-top:0">
+      <b>当前判断。</b>{trend.judgment}
+    </div>
+
+    <div class="detail">
+      <div>
+        {groups.map((g) => (
+          <>
+            <div class="section-head" style="margin-top:36px">
+              <div>
+                <span class="num">{effectLabel[g.effect]}</span>
+                <h2 style="margin-top:6px">{g.items.length} 条事件</h2>
+              </div>
+            </div>
+            <div class="event-list">
+              {g.items.map((e) => <EventRow event={e} showSummary={false} />)}
+            </div>
+          </>
+        ))}
+        {events.length === 0 && <p style="color:var(--ink-3)">暂无关联事件。</p>}
+      </div>
+
+      <aside class="detail-aside">
+        <div class="aside-block">
+          <h3>置信度变化</h3>
+          <ol class="timeline">
+            {trend.revisions.map((r: any) => (
+              <li>
+                <div class="d">{fmtDate(r.date)}</div>
+                <div class="t" style="font-family:var(--mono);font-size:14px">
+                  {r.from ?? '—'} → {r.to}
+                </div>
+                {r.reason && <div class="n">{r.reason}</div>}
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <div class="aside-block">
+          <h3>观察指标</h3>
+          <ul class="indicator-list">
+            {trend.indicators.map((i: string) => <li>{i}</li>)}
+          </ul>
+        </div>
+
+        {relatedForecasts.length > 0 && (
+          <div class="aside-block">
+            <h3>相关判断</h3>
+            {relatedForecasts.map((f: any) => (
+              <div style="margin-bottom:12px">
+                <a href={href('/forecasts/')} style="font-family:var(--serif);font-size:14px;line-height:1.55">{f.claim}</a>
+                <div class="fc-meta" style="margin-top:3px">
+                  置信 {f.confidence} · {forecastStatusLabel[f.status]}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        <div class="aside-block" style="border-top:1px solid var(--rule-2)">
+          <a href={href('/trends/')} style="font-size:12.5px">← 返回趋势图谱</a>
+        </div>
+      </aside>
+    </div>
+  </article>
+</Base>

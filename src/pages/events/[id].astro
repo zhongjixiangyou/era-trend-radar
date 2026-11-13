@@ -1,0 +1,142 @@
+---
+import Base from '../../layouts/Base.astro';
+import ScorePanel from '../../components/ScorePanel.astro';
+import Timeline from '../../components/Timeline.astro';
+import {
+  allEvents, allTrends, trendById, effectLabel, categoryLabel, regionLabel,
+  total, fmtDate, fmtCnDate, forecastStatusLabel,
+} from '../../lib/data';
+import { href } from '../../lib/url';
+import forecasts from '../../data/forecasts.json';
+
+export function getStaticPaths() {
+  return allEvents.map((event) => ({ params: { id: event.id }, props: { event } }));
+}
+
+const { event } = Astro.props;
+const t = total(event.scores);
+const relatedForecasts = (forecasts as any[]).filter((f) =>
+  event.trends.some((tr: any) => tr.id === f.trendId)
+);
+const credibilityCn = event.credibility === 'high' ? '高' : event.credibility === 'medium' ? '中' : '待核实';
+const statusCn = event.status === 'confirmed' ? '已核实' : event.status === 'partial' ? '部分核实' : '待核实';
+---
+
+<Base title={event.title} description={event.summary} active="events">
+  <article style="padding-top:34px">
+    <div class="kicker">
+      {categoryLabel[event.category]} · {regionLabel[event.region]} · {fmtCnDate(event.date)}
+    </div>
+    <h1 style="font-size:clamp(30px,3.8vw,46px);line-height:1.2;margin:0 0 18px;max-width:20em">{event.title}</h1>
+    <p class="standfirst" style="max-width:40em">{event.summary}</p>
+    <div class="byline" style="margin-bottom:26px">
+      重要度 {t} · 可信度 {credibilityCn} · {statusCn} · 收录于 {fmtDate(event.collectedAt ?? event.date)}
+    </div>
+
+    <div class="detail">
+      <div>
+        {event.facts.length > 0 && (
+          <>
+            <h3 style="font-family:var(--sans);font-size:10.5px;letter-spacing:.16em;color:var(--ink-3);font-weight:500;margin:0 0 8px">可核实事实</h3>
+            <ul class="fact-list">
+              {event.facts.map((f: string, i: number) => (
+                <li><span class="n">{String(i + 1).padStart(2, '0')}</span><span>{f}</span></li>
+              ))}
+            </ul>
+          </>
+        )}
+
+        {(event.metrics ?? []).length > 0 && (
+          <>
+            <h3 style="font-family:var(--sans);font-size:10.5px;letter-spacing:.16em;color:var(--ink-3);font-weight:500;margin:30px 0 10px">关键数字</h3>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0 24px">
+              {event.metrics.map((m: any) => (
+                <div class="keyfig">
+                  <div class="label">{m.label}</div>
+                  <div class="value" style="font-size:26px">{m.value}</div>
+                  {m.note && <div class="note">{m.note}</div>}
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+
+        <h3 style="font-family:var(--sans);font-size:10.5px;letter-spacing:.16em;color:var(--ink-3);font-weight:500;margin:34px 0 8px">它与哪些趋势有关</h3>
+        <div class="rel">
+          {event.trends.map((tr: any) => (
+            <div>
+              <a href={href(`/trends/${tr.id}/`)}>
+                <span class={`status effect-${tr.effect}`} style="margin-right:8px">{effectLabel[tr.effect]}</span>
+                {trendById.get(tr.id)?.title ?? tr.id}
+              </a>
+              {tr.reason && <div class="why">{tr.reason}</div>}
+            </div>
+          ))}
+        </div>
+
+        {(event.timeline ?? []).length > 0 && (
+          <>
+            <h3 style="font-family:var(--sans);font-size:10.5px;letter-spacing:.16em;color:var(--ink-3);font-weight:500;margin:34px 0 6px">发展过程</h3>
+            <Timeline items={event.timeline} />
+          </>
+        )}
+
+        {event.watch && (
+          <div class="watch">
+            <b>接下来看什么。</b>{event.watch}
+          </div>
+        )}
+
+        {relatedForecasts.length > 0 && (
+          <>
+            <h3 style="font-family:var(--sans);font-size:10.5px;letter-spacing:.16em;color:var(--ink-3);font-weight:500;margin:34px 0 10px">相关判断</h3>
+            {relatedForecasts.map((f: any) => (
+              <div style="border-top:1px solid var(--rule);padding:12px 0">
+                <a href={href('/forecasts/')} style="font-family:var(--serif);font-size:16px;line-height:1.6">{f.claim}</a>
+                <div class="fc-meta" style="margin-top:4px">
+                  置信 {f.confidence} · 到期 {fmtDate(f.dueBy)} · {forecastStatusLabel[f.status]}
+                </div>
+              </div>
+            ))}
+          </>
+        )}
+      </div>
+
+      <aside class="detail-aside">
+        <div class="aside-block">
+          <h3>评分拆解</h3>
+          <ScorePanel scores={event.scores} />
+          <p style="font-size:11px;color:var(--ink-3);line-height:1.7;margin-top:10px">
+            总分由六维加权计算，不是人工拍板。改分必须留下记录。
+          </p>
+        </div>
+
+        <div class="aside-block">
+          <h3>来源</h3>
+          <ul class="source-list">
+            {event.sources.map((s: any) => (
+              <li>
+                <a href={s.url} target="_blank" rel="noopener noreferrer">{s.name}{s.official ? ' · 官方' : ''}</a>
+                <span class="d">{s.date ? fmtDate(s.date) : ''}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="aside-block">
+          <h3>评分历史</h3>
+          {(event.scoreHistory ?? []).map((h: any) => (
+            <div style="display:flex;justify-content:space-between;gap:10px;font-size:12px;padding:5px 0;border-bottom:1px solid var(--rule)">
+              <span class="mono" style="color:var(--ink-3)">{fmtDate(h.date)}</span>
+              <span class="mono">{h.total}</span>
+            </div>
+          ))}
+        </div>
+
+        <div class="aside-block" style="border-top:1px solid var(--rule-2)">
+          <a href={href('/events/')} style="font-size:12.5px">← 返回事件档案</a>
+        </div>
+      </aside>
+    </div>
+  </article>
+</Base>

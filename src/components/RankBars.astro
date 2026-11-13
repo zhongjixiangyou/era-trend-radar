@@ -1,0 +1,25 @@
+---
+interface Props {
+  items: { label: string; value: number; sub?: string; href?: string }[];
+  unit?: string;
+  top?: number;
+}
+
+const { items, unit = '', top = 1 } = Astro.props;
+const max = Math.max(...items.map((i) => i.value), 1);
+---
+
+<div class="rank">
+  {items.map((it, i) => (
+    <div class={`rank-row${i < top ? ' top' : ''}`}>
+      <div class="rank-name">
+        {it.href ? <a href={it.href}>{it.label}</a> : it.label}
+        {it.sub && <small>{it.sub}</small>}
+      </div>
+      <div class="rank-track" aria-hidden="true">
+        <div class="rank-fill" style={`width:${Math.max((it.value / max) * 100, 1.5)}%`}></div>
+      </div>
+      <div class="rank-val">{it.value}{unit}</div>
+    </div>
+  ))}
+</div>

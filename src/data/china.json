@@ -1,0 +1,39 @@
+{
+  "macro": [
+    { "label": "GDP 同比", "value": "4.6%", "note": "前三季度，总量超 107 万亿元" },
+    { "label": "规上工业增加值", "value": "5.3%", "note": "前三季度" },
+    { "label": "规上工业利润", "value": "15.5%", "note": "1—9 月累计" },
+    { "label": "沪市净利", "value": "6.0%", "note": "三季报合计 4.01 万亿元" }
+  ],
+  "samples": [
+    {
+      "name": "沪市整体",
+      "scope": "上市公司",
+      "revenueGrowth": 3.8,
+      "profitGrowth": 6.0,
+      "note": "2317 家公司三季报合计，营收 39.07 万亿元、净利 4.01 万亿元",
+      "eventId": "ev-20261104-sse-q3-earnings"
+    },
+    {
+      "name": "中芯国际",
+      "scope": "半导体",
+      "revenueGrowth": 22.4,
+      "profitGrowth": 91.6,
+      "note": "前三季度营收 606.18 亿元、净利 73.14 亿元",
+      "eventId": "ev-20261112-smic-q3"
+    },
+    {
+      "name": "规上工业",
+      "scope": "全国工业",
+      "revenueGrowth": null,
+      "profitGrowth": 15.5,
+      "note": "1—9 月利润同比；营收增速未在同口径下公布",
+      "eventId": "ev-20261027-cn-industrial-profit"
+    }
+  ],
+  "missing": [
+    "分行业营收与利润增速（二组按统计局分行业口径补）",
+    "高技术制造业与装备制造业增加值增速",
+    "出口交货值与工业企业产能利用率"
+  ]
+}

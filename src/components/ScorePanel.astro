@@ -1,0 +1,25 @@
+---
+import { scoreLabels, total } from '../lib/data';
+
+interface Props {
+  scores: Record<string, number>;
+}
+
+const { scores } = Astro.props;
+const t = total(scores as any);
+---
+
+<div class="score-panel">
+  {scoreLabels.map(([key, label]) => (
+    <div class="score-row">
+      <span>{label}</span>
+      <div class="bar"><i style={`width:${scores[key]}%`}></i></div>
+      <span class="v">{scores[key]}</span>
+    </div>
+  ))}
+  <div class="score-row total">
+    <span>加权总分</span>
+    <div class="bar"><i style={`width:${t}%`}></i></div>
+    <span class="v">{t}</span>
+  </div>
+</div>

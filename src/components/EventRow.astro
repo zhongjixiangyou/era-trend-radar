@@ -1,0 +1,47 @@
+---
+import { total, trendById, effectLabel, categoryLabel, regionLabel, fmtDate } from '../lib/data';
+import { href } from '../lib/url';
+
+interface Props {
+  event: any;
+  showSummary?: boolean;
+}
+
+const { event, showSummary = true } = Astro.props;
+const t = total(event.scores);
+const [, m, d] = event.date.split('-');
+const dims = [
+  event.scores.structural, event.scores.scope, event.scores.signal,
+  event.scores.novelty, event.scores.timeliness, event.scores.cross,
+];
+---
+
+<article class="event-row">
+  <div class="event-date">
+    <b>{Number(m)}.{String(Number(d)).padStart(2, '0')}</b>
+    {event.date.slice(0, 4)}
+  </div>
+  <div>
+    <a class="event-title" href={href(`/events/${event.id}/`)}>{event.title}</a>
+    {showSummary && <p class="event-summary">{event.summary}</p>}
+    <div class="event-tags">
+      <span class="tag">{regionLabel[event.region] ?? event.region}</span>
+      <span class="tag">{categoryLabel[event.category] ?? event.category}</span>
+      {event.trends.slice(0, 3).map((tr: any) => (
+        <a class={`tag effect-${tr.effect}`} href={href(`/trends/${tr.id}/`)}>
+          {effectLabel[tr.effect]} · {(trendById.get(tr.id)?.title ?? tr.id).split(/[，,]/)[0]}
+        </a>
+      ))}
+      {event.credibility !== 'high' && (
+        <span class="tag">{event.credibility === 'medium' ? '单一来源' : '待核实'}</span>
+      )}
+    </div>
+  </div>
+  <div class="event-score">
+    <div class="score-total">{t}</div>
+    <div class="score-cap">重要度</div>
+    <div class="score-bars" aria-hidden="true">
+      {dims.map((v) => <i class={v >= 55 ? 'on' : ''} style={`height:${6 + Math.round(v * 0.12)}px`}></i>)}
+    </div>
+  </div>
+</article>

@@ -1,0 +1,14 @@
+{
+  "name": "era-trend-radar-qa",
+  "private": true,
+  "type": "module",
+  "description": "ERA 验收脚本（独立于站点包，避免动根 package.json）",
+  "scripts": {
+    "accept": "node playwright/acceptance.mjs",
+    "routes": "node playwright/routes.mjs",
+    "screens": "node playwright/screens.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.65.0"
+  }
+}

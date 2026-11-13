@@ -1,0 +1,140 @@
+---
+import Base from '../../layouts/Base.astro';
+import TrendStrip from '../../components/TrendStrip.astro';
+import RankBars from '../../components/RankBars.astro';
+import { allTrends, allEvents, statusLabel, fmtDate, total, siteMeta } from '../../lib/data';
+import { href } from '../../lib/url';
+
+const months = ['05', '06', '07', '08', '09', '10', '11'];
+
+const rows = allTrends.map((t) => {
+  const related = allEvents.filter((e) => e.trends.some((x: any) => x.id === t.id));
+  const heat = related.reduce((s, e) => s + total(e.scores), 0);
+  const avg = related.length ? Math.round(heat / related.length) : 0;
+  return { ...t, count: related.length, heat, avg };
+});
+
+const byConfidence = [...rows].sort((a, b) => b.confidence - a.confidence);
+const domainCn = (d: string) => (d === 'global' ? '全球' : d === 'china' ? '中国' : d === 'technology' ? '科技' : d);
+---
+
+<Base title="趋势图谱" active="trends" description="把事件归并为趋势信号：每一条趋势都可被证伪，支撑与反证都保留在时间轴上。">
+  <div class="section-head" style="margin-top:34px">
+    <div>
+      <span class="num">趋势图谱 / SIGNALS</span>
+      <h2 style="margin-top:6px">{rows.length} 条趋势，{siteMeta.counts.events} 条事件</h2>
+    </div>
+    <span class="more">置信度为判断把握，不是事件分数</span>
+  </div>
+
+  <p style="max-width:46em;color:var(--ink-2);font-size:14px;line-height:1.85">
+    趋势不是把新闻归类，而是提出一个可以被推翻的命题。横轴是时间，圆点是支撑事件，彩色点是削弱与挑战。反证不会被隐藏。
+  </p>
+
+  <div style="margin-top:34px">
+    <div class="month-axis">
+      {months.map((m) => <span>2026.{m}</span>)}
+    </div>
+    <p style="font-size:11.5px;color:var(--ink-3);margin:-2px 0 18px;line-height:1.7">
+      5—9 月仍在回溯补录，右侧圆点密集不代表变化突然加速。空档是研究进度，不是结论。
+    </p>
+    {rows.map((t) => <TrendStrip trend={t} />)}
+    <div class="legend">
+      <span><i style="background:var(--ink)"></i>支撑</span>
+      <span><i style="background:var(--weaken)"></i>削弱</span>
+      <span><i style="background:var(--challenge)"></i>挑战</span>
+      <span><i style="background:var(--accent);border-radius:0;width:1px;height:12px"></i>当前</span>
+    </div>
+  </div>
+
+  <div class="section-head">
+    <div>
+      <span class="num">排行</span>
+      <h2 style="margin-top:6px">置信度</h2>
+    </div>
+    <span class="more">0—100，越高越有把握</span>
+  </div>
+
+  <RankBars
+    items={byConfidence.map((t) => ({
+      label: t.title,
+      value: t.confidence,
+      sub: `${statusLabel[t.status]} · ${t.count} 条事件`,
+      href: href(`/trends/${t.id}/`),
+    }))}
+  />
+
+  <div class="section-head">
+    <div>
+      <span class="num">明细</span>
+      <h2 style="margin-top:6px">趋势与验证期限</h2>
+    </div>
+    <span class="more">点表头排序</span>
+  </div>
+
+  <table class="ledger" id="trend-table">
+    <thead>
+      <tr>
+        <th>趋势</th>
+        <th>领域</th>
+        <th>状态</th>
+        <th class="sortable" data-key="confidence" aria-sort="none">置信度</th>
+        <th class="sortable" data-key="heat" aria-sort="none">热度</th>
+        <th class="sortable" data-key="count" aria-sort="none">事件数</th>
+        <th class="sortable" data-key="firstSeen" aria-sort="none">首次出现</th>
+        <th>验证期限</th>
+      </tr>
+    </thead>
+    <tbody>
+      {rows.map((t) => (
+        <tr
+          data-confidence={t.confidence}
+          data-heat={t.heat}
+          data-count={t.count}
+          data-firstseen={t.firstSeen}
+        >
+          <td><a href={href(`/trends/${t.id}/`)} style="font-family:var(--serif);font-size:15px">{t.title}</a></td>
+          <td>{domainCn(t.domain)}</td>
+          <td><span class={`status ${t.status}`}>{statusLabel[t.status]}</span></td>
+          <td class="num">{t.confidence}</td>
+          <td class="num">{t.heat}</td>
+          <td class="num">{t.count}</td>
+          <td class="num">{fmtDate(t.firstSeen)}</td>
+          <td class="num">{t.verifyBy ? fmtDate(t.verifyBy) : '—'}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+  <p style="font-size:11px;color:var(--ink-3);margin-top:10px;max-width:52em;line-height:1.7">
+    热度 = 该趋势关联事件的重要度之和，衡量它当前占据了多少结构性注意力，不是预测准确率。缺数据的趋势热度记 0，排在末尾，不补估值。
+  </p>
+</Base>
+
+<script>
+  const table = document.getElementById('trend-table');
+  const tbody = table?.querySelector('tbody');
+  const heads = Array.from(document.querySelectorAll('#trend-table .sortable'));
+
+  heads.forEach((th) => {
+    th.addEventListener('click', () => {
+      const key = th.dataset.key;
+      const dir = th.getAttribute('aria-sort') === 'descending' ? 'ascending' : 'descending';
+      heads.forEach((h) => h.setAttribute('aria-sort', 'none'));
+      th.setAttribute('aria-sort', dir);
+
+      const rows = Array.from(tbody.querySelectorAll('tr'));
+      const val = (tr) => {
+        const raw = tr.dataset[key.toLowerCase()];
+        return key === 'firstSeen' ? raw : Number(raw);
+      };
+      rows
+        .sort((a, b) => {
+          const va = val(a);
+          const vb = val(b);
+          const c = typeof va === 'string' ? va.localeCompare(vb) : va - vb;
+          return dir === 'ascending' ? c : -c;
+        })
+        .forEach((tr) => tbody.appendChild(tr));
+    });
+  });
+</script>

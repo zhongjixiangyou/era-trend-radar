@@ -1,0 +1,74 @@
+---
+import Base from '../layouts/Base.astro';
+import Sparkline from '../components/Sparkline.astro';
+import { allForecasts, trendById, forecastStatusLabel, fmtDate } from '../lib/data';
+import { href } from '../lib/url';
+
+const forecasts = [...allForecasts].sort((a, b) => a.dueBy.localeCompare(b.dueBy));
+---
+
+<Base title="判断追踪" active="forecasts" description="每一条预测都写清提出时间、到期时间、支撑与反证；到期不模糊结论。">
+  <div class="section-head" style="margin-top:34px">
+    <div>
+      <span class="num">判断追踪 / FORECASTS</span>
+      <h2 style="margin-top:6px">{forecasts.length} 条判断在跟踪</h2>
+    </div>
+    <span class="more">到期未验证写「到期未决」</span>
+  </div>
+
+  <p style="max-width:46em;color:var(--ink-2);font-size:14px;line-height:1.85">
+    判断的价值在于可以被推翻。每条判断都保留最初的措辞与置信度，后续变化只追加、不覆盖。到期时不写「基本正确」。
+  </p>
+
+  <div style="margin-top:40px">
+    {forecasts.map((f) => (
+      <section class="forecast">
+        <div style="display:flex;justify-content:space-between;gap:20px;align-items:baseline">
+          <div class="kicker" style="margin-bottom:8px">
+            {forecastStatusLabel[f.status]} · 到期 {fmtDate(f.dueBy)}
+          </div>
+          <div style="color:var(--ink-3);display:flex;align-items:center;gap:10px">
+            {f.history.length > 1 ? (
+              <Sparkline values={f.history.map((h) => h.confidence)} width={90} height={22} />
+            ) : (
+              <span style="font-size:11px;letter-spacing:.06em">未调整</span>
+            )}
+            <span class="mono" style="font-size:12px">置信 {f.confidence}</span>
+          </div>
+        </div>
+
+        <h2 class="fc-claim">{f.claim}</h2>
+        <div class="fc-meta">
+          提出于 {fmtDate(f.madeAt)}
+          {f.trendId && trendById.get(f.trendId) && (
+            <> · 关联趋势 <a href={href(`/trends/${f.trendId}/`)} style="text-decoration:underline;text-underline-offset:3px">{trendById.get(f.trendId)?.title}</a></>
+          )}
+        </div>
+
+        <div class="evidence">
+          <div>
+            <h4>支撑证据</h4>
+            <ul>{f.support.map((s) => <li>{s}</li>)}</ul>
+          </div>
+          <div>
+            <h4>反向证据</h4>
+            <ul>{f.counter.map((s) => <li>{s}</li>)}</ul>
+          </div>
+        </div>
+
+        {f.history.length > 1 && (
+          <div style="margin-top:16px">
+            <h4 style="font-family:var(--sans);font-size:10.5px;letter-spacing:.14em;color:var(--ink-3);font-weight:500;margin:0 0 6px">置信度调整</h4>
+            {f.history.map((h) => (
+              <div style="display:flex;gap:14px;font-size:12px;padding:5px 0;border-bottom:1px solid var(--rule)">
+                <span class="mono" style="color:var(--ink-3);min-width:76px">{fmtDate(h.date)}</span>
+                <span class="mono" style="min-width:32px">{h.confidence}</span>
+                <span style="color:var(--ink-2)">{h.reason}</span>
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
+    ))}
+  </div>
+</Base>

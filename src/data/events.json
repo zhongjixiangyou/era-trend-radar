@@ -1,0 +1,735 @@
+[
+  {
+    "id": "ev-20261110-us-cpi-oct",
+    "title": "美国 10 月 CPI 连续第三个月超预期，12 月加息概率抬升",
+    "date": "2026-11-10",
+    "reportedAt": "2026-11-10",
+    "collectedAt": "2026-11-13",
+    "region": "us",
+    "category": "economy",
+    "summary": "美国劳工统计局公布 10 月 CPI 环比上涨 0.4%，高于预期的 0.3%；核心 CPI 环比 0.3%，同样高于预期的 0.2%。这是通胀数据连续第三个月超出市场预期，市场对 12 月加息 50 个基点的定价明显上升。",
+    "facts": [
+      "10 月 CPI 环比 +0.4%，市场预期 +0.3%",
+      "10 月核心 CPI 环比 +0.3%，市场预期 +0.2%",
+      "连续第三个月通胀数据超出预期"
+    ],
+    "metrics": [
+      {
+        "label": "CPI 环比",
+        "value": "+0.4%",
+        "note": "预期 +0.3%"
+      },
+      {
+        "label": "核心 CPI 环比",
+        "value": "+0.3%",
+        "note": "预期 +0.2%"
+      },
+      {
+        "label": "连续超预期",
+        "value": "3 个月",
+        "note": "9—11 月，12 月加息 50bp 定价上升"
+      }
+    ],
+    "scores": {
+      "structural": 86,
+      "scope": 88,
+      "signal": 76,
+      "novelty": 52,
+      "timeliness": 92,
+      "cross": 72
+    },
+    "credibility": "high",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "美国劳工统计局",
+        "url": "https://www.bls.gov/",
+        "date": "2026-11-10",
+        "official": true
+      },
+      {
+        "name": "光明网转澎湃新闻",
+        "url": "https://m.gmw.cn/2026-11/12/content_1304585356.htm",
+        "date": "2026-11-12"
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr-fed-hike-cycle",
+        "effect": "support",
+        "reason": "连续三个月超预期，坐实加息而非降息的方向"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-14",
+        "title": "9 月 CPI 超预期",
+        "note": "同比 3.7%，环比 0.6%，市场重新定价加息"
+      },
+      {
+        "date": "2026-11-10",
+        "title": "10 月 CPI 公布",
+        "note": "环比 0.4%、核心 0.3%，连续第三个月超预期"
+      },
+      {
+        "date": "2026-11-12",
+        "title": "大行上调路径",
+        "note": "高盛、德意志银行上调 2027 年加息预期"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 79,
+        "reason": "回溯首次评分"
+      }
+    ],
+    "watch": "看 12 月议息会议前的 11 月 CPI 与非农；若核心环比仍 ≥0.3%，加息幅度可能超 25bp。",
+    "backfill": true
+  },
+  {
+    "id": "ev-20261112-wallstreet-fed-hikes",
+    "title": "华尔街大行集体上调美联储加息预期，紧缩周期被拉长",
+    "date": "2026-11-12",
+    "reportedAt": "2026-11-12",
+    "collectedAt": "2026-11-13",
+    "region": "global",
+    "category": "economy",
+    "summary": "在通胀连续超预期后，高盛、德意志银行等机构进一步上调 2027 年的加息路径预期，认为美联储的紧缩周期会比此前假设更长。市场对 12 月加息 50 个基点的押注上升。",
+    "facts": [
+      "高盛、德意志银行上调 2027 年后续加息预期",
+      "机构认为 12 月加息 50 个基点的可能性上升",
+      "美联储加息周期可能较此前预期延长"
+    ],
+    "metrics": [
+      {
+        "label": "上调机构",
+        "value": "高盛、德银等",
+        "note": "公开研报口径"
+      }
+    ],
+    "scores": {
+      "structural": 78,
+      "scope": 82,
+      "signal": 80,
+      "novelty": 48,
+      "timeliness": 90,
+      "cross": 65
+    },
+    "credibility": "high",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "光明网转澎湃新闻",
+        "url": "https://m.gmw.cn/2026-11/12/content_1304585356.htm",
+        "date": "2026-11-12"
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr-fed-hike-cycle",
+        "effect": "support",
+        "reason": "卖方一致预期从降息转向更长加息周期"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "10 月 CPI 公布",
+        "note": "连续第三个月超预期"
+      },
+      {
+        "date": "2026-11-12",
+        "title": "大行上调路径",
+        "note": "紧缩周期延长的判断扩散"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 75,
+        "reason": "回溯首次评分"
+      }
+    ],
+    "watch": "看美元指数与实际利率是否同步上行；若金融条件快速收紧，美联储内部可能出现分歧。",
+    "backfill": true
+  },
+  {
+    "id": "ev-20261112-smic-q3",
+    "title": "中芯国际三季度净利同比增 87.6%，产能利用率回到 97.3%",
+    "date": "2026-11-12",
+    "reportedAt": "2026-11-12",
+    "collectedAt": "2026-11-13",
+    "region": "china",
+    "category": "industry",
+    "summary": "中芯国际发布 2026 年三季报：前三季度营收 606.18 亿元，同比增长 22.4%；净利润 73.14 亿元，同比增长 91.6%。第三季度单季营收 219.83 亿元，同比增长 28.1%；毛利率 29.9%，产能利用率 97.3%。",
+    "facts": [
+      "前三季度营收 606.18 亿元，同比 +22.4%",
+      "前三季度净利 73.14 亿元，同比 +91.6%",
+      "Q3 单季营收 219.83 亿元，同比 +28.1%",
+      "Q3 毛利率 29.9%，产能利用率 97.3%"
+    ],
+    "metrics": [
+      {
+        "label": "Q3 营收",
+        "value": "219.83 亿元",
+        "note": "同比 +28.1%"
+      },
+      {
+        "label": "Q3 净利",
+        "value": "28.47 亿元",
+        "note": "同比 +87.6%"
+      },
+      {
+        "label": "产能利用率",
+        "value": "97.3%",
+        "note": "接近满载"
+      },
+      {
+        "label": "毛利率",
+        "value": "29.9%",
+        "note": "Q3 单季"
+      }
+    ],
+    "scores": {
+      "structural": 78,
+      "scope": 65,
+      "signal": 82,
+      "novelty": 58,
+      "timeliness": 90,
+      "cross": 60
+    },
+    "credibility": "high",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "中芯国际投资者关系",
+        "url": "https://www.smics.com/",
+        "date": "2026-11-12",
+        "official": true
+      },
+      {
+        "name": "新华财经",
+        "url": "https://www.cnfin.com/",
+        "date": "2026-11-12"
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr-china-semiconductor-capacity",
+        "effect": "support",
+        "reason": "满产与毛利率回升同时出现，验证利用率摊薄折旧"
+      },
+      {
+        "id": "tr-cn-profit-recovery",
+        "effect": "support",
+        "reason": "净利增速远高于营收增速，属于利润修复的强样本"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-12",
+        "title": "三季报发布",
+        "note": "营收与净利均超市场预期"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 73,
+        "reason": "回溯首次评分"
+      }
+    ],
+    "watch": "看四季度资本开支与成熟制程价格能否维持；若利用率回落，毛利率的改善可能是一次性的。",
+    "backfill": true
+  },
+  {
+    "id": "ev-20261112-nebius-capex",
+    "title": "Nebius 资本开支升至 270 亿美元，ARR 目标延期，股价盘前跌逾 14%",
+    "date": "2026-11-12",
+    "reportedAt": "2026-11-12",
+    "collectedAt": "2026-11-13",
+    "region": "us",
+    "category": "technology",
+    "summary": "Nebius 在第三季度将资本开支指引上调至 270 亿美元，同时把年度经常性收入（ARR）目标的达成时间推后。市场担心算力投入与收入兑现之间的缺口扩大，股价盘前下跌超过 14%。",
+    "facts": [
+      "资本开支指引上调至 270 亿美元",
+      "ARR 目标达成时间推迟",
+      "财报发布后股价盘前跌逾 14%"
+    ],
+    "metrics": [
+      {
+        "label": "资本开支指引",
+        "value": "270 亿美元",
+        "note": "上调"
+      },
+      {
+        "label": "盘前跌幅",
+        "value": "逾 14%",
+        "note": "市场对兑现节奏投票"
+      }
+    ],
+    "scores": {
+      "structural": 74,
+      "scope": 60,
+      "signal": 85,
+      "novelty": 66,
+      "timeliness": 90,
+      "cross": 62
+    },
+    "credibility": "high",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "Nebius 投资者关系",
+        "url": "https://nebius.com/investor-relations",
+        "date": "2026-11-12",
+        "official": true
+      },
+      {
+        "name": "华尔街见闻",
+        "url": "https://wallstreetcn.com/",
+        "date": "2026-11-12"
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr-ai-capex-supply-chain",
+        "effect": "challenge",
+        "reason": "资本开支继续抬升，但收入兑现延期，直接挑战'投入会变成订单'的斜率"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-12",
+        "title": "Q3 财报",
+        "note": "上调资本开支、推迟 ARR 目标"
+      },
+      {
+        "date": "2026-11-12",
+        "title": "盘前交易",
+        "note": "股价跌逾 14%"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 73,
+        "reason": "回溯首次评分"
+      }
+    ],
+    "watch": "看四季度折旧与融资成本对利润表的冲击；若同业跟随上调资本开支，板块估值会先于业绩调整。",
+    "backfill": true
+  },
+  {
+    "id": "ev-20261104-sse-q3-earnings",
+    "title": "沪市三季报：营收增 3.8%、净利增 6.0%，806 家公司营收利润同步提升",
+    "date": "2026-11-04",
+    "reportedAt": "2026-11-04",
+    "collectedAt": "2026-11-13",
+    "region": "china",
+    "category": "economy",
+    "summary": "沪市 2317 家上市公司完成三季报披露：合计营收 39.07 万亿元，同比增长 3.8%；合计净利润 4.01 万亿元，同比增长 6.0%。806 家公司营收与利润同步提升，441 家净利润增速超过 50%。",
+    "facts": [
+      "2317 家公司合计营收 39.07 万亿元，同比 +3.8%",
+      "合计净利 4.01 万亿元，同比 +6.0%",
+      "806 家营收利润同步提升，441 家净利增速超 50%"
+    ],
+    "metrics": [
+      {
+        "label": "营收增速",
+        "value": "+3.8%",
+        "note": "39.07 万亿元"
+      },
+      {
+        "label": "净利增速",
+        "value": "+6.0%",
+        "note": "4.01 万亿元"
+      },
+      {
+        "label": "双增公司",
+        "value": "806 家",
+        "note": "营收利润同步提升"
+      }
+    ],
+    "scores": {
+      "structural": 72,
+      "scope": 80,
+      "signal": 74,
+      "novelty": 50,
+      "timeliness": 78,
+      "cross": 55
+    },
+    "credibility": "high",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "经济参考报",
+        "url": "http://jjckb.xinhuanet.com/",
+        "date": "2026-11-04"
+      },
+      {
+        "name": "上海证券交易所",
+        "url": "https://www.sse.com.cn/",
+        "date": "2026-11-04",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr-cn-profit-recovery",
+        "effect": "support",
+        "reason": "净利增速高于营收增速，上市公司层面同向验证"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-04",
+        "title": "三季报披露收官",
+        "note": "2317 家公司完成披露"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 70,
+        "reason": "回溯首次评分"
+      }
+    ],
+    "watch": "看四季度净利增速能否维持高于营收增速；若不能，利润修复可能只是低基数效应。",
+    "backfill": true
+  },
+  {
+    "id": "ev-20261027-cn-industrial-profit",
+    "title": "1—9 月规上工业企业利润同比增长 15.5%",
+    "date": "2026-10-27",
+    "reportedAt": "2026-10-27",
+    "collectedAt": "2026-11-13",
+    "region": "china",
+    "category": "economy",
+    "summary": "国家统计局数据显示，2026 年 1—9 月全国规模以上工业企业利润同比增长 15.5%，增速明显高于同期营收，单位成本下降与价格因素改善是主要支撑。",
+    "facts": [
+      "1—9 月规上工业企业利润同比 +15.5%",
+      "利润增速高于营收增速"
+    ],
+    "metrics": [
+      {
+        "label": "利润增速",
+        "value": "+15.5%",
+        "note": "1—9 月累计"
+      }
+    ],
+    "scores": {
+      "structural": 70,
+      "scope": 75,
+      "signal": 68,
+      "novelty": 45,
+      "timeliness": 75,
+      "cross": 45
+    },
+    "credibility": "high",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "国家统计局",
+        "url": "https://www.stats.gov.cn/",
+        "date": "2026-10-27",
+        "official": true
+      },
+      {
+        "name": "人民网",
+        "url": "http://finance.people.com.cn/",
+        "date": "2026-10-27"
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr-cn-profit-recovery",
+        "effect": "support",
+        "reason": "利润增速连续高于营收，构成趋势的主证据"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "统计局公布",
+        "note": "1—9 月利润同比 +15.5%"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 65,
+        "reason": "回溯首次评分"
+      }
+    ],
+    "watch": "看 10—12 月基数抬升后增速是否回落；若回落幅度小，说明改善来自利润率而非基数。",
+    "backfill": true
+  },
+  {
+    "id": "ev-20261019-cn-gdp-q3",
+    "title": "中国前三季度 GDP 超 107 万亿元，同比增长 4.6%",
+    "date": "2026-10-19",
+    "reportedAt": "2026-10-19",
+    "collectedAt": "2026-11-13",
+    "region": "china",
+    "category": "economy",
+    "summary": "国家统计局公布，2026 年前三季度国内生产总值超过 107 万亿元，同比增长 4.6%；规模以上工业增加值同比增长 5.3%，服务业增加值增速快于整体。",
+    "facts": [
+      "前三季度 GDP 超 107 万亿元，同比 +4.6%",
+      "规模以上工业增加值同比 +5.3%"
+    ],
+    "metrics": [
+      {
+        "label": "GDP 同比",
+        "value": "+4.6%",
+        "note": "前三季度"
+      },
+      {
+        "label": "工业增加值",
+        "value": "+5.3%",
+        "note": "前三季度"
+      }
+    ],
+    "scores": {
+      "structural": 88,
+      "scope": 92,
+      "signal": 70,
+      "novelty": 35,
+      "timeliness": 80,
+      "cross": 60
+    },
+    "credibility": "high",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "国家统计局",
+        "url": "https://www.stats.gov.cn/",
+        "date": "2026-10-19",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr-cn-profit-recovery",
+        "effect": "support",
+        "reason": "总量增长为利润修复提供需求底座，但增速仍偏温和"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-19",
+        "title": "统计局发布会",
+        "note": "前三季度 GDP 同比 +4.6%"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 74,
+        "reason": "回溯首次评分"
+      }
+    ],
+    "watch": "看四季度能否完成全年目标；若政策加码，关注投向是消费还是投资。",
+    "backfill": true
+  },
+  {
+    "id": "ev-20261026-humanoid-mass-production",
+    "title": "人形机器人喊出年产 10 万台，供应链成为量产瓶颈",
+    "date": "2026-10-26",
+    "reportedAt": "2026-10-26",
+    "collectedAt": "2026-11-13",
+    "region": "china",
+    "category": "technology",
+    "summary": "2026 年被业界称为人形机器人「量产元年」，多家整机厂把年产量目标指向 10 万台。但企业普遍反映，从实验室样机到工厂批量下线之间，减速器、灵巧手与一致性交付仍是瓶颈。",
+    "facts": [
+      "行业年产量目标指向 10 万台",
+      "企业反映样机到批量下线仍有难度",
+      "核心零部件与一致性交付是主要约束"
+    ],
+    "metrics": [
+      {
+        "label": "行业年产量目标",
+        "value": "10 万台",
+        "note": "整机厂规划口径"
+      }
+    ],
+    "scores": {
+      "structural": 76,
+      "scope": 70,
+      "signal": 84,
+      "novelty": 62,
+      "timeliness": 82,
+      "cross": 65
+    },
+    "credibility": "high",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "央视财经 / 中国日报网",
+        "url": "http://caijing.chinadaily.com.cn/a/202610/26/WS6adeeeb9e4b09a165c7917fa.html",
+        "date": "2026-10-26"
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr-humanoid-mass-production",
+        "effect": "support",
+        "reason": "需求与产能规划同时抬升，趋势成立；瓶颈信息构成对'10 万台'的削弱"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "央视财经报道",
+        "note": "量产元年，年产量冲刺 10 万台"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 74,
+        "reason": "回溯首次评分"
+      }
+    ],
+    "watch": "看四季度实际下线量与零部件交期；若交期缩短，10 万台目标的可信度上升。",
+    "backfill": true
+  },
+  {
+    "id": "ev-20261029-agibot-revenue",
+    "title": "智元机器人等企业收入快速增长，人形机器人需求侧得到验证",
+    "date": "2026-10-29",
+    "reportedAt": "2026-10-29",
+    "collectedAt": "2026-11-13",
+    "region": "china",
+    "category": "technology",
+    "summary": "据《环球时报》报道，智元机器人等中国人形机器人企业收入快速增长，商用场景从展示扩展到工厂、商超与文旅。需求侧的验证强于此前市场预期。",
+    "facts": [
+      "智元机器人等企业收入快速增长",
+      "商用场景扩展到工厂、商超与文旅"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 65,
+      "scope": 55,
+      "signal": 78,
+      "novelty": 60,
+      "timeliness": 80,
+      "cross": 55
+    },
+    "credibility": "medium",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "Global Times",
+        "url": "https://www.globaltimes.cn/page/202610/1373258.shtml",
+        "date": "2026-10-29"
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr-humanoid-mass-production",
+        "effect": "support",
+        "reason": "需求侧收入增长，削弱'只有产能没有订单'的质疑"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "媒体报道",
+        "note": "多家整机厂收入快速增长"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 65,
+        "reason": "回溯首次评分"
+      }
+    ],
+    "watch": "看收入是来自一次性政府项目还是可持续的工业复购；前者不能支撑量产叙事。",
+    "backfill": true
+  },
+  {
+    "id": "ev-20261014-us-cpi-sept",
+    "title": "美国 9 月 CPI 同比升至 3.7%，降息叙事首次被打断",
+    "date": "2026-10-14",
+    "reportedAt": "2026-10-14",
+    "collectedAt": "2026-11-13",
+    "region": "us",
+    "category": "economy",
+    "summary": "美国 9 月 CPI 同比上涨 3.7%，高于 8 月的 3.4% 和市场预期的 3.6%；环比上涨 0.6%，为五个月来最大月度涨幅。汽油价格环比飙升 9.1%，约贡献整体涨幅的一半。市场对 10 月加息的概率升至约 44%。",
+    "facts": [
+      "9 月 CPI 同比 +3.7%，预期 +3.6%",
+      "环比 +0.6%，五个月来最大",
+      "汽油价格环比 +9.1%，贡献约一半涨幅"
+    ],
+    "metrics": [
+      {
+        "label": "CPI 同比",
+        "value": "+3.7%",
+        "note": "前值 +3.4%"
+      },
+      {
+        "label": "CPI 环比",
+        "value": "+0.6%",
+        "note": "五个月最大"
+      },
+      {
+        "label": "10 月加息概率",
+        "value": "约 44%",
+        "note": "数据公布后"
+      }
+    ],
+    "scores": {
+      "structural": 85,
+      "scope": 88,
+      "signal": 72,
+      "novelty": 40,
+      "timeliness": 85,
+      "cross": 70
+    },
+    "credibility": "high",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "新华财经",
+        "url": "https://www.cnfin.com/yw-lb/detail/20261014/4480910_1.html",
+        "date": "2026-10-14"
+      },
+      {
+        "name": "财联社",
+        "url": "https://www.cls.cn/detail/2504926",
+        "date": "2026-10-14"
+      },
+      {
+        "name": "财新网",
+        "url": "https://international.caixin.com/2026-10-15/102493486.html",
+        "date": "2026-10-15"
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr-fed-hike-cycle",
+        "effect": "support",
+        "reason": "首次打断降息叙事，趋势的起点事件"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-14",
+        "title": "9 月 CPI 公布",
+        "note": "同比 3.7%，环比 0.6%"
+      }
+    ],
+    "scoreHistory": [
+      {
+        "date": "2026-11-13",
+        "total": 75,
+        "reason": "回溯首次评分"
+      }
+    ],
+    "watch": "当时市场仍在讨论'一次性的能源冲击'；后续两个月的连续超预期证伪了这一解释。",
+    "backfill": true
+  }
+]

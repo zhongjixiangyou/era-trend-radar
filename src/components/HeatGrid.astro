@@ -1,0 +1,31 @@
+---
+interface Props {
+  months: { key: string; label: string }[];
+  rows: { label: string; cells: { key: string; count: number }[] }[];
+  hot?: number;
+}
+
+const { months, rows, hot = 3 } = Astro.props;
+---
+
+<div class="heat" style={`grid-template-columns: 96px repeat(${months.length}, minmax(0, 1fr))`}>
+  <div></div>
+  {months.map((m) => <div class="heat-head">{m.label}</div>)}
+  {rows.map((r) => (
+    <>
+      <div class="heat-label">{r.label}</div>
+      {r.cells.map((c) => (
+        <div
+          class={`heat-cell${c.count >= hot ? ' hot' : c.count > 0 ? ' on' : ''}`}
+          title={`${r.label} · ${c.key}：${c.count} 条`}
+        >
+          {c.count > 0 ? c.count : ''}
+        </div>
+      ))}
+    </>
+  ))}
+</div>
+<div class="heat-legend">
+  <span>少</span><i></i><i class="on"></i><i class="hot"></i><span>多</span>
+  <span style="margin-left:14px">空档 = 回溯研究尚未覆盖</span>
+</div>
