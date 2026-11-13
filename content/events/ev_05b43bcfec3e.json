@@ -18,7 +18,7 @@
       "title": "Mississippi elects first black senator in nearly 150 years",
       "publisher": "Al Jazeera",
       "publishedAt": "2026-11-13T11:21:25+08:00",
-      "type": "primary"
+      "type": "corroboration"
     }
   ],
   "scores": {
@@ -43,12 +43,12 @@
     "level": "partial",
     "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
   },
-  "evidenceGrade": "single_primary",
+  "evidenceGrade": "secondary_only",
   "verification": {
-    "status": "passed",
+    "status": "not_started",
     "method": "rss+http/title-match",
     "checkedAt": "2026-11-13T15:39:54+08:00",
-    "note": "原文可达，标题片段「mississippie」在页面中出现",
+    "note": "RSS 标题匹配只证明链接可达与标题一致，不构成原文核验；按一手核验口径退回 pending，待抓取一手来源正文逐项核对后提升。",
     "checks": [
       {
         "kind": "source_text",
@@ -57,7 +57,7 @@
       }
     ]
   },
-  "status": "published",
+  "status": "pending",
   "trendLinks": [
     {
       "trendId": "tr_cn-industrial-margin-repair",
@@ -65,7 +65,13 @@
       "reason": "关键词命中：PPI（规则关联，非人工判定）"
     }
   ],
-  "revisions": [],
+  "revisions": [
+    {
+      "at": "2026-11-13T15:52:00+08:00",
+      "by": "Coder 二组",
+      "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+    }
+  ],
   "forecastRefs": [],
   "retro": {
     "isRetro": false

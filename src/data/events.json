@@ -1817,19 +1817,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "中国新闻网",
         "url": "https://www.chinanews.com.cn/ty/2026/11-13/10731472.shtml",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -1871,19 +1877,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "中国新闻网",
         "url": "https://www.chinanews.com.cn/cul/2026/11-13/10731471.shtml",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -1925,19 +1937,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "中国新闻网",
         "url": "https://www.chinanews.com.cn/jk/2026/11-13/10731505.shtml",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -1979,19 +1997,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "中国新闻网",
         "url": "https://www.chinanews.com.cn/gn/2026/11-13/10731504.shtml",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -2033,19 +2057,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "中国新闻网",
         "url": "https://www.chinanews.com.cn/ydyl/2026/11-13/10731470.shtml",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -2087,19 +2117,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "中国新闻网",
         "url": "https://www.chinanews.com.cn/gj/2026/11-13/10731477.shtml",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -2141,19 +2177,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "中国新闻网",
         "url": "https://www.chinanews.com.cn/tp/2026/11-13/10731483.shtml",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -2195,19 +2237,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "中国新闻网",
         "url": "https://www.chinanews.com.cn/gn/2026/11-13/10731503.shtml",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -2249,19 +2297,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "中国新闻网",
         "url": "https://www.chinanews.com.cn/cj/2026/11-13/10731469.shtml",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -2303,19 +2357,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "中国新闻网",
         "url": "http://www.chinanews.com.cn/tp/hd2011/2026/11-13/1210704.shtml",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -2357,15 +2417,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "中国新闻网",
         "url": "https://www.chinanews.com.cn/gj/2026/11-13/10731499.shtml",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -2375,7 +2435,13 @@
         "reason": "关键词命中：战争（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -2417,19 +2483,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "中国新闻网",
         "url": "https://www.chinanews.com.cn/tp/2026/11-13/10731481.shtml",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -2471,19 +2543,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Al Jazeera",
         "url": "https://www.aljazeera.com/opinions/2026/11/13/the-real-winner-in-polands-constitutional-battle-is-putin?traffic_source=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -2525,19 +2603,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "中国新闻网",
         "url": "https://www.chinanews.com.cn/gn/2026/11-13/10731487.shtml",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -2579,19 +2663,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "中国新闻网",
         "url": "https://www.chinanews.com.cn/sh/2026/11-13/10731475.shtml",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -2633,19 +2723,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "中国新闻网",
         "url": "https://www.chinanews.com.cn/sh/2026/11-13/10731418.shtml",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -2741,19 +2837,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "中国新闻网",
         "url": "https://www.chinanews.com.cn/gn/2026/11-13/10731490.shtml",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -2795,19 +2897,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "中国新闻网",
         "url": "https://www.chinanews.com.cn/edu/2026/11-13/10731474.shtml",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -2849,15 +2957,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "中国新闻网",
         "url": "https://www.chinanews.com.cn/cj/2026/11-13/10731468.shtml",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -2867,7 +2975,13 @@
         "reason": "关键词命中：气候（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -2909,15 +3023,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Al Jazeera",
         "url": "https://www.aljazeera.com/opinions/2026/11/13/the-gulf-must-build-security-that-can-outlast-this-war?traffic_source=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -2927,7 +3041,13 @@
         "reason": "关键词命中：war（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -2969,19 +3089,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "中国新闻网",
         "url": "https://www.chinanews.com.cn/dwq/2026/11-13/10731476.shtml",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -3023,19 +3149,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "中国新闻网",
         "url": "https://www.chinanews.com.cn/gn/2026/11-13/10731488.shtml",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -3077,19 +3209,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "中国新闻网",
         "url": "https://www.chinanews.com.cn/sh/2026/11-13/10731478.shtml",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -3131,19 +3269,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "中国新闻网",
         "url": "https://www.chinanews.com.cn/ydyl/2026/11-13/10731467.shtml",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -3185,19 +3329,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "中国新闻网",
         "url": "https://www.chinanews.com.cn/sh/2026/11-13/10731486.shtml",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -3239,19 +3389,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "中国新闻网",
         "url": "https://www.chinanews.com.cn/cj/2026/11-13/10731479.shtml",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -3293,19 +3449,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "中国新闻网",
         "url": "https://www.chinanews.com.cn/cj/2026/11-13/10731480.shtml",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -3347,19 +3509,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "中国新闻网",
         "url": "https://www.chinanews.com.cn/sh/2026/11-13/10731482.shtml",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -3461,19 +3629,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "中国新闻网",
         "url": "https://www.chinanews.com.cn/sh/2026/11-13/10731485.shtml",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -3515,19 +3689,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Al Jazeera",
         "url": "https://www.aljazeera.com/sports/2026/11/13/jessica-pegula-coco-gauff-united-states-wta-finals-tennis?traffic_source=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -3569,19 +3749,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "中国新闻网",
         "url": "https://www.chinanews.com.cn/jk/2026/11-13/10731473.shtml",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -3623,15 +3809,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "中国新闻网",
         "url": "https://www.chinanews.com.cn/sh/2026/11-13/10731450.shtml",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -3641,7 +3827,13 @@
         "reason": "关键词命中：气候（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -3748,19 +3940,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Al Jazeera",
         "url": "https://www.aljazeera.com/news/2026/11/13/us-reports-record-number-of-deportations-and-arrests-in-2026?traffic_source=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -3856,15 +4054,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Al Jazeera",
         "url": "https://www.aljazeera.com/sports/2026/11/13/pat-cummins-australia-usman-khawaja-sandpapergate-test-south-africa?traffic_source=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -3874,7 +4072,13 @@
         "reason": "关键词命中：AI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -4144,15 +4348,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Al Jazeera",
         "url": "https://www.aljazeera.com/sports/2026/11/13/harry-kane-england-appearance-record-126-croatia-nations-league-quarterfinals?traffic_source=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -4162,7 +4366,13 @@
         "reason": "关键词命中：AI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -4318,15 +4528,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Al Jazeera",
         "url": "https://www.aljazeera.com/news/2026/11/13/burkina-fasos-rival-armed-groups-turn-on-each-other-as-state-loses-ground?traffic_source=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -4336,7 +4546,13 @@
         "reason": "关键词命中：AI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -4438,15 +4654,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Al Jazeera",
         "url": "https://www.aljazeera.com/video/newsfeed/2026/11/13/aje-onl-nf_pope-leo-meets-clergy-abuse-survivors-in-peru-121126?traffic_source=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -4456,7 +4672,13 @@
         "reason": "关键词命中：AI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -4623,15 +4845,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Al Jazeera",
         "url": "https://www.aljazeera.com/features/2026/11/13/unrwa-funding-cuts-deepen-hardship-for-palestinian-refugees-in-lebanon?traffic_source=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -4641,7 +4863,13 @@
         "reason": "关键词命中：war（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -4683,15 +4911,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Al Jazeera",
         "url": "https://www.aljazeera.com/news/2026/11/13/iranophobia-netanyahus-bid-to-transform-fear-into-political-survival?traffic_source=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -4701,7 +4929,13 @@
         "reason": "关键词命中：war（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -4803,19 +5037,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Al Jazeera",
         "url": "https://www.aljazeera.com/news/2026/11/13/from-ocean-legend-to-undersea-reef-why-has-the-ss-united-states-been-sunk?traffic_source=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -4911,19 +5151,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Al Jazeera",
         "url": "https://www.aljazeera.com/video/newsfeed/2026/11/13/talarico-appeals-to-trumps-legacy-in-bid-for-bipartisan-reforms?traffic_source=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -4965,15 +5211,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Al Jazeera",
         "url": "https://www.aljazeera.com/news/2026/11/13/who-is-us-senator-chris-van-hollen?traffic_source=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -4983,7 +5229,13 @@
         "reason": "关键词命中：war（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -5144,15 +5396,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Al Jazeera",
         "url": "https://www.aljazeera.com/video/newsfeed/2026/11/13/aje-onl-nf_us-envoys-shuttle-between-putin-and-zelenskyy-121126?traffic_source=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -5162,7 +5414,13 @@
         "reason": "关键词命中：AI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -5394,15 +5652,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/articles/cmq5vd1wdgz6o?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -5417,7 +5675,13 @@
         "reason": "关键词命中：EV（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -5573,15 +5837,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Al Jazeera",
         "url": "https://www.aljazeera.com/video/newsfeed/2026/11/13/mississippi-elects-first-black-senator-in-nearly-150-years?traffic_source=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -5591,7 +5855,13 @@
         "reason": "关键词命中：PPI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -5633,15 +5903,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Al Jazeera",
         "url": "https://www.aljazeera.com/news/2026/11/13/iran-says-it-struck-us-radar-site-in-bahrain?traffic_source=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -5651,7 +5921,13 @@
         "reason": "关键词命中：AI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -5693,19 +5969,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Al Jazeera",
         "url": "https://www.aljazeera.com/video/newsfeed/2026/11/13/gaza-surgeon-films-aftermath-of-israeli-strike?traffic_source=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -5747,19 +6029,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/articles/ckregjwr7njqo?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -5801,19 +6089,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Al Jazeera",
         "url": "https://www.aljazeera.com/news/2026/11/13/spanish-court-suspends-far-right-group-over-alleged-hate-crimes?traffic_source=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -5855,19 +6149,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/articles/cqdj1ellpd70o?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -5909,19 +6209,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Al Jazeera",
         "url": "https://www.aljazeera.com/news/2026/11/13/chris-van-hollen-to-run-for-us-senate-majority-leader?traffic_source=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -5963,15 +6269,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Al Jazeera",
         "url": "https://www.aljazeera.com/news/2026/11/13/finland-detects-strike-on-russian-warship-as-zelenskyy-meets-us-envoys?traffic_source=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -5986,7 +6292,13 @@
         "reason": "关键词命中：war（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -6082,15 +6394,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Al Jazeera",
         "url": "https://www.aljazeera.com/news/2026/11/13/trump-moots-toppling-cuba-authorities-before-leaving-office?traffic_source=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -6100,7 +6412,13 @@
         "reason": "关键词命中：AI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -6392,15 +6710,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/articles/ckn80j9jv3jxo?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -6415,7 +6733,13 @@
         "reason": "关键词命中：EV（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -6457,19 +6781,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Al Jazeera",
         "url": "https://www.aljazeera.com/news/2026/11/13/after-iraq-ex-mps-killing-lebanon-asks-syria-to-extradite-suspects?traffic_source=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -6511,19 +6841,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Al Jazeera",
         "url": "https://www.aljazeera.com/news/2026/11/13/albanias-pm-says-2027-nato-summit-will-not-be-held-in-tirana?traffic_source=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -7145,15 +7481,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/articles/cm3egjgvp794o?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -7168,7 +7504,13 @@
         "reason": "关键词命中：war（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -7210,15 +7552,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Al Jazeera",
         "url": "https://www.aljazeera.com/news/liveblog/2026/11/13/iran-war-live-riyadh-china-discuss-houthis-as-group-claims-aramco-attacks?traffic_source=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -7233,7 +7575,13 @@
         "reason": "关键词命中：war（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -7335,15 +7683,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Al Jazeera",
         "url": "https://www.aljazeera.com/news/2026/11/12/yemens-houthis-renew-strikes-on-saudi-arabia-as-unsc-extends-sanctions?traffic_source=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -7353,7 +7701,13 @@
         "reason": "关键词命中：sanctions（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -7395,19 +7749,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/videos/cv5y1309dg3go?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -7694,15 +8054,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Ars Technica",
         "url": "https://arstechnica.com/health/2026/11/in-reversal-american-cancer-society-urges-prostate-cancer-tests-for-all-men/",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -7712,7 +8072,13 @@
         "reason": "关键词命中：EV（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -7944,19 +8310,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "TechCrunch",
         "url": "https://techcrunch.com/2026/11/12/democrats-launch-nvidia-investigation-write-scathing-letter-on-huangs-scheme-with-trump/",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -8123,15 +8495,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Ars Technica",
         "url": "https://arstechnica.com/ai/2026/11/faa-expands-ai-advice-to-manage-air-traffic-congestion-across-entire-us-airspace/",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -8146,7 +8518,13 @@
         "reason": "关键词命中：space（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -8188,15 +8566,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "TechCrunch",
         "url": "https://techcrunch.com/2026/11/12/muse-can-now-place-calls-to-u-s-businesses-if-you-pay/",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -8206,7 +8584,13 @@
         "reason": "关键词命中：AI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -8551,15 +8935,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "MarketWatch",
         "url": "https://www.marketwatch.com/story/am-i-overpaying-for-health-insurance-how-to-answer-the-key-question-this-open-enrollment-season-2d00ed55?mod=mw_rss_topstories",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -8569,7 +8953,13 @@
         "reason": "关键词命中：health（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -8665,15 +9055,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "TechCrunch",
         "url": "https://techcrunch.com/2026/11/12/nvidia-ceo-jensen-huangs-affair-with-alleged-chinese-spy-a-timeline/",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -8683,7 +9073,13 @@
         "reason": "关键词命中：AI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -8790,15 +9186,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/articles/cmy0enrkwkklo?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -8813,7 +9209,13 @@
         "reason": "关键词命中：war（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -8855,15 +9257,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "TechCrunch",
         "url": "https://techcrunch.com/2026/11/12/nebius-tests-the-neocloud-playbook-with-40-billion-in-planned-spending/",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -8878,7 +9280,13 @@
         "reason": "关键词命中：EV（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -9267,15 +9675,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "TechCrunch",
         "url": "https://techcrunch.com/2026/11/12/jensen-huang-was-having-a-third-affair-reuters-reports/",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -9285,7 +9693,13 @@
         "reason": "关键词命中：AI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -9447,15 +9861,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/articles/cmn0d33zz34zo?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -9470,7 +9884,13 @@
         "reason": "关键词命中：war（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -9512,15 +9932,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Ars Technica",
         "url": "https://arstechnica.com/gadgets/2026/11/ars-live-can-the-cloud-survive-drone-strikes-on-data-centers/",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -9530,7 +9950,13 @@
         "reason": "关键词命中：data center（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -9572,15 +9998,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Ars Technica",
         "url": "https://arstechnica.com/gaming/2026/11/the-elder-scrolls-most-obscure-adventure-gets-a-4k-pc-makeover/",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -9590,7 +10016,13 @@
         "reason": "关键词命中：AI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -9632,15 +10064,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/videos/cmdx1r99kp9wo?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -9650,7 +10082,13 @@
         "reason": "关键词命中：AI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -9692,15 +10130,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "TechCrunch",
         "url": "https://techcrunch.com/2026/11/12/googles-latest-search-upgrade-promises-better-answers-to-your-most-complicated-questions/",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -9715,7 +10153,13 @@
         "reason": "关键词命中：EV（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -9757,19 +10201,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Ars Technica",
         "url": "https://arstechnica.com/google/2026/11/google-rolls-out-gemini-4-hydrogen-finally-replacing-3-8-flash/",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -9811,15 +10261,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/articles/cr894w453e90o?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -9829,7 +10279,13 @@
         "reason": "关键词命中：EV（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -9871,15 +10327,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "TechCrunch",
         "url": "https://techcrunch.com/2026/11/12/nectar-launches-an-ai-agent-to-automate-creator-discovery-and-outreach-for-brands/",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -9889,7 +10345,13 @@
         "reason": "关键词命中：AI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -9931,15 +10393,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Ars Technica",
         "url": "https://arstechnica.com/tech-policy/2026/11/ukraine-says-spacex-starshield-is-restricted-again-spacex-claims-it-isnt/",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -9949,7 +10411,13 @@
         "reason": "关键词命中：AI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -10051,15 +10519,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "TechCrunch",
         "url": "https://techcrunch.com/2026/11/12/microsofts-outlook-email-hit-by-new-outage/",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -10069,7 +10537,13 @@
         "reason": "关键词命中：AI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -10111,15 +10585,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Ars Technica",
         "url": "https://arstechnica.com/tech-policy/2026/11/families-fight-to-keep-googles-disturbing-ai-off-school-issued-chromebooks/",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -10129,7 +10603,13 @@
         "reason": "关键词命中：AI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -10171,15 +10651,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/articles/cmvg2r3dq7xno?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -10189,7 +10669,13 @@
         "reason": "关键词命中：war（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -10231,15 +10717,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "TechCrunch",
         "url": "https://techcrunch.com/2026/11/12/jensen-huangs-exit-puts-nvidias-support-for-open-source-in-question/",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -10249,7 +10735,13 @@
         "reason": "关键词命中：AI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -10291,15 +10783,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Ars Technica",
         "url": "https://arstechnica.com/culture/2026/11/netflix-releases-new-trailer-for-ray-gunn/",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -10309,7 +10801,13 @@
         "reason": "关键词命中：AI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -10405,15 +10903,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Ars Technica",
         "url": "https://arstechnica.com/space/2026/11/building-a-rocket-is-hard-ast-spacemobile-thinks-its-simple/",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -10423,7 +10921,13 @@
         "reason": "关键词命中：space（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -10465,15 +10969,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Ars Technica",
         "url": "https://arstechnica.com/health/2026/11/mans-secret-use-of-synthetic-testosterone-for-cows-nearly-destroyed-his-heart/",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -10483,7 +10987,13 @@
         "reason": "关键词命中：war（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -10650,15 +11160,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "TechCrunch",
         "url": "https://techcrunch.com/2026/11/12/hugging-face-ceo-vows-to-keep-fighting-for-open-source-ai-after-jensen-huangs-exit/",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -10668,7 +11178,13 @@
         "reason": "关键词命中：AI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -10764,19 +11280,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Ars Technica",
         "url": "https://arstechnica.com/science/2026/11/the-amazing-disappearing-exoplanet/",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -10818,15 +11340,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "TechCrunch",
         "url": "https://techcrunch.com/2026/11/12/united-airlines-blocks-ai-agents-from-booking-flights-citing-cybersecurity-risks/",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -10836,7 +11358,13 @@
         "reason": "关键词命中：AI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -10878,19 +11406,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/articles/cmze750zg0jeo?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -10932,15 +11466,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "TechCrunch",
         "url": "https://techcrunch.com/2026/11/12/softbanks-billion-dollar-loss-may-have-put-a-cap-on-ais-natural-gas-ambitions/",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -10950,7 +11484,13 @@
         "reason": "关键词命中：AI、data center、power（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -10992,15 +11532,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "TechCrunch",
         "url": "https://techcrunch.com/2026/11/12/phota-labs-uses-ai-to-turn-everyday-photos-into-professional-looking-shots/",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -11015,7 +11555,13 @@
         "reason": "关键词命中：EV（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -11057,15 +11603,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/articles/ckzd9p7e4eqeo?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -11080,7 +11626,13 @@
         "reason": "关键词命中：war（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -11122,15 +11674,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "TechCrunch",
         "url": "https://techcrunch.com/2026/11/12/jensen-huang-agrees-to-testify-before-congress/",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -11140,7 +11692,13 @@
         "reason": "关键词命中：AI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -11182,15 +11740,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "TechCrunch",
         "url": "https://techcrunch.com/2026/11/12/five-ways-jensen-huangs-ouster-from-nvidia-could-damage-the-ai-industry/",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -11200,7 +11758,13 @@
         "reason": "关键词命中：AI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -11242,15 +11806,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "TechCrunch",
         "url": "https://techcrunch.com/2026/11/12/trump-floats-apple-chairman-tim-cook-as-jensen-huangs-successor/",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -11260,7 +11824,13 @@
         "reason": "关键词命中：AI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -11302,19 +11872,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "TechCrunch",
         "url": "https://techcrunch.com/2026/11/12/whoop-just-launched-a-social-network/",
         "date": "2026-11-13",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-13",
@@ -11356,19 +11932,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "TechCrunch",
         "url": "https://techcrunch.com/2026/11/12/jensen-huang-is-out-at-nvidia-who-is-colette-kress-his-interim-replacement/",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -11410,15 +11992,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "NPR World",
         "url": "https://www.npr.org/2026/11/12/nx-s1-6038809/us-envoys-meet-putin-russia-ukraine-war-talks",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -11433,7 +12015,13 @@
         "reason": "关键词命中：EV（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -11475,15 +12063,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/articles/cx98757ymm6zo?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -11498,7 +12086,13 @@
         "reason": "关键词命中：war（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -11540,15 +12134,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "TechCrunch",
         "url": "https://techcrunch.com/2026/11/12/norwest-pushes-deeper-into-ai-with-new-4b-fund/",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -11558,7 +12152,13 @@
         "reason": "关键词命中：AI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -11600,15 +12200,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "TechCrunch",
         "url": "https://techcrunch.com/2026/11/12/cyberattack-on-fireworks-ai-allowed-hackers-to-access-notion-customers-chat-transcripts/",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -11618,7 +12218,13 @@
         "reason": "关键词命中：AI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -11725,15 +12331,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Ars Technica",
         "url": "https://arstechnica.com/google/2026/11/google-pushes-privacy-angle-as-gemini-powered-smartglasses-debut-starting-at-395/",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -11748,7 +12354,13 @@
         "reason": "关键词命中：war（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -12077,19 +12689,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "NPR World",
         "url": "https://www.npr.org/2026/11/12/g-s1-153190/indonesias-vp-resigns-as-his-eligibility-and-academic-credentials-are-questioned",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -12251,15 +12869,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/articles/cmde1y19g19do?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -12269,7 +12887,13 @@
         "reason": "关键词命中：PPI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -12371,15 +12995,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Ars Technica",
         "url": "https://arstechnica.com/gadgets/2026/11/ceo-jensen-huangs-job-is-suddenly-on-the-line-at-nvidia/",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -12389,7 +13013,13 @@
         "reason": "关键词命中：AI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -12431,19 +13061,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Ars Technica",
         "url": "https://arstechnica.com/gadgets/2026/11/hundreds-of-streaming-services-and-nothing-to-watch/",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -12485,15 +13121,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/articles/crgj3v3z10dno?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -12503,7 +13139,13 @@
         "reason": "关键词命中：AI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -12545,15 +13187,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/videos/cm93rp3gxn6qo?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -12563,7 +13205,13 @@
         "reason": "关键词命中：AI、power（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -12605,15 +13253,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/articles/cw7vppyr80eeo?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -12623,7 +13271,13 @@
         "reason": "关键词命中：PPI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -12665,15 +13319,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "NPR World",
         "url": "https://www.npr.org/2026/11/12/g-s1-153171/up-first-newsletter-scott-colom-trump-democrats-ukraine-russia",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -12688,7 +13342,13 @@
         "reason": "关键词命中：war（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -12730,15 +13390,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Ars Technica",
         "url": "https://arstechnica.com/features/2026/11/review-apples-m6-imac-is-pricey-but-its-still-a-good-choice-for-a-clean-desk/",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -12748,7 +13408,13 @@
         "reason": "关键词命中：EV（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -12790,15 +13456,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/articles/c8kgkw7dr5rko?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -12808,7 +13474,13 @@
         "reason": "关键词命中：EV（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -12964,15 +13636,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "NPR World",
         "url": "https://www.npr.org/2026/11/12/nx-s1-6037759/ukraine-ex-foreign-minister",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -12982,7 +13654,13 @@
         "reason": "关键词命中：AI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -13024,15 +13702,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "NPR World",
         "url": "https://www.npr.org/2026/11/12/nx-s1-6037526/former-u-s-ambassador-william-taylor-discusses-the-latest-russia-ukraine-talks",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -13042,7 +13720,13 @@
         "reason": "关键词命中：AI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -13084,15 +13768,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "NPR World",
         "url": "https://www.npr.org/2026/11/12/nx-s1-6037558/u-s-officials-set-to-meet-with-putin-zelenskyy-following-abu-dhabi-peace-talks",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -13102,7 +13786,13 @@
         "reason": "关键词命中：AI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -13144,15 +13834,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "NPR World",
         "url": "https://www.npr.org/2026/11/12/nx-s1-6026458/drought-threatens-iraqs-marshes-risking-one-of-the-oldest-ways-of-life",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -13162,7 +13852,13 @@
         "reason": "关键词命中：EV（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -13204,15 +13900,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "NPR World",
         "url": "https://www.npr.org/2026/11/12/nx-s1-6035686/aid-groups-call-on-israel-to-allow-shelters-in-gaza-amid-a-humanitarian-emergency",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -13222,7 +13918,13 @@
         "reason": "关键词命中：AI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -13264,15 +13966,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "NPR World",
         "url": "https://www.npr.org/2026/11/12/nx-s1-6038339/israeli-strike-gaza-hospital",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -13282,7 +13984,13 @@
         "reason": "关键词命中：AI（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -13324,19 +14032,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/articles/cmvgxgz87qqro?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -13443,19 +14157,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/articles/ck9d71wyn7wwo?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -13665,19 +14385,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/articles/c3x298n87rn2o?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -13833,15 +14559,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/articles/ckvg25zmppglo?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -13856,7 +14582,13 @@
         "reason": "关键词命中：EV（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -13952,15 +14684,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/articles/cwvg25nypmrvo?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -13975,7 +14707,13 @@
         "reason": "关键词命中：housing（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -14017,19 +14755,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/videos/ck5y132yq1ymo?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -14191,19 +14935,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Ars Technica",
         "url": "https://arstechnica.com/tech-policy/2026/11/t-mobile-illegally-imposed-50-gb-cap-on-low-income-home-internet-plan-ny-says/",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -14245,15 +14995,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Ars Technica",
         "url": "https://arstechnica.com/space/2026/11/anduril-demos-night-vision-sensor-for-tracking-satellites-in-darkness/",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -14263,7 +15013,13 @@
         "reason": "关键词命中：satellite（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -14359,15 +15115,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Ars Technica",
         "url": "https://arstechnica.com/space/2026/11/nasa-takes-an-all-hands-on-deck-approach-in-its-return-to-the-moon/",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -14377,7 +15133,13 @@
         "reason": "关键词命中：space、NASA（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -14419,19 +15181,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/articles/cwz0k79pr8z2o?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -14473,15 +15241,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Ars Technica",
         "url": "https://arstechnica.com/ai/2026/11/taiwans-chipmaking-giant-tsmc-to-invest-1b-in-anthropic-openai/",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -14496,7 +15264,13 @@
         "reason": "关键词命中：OpenAI、Anthropic（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -14538,19 +15312,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/articles/c8e391xzg6z2o?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -14592,19 +15372,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "Ars Technica",
         "url": "https://arstechnica.com/tech-policy/2026/11/trump-admin-loses-fight-to-spy-on-random-journalists-linkedin-dms/",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -14826,19 +15612,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "NPR World",
         "url": "https://www.npr.org/2026/11/11/g-s1-150228/senegal-youth-olympic-games-breakdancing",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -14880,15 +15672,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/articles/cqr7gr0010r2o?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-12",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -14898,7 +15690,13 @@
         "reason": "关键词命中：EV（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-12",
@@ -15135,19 +15933,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/articles/c933gn6710lyo?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-11",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-11",
@@ -15243,19 +16047,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/articles/cwg5r8zrm11mo?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-11",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-11",
@@ -15297,15 +16107,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/articles/cwe9kzv0g0v7o?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-11",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -15315,7 +16125,13 @@
         "reason": "关键词命中：war（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-11",
@@ -15482,19 +16298,25 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/videos/cm894wg251pzo?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-11",
-        "official": true
+        "official": false
       }
     ],
     "trends": [],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-11",
@@ -15720,15 +16542,15 @@
         "crossDomain": "单一类别为主"
       }
     },
-    "credibility": "medium",
-    "evidenceGrade": "single_primary",
-    "status": "confirmed",
+    "credibility": "low",
+    "evidenceGrade": "secondary_only",
+    "status": "pending",
     "sources": [
       {
         "name": "BBC World",
         "url": "https://www.bbc.co.uk/news/articles/c8wy9y37z30vo?at_medium=RSS&at_campaign=rss",
         "date": "2026-11-11",
-        "official": true
+        "official": false
       }
     ],
     "trends": [
@@ -15743,7 +16565,13 @@
         "reason": "关键词命中：war（规则关联，非人工判定）"
       }
     ],
-    "timeline": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "修订",
+        "note": "批量 RSS 放行不符合「官方原文逐项核对」口径：来源为媒体转述、核验方式为标题匹配，状态由 published 退回 pending，来源类型改为 corroboration。"
+      }
+    ],
     "scoreHistory": [
       {
         "date": "2026-11-11",
