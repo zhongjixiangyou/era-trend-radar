@@ -17,8 +17,9 @@ on:
       - ".github/workflows/deploy.yml"
   workflow_run:
     # GITHUB_TOKEN 产生的 push 不会再触发本工作流（GitHub 规则），
-    # 所以采集/分析跑完后必须靠 workflow_run 接棒，否则提交了也不会部署。
-    workflows: ["ERA analyze", "ERA collect"]
+    # 所以采集跑完后必须靠 workflow_run 接棒，否则提交了也不会部署。
+    # 2026-11-15：ERA analyze 已删除（分析改由本机每周一执行，不再调用任何外部模型 API）。
+    workflows: ["ERA collect"]
     types: [completed]
   workflow_dispatch:
 
