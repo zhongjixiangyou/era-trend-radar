@@ -1,0 +1,84 @@
+{
+  "id": "ev_97b91a267137",
+  "dedupeKey": "ev:089fc4fbc729",
+  "title": "吴清：进一步深化市场稳定长效机制研究，防范市场异常波动",
+  "summary": "证监会主席吴清在参加2026中国资本市场学术年会时表示，进一步深化市场稳定长效机制研究，中国资本市场从未像今天这样与全球资本市场高度联动、传导共振。面对高度不确定的外部环境和输入性风险，需要我们加强对全球资本市场周期变化、资产定价逻辑演变、",
+  "facts": [
+    "证监会主席吴清在参加2026中国资本市场学术年会时表示，进一步深化市场稳定长效机制研究，中国资本市场从未像今天这样与全球资本市场高度联动、传导共振。面对高度不确定的外部环境和输入性风险，需要我们加强对全球资本市场周期变化、资产定价逻辑演变、"
+  ],
+  "analysis": "科技与社会口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "科技与社会",
+  "region": "中国",
+  "occurredAt": "2026-11-14T05:06:12+00:00",
+  "firstReportedAt": "2026-11-14T05:06:12+00:00",
+  "collectedAt": "2026-11-14T05:06:12+00:00",
+  "sources": [
+    {
+      "url": "https://36kr.com/newsflashes/4069079944975497?f=rss",
+      "title": "吴清：进一步深化市场稳定长效机制研究，防范市场异常波动",
+      "publisher": "36氪",
+      "publishedAt": "2026-11-14T05:06:12+00:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 12,
+    "scope": 16,
+    "signal": 8,
+    "delta": 5,
+    "timeliness": 4,
+    "crossDomain": 3,
+    "total": 48,
+    "rationale": {
+      "structural": "科技与社会类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（中国）",
+      "signal": "命中 0 个信号词",
+      "delta": "命中 0 个变化词",
+      "timeliness": "距采集约 30 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "pending",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-14T05:06:12+00:00",
+    "note": "原文可达但未匹配到标题片段「吴清进一步深化市场稳定长」",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "unknown",
+        "evidence": "原文可达但未匹配到标题片段「吴清进一步深化市场稳定长」"
+      }
+    ]
+  },
+  "status": "pending",
+  "trendLinks": [],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-14T05:06:12+00:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 12,
+        "scope": 16,
+        "signal": 8,
+        "delta": 5,
+        "timeliness": 4,
+        "crossDomain": 3,
+        "total": 48
+      }
+    }
+  ],
+  "linkHistory": []
+}

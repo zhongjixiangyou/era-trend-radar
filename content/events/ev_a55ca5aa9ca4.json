@@ -1,0 +1,95 @@
+{
+  "id": "ev_a55ca5aa9ca4",
+  "dedupeKey": "ev:4667237cb2fa",
+  "title": "Anthropic’s Amodei ‘not super fussed’ about market turmoil ahead of IPO",
+  "summary": "AI lab’s chief executive brushes off tech stock turbulence less than a week before planned $1.5tn listing",
+  "facts": [
+    "AI lab’s chief executive brushes off tech stock turbulence less than a week before planned $1.5tn listing"
+  ],
+  "analysis": "全球宏观口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "全球宏观",
+  "region": "全球",
+  "occurredAt": "2026-11-14T03:41:26+08:00",
+  "firstReportedAt": "2026-11-14T03:41:26+08:00",
+  "collectedAt": "2026-11-14T05:06:12+00:00",
+  "sources": [
+    {
+      "url": "https://www.ft.com/content/4b7b83d7-7fea-4ce2-bfe3-4f2cf75b1d82?syn-25a6b1a6=1",
+      "title": "Anthropic’s Amodei ‘not super fussed’ about market turmoil ahead of IPO",
+      "publisher": "Financial Times",
+      "publishedAt": "2026-11-14T03:41:26+08:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 18,
+    "scope": 16,
+    "signal": 11,
+    "delta": 5,
+    "timeliness": 4,
+    "crossDomain": 3,
+    "total": 57,
+    "rationale": {
+      "structural": "全球宏观类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（全球）",
+      "signal": "命中 1 个信号词：AI",
+      "delta": "命中 0 个变化词",
+      "timeliness": "距采集约 30 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "pending",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-14T05:06:12+00:00",
+    "note": "取原文失败：HTTPError",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "unknown",
+        "evidence": "取原文失败：HTTPError"
+      }
+    ]
+  },
+  "status": "pending",
+  "trendLinks": [
+    {
+      "trendId": "tr_ai-power-constraint",
+      "direction": "support",
+      "reason": "关键词命中：AI（规则关联，非人工判定）"
+    },
+    {
+      "trendId": "tr_ai-platform-expansion",
+      "direction": "support",
+      "reason": "关键词命中：Anthropic（规则关联，非人工判定）"
+    }
+  ],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-14T03:41:26+08:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 18,
+        "scope": 16,
+        "signal": 11,
+        "delta": 5,
+        "timeliness": 4,
+        "crossDomain": 3,
+        "total": 57
+      }
+    }
+  ],
+  "linkHistory": []
+}

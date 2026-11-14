@@ -1,0 +1,84 @@
+{
+  "id": "ev_96cdcbe83b95",
+  "dedupeKey": "ev:07cea90d7dc6",
+  "title": "百万级CAR-T抗癌药首次纳入基本医保，患者自付降至10万元以内",
+  "summary": "在2026创新药高质量发展大会上，最新版国家医保药品目录及商保创新药目录同步公布。据记者获悉，新版基本医保目录中，有2款创新药由此前首版商保创新药目录转入基本医保，体现“医保+商保”双目录协同衔接的进一步深化。其中，百万级CAR-T抗癌疗法",
+  "facts": [
+    "在2026创新药高质量发展大会上，最新版国家医保药品目录及商保创新药目录同步公布。据记者获悉，新版基本医保目录中，有2款创新药由此前首版商保创新药目录转入基本医保，体现“医保+商保”双目录协同衔接的进一步深化。其中，百万级CAR-T抗癌疗法"
+  ],
+  "analysis": "科技与社会口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "科技与社会",
+  "region": "中国",
+  "occurredAt": "2026-11-14T05:06:12+00:00",
+  "firstReportedAt": "2026-11-14T05:06:12+00:00",
+  "collectedAt": "2026-11-14T05:06:12+00:00",
+  "sources": [
+    {
+      "url": "https://36kr.com/newsflashes/4069026187154307?f=rss",
+      "title": "百万级CAR-T抗癌药首次纳入基本医保，患者自付降至10万元以内",
+      "publisher": "36氪",
+      "publishedAt": "2026-11-14T05:06:12+00:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 12,
+    "scope": 16,
+    "signal": 8,
+    "delta": 9,
+    "timeliness": 4,
+    "crossDomain": 3,
+    "total": 52,
+    "rationale": {
+      "structural": "科技与社会类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（中国）",
+      "signal": "命中 0 个信号词",
+      "delta": "命中 1 个变化词：首次",
+      "timeliness": "距采集约 30 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "pending",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-14T05:06:12+00:00",
+    "note": "原文可达但未匹配到标题片段「百万级cart抗癌药首次」",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "unknown",
+        "evidence": "原文可达但未匹配到标题片段「百万级cart抗癌药首次」"
+      }
+    ]
+  },
+  "status": "pending",
+  "trendLinks": [],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-14T05:06:12+00:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 12,
+        "scope": 16,
+        "signal": 8,
+        "delta": 9,
+        "timeliness": 4,
+        "crossDomain": 3,
+        "total": 52
+      }
+    }
+  ],
+  "linkHistory": []
+}

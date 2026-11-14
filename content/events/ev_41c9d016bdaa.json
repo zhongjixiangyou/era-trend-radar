@@ -1,0 +1,90 @@
+{
+  "id": "ev_41c9d016bdaa",
+  "dedupeKey": "ev:e05b27b8b361",
+  "title": "2026年版国家基本医保药品目录发布，新增107种药品",
+  "summary": "国家医疗保障局、人力资源社会保障部今天（14日）发布《国家基本医疗保险、生育保险和工伤保险药品目录》以及《商业健康保险创新药品目录》（2026年），这是国家医保局成立以来开展的第9次国家基本医保药品目录调整，本次调整共新增107种药品，其中",
+  "facts": [
+    "国家医疗保障局、人力资源社会保障部今天（14日）发布《国家基本医疗保险、生育保险和工伤保险药品目录》以及《商业健康保险创新药品目录》（2026年），这是国家医保局成立以来开展的第9次国家基本医保药品目录调整，本次调整共新增107种药品，其中"
+  ],
+  "analysis": "科技与社会口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "科技与社会",
+  "region": "中国",
+  "occurredAt": "2026-11-14T05:06:12+00:00",
+  "firstReportedAt": "2026-11-14T05:06:12+00:00",
+  "collectedAt": "2026-11-14T05:06:12+00:00",
+  "sources": [
+    {
+      "url": "https://36kr.com/newsflashes/4069006049350530?f=rss",
+      "title": "2026年版国家基本医保药品目录发布，新增107种药品",
+      "publisher": "36氪",
+      "publishedAt": "2026-11-14T05:06:12+00:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 12,
+    "scope": 16,
+    "signal": 8,
+    "delta": 5,
+    "timeliness": 4,
+    "crossDomain": 3,
+    "total": 48,
+    "rationale": {
+      "structural": "科技与社会类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（中国）",
+      "signal": "命中 0 个信号词",
+      "delta": "命中 0 个变化词",
+      "timeliness": "距采集约 30 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "pending",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-14T05:06:12+00:00",
+    "note": "原文可达但未匹配到标题片段「2026年版国家基本医保」",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "unknown",
+        "evidence": "原文可达但未匹配到标题片段「2026年版国家基本医保」"
+      }
+    ]
+  },
+  "status": "pending",
+  "trendLinks": [
+    {
+      "trendId": "tr_health-translation",
+      "direction": "support",
+      "reason": "关键词命中：医疗（规则关联，非人工判定）"
+    }
+  ],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-14T05:06:12+00:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 12,
+        "scope": 16,
+        "signal": 8,
+        "delta": 5,
+        "timeliness": 4,
+        "crossDomain": 3,
+        "total": 48
+      }
+    }
+  ],
+  "linkHistory": []
+}

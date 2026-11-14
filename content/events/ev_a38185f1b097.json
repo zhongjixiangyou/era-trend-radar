@@ -1,0 +1,90 @@
+{
+  "id": "ev_a38185f1b097",
+  "dedupeKey": "ev:951d76211135",
+  "title": "金价一周跌去4.6%",
+  "summary": "截至周五收盘，纽约商品交易所12月交割的黄金期价收于每盎司3886.30美元，较前一交易日上涨0.03%，本周金价累计跌幅超4.6%。国际金价持续走弱，主要是市场担忧美国通胀具备黏性，同时预期美联储可能进一步收紧货币政策，推动美元走强、美债",
+  "facts": [
+    "截至周五收盘，纽约商品交易所12月交割的黄金期价收于每盎司3886.30美元，较前一交易日上涨0.03%，本周金价累计跌幅超4.6%。国际金价持续走弱，主要是市场担忧美国通胀具备黏性，同时预期美联储可能进一步收紧货币政策，推动美元走强、美债"
+  ],
+  "analysis": "科技与社会口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "科技与社会",
+  "region": "中国",
+  "occurredAt": "2026-11-14T05:06:12+00:00",
+  "firstReportedAt": "2026-11-14T05:06:12+00:00",
+  "collectedAt": "2026-11-14T05:06:12+00:00",
+  "sources": [
+    {
+      "url": "https://36kr.com/newsflashes/4069040028537731?f=rss",
+      "title": "金价一周跌去4.6%",
+      "publisher": "36氪",
+      "publishedAt": "2026-11-14T05:06:12+00:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 12,
+    "scope": 16,
+    "signal": 11,
+    "delta": 5,
+    "timeliness": 4,
+    "crossDomain": 3,
+    "total": 51,
+    "rationale": {
+      "structural": "科技与社会类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（中国）",
+      "signal": "命中 1 个信号词：通胀",
+      "delta": "命中 0 个变化词",
+      "timeliness": "距采集约 30 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "pending",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-14T05:06:12+00:00",
+    "note": "原文可达但未匹配到标题片段「金价一周跌去」",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "unknown",
+        "evidence": "原文可达但未匹配到标题片段「金价一周跌去」"
+      }
+    ]
+  },
+  "status": "pending",
+  "trendLinks": [
+    {
+      "trendId": "tr_global-rates-rehike",
+      "direction": "support",
+      "reason": "关键词命中：美联储（规则关联，非人工判定）"
+    }
+  ],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-14T05:06:12+00:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 12,
+        "scope": 16,
+        "signal": 11,
+        "delta": 5,
+        "timeliness": 4,
+        "crossDomain": 3,
+        "total": 51
+      }
+    }
+  ],
+  "linkHistory": []
+}
