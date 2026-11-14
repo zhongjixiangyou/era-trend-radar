@@ -1,27 +1,28 @@
 {
   "site": "ERA · 时代趋势雷达",
-  "generatedAt": "2026-11-14T12:46:45+08:00",
+  "generatedAt": "2026-11-14T13:12:35+08:00",
   "window": {
     "from": "2026-05-19",
     "to": "2026-11-14",
     "mode": "rolling",
     "days": 180,
-    "asOf": "2026-11-14T12:46:45+08:00"
+    "asOf": "2026-11-14T13:12:35+08:00",
+    "asOfSource": "run_time"
   },
   "coverage": {
     "firstEvent": "2026-05-20",
-    "lastEvent": "2026-11-13"
+    "lastEvent": "2026-11-14"
   },
   "counts": {
-    "events": 347,
+    "events": 553,
     "trends": 17,
     "forecasts": 2,
-    "published": 68,
-    "pending": 279
+    "published": 191,
+    "pending": 362
   },
   "preview": {
-    "published": 68,
-    "pending": 279
+    "published": 191,
+    "pending": 362
   },
   "mode": "preview",
   "dataSource": "content/ → export_astro.py（v1）",

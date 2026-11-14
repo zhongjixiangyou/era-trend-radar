@@ -283,6 +283,10 @@ class Window:
         }
         if self.mode == "fixed" and self.frozen_at:
             meta["frozenAt"] = self.frozen_at
+        else:
+            # 滚动窗口的 asOf 天生是「运行时刻」：门禁比对派生层时要把它当非确定字段，
+            # 否则每次 deploy 用新时钟重算都会和仓库里的投影差一个时间戳，恒判漂移。
+            meta["asOfSource"] = "run_time"
         return meta
 
     def as_report(self) -> dict:
