@@ -859,10 +859,14 @@ def group_g() -> None:
     d1 = write_fixture("bookkeeping_ok", [bk_event("ev_qa_bk_ok", before)])
     p1 = validate_on(d1, ["--as-of", AS_OF])
     j1 = as_json(p1.stdout) or {}
+    # 口径更新（2026-11-14，随 WINDOW_BOOKKEEPING_FUTURE 一起改）：
+    # 簿记时间不再判负，但 collectedAt > upper 会出 warning 作为「窗口钳制失效」的可观测信号，
+    # 所以本条从「无 findings」放宽为「无 error，允许 WINDOW_BOOKKEEPING_FUTURE warning」。
+    _errs1 = by_level(j1, "error")
     cmp("G1", "G", "簿记时间（collectedAt/firstReportedAt/scoreHistory.at/revisions.at/checkedAt）晚于 asOf 3 分钟 → 必须通过",
-        "exit0；无 findings",
-        f"exit={p1.returncode} {short(j1)}",
-        p1.returncode == 0 and not findings(j1),
+        "exit0；无 error（允许 WINDOW_BOOKKEEPING_FUTURE warning）",
+        f"exit={p1.returncode} errors={len(_errs1)} {short(j1)}",
+        p1.returncode == 0 and not _errs1,
         "asOf=2026-11-14T12:00，簿记时间=12:03")
 
     d2 = write_fixture("bookkeeping_bad", [bk_event("ev_qa_bk_bad", plus3)])
@@ -941,11 +945,15 @@ print(json.dumps(out))
     h4 = d["h4"]
     w4 = dt.datetime.fromisoformat(h4["wall"])
     c4 = dt.datetime.fromisoformat(h4["collect"])
-    ok4 = abs((c4 - w4).total_seconds()) < 30 and h4["source"] == "clock"
-    cmp("H4", "H", "fixed 无 max-ts：asOf=时钟 → 不钳，仍返回墙钟",
-        "collect.now ≈ 墙钟，asOfSource=clock",
+    # 口径更新（2026-11-14，fixed 钳制目标改为 min(墙钟, asOf, upper)）：
+    # fixed 下 asOf 可以是时钟（11-14），但数据上限是窗止日 23:59:59.999（11-13），
+    # 若按墙钟写 occurredAt 会越过 upper 被判 TS_FUTURE，所以要钳到 upper，而不是不钳。
+    upper4 = dt.datetime.fromisoformat("2026-11-13T23:59:59.999+08:00")
+    ok4 = c4 <= upper4 and h4["source"] == "clock"
+    cmp("H4", "H", "fixed 无 max-ts：asOf=时钟 → 钳到窗口上界（不是墙钟）",
+        "collect.now ≤ 窗止日 23:59:59.999，asOfSource=clock",
         f"as_of={h4['as_of'][:26]} source={h4['source']} collect={h4['collect'][:26]}", ok4,
-        "没有钉死的 asOf 就没有钳制的必要")
+        "fixed 下 asOf 只表示「哪一轮」，钳制目标是数据上限 upper")
 
 
 # --------------------------------------------------------------------------- #

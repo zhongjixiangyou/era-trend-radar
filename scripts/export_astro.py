@@ -507,9 +507,9 @@ def validate_and_normalize_events(
             errors.append(f"{ctx}：title {C.char_len(title)} 字，需在 {TITLE_MIN_CHARS}–{TITLE_MAX_CHARS}")
         if not summary:
             errors.append(f"{ctx}：缺 summary")
-        elif not (SUMMARY_MIN_CHARS <= len(summary) <= SUMMARY_MAX_CHARS):
+        elif not (SUMMARY_MIN_CHARS <= C.char_len(summary) <= SUMMARY_MAX_CHARS):
             errors.append(
-                f"{ctx}：summary {len(summary)} 字，需在 {SUMMARY_MIN_CHARS}–{SUMMARY_MAX_CHARS}"
+                f"{ctx}：summary {C.char_len(summary)} 字，需在 {SUMMARY_MIN_CHARS}–{SUMMARY_MAX_CHARS}"
             )
 
         dedupe_key = as_text(doc.get("dedupeKey")).strip()
@@ -573,13 +573,13 @@ def validate_and_normalize_events(
             stitle = as_text(src.get("title")).strip()
             if not stitle:
                 errors.append(f"{sctx}：缺 title（schema 必填）")
-            elif not (2 <= len(stitle) <= 200):
-                errors.append(f"{sctx}：title {len(stitle)} 字，需在 2–200")
+            elif not (2 <= C.char_len(stitle) <= 200):
+                errors.append(f"{sctx}：title {C.char_len(stitle)} 字，需在 2–200")
             publisher = as_text(src.get("publisher")).strip()
             if not publisher:
                 errors.append(f"{sctx}：缺 publisher（schema 必填）")
-            elif not (2 <= len(publisher) <= 80):
-                errors.append(f"{sctx}：publisher {len(publisher)} 字，需在 2–80")
+            elif not (2 <= C.char_len(publisher) <= 80):
+                errors.append(f"{sctx}：publisher {C.char_len(publisher)} 字，需在 2–80")
             snote = as_text(src.get("note")).strip()
             published_at = parse_time(
                 src.get("publishedAt"), f"{sctx}.publishedAt", errors, allow_none=True
@@ -713,8 +713,8 @@ def validate_and_normalize_events(
             note = as_text(rev.get("note", rev.get("change", ""))).strip()
             if not note:
                 errors.append(f"{ctx}.revisions[{n}]：缺 note（改了什么、为什么）")
-            elif not (4 <= len(note) <= 400):
-                errors.append(f"{ctx}.revisions[{n}]：note {len(note)} 字，需在 4–400")
+            elif not (4 <= C.char_len(note) <= 400):
+                errors.append(f"{ctx}.revisions[{n}]：note {C.char_len(note)} 字，需在 4–400")
             clean_revisions.append(
                 {
                     "at": _iso(at),
@@ -870,8 +870,8 @@ def validate_and_normalize_trends(docs: list[dict], today: date, warnings: list[
             stage_before = as_text(rev.get("stageBefore", rev.get("from", ""))).strip()
             if not note:
                 errors.append(f"{ctx}.revisions[{n}]：状态改动必须写 note（为什么改）")
-            elif not (4 <= len(note) <= 400):
-                errors.append(f"{ctx}.revisions[{n}]：note {len(note)} 字，需在 4–400")
+            elif not (4 <= C.char_len(note) <= 400):
+                errors.append(f"{ctx}.revisions[{n}]：note {C.char_len(note)} 字，需在 4–400")
             if stage_before and stage_before not in TREND_STAGES:
                 errors.append(f"{ctx}.revisions[{n}].stageBefore={stage_before!r} 不是合法 stage")
             item = {"at": _iso(at), "by": as_text(rev.get("by")).strip()[:40], "note": note}
@@ -956,8 +956,8 @@ def validate_and_normalize_forecasts(
         statement = as_text(doc.get("statement")).strip()
         if not statement:
             errors.append(f"{ctx}：缺 statement（要能被判定对错）")
-        elif not (10 <= len(statement) <= 200):
-            errors.append(f"{ctx}.statement {len(statement)} 字，需 10–200 字且能被判定对错")
+        elif not (10 <= C.char_len(statement) <= 200):
+            errors.append(f"{ctx}.statement {C.char_len(statement)} 字，需 10–200 字且能被判定对错")
         rationale = as_text(doc.get("rationale")).strip()
         if not rationale:
             errors.append(f"{ctx}：缺 rationale（判断依据，至少 20 字）")
