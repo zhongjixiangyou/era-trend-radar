@@ -2,7 +2,7 @@
 """ERA 数据层命令行入口（纯标准库，GitHub Actions 可直接跑）。
 
 用法:
-  python3 scripts/cli.py validate [路径...] [--json] [--refs auto|error|warn|skip]
+  python3 scripts/cli.py validate [路径...] [--json] [--refs auto|error|warn|skip] [--as-of ISO]
   python3 scripts/cli.py score    [路径...] [--write] [--json]
   python3 scripts/cli.py dedupe   [路径...] [--json] [--out FILE]
   python3 scripts/cli.py report   [路径...] [--out FILE] [--json]
@@ -33,7 +33,9 @@ def build_parser() -> argparse.ArgumentParser:
     v.add_argument("paths", nargs="*", help="JSON 文件或目录，默认 content/")
     v.add_argument("--json", action="store_true")
     v.add_argument("--refs", choices=["auto", "error", "warn", "skip"], default="auto")
-    v.add_argument("--max-ts", default=None)
+    v.add_argument("--max-ts", default=None, help="数据时间上限（等价 as-of）")
+    v.add_argument("--as-of", dest="as_of", default=None,
+                       help="窗口基准时刻；默认读 ERA_AS_OF，再退 --max-ts/配置/时钟")
     v.add_argument("--baseline", default=None, help="上一版数据目录（无 git 时检查追加性）")
     v.add_argument("--history", choices=["auto", "git", "baseline", "off"], default="auto")
 
@@ -42,7 +44,9 @@ def build_parser() -> argparse.ArgumentParser:
     s.add_argument("--write", action="store_true", help="重算并把 total 写回（先备份 .bak）")
     s.add_argument("--dry-run", action="store_true", help="只报告不写盘")
     s.add_argument("--json", action="store_true")
-    s.add_argument("--max-ts", default=None)
+    s.add_argument("--max-ts", default=None, help="数据时间上限（等价 as-of）")
+    s.add_argument("--as-of", dest="as_of", default=None,
+                       help="窗口基准时刻；默认读 ERA_AS_OF，再退 --max-ts/配置/时钟")
 
     d = sub.add_parser("dedupe", help="去重：dedupeKey / URL / 标题相似度")
     d.add_argument("paths", nargs="*", help="JSON 文件或目录，默认 content/")
@@ -56,8 +60,15 @@ def build_parser() -> argparse.ArgumentParser:
     r.add_argument("paths", nargs="*", help="JSON 文件或目录，默认 content/")
     r.add_argument("--out", default=None, help="输出路径；'-' 表示打印到 stdout")
     r.add_argument("--json", action="store_true")
-    r.add_argument("--max-ts", default=None)
+    r.add_argument("--max-ts", default=None, help="数据时间上限（等价 as-of）")
+    r.add_argument("--as-of", dest="as_of", default=None,
+                       help="窗口基准时刻；默认读 ERA_AS_OF，再退 --max-ts/配置/时钟")
     return p
+
+
+def bootstrap_window(as_of: str | None, max_ts: str | None) -> C.Window:
+    """进程内先定窗口：本进程里后续 max_dt() 都跟着窗口上界走（CI 用 ERA_AS_OF）。"""
+    return C.apply_window(C.load_pipeline_config(), as_of=as_of, max_ts=max_ts)
 
 
 def cmd_validate(args: argparse.Namespace) -> int:
@@ -67,6 +78,8 @@ def cmd_validate(args: argparse.Namespace) -> int:
     argv += ["--refs", args.refs]
     if args.max_ts:
         argv += ["--max-ts", args.max_ts]
+    if args.as_of:
+        argv += ["--as-of", args.as_of]
     if args.baseline:
         argv += ["--baseline", args.baseline]
     argv += ["--history", args.history]
@@ -74,6 +87,7 @@ def cmd_validate(args: argparse.Namespace) -> int:
 
 
 def cmd_score(args: argparse.Namespace) -> int:
+    bootstrap_window(args.as_of, args.max_ts)
     argv = ["apply" if args.write and not args.dry_run else "check", *args.paths]
     if args.dry_run:
         argv.append("--dry-run")
@@ -96,8 +110,7 @@ def cmd_dedupe(args: argparse.Namespace) -> int:
 
 
 def cmd_report(args: argparse.Namespace) -> int:
-    if args.max_ts:
-        C.set_max_ts(args.max_ts)
+    bootstrap_window(args.as_of, args.max_ts)
     paths = args.paths or [str(C.CONTENT_DIR)]
     try:
         records, load_findings, files = C.load_paths(paths)

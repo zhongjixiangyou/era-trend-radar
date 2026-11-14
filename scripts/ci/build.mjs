@@ -5,9 +5,13 @@
 import fs from "node:fs";
 import path from "node:path";
 import { loadConfig, parseArgs, readJson, writeJson, resolvePath, ensureDir, relative, sha256, run } from "./lib/common.mjs";
+import { currentWindow } from "./lib/window.mjs";
 import { emitStatus, exitFor } from "./lib/status.mjs";
 import { entryOf } from "./lib/entry.mjs";
 import { previewState, checkPreviewGuards } from "./lib/preview-guards.mjs";
+
+// 报告/兜底页文案里的窗口：CI 钉好的 ERA_WINDOW_* 优先，否则按配置重算；绝不写死日期。
+const WIN = currentWindow((() => { try { return loadConfig(); } catch { return {}; } })());
 
 // 与 scripts/ci/leakcheck.mjs 同一检测集：events / trends / forecasts 三类的非 published ID。
 // 以前只扫 events，趋势和判断泄漏了也算 healthy。
@@ -101,7 +105,7 @@ function render(cfg, doc) {
     )
     .join("\n");
   const list = trends.map((t) => `<li><strong>${esc(t.name)}</strong> — ${esc(t.firstJudgment?.text || "")}</li>`).join("\n");
-  return `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ERA 趋势雷达</title><style>body{margin:0;font:16px/1.7 -apple-system,system-ui,"PingFang SC",sans-serif;background:#0e1116;color:#e8eaed}main{max-width:820px;margin:0 auto;padding:40px 20px}h1{font-size:26px;letter-spacing:.02em}.card{border:1px solid #26303d;border-radius:12px;padding:18px 20px;margin:16px 0;background:#141922}.meta{color:#8b98a8;font-size:13px}.links span{display:inline-block;margin-right:8px;font-size:12px;color:#7fd1c0}.trends{color:#b9c4d0;font-size:14px}footer{color:#6b7787;font-size:12px;margin-top:32px}</style></head><body><main><h1>ERA 时代趋势雷达</h1><p class="meta">窗口 ${esc(cfg.window.start)} → ${esc(cfg.window.end)} · 生成于 ${esc(doc.generatedAt)} · schema ${esc(cfg.schemaVersion)}</p>${cards}<h2>长期趋势</h2><ul class="trends">${list}</ul><footer>数据校验与四态运行日志见 reports/；本页只渲染 displayedTotal，不重算。</footer></main></body></html>`;
+  return `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ERA 趋势雷达</title><style>body{margin:0;font:16px/1.7 -apple-system,system-ui,"PingFang SC",sans-serif;background:#0e1116;color:#e8eaed}main{max-width:820px;margin:0 auto;padding:40px 20px}h1{font-size:26px;letter-spacing:.02em}.card{border:1px solid #26303d;border-radius:12px;padding:18px 20px;margin:16px 0;background:#141922}.meta{color:#8b98a8;font-size:13px}.links span{display:inline-block;margin-right:8px;font-size:12px;color:#7fd1c0}.trends{color:#b9c4d0;font-size:14px}footer{color:#6b7787;font-size:12px;margin-top:32px}</style></head><body><main><h1>ERA 时代趋势雷达</h1><p class="meta">窗口 ${esc(WIN.from)} → ${esc(WIN.to)} · 生成于 ${esc(doc.generatedAt)} · schema ${esc(cfg.schemaVersion)}</p>${cards}<h2>长期趋势</h2><ul class="trends">${list}</ul><footer>数据校验与四态运行日志见 reports/；本页只渲染 displayedTotal，不重算。</footer></main></body></html>`;
 }
 
 function main() {

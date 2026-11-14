@@ -1234,7 +1234,27 @@ def main(argv=None) -> int:
     parser.add_argument("--content-digest", default="", help="content 树哈希，写进对照表表头（如 c928890acdb8e762）")
     parser.add_argument("--preserve-format", action="store_true", help="写盘时保留基线文件原文，只追加/最小改动（git diff 只出新增）")
     parser.add_argument("--json", dest="as_json", action="store_true", help="机器可读输出（人类提示走 stderr）")
+    parser.add_argument("--legacy-allow", action="store_true",
+                        help="旧旁路专用：允许在 rolling 窗口下运行（默认拒绝，避免写出误导性 meta.window）")
     args = parser.parse_args(argv)
+
+    # 旧旁路护栏：本脚本的窗口是「只增不减」（事件日期 min/max 并进既有 window），
+    # rolling 下会一直留着历史窗口、且不写 mode/asOf，站点 meta 会失真。
+    # 线上链路是 export_astro.py → from-export.mjs，这里直接拒绝，避免被误用。
+    if not args.legacy_allow:
+        cfg_path = Path(__file__).resolve().parent.parent / "pipeline.config.json"
+        try:
+            mode = (json.loads(cfg_path.read_text(encoding="utf-8")).get("window") or {}).get("mode")
+        except (OSError, json.JSONDecodeError, AttributeError):
+            mode = None
+        if mode == "rolling":
+            sys.stderr.write(
+                "[export_site] 拒绝运行：pipeline.config.json 是 rolling 窗口，本脚本（旧旁路）"
+                "不会按 asOf 过滤、也不会写 mode/asOf，会产出失真的 meta.window。\n"
+                "           请用 scripts/export_astro.py（线上链路），"
+                "确实要跑旧旁路请加 --legacy-allow。\n"
+            )
+            return 2
 
     try:
         ctx = build(args)

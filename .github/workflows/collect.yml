@@ -49,6 +49,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      # 一轮只解析一次窗口：asOf 钉进 GITHUB_ENV，后续 collect/promote/validate/export 全部复用，
+      # 避免各步骤各自取 now() 在跨午夜时得到两个「今天」。
+      - name: Resolve window (pin as-of once)
+        run: node scripts/ci/window.mjs --github-env
+
       - name: Collect (config entry)
         continue-on-error: true
         run: node scripts/ci/collect.mjs --report reports/collect.json

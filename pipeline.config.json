@@ -5,12 +5,15 @@
   "pipelineVersion": "0.4.0",
   "timezone": "Asia/Shanghai",
   "window": {
-    "mode": "fixed",
-    "start": "2026-05-13",
-    "end": "2026-11-13",
+    "mode": "rolling",
     "days": 180,
-    "frozenAt": "2026-11-13",
-    "note": "契约窗口冻结到 2026-11-13；到期前必须改成 mode=rolling（近180天）或更新契约，否则新事件全部 EVENT_DATE_OUT_OF_RANGE"
+    "timezone": "Asia/Shanghai",
+    "frozen": {
+      "start": "2026-05-13",
+      "end": "2026-11-13",
+      "frozenAt": "2026-11-13"
+    },
+    "note": "rolling=以 asOf 当天为 to、往前 days 天的滑动窗口（口径见 docs/window-rolling.md）；frozen 只在 mode=fixed 时用来重现 2026-05-13~2026-11-13 的历史结果。"
   },
   "schedule": {
     "collect": [

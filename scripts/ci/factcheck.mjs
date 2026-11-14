@@ -5,6 +5,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { loadConfig, parseArgs, readJson, writeJson, resolvePath, ensureDir, relative, withRetry, mustRun } from "./lib/common.mjs";
 import { emitStatus, exitFor } from "./lib/status.mjs";
+import { currentWindow } from "./lib/window.mjs";
 
 const TOOL = "factcheck";
 
@@ -32,6 +33,7 @@ async function main() {
   const args = parseArgs();
   for (const k of ["data", "fixture", "report"]) if (args[k] === true) process.exit(exitForSafe("usage_error", 2));
   const cfg = loadConfig(args.config || undefined);
+  const WIN = currentWindow(cfg);
   const dataFile = resolvePath(args.data || path.join(cfg.data.dir, cfg.data.file));
   if (!fs.existsSync(dataFile)) {
     const message = `反证检索失败：缺少 ${relative(dataFile)}`;
@@ -51,7 +53,7 @@ async function main() {
       trendId: tr.id,
       name: tr.name,
       query,
-      window: { start: cfg.window.start, end: cfg.window.end },
+      window: { start: WIN.from, end: WIN.to, mode: WIN.mode },
       searchedAt: new Date().toISOString(),
     };
     if (!configured) {
@@ -96,7 +98,7 @@ async function main() {
   const md = [
     `# 反证检索留痕 ${new Date().toISOString().slice(0, 10)}`,
     "",
-    `窗口 ${cfg.window.start} ~ ${cfg.window.end} · 趋势 ${records.length} · 已查 ${records.length - unavailable} · 不可用 ${unavailable} · 未发现 ${empty}`,
+    `窗口 ${WIN.from} ~ ${WIN.to} · 趋势 ${records.length} · 已查 ${records.length - unavailable} · 不可用 ${unavailable} · 未发现 ${empty}`,
     "",
     "| 趋势 | 关键词 | 命中 | 留痕 |",
     "|---|---|---|---|",

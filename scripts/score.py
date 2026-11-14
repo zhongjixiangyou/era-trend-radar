@@ -25,7 +25,10 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("paths", nargs="*", help="JSON 文件或目录，默认 content/")
     p.add_argument("--json", action="store_true")
     p.add_argument("--dry-run", action="store_true", help="apply 时只报告不写盘")
-    p.add_argument("--max-ts", default=None)
+    p.add_argument("--max-ts", default=None, help="数据时间上限（等价 as-of）")
+    p.add_argument("--as-of", dest="as_of", default=None,
+                   help="窗口基准时刻；默认读 ERA_AS_OF，再退 --max-ts/配置/时钟")
+    p.add_argument("--config", default=None, help="pipeline.config.json 路径（默认仓库根）")
     return p
 
 
@@ -47,8 +50,9 @@ def rubric_payload() -> dict:
 
 def run(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
-    if args.max_ts:
-        C.set_max_ts(args.max_ts)
+    # 与 collect/validate/export 同一口径：一次运行只解析一次窗口，不在这里自己定上限。
+    C.apply_window(C.load_pipeline_config(getattr(args, "config", None)),
+                   as_of=getattr(args, "as_of", None), max_ts=args.max_ts)
 
     if args.action == "rubric":
         payload = rubric_payload()

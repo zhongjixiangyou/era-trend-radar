@@ -2,6 +2,7 @@
 // 单文件数据模型：content/data.json = { schemaVersion, scoringVersion, events[], trends[] }
 // 只用标准库；validate.mjs / test-validate.mjs / analyze.mjs 共用。
 import { dateOnly } from "./common.mjs";
+import { resolveWindow as resolveSharedWindow } from "./window.mjs";
 
 export const DIRECTIONS = ["支持", "削弱", "挑战"];
 
@@ -31,19 +32,22 @@ const isStr = (v) => typeof v === "string" && v.trim().length > 0;
 const isInt = (v) => typeof v === "number" && Number.isInteger(v);
 const deep = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
-/** 窗口解析：fixed = 契约冻结窗口；rolling = 近 N 天（按 Asia/Shanghai 计日）。
- * 滚动窗口用于避免 end 写死后新事件全部越界。 */
-export function resolveWindow(config, now = new Date()) {
-  const w = config?.window || {};
-  const dayOf = (d) => d.toLocaleDateString("sv-SE", { timeZone: "Asia/Shanghai" });
-  if (w.mode === "rolling") {
-    const days = Number(w.days || 180);
-    const end = dayOf(now);
-    const endMs = Date.parse(`${end}T00:00:00Z`);
-    const start = new Date(endMs - (days - 1) * 86400000).toISOString().slice(0, 10);
-    return { mode: "rolling", start, end, days };
-  }
-  return { mode: "fixed", start: w.start, end: w.end, frozenAt: w.frozenAt || w.end };
+/** 窗口：不再自己算，统一走 ./window.mjs（契约 docs/window-rolling.md）。
+ * 这里只把字段名适配成校验器用的 start/end，asOf 优先级（--as-of/ERA_AS_OF > --max-ts/ERA_MAX_TS > 时钟）
+ * 与 collect/validate/export 完全一致，不会跨午夜出现两个「今天」。 */
+export function resolveWindow(config, now) {
+  const w = resolveSharedWindow(config, now ? { now } : {});
+  return {
+    mode: w.mode,
+    start: w.from,
+    end: w.to,
+    days: w.days,
+    upper: w.upper,
+    asOf: w.asOf,
+    asOfSource: w.asOfSource,
+    asOfFrom: w.asOfFrom,
+    ...(w.frozenAt ? { frozenAt: w.frozenAt } : {}),
+  };
 }
 
 function parseDate(v) {
@@ -214,8 +218,11 @@ function checkDates(ev, config, p, errors, warnings, win) {
     }
     parsed[f] = d;
     const day = dateOnly(raw);
-    if (day < win.start || day > win.end) {
-      errors.push({ code: "EVENT_DATE_OUT_OF_RANGE", path: `${p}.dates.${f}`, message: `${day} 超出 ${win.start} ~ ${win.end}（${win.mode}）` });
+    // 契约：窗口外旧记录只提示（历史保留、只是不展示）；上界之后才是错。
+    if (day < win.start) {
+      warnings.push({ code: "EVENT_DATE_OUT_OF_RANGE", path: `${p}.dates.${f}`, message: `${day} 早于窗口 ${win.start}（${win.mode}，历史保留、不展示）` });
+    } else if (day > win.end) {
+      errors.push({ code: "EVENT_DATE_OUT_OF_RANGE", path: `${p}.dates.${f}`, message: `${day} 晚于窗口 ${win.end}（${win.mode}）` });
     }
   }
   if (parsed.occurred && parsed.collected && parsed.occurred > parsed.collected) {

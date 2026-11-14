@@ -22,7 +22,9 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--json", action="store_true", help="输出机器可读 JSON")
     p.add_argument("--refs", choices=["auto", "error", "warn", "skip"], default="auto",
                    help="跨记录引用检查：auto=多文件按错误、单文件按警告（默认）")
-    p.add_argument("--max-ts", default=None, help=f"数据时间上限，默认 {C.MAX_TS_DEFAULT}")
+    p.add_argument("--as-of", default=None,
+                   help="窗口基准时刻（ISO 8601，默认读 ERA_AS_OF，再退到 --max-ts/配置/时钟）")
+    p.add_argument("--max-ts", default=None, help=f"数据时间上限（等价 as-of）；默认 {C.MAX_TS_DEFAULT}")
     p.add_argument("--baseline", default=None, help="上一版数据目录（没有 git 时用它检查追加性）")
     p.add_argument("--history", choices=["auto", "git", "baseline", "off"], default="auto",
                    help="追加历史检查：auto=有 git 用 HEAD、给了 --baseline 用目录（默认），off=关闭")
@@ -32,8 +34,8 @@ def build_parser() -> argparse.ArgumentParser:
 
 def run(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
-    if args.max_ts:
-        C.set_max_ts(args.max_ts)
+    # 一次运行只解析一次窗口；--as-of/ERA_AS_OF > --max-ts/ERA_MAX_TS > 配置 > 时钟
+    win = C.apply_window(C.load_pipeline_config(), as_of=args.as_of, max_ts=args.max_ts)
 
     paths = args.paths or [str(C.CONTENT_DIR)]
     try:
@@ -55,7 +57,8 @@ def run(argv: list[str] | None = None) -> int:
         stats = payload["stats"]
         print(f"ERA validate · {C.SCHEMA_VERSION} · {stats['files']} 文件 · "
               f"{stats['records']} 记录（event {stats['events']} / trend {stats['trends']} / forecast {stats['forecasts']}）")
-        print(f"数据时间上限 {stats['maxTs']}")
+        print(f"窗口 {win.from_str} → {win.to_str}（{win.mode}，asOf {C.fmt_ts(win.as_of)} via {win.as_of_source}/{win.as_of_from}）"
+              f" · 数据时间上限 {stats['maxTs']}")
         print("-" * 72)
         C.print_findings(ctx, args.limit)
         print("-" * 72)

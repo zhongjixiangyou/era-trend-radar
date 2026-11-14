@@ -1,0 +1,84 @@
+{
+ "id": "ev_qa_edge_0030",
+ "dedupeKey": "ev:qa-ev-qa-edge-0030",
+ "title": "QA 窗口边界用例 ev_qa_edge_0030",
+ "summary": "Van Hollen&#039;s leadership drive follows Democratic sweeps in elections and challenges veteran leader Schumer.",
+ "facts": [
+  "Van Hollen&#039;s leadership drive follows Democratic sweeps in elections and challenges veteran leader Schumer."
+ ],
+ "analysis": "地缘政治口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+ "category": "全球宏观",
+ "region": "全球",
+ "occurredAt": "2026-11-14T00:30:00+08:00",
+ "firstReportedAt": "2026-11-14T00:30:00+08:00",
+ "collectedAt": "2026-11-14T00:31:00+08:00",
+ "sources": [
+  {
+   "url": "https://example.com/qa-window",
+   "title": "QA fixture ev_qa_edge_0030",
+   "publisher": "QA",
+   "publishedAt": "2026-11-14T00:30:00+08:00",
+   "type": "primary"
+  }
+ ],
+ "scores": {
+  "structural": 12,
+  "scope": 16,
+  "signal": 8,
+  "delta": 5,
+  "timeliness": 4,
+  "crossDomain": 3,
+  "total": 48,
+  "rationale": {
+   "structural": "地缘政治类事件，按类别基线给分",
+   "scope": "影响范围按地区口径（全球）",
+   "signal": "命中 0 个信号词",
+   "delta": "命中 0 个变化词",
+   "timeliness": "距采集约 30 天",
+   "crossDomain": "单一类别为主"
+  },
+  "scorerVersion": "score/v1.0"
+ },
+ "credibility": {
+  "level": "partial",
+  "basis": "QA 夹具，仅用于窗口边界验证"
+ },
+ "evidenceGrade": "single_primary",
+ "verification": {
+  "status": "not_started",
+  "method": "qa-fixture"
+ },
+ "status": "published",
+ "trendLinks": [],
+ "revisions": [],
+ "forecastRefs": [],
+ "retro": {
+  "isRetro": false
+ },
+ "scoreHistory": [
+  {
+   "at": "2026-11-14T00:30:00+08:00",
+   "by": "qa",
+   "note": "夹具初始分",
+   "scores": {
+    "structural": 12,
+    "scope": 16,
+    "signal": 8,
+    "delta": 5,
+    "timeliness": 4,
+    "crossDomain": 3,
+    "total": 48,
+    "rationale": {
+     "structural": "地缘政治类事件，按类别基线给分",
+     "scope": "影响范围按地区口径（全球）",
+     "signal": "命中 0 个信号词",
+     "delta": "命中 0 个变化词",
+     "timeliness": "距采集约 30 天",
+     "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+   }
+  }
+ ],
+ "linkHistory": []
+}

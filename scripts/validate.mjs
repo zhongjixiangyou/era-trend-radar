@@ -263,8 +263,10 @@ uniqueIds(snapshots, 'snapshots', ID_RE.snapshot);
     });
   }
 
+  // 滚动窗口下，窗口外的旧记录只提示、不判负：历史数据保留在 content/，只是不参与展示。
+  // 上界之后（真实未来数据）仍然算错，不允许用「整日上限」放过。
   if (meta?.window?.from && isDate(e.date) && e.date < meta.window.from) {
-    push(`${p}.date`, 'WINDOW', `事件日期早于覆盖窗口 ${meta.window.from}`);
+    warn(`${p}.date`, 'WINDOW_OUT', `事件日期早于覆盖窗口 ${meta.window.from}（保留，不展示）`);
   }
   if (meta?.window?.to && isDate(e.date) && e.date > meta.window.to) {
     push(`${p}.date`, 'WINDOW', `事件日期晚于覆盖窗口 ${meta.window.to}`);

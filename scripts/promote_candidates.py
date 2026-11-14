@@ -17,6 +17,9 @@ from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import _core as C  # noqa: E402 —— 窗口口径与校验器共用一份（docs/window-rolling.md）
+
 ROOT = Path(__file__).resolve().parent.parent
 EVENTS = ROOT / "content" / "events"
 INBOX = ROOT / "inbox" / "imported" / "events"
@@ -214,7 +217,13 @@ def main() -> int:
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--workers", type=int, default=10)
+    ap.add_argument("--as-of", dest="as_of", default=None,
+                    help="窗口基准时刻（默认 ERA_AS_OF，再退 --max-ts / pipeline.config.json / 时钟）")
+    ap.add_argument("--max-ts", dest="max_ts", default=None, help="数据时间上限（等价 as-of）")
+    ap.add_argument("--config", default=None, help="pipeline.config.json 路径（默认仓库根）")
     a = ap.parse_args()
+
+    win = C.apply_window(C.load_pipeline_config(a.config), as_of=a.as_of, max_ts=a.max_ts)
 
     existing = {}
     for p in EVENTS.glob("*.json"):
@@ -224,7 +233,7 @@ def main() -> int:
         except Exception:
             continue
 
-    candidates, seen = [], set()
+    candidates, seen, skipped = [], set(), 0
     for f in sorted(INBOX.glob("*.jsonl")):
         for line in f.read_text(encoding="utf-8").splitlines():
             line = line.strip()
@@ -238,6 +247,11 @@ def main() -> int:
             if not key or key in seen or key in existing:
                 continue
             if len((item.get("title") or "").strip()) < 8:
+                continue
+            # 窗口外的候选跳过但不中断整批：计数进 skippedOutOfWindow。
+            occurred = to_iso(item.get("occurredAt") or item.get("firstReportedAt") or "")
+            if occurred and win.judge(occurred) in (C.JUDGE_OLD, C.JUDGE_FUTURE):
+                skipped += 1
                 continue
             seen.add(key)
             candidates.append(item)
@@ -261,7 +275,14 @@ def main() -> int:
             (EVENTS / f"{ev['id']}.json").write_text(json.dumps(ev, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         written += 1
 
-    print(json.dumps({"candidates": len(candidates), "written": written, "verified": passed, "pending": written - passed}, ensure_ascii=False))
+    print(json.dumps({
+        "candidates": len(candidates),
+        "written": written,
+        "verified": passed,
+        "pending": written - passed,
+        "skippedOutOfWindow": skipped,
+        "window": win.as_report(),
+    }, ensure_ascii=False))
     return 0
 
 

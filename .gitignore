@@ -17,3 +17,6 @@ history/
 # 采集原始落盘（candidates jsonl）是过程产物，数据根只有 content/；
 # 不进库就不会再让 commit 的白名单检查把整条流水线判负。
 inbox/
+
+# 窗口验证器的临时工作目录（脚本运行时会重建）
+qa/window-verify/_tmp/

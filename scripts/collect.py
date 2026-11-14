@@ -30,6 +30,10 @@ import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import _core as C  # noqa: E402 —— 窗口口径与校验器共用一份（docs/window-rolling.md）
+from email.utils import parsedate_to_datetime  # noqa: E402
+
 TZ = timezone(timedelta(hours=8))
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/122.0 Safari/537.36")
@@ -39,6 +43,23 @@ MAX_ITEMS = 40
 
 def now() -> datetime:
     return datetime.now(TZ)
+
+
+def when(text: str) -> datetime | None:
+    """把源里的时间归一成带时区 datetime；认 ISO 8601 与 RSS 的 RFC 822。"""
+    text = (text or "").strip()
+    if not text:
+        return None
+    parsed = C.parse_ts(text)
+    if parsed is not None:
+        return C.as_aware(parsed)
+    try:
+        dtv = parsedate_to_datetime(text)
+    except (TypeError, ValueError):
+        return None
+    if dtv is None:
+        return None
+    return dtv if dtv.tzinfo else dtv.replace(tzinfo=timezone.utc)
 
 
 def strip_tags(s: str) -> str:
@@ -97,7 +118,13 @@ def main() -> int:
     ap.add_argument("--fixture-dir", default=None, help="离线夹具目录：按 <source-id>.xml|.json 取本地文件")
     ap.add_argument("--timeout", type=int, default=20)
     ap.add_argument("--json", action="store_true")
+    ap.add_argument("--as-of", dest="as_of", default=None,
+                    help="窗口基准时刻（默认 ERA_AS_OF，再退 --max-ts / pipeline.config.json / 时钟）")
+    ap.add_argument("--max-ts", dest="max_ts", default=None, help="数据时间上限（等价 as-of）")
+    ap.add_argument("--config", default=None, help="pipeline.config.json 路径（默认仓库根）")
     a = ap.parse_args()
+
+    win = C.apply_window(C.load_pipeline_config(a.config), as_of=a.as_of, max_ts=a.max_ts)
 
     sp = Path(a.sources)
     if not sp.is_file():
@@ -117,6 +144,7 @@ def main() -> int:
     report_path.parent.mkdir(parents=True, exist_ok=True)
 
     seen, new, ok, bad, per = set(), [], 0, 0, {}
+    out_of_window = {"old": 0, "future": 0}
     for s in sources:
         sid = s.get("id", "?")
         try:
@@ -133,6 +161,13 @@ def main() -> int:
                 k = ckey(it.get("url", ""), it["title"])
                 if k in seen:
                     continue
+                # 窗口外条目丢弃但不中断：越界数进报告，不写进候选文件。
+                published = when(it.get("publishedAt", ""))
+                if published is not None:
+                    verdict = win.judge(published)
+                    if verdict in (C.JUDGE_OLD, C.JUDGE_FUTURE):
+                        out_of_window[verdict] += 1
+                        continue
                 seen.add(k)
                 new.append({"id": k, "dedupeKey": k, "title": it["title"], "summary": it["summary"][:120],
                             "facts": [it["summary"][:200]] if it["summary"] else [],
@@ -168,7 +203,8 @@ def main() -> int:
     if code == EXIT_FAILED:
         # 全源失败：不写候选文件，只写报告
         rep = {"status": status, "reason": reason, "runId": run_id, "at": run.isoformat(timespec="seconds"),
-               "sources": per, "newItems": 0, "published": False}
+               "window": win.as_report(), "sources": per, "newItems": 0, "outOfWindow": out_of_window,
+               "published": False}
         report_path.write_text(json.dumps(rep, ensure_ascii=False, indent=1), encoding="utf-8")
         print(json.dumps(rep, ensure_ascii=False, indent=1) if a.json else f"[collect] failed：全部来源失败，未写候选")
         return code
@@ -179,7 +215,8 @@ def main() -> int:
             for x in new:
                 f.write(json.dumps(x, ensure_ascii=False) + "\n")
     rep = {"status": status, "reason": reason, "runId": run_id, "at": run.isoformat(timespec="seconds"),
-           "sources": per, "newItems": len(new), "published": False}
+           "window": win.as_report(), "sources": per, "newItems": len(new),
+           "outOfWindow": out_of_window, "published": False}
     report_path.write_text(json.dumps(rep, ensure_ascii=False, indent=1), encoding="utf-8")
     print(json.dumps(rep, ensure_ascii=False, indent=1) if a.json
           else f"[collect] {status}：{len(new)} 条候选，{bad}/{len(sources)} 源失败")

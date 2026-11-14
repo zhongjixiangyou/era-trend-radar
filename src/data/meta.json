@@ -1,23 +1,26 @@
 {
   "site": "ERA · 时代趋势雷达",
-  "generatedAt": "2026-11-13T15:59:28+08:00",
+  "generatedAt": "2026-11-14T12:46:45+08:00",
   "window": {
-    "from": "2026-05-13",
-    "to": "2026-11-13"
+    "from": "2026-05-19",
+    "to": "2026-11-14",
+    "mode": "rolling",
+    "days": 180,
+    "asOf": "2026-11-14T12:46:45+08:00"
   },
   "coverage": {
-    "firstEvent": "2026-05-13",
+    "firstEvent": "2026-05-20",
     "lastEvent": "2026-11-13"
   },
   "counts": {
-    "events": 349,
+    "events": 347,
     "trends": 17,
     "forecasts": 2,
-    "published": 70,
+    "published": 68,
     "pending": 279
   },
   "preview": {
-    "published": 70,
+    "published": 68,
     "pending": 279
   },
   "mode": "preview",

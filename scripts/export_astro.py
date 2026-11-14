@@ -33,6 +33,9 @@ import tempfile
 from datetime import date, datetime, timezone
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import _core as C  # noqa: E402 —— 窗口/时间上限与校验器共用一份口径（docs/window-rolling.md）
+
 SCHEMA_VERSION = "1"
 
 # ---- 契约常量（与 schema/event.json、schema/trend.json 对齐）----
@@ -1300,6 +1303,7 @@ def build_payload(
     notes: list[str],
     warnings: list[str],
     forecasts: list[dict] | None = None,
+    window_meta: dict | None = None,
 ):
     events_sorted = sorted(
         events, key=lambda e: (e["occurredAt"], e["collectedAt"], e["id"]), reverse=True
@@ -1345,6 +1349,9 @@ def build_payload(
         "counts": {"trends": len(trends_sorted)},
         "trends": trends_sorted,
     }
+    if window_meta:
+        # 站点侧（from-export.mjs）直接沿用这里，不再自己写死日期
+        events_payload["meta"] = {"window": window_meta}
     if notes:
         events_payload["notes"] = notes
     if warnings:
@@ -1376,7 +1383,13 @@ def build_payload(
 def run(args) -> int:
     content_root = Path(args.content)
     out_root = Path(args.out)
-    today = date.today()
+    # 一次运行只解析一次窗口：--as-of/ERA_AS_OF > --max-ts/ERA_MAX_TS > 配置 > 时钟
+    win = C.apply_window(
+        C.load_pipeline_config(getattr(args, "config", None)),
+        as_of=getattr(args, "as_of", None),
+        max_ts=getattr(args, "max_ts", None),
+    )
+    today = win.to_date
     warnings: list[str] = []
 
     if not args.no_schema_check:
@@ -1403,11 +1416,25 @@ def run(args) -> int:
     )
     attach_event_refs(trends, events)
 
+    # 窗口过滤：content/ 保留全部历史，但展示数组只留窗口内（旧记录不参与导出，不删源）
+    def _in_window(doc) -> bool:
+        return win.judge(doc.get("occurredAt")) not in (C.JUDGE_OLD, C.JUDGE_FUTURE)
+
+    dropped = [e for e in events if not _in_window(e)]
+    if dropped:
+        old = sum(1 for e in dropped if win.judge(e.get("occurredAt")) == C.JUDGE_OLD)
+        warnings.append(
+            f"窗口 {win.from_str} ~ {win.to_str} 之外 {len(dropped)} 条事件不参与导出"
+            f"（历史 {old} 条 / 超出上界 {len(dropped) - old} 条）；content/ 原件保留"
+        )
+        events = [e for e in events if _in_window(e)]
+    dropped_ids = {e["id"] for e in dropped}
+
     # 趋势引用了不在导出集里的事件：页面会链空，提前说清楚
     event_id_set = {e["id"] for e in events}
     for t in trends:
         for ref in t.get("evidenceRefs", []):
-            if ref not in event_id_set:
+            if ref not in event_id_set and ref not in dropped_ids:
                 warnings.append(
                     f"trend[{t['id']}]：evidenceRefs 里的 {ref} 不在已导出事件里，趋势页会链空"
                 )
@@ -1432,11 +1459,14 @@ def run(args) -> int:
                         if public_ids else []) if forecasts else forecasts
 
     events_payload, trends_payload, forecasts_payload, counts = build_payload(
-        public_events, public_trends, generated_at, notes, warnings, public_forecasts
+        public_events, public_trends, generated_at, notes, warnings, public_forecasts,
+        window_meta=win.as_meta(),
     )
-    counts["contentTotal"] = len(events)
+    counts["contentTotal"] = len(events) + len(dropped)
+    counts["publishedTotal"] = sum(1 for e in events if e.get("status") == "published")
     counts["publicExported"] = len(public_events)
     counts["publicTrends"] = len(public_trends)
+    counts["droppedOutOfWindow"] = len(dropped)
     if not public_events:
         warnings.append(
             f"公开导出 0 条：content 有 {len(events)} 条但 published=0；"
@@ -1444,7 +1474,7 @@ def run(args) -> int:
         )
     # 内部预览：全部记录（含 pending），只写到 out/preview/，不参与线上
     preview_events_payload, preview_trends_payload, preview_forecasts_payload, _pc = build_payload(
-        events, trends, generated_at, list(notes), [], forecasts
+        events, trends, generated_at, list(notes), [], forecasts, window_meta=win.as_meta()
     )
 
     if args.as_json:
@@ -1454,6 +1484,7 @@ def run(args) -> int:
             "content": str(content_root),
             "check": bool(args.check),
             "out": str(out_root),
+            "window": win.as_report(),
             "counts": counts,
             "errors": errors,
             "warnings": warnings,
@@ -1462,6 +1493,8 @@ def run(args) -> int:
         print(json.dumps(report, ensure_ascii=False, indent=2))
     else:
         print(f"[export] 输入 {args.format}: {content_root}")
+        print(f"[export] 窗口 {win.from_str} → {win.to_str}（{win.mode}，asOf {C.fmt_ts(win.as_of)} via {win.as_of_source}/{win.as_of_from}）"
+              f" · 窗口外 {counts['droppedOutOfWindow']} 条不参与导出")
         print(f"[export] mode={args.mode} · content {counts['contentTotal']} 条 · published {counts['published']} 条 · "
               f"公开导出 {counts['publicExported']} 条（pending 只进 preview/）")
         print(f"[export] events {counts['events']}（published {counts['published']} / "
@@ -1596,6 +1629,10 @@ def main(argv: list[str] | None = None) -> int:
         help="public=只写公开产物（仅 published，CI/Pages 只能用它）；"
              "preview=只写内部预览（含 pending）；both=两者都写（本地调试）",
     )
+    parser.add_argument("--as-of", default=None,
+                        help="窗口基准时刻（ISO 8601）；默认读 ERA_AS_OF，再退到 --max-ts/配置/时钟")
+    parser.add_argument("--max-ts", default=None, help="等价 as-of 的数据时间上限")
+    parser.add_argument("--config", default=None, help="pipeline.config.json 路径（默认仓库根）")
     parser.add_argument("--lenient", action="store_true", help="有硬错误也照样导出（不推荐）")
     parser.add_argument("--json", action="store_true", dest="as_json", help="机器可读输出")
     parser.add_argument("--selftest", action="store_true", help="跑内置自检")

@@ -292,7 +292,7 @@
     "firstSeen": "2026-11-13",
     "status": "emerging",
     "confidence": null,
-    "evidenceCount": 5,
+    "evidenceCount": 4,
     "supportCount": 5,
     "counterCount": 0,
     "indicators": [
@@ -362,7 +362,7 @@
     "firstSeen": "2026-08-28",
     "status": "emerging",
     "confidence": null,
-    "evidenceCount": 41,
+    "evidenceCount": 40,
     "supportCount": 40,
     "counterCount": 1,
     "indicators": [

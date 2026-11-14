@@ -75,6 +75,7 @@ DIM_GUIDE = {
 CN_TZ = dt.timezone(dt.timedelta(hours=8))
 MAX_TS_DEFAULT = "2026-11-13T23:59:59+08:00"
 _MAX_DT: dt.datetime | None = None
+_ACTIVE_WINDOW: "Window | None" = None
 
 ID_PATTERNS = {
     "event": r"^ev_[a-z0-9][a-z0-9_-]{2,63}$",
@@ -122,13 +123,18 @@ _ISO_RE = re.compile(
 
 
 def set_max_ts(value: str) -> None:
-    global MAX_TS_DEFAULT, _MAX_DT
+    """只设时间上限（兼容老入口）：清掉已解析的窗口，避免两条口径打架。"""
+    global MAX_TS_DEFAULT, _MAX_DT, _ACTIVE_WINDOW
     MAX_TS_DEFAULT = value
     _MAX_DT = None
+    _ACTIVE_WINDOW = None
 
 
 def max_dt() -> dt.datetime:
+    """数据时间上限：有窗口时由窗口上界驱动，否则退回 ERA_MAX_TS/内置常量。"""
     global _MAX_DT
+    if _ACTIVE_WINDOW is not None:
+        return _ACTIVE_WINDOW.upper
     if _MAX_DT is None:
         parsed = parse_ts(MAX_TS_DEFAULT)
         if parsed is None:
@@ -174,6 +180,269 @@ def fmt_ts(value: dt.datetime | None) -> str:
 
 def today_str() -> str:
     return now_ts().strftime("%Y-%m-%d")
+
+
+# --------------------------------------------------------------------------- #
+# 窗口 —— 唯一口径见 docs/window-rolling.md
+# 与 Node 侧 scripts/ci/lib/window.mjs 一一对应；两边边界必须一致，
+# 任何一侧改了边界都要同步改另一侧，并补 docs 里 §6 的边界用例。
+# --------------------------------------------------------------------------- #
+WINDOW_MODES = ("rolling", "fixed")
+DEFAULT_WINDOW_DAYS = 180
+DEFAULT_WINDOW_TZ = "Asia/Shanghai"
+
+JUDGE_OK, JUDGE_OLD, JUDGE_FUTURE, JUDGE_INVALID = "ok", "old", "future", "invalid"
+_CN_TZ_NAMES = {"asia/shanghai", "cn", "prc", "utc+8", "+08:00", "+0800", "etc/gmt-8"}
+
+
+def tz_for(name: str) -> dt.tzinfo:
+    """Asia/Shanghai 走固定 +08:00（无夏令时，不用依赖 tzdata）；其它时区尽力解析。"""
+    key = (name or DEFAULT_WINDOW_TZ).strip()
+    if key.lower() in _CN_TZ_NAMES:
+        return CN_TZ
+    try:
+        from zoneinfo import ZoneInfo  # noqa: PLC0415 —— 只有非默认时区才需要
+
+        return ZoneInfo(key)
+    except Exception:  # noqa: BLE001 —— 缺时区库/写错名字时退回 +08:00，不阻断流水线
+        return CN_TZ
+
+
+@dataclass(frozen=True)
+class Window:
+    """一次运行解析出来的唯一窗口；所有阶段都复用它，不许各自取 now()。"""
+
+    mode: str
+    from_date: dt.date
+    to_date: dt.date
+    upper: dt.datetime          # 上界（含）：rolling=asOf 时刻；fixed=to 23:59:59.999+08
+    from_ts: dt.datetime        # 下界（含）：from 00:00:00+08
+    as_of: dt.datetime
+    as_of_source: str           # 谁给的：cli / env / arg / clock（枚举保持不变）
+    as_of_from: str = "clock"  # 走哪条通道：as-of / max-ts / clock / arg
+    days: int | None = None
+    timezone: str = DEFAULT_WINDOW_TZ
+    frozen_at: str | None = None
+
+    @property
+    def from_str(self) -> str:
+        return self.from_date.isoformat()
+
+    @property
+    def to_str(self) -> str:
+        return self.to_date.isoformat()
+
+    def judge(self, value: Any) -> str:
+        """判定时间/日期落在窗口哪一侧：ok / old / future / invalid。
+
+        日期型按日历日比（date==to 合法）；时刻型按 [from 00:00+08, upper] 比。
+        """
+        if isinstance(value, dt.datetime):
+            ts = as_aware(value)
+            return self._judge_ts(ts)
+        if isinstance(value, dt.date):
+            return self._judge_date(value.isoformat())
+        if not isinstance(value, str):
+            return JUDGE_INVALID
+        text = value.strip()
+        if not text:
+            return JUDGE_INVALID
+        if re.fullmatch(r"\d{4}-\d{2}-\d{2}", text):
+            return self._judge_date(text)
+        parsed = parse_ts(text)
+        if parsed is None:
+            return JUDGE_INVALID
+        return self._judge_ts(as_aware(parsed))
+
+    def _judge_date(self, day: str) -> str:
+        if day < self.from_str:
+            return JUDGE_OLD
+        if day > self.to_str:
+            return JUDGE_FUTURE
+        return JUDGE_OK
+
+    def _judge_ts(self, ts: dt.datetime) -> str:
+        if ts > self.upper:
+            return JUDGE_FUTURE
+        if ts < self.from_ts:
+            return JUDGE_OLD
+        return JUDGE_OK
+
+    def covers(self, value: Any) -> bool:
+        return self.judge(value) == JUDGE_OK
+
+    def as_meta(self) -> dict:
+        """站点/导出产物里的 meta.window；rolling 不写 frozenAt。"""
+        meta: dict[str, Any] = {
+            "from": self.from_str,
+            "to": self.to_str,
+            "mode": self.mode,
+            "asOf": fmt_ts(self.as_of),
+            "asOfFrom": self.as_of_from,
+            "days": self.days,
+        }
+        if self.mode == "fixed" and self.frozen_at:
+            meta["frozenAt"] = self.frozen_at
+        return meta
+
+    def as_report(self) -> dict:
+        """各阶段报告里的 window（比 meta 多 asOfSource，便于追是哪一级给的 asOf）。"""
+        report = self.as_meta()
+        report["asOfSource"] = self.as_of_source
+        return report
+
+
+def _instant(value: str, label: str) -> dt.datetime:
+    parsed = parse_ts(value)
+    if parsed is None:
+        raise SystemExit(f"{label} 不是合法 ISO 8601 时间: {value}")
+    return as_aware(parsed)
+
+
+def _day(value: str, label: str) -> dt.date:
+    text = str(value).strip()
+    try:
+        return dt.date.fromisoformat(text[:10])
+    except ValueError:
+        raise SystemExit(f"{label} 不是合法日期（YYYY-MM-DD）: {value}") from None
+
+
+def resolve_window(
+    config: Any = None,
+    *,
+    as_of: str | None = None,
+    max_ts: str | None = None,
+    now: dt.datetime | None = None,
+    mode: str | None = None,
+    days: int | None = None,
+    use_env: bool = True,
+) -> Window:
+    """按 docs/window-rolling.md 解析窗口（纯函数，不设全局状态）。
+
+    优先级：--as-of/ERA_AS_OF > --max-ts/ERA_MAX_TS > 配置 window > 时钟。
+    rolling：to=asOf 在配置时区里的日历日，from=to-(days-1)，上界=asOf 时刻本身。
+    fixed：from/to 取 frozen.start/end（兼容老 start/end），上界=to 23:59:59.999+08，
+           max-ts 可覆盖上界，日期仍取配置。
+    """
+    cfg = config if isinstance(config, dict) else {}
+    w = cfg.get("window") if isinstance(cfg.get("window"), dict) else {}
+
+    win_mode = str(mode or w.get("mode") or "fixed").strip().lower()
+    if win_mode not in WINDOW_MODES:
+        raise SystemExit(f"window.mode 只能是 rolling|fixed，收到 {win_mode}")
+    tzname = str(w.get("timezone") or w.get("tz") or DEFAULT_WINDOW_TZ)
+    tz = tz_for(tzname)
+    win_days = int(days or w.get("days") or DEFAULT_WINDOW_DAYS)
+    if win_mode == "rolling" and win_days < 1:
+        raise SystemExit(f"window.days 必须是正整数，收到 {win_days}")
+
+    cli_as_of = _instant(as_of, "--as-of") if as_of else None
+    env_as_of = None
+    cli_max = _instant(max_ts, "--max-ts") if max_ts else None
+    env_max = None
+    if use_env:
+        raw_env_as_of = os.environ.get("ERA_AS_OF")
+        raw_env_max = os.environ.get("ERA_MAX_TS")
+        env_as_of = _instant(raw_env_as_of, "ERA_AS_OF") if raw_env_as_of else None
+        env_max = _instant(raw_env_max, "ERA_MAX_TS") if raw_env_max else None
+
+    # as_of_source=谁给的（cli/env/arg/clock，枚举不动）；as_of_from=走哪条通道（as-of/max-ts/arg/clock）
+    as_of_source, as_of_from, as_of_dt = "clock", "clock", now_ts()
+    if cli_as_of is not None:
+        as_of_source, as_of_from, as_of_dt = "cli", "as-of", cli_as_of
+    elif env_as_of is not None:
+        as_of_source, as_of_from, as_of_dt = "env", "as-of", env_as_of
+    elif cli_max is not None:
+        as_of_source, as_of_from, as_of_dt = "cli", "max-ts", cli_max
+    elif env_max is not None:
+        as_of_source, as_of_from, as_of_dt = "env", "max-ts", env_max
+    elif now is not None:
+        as_of_source, as_of_from, as_of_dt = "arg", "arg", as_aware(now)
+
+    # CI 用 window.mjs 钉过一轮 asOf 时会多导 ERA_WINDOW_AS_OF_FROM：
+    # 以它为准，避免「CI 里是 --max-ts、Python 报成 as-of」两套说法。
+    if cli_as_of is None and env_as_of is not None:
+        pinned = (os.environ.get("ERA_WINDOW_AS_OF_FROM") or "").strip()
+        if pinned in ("as-of", "max-ts", "clock", "arg"):
+            as_of_from = pinned
+
+    if win_mode == "fixed":
+        frozen_raw = w.get("frozen")
+        frozen = (
+            frozen_raw
+            if isinstance(frozen_raw, dict) and (frozen_raw.get("start") or frozen_raw.get("end"))
+            else w
+        )
+        start_raw, end_raw = frozen.get("start"), frozen.get("end")
+        if not start_raw or not end_raw:
+            raise SystemExit("window.mode=fixed 缺少 window.start/end（或 window.frozen.start/end）")
+        from_date = _day(start_raw, "window.frozen.start")
+        to_date = _day(end_raw, "window.frozen.end")
+        upper = cli_max or env_max or dt.datetime.combine(
+            to_date, dt.time(23, 59, 59, 999000), CN_TZ
+        )
+        return Window(
+            mode="fixed",
+            from_date=from_date,
+            to_date=to_date,
+            upper=upper,
+            from_ts=dt.datetime.combine(from_date, dt.time(0, 0), CN_TZ),
+            as_of=as_of_dt,
+            as_of_source=as_of_source,
+            as_of_from=as_of_from,
+            days=None,
+            timezone=tzname,
+            frozen_at=str(frozen.get("frozenAt") or end_raw),
+        )
+
+    to_date = as_of_dt.astimezone(tz).date()
+    from_date = to_date - dt.timedelta(days=win_days - 1)
+    return Window(
+        mode="rolling",
+        from_date=from_date,
+        to_date=to_date,
+        upper=as_of_dt,
+        from_ts=dt.datetime.combine(from_date, dt.time(0, 0), CN_TZ),
+        as_of=as_of_dt,
+        as_of_source=as_of_source,
+        as_of_from=as_of_from,
+        days=win_days,
+        timezone=tzname,
+    )
+
+
+def set_window(win: Window | None) -> None:
+    """把窗口设为本次运行的有效窗口；max_dt() 随之上移到窗口上界。"""
+    global _ACTIVE_WINDOW, _MAX_DT
+    _ACTIVE_WINDOW = win
+    _MAX_DT = win.upper if win else None
+
+
+def active_window() -> Window | None:
+    return _ACTIVE_WINDOW
+
+
+def apply_window(
+    config: Any = None,
+    *,
+    as_of: str | None = None,
+    max_ts: str | None = None,
+    now: dt.datetime | None = None,
+) -> Window:
+    """解析并设为有效窗口（各入口脚本一次调用即可）。"""
+    win = resolve_window(config, as_of=as_of, max_ts=max_ts, now=now)
+    set_window(win)
+    return win
+
+
+def load_pipeline_config(path: str | os.PathLike | None = None) -> dict:
+    """读 pipeline.config.json；缺文件返回空 dict（由 resolve_window 决定怎么报错）。"""
+    p = Path(path) if path else ERA_HOME / "pipeline.config.json"
+    try:
+        data = json.loads(p.read_text(encoding="utf-8"))
+        return data if isinstance(data, dict) else {}
+    except (OSError, json.JSONDecodeError):
+        return {}
 
 
 # --------------------------------------------------------------------------- #
@@ -856,6 +1125,12 @@ def validate_event(ctx: Ctx, label: str, data: dict) -> None:
     f.text("region", min_len=2, max_len=60)
 
     occurred = f.ts("occurredAt", want_tz=True, limit=True)
+    win = active_window()
+    if win is not None and occurred is not None and win.judge(occurred) == JUDGE_OLD:
+        # 旧记录只降级为 warning：content/ 里保留，只是不参与窗口展示，
+        # 不能因为历史数据把整库判负（docs/window-rolling.md）。
+        ctx.warn("WINDOW_OUT", label, "occurredAt",
+                 f"occurredAt={fmt_ts(occurred)} 早于窗口下界 {win.from_str}（历史记录保留，不参与窗口展示）")
     reported = f.ts("firstReportedAt", want_tz=True, limit=True)
     collected = f.ts("collectedAt", want_tz=True, limit=True)
     if occurred and collected and occurred > collected + dt.timedelta(days=1):
@@ -1664,7 +1939,7 @@ def print_findings(ctx: Ctx, limit: int = 200) -> None:
 
 
 def stats_dict(ctx: Ctx, files: list[Path] | None = None) -> dict:
-    return {
+    stats = {
         "schema": SCHEMA_VERSION,
         "maxTs": fmt_ts(max_dt()),
         "files": len(files or []),
@@ -1676,6 +1951,10 @@ def stats_dict(ctx: Ctx, files: list[Path] | None = None) -> dict:
         "warnings": len(ctx.warnings),
         "ok": ctx.ok,
     }
+    win = active_window()
+    if win is not None:
+        stats["window"] = win.as_report()
+    return stats
 
 
 def dump_json(payload: Any) -> None:

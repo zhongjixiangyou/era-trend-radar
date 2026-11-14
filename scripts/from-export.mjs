@@ -15,6 +15,7 @@ import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { basename, dirname, join, resolve } from 'node:path';
 import { acquire, releaseLock, isDataDir, lockHeldByParent } from './ci/lib/release-lock.mjs';
+import { resolveWindow } from './ci/lib/window.mjs';
 
 const args = process.argv.slice(2);
 const dirArg = args.indexOf('--dir');
@@ -69,6 +70,16 @@ const contentPending = (() => {
 })();
 
 const srcEvents = read('events.json', { events: [], generatedAt: null, gates: null });
+
+// 本轮窗口：优先用 export_astro.py 写进 v1 的 meta.window（唯一权威），
+// 没有就按 pipeline.config.json + ERA_AS_OF 解析，绝不硬编码日期。
+const CFG = (() => {
+  try { return JSON.parse(readFileSync(resolve(process.cwd(), 'pipeline.config.json'), 'utf8')); } catch { return {}; }
+})();
+const v1Window = srcEvents?.meta?.window || null;
+const WINDOW = (v1Window && v1Window.from && v1Window.to && (v1Window.mode === 'rolling' || v1Window.mode === 'fixed'))
+  ? v1Window
+  : resolveWindow(CFG, { asOf: process.env.ERA_AS_OF || null });
 const srcTrends = read('trends.json', { trends: [] });
 const srcForecasts = read('forecasts.json', { forecasts: [] });
 
@@ -118,6 +129,20 @@ const events = srcEvents.events.map((e) => {
     backfill: Boolean(e.retro?.isRetro),
   };
 });
+
+// 滚动窗口：窗口外的事件不进展示投影（content/ 里一条不删，只是不展示）。
+// 只对 rolling 生效——fixed 是历史重现，行为保持与冻结时一致。
+let droppedOutOfWindow = 0;
+if (WINDOW.mode === 'rolling') {
+  const kept = events.filter((e) => {
+    const d = e.date;
+    if (!d) return true;
+    if (d < WINDOW.from || d > WINDOW.to) { droppedOutOfWindow++; return false; }
+    return true;
+  });
+  events.length = 0;
+  events.push(...kept);
+}
 
 // public 构建必须过滤 pending：HTML、图表、JSON、搜索索引都不许出现候选 ID。
 const allEventCount = events.length;
@@ -211,7 +236,9 @@ if (d0) {
 const meta = {
   site: 'ERA · 时代趋势雷达',
   generatedAt: srcEvents.generatedAt ?? new Date().toISOString(),
-  window: { from: '2026-05-13', to: '2026-11-13' },
+  window: WINDOW.mode === 'rolling'
+    ? { from: WINDOW.from, to: WINDOW.to, mode: 'rolling', days: WINDOW.days ?? 180, asOf: WINDOW.asOf ?? null }
+    : { from: WINDOW.from, to: WINDOW.to, mode: 'fixed', frozenAt: WINDOW.frozenAt ?? WINDOW.to },
   coverage: { firstEvent: dates[0] ?? null, lastEvent: dates[dates.length - 1] ?? null },
   counts: {
     events: events.length,
@@ -266,6 +293,7 @@ console.log(
       trends: trends.length,
       forecasts: forecasts.length,
       range: meta.window,
+      droppedOutOfWindow,
       backfill: events.filter((e) => e.backfill).length,
       pending: events.filter((e) => e.status === 'pending').length,
       mode: MODE,
