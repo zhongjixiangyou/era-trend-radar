@@ -71,6 +71,16 @@ jobs:
         run: node scripts/ci/entry-run.mjs --name scoreCheck --report reports/score-check.json
 
 
+      # 内容提交（collect/人工）之后 src/data 会落后于 content/，门禁会判「派生层漂移」。
+      # 这里在构建前把预览投影按当前 content 重生成，保证「采集→发布」链路自愈。
+      - name: Regenerate derived projection (content → src/data)
+        continue-on-error: true
+        run: |
+          node scripts/ci/derive.mjs --mode preview
+          node scripts/from-export.mjs --dir .era-tmp/v1/preview --out src/data --mode preview
+          cp .era-tmp/derived/emerging.json src/data/emerging.json
+          cp .era-tmp/derived/clues.json src/data/clues.json
+
       - name: Build site (config entry, out=dist)
         continue-on-error: true
         run: node scripts/ci/build.mjs --expect public --report reports/build.json
