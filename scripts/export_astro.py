@@ -501,8 +501,10 @@ def validate_and_normalize_events(
         summary = as_text(doc.get("summary")).strip()
         if not title:
             errors.append(f"{ctx}：缺 title")
-        elif not (TITLE_MIN_CHARS <= len(title) <= TITLE_MAX_CHARS):
-            errors.append(f"{ctx}：title {len(title)} 字，需在 {TITLE_MIN_CHARS}–{TITLE_MAX_CHARS}")
+        elif not (TITLE_MIN_CHARS <= C.char_len(title) <= TITLE_MAX_CHARS):
+            # 与校验器同一口径：按「字」计，不计空白（_core.char_len）。
+            # 用裸 len() 会把带空格的英文标题判长，出现「collect 通过、deploy 才炸」的错位。
+            errors.append(f"{ctx}：title {C.char_len(title)} 字，需在 {TITLE_MIN_CHARS}–{TITLE_MAX_CHARS}")
         if not summary:
             errors.append(f"{ctx}：缺 summary")
         elif not (SUMMARY_MIN_CHARS <= len(summary) <= SUMMARY_MAX_CHARS):
