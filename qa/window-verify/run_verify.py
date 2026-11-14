@@ -233,6 +233,24 @@ def write_fixture(name: str, events: list[dict]) -> Path:
     return d
 
 
+FROZEN_REV = "ee7fd88"
+
+
+def frozen_tree(rev: str) -> Path | None:
+    """把某个 commit 的树只读导出到 _tmp，用于「冻结口径」回归；不碰工作区、不改 .git。"""
+    d = TMP / f"frozen_{rev[:7]}"
+    if (d / "scripts" / "validate.py").exists():
+        return d
+    if d.exists():
+        shutil.rmtree(d)
+    d.mkdir(parents=True)
+    arc = subprocess.run(["git", "archive", rev], cwd=str(ROOT), capture_output=True, timeout=300)
+    if arc.returncode != 0:
+        return None
+    untar = subprocess.run(["tar", "-x", "-C", str(d)], input=arc.stdout, timeout=300)
+    return d if untar.returncode == 0 else None
+
+
 def validate_on(path: Path, extra: list[str], env_extra: dict | None = None):
     return run([sys.executable, "scripts/validate.py", str(path), "--json", "--history", "off", *extra], env_extra)
 
@@ -565,42 +583,39 @@ def group_c(ev: dict) -> None:
         and bool(w7.get("asOf")) and str(w7.get("days")) == "180" and bool(w7.get("asOfSource")),
         "契约 §2 旧记录/§5 报告字段")
 
-    # C8 fixed 回归：真实 content/ 全量，用固定配置跑（不改仓库配置，进程内 mock）
-    mock = (
-        "import sys, json\n"
-        "sys.path.insert(0, 'scripts')\n"
-        "import _core as C\n"
-        "_real = C.load_pipeline_config\n"
-        "C.load_pipeline_config = lambda path=None: {**_real(path), 'window': {'mode': 'fixed', "
-        "'timezone': 'Asia/Shanghai', 'frozen': {'start': '2026-05-13', 'end': '2026-11-13', "
-        "'frozenAt': '2026-11-13'}}}\n"
-        "import validate\n"
-        "rc = validate.run(['content', '--json', '--history', 'off'])\n"
-        "print('@@RC@@', rc)\n"
-    )
-    proc8 = run([sys.executable, "-c", mock])
-    p8 = as_json(proc8.stdout) or {}
-    st8 = p8.get("stats") or {}
-    w8 = st8.get("window") or {}
-    cmp("C8", "C", "fixed 回归：真实 content/ 全量（冻结 2026-05-13~11-13 口径）",
-        "errors=0 warnings=0 records=368；window.mode=fixed from=2026-05-13 to=2026-11-13 且带 frozenAt",
-        f"errors={st8.get('errors')} warnings={st8.get('warnings')} records={st8.get('records')} "
-        f"window={json.dumps(w8, ensure_ascii=False)}",
-        st8.get("errors") == 0 and st8.get("warnings") == 0 and st8.get("records") == 368
-        and w8.get("mode") == "fixed" and w8.get("from") == "2026-05-13"
-        and w8.get("to") == "2026-11-13" and w8.get("frozenAt") == "2026-11-13",
-        "契约 §4 fixed 必须与冻结时一致；用工单 mock config，不改仓库配置")
-
+    # C8 fixed 回归：在冻结 commit 上重跑（当前 content/ 已长到 574 条，无法再当冻结快照）
+    frozen = frozen_tree(FROZEN_REV)
+    if frozen is None:
+        record("C8", "C", "fixed 回归：冻结 commit 上 0/0", f"errors=0 warnings=0，from/to=05-13/11-13",
+               f"git archive {FROZEN_REV} 失败", "BLOCKED", "无法取到冻结快照")
+    else:
+        p8 = subprocess.run([sys.executable, "scripts/validate.py", "--json", "--history", "off"],
+                            cwd=str(frozen), capture_output=True, text=True, timeout=300)
+        j8 = as_json(p8.stdout) or {}
+        st8 = j8.get("stats") or {}
+        w8 = st8.get("window") or {}
+        cmp("C8", "C", f"fixed 回归：冻结快照 {FROZEN_REV[:7]} 上重跑",
+            "errors=0 warnings=0 records=368；window.mode=fixed from=2026-05-13 to=2026-11-13",
+            f"errors={st8.get('errors')} warnings={st8.get('warnings')} records={st8.get('records')} "
+            f"window={json.dumps(w8, ensure_ascii=False)}",
+            st8.get("errors") == 0 and st8.get("warnings") == 0 and st8.get("records") == 368
+            and w8.get("mode") == "fixed" and w8.get("from") == "2026-05-13" and w8.get("to") == "2026-11-13",
+            "契约 §4：fixed 必须与冻结时完全一致（git archive 只读快照，不动工作区）")
 
 # --------------------------------------------------------------------------- #
 # D 组：export_site.py 的 meta.window
 # --------------------------------------------------------------------------- #
 def group_d(ev: dict) -> None:
+    """export_site.py 现值：rolling 配置下直接拒绝（exit 2），--legacy-allow 才放行。
+
+    线上链路已换成 export_astro.py → from-export.mjs，所以这里验「护栏」而不是窗口过滤。
+    """
     data_dir = TMP / "export_data"
     if data_dir.exists():
         shutil.rmtree(data_dir)
     data_dir.mkdir(parents=True)
-    (data_dir / "events.json").write_text(json.dumps([ev["edge"], ev["old"], ev["future"]], ensure_ascii=False), encoding="utf-8")
+    (data_dir / "events.json").write_text(
+        json.dumps([ev["edge"], ev["old"], ev["future"]], ensure_ascii=False), encoding="utf-8")
     (data_dir / "trends.json").write_text("[]", encoding="utf-8")
     (data_dir / "forecasts.json").write_text("[]", encoding="utf-8")
 
@@ -611,35 +626,26 @@ def group_d(ev: dict) -> None:
     for name in ("events", "trends", "forecasts", "snapshots"):
         (sd / f"{name}.json").write_text("[]", encoding="utf-8")
 
-    out = TMP / "export_out"
-    cmd = [
-        sys.executable, "scripts/export_site.py",
-        "--data", str(data_dir), "--site", str(site), "--out", str(out),
-        "--report", str(TMP / "export_report.md"), "--dry-run", "--json",
-        "--as-of", AS_OF,
-    ]
-    proc = run(cmd, timeout=300)
-    if unsupported(proc, "--as-of"):
-        record("D1", "D", "export_site 按窗口过滤 + meta.window 完整",
-               "meta.window={from:2026-05-19,to:2026-11-14,mode:rolling,asOf,days:180}，rolling 下无 frozenAt",
-               "export_site.py 不认识 --as-of", "BLOCKED", "契约 §4 export_site 行")
-        record("D2", "D", "export 展示数组过滤越界事件",
-               "old/future 不出现在导出 events", "缺 --as-of，无法指定本轮窗口", "BLOCKED", "")
-        return
-    payload = as_json(proc.stdout) or {}
-    win = ((payload.get("meta") or {}).get("window") or payload.get("window") or {})
-    got = json.dumps(win, ensure_ascii=False)
-    ok = (str(win.get("from"))[:10] == WIN["from"] and str(win.get("to"))[:10] == WIN["to"]
-          and win.get("mode") == "rolling" and str(win.get("days")) == "180" and "frozenAt" not in win)
-    cmp("D1", "D", "export meta.window 完整且 rolling 不写 frozenAt",
-        "from=2026-05-19 to=2026-11-14 mode=rolling days=180 无 frozenAt",
-        f"exit={proc.returncode} window={got[:300]}", ok, "")
+    base = [sys.executable, "scripts/export_site.py", "--data", str(data_dir),
+            "--site", str(site), "--out", str(TMP / "export_out"),
+            "--report", str(TMP / "export_report.md"), "--dry-run"]
 
-    exported = [e for e in (payload.get("events") or []) if isinstance(e, dict)]
-    ids = [str(e.get("_v1_id") or e.get("id") or "") for e in exported]
-    cmp("D2", "D", "export 展示数组按窗口过滤",
-        "只留 11-14T00:30（11-15 未来剔除；05-18 旧记录不展示）",
-        f"导出 {len(ids)} 条: {ids[:6]}", len(ids) == 1, "契约 §4：展示数组按窗口过滤")
+    # D1 无 flag：必须 exit 2 且明确指路
+    p1 = run(base, timeout=300)
+    blob = (p1.stderr or "") + (p1.stdout or "")
+    cmp("D1", "D", "rolling 配置下 export_site 拒绝运行（exit 2 并指路 export_astro）",
+        "exit=2；提示「拒绝运行」且提到 --legacy-allow",
+        f"exit={p1.returncode} {(blob.strip().splitlines() or [''])[0][:120]}",
+        p1.returncode == 2 and "拒绝运行" in blob and "--legacy-allow" in blob,
+        "旧旁路护栏：rolling 下不写失真的 meta.window")
+
+    # D2 --legacy-allow：放行
+    p2 = run([*base, "--legacy-allow"], timeout=300)
+    blob2 = (p2.stderr or "") + (p2.stdout or "")
+    cmp("D2", "D", "--legacy-allow 放行旧旁路",
+        "exit=0（旧旁路仍可跑，只是不再写按 asOf 过滤的 meta.window）",
+        f"exit={p2.returncode} {(blob2.strip().splitlines() or [''])[0][:120]}",
+        p2.returncode == 0, "护栏只是拒绝误用，不拆旧能力")
 
 
 # --------------------------------------------------------------------------- #
@@ -783,14 +789,221 @@ def group_f() -> None:
 
 
 # --------------------------------------------------------------------------- #
+# B5：data.mjs 是否真的复用了 ./window.mjs（而不是自己再算一套）
+# --------------------------------------------------------------------------- #
+def group_b5() -> None:
+    script = """
+import { resolveWindow as sharedResolve } from "__WINDOW__";
+import { resolveWindow as dataResolve } from "__DATA__";
+import fs from "node:fs";
+const cfg = JSON.parse(fs.readFileSync("pipeline.config.json", "utf8"));
+const shared = sharedResolve(cfg, {});
+const data = dataResolve(cfg);
+console.log(JSON.stringify({ shared, data }));
+"""
+    script = script.replace("__WINDOW__", (ROOT / "scripts/ci/lib/window.mjs").as_uri())
+    script = script.replace("__DATA__", (ROOT / "scripts/ci/lib/data.mjs").as_uri())
+    tmp_js = TMP / "js_data_window.mjs"
+    tmp_js.write_text(script, encoding="utf-8")
+    proc = run(["node", str(tmp_js)], {"ERA_AS_OF": AS_OF})
+    if proc.returncode != 0:
+        record("B5", "B", "data.mjs 复用 window.mjs", "同一 asOf 下两者取值一致",
+               (proc.stderr or "").strip()[:200], "BLOCKED", "node 调用失败")
+        return
+    d = as_json(proc.stdout) or {}
+    sh, da = d.get("shared") or {}, d.get("data") or {}
+    same = (sh.get("from") == da.get("start") and sh.get("to") == da.get("end")
+            and sh.get("asOf") == da.get("asOf") and sh.get("days") == da.get("days")
+            and sh.get("upper") == da.get("upper"))
+    cmp("B5", "B", "data.mjs 复用 window.mjs：同一 asOf 下 from/end/asOf/upper/days 全一致",
+        f"start=2026-05-19 end=2026-11-14 asOf={AS_OF} days=180",
+        f"shared(from={sh.get('from')},to={sh.get('to')},asOf={sh.get('asOf')}) "
+        f"data(start={da.get('start')},end={da.get('end')},asOf={da.get('asOf')},upper={da.get('upper')})",
+        same and da.get("start") == WIN["from"] and da.get("end") == WIN["to"],
+        "ERA_AS_OF 生效说明它吃的是同一套解析")
+
+
+# --------------------------------------------------------------------------- #
+# G 组：簿记时间豁免（只有 occurredAt 受上界约束）
+# --------------------------------------------------------------------------- #
+def group_g() -> None:
+    base = template_event()
+    asof_dt = dt.datetime.fromisoformat(AS_OF)
+    plus3 = (asof_dt + dt.timedelta(minutes=3)).isoformat()
+    before = (asof_dt - dt.timedelta(hours=1)).isoformat()
+
+    def bk_event(eid: str, occurred: str) -> dict:
+        e = make_event(base, eid, occurred, plus3, plus3)
+        e["scoreHistory"] = [{
+            "at": plus3, "by": "qa", "note": "簿记时间晚于 asOf 3 分钟",
+            "scores": {k: e["scores"][k] for k in
+                       ("structural", "scope", "signal", "delta", "timeliness", "crossDomain", "total")},
+        }]
+        e["revisions"] = [{"at": plus3, "by": "qa", "note": "簿记时间晚于 asOf 3 分钟"}]
+        e["verification"] = {
+            "status": "passed", "method": "qa-fixture", "checkedAt": plus3,
+            "checks": [{"kind": "source_text", "result": "pass", "evidence": "QA 簿记时间豁免用例"}],
+        }
+        return e
+
+    d1 = write_fixture("bookkeeping_ok", [bk_event("ev_qa_bk_ok", before)])
+    p1 = validate_on(d1, ["--as-of", AS_OF])
+    j1 = as_json(p1.stdout) or {}
+    cmp("G1", "G", "簿记时间（collectedAt/firstReportedAt/scoreHistory.at/revisions.at/checkedAt）晚于 asOf 3 分钟 → 必须通过",
+        "exit0；无 findings",
+        f"exit={p1.returncode} {short(j1)}",
+        p1.returncode == 0 and not findings(j1),
+        "asOf=2026-11-14T12:00，簿记时间=12:03")
+
+    d2 = write_fixture("bookkeeping_bad", [bk_event("ev_qa_bk_bad", plus3)])
+    p2 = validate_on(d2, ["--as-of", AS_OF])
+    j2 = as_json(p2.stdout) or {}
+    tf = hit(j2, "TS_FUTURE")
+    fields = sorted({f.get("field") for f in tf})
+    cmp("G2", "G", "同一条记录只把 occurredAt 改到 asOf 之后 → 必须报 TS_FUTURE",
+        "exit1；TS_FUTURE 只命中 occurredAt（簿记字段不再连坐）",
+        f"exit={p2.returncode} ts_future={len(tf)} fields={fields} {short(j2)}",
+        p2.returncode == 1 and len(tf) >= 1 and fields == ["occurredAt"],
+        "fix 2a983b4/e18be96：上界只约束 occurredAt")
+
+
+# --------------------------------------------------------------------------- #
+# H 组：采集侧钳制（collect.now / promote_candidates.now_iso）
+# --------------------------------------------------------------------------- #
+def group_h() -> None:
+    code = r'''
+import sys, json, datetime as dt
+sys.path.insert(0, "scripts")
+import _core as C, collect, promote_candidates
+
+def setwin(mode, as_of=None, max_ts=None):
+    cfg = {"window": {"mode": mode, "days": 180, "timezone": "Asia/Shanghai",
+                      "frozen": {"start": "2026-05-13", "end": "2026-11-13", "frozenAt": "2026-11-13"}}}
+    win = C.resolve_window(cfg, as_of=as_of, max_ts=max_ts, use_env=False)
+    C.set_window(win)
+    return win
+
+def snap(win):
+    return {"as_of": win.as_of.isoformat(), "source": win.as_of_source,
+            "collect": collect.now().isoformat(),
+            "promote": promote_candidates.now_iso(),
+            "wall": dt.datetime.now(dt.timezone(dt.timedelta(hours=8))).isoformat(timespec="seconds")}
+
+out = {"h1": snap(setwin("rolling", as_of="2026-11-14T12:00:00+08:00")),
+       "h2": snap(setwin("rolling", as_of="2099-01-01T00:00:00+08:00")),
+       "h3": snap(setwin("fixed", max_ts="2026-11-12T00:00:00+08:00")),
+       "h4": snap(setwin("fixed"))}
+print(json.dumps(out))
+'''
+    tmp_py = TMP / "py_clamp.py"
+    tmp_py.write_text(code, encoding="utf-8")
+    proc = run([sys.executable, str(tmp_py)])
+    d = as_json(proc.stdout)
+    if not d:
+        record("H1", "H", "collect/promote 钳到 asOf", "见说明", (proc.stderr or "")[:200], "BLOCKED", "导入失败")
+        return
+
+    h1 = d["h1"]
+    ok1 = (h1["collect"].startswith("2026-11-14T12:00:00")
+           and h1["promote"].startswith("2026-11-14T12:00:00"))
+    cmp("H1", "H", "rolling：墙钟(13:2x) 晚于 asOf(12:00) → collect.now / promote.now_iso 钳到 asOf",
+        "两者都等于 2026-11-14T12:00:00+08:00",
+        f"collect={h1['collect'][:26]} promote={h1['promote']} wall={h1['wall']}", ok1,
+        "7175924：无发布时间条目不再写成未来")
+
+    h2 = d["h2"]
+    w = dt.datetime.fromisoformat(h2["wall"])
+    c = dt.datetime.fromisoformat(h2["collect"])
+    ok2 = abs((c - w).total_seconds()) < 30 and not c.year == 2099
+    cmp("H2", "H", "rolling：asOf(2099) 晚于墙钟 → 不得向上钳（返回真实墙钟）",
+        "collect.now ≈ 墙钟，不是 2099",
+        f"collect={h2['collect'][:26]} wall={h2['wall']} as_of={h2['as_of'][:10]}", ok2,
+        "钳制是单向的：只防「写未来」，不伪造未来")
+
+    h3 = d["h3"]
+    ok3 = (h3["collect"].startswith("2026-11-12T00:00:00")
+           and h3["promote"].startswith("2026-11-12T00:00:00"))
+    cmp("H3", "H", "fixed + --max-ts(11-12)：同样钳到窗口 asOf",
+        "两者都等于 2026-11-12T00:00:00+08:00",
+        f"as_of={h3['as_of'][:26]} collect={h3['collect'][:26]} promote={h3['promote']}", ok3,
+        "fixed 口径同一条规则")
+
+    h4 = d["h4"]
+    w4 = dt.datetime.fromisoformat(h4["wall"])
+    c4 = dt.datetime.fromisoformat(h4["collect"])
+    ok4 = abs((c4 - w4).total_seconds()) < 30 and h4["source"] == "clock"
+    cmp("H4", "H", "fixed 无 max-ts：asOf=时钟 → 不钳，仍返回墙钟",
+        "collect.now ≈ 墙钟，asOfSource=clock",
+        f"as_of={h4['as_of'][:26]} source={h4['source']} collect={h4['collect'][:26]}", ok4,
+        "没有钉死的 asOf 就没有钳制的必要")
+
+
+# --------------------------------------------------------------------------- #
+# I 组：export_astro 标题长度按「字」计（_core.char_len）
+# --------------------------------------------------------------------------- #
+def group_i() -> None:
+    code = r'''
+import sys, json, datetime as dt
+sys.path.insert(0, "scripts")
+import export_astro as X, _core as C
+
+def probe(title):
+    warnings = []
+    _events, errors = X.validate_and_normalize_events(
+        [{"id": "ev_qa_len_001", "title": title, "summary": "QA 标题长度口径用例。"}],
+        set(), dt.date(2026, 11, 14), warnings)
+    return {"len": len(title), "char_len": C.char_len(title),
+            "title_errors": [e for e in errors if "：title " in str(e)]}
+
+base119 = "a" * 119
+# 119 个字母 + 7 个空格 = 裸 len() 126，char_len 仍是 119
+spaced = ""
+for i, ch in enumerate(base119):
+    spaced += ch
+    if i in (18, 35, 52, 69, 86, 103, 110):
+        spaced += " "
+out = {"spaced": probe(spaced), "over": probe("b" * 121), "exact": probe("c" * 120)}
+print(json.dumps(out, ensure_ascii=False))
+'''
+    tmp_py = TMP / "py_title.py"
+    tmp_py.write_text(code, encoding="utf-8")
+    proc = run([sys.executable, str(tmp_py)])
+    d = as_json(proc.stdout)
+    if not d:
+        record("I1", "I", "export_astro 标题长度口径", "见说明", (proc.stderr or "")[:200], "BLOCKED", "导入失败")
+        return
+
+    sp = d["spaced"]
+    cmp("I1", "I", "英文带空格标题：裸 len()=126 但 char_len=119 → export 接受",
+        "len=126 char_len=119，无 title 报错",
+        f"len={sp['len']} char_len={sp['char_len']} title_errors={sp['title_errors']}",
+        sp["len"] == 126 and sp["char_len"] == 119 and not sp["title_errors"],
+        "86f8414：改用 _core.char_len，与 validate 同口径")
+
+    ov = d["over"]
+    cmp("I2", "I", "char_len=121（超 120）→ 仍必须拒绝",
+        "title 报错且提到 121 字",
+        f"len={ov['len']} char_len={ov['char_len']} title_errors={ov['title_errors']}",
+        bool(ov["title_errors"]) and "121" in " ".join(ov["title_errors"]),
+        "放宽的是空格，不是上限")
+
+    ex = d["exact"]
+    cmp("I3", "I", "char_len=120（正好上限）→ 边界接受",
+        "无 title 报错",
+        f"len={ex['len']} char_len={ex['char_len']} title_errors={ex['title_errors']}",
+        ex["char_len"] == 120 and not ex["title_errors"],
+        "闭区间 4–120")
+
+
+# --------------------------------------------------------------------------- #
 # 主流程
 # --------------------------------------------------------------------------- #
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--only", default="", help="A/B/C/D 组合，如 AC")
+    ap.add_argument("--only", default="", help="A/B/C/D/E/F/G/H/I 组合，如 AC")
     ap.add_argument("--strict", action="store_true", help="BLOCKED 视为失败")
     args = ap.parse_args()
-    only = args.only.upper() or "ABCDEF"
+    only = args.only.upper() or "ABCDEFGHI"
 
     TMP.mkdir(parents=True, exist_ok=True)
     cfg_rolling = {
@@ -817,6 +1030,14 @@ def main() -> int:
         group_e()
     if "F" in only:
         group_f()
+    if "B" in only:
+        group_b5()
+    if "G" in only:
+        group_g()
+    if "H" in only:
+        group_h()
+    if "I" in only:
+        group_i()
 
     # 报告
     order = {"FAIL": 0, "BLOCKED": 1, "PASS": 2}

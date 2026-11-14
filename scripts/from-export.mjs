@@ -237,7 +237,7 @@ const meta = {
   site: 'ERA · 时代趋势雷达',
   generatedAt: srcEvents.generatedAt ?? new Date().toISOString(),
   window: WINDOW.mode === 'rolling'
-    ? { from: WINDOW.from, to: WINDOW.to, mode: 'rolling', days: WINDOW.days ?? 180, asOf: WINDOW.asOf ?? null, asOfSource: 'run_time' }
+    ? { from: WINDOW.from, to: WINDOW.to, mode: 'rolling', days: WINDOW.days ?? 180, asOf: WINDOW.asOf ?? null }
     : { from: WINDOW.from, to: WINDOW.to, mode: 'fixed', frozenAt: WINDOW.frozenAt ?? WINDOW.to },
   coverage: { firstEvent: dates[0] ?? null, lastEvent: dates[dates.length - 1] ?? null },
   counts: {
