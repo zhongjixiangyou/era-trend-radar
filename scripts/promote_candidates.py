@@ -56,7 +56,12 @@ TREND_RULES = [
 
 
 def now_iso() -> str:
-    return datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds")
+    """本轮「现在」的 ISO 串；窗口存在时钳到 asOf（同 collect.now，理由见 docs/window-rolling.md §2）。"""
+    dtv = datetime.now(timezone.utc).astimezone()
+    win = C.active_window()
+    if win is not None and win.as_of is not None and dtv > win.as_of:
+        dtv = win.as_of
+    return dtv.isoformat(timespec="seconds")
 
 
 def to_iso(value: str) -> str:

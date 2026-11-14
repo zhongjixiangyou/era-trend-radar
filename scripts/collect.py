@@ -42,7 +42,17 @@ MAX_ITEMS = 40
 
 
 def now() -> datetime:
-    return datetime.now(TZ)
+    """本轮「现在」。
+
+    asOf 在采集前就被钉死（CI 第一步跑 window.mjs），采集本身发生在 asOf 之后几秒；
+    若这里返回墙钟，无发布时间条目会把 occurredAt 写成「未来」，整库被 TS_FUTURE 判负
+    （run 43559563839）。所以窗口存在时，把 now 钳到 asOf。
+    """
+    dtv = datetime.now(TZ)
+    win = C.active_window()
+    if win is not None and win.as_of is not None and dtv > win.as_of:
+        return win.as_of
+    return dtv
 
 
 def when(text: str) -> datetime | None:

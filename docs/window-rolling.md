@@ -53,6 +53,8 @@
   `publishedAt` / 各种 `history[].at` / `createdAt` / `resolvedAt` / 快照 `asOf` / 来源 `checkedAt`）
   是采集与证据簿记时间，**不卡上界**，只校验格式和相互先后——CI 里 asOf 在采集前钉死，
   采集本身发生在 asOf 之后几秒，卡上界会把刚采到的数据全判成「未来」（run 43559162038 / 43559356709 就是这么挂的）。
+- 还有一层：`collect.py` 与 `promote_candidates.py` 里的「本轮 now」在窗口存在时会**钳到 `asOf`**。
+  无发布时间的条目 `occurredAt` 由此等于 asOf 而不是墙钟，避免「采到即未来」（run 43559563839）。
 - 只有日期的记录：`date > to` → error；`date == to` 合法（当天的事当天可写）。
 - 旧记录（`date < from`）：**warning，不报错**（`WINDOW_OUT`）。历史数据保留在 `content/`，只是不参与展示。
 
