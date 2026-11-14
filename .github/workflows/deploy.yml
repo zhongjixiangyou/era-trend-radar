@@ -8,6 +8,10 @@ on:
     paths:
       - "content/**"
       - "src/**"
+      - "public/**"
+      - "astro.config.mjs"
+      - "package.json"
+      - "pnpm-lock.yaml"
       - "pipeline.config.json"
       - "scripts/ci/**"
       - ".github/workflows/deploy.yml"
