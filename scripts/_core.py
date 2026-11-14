@@ -1131,8 +1131,10 @@ def validate_event(ctx: Ctx, label: str, data: dict) -> None:
         # 不能因为历史数据把整库判负（docs/window-rolling.md）。
         ctx.warn("WINDOW_OUT", label, "occurredAt",
                  f"occurredAt={fmt_ts(occurred)} 早于窗口下界 {win.from_str}（历史记录保留，不参与窗口展示）")
-    reported = f.ts("firstReportedAt", want_tz=True, limit=True)
-    collected = f.ts("collectedAt", want_tz=True, limit=True)
+    # 上界只约束「事件发生时间」（occurredAt）。firstReportedAt/collectedAt 是簿记时间：
+    # CI 里 asOf 在采集前钉死，采集本身发生在 asOf 之后几秒，若也卡上界会把自己判成未来数据。
+    reported = f.ts("firstReportedAt", want_tz=True, limit=False)
+    collected = f.ts("collectedAt", want_tz=True, limit=False)
     if occurred and collected and occurred > collected + dt.timedelta(days=1):
         ctx.err("TS_ORDER", label, "occurredAt",
                 f"occurredAt={fmt_ts(occurred)} 晚于 collectedAt={fmt_ts(collected)}")
