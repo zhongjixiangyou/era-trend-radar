@@ -1,5 +1,419 @@
 [
   {
+    "id": "I4",
+    "group": "I",
+    "desc": "summary 长度口径：validate 按字(char_len=119)放行 / export_astro 仍按裸 len()=126 拒绝",
+    "expected": "两侧口径一致（要么都放行、要么都拒）",
+    "actual": "validate: exit=0 errors=0；export_astro: ['event[ev_qa_summary_spaced]：summary 126 字，需在 10–120']",
+    "status": "FAIL",
+    "evidence": "export_astro.py:510 仍是 len(summary)；同类还在 576/581/716/873/959 行，817 结论：只有 title 修了"
+  },
+  {
+    "id": "A1",
+    "group": "A",
+    "desc": "resolve_window 滚动窗口取值",
+    "expected": "from=2026-05-19 to=2026-11-14 days=180 mode=rolling",
+    "actual": "from=2026-05-19 to=2026-11-14 days=180 mode=rolling",
+    "status": "PASS",
+    "evidence": "signature=(config: 'Any' = None, *, as_of: 'str | None' = None, max_ts: 'str | None' = None, now: 'dt.datetime | None' = None, mode: 'str | None' = None, days: 'int | None' = None, use_env: 'bool' = True) -> 'Window'"
+  },
+  {
+    "id": "A2",
+    "group": "A",
+    "desc": "返回体带 asOf",
+    "expected": "asOf=2026-11-14T12:00:00+08:00",
+    "actual": "2026-11-14T12:00:00+08:00",
+    "status": "PASS",
+    "evidence": "契约 §2：滚动窗口上界即 asOf 时刻"
+  },
+  {
+    "id": "A3",
+    "group": "A",
+    "desc": "返回体带 asOfSource",
+    "expected": "cli",
+    "actual": "cli",
+    "status": "PASS",
+    "evidence": "契约 §3：报告里写明 asOfSource(cli/env/clock/config)"
+  },
+  {
+    "id": "A4",
+    "group": "A",
+    "desc": "同日 00:00:01 与 23:59:59 得到同一窗口",
+    "expected": "to=2026-11-14 from=2026-05-19（两者相同）",
+    "actual": "00:00:01 → to=2026-11-14 from=2026-05-19；23:59:59 → to=2026-11-14 from=2026-05-19",
+    "status": "PASS",
+    "evidence": "承接 docs §6「得到同一个 to」"
+  },
+  {
+    "id": "A5",
+    "group": "A",
+    "desc": "跨日：13T23:59:59 vs 14T00:00:01 下界差一天",
+    "expected": "to=2026-11-13 from=2026-05-18",
+    "actual": "to=2026-11-13 from=2026-05-18",
+    "status": "PASS",
+    "evidence": "契约 §6 跨日条；Coder 原文「14T00:00:01 与 23:59:59 下界差一天」两种读法都覆盖"
+  },
+  {
+    "id": "A6",
+    "group": "A",
+    "desc": "fixed 模式回归",
+    "expected": "from=2026-05-13 to=2026-11-13 mode=fixed 且保留 frozenAt",
+    "actual": "from=2026-05-13 to=2026-11-13 mode=fixed frozenAt=2026-11-13",
+    "status": "PASS",
+    "evidence": ""
+  },
+  {
+    "id": "B1",
+    "group": "B",
+    "desc": "data.mjs resolveWindow rolling 取值",
+    "expected": "start=2026-05-19 end=2026-11-14",
+    "actual": "start=2026-05-19 end=2026-11-14",
+    "status": "PASS",
+    "evidence": "scripts/ci/lib/data.mjs:36"
+  },
+  {
+    "id": "B2",
+    "group": "B",
+    "desc": "data.mjs resolveWindow 返回 asOf/asOfSource",
+    "expected": "带 asOf 与 asOfSource",
+    "actual": "keys=['asOf', 'asOfFrom', 'asOfSource', 'days', 'end', 'mode', 'start', 'upper']",
+    "status": "PASS",
+    "evidence": "契约 §4：只用 resolveWindow(config, asOf)"
+  },
+  {
+    "id": "B3",
+    "group": "B",
+    "desc": "同日 00:00:01 与 23:59:59 同一窗口",
+    "expected": "两者 start/end 相同",
+    "actual": "early=2026-05-19~2026-11-14 late=2026-05-19~2026-11-14",
+    "status": "PASS",
+    "evidence": ""
+  },
+  {
+    "id": "B4",
+    "group": "B",
+    "desc": "data.mjs fixed 回归",
+    "expected": "start=2026-05-13 end=2026-11-13",
+    "actual": "start=2026-05-13 end=2026-11-13",
+    "status": "PASS",
+    "evidence": ""
+  },
+  {
+    "id": "B5",
+    "group": "B",
+    "desc": "data.mjs 复用 window.mjs：同一 asOf 下 from/end/asOf/upper/days 全一致",
+    "expected": "start=2026-05-19 end=2026-11-14 asOf=2026-11-14T12:00:00+08:00 days=180",
+    "actual": "shared(from=2026-05-19,to=2026-11-14,asOf=2026-11-14T04:00:00.000Z) data(start=2026-05-19,end=2026-11-14,asOf=2026-11-14T04:00:00.000Z,upper=2026-11-14T04:00:00.000Z)",
+    "status": "PASS",
+    "evidence": "ERA_AS_OF 生效说明它吃的是同一套解析"
+  },
+  {
+    "id": "C0",
+    "group": "C",
+    "desc": "夹具自检：11-14T00:30 事件在 --max-ts=11-13 下应报 TS_FUTURE",
+    "expected": "存在 TS_FUTURE（说明夹具时间字段被真正校验）",
+    "actual": "[error/TS_FUTURE] qa/window-verify/_tmp/c0_clean/ev_qa_edge_0030.json#occurredAt",
+    "status": "PASS",
+    "evidence": "把上界钉回 11-13，验证夹具不是空壳"
+  },
+  {
+    "id": "C1",
+    "group": "C",
+    "desc": "跨日 fixture 三条：edge 合法 / old warning 不 error / future error",
+    "expected": "exit1；old 仅 warning；future 报 TS_FUTURE；edge 干净",
+    "actual": "exit=1 [error/TS_FUTURE] qa/window-verify/_tmp/cross_day/ev_qa_future_1115.json#occurredAt；[warn/WINDOW_OUT] qa/window-verify/_tmp/cross_day/ev_qa_old_0518.json#occurredAt",
+    "status": "PASS",
+    "evidence": "--history off；fixture 见 _tmp/cross_day"
+  },
+  {
+    "id": "C2",
+    "group": "C",
+    "desc": "下界：from 00:00 通过 / from-1s 判旧",
+    "expected": "05-19T00:00 无 finding；05-18T23:59:59 仅 WINDOW_OUT(warn)，exit0",
+    "actual": "exit=0 [warn/WINDOW_OUT] qa/window-verify/_tmp/lower/ev_qa_lower_minus1s.json#occurredAt",
+    "status": "PASS",
+    "evidence": "旧记录只 warning 不 error（契约 §2）"
+  },
+  {
+    "id": "C3",
+    "group": "C",
+    "desc": "上界：asOf 通过 / +1s error",
+    "expected": "exit1；12:00:00 干净，12:00:01 报 TS_FUTURE",
+    "actual": "exit=1 [error/TS_FUTURE] qa/window-verify/_tmp/upper/ev_qa_upper_plus1s.json#occurredAt",
+    "status": "PASS",
+    "evidence": "不允许用整日上限放过 12:00 跑的 18:00 数据"
+  },
+  {
+    "id": "C4",
+    "group": "C",
+    "desc": "date-only：当天合法 / 次日非法",
+    "expected": "11-14 无 error；11-15 有 error（TS_FUTURE）",
+    "actual": "exit=1 [error/TS_FUTURE] qa/window-verify/_tmp/dateonly/ev_qa_dateonly_next.json#occurredAt",
+    "status": "PASS",
+    "evidence": ""
+  },
+  {
+    "id": "C5",
+    "group": "C",
+    "desc": "--max-ts 生效（11-12 上限压掉 11-14 事件）",
+    "expected": "exit1；TS_FUTURE 命中",
+    "actual": "exit=1 [error/TS_FUTURE] qa/window-verify/_tmp/maxts/ev_qa_upper_exact.json#occurredAt",
+    "status": "PASS",
+    "evidence": "老参数，现状已实现（这是现状能力基线）"
+  },
+  {
+    "id": "C6",
+    "group": "C",
+    "desc": "--as-of 压过 ERA_MAX_TS（11-14T00:30 事件不报 TS_FUTURE）",
+    "expected": "asOfSource=cli；edge 无 TS_FUTURE；window.to=2026-11-14",
+    "actual": "asOfSource=cli to=2026-11-14 upper=2026-11-14T12:00:00+08:00 ts_future=0 无 findings",
+    "status": "PASS",
+    "evidence": "契约 §3 优先级 1 > 2；若被 ERA_MAX_TS 压住，这条会报 TS_FUTURE"
+  },
+  {
+    "id": "C7",
+    "group": "C",
+    "desc": "rolling 真实 content/ 全量：旧记录只 warning、不 error",
+    "expected": "exit0；errors=0；warning 全部是 WINDOW_OUT；window{from,to,mode,asOf,days,asOfSource} 齐全",
+    "actual": "exit=0 errors=0 warnings=2 old=2 errfind=0 window={\"from\": \"2026-05-19\", \"to\": \"2026-11-14\", \"mode\": \"rolling\", \"asOf\": \"2026-11-14T13:21:39+08:00\", \"asOfFrom\": \"clock\", \"days\": 180, \"asOfSource\": \"clock\"}",
+    "status": "PASS",
+    "evidence": "契约 §2 旧记录/§5 报告字段"
+  },
+  {
+    "id": "C8",
+    "group": "C",
+    "desc": "fixed 回归：冻结快照 ee7fd88 上重跑",
+    "expected": "errors=0 warnings=0 records=368；快照配置 window.mode=fixed、冻结区间 05-13~11-13",
+    "actual": "errors=0 warnings=0 records=368 cfg.mode=fixed (旧版 validate 不输出 window 字段)",
+    "status": "PASS",
+    "evidence": "契约 §4：fixed 与冻结时完全一致（git archive 只读快照，不动工作区）"
+  },
+  {
+    "id": "D1",
+    "group": "D",
+    "desc": "rolling 配置下 export_site 拒绝运行（exit 2 并指路 export_astro）",
+    "expected": "exit=2；提示「拒绝运行」且提到 --legacy-allow",
+    "actual": "exit=2 [export_site] 拒绝运行：pipeline.config.json 是 rolling 窗口，本脚本（旧旁路）不会按 asOf 过滤、也不会写 mode/asOf，会产出失真的 meta.window。",
+    "status": "PASS",
+    "evidence": "旧旁路护栏：rolling 下不写失真的 meta.window"
+  },
+  {
+    "id": "D2",
+    "group": "D",
+    "desc": "--legacy-allow 放行旧旁路（不再被 rolling 护栏拦）",
+    "expected": "exit!=2；无「拒绝运行」；输出进入对照表/自检阶段",
+    "actual": "exit=1 对照表=有 护栏=放行",
+    "status": "PASS",
+    "evidence": "护栏只拒绝误用，不拆旧能力；自检 exit=1 来自夹具数据本身"
+  },
+  {
+    "id": "E1",
+    "group": "E",
+    "desc": "judge(): from 当天 00:00:00+08 → 通过",
+    "expected": "ok",
+    "actual": "ok",
+    "status": "PASS",
+    "evidence": "window.from=2026-05-19 to=2026-11-14 upper=2026-11-14T04:00:00.000Z"
+  },
+  {
+    "id": "E2",
+    "group": "E",
+    "desc": "judge(): from-1 秒（05-18T23:59:59）→ 旧记录（warning 口径）",
+    "expected": "old",
+    "actual": "old",
+    "status": "PASS",
+    "evidence": "window.from=2026-05-19 to=2026-11-14 upper=2026-11-14T04:00:00.000Z"
+  },
+  {
+    "id": "E3",
+    "group": "E",
+    "desc": "judge(): asOf 时刻本身 → 通过",
+    "expected": "ok",
+    "actual": "ok",
+    "status": "PASS",
+    "evidence": "window.from=2026-05-19 to=2026-11-14 upper=2026-11-14T04:00:00.000Z"
+  },
+  {
+    "id": "E4",
+    "group": "E",
+    "desc": "judge(): asOf+1 秒 → error(TS_FUTURE)",
+    "expected": "future",
+    "actual": "future",
+    "status": "PASS",
+    "evidence": "window.from=2026-05-19 to=2026-11-14 upper=2026-11-14T04:00:00.000Z"
+  },
+  {
+    "id": "E5",
+    "group": "E",
+    "desc": "judge(): date-only == to（2026-11-14）→ 合法",
+    "expected": "ok",
+    "actual": "ok",
+    "status": "PASS",
+    "evidence": "window.from=2026-05-19 to=2026-11-14 upper=2026-11-14T04:00:00.000Z"
+  },
+  {
+    "id": "E6",
+    "group": "E",
+    "desc": "judge(): date-only == to+1（2026-11-15）→ 非法",
+    "expected": "future",
+    "actual": "future",
+    "status": "PASS",
+    "evidence": "window.from=2026-05-19 to=2026-11-14 upper=2026-11-14T04:00:00.000Z"
+  },
+  {
+    "id": "E7",
+    "group": "E",
+    "desc": "judge(): date-only < from（2026-05-18）→ 旧记录",
+    "expected": "old",
+    "actual": "old",
+    "status": "PASS",
+    "evidence": "window.from=2026-05-19 to=2026-11-14 upper=2026-11-14T04:00:00.000Z"
+  },
+  {
+    "id": "E8",
+    "group": "E",
+    "desc": "judge(): asOf 当天 23:00 带时刻 → future（不得用整日上限）",
+    "expected": "future",
+    "actual": "future",
+    "status": "PASS",
+    "evidence": "window.from=2026-05-19 to=2026-11-14 upper=2026-11-14T04:00:00.000Z"
+  },
+  {
+    "id": "F1",
+    "group": "F",
+    "desc": "window.mjs rolling：from/to/days/asOfSource",
+    "expected": "mode=rolling from=2026-05-19 to=2026-11-14 days=180 asOfSource=cli",
+    "actual": "{\"mode\": \"rolling\", \"from\": \"2026-05-19\", \"to\": \"2026-11-14\", \"days\": 180, \"timezone\": \"Asia/Shanghai\", \"asOf\": \"2026-11-14T04:00:00.000Z\", \"asOfSource\": \"cli\", \"asOfFrom\": \"as-of\", \"upper\": \"2026-11-14T04:00:00.000Z\", \"fromTs\": \"2026-05-18T16:00:00.000Z\"}",
+    "status": "PASS",
+    "evidence": "scripts/ci/window.mjs"
+  },
+  {
+    "id": "F2",
+    "group": "F",
+    "desc": "window.mjs rolling：upper = asOf 时刻本身",
+    "expected": "upper=2026-11-14T12:00:00+08:00",
+    "actual": "2026-11-14T04:00:00.000Z",
+    "status": "PASS",
+    "evidence": "契约 §2 上界定义"
+  },
+  {
+    "id": "F3",
+    "group": "F",
+    "desc": "window.mjs fixed 回归（与 2026-11-13 冻结一致）",
+    "expected": "from=2026-05-13 to=2026-11-13 frozenAt=2026-11-13",
+    "actual": "{\"mode\": \"fixed\", \"from\": \"2026-05-13\", \"to\": \"2026-11-13\", \"days\": null, \"timezone\": \"Asia/Shanghai\", \"asOf\": \"2026-11-14T05:21:40.033Z\", \"asOfSource\": \"clock\", \"asOfFrom\": \"clock\", \"upper\": \"2026-11-13T15:59:59.999Z\", \"fromTs\": \"2026-05-12T16:00:00.000Z\", \"frozenAt\": \"2026-11-13\"}",
+    "status": "PASS",
+    "evidence": ""
+  },
+  {
+    "id": "F4",
+    "group": "F",
+    "desc": "fixed + --max-ts：上界被压过、窗口日期不变",
+    "expected": "from/to 仍 05-13/11-13；upper=2026-11-12T00:00+08",
+    "actual": "{\"mode\": \"fixed\", \"from\": \"2026-05-13\", \"to\": \"2026-11-13\", \"days\": null, \"timezone\": \"Asia/Shanghai\", \"asOf\": \"2026-11-11T16:00:00.000Z\", \"asOfSource\": \"cli\", \"asOfFrom\": \"max-ts\", \"upper\": \"2026-11-11T16:00:00.000Z\", \"fromTs\": \"2026-05-12T16:00:00.000Z\", \"frozenAt\": \"2026-11-13\"}",
+    "status": "PASS",
+    "evidence": "契约 §3"
+  },
+  {
+    "id": "F5",
+    "group": "F",
+    "desc": "--as-of 压过 ERA_MAX_TS",
+    "expected": "asOfSource=cli，upper=2026-11-14T12:00+08（不是 11-12）",
+    "actual": "{\"mode\": \"rolling\", \"from\": \"2026-05-19\", \"to\": \"2026-11-14\", \"days\": 180, \"timezone\": \"Asia/Shanghai\", \"asOf\": \"2026-11-14T04:00:00.000Z\", \"asOfSource\": \"cli\", \"asOfFrom\": \"as-of\", \"upper\": \"2026-11-14T04:00:00.000Z\", \"fromTs\": \"2026-05-18T16:00:00.000Z\"}",
+    "status": "PASS",
+    "evidence": "契约 §3 优先级 1>2"
+  },
+  {
+    "id": "F6",
+    "group": "F",
+    "desc": "跨日：13T23:59:59 → 05-18/11-13；14T00:00:01 → 05-19/11-14",
+    "expected": "下界随日历日平移一天",
+    "actual": "13日: 2026-05-18~2026-11-13；14日: 2026-05-19~2026-11-14",
+    "status": "PASS",
+    "evidence": "契约 §6 跨日条"
+  },
+  {
+    "id": "F7",
+    "group": "F",
+    "desc": "同日 00:00:01 与 23:59:59 同窗（差一天只发生在跨日）",
+    "expected": "两者 from=2026-05-19 to=2026-11-14",
+    "actual": "2026-05-19~2026-11-14 / 2026-05-19~2026-11-14",
+    "status": "PASS",
+    "evidence": "澄清 Coder 口述与 docs §6 的歧义"
+  },
+  {
+    "id": "F8",
+    "group": "F",
+    "desc": "asOf 用 UTC 写法（13T17:00Z）→ 按 +08 落到 11-14",
+    "expected": "to=2026-11-14 from=2026-05-19",
+    "actual": "to=2026-11-14 from=2026-05-19",
+    "status": "PASS",
+    "evidence": "时区换算边界：UTC 17:00 = 次日 01:00+08"
+  },
+  {
+    "id": "F9",
+    "group": "F",
+    "desc": "asOf=13T15:59:59Z → 仍属 11-13（前一日）",
+    "expected": "to=2026-11-13 from=2026-05-18",
+    "actual": "to=2026-11-13 from=2026-05-18",
+    "status": "PASS",
+    "evidence": "与 F8 成对，验证不是简单取 UTC 日期"
+  },
+  {
+    "id": "G1",
+    "group": "G",
+    "desc": "簿记时间（collectedAt/firstReportedAt/scoreHistory.at/revisions.at/checkedAt）晚于 asOf 3 分钟 → 必须通过",
+    "expected": "exit0；无 findings",
+    "actual": "exit=0 无 findings",
+    "status": "PASS",
+    "evidence": "asOf=2026-11-14T12:00，簿记时间=12:03"
+  },
+  {
+    "id": "G2",
+    "group": "G",
+    "desc": "同一条记录只把 occurredAt 改到 asOf 之后 → 必须报 TS_FUTURE",
+    "expected": "exit1；TS_FUTURE 只命中 occurredAt（簿记字段不再连坐）",
+    "actual": "exit=1 ts_future=1 fields=['occurredAt'] [error/TS_FUTURE] qa/window-verify/_tmp/bookkeeping_bad/ev_qa_bk_bad.json#occurredAt",
+    "status": "PASS",
+    "evidence": "fix 2a983b4/e18be96：上界只约束 occurredAt"
+  },
+  {
+    "id": "H1",
+    "group": "H",
+    "desc": "rolling：墙钟(13:2x) 晚于 asOf(12:00) → collect.now / promote.now_iso 钳到 asOf",
+    "expected": "两者都等于 2026-11-14T12:00:00+08:00",
+    "actual": "collect=2026-11-14T12:00:00+08:00 promote=2026-11-14T12:00:00+08:00 wall=2026-11-14T13:21:40+08:00",
+    "status": "PASS",
+    "evidence": "7175924：无发布时间条目不再写成未来"
+  },
+  {
+    "id": "H2",
+    "group": "H",
+    "desc": "rolling：asOf(2099) 晚于墙钟 → 不得向上钳（返回真实墙钟）",
+    "expected": "collect.now ≈ 墙钟，不是 2099",
+    "actual": "collect=2026-11-14T13:21:40.523943 wall=2026-11-14T13:21:40+08:00 as_of=2099-01-01",
+    "status": "PASS",
+    "evidence": "钳制是单向的：只防「写未来」，不伪造未来"
+  },
+  {
+    "id": "H3",
+    "group": "H",
+    "desc": "fixed + --max-ts(11-12)：同样钳到窗口 asOf",
+    "expected": "两者都等于 2026-11-12T00:00:00+08:00",
+    "actual": "as_of=2026-11-12T00:00:00+08:00 collect=2026-11-12T00:00:00+08:00 promote=2026-11-12T00:00:00+08:00",
+    "status": "PASS",
+    "evidence": "fixed 口径同一条规则"
+  },
+  {
+    "id": "H4",
+    "group": "H",
+    "desc": "fixed 无 max-ts：asOf=时钟 → 不钳，仍返回墙钟",
+    "expected": "collect.now ≈ 墙钟，asOfSource=clock",
+    "actual": "as_of=2026-11-14T13:21:40.523965 source=clock collect=2026-11-14T13:21:40.523965",
+    "status": "PASS",
+    "evidence": "没有钉死的 asOf 就没有钳制的必要"
+  },
+  {
     "id": "I1",
     "group": "I",
     "desc": "英文带空格标题：裸 len()=126 但 char_len=119 → export 接受",

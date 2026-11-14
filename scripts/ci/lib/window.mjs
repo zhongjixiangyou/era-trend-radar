@@ -25,6 +25,22 @@ function shiftDay(day, delta) {
   return new Date(t).toISOString().slice(0, 10);
 }
 
+/** 某时区里 `YYYY-MM-DD` 当天 00:00 对应的 UTC 毫秒。
+ *  fromTs 曾经硬编码 +08:00，timezone 不是 Asia/Shanghai 时会多放/少放几小时（审稿实测 UTC 多放 8 小时）。 */
+function zonedMidnightUtc(dateStr, timeZone) {
+  const [y, m, d] = dateStr.split("-").map(Number);
+  const guess = Date.UTC(y, m - 1, d, 0, 0, 0);
+  if (!timeZone || timeZone === "Asia/Shanghai") return guess - 8 * 3600 * 1000;
+  const dtf = new Intl.DateTimeFormat("en-US", {
+    timeZone, hour12: false,
+    year: "numeric", month: "2-digit", day: "2-digit",
+    hour: "2-digit", minute: "2-digit", second: "2-digit",
+  });
+  const parts = Object.fromEntries(dtf.formatToParts(new Date(guess)).map((p) => [p.type, p.value]));
+  const asUtc = Date.UTC(+parts.year, +parts.month - 1, +parts.day, +parts.hour % 24, +parts.minute, +parts.second);
+  return guess - (asUtc - guess);
+}
+
 export function resolveWindow(config = {}, opts = {}) {
   const w = config?.window || {};
   const mode = String(opts.mode || w.mode || "fixed").toLowerCase();
@@ -59,7 +75,7 @@ export function resolveWindow(config = {}, opts = {}) {
       mode, from, to, days: null, timezone,
       asOf: asOf.toISOString(), asOfSource, asOfFrom,
       upper: upper.toISOString(),
-      fromTs: new Date(Date.parse(`${from}T00:00:00+08:00`)).toISOString(),
+      fromTs: new Date(zonedMidnightUtc(from, timezone)).toISOString(),
       frozenAt: frozen.frozenAt || to,
     };
   }
@@ -70,7 +86,7 @@ export function resolveWindow(config = {}, opts = {}) {
     mode, from, to, days, timezone,
     asOf: asOf.toISOString(), asOfSource, asOfFrom,
     upper: asOf.toISOString(),
-    fromTs: new Date(Date.parse(`${from}T00:00:00+08:00`)).toISOString(),
+    fromTs: new Date(zonedMidnightUtc(from, timezone)).toISOString(),
   };
 }
 
