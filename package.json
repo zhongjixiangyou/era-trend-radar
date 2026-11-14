@@ -8,7 +8,7 @@
     "build": "node scripts/ci/release.mjs",
     "preview": "astro preview",
     "check": "node scripts/validate.mjs",
-    "build:preview": "node scripts/ci/derive.mjs --mode preview && node scripts/from-export.mjs --dir .era-tmp/v1/preview --out src/data --mode preview && cp .era-tmp/derived/emerging.json src/data/emerging.json && node scripts/ci/astro.mjs build"
+    "build:preview": "node scripts/ci/derive.mjs --mode preview && node scripts/from-export.mjs --dir .era-tmp/v1/preview --out src/data --mode preview && cp .era-tmp/derived/emerging.json src/data/emerging.json && cp .era-tmp/derived/clues.json src/data/clues.json && node scripts/ci/astro.mjs build"
   },
   "dependencies": {
     "astro": "^7.4.11",
