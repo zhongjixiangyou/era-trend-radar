@@ -53,6 +53,13 @@ jobs:
         continue-on-error: true
         run: node scripts/ci/collect.mjs --report reports/collect.json
 
+      # collect 只把候选落到 inbox/imported/events/*.jsonl；不提升的话 content/ 永远是空的，
+      # 抓取等于白跑。这一步放进工作流才让「抓 → 提升 → 校验 → 提交」闭环。
+      - name: Promote candidates (inbox -> content/events)
+        if: always()
+        continue-on-error: true
+        run: python3 scripts/promote_candidates.py --workers 10
+
       - name: Validate (schema gate)
         if: always()
         continue-on-error: true
