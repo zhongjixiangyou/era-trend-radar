@@ -1,0 +1,18 @@
+{
+ "id": "ev_us-ai-youth-employment-2026",
+ "status": "pending_review",
+ "source": "content/events/ev_us-ai-youth-employment-2026.json",
+ "model": "opencode-go/deepseek-v4.1-flash",
+ "at": "2026-11-15T01:04:35+08:00",
+ "draft": {
+  "analysis": "机制是AI暴露岗位的入门层被压缩：企业以减少招聘完成调整，而不是裁员，所以差距集中在22—25岁。差距自2025年8月起持续扩大，且在任务被替代的职业里更明显。不确定点：作者明确这是描述性早期指标，不等于因果，也无法区分AI本身与同期宏观因素对招聘的影响。",
+  "summary": "斯坦福8月论文用ADP数据发现，AI暴露职业中22—25岁就业比同类低19%，资深员工无同等差距，主要通过减少招聘实现；作者称这是早期描述性指标。",
+  "trendLinks": [
+   {
+    "trendId": "tr_labour-demographic-adjustment",
+    "direction": "support",
+    "reason": "青年入门岗位收缩，符合就业结构调整判断"
+   }
+  ]
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "id": "ev_jp-boj-rate-2026-06",
+ "status": "pending_review",
+ "source": "content/events/ev_jp-boj-rate-2026-06.json",
+ "model": "opencode-go/deepseek-v4.1-flash",
+ "at": "2026-11-15T01:04:35+08:00",
+ "draft": {
+  "analysis": "7比1通过说明委员会内部对加息节奏已有分歧，多数派认为企业利润、就业与收入足以支撑继续正常化；声明同时提示中东局势与原油上涨对活动形成下行压力，后续路径依赖能源价格。不确定点：政策利率到1.0%之后的中性水平并未明示，进一步空间不清楚。",
+  "summary": "日本央行6月16日以7比1多数决定将无担保隔夜拆借利率设为1.0%左右，6月17日生效；声明称经济温和复苏，但中东局势与原油上涨构成下行压力。",
+  "trendLinks": [
+   {
+    "trendId": "tr_global-rates-rehike",
+    "direction": "support",
+    "reason": "主要央行再度加息，支持全球利率再收紧"
+   }
+  ]
+ }
+}

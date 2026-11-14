@@ -1,0 +1,18 @@
+{
+ "id": "ev_us-fomc-hold-2026-06",
+ "status": "pending_review",
+ "source": "content/events/ev_us-fomc-hold-2026-06.json",
+ "model": "opencode-go/deepseek-v4.1-flash",
+ "at": "2026-11-15T01:04:35+08:00",
+ "draft": {
+  "analysis": "维持不变说明委员会在通胀仍高于2%目标与中东冲突不确定性之间选择观望；声明把通胀偏高部分归因于能源等供应冲击，等于把政策重心放在供给端是否二次传导。不确定点：声明没有给出降息或再加息的时间指引，方向仍取决于后续数据。",
+  "summary": "美联储6月17日FOMC维持联邦基金利率目标区间3.50%—3.75%不变，重申2%通胀目标与充足准备金政策，并称经济稳健扩张、中东冲突带来不确定性。",
+  "trendLinks": [
+   {
+    "trendId": "tr_global-rates-rehike",
+    "direction": "weaken",
+    "reason": "本次维持不变，未进一步加息"
+   }
+  ]
+ }
+}

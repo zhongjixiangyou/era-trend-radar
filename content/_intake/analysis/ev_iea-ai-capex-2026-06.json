@@ -1,0 +1,18 @@
+{
+ "id": "ev_iea-ai-capex-2026-06",
+ "status": "pending_review",
+ "source": "content/events/ev_iea-ai-capex-2026-06.json",
+ "model": "opencode-go/deepseek-v4.1-flash",
+ "at": "2026-11-15T01:04:35+08:00",
+ "draft": {
+  "analysis": "资本开支与用电需求同时上行，说明算力扩张的瓶颈正从芯片转向电力与并网能力；五家公司的开支规模已超过全球油气上游投资，意味着AI基础设施成为能源需求的新增量。不确定点：报告是并列展示而非因果识别，资本开支能否转化为持续用电取决于项目投产节奏。",
+  "summary": "IEA报告称，仅五家科技公司（主要投向数据中心）的资本开支已超过全球石油天然气生产投资，2025年全球数据中心用电需求增长近20%。",
+  "trendLinks": [
+   {
+    "trendId": "tr_ai-power-constraint",
+    "direction": "support",
+    "reason": "资本开支与用电同步上行，支持算力受电力约束"
+   }
+  ]
+ }
+}
