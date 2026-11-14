@@ -50,8 +50,14 @@ def now() -> datetime:
     """
     dtv = datetime.now(TZ)
     win = C.active_window()
-    if win is not None and win.as_of is not None and dtv > win.as_of:
-        return win.as_of
+    limit = None
+    if win is not None:
+        limit = win.as_of
+        # fixed 模式下 asOf 只表示「哪一轮」，数据上限是 upper；钳到更紧的那个。
+        if win.upper is not None and (limit is None or win.upper < limit):
+            limit = win.upper
+    if limit is not None and dtv > limit:
+        return limit
     return dtv
 
 

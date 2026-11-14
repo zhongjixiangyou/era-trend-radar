@@ -1135,6 +1135,10 @@ def validate_event(ctx: Ctx, label: str, data: dict) -> None:
     # CI 里 asOf 在采集前钉死，采集本身发生在 asOf 之后几秒，若也卡上界会把自己判成未来数据。
     reported = f.ts("firstReportedAt", want_tz=True, limit=False)
     collected = f.ts("collectedAt", want_tz=True, limit=False)
+    if win is not None and collected is not None and win.upper is not None and collected > win.upper:
+        # 簿记时间不判负（契约 §2），但窗口钳制失效时要有可观测信号。
+        ctx.warn("WINDOW_BOOKKEEPING_FUTURE", label, "collectedAt",
+                 f"collectedAt={fmt_ts(collected)} 晚于窗口上界 {fmt_ts(win.upper)}（簿记时间不判负，请确认窗口是否生效或回放 asOf 是否偏早）")
     if occurred and collected and occurred > collected + dt.timedelta(days=1):
         ctx.err("TS_ORDER", label, "occurredAt",
                 f"occurredAt={fmt_ts(occurred)} 晚于 collectedAt={fmt_ts(collected)}")

@@ -58,6 +58,18 @@
 - 只有日期的记录：`date > to` → error；`date == to` 合法（当天的事当天可写）。
 - 旧记录（`date < from`）：**warning，不报错**（`WINDOW_OUT`）。历史数据保留在 `content/`，只是不参与展示。
 
+### fixed 模式的钳制目标（补充）
+
+`collect.now()` / `promote.now_iso()` 的钳制目标是「数据上限」而不是 asOf：`min(墙钟, asOf, upper)`。
+rolling 下 `asOf == upper`，两者等价；fixed 下 asOf 只表示「哪一轮」，可以晚于 upper，
+若钳到 asOf 会把无发布时间的条目写成次日，越过上界、整库被判 TS_FUTURE（审稿实测 2026-11-14 复现）。
+
+簿记时间（collectedAt/firstReportedAt/history[].at 等）不判负，但 `collectedAt > upper` 会出
+`WINDOW_BOOKKEEPING_FUTURE` warning，用来暴露「窗口没生效」或「回放 asOf 偏早」。
+
+已知限制（下一轮）：`scripts/ci/build.mjs` 的 `canonicalize()` 把窗口对象的 `asOf/from/to` 一律当易变字段，
+所以 `asOfSource=run_time` 这套标记目前不生效，显式 `--as-of` 回放时的窗口差异不会触发派生层漂移告警。
+
 ## 3. 覆盖优先级（显式覆盖，可复现）
 
 从高到低：

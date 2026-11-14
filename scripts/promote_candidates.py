@@ -59,8 +59,14 @@ def now_iso() -> str:
     """本轮「现在」的 ISO 串；窗口存在时钳到 asOf（同 collect.now，理由见 docs/window-rolling.md §2）。"""
     dtv = datetime.now(timezone.utc).astimezone()
     win = C.active_window()
-    if win is not None and win.as_of is not None and dtv > win.as_of:
-        dtv = win.as_of
+    limit = None
+    if win is not None:
+        limit = win.as_of
+        # fixed 模式下 asOf 可以晚于 upper，钳制目标是「数据上限」，不是 asOf。
+        if win.upper is not None and (limit is None or win.upper < limit):
+            limit = win.upper
+    if limit is not None and dtv > limit:
+        dtv = limit
     return dtv.isoformat(timespec="seconds")
 
 
