@@ -885,7 +885,7 @@ def verification(ctx: Ctx, label: str, value: Any) -> None:
     sub = Field(ctx, value, label, "verification.")
     sub.text("status", enum=VERIFY_STATUSES)
     sub.text("method", min_len=2, max_len=200, required=False)
-    sub.ts("checkedAt", required=False, want_tz=True, limit=True)
+    sub.ts("checkedAt", required=False, want_tz=True, limit=False)
     sub.text("note", required=False, max_len=300)
     checks = sub.arr("checks", min_items=0, max_items=12, required=False)
     if checks:
@@ -956,7 +956,7 @@ def score_history(ctx: Ctx, label: str, items: Any) -> None:
             ctx.err("F_TYPE", label, f"scoreHistory[{i}]", "应为对象")
             continue
         h = Field(ctx, item, label, f"scoreHistory[{i}].")
-        h.ts("at", want_tz=True, limit=True)
+        h.ts("at", want_tz=True, limit=False)
         h.text("by", min_len=1, max_len=40, required=False)
         h.text("note", min_len=2, max_len=200, required=False)
         scores = h.obj("scores", required=False)
@@ -980,7 +980,7 @@ def link_history(ctx: Ctx, label: str, items: Any) -> None:
             ctx.err("F_TYPE", label, f"linkHistory[{i}]", "应为对象")
             continue
         h = Field(ctx, item, label, f"linkHistory[{i}].")
-        h.ts("at", want_tz=True, limit=True)
+        h.ts("at", want_tz=True, limit=False)
         h.text("trendId", min_len=6, max_len=64, pattern=ID_PATTERNS["trend"])
         h.text("direction", enum=DIRECTIONS)
         h.text("action", enum=("add", "remove", "change"))
@@ -996,7 +996,7 @@ def counter_search(ctx: Ctx, label: str, value: Any) -> None:
         ctx.err("F_TYPE", label, "counterSearch", f"应为对象，实际 {typename(value)}")
         return
     sub = Field(ctx, value, label, "counterSearch.")
-    sub.ts("at", want_tz=True, limit=True)
+    sub.ts("at", want_tz=True, limit=False)
     sub.arr("sources", min_items=0, max_items=20, required=False)
     sub.arr("keywords", min_items=0, max_items=20, required=False)
     sub.text("window", min_len=2, max_len=60, required=False)
@@ -1018,7 +1018,7 @@ def first_judgment(ctx: Ctx, label: str, value: Any, created: Any) -> None:
         return
     sub = Field(ctx, value, label, "firstJudgment.")
     sub.text("statement", min_len=10, max_len=400)
-    at = sub.ts("createdAt", want_tz=True, limit=True)
+    at = sub.ts("createdAt", want_tz=True, limit=False)
     sub.number("probability", lo=0, hi=1, required=False)
     if created and at and as_aware(at) > as_aware(created):
         ctx.err("TS_ORDER", label, "firstJudgment.createdAt",
@@ -1200,7 +1200,7 @@ def sources(ctx: Ctx, label: str, items: Any) -> None:
         url = sub.text("url", min_len=10, max_len=600, pattern=r"^https?://")
         sub.text("title", min_len=2, max_len=200)
         sub.text("publisher", min_len=2, max_len=80)
-        sub.ts("publishedAt", want_tz=False, limit=True)
+        sub.ts("publishedAt", want_tz=False, limit=False)
         sub.text("type", enum=SOURCE_TYPES)
         sub.text("note", min_len=1, max_len=200, required=False)
         for key in sorted(set(item) - {"url", "title", "publisher", "publishedAt", "type", "note"}):
@@ -1280,7 +1280,7 @@ def revisions(ctx: Ctx, label: str, items: Any, allow_stage: bool = False) -> No
             ctx.err("F_TYPE", label, f"revisions[{i}]", f"应为对象，实际 {typename(item)}")
             continue
         sub = Field(ctx, item, label, f"revisions[{i}].")
-        sub.ts("at", want_tz=True, limit=True)
+        sub.ts("at", want_tz=True, limit=False)
         sub.text("by", min_len=1, max_len=40, required=False)
         sub.text("note", min_len=4, max_len=400)
         if allow_stage and "stageBefore" in item:
@@ -1315,7 +1315,7 @@ def retro(ctx: Ctx, label: str, item: Any, reported: dt.datetime | None, collect
         return
     sub = Field(ctx, item, label, "retro.")
     is_retro = sub.boolean("isRetro")
-    as_of = sub.ts("asOf", required=False, want_tz=True, limit=True)
+    as_of = sub.ts("asOf", required=False, want_tz=True, limit=False)
     note = sub.text("note", min_len=8, max_len=400, required=False)
     for key in sorted(set(item) - {"isRetro", "asOf", "note"}):
         ctx.warn("W_UNKNOWN_FIELD", label, f"retro.{key}", f"未知字段 {key}")
@@ -1342,7 +1342,7 @@ def validate_trend(ctx: Ctx, label: str, data: dict) -> None:
     f = Field(ctx, data, label)
     f.text("id", min_len=6, max_len=64, pattern=ID_PATTERNS["trend"])
     f.text("thesis", min_len=10, max_len=200)
-    first_seen = f.ts("firstSeenAt", want_tz=False, limit=True)
+    first_seen = f.ts("firstSeenAt", want_tz=False, limit=False)
     f.text("stage", enum=STAGES)
     indicators(ctx, label, data.get("indicators"))
     evidence_refs(ctx, label, data.get("evidenceRefs"))
@@ -1438,7 +1438,7 @@ def validate_forecast(ctx: Ctx, label: str, data: dict) -> None:
     f = Field(ctx, data, label)
     f.text("id", min_len=6, max_len=64, pattern=ID_PATTERNS["forecast"])
     f.text("statement", min_len=10, max_len=200)
-    created = f.ts("createdAt", want_tz=True, limit=True)
+    created = f.ts("createdAt", want_tz=True, limit=False)
     resolve_by = f.ts("resolveBy", want_tz=False, limit=False)
     f.number("probability", lo=0, hi=1)
     f.text("rationale", min_len=20, max_len=2000)
@@ -1482,7 +1482,7 @@ def resolution(ctx: Ctx, label: str, item: Any, status: str | None,
             ctx.err("F_MISSING", label, "resolution", "status=resolved 必须写 resolution 对象")
             return
         sub = Field(ctx, item, label, "resolution.")
-        resolved_at = sub.ts("resolvedAt", want_tz=True, limit=True)
+        resolved_at = sub.ts("resolvedAt", want_tz=True, limit=False)
         outcome = sub.text("outcome", enum=OUTCOMES)
         sub.text("note", min_len=10, max_len=400)
         urls = sub.arr("evidenceUrls", min_items=0, max_items=20, required=False)

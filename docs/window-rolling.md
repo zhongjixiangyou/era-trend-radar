@@ -49,8 +49,10 @@
 ### 未来时间
 
 - 带时刻的记录：`ts > asOf` → **error**（`TS_FUTURE`）。（不允许用「整日上限」把 12:00 跑的 18:00 数据放过去。）
-  这个上界**只作用于事件发生时间 `occurredAt`**；`firstReportedAt` / `collectedAt` 是簿记时间，不设上界——
-  CI 里 asOf 在采集前钉死，采集本身就发生在 asOf 之后几秒，卡上界会把刚采到的数据全判成「未来」。
+  这个上界**只作用于事件发生时间 `occurredAt`**。其余时间戳（`firstReportedAt` / `collectedAt` /
+  `publishedAt` / 各种 `history[].at` / `createdAt` / `resolvedAt` / 快照 `asOf` / 来源 `checkedAt`）
+  是采集与证据簿记时间，**不卡上界**，只校验格式和相互先后——CI 里 asOf 在采集前钉死，
+  采集本身发生在 asOf 之后几秒，卡上界会把刚采到的数据全判成「未来」（run 43559162038 / 43559356709 就是这么挂的）。
 - 只有日期的记录：`date > to` → error；`date == to` 合法（当天的事当天可写）。
 - 旧记录（`date < from`）：**warning，不报错**（`WINDOW_OUT`）。历史数据保留在 `content/`，只是不参与展示。
 
