@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zhongjixiangyou.github.io/era-trend-radar/sitemap-index.xml
