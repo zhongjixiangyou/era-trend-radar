@@ -1,25 +1,25 @@
 {
   "schemaVersion": "1",
-  "asOf": "2026-11-14T05:19:29.678788+00:00",
+  "asOf": "2026-11-14T05:33:36.977894+00:00",
   "windows": {
     "recent": {
-      "from": "2026-10-15T05:19:29.678788+00:00",
-      "to": "2026-11-14T05:19:29.678788+00:00",
+      "from": "2026-10-15T05:33:36.977894+00:00",
+      "to": "2026-11-14T05:33:36.977894+00:00",
       "days": 30
     },
     "prior": {
-      "from": "2026-09-15T05:19:29.678788+00:00",
-      "to": "2026-10-15T05:19:29.678788+00:00",
+      "from": "2026-09-15T05:33:36.977894+00:00",
+      "to": "2026-10-15T05:33:36.977894+00:00",
       "days": 30
     },
     "shortRecent": {
-      "from": "2026-11-07T05:19:29.678788+00:00",
-      "to": "2026-11-14T05:19:29.678788+00:00",
+      "from": "2026-11-07T05:33:36.977894+00:00",
+      "to": "2026-11-14T05:33:36.977894+00:00",
       "days": 7
     },
     "shortPrior": {
-      "from": "2026-10-31T05:19:29.678788+00:00",
-      "to": "2026-11-07T05:19:29.678788+00:00",
+      "from": "2026-10-31T05:33:36.977894+00:00",
+      "to": "2026-11-07T05:33:36.977894+00:00",
       "days": 7
     }
   },
@@ -118,7 +118,7 @@
     "duplicateEvents": 0
   },
   "totals": {
-    "events": 478,
+    "events": 490,
     "asOfSource": "run_time",
     "breakthroughAvailable": false,
     "breakthroughNote": "突破判定需 milestones[] 带出处；schema 当前无此字段，故所有突破计数为 0 且不可展示。",
@@ -1302,8 +1302,8 @@
       "lowBase": true,
       "reason": "低基数：前窗不足，不换算增长率",
       "recent": {
-        "events": 186,
-        "distinctSources": 10,
+        "events": 187,
+        "distinctSources": 11,
         "scoreRevisionSignal": 0,
         "scoreRevisionIds": [],
         "breakthroughEvents": 0,
@@ -1495,7 +1495,8 @@
           "ev_f5cf4ab019b8",
           "ev_facc51006d11",
           "ev_fcb93b6a155a",
-          "ev_fe08f1486c6f"
+          "ev_fe08f1486c6f",
+          "ev_fb16ec8cc3a4"
         ]
       },
       "prior": {
@@ -1509,8 +1510,8 @@
         "eventIds": []
       },
       "shortRecent": {
-        "events": 186,
-        "distinctSources": 10,
+        "events": 187,
+        "distinctSources": 11,
         "scoreRevisionSignal": 0,
         "scoreRevisionIds": [],
         "breakthroughEvents": 0,
@@ -1702,7 +1703,8 @@
           "ev_f5cf4ab019b8",
           "ev_facc51006d11",
           "ev_fcb93b6a155a",
-          "ev_fe08f1486c6f"
+          "ev_fe08f1486c6f",
+          "ev_fb16ec8cc3a4"
         ]
       },
       "shortPrior": {
@@ -1892,7 +1894,7 @@
       "lowBase": true,
       "reason": "低基数：前窗不足，不换算增长率",
       "recent": {
-        "events": 50,
+        "events": 52,
         "distinctSources": 9,
         "scoreRevisionSignal": 0,
         "scoreRevisionIds": [],
@@ -1949,7 +1951,9 @@
           "ev_b863a8729f4e",
           "ev_d3a6980acbb3",
           "ev_dc01ad80272f",
-          "ev_f007ac661a10"
+          "ev_f007ac661a10",
+          "ev_6ad02001e0bb",
+          "ev_826e4a189131"
         ]
       },
       "prior": {
@@ -1963,7 +1967,7 @@
         "eventIds": []
       },
       "shortRecent": {
-        "events": 50,
+        "events": 52,
         "distinctSources": 9,
         "scoreRevisionSignal": 0,
         "scoreRevisionIds": [],
@@ -2020,7 +2024,9 @@
           "ev_b863a8729f4e",
           "ev_d3a6980acbb3",
           "ev_dc01ad80272f",
-          "ev_f007ac661a10"
+          "ev_f007ac661a10",
+          "ev_6ad02001e0bb",
+          "ev_826e4a189131"
         ]
       },
       "shortPrior": {
@@ -2657,6 +2663,59 @@
       }
     },
     {
+      "id": "tr_advanced-energy-validation",
+      "title": "先进能源走向验证",
+      "kind": "trend",
+      "state": "insufficient",
+      "growthRatio": null,
+      "lowBase": false,
+      "reason": "近期事件 1 < 3",
+      "recent": {
+        "events": 1,
+        "distinctSources": 1,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": [
+          "ev_826e4a189131"
+        ]
+      },
+      "prior": {
+        "events": 0,
+        "distinctSources": 0,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": []
+      },
+      "shortRecent": {
+        "events": 1,
+        "distinctSources": 1,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": [
+          "ev_826e4a189131"
+        ]
+      },
+      "shortPrior": {
+        "events": 0,
+        "distinctSources": 0,
+        "scoreRevisionSignal": 0,
+        "scoreRevisionIds": [],
+        "breakthroughEvents": 0,
+        "breakthroughIds": [],
+        "breakthroughAvailable": false,
+        "eventIds": []
+      }
+    },
+    {
       "id": "tr_cn-demographic-decline",
       "title": "婚育与人口下行",
       "kind": "trend",
@@ -2763,55 +2822,6 @@
       }
     },
     {
-      "id": "tr_advanced-energy-validation",
-      "title": "先进能源走向验证",
-      "kind": "trend",
-      "state": "insufficient",
-      "growthRatio": null,
-      "lowBase": false,
-      "reason": "近期事件 0 < 3",
-      "recent": {
-        "events": 0,
-        "distinctSources": 0,
-        "scoreRevisionSignal": 0,
-        "scoreRevisionIds": [],
-        "breakthroughEvents": 0,
-        "breakthroughIds": [],
-        "breakthroughAvailable": false,
-        "eventIds": []
-      },
-      "prior": {
-        "events": 0,
-        "distinctSources": 0,
-        "scoreRevisionSignal": 0,
-        "scoreRevisionIds": [],
-        "breakthroughEvents": 0,
-        "breakthroughIds": [],
-        "breakthroughAvailable": false,
-        "eventIds": []
-      },
-      "shortRecent": {
-        "events": 0,
-        "distinctSources": 0,
-        "scoreRevisionSignal": 0,
-        "scoreRevisionIds": [],
-        "breakthroughEvents": 0,
-        "breakthroughIds": [],
-        "breakthroughAvailable": false,
-        "eventIds": []
-      },
-      "shortPrior": {
-        "events": 0,
-        "distinctSources": 0,
-        "scoreRevisionSignal": 0,
-        "scoreRevisionIds": [],
-        "breakthroughEvents": 0,
-        "breakthroughIds": [],
-        "breakthroughAvailable": false,
-        "eventIds": []
-      }
-    },
-    {
       "id": "tr_global-growth-frictions",
       "title": "增长与贸易摩擦",
       "kind": "trend",
@@ -2871,7 +2881,7 @@
       "lowBase": true,
       "reason": "低基数：前窗不足，不换算增长率",
       "recent": {
-        "events": 216,
+        "events": 219,
         "distinctSources": 8,
         "scoreRevisionSignal": 0,
         "scoreRevisionIds": [],
@@ -3094,7 +3104,10 @@
           "ev_efe0d37f2817",
           "ev_f017e4862429",
           "ev_fc638d35c9cd",
-          "ev_fe08f1486c6f"
+          "ev_fe08f1486c6f",
+          "ev_6ad02001e0bb",
+          "ev_826e4a189131",
+          "ev_c097caf5eb1e"
         ]
       },
       "prior": {
@@ -3108,7 +3121,7 @@
         "eventIds": []
       },
       "shortRecent": {
-        "events": 216,
+        "events": 219,
         "distinctSources": 8,
         "scoreRevisionSignal": 0,
         "scoreRevisionIds": [],
@@ -3331,7 +3344,10 @@
           "ev_efe0d37f2817",
           "ev_f017e4862429",
           "ev_fc638d35c9cd",
-          "ev_fe08f1486c6f"
+          "ev_fe08f1486c6f",
+          "ev_6ad02001e0bb",
+          "ev_826e4a189131",
+          "ev_c097caf5eb1e"
         ]
       },
       "shortPrior": {
@@ -3354,11 +3370,12 @@
       "lowBase": true,
       "reason": "低基数：前窗不足，不换算增长率",
       "recent": {
-        "events": 142,
+        "events": 149,
         "distinctSources": 6,
-        "scoreRevisionSignal": 1,
+        "scoreRevisionSignal": 2,
         "scoreRevisionIds": [
-          "ev_cn-nev-oct"
+          "ev_cn-nev-oct",
+          "ev_6eba8011bfbb"
         ],
         "breakthroughEvents": 0,
         "breakthroughIds": [],
@@ -3505,7 +3522,14 @@
           "ev_f2179f19389f",
           "ev_f761fd653524",
           "ev_f795002cf1d0",
-          "ev_fcb93b6a155a"
+          "ev_fcb93b6a155a",
+          "ev_31f6c5a8a2d6",
+          "ev_472a7414ca78",
+          "ev_6eba8011bfbb",
+          "ev_8f002545c867",
+          "ev_9c55657e18f3",
+          "ev_bae7d6a21372",
+          "ev_fb16ec8cc3a4"
         ]
       },
       "prior": {
@@ -3519,11 +3543,12 @@
         "eventIds": []
       },
       "shortRecent": {
-        "events": 141,
+        "events": 148,
         "distinctSources": 4,
-        "scoreRevisionSignal": 1,
+        "scoreRevisionSignal": 2,
         "scoreRevisionIds": [
-          "ev_cn-nev-oct"
+          "ev_cn-nev-oct",
+          "ev_6eba8011bfbb"
         ],
         "breakthroughEvents": 0,
         "breakthroughIds": [],
@@ -3669,7 +3694,14 @@
           "ev_f2179f19389f",
           "ev_f761fd653524",
           "ev_f795002cf1d0",
-          "ev_fcb93b6a155a"
+          "ev_fcb93b6a155a",
+          "ev_31f6c5a8a2d6",
+          "ev_472a7414ca78",
+          "ev_6eba8011bfbb",
+          "ev_8f002545c867",
+          "ev_9c55657e18f3",
+          "ev_bae7d6a21372",
+          "ev_fb16ec8cc3a4"
         ]
       },
       "shortPrior": {
@@ -3694,7 +3726,7 @@
       "lowBase": true,
       "reason": "低基数：前窗不足，不换算增长率",
       "recent": {
-        "events": 120,
+        "events": 122,
         "distinctSources": 3,
         "scoreRevisionSignal": 0,
         "scoreRevisionIds": [],
@@ -3821,7 +3853,9 @@
           "ev_dd81c48c489b",
           "ev_eb80817ae305",
           "ev_f5cf4ab019b8",
-          "ev_facc51006d11"
+          "ev_facc51006d11",
+          "ev_b3d8a023935d",
+          "ev_ddf18a154b49"
         ]
       },
       "prior": {
@@ -3835,7 +3869,7 @@
         "eventIds": []
       },
       "shortRecent": {
-        "events": 120,
+        "events": 122,
         "distinctSources": 3,
         "scoreRevisionSignal": 0,
         "scoreRevisionIds": [],
@@ -3962,7 +3996,9 @@
           "ev_dd81c48c489b",
           "ev_eb80817ae305",
           "ev_f5cf4ab019b8",
-          "ev_facc51006d11"
+          "ev_facc51006d11",
+          "ev_b3d8a023935d",
+          "ev_ddf18a154b49"
         ]
       },
       "shortPrior": {

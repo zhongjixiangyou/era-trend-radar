@@ -1,5 +1,389 @@
 [
   {
+    "id": "ev_31f6c5a8a2d6",
+    "title": "“0卡糖”应该怎么选？减肥控糖必看",
+    "date": "2026-11-14",
+    "reportedAt": "2026-11-14",
+    "collectedAt": "2026-11-14",
+    "region": "china",
+    "category": "industry",
+    "summary": "现在去超市，越来越多袋装“0卡糖”摆在货架上——外观和白砂糖很像，可以炒菜、拌凉菜、做面点时替代白糖。但围绕它的困惑与争议也不少，有人觉得使用起来很方便，也有人使用后测血糖发现数字往上走。今天(11月14日)是世界糖尿病日，一起了解关于“0",
+    "analysis": "中国经济与产业口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+    "facts": [
+      "现在去超市，越来越多袋装“0卡糖”摆在货架上——外观和白砂糖很像，可以炒菜、拌凉菜、做面点时替代白糖。但围绕它的困惑与争议也不少，有人觉得使用起来很方便，也有人使用后测血糖发现数字往上走。今天(11月14日)是世界糖尿病日，一起了解关于“0"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 12,
+      "scope": 16,
+      "signal": 8,
+      "delta": 5,
+      "timeliness": 4,
+      "crossDomain": 3,
+      "total": 48,
+      "rationale": {
+        "structural": "中国经济与产业类事件，按类别基线给分",
+        "scope": "影响范围按地区口径（中国）",
+        "signal": "命中 0 个信号词",
+        "delta": "命中 0 个变化词",
+        "timeliness": "距采集约 30 天",
+        "crossDomain": "单一类别为主"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "中国新闻网",
+        "url": "https://www.chinanews.com.cn/jk/2026/11-14/10731963.shtml",
+        "date": "2026-11-14",
+        "official": true
+      }
+    ],
+    "trends": [],
+    "timeline": [],
+    "scoreHistory": [
+      {
+        "date": "2026-11-14",
+        "total": 48,
+        "reason": "规则评分初值（未人工复核）"
+      }
+    ],
+    "watch": null,
+    "backfill": false
+  },
+  {
+    "id": "ev_bae7d6a21372",
+    "title": "北京延庆奥林匹克园区启动造雪 今年计划开放13条雪道",
+    "date": "2026-11-14",
+    "reportedAt": "2026-11-14",
+    "collectedAt": "2026-11-14",
+    "region": "china",
+    "category": "industry",
+    "summary": "随着天气转凉，北京各大雪场陆续启动造雪作业，迎接雪季到来。北京延庆奥林匹克园区，预计11月中下旬迎来2026雪季开板。",
+    "analysis": "中国经济与产业口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+    "facts": [
+      "随着天气转凉，北京各大雪场陆续启动造雪作业，迎接雪季到来。北京延庆奥林匹克园区，预计11月中下旬迎来2026雪季开板。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 12,
+      "scope": 16,
+      "signal": 8,
+      "delta": 5,
+      "timeliness": 4,
+      "crossDomain": 3,
+      "total": 48,
+      "rationale": {
+        "structural": "中国经济与产业类事件，按类别基线给分",
+        "scope": "影响范围按地区口径（中国）",
+        "signal": "命中 0 个信号词",
+        "delta": "命中 0 个变化词",
+        "timeliness": "距采集约 30 天",
+        "crossDomain": "单一类别为主"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "中国新闻网",
+        "url": "https://www.chinanews.com.cn/ty/2026/11-14/10731957.shtml",
+        "date": "2026-11-14",
+        "official": true
+      }
+    ],
+    "trends": [],
+    "timeline": [],
+    "scoreHistory": [
+      {
+        "date": "2026-11-14",
+        "total": 48,
+        "reason": "规则评分初值（未人工复核）"
+      }
+    ],
+    "watch": null,
+    "backfill": false
+  },
+  {
+    "id": "ev_472a7414ca78",
+    "title": "斯诺克冠中冠赛：韦克林淘汰罗伯逊晋级决赛",
+    "date": "2026-11-14",
+    "reportedAt": "2026-11-14",
+    "collectedAt": "2026-11-14",
+    "region": "china",
+    "category": "industry",
+    "summary": "中新社英国莱斯特11月14日电 当地时间11月13日，2026年斯诺克冠中冠邀请赛在英国莱斯特展开首场半决赛。世界排名第12位的英格兰球手克里斯·韦克林以6比2战胜澳大利亚名将尼尔·罗伯逊，职业生涯首次闯入该项赛事决赛。",
+    "analysis": "中国经济与产业口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+    "facts": [
+      "中新社英国莱斯特11月14日电 当地时间11月13日，2026年斯诺克冠中冠邀请赛在英国莱斯特展开首场半决赛。世界排名第12位的英格兰球手克里斯·韦克林以6比2战胜澳大利亚名将尼尔·罗伯逊，职业生涯首次闯入该项赛事决赛。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 12,
+      "scope": 16,
+      "signal": 8,
+      "delta": 9,
+      "timeliness": 4,
+      "crossDomain": 3,
+      "total": 52,
+      "rationale": {
+        "structural": "中国经济与产业类事件，按类别基线给分",
+        "scope": "影响范围按地区口径（中国）",
+        "signal": "命中 0 个信号词",
+        "delta": "命中 1 个变化词：首次",
+        "timeliness": "距采集约 30 天",
+        "crossDomain": "单一类别为主"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "中国新闻网",
+        "url": "https://www.chinanews.com.cn/ty/2026/11-14/10731950.shtml",
+        "date": "2026-11-14",
+        "official": true
+      }
+    ],
+    "trends": [],
+    "timeline": [],
+    "scoreHistory": [
+      {
+        "date": "2026-11-14",
+        "total": 52,
+        "reason": "规则评分初值（未人工复核）"
+      }
+    ],
+    "watch": null,
+    "backfill": false
+  },
+  {
+    "id": "ev_9c55657e18f3",
+    "title": "佛山队夺得2026年广东省女子篮球联赛冠军",
+    "date": "2026-11-14",
+    "reportedAt": "2026-11-14",
+    "collectedAt": "2026-11-14",
+    "region": "china",
+    "category": "industry",
+    "summary": "中新网中山11月14日电 (记者 张璐)中国体育彩票·2026年广东省女子篮球联赛(以下简称“赛事”)13日在中山沙溪体育馆收官。最终，佛山队以83:68战胜东莞队，获得队史第三冠。前WCBA广东女篮队员于东全场命中7记三分，拿下27分4篮",
+    "analysis": "中国经济与产业口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+    "facts": [
+      "中新网中山11月14日电 (记者 张璐)中国体育彩票·2026年广东省女子篮球联赛(以下简称“赛事”)13日在中山沙溪体育馆收官。最终，佛山队以83:68战胜东莞队，获得队史第三冠。前WCBA广东女篮队员于东全场命中7记三分，拿下27分4篮"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 12,
+      "scope": 16,
+      "signal": 8,
+      "delta": 5,
+      "timeliness": 4,
+      "crossDomain": 3,
+      "total": 48,
+      "rationale": {
+        "structural": "中国经济与产业类事件，按类别基线给分",
+        "scope": "影响范围按地区口径（中国）",
+        "signal": "命中 0 个信号词",
+        "delta": "命中 0 个变化词",
+        "timeliness": "距采集约 30 天",
+        "crossDomain": "单一类别为主"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "中国新闻网",
+        "url": "https://www.chinanews.com.cn/ty/2026/11-14/10731948.shtml",
+        "date": "2026-11-14",
+        "official": true
+      }
+    ],
+    "trends": [],
+    "timeline": [],
+    "scoreHistory": [
+      {
+        "date": "2026-11-14",
+        "total": 48,
+        "reason": "规则评分初值（未人工复核）"
+      }
+    ],
+    "watch": null,
+    "backfill": false
+  },
+  {
+    "id": "ev_fb16ec8cc3a4",
+    "title": "openEuler发布面向Agentic Infra的操作系统，全球协同共建AI生态",
+    "date": "2026-11-14",
+    "reportedAt": "2026-11-14",
+    "collectedAt": "2026-11-14",
+    "region": "china",
+    "category": "industry",
+    "summary": "11月13日，以“智启未来，引领 Agentic Infra创新”为主题的Agentic Infra操作系统大会(以下简称“大会”)在北京中关村国际创新中心成功举办。本次大会由开放原子开源基金会孵化的明星社区openEuler主办，open",
+    "analysis": "中国经济与产业口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+    "facts": [
+      "11月13日，以“智启未来，引领 Agentic Infra创新”为主题的Agentic Infra操作系统大会(以下简称“大会”)在北京中关村国际创新中心成功举办。本次大会由开放原子开源基金会孵化的明星社区openEuler主办，open"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 12,
+      "scope": 16,
+      "signal": 11,
+      "delta": 5,
+      "timeliness": 4,
+      "crossDomain": 3,
+      "total": 51,
+      "rationale": {
+        "structural": "中国经济与产业类事件，按类别基线给分",
+        "scope": "影响范围按地区口径（中国）",
+        "signal": "命中 1 个信号词：AI",
+        "delta": "命中 0 个变化词",
+        "timeliness": "距采集约 30 天",
+        "crossDomain": "单一类别为主"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "中国新闻网",
+        "url": "https://www.chinanews.com.cn/cj/2026/11-14/10731945.shtml",
+        "date": "2026-11-14",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_ai-power-constraint",
+        "effect": "support",
+        "reason": "关键词命中：AI（规则关联，非人工判定）"
+      }
+    ],
+    "timeline": [],
+    "scoreHistory": [
+      {
+        "date": "2026-11-14",
+        "total": 51,
+        "reason": "规则评分初值（未人工复核）"
+      }
+    ],
+    "watch": null,
+    "backfill": false
+  },
+  {
+    "id": "ev_6eba8011bfbb",
+    "title": "悄悄看、精准打！“攻击-21”+四川舰带来3方面改变",
+    "date": "2026-11-14",
+    "reportedAt": "2026-11-14",
+    "collectedAt": "2026-11-14",
+    "region": "china",
+    "category": "industry",
+    "summary": "今年10月下旬，我军首型舰载察打一体隐身无人机“攻击-21”首次在四川舰成功起降。这是我国两栖攻击舰发展历程上取得的又一次突破，标志着人民海军具备固定翼隐身无人机在大型海上作战平台起降能力。大型隐身无人机上舰，会给两栖登陆作战带来哪些改变？",
+    "analysis": "中国经济与产业口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+    "facts": [
+      "今年10月下旬，我军首型舰载察打一体隐身无人机“攻击-21”首次在四川舰成功起降。这是我国两栖攻击舰发展历程上取得的又一次突破，标志着人民海军具备固定翼隐身无人机在大型海上作战平台起降能力。大型隐身无人机上舰，会给两栖登陆作战带来哪些改变？"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 12,
+      "scope": 16,
+      "signal": 8,
+      "delta": 13,
+      "timeliness": 4,
+      "crossDomain": 3,
+      "total": 56,
+      "rationale": {
+        "structural": "中国经济与产业类事件，按类别基线给分",
+        "scope": "影响范围按地区口径（中国）",
+        "signal": "命中 0 个信号词",
+        "delta": "命中 2 个变化词：首次、突破",
+        "timeliness": "距采集约 30 天",
+        "crossDomain": "单一类别为主"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "中国新闻网",
+        "url": "https://www.chinanews.com.cn/gn/2026/11-14/10731956.shtml",
+        "date": "2026-11-14",
+        "official": true
+      }
+    ],
+    "trends": [],
+    "timeline": [],
+    "scoreHistory": [
+      {
+        "date": "2026-11-14",
+        "total": 56,
+        "reason": "规则评分初值（未人工复核）"
+      }
+    ],
+    "watch": null,
+    "backfill": false
+  },
+  {
+    "id": "ev_8f002545c867",
+    "title": "三秦少年迎“篮”而上 陕西省青少年三人篮球冠军赛揭幕",
+    "date": "2026-11-14",
+    "reportedAt": "2026-11-14",
+    "collectedAt": "2026-11-14",
+    "region": "china",
+    "category": "industry",
+    "summary": "中新网西安11月14日电 (记者 张一辰)2026年陕西省青少年三人篮球冠军赛13日在陕西师范大学长安校区开赛。来自全省7个地市及学校的27支代表队、131名青少年运动员齐聚赛场，角逐省级赛事荣誉。",
+    "analysis": "中国经济与产业口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+    "facts": [
+      "中新网西安11月14日电 (记者 张一辰)2026年陕西省青少年三人篮球冠军赛13日在陕西师范大学长安校区开赛。来自全省7个地市及学校的27支代表队、131名青少年运动员齐聚赛场，角逐省级赛事荣誉。"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 12,
+      "scope": 16,
+      "signal": 8,
+      "delta": 5,
+      "timeliness": 4,
+      "crossDomain": 3,
+      "total": 48,
+      "rationale": {
+        "structural": "中国经济与产业类事件，按类别基线给分",
+        "scope": "影响范围按地区口径（中国）",
+        "signal": "命中 0 个信号词",
+        "delta": "命中 0 个变化词",
+        "timeliness": "距采集约 30 天",
+        "crossDomain": "单一类别为主"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "中国新闻网",
+        "url": "https://www.chinanews.com.cn/ty/2026/11-14/10731947.shtml",
+        "date": "2026-11-14",
+        "official": true
+      }
+    ],
+    "trends": [],
+    "timeline": [],
+    "scoreHistory": [
+      {
+        "date": "2026-11-14",
+        "total": 48,
+        "reason": "规则评分初值（未人工复核）"
+      }
+    ],
+    "watch": null,
+    "backfill": false
+  },
+  {
     "id": "ev_d2328dcacc4b",
     "title": "Two Celebrity Cases Put a Spotlight on British Courts’ Gag Orders",
     "date": "2026-11-14",
@@ -114,6 +498,120 @@
     "backfill": false
   },
   {
+    "id": "ev_c097caf5eb1e",
+    "title": "The Nvidia board’s artificial independence",
+    "date": "2026-11-14",
+    "reportedAt": "2026-11-14",
+    "collectedAt": "2026-11-14",
+    "region": "global",
+    "category": "economy",
+    "summary": "Bored of governance",
+    "analysis": "全球宏观口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+    "facts": [
+      "Bored of governance"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 18,
+      "scope": 16,
+      "signal": 8,
+      "delta": 5,
+      "timeliness": 4,
+      "crossDomain": 3,
+      "total": 54,
+      "rationale": {
+        "structural": "全球宏观类事件，按类别基线给分",
+        "scope": "影响范围按地区口径（全球）",
+        "signal": "命中 0 个信号词",
+        "delta": "命中 0 个变化词",
+        "timeliness": "距采集约 30 天",
+        "crossDomain": "单一类别为主"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "pending",
+    "sources": [
+      {
+        "name": "Financial Times",
+        "url": "https://www.ft.com/content/e141a5ea-5aa4-491b-88a4-369cfc67693a",
+        "date": "2026-11-14",
+        "official": true
+      }
+    ],
+    "trends": [],
+    "timeline": [],
+    "scoreHistory": [
+      {
+        "date": "2026-11-14",
+        "total": 54,
+        "reason": "规则评分初值（未人工复核）"
+      }
+    ],
+    "watch": null,
+    "backfill": false
+  },
+  {
+    "id": "ev_6ad02001e0bb",
+    "title": "Nvidia’s cult of personality was bound to end badly",
+    "date": "2026-11-14",
+    "reportedAt": "2026-11-14",
+    "collectedAt": "2026-11-14",
+    "region": "global",
+    "category": "economy",
+    "summary": "It is worth paying attention to the warning signs of corporate hubris — they often mean something bad is about to happen",
+    "analysis": "全球宏观口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+    "facts": [
+      "It is worth paying attention to the warning signs of corporate hubris — they often mean something bad is about to happen"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 18,
+      "scope": 16,
+      "signal": 8,
+      "delta": 5,
+      "timeliness": 4,
+      "crossDomain": 3,
+      "total": 54,
+      "rationale": {
+        "structural": "全球宏观类事件，按类别基线给分",
+        "scope": "影响范围按地区口径（全球）",
+        "signal": "命中 0 个信号词",
+        "delta": "命中 0 个变化词",
+        "timeliness": "距采集约 30 天",
+        "crossDomain": "单一类别为主"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "pending",
+    "sources": [
+      {
+        "name": "Financial Times",
+        "url": "https://www.ft.com/content/546ec5eb-fbc2-4600-9794-12b1749c1a04",
+        "date": "2026-11-14",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_geopolitics-energy-premium",
+        "effect": "support",
+        "reason": "关键词命中：war（规则关联，非人工判定）"
+      }
+    ],
+    "timeline": [],
+    "scoreHistory": [
+      {
+        "date": "2026-11-14",
+        "total": 54,
+        "reason": "规则评分初值（未人工复核）"
+      }
+    ],
+    "watch": null,
+    "backfill": false
+  },
+  {
     "id": "ev_74d080d915a3",
     "title": "自媒体人卢克文与成都青年共话家国情怀",
     "date": "2026-11-14",
@@ -161,6 +659,71 @@
       {
         "date": "2026-11-14",
         "total": 48,
+        "reason": "规则评分初值（未人工复核）"
+      }
+    ],
+    "watch": null,
+    "backfill": false
+  },
+  {
+    "id": "ev_826e4a189131",
+    "title": "Trump, Xi and Putin to hold first three-way summit in China",
+    "date": "2026-11-14",
+    "reportedAt": "2026-11-14",
+    "collectedAt": "2026-11-14",
+    "region": "global",
+    "category": "economy",
+    "summary": "White House says Trump plans to discuss the Iran war and nuclear arms at a meeting on the sidelines of APEC next week.",
+    "analysis": "全球宏观口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+    "facts": [
+      "White House says Trump plans to discuss the Iran war and nuclear arms at a meeting on the sidelines of APEC next week."
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 18,
+      "scope": 16,
+      "signal": 8,
+      "delta": 9,
+      "timeliness": 4,
+      "crossDomain": 3,
+      "total": 58,
+      "rationale": {
+        "structural": "全球宏观类事件，按类别基线给分",
+        "scope": "影响范围按地区口径（全球）",
+        "signal": "命中 0 个信号词",
+        "delta": "命中 1 个变化词：first",
+        "timeliness": "距采集约 30 天",
+        "crossDomain": "单一类别为主"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "confirmed",
+    "sources": [
+      {
+        "name": "Al Jazeera",
+        "url": "https://www.aljazeera.com/news/2026/11/14/trump-xi-and-putin-to-hold-first-three-way-summit-in-china?traffic_source=rss",
+        "date": "2026-11-14",
+        "official": true
+      }
+    ],
+    "trends": [
+      {
+        "id": "tr_geopolitics-energy-premium",
+        "effect": "support",
+        "reason": "关键词命中：war（规则关联，非人工判定）"
+      },
+      {
+        "id": "tr_advanced-energy-validation",
+        "effect": "support",
+        "reason": "关键词命中：nuclear（规则关联，非人工判定）"
+      }
+    ],
+    "timeline": [],
+    "scoreHistory": [
+      {
+        "date": "2026-11-14",
+        "total": 58,
         "reason": "规则评分初值（未人工复核）"
       }
     ],
@@ -5531,6 +6094,114 @@
       {
         "name": "South China Morning Post",
         "url": "https://www.scmp.com/opinion/world-opinion/article/3373980/eus-fixation-chinese-subsidies-masks-its-own-structural-stagnation",
+        "date": "2026-11-14",
+        "official": true
+      }
+    ],
+    "trends": [],
+    "timeline": [],
+    "scoreHistory": [
+      {
+        "date": "2026-11-14",
+        "total": 48,
+        "reason": "规则评分初值（未人工复核）"
+      }
+    ],
+    "watch": null,
+    "backfill": false
+  },
+  {
+    "id": "ev_ddf18a154b49",
+    "title": "突破颅骨物理限制，鲲为推出经颅超声定位显微成像",
+    "date": "2026-11-14",
+    "reportedAt": "2026-11-14",
+    "collectedAt": "2026-11-14",
+    "region": "china",
+    "category": "technology",
+    "summary": "36氪获悉，11月13日，在CSUM2026重庆中华医学会会议上，深圳鲲为公司推出了Transcranial Ultrasound Localization Microscopy，经颅超声定位显微成像（缩写：tULM），是行业首个实现的无创",
+    "analysis": "科技与社会口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+    "facts": [
+      "36氪获悉，11月13日，在CSUM2026重庆中华医学会会议上，深圳鲲为公司推出了Transcranial Ultrasound Localization Microscopy，经颅超声定位显微成像（缩写：tULM），是行业首个实现的无创"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 12,
+      "scope": 16,
+      "signal": 8,
+      "delta": 9,
+      "timeliness": 4,
+      "crossDomain": 3,
+      "total": 52,
+      "rationale": {
+        "structural": "科技与社会类事件，按类别基线给分",
+        "scope": "影响范围按地区口径（中国）",
+        "signal": "命中 0 个信号词",
+        "delta": "命中 1 个变化词：突破",
+        "timeliness": "距采集约 30 天",
+        "crossDomain": "单一类别为主"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "pending",
+    "sources": [
+      {
+        "name": "36氪",
+        "url": "https://36kr.com/newsflashes/4069059710211204?f=rss",
+        "date": "2026-11-14",
+        "official": true
+      }
+    ],
+    "trends": [],
+    "timeline": [],
+    "scoreHistory": [
+      {
+        "date": "2026-11-14",
+        "total": 52,
+        "reason": "规则评分初值（未人工复核）"
+      }
+    ],
+    "watch": null,
+    "backfill": false
+  },
+  {
+    "id": "ev_b3d8a023935d",
+    "title": "中证协启动券商财务数智化应用调研，五阶段坐标勾勒智能财务路径",
+    "date": "2026-11-14",
+    "reportedAt": "2026-11-14",
+    "collectedAt": "2026-11-14",
+    "region": "china",
+    "category": "technology",
+    "summary": "中国证券业协会日前向各证券公司下发通知，开展财务数智化应用调研，旨在系统了解行业财务数智化应用现状，总结先进经验、剖析问题挑战，为行业深化财务数智化建设、提升财务核算质效和推动财务职能升级提供参考。值得注意的是，券商数智化转型正从财富管理、",
+    "analysis": "科技与社会口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+    "facts": [
+      "中国证券业协会日前向各证券公司下发通知，开展财务数智化应用调研，旨在系统了解行业财务数智化应用现状，总结先进经验、剖析问题挑战，为行业深化财务数智化建设、提升财务核算质效和推动财务职能升级提供参考。值得注意的是，券商数智化转型正从财富管理、"
+    ],
+    "metrics": [],
+    "scores": {
+      "structural": 12,
+      "scope": 16,
+      "signal": 8,
+      "delta": 5,
+      "timeliness": 4,
+      "crossDomain": 3,
+      "total": 48,
+      "rationale": {
+        "structural": "科技与社会类事件，按类别基线给分",
+        "scope": "影响范围按地区口径（中国）",
+        "signal": "命中 0 个信号词",
+        "delta": "命中 0 个变化词",
+        "timeliness": "距采集约 30 天",
+        "crossDomain": "单一类别为主"
+      }
+    },
+    "credibility": "medium",
+    "evidenceGrade": "single_primary",
+    "status": "pending",
+    "sources": [
+      {
+        "name": "36氪",
+        "url": "https://36kr.com/newsflashes/4069069479826307?f=rss",
         "date": "2026-11-14",
         "official": true
       }

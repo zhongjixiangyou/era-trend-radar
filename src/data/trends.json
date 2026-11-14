@@ -292,8 +292,8 @@
     "firstSeen": "2026-11-13",
     "status": "emerging",
     "confidence": null,
-    "evidenceCount": 4,
-    "supportCount": 5,
+    "evidenceCount": 5,
+    "supportCount": 6,
     "counterCount": 0,
     "indicators": [
       "临界试验与持续功率运行",
@@ -362,8 +362,8 @@
     "firstSeen": "2026-08-28",
     "status": "emerging",
     "confidence": null,
-    "evidenceCount": 55,
-    "supportCount": 55,
+    "evidenceCount": 57,
+    "supportCount": 57,
     "counterCount": 1,
     "indicators": [
       "全球供应及需求修订",
@@ -511,8 +511,8 @@
     "firstSeen": "2026-06-03",
     "status": "emerging",
     "confidence": null,
-    "evidenceCount": 192,
-    "supportCount": 192,
+    "evidenceCount": 193,
+    "supportCount": 193,
     "counterCount": 0,
     "indicators": [
       "数据中心收入与资本投入",
