@@ -1,0 +1,90 @@
+{
+  "id": "ev_3a34707e1e7b",
+  "dedupeKey": "ev:5d33c726c9a1",
+  "title": "US’ Bessent says Nvidia must ‘go outside the company’ to find new CEO after Jensen Huang",
+  "summary": "US Treasury Secretary Scott Bessent on Sunday said Nvidia needs to “go outside the company” as it seeks a ‌new chief exe",
+  "facts": [
+    "US Treasury Secretary Scott Bessent on Sunday said Nvidia needs to “go outside the company” as it seeks a ‌new chief exe"
+  ],
+  "analysis": "中国经济与产业口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "中国经济与产业",
+  "region": "中国",
+  "occurredAt": "2026-11-16T00:31:45+08:00",
+  "firstReportedAt": "2026-11-16T00:31:45+08:00",
+  "collectedAt": "2026-11-15T18:28:00+00:00",
+  "sources": [
+    {
+      "url": "https://www.scmp.com/news/world/united-states-canada/article/3374512/bessent-says-nvidia-must-go-outside-company-find-new-ceo",
+      "title": "US’ Bessent says Nvidia must ‘go outside the company’ to find new CEO after Jensen Huang",
+      "publisher": "South China Morning Post",
+      "publishedAt": "2026-11-16T00:31:45+08:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 12,
+    "scope": 16,
+    "signal": 11,
+    "delta": 5,
+    "timeliness": 4,
+    "crossDomain": 3,
+    "total": 51,
+    "rationale": {
+      "structural": "中国经济与产业类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（中国）",
+      "signal": "命中 1 个信号词：AI",
+      "delta": "命中 0 个变化词",
+      "timeliness": "距采集约 30 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "pending",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-15T18:28:00+00:00",
+    "note": "取原文失败：HTTPError",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "unknown",
+        "evidence": "取原文失败：HTTPError"
+      }
+    ]
+  },
+  "status": "pending",
+  "trendLinks": [
+    {
+      "trendId": "tr_ai-power-constraint",
+      "direction": "support",
+      "reason": "关键词命中：AI（规则关联，非人工判定）"
+    }
+  ],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-16T00:31:45+08:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 12,
+        "scope": 16,
+        "signal": 11,
+        "delta": 5,
+        "timeliness": 4,
+        "crossDomain": 3,
+        "total": 51
+      }
+    }
+  ],
+  "linkHistory": []
+}

@@ -1,0 +1,84 @@
+{
+  "id": "ev_89d5d6927926",
+  "dedupeKey": "ev:00e9cf464ebc",
+  "title": "辽宁女足夺得2026赛季中国女超冠军",
+  "summary": "中新社沈阳11月15日电 (记者 韩宏)辽宁沈北禾丰女足15日坐镇主场，以1比1战平北京女足，提前一轮夺得2026赛季中国足球女子超级联赛(下称“女超”)冠军。这是球队队史首个女超联赛冠军，也是职业化以来辽宁足球首次在同一赛季将男子、女子足",
+  "facts": [
+    "中新社沈阳11月15日电 (记者 韩宏)辽宁沈北禾丰女足15日坐镇主场，以1比1战平北京女足，提前一轮夺得2026赛季中国足球女子超级联赛(下称“女超”)冠军。这是球队队史首个女超联赛冠军，也是职业化以来辽宁足球首次在同一赛季将男子、女子足"
+  ],
+  "analysis": "中国经济与产业口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "中国经济与产业",
+  "region": "中国",
+  "occurredAt": "2026-11-15T21:09:04+08:00",
+  "firstReportedAt": "2026-11-15T21:09:04+08:00",
+  "collectedAt": "2026-11-15T18:28:00+00:00",
+  "sources": [
+    {
+      "url": "https://www.chinanews.com.cn/ty/2026/11-15/10732491.shtml",
+      "title": "辽宁女足夺得2026赛季中国女超冠军",
+      "publisher": "中国新闻网",
+      "publishedAt": "2026-11-15T21:09:04+08:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 12,
+    "scope": 16,
+    "signal": 8,
+    "delta": 9,
+    "timeliness": 4,
+    "crossDomain": 3,
+    "total": 52,
+    "rationale": {
+      "structural": "中国经济与产业类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（中国）",
+      "signal": "命中 0 个信号词",
+      "delta": "命中 1 个变化词：首次",
+      "timeliness": "距采集约 30 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "passed",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-15T18:28:00+00:00",
+    "note": "原文可达，标题片段「辽宁女足夺得2026赛季」在页面中出现",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "原文可达，标题片段「辽宁女足夺得2026赛季」在页面中出现"
+      }
+    ]
+  },
+  "status": "published",
+  "trendLinks": [],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-15T21:09:04+08:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 12,
+        "scope": 16,
+        "signal": 8,
+        "delta": 9,
+        "timeliness": 4,
+        "crossDomain": 3,
+        "total": 52
+      }
+    }
+  ],
+  "linkHistory": []
+}

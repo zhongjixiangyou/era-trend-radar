@@ -1,0 +1,90 @@
+{
+  "id": "ev_d9306a03ee87",
+  "dedupeKey": "ev:a54e54d466be",
+  "title": "36氪首发丨具身智能建筑机器人企业完成超亿级融资，连续三年订单复合增长率超100%",
+  "summary": "图源/企业 本文约2700字，建议阅读7分钟 作者丨欧雪 编辑丨原斯来 硬氪获悉，建筑机器人公司上海蔚建科技有限公司（下称“蔚建科技”）已于近期完成第五轮融资，融资金额超亿元人民币，投资方为财通资本。本轮资金将主要用于生产制造、海外市场开拓",
+  "facts": [
+    "图源/企业 本文约2700字，建议阅读7分钟 作者丨欧雪 编辑丨原斯来 硬氪获悉，建筑机器人公司上海蔚建科技有限公司（下称“蔚建科技”）已于近期完成第五轮融资，融资金额超亿元人民币，投资方为财通资本。本轮资金将主要用于生产制造、海外市场开拓"
+  ],
+  "analysis": "科技与社会口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "科技与社会",
+  "region": "中国",
+  "occurredAt": "2026-11-15T18:28:00+00:00",
+  "firstReportedAt": "2026-11-15T18:28:00+00:00",
+  "collectedAt": "2026-11-15T18:28:00+00:00",
+  "sources": [
+    {
+      "url": "https://36kr.com/p/4070571639067782?f=rss",
+      "title": "36氪首发丨具身智能建筑机器人企业完成超亿级融资，连续三年订单复合增长率超100%",
+      "publisher": "36氪",
+      "publishedAt": "2026-11-15T18:28:00+00:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 12,
+    "scope": 16,
+    "signal": 11,
+    "delta": 5,
+    "timeliness": 4,
+    "crossDomain": 3,
+    "total": 51,
+    "rationale": {
+      "structural": "科技与社会类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（中国）",
+      "signal": "命中 1 个信号词：机器人",
+      "delta": "命中 0 个变化词",
+      "timeliness": "距采集约 30 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "pending",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-15T18:28:00+00:00",
+    "note": "原文可达但未匹配到标题片段「36氪首发丨具身智能建筑」",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "unknown",
+        "evidence": "原文可达但未匹配到标题片段「36氪首发丨具身智能建筑」"
+      }
+    ]
+  },
+  "status": "pending",
+  "trendLinks": [
+    {
+      "trendId": "tr_science-manufacturing-transfer",
+      "direction": "support",
+      "reason": "关键词命中：制造（规则关联，非人工判定）"
+    }
+  ],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-15T18:28:00+00:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 12,
+        "scope": 16,
+        "signal": 11,
+        "delta": 5,
+        "timeliness": 4,
+        "crossDomain": 3,
+        "total": 51
+      }
+    }
+  ],
+  "linkHistory": []
+}

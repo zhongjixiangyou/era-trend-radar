@@ -1,0 +1,84 @@
+{
+  "id": "ev_5324e91021cd",
+  "dedupeKey": "ev:b3f9cda9ad56",
+  "title": "韩国10月ICT产业出口额达703.5亿美元 芯片出口同比大增259.4%",
+  "summary": "上月，韩国信息通信技术产业出口额达703.5亿美元，连续第二个月突破700亿美元关口。同比增速为202.0%，首次超过200%。韩国科学技术信息通信部与产业通商资源部15日发布的《2026年10月ICT贸易动向》显示，10月ICT出口额较去",
+  "facts": [
+    "上月，韩国信息通信技术产业出口额达703.5亿美元，连续第二个月突破700亿美元关口。同比增速为202.0%，首次超过200%。韩国科学技术信息通信部与产业通商资源部15日发布的《2026年10月ICT贸易动向》显示，10月ICT出口额较去"
+  ],
+  "analysis": "科技与社会口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "科技与社会",
+  "region": "中国",
+  "occurredAt": "2026-11-15T18:28:00+00:00",
+  "firstReportedAt": "2026-11-15T18:28:00+00:00",
+  "collectedAt": "2026-11-15T18:28:00+00:00",
+  "sources": [
+    {
+      "url": "https://36kr.com/newsflashes/4070541922685828?f=rss",
+      "title": "韩国10月ICT产业出口额达703.5亿美元 芯片出口同比大增259.4%",
+      "publisher": "36氪",
+      "publishedAt": "2026-11-15T18:28:00+00:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 12,
+    "scope": 16,
+    "signal": 14,
+    "delta": 13,
+    "timeliness": 4,
+    "crossDomain": 4,
+    "total": 63,
+    "rationale": {
+      "structural": "科技与社会类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（中国）",
+      "signal": "命中 2 个信号词：出口、芯片",
+      "delta": "命中 2 个变化词：首次、突破",
+      "timeliness": "距采集约 30 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "pending",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-15T18:28:00+00:00",
+    "note": "原文可达但未匹配到标题片段「韩国10月ict产业出口」",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "unknown",
+        "evidence": "原文可达但未匹配到标题片段「韩国10月ict产业出口」"
+      }
+    ]
+  },
+  "status": "pending",
+  "trendLinks": [],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-15T18:28:00+00:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 12,
+        "scope": 16,
+        "signal": 14,
+        "delta": 13,
+        "timeliness": 4,
+        "crossDomain": 4,
+        "total": 63
+      }
+    }
+  ],
+  "linkHistory": []
+}

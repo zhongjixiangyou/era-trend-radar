@@ -1,0 +1,84 @@
+{
+  "id": "ev_9535380861a0",
+  "dedupeKey": "ev:385e2a48954d",
+  "title": "复星医药：多款药品新纳入国家医保目录",
+  "summary": "11月15日，复星医药公告称，根据2026年国家医保目录，公司及控股子公司多款产品获首次纳入、备注信息调整或转入常规目录管理。其中斯鲁利单抗注射液获首次纳入，枸橼酸伏维西利胶囊和芦沃美替尼片新增支付适应症，抗人T细胞兔免疫球蛋白放宽支付限定",
+  "facts": [
+    "11月15日，复星医药公告称，根据2026年国家医保目录，公司及控股子公司多款产品获首次纳入、备注信息调整或转入常规目录管理。其中斯鲁利单抗注射液获首次纳入，枸橼酸伏维西利胶囊和芦沃美替尼片新增支付适应症，抗人T细胞兔免疫球蛋白放宽支付限定"
+  ],
+  "analysis": "科技与社会口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "科技与社会",
+  "region": "中国",
+  "occurredAt": "2026-11-15T18:28:00+00:00",
+  "firstReportedAt": "2026-11-15T18:28:00+00:00",
+  "collectedAt": "2026-11-15T18:28:00+00:00",
+  "sources": [
+    {
+      "url": "https://36kr.com/newsflashes/4070736818819974?f=rss",
+      "title": "复星医药：多款药品新纳入国家医保目录",
+      "publisher": "36氪",
+      "publishedAt": "2026-11-15T18:28:00+00:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 12,
+    "scope": 16,
+    "signal": 8,
+    "delta": 9,
+    "timeliness": 4,
+    "crossDomain": 3,
+    "total": 52,
+    "rationale": {
+      "structural": "科技与社会类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（中国）",
+      "signal": "命中 0 个信号词",
+      "delta": "命中 1 个变化词：首次",
+      "timeliness": "距采集约 30 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "pending",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-15T18:28:00+00:00",
+    "note": "原文可达但未匹配到标题片段「复星医药多款药品新纳入国」",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "unknown",
+        "evidence": "原文可达但未匹配到标题片段「复星医药多款药品新纳入国」"
+      }
+    ]
+  },
+  "status": "pending",
+  "trendLinks": [],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-15T18:28:00+00:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 12,
+        "scope": 16,
+        "signal": 8,
+        "delta": 9,
+        "timeliness": 4,
+        "crossDomain": 3,
+        "total": 52
+      }
+    }
+  ],
+  "linkHistory": []
+}

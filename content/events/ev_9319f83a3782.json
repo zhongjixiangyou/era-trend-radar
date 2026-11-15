@@ -1,0 +1,95 @@
+{
+  "id": "ev_9319f83a3782",
+  "dedupeKey": "ev:6711dfebda35",
+  "title": "起亚汽车2026年韩国国内电动汽车销量超过30万辆",
+  "summary": "11月15日，据报道，现代汽车集团旗下汽车制造商起亚公司表示，截至11月9日，其包括纯电动汽车（EV）和混合动力车型在内的电动汽车销量达到300,048辆，同比增长41.9%。在今年的总销量中，纯电动汽车占120,360辆，较上年同期增长逾",
+  "facts": [
+    "11月15日，据报道，现代汽车集团旗下汽车制造商起亚公司表示，截至11月9日，其包括纯电动汽车（EV）和混合动力车型在内的电动汽车销量达到300,048辆，同比增长41.9%。在今年的总销量中，纯电动汽车占120,360辆，较上年同期增长逾"
+  ],
+  "analysis": "科技与社会口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "科技与社会",
+  "region": "中国",
+  "occurredAt": "2026-11-15T18:28:00+00:00",
+  "firstReportedAt": "2026-11-15T18:28:00+00:00",
+  "collectedAt": "2026-11-15T18:28:00+00:00",
+  "sources": [
+    {
+      "url": "https://36kr.com/newsflashes/4070734403654793?f=rss",
+      "title": "起亚汽车2026年韩国国内电动汽车销量超过30万辆",
+      "publisher": "36氪",
+      "publishedAt": "2026-11-15T18:28:00+00:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 12,
+    "scope": 16,
+    "signal": 8,
+    "delta": 5,
+    "timeliness": 4,
+    "crossDomain": 3,
+    "total": 48,
+    "rationale": {
+      "structural": "科技与社会类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（中国）",
+      "signal": "命中 0 个信号词",
+      "delta": "命中 0 个变化词",
+      "timeliness": "距采集约 30 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "pending",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-15T18:28:00+00:00",
+    "note": "原文可达但未匹配到标题片段「起亚汽车2026年韩国国」",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "unknown",
+        "evidence": "原文可达但未匹配到标题片段「起亚汽车2026年韩国国」"
+      }
+    ]
+  },
+  "status": "pending",
+  "trendLinks": [
+    {
+      "trendId": "tr_cn-nev-demand-shift",
+      "direction": "support",
+      "reason": "关键词命中：EV（规则关联，非人工判定）"
+    },
+    {
+      "trendId": "tr_science-manufacturing-transfer",
+      "direction": "support",
+      "reason": "关键词命中：制造（规则关联，非人工判定）"
+    }
+  ],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-15T18:28:00+00:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 12,
+        "scope": 16,
+        "signal": 8,
+        "delta": 5,
+        "timeliness": 4,
+        "crossDomain": 3,
+        "total": 48
+      }
+    }
+  ],
+  "linkHistory": []
+}
