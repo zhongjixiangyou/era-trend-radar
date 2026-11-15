@@ -1,0 +1,90 @@
+{
+  "id": "ev_d923d5caab47",
+  "dedupeKey": "ev:61f808cbee2f",
+  "title": "SpaceX首次实现“筷子夹飞船”",
+  "summary": "SpaceX星舰第十五次试飞的上面级飞船返回得克萨斯州星港，在完成着陆点火和姿态翻转后，成功被发射塔“筷子”机械臂捕获。这是SpaceX首次成功捕获从地球轨道返回的星舰上面级飞船，为实现星舰完全、快速重复使用迈出关键一步。此次飞船此前已完成",
+  "facts": [
+    "SpaceX星舰第十五次试飞的上面级飞船返回得克萨斯州星港，在完成着陆点火和姿态翻转后，成功被发射塔“筷子”机械臂捕获。这是SpaceX首次成功捕获从地球轨道返回的星舰上面级飞船，为实现星舰完全、快速重复使用迈出关键一步。此次飞船此前已完成"
+  ],
+  "analysis": "科技与社会口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "科技与社会",
+  "region": "中国",
+  "occurredAt": "2026-11-15T04:00:22+00:00",
+  "firstReportedAt": "2026-11-15T04:00:22+00:00",
+  "collectedAt": "2026-11-15T04:00:22+00:00",
+  "sources": [
+    {
+      "url": "https://36kr.com/newsflashes/4070331143214215?f=rss",
+      "title": "SpaceX首次实现“筷子夹飞船”",
+      "publisher": "36氪",
+      "publishedAt": "2026-11-15T04:00:22+00:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 12,
+    "scope": 16,
+    "signal": 8,
+    "delta": 9,
+    "timeliness": 4,
+    "crossDomain": 3,
+    "total": 52,
+    "rationale": {
+      "structural": "科技与社会类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（中国）",
+      "signal": "命中 0 个信号词",
+      "delta": "命中 1 个变化词：首次",
+      "timeliness": "距采集约 30 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "pending",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-15T04:00:22+00:00",
+    "note": "原文可达但未匹配到标题片段「spacex首次实现筷子」",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "unknown",
+        "evidence": "原文可达但未匹配到标题片段「spacex首次实现筷子」"
+      }
+    ]
+  },
+  "status": "pending",
+  "trendLinks": [
+    {
+      "trendId": "tr_space-observation-network",
+      "direction": "support",
+      "reason": "关键词命中：space（规则关联，非人工判定）"
+    }
+  ],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-15T04:00:22+00:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 12,
+        "scope": 16,
+        "signal": 8,
+        "delta": 9,
+        "timeliness": 4,
+        "crossDomain": 3,
+        "total": 52
+      }
+    }
+  ],
+  "linkHistory": []
+}
