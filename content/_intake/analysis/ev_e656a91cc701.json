@@ -1,0 +1,12 @@
+{
+ "id": "ev_e656a91cc701",
+ "status": "pending_review",
+ "source": "content/events/ev_e656a91cc701.json",
+ "model": "opencode-go/deepseek-v4.1-flash",
+ "at": "2026-11-16T09:00:52+08:00",
+ "draft": {
+  "analysis": "该条是媒体的「早报」聚合页，把当日多条消息混在一页，不是单一事件。正文无法归属到某一个类别或趋势，页内也没有可供追踪的指标。按现有规则只能当线索，不进公开产物；如要使用，需要人工拆成独立事件再逐条评估。",
+  "summary": "该条为早报聚合页而非单一事件，暂不具备分析条件。",
+  "trendLinks": []
+ }
+}

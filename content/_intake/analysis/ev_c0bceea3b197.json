@@ -1,0 +1,12 @@
+{
+ "id": "ev_c0bceea3b197",
+ "status": "pending_review",
+ "source": "content/events/ev_c0bceea3b197.json",
+ "model": "opencode-go/deepseek-v4.1-flash",
+ "at": "2026-11-16T09:00:52+08:00",
+ "draft": {
+  "analysis": "该条只有标题与来源链接，正文没有可核验内容，facts 也只有「待人工补充」一句。标题属于学习贯彻全会精神的宣传报道，不是可度量的事件，既无数值也无时间线，暂无法与任何趋势建立可信关联。建议人工补正文后再评。",
+  "summary": "仅有标题与链接，正文信息不足，暂不具备分析条件，建议人工补充后再评估。",
+  "trendLinks": []
+ }
+}
