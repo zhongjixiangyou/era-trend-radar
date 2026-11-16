@@ -227,6 +227,13 @@ def make_event(item: dict, ok: bool, why: str) -> dict:
     }
 
 
+def contract_errors(ev: dict) -> list:
+    """按与 CI 相同的契约校验单条事件，返回错误清单（空 = 合格）。"""
+    ctx = C.Ctx()
+    C.validate_event(ctx, "promote:" + str(ev.get("id", "?")), ev)
+    return ctx.errors
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0)
@@ -283,8 +290,19 @@ def main() -> int:
 
     written = 0
     passed = 0
+    rejected = []
     for it, (ok, why) in zip(candidates, results):
         ev = make_event(it, ok, why)
+        # 入口闸门：写盘前先按同一套契约自检，不合格的不写、只记账。
+        # 这样 CI 的 validate 不会因为采集端造出的数据整轮作废（F_LEN 事故即此）。
+        errs = contract_errors(ev)
+        if errs:
+            rejected.append({
+                "title": ev.get("title", "")[:60],
+                "codes": sorted({e.code for e in errs}),
+                "why": errs[0].message,
+            })
+            continue
         passed += 1 if ok else 0
         if not a.dry_run:
             (EVENTS / f"{ev['id']}.json").write_text(json.dumps(ev, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -296,6 +314,8 @@ def main() -> int:
         "verified": passed,
         "pending": written - passed,
         "skippedOutOfWindow": skipped,
+        "rejectedByContract": len(rejected),
+        "rejectedSample": rejected[:5],
         "window": win.as_report(),
     }, ensure_ascii=False))
     return 0
