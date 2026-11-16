@@ -57,9 +57,10 @@ DIMENSIONS = (
 )
 TOTAL_MAX = sum(cap for _, cap in DIMENSIONS)  # 100
 
-# 发布门槛（项目.md 内容口径：unverified 不上头条、总分 < 50 不进首页）
+# 发布门槛（项目.md 内容口径：unverified 不上头条、总分 < 65 不进首页）
+# 2026-11-16 由 50 提到 65：全库中位数 54，50 的门槛等于没设，综合媒体的即时新闻全能进首页。
 HEADLINE_MIN_TOTAL = 50
-HOMEPAGE_MIN_TOTAL = 50
+HOMEPAGE_MIN_TOTAL = 65
 
 SUMMARY_MAX_CHARS = 120
 SUMMARY_MIN_CHARS = 10

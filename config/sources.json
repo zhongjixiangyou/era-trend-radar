@@ -17,44 +17,12 @@
       "region": "全球"
     },
     {
-      "id": "aljazeera-all",
-      "type": "rss",
-      "url": "https://www.aljazeera.com/xml/rss/all.xml",
-      "name": "Al Jazeera",
-      "category": "全球宏观",
-      "region": "全球"
-    },
-    {
       "id": "npr-world",
       "type": "rss",
       "url": "https://feeds.npr.org/1004/rss.xml",
       "name": "NPR World",
       "category": "全球宏观",
       "region": "全球"
-    },
-    {
-      "id": "scmp-china",
-      "type": "rss",
-      "url": "https://www.scmp.com/rss/91/feed",
-      "name": "South China Morning Post",
-      "category": "中国经济与产业",
-      "region": "中国"
-    },
-    {
-      "id": "chinanews-scroll",
-      "type": "rss",
-      "url": "https://www.chinanews.com.cn/rss/scroll-news.xml",
-      "name": "中国新闻网",
-      "category": "中国经济与产业",
-      "region": "中国"
-    },
-    {
-      "id": "36kr",
-      "type": "rss",
-      "url": "https://www.36kr.com/feed",
-      "name": "36氪",
-      "category": "科技与社会",
-      "region": "中国"
     },
     {
       "id": "techcrunch",

@@ -11,8 +11,13 @@ import { href } from '../lib/url';
 import cluesData from '../data/clues.json';
 
 const ranked = [...publishedEvents].sort((a, b) => total(b.scores) - total(a.scores));
-const lead = ranked[0];
-const rest = lead ? publishedEvents.filter((e) => e.id !== lead.id).slice(0, 6) : [];
+// 首页门槛：与 scripts/export_astro.py 的 HOMEPAGE_MIN_TOTAL 保持一致（2026-11-16 由 50 提到 65）。
+// 这个常量以前只在导出侧算 display.homepage，页面并没有用，所以首页照样混进 48 分的即时新闻。
+const HOMEPAGE_MIN_TOTAL = 65;
+const homepageEligible = publishedEvents.filter((e) => total(e.scores) >= HOMEPAGE_MIN_TOTAL);
+const rankedEligible = ranked.filter((e) => total(e.scores) >= HOMEPAGE_MIN_TOTAL);
+const lead = rankedEligible[0];
+const rest = lead ? homepageEligible.filter((e) => e.id !== lead.id).slice(0, 6) : [];
 
 const topTrends = [...allTrends].sort((a, b) => (b.evidenceCount ?? 0) - (a.evidenceCount ?? 0));
 const maxEvidence = Math.max(1, ...allTrends.map((t) => t.evidenceCount ?? 0));
@@ -22,7 +27,7 @@ const latestSnap = allSnapshots[0];
 const contents = [
   {
     head: '事件',
-    items: publishedEvents.slice(0, 4).map((e) => ({ text: e.title, url: href(`/events/${e.id}/`) })),
+    items: rankedEligible.slice(0, 4).map((e) => ({ text: e.title, url: href(`/events/${e.id}/`) })),
   },
   {
     head: '趋势',
