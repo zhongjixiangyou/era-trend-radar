@@ -1,0 +1,95 @@
+{
+  "id": "ev_7ff40970ae8f",
+  "dedupeKey": "ev:60e134052b1b",
+  "title": "Apple Creator Studio adds powerful new AI features and even more creative tools",
+  "summary": "Apple Creator Studio adds powerful new AI features and even more creative tools",
+  "facts": [
+    "Apple Creator Studio adds powerful new AI features and even more creative tools"
+  ],
+  "analysis": "科技与社会口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "科技与社会",
+  "region": "全球",
+  "occurredAt": "2026-10-27T20:58:45+08:00",
+  "firstReportedAt": "2026-10-27T20:58:45+08:00",
+  "collectedAt": "2026-11-16T21:37:24+00:00",
+  "sources": [
+    {
+      "url": "https://www.apple.com/newsroom/2026/10/apple-creator-studio-adds-powerful-new-ai-features-and-even-more-creative-tools/",
+      "title": "Apple Creator Studio adds powerful new AI features and even more creative tools",
+      "publisher": "Apple",
+      "publishedAt": "2026-10-27T20:58:45+08:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 12,
+    "scope": 16,
+    "signal": 11,
+    "delta": 5,
+    "timeliness": 4,
+    "crossDomain": 3,
+    "total": 51,
+    "rationale": {
+      "structural": "科技与社会类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（全球）",
+      "signal": "命中 1 个信号词：AI",
+      "delta": "命中 0 个变化词",
+      "timeliness": "距采集约 20 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "passed",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-16T21:37:24+00:00",
+    "note": "原文可达，标题片段「applecreator」在页面中出现",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "原文可达，标题片段「applecreator」在页面中出现"
+      }
+    ]
+  },
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_ai-power-constraint",
+      "direction": "support",
+      "reason": "关键词命中：AI、power（规则关联，非人工判定）"
+    },
+    {
+      "trendId": "tr_cn-nev-demand-shift",
+      "direction": "support",
+      "reason": "关键词命中：EV（规则关联，非人工判定）"
+    }
+  ],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-10-27T20:58:45+08:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 12,
+        "scope": 16,
+        "signal": 11,
+        "delta": 5,
+        "timeliness": 4,
+        "crossDomain": 3,
+        "total": 51
+      }
+    }
+  ],
+  "linkHistory": []
+}

@@ -1,0 +1,90 @@
+{
+  "id": "ev_6050caeed552",
+  "dedupeKey": "ev:bf096870123c",
+  "title": "2026年1—10月份全国房地产市场基本情况",
+  "summary": "一、房地产开发投资完成情况 1—10月份，全国房地产开发投资57215亿元，同比下降21.6%（按可比口径计算，详见附注5）；其中，住宅投资44102亿元，下降21.4%。 1—10月份，房地产开发企业房屋施工面积568164万平方米，同比",
+  "facts": [
+    "一、房地产开发投资完成情况 1—10月份，全国房地产开发投资57215亿元，同比下降21.6%（按可比口径计算，详见附注5）；其中，住宅投资44102亿元，下降21.4%。 1—10月份，房地产开发企业房屋施工面积568164万平方米，同比"
+  ],
+  "analysis": "中国经济与产业口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "中国经济与产业",
+  "region": "中国",
+  "occurredAt": "2026-11-16T18:00:02+08:00",
+  "firstReportedAt": "2026-11-16T18:00:02+08:00",
+  "collectedAt": "2026-11-16T21:37:24+00:00",
+  "sources": [
+    {
+      "url": "https://www.stats.gov.cn/sj/zxfb/202611/t20261116_1965840.html",
+      "title": "2026年1—10月份全国房地产市场基本情况",
+      "publisher": "国家统计局",
+      "publishedAt": "2026-11-16T18:00:02+08:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 12,
+    "scope": 16,
+    "signal": 8,
+    "delta": 5,
+    "timeliness": 10,
+    "crossDomain": 3,
+    "total": 54,
+    "rationale": {
+      "structural": "中国经济与产业类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（中国）",
+      "signal": "命中 0 个信号词",
+      "delta": "命中 0 个变化词",
+      "timeliness": "距采集约 1 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "passed",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-16T21:37:24+00:00",
+    "note": "原文可达，标题片段「2026年110月份全国」在页面中出现",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "原文可达，标题片段「2026年110月份全国」在页面中出现"
+      }
+    ]
+  },
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_cn-realestate-contraction",
+      "direction": "support",
+      "reason": "关键词命中：房地产、地产（规则关联，非人工判定）"
+    }
+  ],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-16T18:00:02+08:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 12,
+        "scope": 16,
+        "signal": 8,
+        "delta": 5,
+        "timeliness": 10,
+        "crossDomain": 3,
+        "total": 54
+      }
+    }
+  ],
+  "linkHistory": []
+}
