@@ -55,6 +55,94 @@
       "name": "Financial Times",
       "category": "全球宏观",
       "region": "全球"
+    },
+    {
+      "id": "stats-cn",
+      "type": "rss",
+      "url": "https://www.stats.gov.cn/sj/zxfb/rss.xml",
+      "name": "国家统计局",
+      "category": "中国经济与产业",
+      "region": "中国"
+    },
+    {
+      "id": "fed-press",
+      "type": "rss",
+      "url": "https://www.federalreserve.gov/feeds/press_all.xml",
+      "name": "Federal Reserve Board",
+      "category": "全球宏观",
+      "region": "美国"
+    },
+    {
+      "id": "ecb-press",
+      "type": "rss",
+      "url": "https://www.ecb.europa.eu/rss/press.html",
+      "name": "ECB",
+      "category": "全球宏观",
+      "region": "欧洲"
+    },
+    {
+      "id": "boj-news",
+      "type": "rss",
+      "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
+      "name": "Bank of Japan",
+      "category": "全球宏观",
+      "region": "日本"
+    },
+    {
+      "id": "wto-news",
+      "type": "rss",
+      "url": "https://www.wto.org/library/rss/latest_news_e.xml",
+      "name": "WTO",
+      "category": "全球宏观",
+      "region": "全球"
+    },
+    {
+      "id": "eia-today",
+      "type": "rss",
+      "url": "https://www.eia.gov/rss/todayinenergy.xml",
+      "name": "EIA",
+      "category": "全球宏观",
+      "region": "美国"
+    },
+    {
+      "id": "fda-press",
+      "type": "rss",
+      "url": "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/press-releases/rss.xml",
+      "name": "美国食品药品监督管理局",
+      "category": "科技与社会",
+      "region": "美国"
+    },
+    {
+      "id": "noaa-news",
+      "type": "rss",
+      "url": "https://www.noaa.gov/rss.xml",
+      "name": "NOAA",
+      "category": "科技与社会",
+      "region": "美国"
+    },
+    {
+      "id": "nasa-news",
+      "type": "rss",
+      "url": "https://www.nasa.gov/rss/dyn/breaking_news.rss",
+      "name": "NASA",
+      "category": "科技与社会",
+      "region": "美国"
+    },
+    {
+      "id": "nvidia-news",
+      "type": "rss",
+      "url": "https://nvidianews.nvidia.com/rss.xml",
+      "name": "NVIDIA",
+      "category": "科技与社会",
+      "region": "全球"
+    },
+    {
+      "id": "apple-news",
+      "type": "rss",
+      "url": "https://www.apple.com/newsroom/rss-feed.rss",
+      "name": "Apple",
+      "category": "科技与社会",
+      "region": "全球"
     }
   ]
 }
