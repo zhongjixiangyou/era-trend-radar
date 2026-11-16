@@ -169,8 +169,12 @@ def trend_links(item: dict) -> list[dict]:
 
 
 def make_event(item: dict, ok: bool, why: str) -> dict:
-    title = (item.get("title") or "").strip()
-    summary = (item.get("summary") or "").strip()
+    raw_title = (item.get("title") or "").strip()
+    # 采集端先按契约上限截断：长英文标题（如美联储公告）不截就会让 CI 的 validate 判 F_LEN、整轮 collect 作废。
+    title = C.clip(raw_title, C.TITLE_MAX)
+    summary = C.clip((item.get("summary") or "").strip(), C.SUMMARY_MAX)
+    if C.char_len(summary) < 10:  # summary 契约下限 10 字，不足时退回标题
+        summary = title
     url = (item.get("url") or (item.get("sources") or [{}])[0].get("url") or "").strip()
     occurred = to_iso(item.get("occurredAt") or item.get("firstReportedAt") or "") or now_iso()
     publisher = (item.get("sources") or [{}])[0].get("publisher") or item.get("_sourceId") or "媒体"
@@ -180,8 +184,8 @@ def make_event(item: dict, ok: bool, why: str) -> dict:
         "id": eid,
         "dedupeKey": item.get("dedupeKey") or ("ev:" + hashlib.sha256(url.encode()).hexdigest()[:12]),
         "title": title,
-        "summary": summary[:200] or title,
-        "facts": [summary[:200]] if summary else [title],
+        "summary": summary or title,
+        "facts": [summary] if summary else [title],
         "analysis": f"{item.get('category','全球宏观')}口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
         "category": CATEGORY_MAP.get(item.get("category"), item.get("category") or "全球宏观"),
         "region": item.get("region") or "全球",
@@ -190,7 +194,7 @@ def make_event(item: dict, ok: bool, why: str) -> dict:
         "collectedAt": now_iso(),
         "sources": [{
             "url": url,
-            "title": title,
+            "title": C.clip(raw_title, 200),  # 来源标题上限更宽，保留完整原题
             "publisher": publisher,
             "publishedAt": occurred,
             "type": "primary",

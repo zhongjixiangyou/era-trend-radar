@@ -450,7 +450,30 @@ def load_pipeline_config(path: str | os.PathLike | None = None) -> dict:
 # --------------------------------------------------------------------------- #
 def char_len(text: str) -> int:
     """按"字"计数：不计空白。"""
-    return len(re.sub(r"\s+", "", text))
+    return len(re.sub(r"\s+", "", text or ""))
+
+
+# 字段长度上限：校验器与采集端共用这一份，别再各写一遍。
+# （2026-11-16 复盘：同一套长度规则散在多处，导致「本地过、CI 炸」反复发生）
+TITLE_MAX = 120
+SUMMARY_MAX = 120
+FACT_MAX = 240
+
+
+def clip(text: str, limit: int) -> str:
+    """按"字"截断并补省略号，结果 char_len ≤ limit；不超限原样返回。"""
+    text = (text or "").strip()
+    if char_len(text) <= limit:
+        return text
+    kept: list[str] = []
+    n = 0
+    for ch in text:
+        if n >= limit - 1:  # 留一个字的位置给省略号
+            break
+        kept.append(ch)
+        if not ch.isspace():
+            n += 1
+    return "".join(kept).rstrip() + "…"
 
 
 def short(value: Any, limit: int = 70) -> str:
@@ -1117,8 +1140,8 @@ def validate_event(ctx: Ctx, label: str, data: dict) -> None:
     f = Field(ctx, data, label)
     f.text("id", min_len=6, max_len=64, pattern=ID_PATTERNS["event"])
     f.text("dedupeKey", min_len=8, max_len=128, pattern=DEDUPE_KEY_RE)
-    f.text("title", min_len=4, max_len=120)
-    f.text("summary", min_len=10, max_len=120)
+    f.text("title", min_len=4, max_len=TITLE_MAX)
+    f.text("summary", min_len=10, max_len=SUMMARY_MAX)
     facts(f, ctx)
     f.text("analysis", min_len=30, max_len=2000)
     f.text("category", enum=CATEGORIES)
@@ -1170,7 +1193,7 @@ def facts(f: Field, ctx: Ctx) -> None:
     seen: set[str] = set()
     for i, item in enumerate(items):
         if isinstance(item, str):
-            Field(ctx, {"v": item}, f.label, f"facts[{i}].").text("v", min_len=4, max_len=240)
+            Field(ctx, {"v": item}, f.label, f"facts[{i}].").text("v", min_len=4, max_len=FACT_MAX)
             norm = norm_title(item)
         elif isinstance(item, dict):
             sub = Field(ctx, item, f.label, f"facts[{i}].")
