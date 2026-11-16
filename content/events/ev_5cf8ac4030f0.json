@@ -11,7 +11,7 @@
   "region": "全球",
   "occurredAt": "2026-11-16T00:00:00+08:00",
   "firstReportedAt": "2026-11-16T00:00:00+08:00",
-  "collectedAt": "2026-11-15T18:28:00+00:00",
+  "collectedAt": "2026-11-16T08:30:31+08:00",
   "sources": [
     {
       "url": "https://www.marketwatch.com/story/we-had-the-worst-fight-weve-ever-had-i-want-my-husband-to-retire-at-65-but-i-dont-want-to-lose-his-280-000-salary-48511469?mod=mw_rss_topstories",
@@ -47,7 +47,7 @@
   "verification": {
     "status": "pending",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-15T18:28:00+00:00",
+    "checkedAt": "2026-11-16T08:30:31+08:00",
     "note": "取原文失败：HTTPError",
     "checks": [
       {

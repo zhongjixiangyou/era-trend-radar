@@ -1,0 +1,84 @@
+{
+  "id": "ev_69e8c9c91f1d",
+  "dedupeKey": "ev:95d34e9c912c",
+  "title": "日本三季度实际GDP年率下降0.1%",
+  "summary": "日本内阁府11月16日公布的2026年三季度（7至9月）国内生产总值（GDP）初值显示，剔除物价变动因素后的实际GDP较上季度减少0.0%，换算成年率为下降0.1%。这4个季度以来首次呈现负增长。（界面）",
+  "facts": [
+    "日本内阁府11月16日公布的2026年三季度（7至9月）国内生产总值（GDP）初值显示，剔除物价变动因素后的实际GDP较上季度减少0.0%，换算成年率为下降0.1%。这4个季度以来首次呈现负增长。（界面）"
+  ],
+  "analysis": "科技与社会口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "科技与社会",
+  "region": "中国",
+  "occurredAt": "2026-11-16T08:30:31+08:00",
+  "firstReportedAt": "2026-11-16T08:30:31+08:00",
+  "collectedAt": "2026-11-16T08:30:31+08:00",
+  "sources": [
+    {
+      "url": "https://36kr.com/newsflashes/4071698656744583?f=rss",
+      "title": "日本三季度实际GDP年率下降0.1%",
+      "publisher": "36氪",
+      "publishedAt": "2026-11-16T08:30:31+08:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 12,
+    "scope": 16,
+    "signal": 11,
+    "delta": 9,
+    "timeliness": 4,
+    "crossDomain": 3,
+    "total": 55,
+    "rationale": {
+      "structural": "科技与社会类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（中国）",
+      "signal": "命中 1 个信号词：GDP",
+      "delta": "命中 1 个变化词：首次",
+      "timeliness": "距采集约 30 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "pending",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-16T08:30:31+08:00",
+    "note": "原文可达但未匹配到标题片段「日本三季度实际gdp年率」",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "unknown",
+        "evidence": "原文可达但未匹配到标题片段「日本三季度实际gdp年率」"
+      }
+    ]
+  },
+  "status": "pending",
+  "trendLinks": [],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-16T08:30:31+08:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 12,
+        "scope": 16,
+        "signal": 11,
+        "delta": 9,
+        "timeliness": 4,
+        "crossDomain": 3,
+        "total": 55
+      }
+    }
+  ],
+  "linkHistory": []
+}

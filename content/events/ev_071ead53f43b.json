@@ -1,0 +1,84 @@
+{
+  "id": "ev_071ead53f43b",
+  "dedupeKey": "ev:1362f5201055",
+  "title": "信达生物：信迪利单抗获CHMP积极意见建议批准非鳞状非小细胞肺癌一线治疗",
+  "summary": "36氪获悉，信达生物公告，公司信迪利单抗（欧洲商品名：Zybrivo ）已收到欧洲药品管理局人用药品委员会（CHMP）的首个积极意见，CHMP建议批准信迪利单抗联合化疗用于晚期非鳞状非小细胞肺癌成人患者的上市许可。该推荐基于III期ORIE",
+  "facts": [
+    "36氪获悉，信达生物公告，公司信迪利单抗（欧洲商品名：Zybrivo ）已收到欧洲药品管理局人用药品委员会（CHMP）的首个积极意见，CHMP建议批准信迪利单抗联合化疗用于晚期非鳞状非小细胞肺癌成人患者的上市许可。该推荐基于III期ORIE"
+  ],
+  "analysis": "科技与社会口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "科技与社会",
+  "region": "中国",
+  "occurredAt": "2026-11-16T08:30:31+08:00",
+  "firstReportedAt": "2026-11-16T08:30:31+08:00",
+  "collectedAt": "2026-11-16T08:30:31+08:00",
+  "sources": [
+    {
+      "url": "https://36kr.com/newsflashes/4071672241623938?f=rss",
+      "title": "信达生物：信迪利单抗获CHMP积极意见建议批准非鳞状非小细胞肺癌一线治疗",
+      "publisher": "36氪",
+      "publishedAt": "2026-11-16T08:30:31+08:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 12,
+    "scope": 16,
+    "signal": 8,
+    "delta": 5,
+    "timeliness": 4,
+    "crossDomain": 3,
+    "total": 48,
+    "rationale": {
+      "structural": "科技与社会类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（中国）",
+      "signal": "命中 0 个信号词",
+      "delta": "命中 0 个变化词",
+      "timeliness": "距采集约 30 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "pending",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-16T08:30:31+08:00",
+    "note": "原文可达但未匹配到标题片段「信达生物信迪利单抗获ch」",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "unknown",
+        "evidence": "原文可达但未匹配到标题片段「信达生物信迪利单抗获ch」"
+      }
+    ]
+  },
+  "status": "pending",
+  "trendLinks": [],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-16T08:30:31+08:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 12,
+        "scope": 16,
+        "signal": 8,
+        "delta": 5,
+        "timeliness": 4,
+        "crossDomain": 3,
+        "total": 48
+      }
+    }
+  ],
+  "linkHistory": []
+}

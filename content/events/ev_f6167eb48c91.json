@@ -1,21 +1,21 @@
 {
   "id": "ev_f6167eb48c91",
   "dedupeKey": "ev:b21a48550a96",
-  "title": "Spain vs England live: UEFA Nations League",
-  "summary": "Team news , score and live text commentary as England and Spain vie for top spot in final Nations League group game.",
+  "title": "Spain 2-3 England: UEFA Nations League as it happened",
+  "summary": "Relive the live text commentary as England stun Spain to take top spot in final Nations League group game.",
   "facts": [
-    "Team news , score and live text commentary as England and Spain vie for top spot in final Nations League group game."
+    "Relive the live text commentary as England stun Spain to take top spot in final Nations League group game."
   ],
   "analysis": "全球宏观口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
   "category": "全球宏观",
   "region": "全球",
   "occurredAt": "2026-11-16T00:45:00+08:00",
   "firstReportedAt": "2026-11-16T00:45:00+08:00",
-  "collectedAt": "2026-11-15T18:28:00+00:00",
+  "collectedAt": "2026-11-16T08:30:31+08:00",
   "sources": [
     {
       "url": "https://www.aljazeera.com/sports/liveblog/2026/11/15/live-spain-vs-england-uefa-nations-league?traffic_source=rss",
-      "title": "Spain vs England live: UEFA Nations League",
+      "title": "Spain 2-3 England: UEFA Nations League as it happened",
       "publisher": "Al Jazeera",
       "publishedAt": "2026-11-16T00:45:00+08:00",
       "type": "primary"
@@ -47,13 +47,13 @@
   "verification": {
     "status": "passed",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-15T18:28:00+00:00",
-    "note": "原文可达，标题片段「spainvsengla」在页面中出现",
+    "checkedAt": "2026-11-16T08:30:31+08:00",
+    "note": "原文可达，标题片段「spain23engla」在页面中出现",
     "checks": [
       {
         "kind": "source_text",
         "result": "pass",
-        "evidence": "原文可达，标题片段「spainvsengla」在页面中出现"
+        "evidence": "原文可达，标题片段「spain23engla」在页面中出现"
       }
     ]
   },

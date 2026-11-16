@@ -11,7 +11,7 @@
   "region": "全球",
   "occurredAt": "2026-11-15T19:00:04+08:00",
   "firstReportedAt": "2026-11-15T19:00:04+08:00",
-  "collectedAt": "2026-11-15T18:28:00+00:00",
+  "collectedAt": "2026-11-16T08:30:31+08:00",
   "sources": [
     {
       "url": "https://www.ft.com/content/3062790a-553d-41b8-9c7d-bae17b9d2e29?syn-25a6b1a6=1",
@@ -47,7 +47,7 @@
   "verification": {
     "status": "pending",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-15T18:28:00+00:00",
+    "checkedAt": "2026-11-16T08:30:31+08:00",
     "note": "取原文失败：HTTPError",
     "checks": [
       {

@@ -1,0 +1,84 @@
+{
+  "id": "ev_12dd2a3cf9e0",
+  "dedupeKey": "ev:9db9ca727ed0",
+  "title": "掘金中国资产，海外资金看多信号密集显现",
+  "summary": "全球市场波动之下，海外资金对中国资产的看多信号正在密集显现：最新披露的三季度13F持仓文件显示，巴克莱、花旗、富达投资等机构对多家头部中概互联网企业进行了明显加仓；华尔街知名投资人迈克尔·巴里更是持续买入京东看涨期权和比亚迪股票。与此同时，",
+  "facts": [
+    "全球市场波动之下，海外资金对中国资产的看多信号正在密集显现：最新披露的三季度13F持仓文件显示，巴克莱、花旗、富达投资等机构对多家头部中概互联网企业进行了明显加仓；华尔街知名投资人迈克尔·巴里更是持续买入京东看涨期权和比亚迪股票。与此同时，"
+  ],
+  "analysis": "科技与社会口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "科技与社会",
+  "region": "中国",
+  "occurredAt": "2026-11-16T08:30:31+08:00",
+  "firstReportedAt": "2026-11-16T08:30:31+08:00",
+  "collectedAt": "2026-11-16T08:30:31+08:00",
+  "sources": [
+    {
+      "url": "https://36kr.com/newsflashes/4071658964964485?f=rss",
+      "title": "掘金中国资产，海外资金看多信号密集显现",
+      "publisher": "36氪",
+      "publishedAt": "2026-11-16T08:30:31+08:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 12,
+    "scope": 16,
+    "signal": 8,
+    "delta": 5,
+    "timeliness": 4,
+    "crossDomain": 3,
+    "total": 48,
+    "rationale": {
+      "structural": "科技与社会类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（中国）",
+      "signal": "命中 0 个信号词",
+      "delta": "命中 0 个变化词",
+      "timeliness": "距采集约 30 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "pending",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-16T08:30:31+08:00",
+    "note": "原文可达但未匹配到标题片段「掘金中国资产海外资金看多」",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "unknown",
+        "evidence": "原文可达但未匹配到标题片段「掘金中国资产海外资金看多」"
+      }
+    ]
+  },
+  "status": "pending",
+  "trendLinks": [],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-16T08:30:31+08:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 12,
+        "scope": 16,
+        "signal": 8,
+        "delta": 5,
+        "timeliness": 4,
+        "crossDomain": 3,
+        "total": 48
+      }
+    }
+  ],
+  "linkHistory": []
+}

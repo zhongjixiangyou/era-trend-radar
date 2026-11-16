@@ -1,0 +1,95 @@
+{
+  "id": "ev_66fd3c49135d",
+  "dedupeKey": "ev:8b3694b839fe",
+  "title": "商业航天资本化布局按下“加速键”，20余家A股公司切入商业航天供应链",
+  "summary": "近日，从证监会官网IPO辅导公示系统获悉，国内多家商业航天公司资本化进程进入关键阶段。作为大国科技竞争的战略制高点，商业航天已成为国家战略性新兴产业的重要组成部分。商业航天资本化布局的提速离不开政策的重点扶持。目前，国内不少公司为商业航天产",
+  "facts": [
+    "近日，从证监会官网IPO辅导公示系统获悉，国内多家商业航天公司资本化进程进入关键阶段。作为大国科技竞争的战略制高点，商业航天已成为国家战略性新兴产业的重要组成部分。商业航天资本化布局的提速离不开政策的重点扶持。目前，国内不少公司为商业航天产"
+  ],
+  "analysis": "科技与社会口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "科技与社会",
+  "region": "中国",
+  "occurredAt": "2026-11-16T08:30:31+08:00",
+  "firstReportedAt": "2026-11-16T08:30:31+08:00",
+  "collectedAt": "2026-11-16T08:30:31+08:00",
+  "sources": [
+    {
+      "url": "https://36kr.com/newsflashes/4071682734953346?f=rss",
+      "title": "商业航天资本化布局按下“加速键”，20余家A股公司切入商业航天供应链",
+      "publisher": "36氪",
+      "publishedAt": "2026-11-16T08:30:31+08:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 12,
+    "scope": 16,
+    "signal": 8,
+    "delta": 5,
+    "timeliness": 4,
+    "crossDomain": 3,
+    "total": 48,
+    "rationale": {
+      "structural": "科技与社会类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（中国）",
+      "signal": "命中 0 个信号词",
+      "delta": "命中 0 个变化词",
+      "timeliness": "距采集约 30 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "pending",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-16T08:30:31+08:00",
+    "note": "原文可达但未匹配到标题片段「商业航天资本化布局按下加」",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "unknown",
+        "evidence": "原文可达但未匹配到标题片段「商业航天资本化布局按下加」"
+      }
+    ]
+  },
+  "status": "pending",
+  "trendLinks": [
+    {
+      "trendId": "tr_space-observation-network",
+      "direction": "support",
+      "reason": "关键词命中：航天（规则关联，非人工判定）"
+    },
+    {
+      "trendId": "tr_science-manufacturing-transfer",
+      "direction": "support",
+      "reason": "关键词命中：供应链（规则关联，非人工判定）"
+    }
+  ],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-16T08:30:31+08:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 12,
+        "scope": 16,
+        "signal": 8,
+        "delta": 5,
+        "timeliness": 4,
+        "crossDomain": 3,
+        "total": 48
+      }
+    }
+  ],
+  "linkHistory": []
+}

@@ -11,7 +11,7 @@
   "region": "中国",
   "occurredAt": "2026-11-15T20:02:15+08:00",
   "firstReportedAt": "2026-11-15T20:02:15+08:00",
-  "collectedAt": "2026-11-15T18:28:00+00:00",
+  "collectedAt": "2026-11-16T08:30:31+08:00",
   "sources": [
     {
       "url": "https://www.scmp.com/news/china/science/article/3374306/more-nobel-winners-less-innovation-chinese-study-reveals-cost-top-tier-awards",
@@ -47,7 +47,7 @@
   "verification": {
     "status": "pending",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-15T18:28:00+00:00",
+    "checkedAt": "2026-11-16T08:30:31+08:00",
     "note": "取原文失败：HTTPError",
     "checks": [
       {

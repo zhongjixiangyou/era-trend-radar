@@ -11,7 +11,7 @@
   "region": "全球",
   "occurredAt": "2026-11-15T20:07:34+08:00",
   "firstReportedAt": "2026-11-15T20:07:34+08:00",
-  "collectedAt": "2026-11-15T18:28:00+00:00",
+  "collectedAt": "2026-11-16T08:30:31+08:00",
   "sources": [
     {
       "url": "https://arstechnica.com/science/2026/11/how-the-worlds-fires-changed-while-humanity-hit-pause/",
@@ -47,7 +47,7 @@
   "verification": {
     "status": "passed",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-15T18:28:00+00:00",
+    "checkedAt": "2026-11-16T08:30:31+08:00",
     "note": "原文可达，标题片段「howtheworlds」在页面中出现",
     "checks": [
       {

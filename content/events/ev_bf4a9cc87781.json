@@ -11,7 +11,7 @@
   "region": "中国",
   "occurredAt": "2026-11-15T18:10:06+08:00",
   "firstReportedAt": "2026-11-15T18:10:06+08:00",
-  "collectedAt": "2026-11-15T18:28:00+00:00",
+  "collectedAt": "2026-11-16T08:30:31+08:00",
   "sources": [
     {
       "url": "https://www.scmp.com/news/people-culture/trending-china/article/3374492/china-tcm-doctor-defies-medical-secrecy-carving-100-private-prescriptions-her-tombstone",
@@ -47,7 +47,7 @@
   "verification": {
     "status": "pending",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-15T18:28:00+00:00",
+    "checkedAt": "2026-11-16T08:30:31+08:00",
     "note": "取原文失败：HTTPError",
     "checks": [
       {

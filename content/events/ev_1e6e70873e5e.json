@@ -1,7 +1,7 @@
 {
   "id": "ev_1e6e70873e5e",
   "dedupeKey": "ev:6db5eca12105",
-  "title": "Zelensky says Starshield restrictions threaten Ukraine’s energy defences ahead of winter",
+  "title": "Zelensky warns Starshield restrictions threaten Ukraine’s winter energy defences",
   "summary": "Restrictions on Ukraine’s Starshield satellite communications system are hindering its ability to intercept Russian dron",
   "facts": [
     "Restrictions on Ukraine’s Starshield satellite communications system are hindering its ability to intercept Russian dron"
@@ -11,11 +11,11 @@
   "region": "中国",
   "occurredAt": "2026-11-16T02:10:29+08:00",
   "firstReportedAt": "2026-11-16T02:10:29+08:00",
-  "collectedAt": "2026-11-15T18:28:00+00:00",
+  "collectedAt": "2026-11-16T08:30:31+08:00",
   "sources": [
     {
       "url": "https://www.scmp.com/news/world/russia-central-asia/article/3374516/zelensky-says-starshield-restrictions-threaten-ukraines-energy-defences-ahead-winter",
-      "title": "Zelensky says Starshield restrictions threaten Ukraine’s energy defences ahead of winter",
+      "title": "Zelensky warns Starshield restrictions threaten Ukraine’s winter energy defences",
       "publisher": "South China Morning Post",
       "publishedAt": "2026-11-16T02:10:29+08:00",
       "type": "primary"
@@ -47,7 +47,7 @@
   "verification": {
     "status": "pending",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-15T18:28:00+00:00",
+    "checkedAt": "2026-11-16T08:30:31+08:00",
     "note": "取原文失败：HTTPError",
     "checks": [
       {
@@ -65,9 +65,9 @@
       "reason": "关键词命中：AI（规则关联，非人工判定）"
     },
     {
-      "trendId": "tr_space-observation-network",
+      "trendId": "tr_geopolitics-energy-premium",
       "direction": "support",
-      "reason": "关键词命中：satellite（规则关联，非人工判定）"
+      "reason": "关键词命中：war（规则关联，非人工判定）"
     }
   ],
   "revisions": [],

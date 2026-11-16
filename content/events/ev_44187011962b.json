@@ -1,0 +1,90 @@
+{
+  "id": "ev_44187011962b",
+  "dedupeKey": "ev:929ea34b0f94",
+  "title": "三星电子拟在美为SpaceX“星链”生产芯片",
+  "summary": "据报道，三星电子将在美国得州奥斯汀工厂为SpaceX的“星链”卫星生产STM32V8微控制器（MCU），这种高性能MCU采用三星与意法半导体共同开发的18纳米全耗尽绝缘体上硅（FD-SOI）工艺。三星正投入19亿美元扩建奥斯汀工厂生产设施，",
+  "facts": [
+    "据报道，三星电子将在美国得州奥斯汀工厂为SpaceX的“星链”卫星生产STM32V8微控制器（MCU），这种高性能MCU采用三星与意法半导体共同开发的18纳米全耗尽绝缘体上硅（FD-SOI）工艺。三星正投入19亿美元扩建奥斯汀工厂生产设施，"
+  ],
+  "analysis": "科技与社会口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "科技与社会",
+  "region": "中国",
+  "occurredAt": "2026-11-16T08:30:31+08:00",
+  "firstReportedAt": "2026-11-16T08:30:31+08:00",
+  "collectedAt": "2026-11-16T08:30:31+08:00",
+  "sources": [
+    {
+      "url": "https://36kr.com/newsflashes/4071657554498433?f=rss",
+      "title": "三星电子拟在美为SpaceX“星链”生产芯片",
+      "publisher": "36氪",
+      "publishedAt": "2026-11-16T08:30:31+08:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 12,
+    "scope": 16,
+    "signal": 14,
+    "delta": 5,
+    "timeliness": 4,
+    "crossDomain": 4,
+    "total": 55,
+    "rationale": {
+      "structural": "科技与社会类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（中国）",
+      "signal": "命中 2 个信号词：芯片、半导体",
+      "delta": "命中 0 个变化词",
+      "timeliness": "距采集约 30 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "pending",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-16T08:30:31+08:00",
+    "note": "原文可达但未匹配到标题片段「三星电子拟在美为spac」",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "unknown",
+        "evidence": "原文可达但未匹配到标题片段「三星电子拟在美为spac」"
+      }
+    ]
+  },
+  "status": "pending",
+  "trendLinks": [
+    {
+      "trendId": "tr_space-observation-network",
+      "direction": "support",
+      "reason": "关键词命中：卫星、space（规则关联，非人工判定）"
+    }
+  ],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-16T08:30:31+08:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 12,
+        "scope": 16,
+        "signal": 14,
+        "delta": 5,
+        "timeliness": 4,
+        "crossDomain": 4,
+        "total": 55
+      }
+    }
+  ],
+  "linkHistory": []
+}

@@ -11,7 +11,7 @@
   "region": "全球",
   "occurredAt": "2026-11-15T08:40:59+08:00",
   "firstReportedAt": "2026-11-15T08:40:59+08:00",
-  "collectedAt": "2026-11-15T04:00:22+00:00",
+  "collectedAt": "2026-11-16T08:30:31+08:00",
   "sources": [
     {
       "url": "https://arstechnica.com/space/2026/11/with-starship-catch-spacex-still-shows-it-can-dazzle-the-world/",
@@ -47,7 +47,7 @@
   "verification": {
     "status": "passed",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-15T04:00:22+00:00",
+    "checkedAt": "2026-11-16T08:30:31+08:00",
     "note": "原文可达，标题片段「spacexreturn」在页面中出现",
     "checks": [
       {

@@ -11,7 +11,7 @@
   "region": "全球",
   "occurredAt": "2026-11-15T06:09:40+08:00",
   "firstReportedAt": "2026-11-15T06:09:40+08:00",
-  "collectedAt": "2026-11-15T04:00:22+00:00",
+  "collectedAt": "2026-11-16T08:30:31+08:00",
   "sources": [
     {
       "url": "https://www.bbc.co.uk/news/videos/cwlym2gy3y3eo?at_medium=RSS&at_campaign=rss",
@@ -47,7 +47,7 @@
   "verification": {
     "status": "passed",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-15T04:00:22+00:00",
+    "checkedAt": "2026-11-16T08:30:31+08:00",
     "note": "原文可达，标题片段「canyoubeliev」在页面中出现",
     "checks": [
       {

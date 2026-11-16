@@ -1,0 +1,90 @@
+{
+  "id": "ev_fd385ff4ba76",
+  "dedupeKey": "ev:7916d88cbc35",
+  "title": "先声药业：先必新舌下片纳入新版国家医保药品目录",
+  "summary": "36氪获悉，先声药业公告，于2026年11月14日，先必新®舌下片（依达拉奉右莰醇舌下片）已被正式纳入由国家医保局及人力资源社会保障部印发的《国家基本医疗保险、工伤保险和生育保险药品目录（2026年）》，并将自2027 年1月1日起生效。此",
+  "facts": [
+    "36氪获悉，先声药业公告，于2026年11月14日，先必新®舌下片（依达拉奉右莰醇舌下片）已被正式纳入由国家医保局及人力资源社会保障部印发的《国家基本医疗保险、工伤保险和生育保险药品目录（2026年）》，并将自2027 年1月1日起生效。此"
+  ],
+  "analysis": "科技与社会口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "科技与社会",
+  "region": "中国",
+  "occurredAt": "2026-11-16T08:30:31+08:00",
+  "firstReportedAt": "2026-11-16T08:30:31+08:00",
+  "collectedAt": "2026-11-16T08:30:31+08:00",
+  "sources": [
+    {
+      "url": "https://36kr.com/newsflashes/4071673613669252?f=rss",
+      "title": "先声药业：先必新舌下片纳入新版国家医保药品目录",
+      "publisher": "36氪",
+      "publishedAt": "2026-11-16T08:30:31+08:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 12,
+    "scope": 16,
+    "signal": 8,
+    "delta": 5,
+    "timeliness": 4,
+    "crossDomain": 3,
+    "total": 48,
+    "rationale": {
+      "structural": "科技与社会类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（中国）",
+      "signal": "命中 0 个信号词",
+      "delta": "命中 0 个变化词",
+      "timeliness": "距采集约 30 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "pending",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-16T08:30:31+08:00",
+    "note": "原文可达但未匹配到标题片段「先声药业先必新舌下片纳入」",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "unknown",
+        "evidence": "原文可达但未匹配到标题片段「先声药业先必新舌下片纳入」"
+      }
+    ]
+  },
+  "status": "pending",
+  "trendLinks": [
+    {
+      "trendId": "tr_health-translation",
+      "direction": "support",
+      "reason": "关键词命中：医疗（规则关联，非人工判定）"
+    }
+  ],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-16T08:30:31+08:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 12,
+        "scope": 16,
+        "signal": 8,
+        "delta": 5,
+        "timeliness": 4,
+        "crossDomain": 3,
+        "total": 48
+      }
+    }
+  ],
+  "linkHistory": []
+}
