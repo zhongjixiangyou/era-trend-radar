@@ -1,0 +1,90 @@
+{
+  "id": "ev_3d2c869403ea",
+  "dedupeKey": "ev:d8e65eb6a23f",
+  "title": "Leaked Records Show Deutsche Bank Courting Russian Oligarchs",
+  "summary": "“As you know we have a large Russian Oligarchs client population,” an analyst wrote as the bank braced for sanctions aga",
+  "facts": [
+    "“As you know we have a large Russian Oligarchs client population,” an analyst wrote as the bank braced for sanctions aga"
+  ],
+  "analysis": "全球宏观口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "全球宏观",
+  "region": "全球",
+  "occurredAt": "2026-11-17T14:00:12+08:00",
+  "firstReportedAt": "2026-11-17T14:00:12+08:00",
+  "collectedAt": "2026-11-17T20:26:14+00:00",
+  "sources": [
+    {
+      "url": "https://www.nytimes.com/2026/11/17/world/europe/deutsche-bank-russia-oligarchs-leaked-documents.html",
+      "title": "Leaked Records Show Deutsche Bank Courting Russian Oligarchs",
+      "publisher": "New York Times World",
+      "publishedAt": "2026-11-17T14:00:12+08:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 18,
+    "scope": 16,
+    "signal": 8,
+    "delta": 9,
+    "timeliness": 4,
+    "crossDomain": 3,
+    "total": 58,
+    "rationale": {
+      "structural": "全球宏观类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（全球）",
+      "signal": "命中 0 个信号词",
+      "delta": "命中 1 个变化词：record",
+      "timeliness": "距采集约 30 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "pending",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-17T20:26:14+00:00",
+    "note": "取原文失败：HTTPError",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "unknown",
+        "evidence": "取原文失败：HTTPError"
+      }
+    ]
+  },
+  "status": "pending",
+  "trendLinks": [
+    {
+      "trendId": "tr_geopolitics-energy-premium",
+      "direction": "support",
+      "reason": "关键词命中：sanctions（规则关联，非人工判定）"
+    }
+  ],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-17T14:00:12+08:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 18,
+        "scope": 16,
+        "signal": 8,
+        "delta": 9,
+        "timeliness": 4,
+        "crossDomain": 3,
+        "total": 58
+      }
+    }
+  ],
+  "linkHistory": []
+}
