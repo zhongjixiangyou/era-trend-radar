@@ -1,0 +1,84 @@
+{
+  "id": "ev_67991ed647fa",
+  "dedupeKey": "ev:822517a797d5",
+  "title": "Collateral Accepted by the Bank of Japan (End of Oct.)",
+  "summary": "Collateral Accepted by the Bank of Japan (End of Oct.)",
+  "facts": [
+    "Collateral Accepted by the Bank of Japan (End of Oct.)"
+  ],
+  "analysis": "全球宏观口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "全球宏观",
+  "region": "日本",
+  "occurredAt": "2026-11-04T16:00:00+08:00",
+  "firstReportedAt": "2026-11-04T16:00:00+08:00",
+  "collectedAt": "2026-11-18T19:56:28+00:00",
+  "sources": [
+    {
+      "url": "https://www.boj.or.jp/en/statistics/boj/other/col/col2610.xlsx",
+      "title": "Collateral Accepted by the Bank of Japan (End of Oct.)",
+      "publisher": "Bank of Japan",
+      "publishedAt": "2026-11-04T16:00:00+08:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 18,
+    "scope": 12,
+    "signal": 8,
+    "delta": 5,
+    "timeliness": 4,
+    "crossDomain": 3,
+    "total": 50,
+    "rationale": {
+      "structural": "全球宏观类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（日本）",
+      "signal": "命中 0 个信号词",
+      "delta": "命中 0 个变化词",
+      "timeliness": "距采集约 30 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "pending",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-18T19:56:28+00:00",
+    "note": "原文可达但未匹配到标题片段「collateralac」",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "unknown",
+        "evidence": "原文可达但未匹配到标题片段「collateralac」"
+      }
+    ]
+  },
+  "status": "pending",
+  "trendLinks": [],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-04T16:00:00+08:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 18,
+        "scope": 12,
+        "signal": 8,
+        "delta": 5,
+        "timeliness": 4,
+        "crossDomain": 3,
+        "total": 50
+      }
+    }
+  ],
+  "linkHistory": []
+}

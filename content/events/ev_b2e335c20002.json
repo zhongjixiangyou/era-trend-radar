@@ -1,0 +1,90 @@
+{
+  "id": "ev_b2e335c20002",
+  "dedupeKey": "ev:072bff48ae4c",
+  "title": "Israeli Tanks Advance Across Gaza Cease-Fire Line in Rare Incursion",
+  "summary": "The Israeli military said it was conducting a limited raid into territory controlled by Hamas to address a threat. The m",
+  "facts": [
+    "The Israeli military said it was conducting a limited raid into territory controlled by Hamas to address a threat. The m"
+  ],
+  "analysis": "全球宏观口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "全球宏观",
+  "region": "全球",
+  "occurredAt": "2026-11-19T01:47:13+08:00",
+  "firstReportedAt": "2026-11-19T01:47:13+08:00",
+  "collectedAt": "2026-11-18T19:56:28+00:00",
+  "sources": [
+    {
+      "url": "https://www.nytimes.com/2026/11/18/world/middleeast/israel-gaza-war-ground-operation.html",
+      "title": "Israeli Tanks Advance Across Gaza Cease-Fire Line in Rare Incursion",
+      "publisher": "New York Times World",
+      "publishedAt": "2026-11-19T01:47:13+08:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 18,
+    "scope": 16,
+    "signal": 11,
+    "delta": 5,
+    "timeliness": 4,
+    "crossDomain": 3,
+    "total": 57,
+    "rationale": {
+      "structural": "全球宏观类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（全球）",
+      "signal": "命中 1 个信号词：AI",
+      "delta": "命中 0 个变化词",
+      "timeliness": "距采集约 30 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "pending",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-18T19:56:28+00:00",
+    "note": "取原文失败：HTTPError",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "unknown",
+        "evidence": "取原文失败：HTTPError"
+      }
+    ]
+  },
+  "status": "pending",
+  "trendLinks": [
+    {
+      "trendId": "tr_ai-power-constraint",
+      "direction": "support",
+      "reason": "关键词命中：AI（规则关联，非人工判定）"
+    }
+  ],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-19T01:47:13+08:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 18,
+        "scope": 16,
+        "signal": 11,
+        "delta": 5,
+        "timeliness": 4,
+        "crossDomain": 3,
+        "total": 57
+      }
+    }
+  ],
+  "linkHistory": []
+}

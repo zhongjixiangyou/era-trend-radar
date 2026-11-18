@@ -1,0 +1,84 @@
+{
+  "id": "ev_a75a0234f3b0",
+  "dedupeKey": "ev:70db21327c0a",
+  "title": "Gen Z: Tell Us Your Political Hopes",
+  "summary": "Young people are protesting for a better world in countries across the globe. Let’s talk about it.",
+  "facts": [
+    "Young people are protesting for a better world in countries across the globe. Let’s talk about it."
+  ],
+  "analysis": "全球宏观口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "全球宏观",
+  "region": "全球",
+  "occurredAt": "2026-11-18T22:22:31+08:00",
+  "firstReportedAt": "2026-11-18T22:22:31+08:00",
+  "collectedAt": "2026-11-18T19:56:28+00:00",
+  "sources": [
+    {
+      "url": "https://www.nytimes.com/2026/11/18/world/europe/gen-z-protests-politics-what-do-you-want.html",
+      "title": "Gen Z: Tell Us Your Political Hopes",
+      "publisher": "New York Times World",
+      "publishedAt": "2026-11-18T22:22:31+08:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 18,
+    "scope": 16,
+    "signal": 8,
+    "delta": 5,
+    "timeliness": 4,
+    "crossDomain": 3,
+    "total": 54,
+    "rationale": {
+      "structural": "全球宏观类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（全球）",
+      "signal": "命中 0 个信号词",
+      "delta": "命中 0 个变化词",
+      "timeliness": "距采集约 30 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "pending",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-18T19:56:28+00:00",
+    "note": "取原文失败：HTTPError",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "unknown",
+        "evidence": "取原文失败：HTTPError"
+      }
+    ]
+  },
+  "status": "pending",
+  "trendLinks": [],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-18T22:22:31+08:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 18,
+        "scope": 16,
+        "signal": 8,
+        "delta": 5,
+        "timeliness": 4,
+        "crossDomain": 3,
+        "total": 54
+      }
+    }
+  ],
+  "linkHistory": []
+}
