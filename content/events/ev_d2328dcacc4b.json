@@ -11,7 +11,7 @@
   "region": "全球",
   "occurredAt": "2026-11-14T13:01:07+08:00",
   "firstReportedAt": "2026-11-14T13:01:07+08:00",
-  "collectedAt": "2026-11-16T21:37:24+00:00",
+  "collectedAt": "2026-11-23T08:31:57+08:00",
   "sources": [
     {
       "url": "https://www.nytimes.com/2026/11/14/world/europe/russell-brand-david-walliams-gag-order.html",
@@ -45,19 +45,19 @@
   },
   "evidenceGrade": "single_primary",
   "verification": {
-    "status": "passed",
+    "status": "pending",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-16T21:37:24+00:00",
-    "note": "原文可达，标题片段「twocelebrity」在页面中出现",
+    "checkedAt": "2026-11-23T08:31:57+08:00",
+    "note": "取原文失败：HTTPError",
     "checks": [
       {
         "kind": "source_text",
-        "result": "pass",
-        "evidence": "原文可达，标题片段「twocelebrity」在页面中出现"
+        "result": "unknown",
+        "evidence": "取原文失败：HTTPError"
       }
     ]
   },
-  "status": "published",
+  "status": "pending",
   "trendLinks": [
     {
       "trendId": "tr_ai-power-constraint",
@@ -68,7 +68,9 @@
   "revisions": [],
   "forecastRefs": [],
   "retro": {
-    "isRetro": false
+    "isRetro": true,
+    "asOf": "2026-11-23T08:31:57+08:00",
+    "note": "回溯研究：事件发生于 2026-11-14，本机 2026-11-23 才采集到，非当时即时记录。"
   },
   "scoreHistory": [
     {

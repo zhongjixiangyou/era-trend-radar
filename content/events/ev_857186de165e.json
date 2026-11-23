@@ -1,21 +1,21 @@
 {
   "id": "ev_857186de165e",
   "dedupeKey": "ev:81e856d23e6c",
-  "title": "AI claimed a solution to the 167 year-old Riemann Hypothesis — and a human did, too",
-  "summary": "Mathematicians are having their minds blown by the latest AI-driven result—and there's a competing human solution, too.",
+  "title": "AI claimed a solution to the 167-year-old Riemann hypothesis — and a human did, too",
+  "summary": "Mathematicians are having their minds blown by the latest AI-driven result — and there's a competing human solution, too",
   "facts": [
-    "Mathematicians are having their minds blown by the latest AI-driven result—and there's a competing human solution, too."
+    "Mathematicians are having their minds blown by the latest AI-driven result — and there's a competing human solution, too"
   ],
   "analysis": "科技与社会口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
   "category": "科技与社会",
   "region": "全球",
   "occurredAt": "2026-11-21T03:32:08+08:00",
   "firstReportedAt": "2026-11-21T03:32:08+08:00",
-  "collectedAt": "2026-11-20T19:35:50+00:00",
+  "collectedAt": "2026-11-23T08:31:57+08:00",
   "sources": [
     {
       "url": "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too/",
-      "title": "AI claimed a solution to the 167 year-old Riemann Hypothesis — and a human did, too",
+      "title": "AI claimed a solution to the 167-year-old Riemann hypothesis — and a human did, too",
       "publisher": "TechCrunch",
       "publishedAt": "2026-11-21T03:32:08+08:00",
       "type": "primary"
@@ -47,7 +47,7 @@
   "verification": {
     "status": "passed",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-20T19:35:50+00:00",
+    "checkedAt": "2026-11-23T08:31:57+08:00",
     "note": "原文可达，标题片段「aiclaimedaso」在页面中出现",
     "checks": [
       {

@@ -11,7 +11,7 @@
   "region": "欧洲",
   "occurredAt": "2026-11-18T02:30:00+08:00",
   "firstReportedAt": "2026-11-18T02:30:00+08:00",
-  "collectedAt": "2026-11-17T20:26:14+00:00",
+  "collectedAt": "2026-11-23T08:31:57+08:00",
   "sources": [
     {
       "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261117~7f5d3b1a0e.en.pdf",
@@ -47,7 +47,7 @@
   "verification": {
     "status": "pending",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-17T20:26:14+00:00",
+    "checkedAt": "2026-11-23T08:31:57+08:00",
     "note": "原文可达但未匹配到标题片段「philiprlanet」",
     "checks": [
       {

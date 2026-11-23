@@ -1,23 +1,23 @@
 {
   "id": "ev_ea0ca42a1483",
   "dedupeKey": "ev:13cc81829ab9",
-  "title": "‘Nvidia’s turmoil has me spooked’: Has the time come to sell my stocks?",
-  "summary": "“Real estate here in Florida seems to be presenting some interesting opportunities.”",
+  "title": "‘Nvidia’s turmoil has me spooked’: Is it time to sell my stocks and buy real estate?",
+  "summary": "If you are tempted to ditch stocks for property or CDs, take a deep breath before making any sudden moves.",
   "facts": [
-    "“Real estate here in Florida seems to be presenting some interesting opportunities.”"
+    "If you are tempted to ditch stocks for property or CDs, take a deep breath before making any sudden moves."
   ],
   "analysis": "全球宏观口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
   "category": "全球宏观",
   "region": "全球",
-  "occurredAt": "2026-11-18T03:00:00+08:00",
-  "firstReportedAt": "2026-11-18T03:00:00+08:00",
-  "collectedAt": "2026-11-17T20:26:14+00:00",
+  "occurredAt": "2026-11-23T01:00:00+08:00",
+  "firstReportedAt": "2026-11-23T01:00:00+08:00",
+  "collectedAt": "2026-11-23T08:31:57+08:00",
   "sources": [
     {
       "url": "https://www.marketwatch.com/story/nvidia-spooked-me-should-i-sell-my-stocks-or-ride-out-the-market-turmoil-560583c6?mod=mw_rss_topstories",
-      "title": "‘Nvidia’s turmoil has me spooked’: Has the time come to sell my stocks?",
+      "title": "‘Nvidia’s turmoil has me spooked’: Is it time to sell my stocks and buy real estate?",
       "publisher": "MarketWatch",
-      "publishedAt": "2026-11-18T03:00:00+08:00",
+      "publishedAt": "2026-11-23T01:00:00+08:00",
       "type": "primary"
     }
   ],
@@ -47,7 +47,7 @@
   "verification": {
     "status": "pending",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-17T20:26:14+00:00",
+    "checkedAt": "2026-11-23T08:31:57+08:00",
     "note": "取原文失败：HTTPError",
     "checks": [
       {
@@ -58,7 +58,13 @@
     ]
   },
   "status": "pending",
-  "trendLinks": [],
+  "trendLinks": [
+    {
+      "trendId": "tr_cn-realestate-contraction",
+      "direction": "support",
+      "reason": "关键词命中：property（规则关联，非人工判定）"
+    }
+  ],
   "revisions": [],
   "forecastRefs": [],
   "retro": {
@@ -66,7 +72,7 @@
   },
   "scoreHistory": [
     {
-      "at": "2026-11-18T03:00:00+08:00",
+      "at": "2026-11-23T01:00:00+08:00",
       "by": "rule/v1",
       "note": "规则评分初值（未人工复核）",
       "scores": {

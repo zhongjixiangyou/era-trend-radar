@@ -11,7 +11,7 @@
   "region": "中国",
   "occurredAt": "2026-11-16T18:00:01+08:00",
   "firstReportedAt": "2026-11-16T18:00:01+08:00",
-  "collectedAt": "2026-11-16T21:37:24+00:00",
+  "collectedAt": "2026-11-23T08:31:57+08:00",
   "sources": [
     {
       "url": "https://www.stats.gov.cn/sj/zxfb/202611/t20261116_1965839.html",
@@ -26,15 +26,15 @@
     "scope": 16,
     "signal": 8,
     "delta": 5,
-    "timeliness": 10,
+    "timeliness": 6,
     "crossDomain": 3,
-    "total": 54,
+    "total": 50,
     "rationale": {
       "structural": "中国经济与产业类事件，按类别基线给分",
       "scope": "影响范围按地区口径（中国）",
       "signal": "命中 0 个信号词",
       "delta": "命中 0 个变化词",
-      "timeliness": "距采集约 1 天",
+      "timeliness": "距采集约 7 天",
       "crossDomain": "单一类别为主"
     },
     "scorerVersion": "score/v1.0"
@@ -47,7 +47,7 @@
   "verification": {
     "status": "passed",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-16T21:37:24+00:00",
+    "checkedAt": "2026-11-23T08:31:57+08:00",
     "note": "原文可达，标题片段「2026年110月份社会」在页面中出现",
     "checks": [
       {
@@ -80,9 +80,9 @@
         "scope": 16,
         "signal": 8,
         "delta": 5,
-        "timeliness": 10,
+        "timeliness": 6,
         "crossDomain": 3,
-        "total": 54
+        "total": 50
       }
     }
   ],

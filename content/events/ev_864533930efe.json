@@ -11,7 +11,7 @@
   "region": "全球",
   "occurredAt": "2026-11-21T00:11:21+08:00",
   "firstReportedAt": "2026-11-21T00:11:21+08:00",
-  "collectedAt": "2026-11-20T19:35:50+00:00",
+  "collectedAt": "2026-11-23T08:31:57+08:00",
   "sources": [
     {
       "url": "https://arstechnica.com/gaming/2026/11/valve-says-it-might-have-to-raise-the-price-of-supply-limited-steam-machines/",
@@ -47,7 +47,7 @@
   "verification": {
     "status": "passed",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-20T19:35:50+00:00",
+    "checkedAt": "2026-11-23T08:31:57+08:00",
     "note": "原文可达，标题片段「valvesaysitm」在页面中出现",
     "checks": [
       {

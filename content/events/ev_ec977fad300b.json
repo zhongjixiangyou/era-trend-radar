@@ -11,7 +11,7 @@
   "region": "全球",
   "occurredAt": "2026-11-21T21:17:38+08:00",
   "firstReportedAt": "2026-11-21T21:17:38+08:00",
-  "collectedAt": "2026-11-21T18:39:57+00:00",
+  "collectedAt": "2026-11-23T08:31:57+08:00",
   "sources": [
     {
       "url": "https://www.bbc.co.uk/news/articles/c6wy0qj7w5zqo?at_medium=RSS&at_campaign=rss",
@@ -47,7 +47,7 @@
   "verification": {
     "status": "passed",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-21T18:39:57+00:00",
+    "checkedAt": "2026-11-23T08:31:57+08:00",
     "note": "原文可达，标题片段「zelenskysays」在页面中出现",
     "checks": [
       {

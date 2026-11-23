@@ -11,7 +11,7 @@
   "region": "中国",
   "occurredAt": "2026-10-23T17:30:01+08:00",
   "firstReportedAt": "2026-10-23T17:30:01+08:00",
-  "collectedAt": "2026-11-16T21:37:24+00:00",
+  "collectedAt": "2026-11-23T08:31:57+08:00",
   "sources": [
     {
       "url": "https://www.stats.gov.cn/sj/zxfb/202610/t20261023_1965677.html",
@@ -26,15 +26,15 @@
     "scope": 16,
     "signal": 8,
     "delta": 5,
-    "timeliness": 4,
+    "timeliness": 2,
     "crossDomain": 3,
-    "total": 48,
+    "total": 46,
     "rationale": {
       "structural": "中国经济与产业类事件，按类别基线给分",
       "scope": "影响范围按地区口径（中国）",
       "signal": "命中 0 个信号词",
       "delta": "命中 0 个变化词",
-      "timeliness": "距采集约 25 天",
+      "timeliness": "距采集约 31 天",
       "crossDomain": "单一类别为主"
     },
     "scorerVersion": "score/v1.0"
@@ -47,7 +47,7 @@
   "verification": {
     "status": "passed",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-16T21:37:24+00:00",
+    "checkedAt": "2026-11-23T08:31:57+08:00",
     "note": "原文可达，标题片段「2025年中国创新指数比」在页面中出现",
     "checks": [
       {
@@ -62,7 +62,9 @@
   "revisions": [],
   "forecastRefs": [],
   "retro": {
-    "isRetro": false
+    "isRetro": true,
+    "asOf": "2026-11-23T08:31:57+08:00",
+    "note": "回溯研究：事件发生于 2026-10-23，本机 2026-11-23 才采集到，非当时即时记录。"
   },
   "scoreHistory": [
     {
@@ -74,9 +76,9 @@
         "scope": 16,
         "signal": 8,
         "delta": 5,
-        "timeliness": 4,
+        "timeliness": 2,
         "crossDomain": 3,
-        "total": 48
+        "total": 46
       }
     }
   ],

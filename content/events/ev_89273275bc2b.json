@@ -1,7 +1,7 @@
 {
   "id": "ev_89273275bc2b",
   "dedupeKey": "ev:bf4f3af21c1c",
-  "title": "Dead pets were meant to be cremated - then their bodies appeared on a livestream",
+  "title": "These dead pets were meant to be cremated - then their bodies appeared on a livestream",
   "summary": "Grieving Filipinos confront a distressing reality: their dogs and cats may not have received the send-off they paid for.",
   "facts": [
     "Grieving Filipinos confront a distressing reality: their dogs and cats may not have received the send-off they paid for."
@@ -11,11 +11,11 @@
   "region": "全球",
   "occurredAt": "2026-11-21T07:20:33+08:00",
   "firstReportedAt": "2026-11-21T07:20:33+08:00",
-  "collectedAt": "2026-11-21T04:57:13+00:00",
+  "collectedAt": "2026-11-23T08:31:57+08:00",
   "sources": [
     {
       "url": "https://www.bbc.co.uk/news/articles/cmn502ek17yvo?at_medium=RSS&at_campaign=rss",
-      "title": "Dead pets were meant to be cremated - then their bodies appeared on a livestream",
+      "title": "These dead pets were meant to be cremated - then their bodies appeared on a livestream",
       "publisher": "BBC World",
       "publishedAt": "2026-11-21T07:20:33+08:00",
       "type": "primary"
@@ -47,13 +47,13 @@
   "verification": {
     "status": "passed",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-21T04:57:13+00:00",
-    "note": "原文可达，标题片段「deadpetswere」在页面中出现",
+    "checkedAt": "2026-11-23T08:31:57+08:00",
+    "note": "原文可达，标题片段「thesedeadpet」在页面中出现",
     "checks": [
       {
         "kind": "source_text",
         "result": "pass",
-        "evidence": "原文可达，标题片段「deadpetswere」在页面中出现"
+        "evidence": "原文可达，标题片段「thesedeadpet」在页面中出现"
       }
     ]
   },

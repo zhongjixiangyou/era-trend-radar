@@ -11,7 +11,7 @@
   "region": "日本",
   "occurredAt": "2026-11-16T16:00:00+08:00",
   "firstReportedAt": "2026-11-16T16:00:00+08:00",
-  "collectedAt": "2026-11-16T21:37:24+00:00",
+  "collectedAt": "2026-11-23T08:31:57+08:00",
   "sources": [
     {
       "url": "http://www.boj.or.jp/en/statistics/boj/other/cabs/cabs.xlsx",
@@ -47,7 +47,7 @@
   "verification": {
     "status": "pending",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-16T21:37:24+00:00",
+    "checkedAt": "2026-11-23T08:31:57+08:00",
     "note": "原文可达但未匹配到标题片段「bojcurrentac」",
     "checks": [
       {

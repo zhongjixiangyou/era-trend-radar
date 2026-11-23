@@ -11,7 +11,7 @@
   "region": "全球",
   "occurredAt": "2026-10-26T21:00:22+08:00",
   "firstReportedAt": "2026-10-26T21:00:22+08:00",
-  "collectedAt": "2026-11-16T21:37:24+00:00",
+  "collectedAt": "2026-11-23T08:31:57+08:00",
   "sources": [
     {
       "url": "https://www.apple.com/newsroom/2026/10/apple-gives-ipad-mini-its-biggest-update-ever/",
@@ -34,7 +34,7 @@
       "scope": "影响范围按地区口径（全球）",
       "signal": "命中 0 个信号词",
       "delta": "命中 0 个变化词",
-      "timeliness": "距采集约 21 天",
+      "timeliness": "距采集约 27 天",
       "crossDomain": "单一类别为主"
     },
     "scorerVersion": "score/v1.0"
@@ -47,7 +47,7 @@
   "verification": {
     "status": "passed",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-16T21:37:24+00:00",
+    "checkedAt": "2026-11-23T08:31:57+08:00",
     "note": "原文可达，标题片段「applegivesip」在页面中出现",
     "checks": [
       {
@@ -68,7 +68,9 @@
   "revisions": [],
   "forecastRefs": [],
   "retro": {
-    "isRetro": false
+    "isRetro": true,
+    "asOf": "2026-11-23T08:31:57+08:00",
+    "note": "回溯研究：事件发生于 2026-10-26，本机 2026-11-23 才采集到，非当时即时记录。"
   },
   "scoreHistory": [
     {

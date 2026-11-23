@@ -11,7 +11,7 @@
   "region": "全球",
   "occurredAt": "2026-11-20T22:15:21+08:00",
   "firstReportedAt": "2026-11-20T22:15:21+08:00",
-  "collectedAt": "2026-11-20T19:35:50+00:00",
+  "collectedAt": "2026-11-23T08:31:57+08:00",
   "sources": [
     {
       "url": "https://arstechnica.com/space/2026/11/spacex-lenders-dont-want-elon-musk-launching-their-collateral-into-space/",
@@ -47,7 +47,7 @@
   "verification": {
     "status": "passed",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-20T19:35:50+00:00",
+    "checkedAt": "2026-11-23T08:31:57+08:00",
     "note": "原文可达，标题片段「spacexlender」在页面中出现",
     "checks": [
       {

@@ -11,7 +11,7 @@
   "region": "全球",
   "occurredAt": "2026-11-22T06:01:35+08:00",
   "firstReportedAt": "2026-11-22T06:01:35+08:00",
-  "collectedAt": "2026-11-22T04:18:27+00:00",
+  "collectedAt": "2026-11-23T08:31:57+08:00",
   "sources": [
     {
       "url": "https://www.npr.org/2026/11/21/nx-s1-6044647/highlights-and-challenges-from-covering-an-historic-month-in-south-america",
@@ -47,7 +47,7 @@
   "verification": {
     "status": "passed",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-22T04:18:27+00:00",
+    "checkedAt": "2026-11-23T08:31:57+08:00",
     "note": "原文可达，标题片段「highlightsan」在页面中出现",
     "checks": [
       {

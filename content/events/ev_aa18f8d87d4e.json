@@ -1,23 +1,23 @@
 {
   "id": "ev_aa18f8d87d4e",
   "dedupeKey": "ev:53ba164e0140",
-  "title": "Anthropic shares fall after blockbuster opening as wider tech sell-off continues",
-  "summary": "Other tech companies have also taken a hit as share markets broadly slump.",
+  "title": "Tech stock sell-off drags markets down as Anthropic shares slide",
+  "summary": "Pressures weighed on US markets, with the S&P 500 and the Dow Jones Industrial Average pushed into correction territory.",
   "facts": [
-    "Other tech companies have also taken a hit as share markets broadly slump."
+    "Pressures weighed on US markets, with the S&P 500 and the Dow Jones Industrial Average pushed into correction territory."
   ],
   "analysis": "全球宏观口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
   "category": "全球宏观",
   "region": "全球",
-  "occurredAt": "2026-11-21T01:36:29+08:00",
-  "firstReportedAt": "2026-11-21T01:36:29+08:00",
-  "collectedAt": "2026-11-20T19:35:50+00:00",
+  "occurredAt": "2026-11-21T06:42:47+08:00",
+  "firstReportedAt": "2026-11-21T06:42:47+08:00",
+  "collectedAt": "2026-11-23T08:31:57+08:00",
   "sources": [
     {
       "url": "https://www.bbc.co.uk/news/articles/c6808ym10vzgo?at_medium=RSS&at_campaign=rss",
-      "title": "Anthropic shares fall after blockbuster opening as wider tech sell-off continues",
+      "title": "Tech stock sell-off drags markets down as Anthropic shares slide",
       "publisher": "BBC World",
-      "publishedAt": "2026-11-21T01:36:29+08:00",
+      "publishedAt": "2026-11-21T06:42:47+08:00",
       "type": "primary"
     }
   ],
@@ -47,13 +47,13 @@
   "verification": {
     "status": "passed",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-20T19:35:50+00:00",
-    "note": "原文可达，标题片段「anthropicsha」在页面中出现",
+    "checkedAt": "2026-11-23T08:31:57+08:00",
+    "note": "原文可达，标题片段「techstocksel」在页面中出现",
     "checks": [
       {
         "kind": "source_text",
         "result": "pass",
-        "evidence": "原文可达，标题片段「anthropicsha」在页面中出现"
+        "evidence": "原文可达，标题片段「techstocksel」在页面中出现"
       }
     ]
   },
@@ -72,7 +72,7 @@
   },
   "scoreHistory": [
     {
-      "at": "2026-11-21T01:36:29+08:00",
+      "at": "2026-11-21T06:42:47+08:00",
       "by": "rule/v1",
       "note": "规则评分初值（未人工复核）",
       "scores": {

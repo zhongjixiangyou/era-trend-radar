@@ -11,7 +11,7 @@
   "region": "全球",
   "occurredAt": "2026-11-20T23:46:07+08:00",
   "firstReportedAt": "2026-11-20T23:46:07+08:00",
-  "collectedAt": "2026-11-20T19:35:50+00:00",
+  "collectedAt": "2026-11-23T08:31:57+08:00",
   "sources": [
     {
       "url": "https://techcrunch.com/2026/11/20/a-transcription-firm-used-by-police-prosecutors-and-tech-giants-exposed-customer-data-online/",
@@ -47,7 +47,7 @@
   "verification": {
     "status": "passed",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-20T19:35:50+00:00",
+    "checkedAt": "2026-11-23T08:31:57+08:00",
     "note": "原文可达，标题片段「atranscripti」在页面中出现",
     "checks": [
       {

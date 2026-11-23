@@ -11,7 +11,7 @@
   "region": "全球",
   "occurredAt": "2026-11-20T06:16:37+08:00",
   "firstReportedAt": "2026-11-20T06:16:37+08:00",
-  "collectedAt": "2026-11-20T05:02:13+00:00",
+  "collectedAt": "2026-11-23T08:31:57+08:00",
   "sources": [
     {
       "url": "https://arstechnica.com/tech-policy/2026/11/amazon-takes-its-fight-against-nyc-delivery-bill-to-shoppers-with-in-app-pop-up/",
@@ -47,7 +47,7 @@
   "verification": {
     "status": "passed",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-20T05:02:13+00:00",
+    "checkedAt": "2026-11-23T08:31:57+08:00",
     "note": "原文可达，标题片段「amazonfights」在页面中出现",
     "checks": [
       {

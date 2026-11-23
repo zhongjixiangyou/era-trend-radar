@@ -11,7 +11,7 @@
   "region": "全球",
   "occurredAt": "2026-11-21T04:41:17+08:00",
   "firstReportedAt": "2026-11-21T04:41:17+08:00",
-  "collectedAt": "2026-11-21T04:57:13+00:00",
+  "collectedAt": "2026-11-23T08:31:57+08:00",
   "sources": [
     {
       "url": "https://arstechnica.com/science/2026/11/astronomers-watched-a-star-spiral-to-its-death-inside-a-giant-companion/",
@@ -47,7 +47,7 @@
   "verification": {
     "status": "passed",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-21T04:57:13+00:00",
+    "checkedAt": "2026-11-23T08:31:57+08:00",
     "note": "原文可达，标题片段「watchingasag」在页面中出现",
     "checks": [
       {

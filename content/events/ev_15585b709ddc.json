@@ -9,15 +9,15 @@
   "analysis": "全球宏观口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
   "category": "全球宏观",
   "region": "全球",
-  "occurredAt": "2026-11-22T11:44:19+08:00",
-  "firstReportedAt": "2026-11-22T11:44:19+08:00",
-  "collectedAt": "2026-11-22T04:18:27+00:00",
+  "occurredAt": "2026-11-22T22:34:02+08:00",
+  "firstReportedAt": "2026-11-22T22:34:02+08:00",
+  "collectedAt": "2026-11-23T08:31:57+08:00",
   "sources": [
     {
       "url": "https://www.nytimes.com/2026/11/21/world/asia/bangladesh-protests-sheikh-hasina-what-to-know.html",
       "title": "Deadly Protests Erupt in Bangladesh Over Exiled Former Leader. What to Know.",
       "publisher": "New York Times World",
-      "publishedAt": "2026-11-22T11:44:19+08:00",
+      "publishedAt": "2026-11-22T22:34:02+08:00",
       "type": "primary"
     }
   ],
@@ -47,7 +47,7 @@
   "verification": {
     "status": "pending",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-22T04:18:27+00:00",
+    "checkedAt": "2026-11-23T08:31:57+08:00",
     "note": "取原文失败：HTTPError",
     "checks": [
       {
@@ -66,7 +66,7 @@
   },
   "scoreHistory": [
     {
-      "at": "2026-11-22T11:44:19+08:00",
+      "at": "2026-11-22T22:34:02+08:00",
       "by": "rule/v1",
       "note": "规则评分初值（未人工复核）",
       "scores": {

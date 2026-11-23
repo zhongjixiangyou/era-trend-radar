@@ -11,7 +11,7 @@
   "region": "全球",
   "occurredAt": "2026-11-23T01:06:00+08:00",
   "firstReportedAt": "2026-11-23T01:06:00+08:00",
-  "collectedAt": "2026-11-22T18:59:51+00:00",
+  "collectedAt": "2026-11-23T08:31:57+08:00",
   "sources": [
     {
       "url": "https://techcrunch.com/2026/11/22/techcrunch-mobility-a-b-testing-robots-vs-humans/",
@@ -47,7 +47,7 @@
   "verification": {
     "status": "passed",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-22T18:59:51+00:00",
+    "checkedAt": "2026-11-23T08:31:57+08:00",
     "note": "原文可达，标题片段「techcrunchmo」在页面中出现",
     "checks": [
       {

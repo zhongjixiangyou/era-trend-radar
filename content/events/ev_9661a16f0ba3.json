@@ -11,7 +11,7 @@
   "region": "全球",
   "occurredAt": "2026-11-20T20:00:43+08:00",
   "firstReportedAt": "2026-11-20T20:00:43+08:00",
-  "collectedAt": "2026-11-20T19:35:50+00:00",
+  "collectedAt": "2026-11-23T08:31:57+08:00",
   "sources": [
     {
       "url": "https://arstechnica.com/tech-policy/2026/11/trump-admin-still-wont-let-wi-fi-giant-tp-link-sell-its-latest-routers-in-us/",
@@ -47,7 +47,7 @@
   "verification": {
     "status": "passed",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-20T19:35:50+00:00",
+    "checkedAt": "2026-11-23T08:31:57+08:00",
     "note": "原文可达，标题片段「trumpadminst」在页面中出现",
     "checks": [
       {

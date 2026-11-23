@@ -1,23 +1,23 @@
 {
   "id": "ev_f2adce9d0b7b",
   "dedupeKey": "ev:9bc8a6e38b5a",
-  "title": "'He's a killer': Zelensky reacts to Trump calling Putin a friend",
-  "summary": "Trump's comments came as Russia launched \"biggest attacks this year\" against Ukraine.",
+  "title": "Zelensky says Putin is a 'killer' after Trump calls Russian leader a friend",
+  "summary": "Earlier this week, Trump greeted Putin ahead of a meeting in China and said the pair have a \"great relationship\".",
   "facts": [
-    "Trump's comments came as Russia launched \"biggest attacks this year\" against Ukraine."
+    "Earlier this week, Trump greeted Putin ahead of a meeting in China and said the pair have a \"great relationship\"."
   ],
   "analysis": "全球宏观口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
   "category": "全球宏观",
   "region": "全球",
-  "occurredAt": "2026-11-21T12:32:50+08:00",
-  "firstReportedAt": "2026-11-21T12:32:50+08:00",
-  "collectedAt": "2026-11-21T04:57:13+00:00",
+  "occurredAt": "2026-11-21T16:10:25+08:00",
+  "firstReportedAt": "2026-11-21T16:10:25+08:00",
+  "collectedAt": "2026-11-23T08:31:57+08:00",
   "sources": [
     {
       "url": "https://www.bbc.co.uk/news/articles/cxnv4zvmdy0jo?at_medium=RSS&at_campaign=rss",
-      "title": "'He's a killer': Zelensky reacts to Trump calling Putin a friend",
+      "title": "Zelensky says Putin is a 'killer' after Trump calls Russian leader a friend",
       "publisher": "BBC World",
-      "publishedAt": "2026-11-21T12:32:50+08:00",
+      "publishedAt": "2026-11-21T16:10:25+08:00",
       "type": "primary"
     }
   ],
@@ -47,13 +47,13 @@
   "verification": {
     "status": "passed",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-21T04:57:13+00:00",
-    "note": "原文可达，标题片段「hesakillerze」在页面中出现",
+    "checkedAt": "2026-11-23T08:31:57+08:00",
+    "note": "原文可达，标题片段「zelenskysays」在页面中出现",
     "checks": [
       {
         "kind": "source_text",
         "result": "pass",
-        "evidence": "原文可达，标题片段「hesakillerze」在页面中出现"
+        "evidence": "原文可达，标题片段「zelenskysays」在页面中出现"
       }
     ]
   },
@@ -72,7 +72,7 @@
   },
   "scoreHistory": [
     {
-      "at": "2026-11-21T12:32:50+08:00",
+      "at": "2026-11-21T16:10:25+08:00",
       "by": "rule/v1",
       "note": "规则评分初值（未人工复核）",
       "scores": {

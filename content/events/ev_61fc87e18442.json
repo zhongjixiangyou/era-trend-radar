@@ -1,7 +1,7 @@
 {
   "id": "ev_61fc87e18442",
   "dedupeKey": "ev:f1bb42fd1c54",
-  "title": "In a year of AI solving maths problems, Anthropic may have just solved the biggest",
+  "title": "In a year of AI solving maths problems, an Anthropic worker says he may have cracked the biggest",
   "summary": "A mathematician at Anthropic says he used an AI to prove the famed Riemann hypothesis, though verification will take som",
   "facts": [
     "A mathematician at Anthropic says he used an AI to prove the famed Riemann hypothesis, though verification will take som"
@@ -11,11 +11,11 @@
   "region": "全球",
   "occurredAt": "2026-11-21T07:08:57+08:00",
   "firstReportedAt": "2026-11-21T07:08:57+08:00",
-  "collectedAt": "2026-11-21T04:57:13+00:00",
+  "collectedAt": "2026-11-23T08:31:57+08:00",
   "sources": [
     {
       "url": "https://www.bbc.co.uk/news/articles/c6pqr2g7w059o?at_medium=RSS&at_campaign=rss",
-      "title": "In a year of AI solving maths problems, Anthropic may have just solved the biggest",
+      "title": "In a year of AI solving maths problems, an Anthropic worker says he may have cracked the biggest",
       "publisher": "BBC World",
       "publishedAt": "2026-11-21T07:08:57+08:00",
       "type": "primary"
@@ -47,7 +47,7 @@
   "verification": {
     "status": "passed",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-21T04:57:13+00:00",
+    "checkedAt": "2026-11-23T08:31:57+08:00",
     "note": "原文可达，标题片段「inayearofais」在页面中出现",
     "checks": [
       {

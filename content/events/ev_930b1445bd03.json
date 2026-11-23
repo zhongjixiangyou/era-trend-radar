@@ -1,0 +1,97 @@
+{
+  "id": "ev_930b1445bd03",
+  "dedupeKey": "ev:f21452d48a20",
+  "title": "FDA Launches the Rare Disease Framework Initiative to Develop a Holistic, Fit-For-Purpose Framework for Rare Disease Drug Development",
+  "summary": "The U.S. Food and Drug Administration, a division within the U.S. Department of Health and Human Services (HHS), today a",
+  "facts": [
+    "The U.S. Food and Drug Administration, a division within the U.S. Department of Health and Human Services (HHS), today a"
+  ],
+  "analysis": "科技与社会口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "科技与社会",
+  "region": "美国",
+  "occurredAt": "2026-10-14T23:50:52+08:00",
+  "firstReportedAt": "2026-10-14T23:50:52+08:00",
+  "collectedAt": "2026-11-23T08:31:57+08:00",
+  "sources": [
+    {
+      "url": "http://www.fda.gov/news-events/press-announcements/fda-launches-rare-disease-framework-initiative-develop-holistic-fit-purpose-framework-rare-disease",
+      "title": "FDA Launches the Rare Disease Framework Initiative to Develop a Holistic, Fit-For-Purpose Framework for Rare Disease Drug Development",
+      "publisher": "美国食品药品监督管理局",
+      "publishedAt": "2026-10-14T23:50:52+08:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 12,
+    "scope": 12,
+    "signal": 8,
+    "delta": 5,
+    "timeliness": 4,
+    "crossDomain": 3,
+    "total": 44,
+    "rationale": {
+      "structural": "科技与社会类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（美国）",
+      "signal": "命中 0 个信号词",
+      "delta": "命中 0 个变化词",
+      "timeliness": "距采集约 30 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "passed",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-23T08:31:57+08:00",
+    "note": "原文可达，标题片段「fdalaunchest」在页面中出现",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "原文可达，标题片段「fdalaunchest」在页面中出现"
+      }
+    ]
+  },
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_cn-nev-demand-shift",
+      "direction": "support",
+      "reason": "关键词命中：EV（规则关联，非人工判定）"
+    },
+    {
+      "trendId": "tr_climate-food-inflation",
+      "direction": "support",
+      "reason": "关键词命中：food（规则关联，非人工判定）"
+    }
+  ],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": true,
+    "asOf": "2026-11-23T08:31:57+08:00",
+    "note": "回溯研究：事件发生于 2026-10-14，本机 2026-11-23 才采集到，非当时即时记录。"
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-10-14T23:50:52+08:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 12,
+        "scope": 12,
+        "signal": 8,
+        "delta": 5,
+        "timeliness": 4,
+        "crossDomain": 3,
+        "total": 44
+      }
+    }
+  ],
+  "linkHistory": []
+}

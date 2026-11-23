@@ -11,7 +11,7 @@
   "region": "美国",
   "occurredAt": "2026-11-17T22:00:00+08:00",
   "firstReportedAt": "2026-11-17T22:00:00+08:00",
-  "collectedAt": "2026-11-17T20:26:14+00:00",
+  "collectedAt": "2026-11-23T08:31:57+08:00",
   "sources": [
     {
       "url": "https://www.eia.gov/todayinenergy/detail.php?id=68464",
@@ -45,19 +45,19 @@
   },
   "evidenceGrade": "single_primary",
   "verification": {
-    "status": "pending",
+    "status": "passed",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-17T20:26:14+00:00",
-    "note": "取原文失败：TimeoutError",
+    "checkedAt": "2026-11-23T08:31:57+08:00",
+    "note": "原文可达，标题片段「howdoeseiaac」在页面中出现",
     "checks": [
       {
         "kind": "source_text",
-        "result": "unknown",
-        "evidence": "取原文失败：TimeoutError"
+        "result": "pass",
+        "evidence": "原文可达，标题片段「howdoeseiaac」在页面中出现"
       }
     ]
   },
-  "status": "pending",
+  "status": "published",
   "trendLinks": [],
   "revisions": [],
   "forecastRefs": [],

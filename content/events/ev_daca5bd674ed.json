@@ -1,7 +1,7 @@
 {
   "id": "ev_daca5bd674ed",
   "dedupeKey": "ev:5b76dfe3de30",
-  "title": "Mexico detains top cartel boss 'El Chapo Isidro,' setting off violence",
+  "title": "Cartel leader captured in northern Mexico in a bloody firefight that left 11 dead",
   "summary": "Fausto Isidro Meza Flores, better known as \"El Chapo Isidro,\" was one of the FBI's most wanted fugitives. His arrest in",
   "facts": [
     "Fausto Isidro Meza Flores, better known as \"El Chapo Isidro,\" was one of the FBI's most wanted fugitives. His arrest in"
@@ -11,11 +11,11 @@
   "region": "全球",
   "occurredAt": "2026-11-22T02:08:55+08:00",
   "firstReportedAt": "2026-11-22T02:08:55+08:00",
-  "collectedAt": "2026-11-21T18:39:57+00:00",
+  "collectedAt": "2026-11-23T08:31:57+08:00",
   "sources": [
     {
       "url": "https://www.npr.org/2026/11/21/nx-s1-6049672/cartel-boss-el-chapo-isidro-detained",
-      "title": "Mexico detains top cartel boss 'El Chapo Isidro,' setting off violence",
+      "title": "Cartel leader captured in northern Mexico in a bloody firefight that left 11 dead",
       "publisher": "NPR World",
       "publishedAt": "2026-11-22T02:08:55+08:00",
       "type": "primary"
@@ -24,15 +24,15 @@
   "scores": {
     "structural": 18,
     "scope": 16,
-    "signal": 11,
+    "signal": 8,
     "delta": 5,
     "timeliness": 4,
     "crossDomain": 3,
-    "total": 57,
+    "total": 54,
     "rationale": {
       "structural": "全球宏观类事件，按类别基线给分",
       "scope": "影响范围按地区口径（全球）",
-      "signal": "命中 1 个信号词：AI",
+      "signal": "命中 0 个信号词",
       "delta": "命中 0 个变化词",
       "timeliness": "距采集约 30 天",
       "crossDomain": "单一类别为主"
@@ -47,24 +47,18 @@
   "verification": {
     "status": "passed",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-21T18:39:57+00:00",
-    "note": "原文可达，标题片段「mexicodetain」在页面中出现",
+    "checkedAt": "2026-11-23T08:31:57+08:00",
+    "note": "原文可达，标题片段「cartelleader」在页面中出现",
     "checks": [
       {
         "kind": "source_text",
         "result": "pass",
-        "evidence": "原文可达，标题片段「mexicodetain」在页面中出现"
+        "evidence": "原文可达，标题片段「cartelleader」在页面中出现"
       }
     ]
   },
   "status": "published",
-  "trendLinks": [
-    {
-      "trendId": "tr_ai-power-constraint",
-      "direction": "support",
-      "reason": "关键词命中：AI（规则关联，非人工判定）"
-    }
-  ],
+  "trendLinks": [],
   "revisions": [],
   "forecastRefs": [],
   "retro": {
@@ -78,11 +72,11 @@
       "scores": {
         "structural": 18,
         "scope": 16,
-        "signal": 11,
+        "signal": 8,
         "delta": 5,
         "timeliness": 4,
         "crossDomain": 3,
-        "total": 57
+        "total": 54
       }
     }
   ],

@@ -2,16 +2,16 @@
   "id": "ev_98e7cff9d84f",
   "dedupeKey": "ev:e4dc3fa8f4ea",
   "title": "COP31 fails to reach major climate deal as talks expose deep divisions",
-  "summary": "COP31 climate talks fail to make breakthrough on tackling climate change after a row about mentioning fossil fuels.",
+  "summary": "The talks fail to make a breakthrough on tackling climate change after a row about mentioning fossil fuels.",
   "facts": [
-    "COP31 climate talks fail to make breakthrough on tackling climate change after a row about mentioning fossil fuels."
+    "The talks fail to make a breakthrough on tackling climate change after a row about mentioning fossil fuels."
   ],
   "analysis": "全球宏观口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
   "category": "全球宏观",
   "region": "全球",
   "occurredAt": "2026-11-23T02:17:59+08:00",
   "firstReportedAt": "2026-11-23T02:17:59+08:00",
-  "collectedAt": "2026-11-22T18:59:51+00:00",
+  "collectedAt": "2026-11-23T08:31:57+08:00",
   "sources": [
     {
       "url": "https://www.bbc.co.uk/news/articles/cqwy06zrd26lo?at_medium=RSS&at_campaign=rss",
@@ -47,7 +47,7 @@
   "verification": {
     "status": "passed",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-22T18:59:51+00:00",
+    "checkedAt": "2026-11-23T08:31:57+08:00",
     "note": "原文可达，标题片段「cop31failsto」在页面中出现",
     "checks": [
       {

@@ -11,7 +11,7 @@
   "region": "全球",
   "occurredAt": "2026-11-21T05:43:22+08:00",
   "firstReportedAt": "2026-11-21T05:43:22+08:00",
-  "collectedAt": "2026-11-21T04:57:13+00:00",
+  "collectedAt": "2026-11-23T08:31:57+08:00",
   "sources": [
     {
       "url": "https://www.bbc.co.uk/news/videos/c90k6gl3lyxeo?at_medium=RSS&at_campaign=rss",
@@ -47,7 +47,7 @@
   "verification": {
     "status": "passed",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-21T04:57:13+00:00",
+    "checkedAt": "2026-11-23T08:31:57+08:00",
     "note": "原文可达，标题片段「whatthenewuk」在页面中出现",
     "checks": [
       {

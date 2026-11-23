@@ -2,22 +2,22 @@
   "id": "ev_36e42d626d8e",
   "dedupeKey": "ev:ab83de23fb70",
   "title": "Social Security should be shut down, this Republican senator says",
-  "summary": "The program’s trust funds are expected to run out of money in the next six years.",
+  "summary": "The program’s trust funds are forecast to run out of money in the next six years.",
   "facts": [
-    "The program’s trust funds are expected to run out of money in the next six years."
+    "The program’s trust funds are forecast to run out of money in the next six years."
   ],
   "analysis": "全球宏观口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
   "category": "全球宏观",
   "region": "全球",
-  "occurredAt": "2026-11-19T01:46:00+08:00",
-  "firstReportedAt": "2026-11-19T01:46:00+08:00",
-  "collectedAt": "2026-11-18T19:56:28+00:00",
+  "occurredAt": "2026-11-23T04:26:00+08:00",
+  "firstReportedAt": "2026-11-23T04:26:00+08:00",
+  "collectedAt": "2026-11-23T08:31:57+08:00",
   "sources": [
     {
       "url": "https://www.marketwatch.com/story/social-security-should-be-shut-down-this-republican-senator-says-8f7fef81?mod=mw_rss_topstories",
       "title": "Social Security should be shut down, this Republican senator says",
       "publisher": "MarketWatch",
-      "publishedAt": "2026-11-19T01:46:00+08:00",
+      "publishedAt": "2026-11-23T04:26:00+08:00",
       "type": "primary"
     }
   ],
@@ -47,7 +47,7 @@
   "verification": {
     "status": "pending",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-18T19:56:28+00:00",
+    "checkedAt": "2026-11-23T08:31:57+08:00",
     "note": "取原文失败：HTTPError",
     "checks": [
       {
@@ -66,7 +66,7 @@
   },
   "scoreHistory": [
     {
-      "at": "2026-11-19T01:46:00+08:00",
+      "at": "2026-11-23T04:26:00+08:00",
       "by": "rule/v1",
       "note": "规则评分初值（未人工复核）",
       "scores": {

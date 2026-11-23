@@ -11,7 +11,7 @@
   "region": "美国",
   "occurredAt": "2026-11-20T13:05:00+08:00",
   "firstReportedAt": "2026-11-20T13:05:00+08:00",
-  "collectedAt": "2026-11-20T19:35:50+00:00",
+  "collectedAt": "2026-11-23T08:31:57+08:00",
   "sources": [
     {
       "url": "https://science.nasa.gov/image-article/apod-2026-november-20-v-g-r/",
@@ -47,7 +47,7 @@
   "verification": {
     "status": "passed",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-20T19:35:50+00:00",
+    "checkedAt": "2026-11-23T08:31:57+08:00",
     "note": "原文可达，标题片段「apod2026nove」在页面中出现",
     "checks": [
       {

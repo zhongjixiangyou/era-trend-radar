@@ -1,23 +1,23 @@
 {
   "id": "ev_9fc54f1478e8",
   "dedupeKey": "ev:a9bb7c6e29da",
-  "title": "Russia-bound ship attacked in Gulf of Finland",
-  "summary": "Finnish defence forces say that Ukraine was likely behind the drone attack on the vessel.",
+  "title": "Russia-bound ship towed away after it was attacked in Gulf of Finland",
+  "summary": "Finnish defence forces say that Ukraine was likely behind the drone strike on Saturday. Kyiv has yet to comment.",
   "facts": [
-    "Finnish defence forces say that Ukraine was likely behind the drone attack on the vessel."
+    "Finnish defence forces say that Ukraine was likely behind the drone strike on Saturday. Kyiv has yet to comment."
   ],
   "analysis": "全球宏观口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
   "category": "全球宏观",
   "region": "全球",
-  "occurredAt": "2026-11-22T03:20:22+08:00",
-  "firstReportedAt": "2026-11-22T03:20:22+08:00",
-  "collectedAt": "2026-11-22T04:18:27+00:00",
+  "occurredAt": "2026-11-23T01:18:26+08:00",
+  "firstReportedAt": "2026-11-23T01:18:26+08:00",
+  "collectedAt": "2026-11-23T08:31:57+08:00",
   "sources": [
     {
       "url": "https://www.bbc.co.uk/news/articles/cj752ddve27ko?at_medium=RSS&at_campaign=rss",
-      "title": "Russia-bound ship attacked in Gulf of Finland",
+      "title": "Russia-bound ship towed away after it was attacked in Gulf of Finland",
       "publisher": "BBC World",
-      "publishedAt": "2026-11-22T03:20:22+08:00",
+      "publishedAt": "2026-11-23T01:18:26+08:00",
       "type": "primary"
     }
   ],
@@ -47,7 +47,7 @@
   "verification": {
     "status": "passed",
     "method": "rss+http/title-match",
-    "checkedAt": "2026-11-22T04:18:27+00:00",
+    "checkedAt": "2026-11-23T08:31:57+08:00",
     "note": "原文可达，标题片段「russiabounds」在页面中出现",
     "checks": [
       {
@@ -72,7 +72,7 @@
   },
   "scoreHistory": [
     {
-      "at": "2026-11-22T03:20:22+08:00",
+      "at": "2026-11-23T01:18:26+08:00",
       "by": "rule/v1",
       "note": "规则评分初值（未人工复核）",
       "scores": {
