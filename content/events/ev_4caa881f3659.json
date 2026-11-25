@@ -1,0 +1,84 @@
+{
+  "id": "ev_4caa881f3659",
+  "dedupeKey": "ev:74d99a307b5d",
+  "title": "Jensen Huang broke Nvidia’s code of conduct, and his employees may not forget it",
+  "summary": "Most codes of conduct serve as a reflection of corporate culture. In Nvidia's case, that could have consequences.",
+  "facts": [
+    "Most codes of conduct serve as a reflection of corporate culture. In Nvidia's case, that could have consequences."
+  ],
+  "analysis": "科技与社会口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "科技与社会",
+  "region": "全球",
+  "occurredAt": "2026-11-26T03:54:57+08:00",
+  "firstReportedAt": "2026-11-26T03:54:57+08:00",
+  "collectedAt": "2026-11-25T21:00:29+00:00",
+  "sources": [
+    {
+      "url": "https://techcrunch.com/2026/11/25/jensen-huang-broke-nvidias-code-of-conduct-and-his-employees-may-not-forget-it/",
+      "title": "Jensen Huang broke Nvidia’s code of conduct, and his employees may not forget it",
+      "publisher": "TechCrunch",
+      "publishedAt": "2026-11-26T03:54:57+08:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 12,
+    "scope": 16,
+    "signal": 8,
+    "delta": 5,
+    "timeliness": 4,
+    "crossDomain": 3,
+    "total": 48,
+    "rationale": {
+      "structural": "科技与社会类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（全球）",
+      "signal": "命中 0 个信号词",
+      "delta": "命中 0 个变化词",
+      "timeliness": "距采集约 30 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "passed",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-25T21:00:29+00:00",
+    "note": "原文可达，标题片段「jensenhuangb」在页面中出现",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "原文可达，标题片段「jensenhuangb」在页面中出现"
+      }
+    ]
+  },
+  "status": "published",
+  "trendLinks": [],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-26T03:54:57+08:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 12,
+        "scope": 16,
+        "signal": 8,
+        "delta": 5,
+        "timeliness": 4,
+        "crossDomain": 3,
+        "total": 48
+      }
+    }
+  ],
+  "linkHistory": []
+}
