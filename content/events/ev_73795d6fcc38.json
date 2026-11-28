@@ -1,0 +1,95 @@
+{
+  "id": "ev_73795d6fcc38",
+  "dedupeKey": "ev:d78f8d306811",
+  "title": "The Indian 'Tamasha queen' whose fans paid for a show that never happened",
+  "summary": "A new Bollywood flim spotlights the remarkable life of dancer and singer Vithabhai Narayangaonkar.",
+  "facts": [
+    "A new Bollywood flim spotlights the remarkable life of dancer and singer Vithabhai Narayangaonkar."
+  ],
+  "analysis": "全球宏观口径的单源报道。本条只完成来源可达与标题一致核验，未逐字核对正文，也没有第二来源印证；把它当作线索，不当作定论。",
+  "category": "全球宏观",
+  "region": "全球",
+  "occurredAt": "2026-11-28T08:50:11+08:00",
+  "firstReportedAt": "2026-11-28T08:50:11+08:00",
+  "collectedAt": "2026-11-28T05:40:54+00:00",
+  "sources": [
+    {
+      "url": "https://www.bbc.co.uk/news/articles/cj20q9pw0116o?at_medium=RSS&at_campaign=rss",
+      "title": "The Indian 'Tamasha queen' whose fans paid for a show that never happened",
+      "publisher": "BBC World",
+      "publishedAt": "2026-11-28T08:50:11+08:00",
+      "type": "primary"
+    }
+  ],
+  "scores": {
+    "structural": 18,
+    "scope": 16,
+    "signal": 11,
+    "delta": 5,
+    "timeliness": 4,
+    "crossDomain": 3,
+    "total": 57,
+    "rationale": {
+      "structural": "全球宏观类事件，按类别基线给分",
+      "scope": "影响范围按地区口径（全球）",
+      "signal": "命中 1 个信号词：AI",
+      "delta": "命中 0 个变化词",
+      "timeliness": "距采集约 30 天",
+      "crossDomain": "单一类别为主"
+    },
+    "scorerVersion": "score/v1.0"
+  },
+  "credibility": {
+    "level": "partial",
+    "basis": "媒体自有 RSS 原文，链接可达且标题一致；未逐字核对正文，未获独立来源印证"
+  },
+  "evidenceGrade": "single_primary",
+  "verification": {
+    "status": "passed",
+    "method": "rss+http/title-match",
+    "checkedAt": "2026-11-28T05:40:54+00:00",
+    "note": "原文可达，标题片段「theindiantam」在页面中出现",
+    "checks": [
+      {
+        "kind": "source_text",
+        "result": "pass",
+        "evidence": "原文可达，标题片段「theindiantam」在页面中出现"
+      }
+    ]
+  },
+  "status": "published",
+  "trendLinks": [
+    {
+      "trendId": "tr_ai-power-constraint",
+      "direction": "support",
+      "reason": "关键词命中：AI（规则关联，非人工判定）"
+    },
+    {
+      "trendId": "tr_cn-nev-demand-shift",
+      "direction": "support",
+      "reason": "关键词命中：EV（规则关联，非人工判定）"
+    }
+  ],
+  "revisions": [],
+  "forecastRefs": [],
+  "retro": {
+    "isRetro": false
+  },
+  "scoreHistory": [
+    {
+      "at": "2026-11-28T08:50:11+08:00",
+      "by": "rule/v1",
+      "note": "规则评分初值（未人工复核）",
+      "scores": {
+        "structural": 18,
+        "scope": 16,
+        "signal": 11,
+        "delta": 5,
+        "timeliness": 4,
+        "crossDomain": 3,
+        "total": 57
+      }
+    }
+  ],
+  "linkHistory": []
+}
